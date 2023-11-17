@@ -24,11 +24,13 @@ if len(soup.find_all(lambda tag: tag.name == 'a' and 'IESG evaluation record' in
   print('RFC {r} was not evaluated by the IESG'.format(r=rfcNum))
   exit(0)
 
-adEndsFile = os.path.join(os.path.dirname(__file__), 'AD_term_ends.json')
+metaDataDir = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'data/meta'))
+
+adEndsFile = os.path.join(metaDataDir, 'AD_term_ends.json')
 with open(adEndsFile, 'r') as f:
   adEnds = json.load(f)
 
-iesgsFile = os.path.join(os.path.dirname(__file__), 'IESGs.json')
+iesgsFile = os.path.join(metaDataDir, 'IESGs.json')
 with open(iesgsFile, 'r') as f:
   iesgsJ = json.load(f)
 
@@ -179,7 +181,11 @@ for a in ballots:
 
 res['all_ballots'] = resBallots
 
-rfcFile = os.path.join(os.path.dirname(__file__), 'rfc{}.json'.format(rfcNum))
+rfcDir = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'data/rfc'))
+if not os.path.exists(rfcDir):
+  os.makedirs(rfcDir)
+
+rfcFile = os.path.join(rfcDir, 'rfc{}.json'.format(rfcNum))
 with open(rfcFile, "w") as f:
   json.dump(res, f, indent=2, sort_keys=True, default=str)
 
