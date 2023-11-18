@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import json
 from datetime import datetime, timezone
 from sys import argv, exit
 
@@ -8,6 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from util.files import Files
+from util.json_handler import load_ad_term_ends, load_iesgs, save_json
 
 rfc_num = 9293
 
@@ -34,34 +34,8 @@ if (
     exit(0)
 
 
-with open(Files.ad_term_ends_file(), "r") as f:
-    ad_ends = json.load(f)
-
-with open(Files.iesgs_file(), "r") as f:
-    iesgs_from_json = json.load(f)
-
-
-def date_from_json(s):
-    if s is None:
-        return None
-    return datetime.strptime(s, "%Y-%m-%d").replace(tzinfo=timezone.utc)
-
-
-iesgs = []
-for iesg in iesgs_from_json:
-    iesgs.append(
-        {
-            "date_start": date_from_json(iesg["date_start"]),
-            "date_end": date_from_json(iesg["date_end"]),
-            "members": iesg["members"],
-        }
-    )
-
-for ad in ad_ends:
-    ad_ends[ad] = [date_from_json(e) for e in ad_ends[ad]]
-    # print('{ad}: {s}'.format(ad=ad, s=ad_ends[ad]))
-
-# print(soup.prettify())
+iesgs = load_iesgs()
+ad_ends = load_ad_term_ends()
 
 
 class Ballot:
@@ -206,8 +180,7 @@ for a in ballots:
 
 res["all_ballots"] = res_ballots
 
-with open(Files.rfc_dir("rfc{}.json".format(rfc_num)), "w") as f:
-    json.dump(res, f, indent=2, sort_keys=True, default=str)
+save_json(res, Files.rfc_dir("rfc{}.json".format(rfc_num)))
 
 print("RFC {r} analyzed succesfully".format(r=rfc_num))
 exit(0)
