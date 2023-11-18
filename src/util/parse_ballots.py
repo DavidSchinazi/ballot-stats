@@ -6,7 +6,12 @@ from unidecode import unidecode
 
 from .files import Files
 from .iesg import normalize_ad_name
-from .json_handler import load_ad_term_ends, load_iesgs, save_doc_ballots
+from .json_handler import (
+    load_ad_term_ends,
+    load_ad_term_starts,
+    load_iesgs,
+    save_doc_ballots,
+)
 from .types import Ballot, DocBallot
 
 
@@ -31,6 +36,7 @@ def parse_ballot(doc_name):
         return False
 
     iesgs = load_iesgs()
+    ad_starts = load_ad_term_starts()
     ad_ends = load_ad_term_ends()
 
     ballots = {}
@@ -64,11 +70,23 @@ def parse_ballot(doc_name):
             # print('{t} - {a}'.format(t=timestamp, a=action))
         elif action == 'Closed "Approve" ballot':
             ballot_end_time = timestamp
+            ads_with_no_record = []
             for a in ballots:
-                ballots_for_a = ballots.get(a, [])
-                if len(ballots_for_a) > 0:
-                    ballots_for_a[-1].end_time = timestamp
-                    ballots_for_a[-1].end_reason = "evaluation_closed"
+                if len(ballots.get(a, [])) > 0:
+                    ballots[a][-1].end_time = timestamp
+                    ballots[a][-1].end_reason = "evaluation_closed"
+                else:
+                    ads_with_no_record.append(a)
+            for a in ads_with_no_record:
+                # Handle case where AD joins after ballot started, such as RFC 8489.
+                for ad_start in ad_starts[a]:
+                    if ballot_start_time < ad_start and ad_start < timestamp:
+                        ad_start_ballot = Ballot(a, "No Record", ad_start)
+                        ad_start_ballot.end_time = timestamp
+                        ad_start_ballot.end_reason = "evaluation_closed"
+                        assert len(ballots[a]) == 0
+                        ballots[a] = [ad_start_ballot]
+                assert len(ballots[a]) == 1
         elif action.startswith("["):
             action_type = action[1 : action.find("]")]
             if action_type == "Ballot Position Update":
@@ -92,6 +110,15 @@ def parse_ballot(doc_name):
                     if len(ballots_for_author) > 0:
                         ballots_for_author[-1].end_time = timestamp
                         ballots_for_author[-1].end_reason = "new_position"
+                    else:
+                        # Handle case where AD joins after ballot started, such as RFC 9484.
+                        for ad_start in ad_starts[author]:
+                            if ballot_start_time < ad_start and ad_start < timestamp:
+                                ad_start_ballot = Ballot(author, "No Record", ad_start)
+                                ad_start_ballot.end_time = timestamp
+                                ad_start_ballot.end_reason = "new_position"
+                                ballots_for_author.append(ad_start_ballot)
+                        assert len(ballots_for_author) == 1
                     ballots_for_author.append(Ballot(author, ballot_type, timestamp))
                     ballots[author] = ballots_for_author
                 else:
@@ -102,6 +129,20 @@ def parse_ballot(doc_name):
                         if len(ballots_for_author) > 0:
                             ballots_for_author[-1].end_time = timestamp
                             ballots_for_author[-1].end_reason = "position_updated"
+                        else:
+                            # Handle case where AD joins after ballot started, such as RFC 9428.
+                            for ad_start in ad_starts[author]:
+                                if (
+                                    ballot_start_time < ad_start
+                                    and ad_start < timestamp
+                                ):
+                                    ad_start_ballot = Ballot(
+                                        author, "No Record", ad_start
+                                    )
+                                    ad_start_ballot.end_time = timestamp
+                                    ad_start_ballot.end_reason = "position_updated"
+                                    ballots_for_author.append(ad_start_ballot)
+                            assert len(ballots_for_author) == 1
                         ballots_for_author.append(
                             Ballot(author, ballot_type, timestamp)
                         )
@@ -120,6 +161,15 @@ def parse_ballot(doc_name):
                         )
                         new_ballot.text = action_details
                         ballots_for_author.append(new_ballot)
+                else:
+                    # Handle case where AD joins after ballot started.
+                    for ad_start in ad_starts[author]:
+                        if ballot_start_time < ad_start and ad_start < timestamp:
+                            ad_start_ballot = Ballot(author, "No Record", ad_start)
+                            ad_start_ballot.end_time = timestamp
+                            ad_start_ballot.end_reason = "discuss_updated"
+                            ballots_for_author.append(ad_start_ballot)
+                    assert len(ballots_for_author) == 1
                 ballots[author] = ballots_for_author
             elif action_type == "Ballot comment":
                 action_details = action[action.find("]") + 2 :]
