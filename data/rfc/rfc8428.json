@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-04-19 00:14:08-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-05-07 11:22:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-19 00:14:08-07:00",
+        "text": "Thanks to everyone who contributed to this document. --------------------------------------------------------------------------- \u00a79 defines a URI fragment identification scheme that is intended to apply to senml+xml / sensml+xml. Since this uses the \"+xml\" structured syntax suffix, it has to comply with the fragment identifier considerations associated with that suffix. See: https://www.iana.org/assignments/media-type-structured-suffix/media-type-structured-suffix.xhtml In particular, +xml has requirements around citing section 5 of  RFC 7303 (which this document doesn't), as well as requiring support for element() fragments; e.g.: \u00a0 coap:// example.com/temp#element(/1/3) must be allowed as an alias for \u00a0 coap:// example.com/temp#rec=3 If you want to restrict other aspects of XPointerFramework fragment identifiers, I believe you'll have to say so explicitly.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-07 11:22:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-04-14 03:54:27-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-04-18 18:44:25-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 18:44:25-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-04-18 19:51:33-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 19:51:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-04-15 22:13:41-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-05-18 09:31:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-15 22:13:41-07:00",
+        "text": "Hopefully this is easy to address: \u00a74.7\u00a0 talks about how SenML can also be used to configure parameters and controlling actuators. That capability has some rather significant security implications, but I failed to find mention of it in the security considerations. That needs to be explicitly discussed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-18 09:31:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-04-18 19:33:08-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-05-18 05:16:27-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-18 19:33:08-07:00",
+        "text": "I agree with Ben's DISCUSS. Additionally, I have serious reservations about introducing the concept of \"base fields\" that apply to subsequent array elemnets unless overridden.\u00a0 It seems to violate an abstraction barrier for at least some of the serialization formats, and prevents snippets from being composable and commutable absent the resolution/normalization process.\u00a0 It does not seem like the markup language and the document contain suffient safeguards against misuse to prevent security holes (both sensor data and commands could be misinterpreted).\u00a0 It seems that some substantially expanded text should be added on the hazards of the non-resolved format and giving guidance on when resolution/normalization must be performed in order to avoid correctness and security issues. There also seem to be sizeable risks associated with the semantics for time values.\u00a0 In particular, both with the use of an implicit-\"now-ish\", and with positive and negative values being interpreted with respect to a different absolute time base.\u00a0 (The involvement of base time is a further complication -- I do not remember any discussion of the interaction of a (positive) base time and a negative regular time, for example.\u00a0 I also do not remember any discussion of how the \"now-ish\" semantics make it actively harmful to do things like store-and-forward or archive SenML data (again, absent normalization), or what sort of granularity the \"now-ish\" semantics are expected to adhere to.\u00a0 (Is \"yesterday\" still considered \"roughly now\"?)\u00a0 I understand the desire for this sort of semantics, but the current specification seems to leave many potential problems exposed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-18 05:16:27-07:00",
+        "text": "Thank you for addressing my comments! I am changing my position to Abstain, because I am still uncomfortable with the possibility for non-hierarchical, interleaving use of base values, but recognize that the WG has consensus to do so, and I will not stand in the way. Original ballot text preserved below. DISCUSS I agree with Ben's DISCUSS. Additionally, I have serious reservations about introducing the concept of \"base fields\" that apply to subsequent array elemnets unless overridden.\u00a0 It seems to violate an abstraction barrier for at least some of the serialization formats, and prevents snippets from being composable and commutable absent the resolution/normalization process.\u00a0 It does not seem like the markup language and the document contain suffient safeguards against misuse to prevent security holes (both sensor data and commands could be misinterpreted).\u00a0 It seems that some substantially expanded text should be added on the hazards of the non-resolved format and giving guidance on when resolution/normalization must be performed in order to avoid correctness and security issues. There also seem to be sizeable risks associated with the semantics for time values.\u00a0 In particular, both with the use of an implicit-\"now-ish\", and with positive and negative values being interpreted with respect to a different absolute time base.\u00a0 (The involvement of base time is a further complication -- I do not remember any discussion of the interaction of a (positive) base time and a negative regular time, for example.\u00a0 I also do not remember any discussion of how the \"now-ish\" semantics make it actively harmful to do things like store-and-forward or archive SenML data (again, absent normalization), or what sort of granularity the \"now-ish\" semantics are expected to adhere to.\u00a0 (Is \"yesterday\" still considered \"roughly now\"?)\u00a0 I understand the desire for this sort of semantics, but the current specification seems to leave many potential problems exposed. COMMENT Section 4.4 Just \"Considerations\" is an unusual subject title. Having no Unit and no Base Unit is allowed, but you don't say what the semantics are in that case (presumably just a dimensionless counter for integers, with units not really being applicable to non-numeric types).\u00a0 Interestingly, Section 5.1.7 deems it fit to use \"/\" for the unit for a boolean value, even though \"/\" is supposed to be a (continuous/floating-point) ratio. Section 4.5 Just to double-check: you really do want to privilege this specification's version for eternity, for the purpose of being omitted from resolved records? Section 12.1 is there not some other units registry we can use?\u00a0 I fear begetting  https://xkcd.com/927/ \u00a0 .\u00a0 Also, how is/should the table be sorted? Also in Section 12.1, number 9, is the need for case sensitivity in Units (or otherwise?) normatively covered anywhere?\u00a0 If not, should it? Section 12 Are Base fields supposed to get negative CBOR labels (and not other fields)?\u00a0 Is this mentioned explicitly somewhere? (Yes, I know that the intent is for no more CBOR lablels to be allocated, but that is only a SHOULD-level requirement.) In \u00a0  Extensions that are mandatory to understand to correctly process the \u00a0  Pack MUST have a label name that ends with the '_' character. should that say something about \"mandatory to understand but not defined in this document\"?\u00a0 (Also in 12.3.1 et seq?) Section 13 Why are we talking about \"executable content\" at all?\u00a0 It seems quite unrelated to the rest of the document.",
+        "type": "Abstain"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-04-18 12:58:23-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 12:58:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-04-15 06:50:43-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-15 06:50:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-04-19 07:01:28-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-19 07:01:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-04-19 07:00:57-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-19 07:00:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-04-18 09:01:11-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 09:01:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-04-15 18:14:52-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-15 18:14:52-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-04-18 19:05:02-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 19:05:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-04-18 01:59:51-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 01:59:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-04-16 09:50:43-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-14 03:54:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-05-21 08:36:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-16 09:50:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8428",
+  "evaluation_end": "2018-05-21 08:36:36-07:00",
+  "evaluation_start": "2018-04-14 03:54:27-07:00"
+}

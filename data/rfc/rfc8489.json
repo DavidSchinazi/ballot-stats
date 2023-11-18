@@ -1,0 +1,306 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-04-17 23:03:03-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-10-09 10:29:49-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-17 23:03:03-07:00",
+        "text": "Thanks to everyone who worked on this revision of the STUN protocol. Thanks in particular to the ARTART reviewer and to the authors for actively engaging on the points he raised. I have one concern about interoperability and another about the IANA changes that I believe require changes to the document prior to publication. \u00a714.2: >\u00a0 X-Port is computed by taking the mapped port in host byte order, >\u00a0 XOR'ing it with the most significant 16 bits of the magic cookie, and >\u00a0 then the converting the result to network byte order.\u00a0 If the IP >\u00a0 address family is IPv4, X-Address is computed by taking the mapped IP >\u00a0 address in host byte order, XOR'ing it with the magic cookie, and >\u00a0 converting the result to network byte order.\u00a0 If the IP address >\u00a0 family is IPv6, X-Address is computed by taking the mapped IP address >\u00a0 in host byte order, XOR'ing it with the concatenation of the magic >\u00a0 cookie and the 96-bit transaction ID, and converting the result to >\u00a0 network byte order. The discussion of performing operations \"in host byte order\" is very confusing, and seems likely to cause issues communicating between machines of different endianness. As an implementor, based on this description, I cannot tell whether, given a port of 0x1234 (and operating on a little-endian machine), I'm supposed to do: Port (host order):\u00a0  34 12 Magic Cookie Prefix: 21 12 Result (host order): 15 00 X-Port (net order):\u00a0 00 15 or: Port (host order):\u00a0  34 12 Magic Cookie Prefix: 12 21 Result (host order): 26 33 X-Port (net order):\u00a0 33 26 One of these is clearly wrong. I think it's the first one, but I *also* think that the first one is the most straightforward interpretation of the quoted paragraph. The following would seem to be a complete description of the operation without introducing possible confusion about the difference between host and network order: \u00a0  X-Port is computed by XOR'ing the mapped port with the most significant 16 \u00a0  bits of the magic cookie.\u00a0 If the IP address family is IPv4, X-Address is \u00a0  computed XOR'ing the mapped IP with the magic cookie.\u00a0 If the IP address \u00a0  family is IPv6, X-Address is computed by XOR'ing the mapped IP address with \u00a0  the concatenation of the magic cookie and the 96-bit transaction ID. In all \u00a0  cases, the XOR operation works on its inputs in network byte order (that is, \u00a0  the order they will be encoded in the message). This makes it clear that the proper operation is: Port:\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 12 34 Magic Cookie Prefix: 21 12 Result / X-Port:\u00a0 \u00a0  33 26 --------------------------------------------------------------------------- \u00a717.3.1: >\u00a0 IANA is requested to update the names for attributes 0x0002, 0x0003, >\u00a0 0x0004, 0x0005, 0x0007, and 0x000B, and the reference from  RFC 5389 >\u00a0 to RFC-to-be for the following STUN methods: ... >\u00a0 0x0003: (Reserved; prior to [ RFC5389 ] this was CHANGE-REQUEST) The attribute 0x0003 is registered by  RFC 5780 , and should not be removed by this document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-09 10:29:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-04-18 09:29:09-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-05-04 09:18:16-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-18 09:29:09-07:00",
+        "text": "I would like to discuss several issues with the document (which look easy to fix to me) before recommending its approval for publication as an RFC: 1) 14.3.\u00a0 USERNAME \u00a0  The USERNAME attribute is used for message integrity.\u00a0 It identifies \u00a0  the username and password combination used in the message-integrity \u00a0  check. \u00a0  The value of USERNAME is a variable-length value containing the \u00a0  authentication username.\u00a0 It MUST contain a UTF-8 [ RFC3629 ] encoded \u00a0  sequence of less than 509 bytes, and MUST have been processed using \u00a0  the OpaqueString profile [ RFC8265 ]. I am trying to understand if there was a particular reason why you didn't use UsernameCasePreserved (or its case insensitive alternative) profile here which was specifically designed for usernames? \u00a0  A compliant implementation MUST \u00a0  be able to parse UTF-8 encoded sequence of less than 763. I am confused by this statement: you already have 509 bytes above. Is \"no\" missing above? 14.4.\u00a0 USERHASH \u00a0  The USERHASH attribute is used as a replacement for the USERNAME \u00a0  attribute when username anonymity is supported. \u00a0  The value of USERHASH has a fixed length of 32 bytes.\u00a0 The username \u00a0  and the realm MUST have been processed using the OpaqueString profile \u00a0  [ RFC8265 ] before hashing. As above: why didn't you use UsernameCasePreserved profile which was specifically designed for usernames? 2) 14.9.\u00a0 REALM \u00a0  The REALM attribute may be present in requests and responses.\u00a0 It \u00a0  contains text that meets the grammar for \"realm-value\" as described \u00a0  in [ RFC3261 ] but without the double quotes and their surrounding \u00a0  whitespace.\u00a0 That is, it is an unquoted realm-value (and is therefore \u00a0  a sequence of qdtext or quoted-pair).\u00a0 It MUST be a UTF-8 [ RFC3629 ] \u00a0  encoded sequence of less than 128 characters (which can be as long as \u00a0  509 bytes when encoding them and a long as 763 bytes when decoding \u00a0  them), (Here and similar text in several other sections) Can you please elaborate on how you came up with values 509 and 763? And why you need more space for decoding than for encoding of UTF-8. \u00a0  and MUST have been processed using the OpaqueString profile \u00a0  [ RFC8265 ]. 3) 14.16.\u00a0 ALTERNATE-DOMAIN \u00a0  The value of ALTERNATE-DOMAIN is variable length.\u00a0 It MUST be a UTF-8 \u00a0  [ RFC3629 ] encoded sequence of less than 128 characters (which can be Ekr already pointed this out, but I want to expand on this: you need to say whether this allows U-label (which are UTF-8) or A-labels (which are ASCII only). If you only allow Punycode encoded A-labels, this field doesn't need to be UTF-8, it only need to be ASCII. As far as I remember ASCII domain names are limited to 255 bytes. \u00a0  as long as 509 bytes when encoding them and as long as 763 bytes when \u00a0  decoding them). 4)  10.\u00a0 ALTERNATE-SERVER Mechanism \u00a0  If the transport protocol uses TLS or DTLS, then the \u00a0  client looks for an ALTERNATE-DOMAIN attribute.\u00a0 If the attribute is \u00a0  found, the domain MUST be used to validate the certificate using the \u00a0  recommendations in [ RFC6125 ]. When you reference  RFC 6125  you need to provide more details: a) Are you expecting support for DNS-ID, CN-ID or both? I assume you don't support SRV-ID/URI-ID (saying so explicitly would be great too). b) Are you expected to allow wildcards in DNS-IDs/CN-IDs? If yes, you need to say so. There is one more reference to  RFC 6125  in the document, you should make a similar change there as well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-04 09:18:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-04-18 18:55:32-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 18:55:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-04-18 19:57:51-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 19:57:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-04-16 19:10:58-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-16 19:10:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 19:24:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-04-18 13:01:38-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 13:01:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-04-16 12:51:00-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-04-16 12:57:07-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-04-16 12:51:00-07:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D5132 Can you please indicate how you addressed the points Matt Miller raised in his secdir review about the use of MD5. DETAIL >\u00a0 \u00a0 \u00a0 by the agent sending the indication.\u00a0 It primarily serves to >\u00a0 \u00a0 \u00a0 correlate requests with responses, though it also plays a small role >\u00a0 \u00a0 \u00a0 in helping to prevent certain types of attacks.\u00a0 The server also uses >\u00a0 \u00a0 \u00a0 the transaction ID as a key to identify each transaction uniquely >\u00a0 \u00a0 \u00a0 across all clients.\u00a0 As such, the transaction ID MUST be uniformly >\u00a0 \u00a0 \u00a0 and randomly chosen from the interval 0 .. 2**96-1, and SHOULD be I didn't realize this was a SHOULD. ICE depends on it as a security condition, so it probably needs to be a MUST. >\u00a0 \u00a0 \u00a0 For a request or indication message, the agent MUST include the >\u00a0 \u00a0 \u00a0 USERNAME, MESSAGE-INTEGRITY-SHA256, and MESSAGE-INTEGRITY attributes >\u00a0 \u00a0 \u00a0 in the message unless the agent knows from an external indication >\u00a0 \u00a0 \u00a0 which message integrity algorithm is supported by both agents.\u00a0 In >\u00a0 \u00a0 \u00a0 this case either MESSAGE-INTEGRITY or MESSAGE-INTEGRITY-SHA256 MUST >\u00a0 \u00a0 \u00a0 be included in addition to USERNAME.\u00a0 The HMAC for the MESSAGE- This text appears to conflict with S 7.3 of 5245-bis, which says: >\u00a0 \u00a0 \u00a0 STUN Security Feature it is understood that the corresponding STUN >\u00a0 \u00a0 \u00a0 Security Feature bit in the \"nonce cookie\" is set to 1. >\u00a0   >\u00a0 \u00a0 \u00a0 For example, in Section 9.2.4 discussing the PASSWORD-ALGORITHMS >\u00a0 \u00a0 \u00a0 security feature, it is implied that the \"Password algorithms\" bit, >\u00a0 \u00a0 \u00a0 as defined in Section 17.1, is set to 1 in the \"nonce cookie\". I'm not sure I understand the bid down attack here or the proposed defense.\u00a0 Can you please walk through what the assumed attacker capabilities are, what the client and server capabilities are, how the bid down attack works, and how this protects against it?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-04-18 15:48:37-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-04-16 12:57:07-07:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D5132 Can you please indicate how you addressed the points Matt Miller raised in his secdir review about the use of MD5. DETAIL >\u00a0 \u00a0 \u00a0 by the agent sending the indication.\u00a0 It primarily serves to >\u00a0 \u00a0 \u00a0 correlate requests with responses, though it also plays a small role >\u00a0 \u00a0 \u00a0 in helping to prevent certain types of attacks.\u00a0 The server also uses >\u00a0 \u00a0 \u00a0 the transaction ID as a key to identify each transaction uniquely >\u00a0 \u00a0 \u00a0 across all clients.\u00a0 As such, the transaction ID MUST be uniformly >\u00a0 \u00a0 \u00a0 and randomly chosen from the interval 0 .. 2**96-1, and SHOULD be I didn't realize this was a SHOULD. ICE depends on it as a security condition, so it probably needs to be a MUST. >\u00a0 \u00a0 \u00a0 For a request or indication message, the agent MUST include the >\u00a0 \u00a0 \u00a0 USERNAME, MESSAGE-INTEGRITY-SHA256, and MESSAGE-INTEGRITY attributes >\u00a0 \u00a0 \u00a0 in the message unless the agent knows from an external indication >\u00a0 \u00a0 \u00a0 which message integrity algorithm is supported by both agents.\u00a0 In >\u00a0 \u00a0 \u00a0 this case either MESSAGE-INTEGRITY or MESSAGE-INTEGRITY-SHA256 MUST >\u00a0 \u00a0 \u00a0 be included in addition to USERNAME.\u00a0 The HMAC for the MESSAGE- This text appears to conflict with S 7.3 of 5245-bis, which says: >\u00a0 \u00a0 \u00a0 STUN Security Feature it is understood that the corresponding STUN >\u00a0 \u00a0 \u00a0 Security Feature bit in the \"nonce cookie\" is set to 1. >\u00a0   >\u00a0 \u00a0 \u00a0 For example, in Section 9.2.4 discussing the PASSWORD-ALGORITHMS >\u00a0 \u00a0 \u00a0 security feature, it is implied that the \"Password algorithms\" bit, >\u00a0 \u00a0 \u00a0 as defined in Section 17.1, is set to 1 in the \"nonce cookie\". I'm not sure I understand the bid down attack here or the proposed defense.\u00a0 Can you please walk through what the assumed attacker capabilities are, what the client and server capabilities are, how the bid down attack works, and how this protects against it?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-22 10:03:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-18 15:48:37-07:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D5132 Can you please indicate how you addressed the points Matt Miller raised in his secdir review about the use of MD5. DETAIL >\u00a0 \u00a0 \u00a0 by the agent sending the indication.\u00a0 It primarily serves to >\u00a0 \u00a0 \u00a0 correlate requests with responses, though it also plays a small role >\u00a0 \u00a0 \u00a0 in helping to prevent certain types of attacks.\u00a0 The server also uses >\u00a0 \u00a0 \u00a0 the transaction ID as a key to identify each transaction uniquely >\u00a0 \u00a0 \u00a0 across all clients.\u00a0 As such, the transaction ID MUST be uniformly >\u00a0 \u00a0 \u00a0 and randomly chosen from the interval 0 .. 2**96-1, and SHOULD be I didn't realize this was a SHOULD. ICE depends on it as a security condition, so it probably needs to be a MUST. >\u00a0 \u00a0 \u00a0 For a request or indication message, the agent MUST include the >\u00a0 \u00a0 \u00a0 USERNAME, MESSAGE-INTEGRITY-SHA256, and MESSAGE-INTEGRITY attributes >\u00a0 \u00a0 \u00a0 in the message unless the agent knows from an external indication >\u00a0 \u00a0 \u00a0 which message integrity algorithm is supported by both agents.\u00a0 In >\u00a0 \u00a0 \u00a0 this case either MESSAGE-INTEGRITY or MESSAGE-INTEGRITY-SHA256 MUST >\u00a0 \u00a0 \u00a0 be included in addition to USERNAME.\u00a0 The HMAC for the MESSAGE- This text appears to conflict with S 7.3 of 5245-bis, which says that you must have MESSAGE-INTEGRITY. >\u00a0 \u00a0 \u00a0 STUN Security Feature it is understood that the corresponding STUN >\u00a0 \u00a0 \u00a0 Security Feature bit in the \"nonce cookie\" is set to 1. >\u00a0   >\u00a0 \u00a0 \u00a0 For example, in Section 9.2.4 discussing the PASSWORD-ALGORITHMS >\u00a0 \u00a0 \u00a0 security feature, it is implied that the \"Password algorithms\" bit, >\u00a0 \u00a0 \u00a0 as defined in Section 17.1, is set to 1 in the \"nonce cookie\". I'm not sure I understand the bid down attack here or the proposed defense.\u00a0 Can you please walk through what the assumed attacker capabilities are, what the client and server capabilities are, how the bid down attack works, and how this protects against it?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-22 10:03:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-19 07:01:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-04-16 12:26:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-16 12:26:23-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-03-13 12:51:56-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-04-18 19:49:22-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 19:49:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-04-18 12:52:37-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-13 12:51:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-03-23 03:05:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-18 12:52:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8489",
+  "evaluation_end": "2019-03-23 03:05:07-07:00",
+  "evaluation_start": "2018-03-13 12:51:56-07:00"
+}

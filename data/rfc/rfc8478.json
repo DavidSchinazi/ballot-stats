@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-05-22 18:18:45-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-07-11 12:23:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-05-22 18:18:45-07:00",
+        "text": "Thanks for taking the time to document this format for public consumption. I have a handful of blocking concerns (although I'm open to listening to reasons that I might be wrong on this front), and a number of additional comments. --------------------------------------------------------------------------- I have a lot of heartburn around the publication of an in informational document of a protocol called \"Zstandard.\" I know the protocol has been in development for a while, and has non-trivial deployment, so I understand that there would be reluctance to change its name at this point. If we leave the name as-is, I do not think that the normal informational boilerplate is sufficient. I would like to see additional text that explicitly addresses the situation, along the lines of: [Abstract] \u00a0  Zstandard, or \"zstd\" (pronounced \"zee standard\"), is a data \u00a0  compression mechanism.\u00a0 This document describes the mechanism, and \u00a0  registers a media type to be used when transporting zstd-compressed \u00a0  via Multipurpose Internet Mail Extensions (MIME).\u00a0 Despite the use of the \u00a0  word \"standard\" as part of its name, readers are advised that this document \u00a0  is not an Internet Standards Track specification, and is being published \u00a0  for informational purposes only. [Introduction] \u00a0  Zstandard, or \"zstd\" (pronounced \"zee standard\") is a data compression \u00a0  mechanism, akin to gzip [ RFC1952 ]. Despite the use of the word \"standard\" \u00a0  as part of its name, readers are advised that this document is not an \u00a0  Internet Standards Track specification, and is being published for \u00a0  informational purposes only. --------------------------------------------------------------------------- \u00a72.2.1: >\u00a0 For the first block, the starting offset history is populated with >\u00a0 the following values : 1, 4 and 8 (in order). I fear this is ambiguously specified. I can interpret this as either temporal order: Repeated_Offset1 = 8 Repeated_Offset2 = 4 Repeated_Offset3 = 1 Or as sequential order: Repeated_Offset1 = 1 Repeated_Offset2 = 4 Repeated_Offset3 = 8 Please clarify, as this confusion can lead to incompatible implementations. --------------------------------------------------------------------------- The dictionary scheme in here seems problematic, in that the intention is clearly to have public, well-known dictionaries; and the dictionaries are intended to have globally-unique identifiers for that purpose. 31 bits isn't enough space to achieve uniqueness through randomness. While there are other approaches that involve things like dictionary IDs that are hashes of their contents (see, e.g., SigComp), I suspect the notion of expanding the size of this field isn't very appealing. If you keep the format the same (4 bytes), I don't see how the dictionary part of this scheme can be interoperable without a registry of some kind. Even if the intention is to publish further documents on the topic of dictionaries, I believe publication of this document needs to wait on establishment of such a registry. I have no opinion about whether this is resolved by creating the registry in this document, or in holding its publication until the document that does create such a registry is published.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-11 12:23:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-05-18 06:08:45-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-05-23 10:40:21-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-23 10:40:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-05-23 11:18:02-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-23 11:18:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-05-23 14:55:27-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-23 14:55:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-05-24 06:41:16-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-07-12 08:37:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-05-24 06:41:16-07:00",
+        "text": "I support Adam's DISCUSS. Additionally, I think that there are significant privacy  considerations associated with the Skippable Frames described in Section 2.3, that should be documented before this document advances.\u00a0 Specifically, this provides an easy way for a party (not even necessarily the encoder, since these frames can be inserted independently from the actual compression scheme) to insert (e.g.) tracking data into a compressed stream and have it ignored by standard decoders.\u00a0 There are myriad possibilities for how this could be used, such as for watermarking files with information about how they were downloaded/generated/etc., which could be used for tracking leaks from confidential materials or illegal distribution of copyrighted content; there is potential for personally identifying information to be included; the list goes on.\u00a0 I can see that there can also be useful ways to use these frames to introduce additional metadata about the compressed content, but fear that we may want to give guidance for these frames to be stripped/forbidden/etc. absent additional context to indicate that the information in the skippable frame is non-malicious. A more minor note, but still IMO blocking -- in Section 2.1.1.1.2: \u00a0 \u00a0  windowLog = 10 + Exponent; \u00a0 \u00a0  windowBase = 1 << windowLog; \u00a0 \u00a0  windowAdd = (windowBase / 8) * Mantissa; \u00a0 \u00a0  Window_Size = windowBase + windowAdd; I don't think this formula is correct -- windowAdd in this formula is not modified by windowLog at all, which does not match up with the stated maxiumum bound in the body text.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-12 08:37:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-05-21 14:06:08-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-21 14:06:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-05-24 06:52:08-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-24 06:52:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-05-24 02:00:17-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-24 02:00:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-05-18 07:43:10-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-18 07:43:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-05-18 13:28:56-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-18 13:28:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-05-22 20:47:27-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-22 20:47:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-05-23 20:04:44-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-23 20:04:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-07-16 11:29:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-18 06:08:45-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8478",
+  "evaluation_end": "2018-07-16 11:29:35-07:00",
+  "evaluation_start": "2018-05-18 06:08:45-07:00"
+}

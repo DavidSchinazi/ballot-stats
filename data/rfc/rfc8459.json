@@ -1,0 +1,237 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-06-20 22:31:36-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-20 22:31:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-06-21 06:47:32-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-21 06:47:32-07:00",
+        "text": "I agree with Benjamin's DISCUSS. In particular, each of the options presented in Section 4.1 seem to have challenges that could render them unworkable, and no insights from deployment experience are provided to explain why they are in fact workable in practice. I think it would be preferable to do the further analysis suggested by Alvaro before publishing an informational document about hSFC. With that said, given that this is an informational document I wouldn't stand in the way of it being published.",
+        "type": "Abstain"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-06-19 14:43:05-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-19 14:43:05-07:00",
+        "text": "The hSFC concept is indeed interesting -- thanks for doing the work! Reading through the document, I found myself thinking about its usefulness.\u00a0 The Introduction says that it \"focuses on the difficult problem of implementing SFC across a large, geographically dispersed network, potentially comprised of millions of hosts and thousands of network forwarding elements, and which may involve multiple operational teams (with varying functional responsibilities).\"\u00a0 However, the content doesn't deal directly with the implementation/operational issues -- and offers instead a list of options around the IBN, with no clear or explicit recommendation.\u00a0 Even though it is not explicitly mentioned anywhere, I think that is the intent of the document. The options themselves include speculation about how things could work; including, for example, state synchronization between IBNs (\u00a74.1.1) without specific proposals...or, my favorite, the nesting of NSH headers (\u00a74.1.4).\u00a0 I note that even though the NSH spec ( rfc8300 ) offers a Next Protocol value of \"NSH\", and the architecture ( rfc7665 ) is such that \"the SFC encapsulation remain transport independent...[and]...any network transport protocol may be used\", it may not be possible to add/remove NSH Headers within specific transport encapsulations...but that is not discussed.\u00a0 Again, I think that was the intent. The design of the document (present options, but don't dig deep into any of them) is ok.\u00a0 It would be nicer if the WG would move this work forward by exploring the options, specifying them and having detailed operational considerations related to \"the difficult problem of implementing SFC\" and how hSFC may help.\u00a0 But I didn't find related work in the datatracker. In the end, I believe that this document is valuable as a discussion piece which may lead to future work...but, in my opinion, it doesn't need to be published as an RFC to serve that purpose...and it could in fact benefit from further analysis and evaluation before eventual publication reflecting *the* hSFC architecture.\u00a0  Given that we're at the IESG Evaluation point in the process, I won't stand in the way of publication and have chosen to ABSTAIN instead.",
+        "type": "Abstain"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-06-19 20:24:23-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-19 20:24:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-06-20 18:44:56-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-06-22 11:23:27-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-06-20 18:44:56-07:00",
+        "text": "This does seem like an interesting and potentially useful idea -- thanks for doing the work!\u00a0 However, I am not sure that the document as-is is suitable for publication. In Section 4.1.5 we hear that preserving metadata and applying metadata to injected packets is not special and is \"usual\" functionality, but section 4.1.2 calls out that the 4.1.2 approach requires the SFs in the path to be capable of forwarding metadata and attaching metadata to injected packets as if it is a nontrivial requirement.\u00a0 This apparent internal inconsistency needs to be resolved before publication. Why does Section 4.1 offer five different choices with no guidance on how to make a cost/benefit analysis amongst them?\u00a0 Is the full spread of five choices really necessary?\u00a0 Complexity breeds implementation bugs which breed security issues, so I feel that this breadth of choice needs to be justified.\u00a0 This also ties into some confusion I have as to the goal of this document (which currently targets Informational status), akin to what is stated in Alvaro's ballot position: is it just providing information on how to assemble existing pieces in a novel way, or presenting a new protocol specification that is not yet fit for Proposed Standard status, or is it listing out potential solutions to a problem so that they can be implemented and experience gained as to which are useful in practice and which are not?\u00a0 Accordingly, I would be interested to hear about what deployment experience exists already and whether this abstraction proves to be as useful as the use cases seem to promise; if there is little implementation experience, perhaps Experimental status is more appropriate. I further am uncertain as to whether the approach described in Section 4.1.3 even merits consideration at all; the technique it describes seems to have a very leaky abstraction barrier (e.g., w.r.t TTL modifications). This seems especially poignant given the already large size of candidate approaches. The approach described in Section 4.1.5 also seems to be incompletely specified, in that the hSFC Flow ID semantics are not covered at all.\u00a0 On my initial reading I assumed that this field's encoding and semantics were intended to be left as entirely local matters to the lower domain, avoiding a need to specify them in this document.\u00a0 However, I'm not sure that it's actually true, since we generally want multiple vendors to be able to interoperate, and this scheme does not appear to require that the node applying the hSFC Flow ID (and saving state) is the same node that removes it (and restores state).\u00a0 That is, these two nodes could potentially be implemented by different vendors. Even once the above issues are resolved, I will only be able to move to an Abstain position, since this document proposes additional usage of (meta)data in the NSH headers that is not subject to mandatory integrity protection, as was discussed at length for  RFC 8300  and is mandated to be available by  RFC 7665 .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-22 11:23:27-07:00",
+        "text": "Thanks for the quick updates to the document. As previously indicated, I am Abstaining, since this document includes a proposal for adding a new category of NSH metadata contents, and as discussed during  RFC 8300 's evaluation there is not a mandatory integrity protection option for such metadata.",
+        "type": "Abstain"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-06-20 16:13:14-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-20 16:13:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-05-31 02:44:23-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-31 02:44:23-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-06-21 05:22:29-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-21 05:22:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-06-20 21:02:58-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-20 21:02:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-06-26 06:33:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-31 02:44:22-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8459",
+  "evaluation_end": "2018-06-26 06:33:16-07:00",
+  "evaluation_start": "2018-05-31 02:44:22-07:00"
+}

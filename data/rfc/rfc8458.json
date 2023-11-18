@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-06-06 23:51:49-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-06 23:51:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-05-03 07:29:19-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-06-06 13:49:11-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-06 13:49:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-06-06 14:42:41-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-06 14:42:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-06-06 13:07:21-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-06-26 14:38:18-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-06-06 13:07:21-07:00",
+        "text": "This should be easy to resolve; if other ADs believe that this approach is appropriate, I will clear. But I want to make sure we've thought it through: The draft states a number of normative requirements for how National Libraries manage the namespace. What standing does an IETF informational RFC have to tell the NLs what to do?\u00a0 I think it would be better to state such things as assumptions, or even as non-normative guidance about why the NLs would want to follow these requirements. Please note, however, that simply changing MUSTs to musts would not solve my concern; the normative vs non-normative question is only incidental to my concern.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-26 14:38:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-06-07 05:21:01-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-06-29 15:05:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-06-07 05:21:01-07:00",
+        "text": "I think this document may benefit from an Internationalization Considerations sections, but am not entirely sure how needed it is. So let's discuss it... In particular, the URN:NBN lexical equivalence rules include several case-insensitive comparisons, for the prefix and for the case of the hex digits in any percent-encoded values, but do not specify any operation on the decoded percent-encoded values/characters.\u00a0 In many (perhaps even most?) cases, ignoring such encoded characters for purposes of case-insensitive comparison is the wrong thing to do, but if I understand correctly, it actually is the correct thing to do in this case.\u00a0 Namely, a NBN (or URN:NBN), once assigned, is essentially static data and consumers of it should not attempt to perform modification, Unicode normalization, etc. on it -- that would potentially change what is being identified (or render the identifier invalid).\u00a0 On the other hand, a national library or delegated institution that is assigning NBNs may wish to take into account Unicode normalization rules and other similar considerations while assigning NBNs (in particular, the nbn_string component), as part of their allocation policy.\u00a0 Because these can be subtle, it may be worth explicitly pointing out the potential issues for registration authorities.\u00a0 That, plus the directive to consumers to not normalize, seems like it would be appropriate content for an Internationalization Considerations section. Separately, in Section 4.2.1 where we cover 4-components, I noted that  RFC 8141  rather discourages actually using r-components until their semantics are standardized.\u00a0 The text here seems to be giving free reign for national libraries to assign their own semantics without any coordination with a broader community.\u00a0 Do we really want to advocate for this, as opposed to attempting to get broadly unified semantics for r-components Internet-wide?\u00a0 (Perhaps we already have and I just missed it; if so, a reference here would be appropriate.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-29 15:05:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-06-02 06:49:53-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-02 06:49:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-06-07 06:57:01-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-07 06:57:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-06-07 03:50:04-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-07 03:50:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-06-06 14:33:26-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-06 14:33:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-06-01 07:39:18-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-01 07:39:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-06-06 23:51:57-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-06 23:51:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-06-03 13:53:54-07:00",
+        "end_reason": "new_position",
+        "start": "2018-05-03 07:29:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-07-02 07:45:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-03 13:53:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8458",
+  "evaluation_end": "2018-07-02 07:45:58-07:00",
+  "evaluation_start": "2018-05-03 07:29:19-07:00"
+}

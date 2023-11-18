@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-04-04 19:34:03-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-04 19:34:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-04-05 05:03:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-06-27 05:51:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-05 05:03:39-07:00",
+        "text": "Thank you for a well written document. I have a small list of questions/comments, which I would like to discuss before recommending approval of this document: 1) 3.3.2.\u00a0 Deleting Cells \u00a0  o\u00a0 The CellList in a 6P Request (2-step transaction) or 6P Response \u00a0 \u00a0 \u00a0 (3-step transaction) MUST either be empty, contain exactly \u00a0 \u00a0 \u00a0 NumCells cells, or more than NumCells cells. What is the meaning of \"more than NumCells cells\" in case of DELETE? \u00a0 \u00a0 \u00a0 The case where the \u00a0 \u00a0 \u00a0 CellList is not empty but contains less than NumCells cells is not \u00a0 \u00a0 \u00a0 supported. 2) 3.4.7.\u00a0 Handling Error Responses  How should unrecognized error codes be treated by recipients? For example if one of the nodes is implementing an extension and the other node doesn't support such extension.  I think adding some text to this section would help. 3) 4.2.\u00a0 Requirements for an SF \u00a0  o\u00a0 MAY redefine the format of the CellList field. \u00a0  o\u00a0 MAY redefine the format of the CellOptions field. \u00a0  o\u00a0 MAY redefine the meaning of the CellOptions field. I am a concerned about interoperability problems that might result from these requirements. Can you elaborate on what kind of format changes you are expecting? Wouldn't such changes require some sort of extension (e.g. use of a new extended ADD command)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-27 05:51:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-04-03 10:59:56-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 10:59:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-04-03 01:17:53-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 01:17:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-04-03 12:54:59-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 12:54:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-04-02 15:44:55-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-07-03 19:45:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-02 15:44:55-07:00",
+        "text": "Section 3.5 states: \u00a0  [...] When link-layer \u00a0  security is enabled, the 6P messages MUST be secured. but Section 5 (the Security Considerations) says: \u00a0  6P messages are carried inside 802.15.4 Payload Information Elements \u00a0  (IEs).\u00a0 Those Payload IEs are encrypted and authenticated at the link \u00a0  layer through CCM* [CCM-Star]. implying that this message protection is always enabled.\u00a0 So, which is it -- always-on, or (application)-controlled? If use of link-layer security is optional, then the security considerations for the case without link-layer security should be documented. Separately, Section 3.2.2 describes the generic message format, but only for version 0. Some indication should be given as to which aspects of the format are required to be invariant across all versions of 6P (and thus which aspects are potentially specific to version 0). Some readers might assume that only the version nybble is invariant (though there also seems to be a requirement in Section 3.4.1 that the RC_ERR_VERSION response remain invariant to some extent).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-03 19:45:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-04-03 12:07:17-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 12:07:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-04-04 11:51:10-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-04 11:51:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-04-05 06:56:24-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-05 06:56:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-04-05 02:57:42-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-05 02:57:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-04-04 10:07:27-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-04 10:07:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-04-02 08:37:26-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-02 08:37:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-04-01 19:42:20-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-04-04 13:31:52-07:00",
+        "end_reason": "new_position",
+        "start": "2018-04-01 19:42:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-08-16 06:37:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-04 13:31:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8480",
+  "evaluation_end": "2018-08-16 06:37:58-07:00",
+  "evaluation_start": "2018-04-01 19:42:20-07:00"
+}

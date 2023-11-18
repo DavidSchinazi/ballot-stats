@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-08-01 20:32:26-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-01 20:32:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-07-29 10:03:23-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-29 10:03:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-08-02 05:26:22-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-02 05:26:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-08-01 16:03:15-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-01 16:03:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-07-27 08:24:44-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-09-17 15:25:26-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-07-27 08:24:44-07:00",
+        "text": "Hopefully this first point is simple to resolve (whether by changing text or merely un-confusing me).\u00a0 The other ones may require some actual discussion, though. Section 6.6.1.2 has: \u00a0  After a DSO Session is ended by the server (either by sending the \u00a0  client a Retry Delay message, or by forcibly aborting the underlying \u00a0  transport connection) the client SHOULD try to reconnect, to that \u00a0  service instance, or to another suitable service instance, if more \u00a0  than one is available. which seems to contradict the text from Section 3: %\u00a0 [...] Given that these fatal error %\u00a0 conditions signify defective software, and given that defective %\u00a0 software is likely to remain defective for some time until it is %\u00a0 fixed, after forcibly aborting a connection, a client SHOULD refrain %\u00a0 from automatically reconnecting to that same service instance for at %\u00a0 least one hour. Given some other mentions in the document about aborting the connection, it may be that I am just reading the \"refrain from reconnecting for an hour\" more strongly than I should be. Is Section 5.1.2 expected to be considered an \"application protocol profile\" that defines the use of TLS 1.3 0-RTT data for DSO?\u00a0 (If so, I do not personally feel that it provides adequate treatment to be considered as such.) I should probably leave this to my (transport-area?) colleagues to discuss further, but I'm not sure that the interaction of this mechanism with high-RTT connections is fully covered -- for example, the inactivity timeout in Section 6.4(.x) could behave poorly when the timeout is set to a smaller value than the RTT, as the server would potentially end up starting the \"forcibly abort\" process (and potentially causing the client to lose for an hour) because the server's timer starts when it sends the DSO response that initiates its idea of the session, and would not recieve graceful shutdown messages from a properly-behaving client in time. I'm not sure that the behavior specified in Section 7.1.2 is entirely safe. Consider when a client sends a DSO keepalive to try to request a DSO session, but subsequently sends EDNS(0) TCP Keepalive (whether \"just in case\" or for some other reason).\u00a0 The Server will receive the DSO keepalive and respond, creating a session, but the EDNS(0) TCP Keepalive is already in flight.\u00a0 I don't remember seeing any text that prevents this client behavior explicitly, but that seems like the right sort of thing to do.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-10-01 08:52:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-09-17 15:25:26-07:00",
+        "text": "Thank you for resolving most of my DISCUSS points (the additional clarification about when the one-hour retry does (not) apply in particular is helpful even if not strictly needed).\u00a0 However, it seems that my point about an \"application protocol profile\" for TLS 1.3 0-RTT was deferred until the resolution of a different thread covering 0-RTT, but that we never picked it back up.\u00a0 I think this document's profile needs to provide greater clarity about what specific messages are (or are not) allowed in 0-RTT data, i.e., listing permitted TLVs and having a column in the registry for whether a TLV is 0-RTT-safe.\u00a0 For example, Retry Delay simply cannot appear in a DSO message that is eligible for 0-RTT, so it accordingly cannot appear in a 0-RTT message, while EncryptionPadding should be safe to appear [as an additional TLV], provided there is a suitable primary TLV to attach it to.\u00a0 On first look [after long absence], the keepalive TLV should be safe to use as a 0-RTT primary TLV, since it elicits a response and only affects the current connection.\u00a0 Anyway, my main point here is that we need to place the burden of analysis on a TLV's safety on the authors of the spec introducing that TLV, and not on implementors or users of the protocol.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-01 08:52:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-07-30 11:51:43-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-30 11:51:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-07-31 15:28:27-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-31 15:28:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-08-02 07:05:18-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-02 07:05:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-07-30 11:12:34-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-07-30 12:25:44-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-07-30 11:12:34-07:00",
+        "text": "In addition to the bullet point in the 6.2 that was flagged by Spencer, I would like to discuss the content of secton 5.4.\u00a0 DSO Response Generation. I understand the desire to optmize for the case where the application knows that no data will be sent as reply to a certain message. However, TCP does not have a notion of message boundaries and therfore cannot and should not act based on the reception of a certain message. Indicating to the TCP that an ACK can be set immediately in an specfic situation is also problematic as ACK processing is part of the TCP's internal machinery. However, why it is important at all that an TCP-level ACK is send out fast than the delayed ACK timer? The ACK receiver does not expose the information when an ACK is received to the application and the delayed ACK timer only expires if no further data is received/send by the ACK-receiver, therefore this optimization should not have any impact in the application performance. I would just recomend to remove this section and any additional discussion about delayed ACKs. Please note that the problem described in [NagleDA] only occurs for request-repsonse protocols where not further request can be sent before the response is received. This is not the case in this protocol.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-07-30 13:19:15-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-07-30 12:25:44-07:00",
+        "text": "1) In addition to the bullet point in the 6.2 that was flagged by Spencer, I would like to discuss the content of secton 5.4.\u00a0 DSO Response Generation. I understand the desire to optmize for the case where the application knows that no data will be sent as reply to a certain message. However, TCP does not have a notion of message boundaries and therfore cannot and should not act based on the reception of a certain message. Indicating to the TCP that an ACK can be set immediately in an specfic situation is also problematic as ACK processing is part of the TCP's internal machinery. However, why it is important at all that an TCP-level ACK is send out fast than the delayed ACK timer? The ACK receiver does not expose the information when an ACK is received to the application and the delayed ACK timer only expires if no further data is received/send by the ACK-receiver, therefore this optimization should not have any impact in the application performance. I would just recomend to remove this section and any additional discussion about delayed ACKs. Please note that the problem described in [NagleDA] only occurs for request-repsonse protocols where not further request can be sent before the response is received. This is not the case in this protocol. 2) Furthe regarding keep-alives in sec 6.5.2: \"For example, a hypothetical keepalive interval \u00a0  value of 100ms would result in a continuous stream of at least ten \u00a0  messages per second, in both directions, to keep the DSO Session \u00a0  alive.\" This does not seems correct. There should be at max one keep-a-lives message in flight. Thus the keep-lives timer should be restarted when the keep-alive reply was receiced.  Also: \"And, in this extreme example, a single packet loss and \u00a0  retransmission over a long path could introduce a momentary pause in \u00a0  the stream of messages, long enough to cause the server to \u00a0  overzealously abort the connection.\" This doesn't really make sense to me: As I said, TCP will retransmit and the keep-alives timer should not be running until the reply is receiced. if you want to abort the connection based on keep-alives quickly before the TCP connection indicates you a failure, you need to wait at minimum for an interval that is larger than the TCP RTO (with is uaually 3 RTTs).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-12-06 14:08:59-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-07-30 13:19:15-07:00",
+        "text": "1) In addition to the bullet point in the 6.2 that was flagged by Spencer, I would like to discuss the content of section 5.4.\u00a0 (DSO Response Generation). I understand the desire to optimize for the case where the application knows that no data will be sent as reply to a certain message, however, TCP does not have a notion of message boundaries and therefore cannot and should not act based on the reception of a certain message. Indicating to the TCP that an ACK can be set immediately in an specific situation is also problematic as ACK processing is part of the TCP's internal machinery. However, why it is important at all that an TCP-level ACK is send out fast than the delayed ACK timer? The ACK receiver does not expose the information when an ACK is received to the application and the delayed ACK timer only expires if no further data is received/send by the ACK-receiver, therefore this optimization should not have any impact in the application performance. I would just recommend to remove this section and any additional discussion about delayed ACKs. Please note that the problem described in [NagleDA] only occurs for request-response protocols where no further request can be sent before the response is received. This is not the case in this protocol (as pipelining is supported). 2) Further regarding keep-alives: in sec 6.5.2: \"For example, a hypothetical keepalive interval \u00a0  value of 100ms would result in a continuous stream of at least ten \u00a0  messages per second, in both directions, to keep the DSO Session \u00a0  alive.\" This does not seems correct. There should be at max one keep-alives message in flight. Thus the keep-laives timer should only be restarted after the keep-alive reply was received.  Also: \"And, in this extreme example, a single packet loss and \u00a0  retransmission over a long path could introduce a momentary pause in \u00a0  the stream of messages, long enough to cause the server to \u00a0  overzealously abort the connection.\" This doesn't really make sense to me: As I said, TCP will retransmit and the keep-alive timer should not be running until the reply is received. If you want to abort the connection based on keep-alives quickly before the TCP connection indicates you a failure, you need to wait at minimum for an interval that is larger than the TCP RTO (with is uaually 3 RTTs) which means you basically need to know the RTT. Also sec 7.1: \"If the client does not generate the \u00a0 \u00a0 \u00a0 mandated keepalive traffic, then after twice this interval the \u00a0 \u00a0 \u00a0 server will forcibly abort the connection.\" Why must the server terminate the connection at all if the client refuses to send keep-alives? Isn't that what the inactivity timer is meant for? Usually only the endpoint that initiates the keep-alive should terminate the connection if no response is received. 3) There is another contraction regarding the inactive timer: Sec 6.2 say \"A shorter inactivity timeout with a longer keepalive interval signals \u00a0  to the client that it should not speculatively keep an inactive DSO \u00a0  Session open for very long without reason, but when it does have an \u00a0  active reason to keep a DSO Session open, it doesn't need to be \u00a0  sending an aggressive level of keepalive traffic to maintain that \u00a0  session.\" which indicates that the client may leave the session open longer than indicated by the inactive timer of the server. However section 7.1.1 say that the client MUST close the connection when the timer is expired.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-06 14:08:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-07-26 21:28:46-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-08-02 06:43:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-07-26 21:28:46-07:00",
+        "text": "I really like this document, and think it's headed the right direction. Of course I have four pages of comments, because reasons, but the only part I'm really confused about is this one ... I would have thought that if you end up with a different endpoint because your anycast address now resolves differently, the new endpoint would have to have shared a lot of state with the previous endpoint, for this to work: \u00a0 When an anycast service is configured on a particular IP address and \u00a0  port, it must be the case that although there is more than one \u00a0  physical server responding on that IP address, each such server can \u00a0  be treated as equivalent.\u00a0 If a change in network topology causes \u00a0  packets in a particular TCP connection to be sent to an anycast \u00a0  server instance that does not know about the connection, the normal \u00a0  keepalive and TCP connection timeout process will allow for recovery. What I would have expected to happen, is that the new endpoint sees a packet arrive that's not on a synchronized TCP connection, and immediately responds with a RST (reset), rather than the normal keepalive and TCP connection timeout process happening. That's also the way I'm reading  https://tools.ietf.org/html/rfc7828#section-3.6 . Is that not the way it's working for anycast these days?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-02 06:43:10-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-08-01 21:20:40-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-01 21:20:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-07-31 19:58:23-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-31 19:58:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-07-03 13:17:45-07:00",
+        "end_reason": "new_position",
+        "start": "2018-07-03 13:17:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-12-07 12:41:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-03 13:17:45-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc8490",
+  "evaluation_end": "2018-12-07 12:41:11-08:00",
+  "evaluation_start": "2018-07-03 13:17:44-07:00"
+}

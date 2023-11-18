@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-03-07 00:58:12-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-07 00:58:12-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-03-07 05:29:49-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-03-07 07:30:36-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-03-07 05:29:49-08:00",
+        "text": "Thank you for a well written document. I will be switching to Yes once the following is addressed/discussed: Relationship to TLS 1.2 needs to be clarified. The document is adding requirements on TLS 1.2 clients. Implementors of TLS 1.2 are not going to (or very unlikely to) read this document. This looks fishy to me. Two examples on page 37: \u00a0 TLS 1.2 clients SHOULD also check that the last eight bytes\u00a0 are not equal to the second value if the ServerHello indicates TLS\u00a0 1.1 or below and  A legacy TLS client performing renegotiation with TLS 1.2 or prior\u00a0 and which receives a TLS 1.3 ServerHello during renegotiation MUST\u00a0 abort the handshake with a \"protocol_version\" alert.\u00a0 Note that\u00a0 renegotiation is not possible when TLS 1.3 has been negotiated. There are similar statements on page 45: \u00a0 TLS 1.2 implementations SHOULD also process this extension. and on page 48: \u00a0 However, the old semantics did not constrain the signing \u00a0 curve.\u00a0 If TLS 1.2 is negotiated, implementations MUST be prepared \u00a0 to accept a signature that uses any curve that they advertised in \u00a0 the \"supported_groups\" extension. I think you need to clarify whether these normative requirements apply to pure TLS 1.2 clients or TLS clients that implement both 1.2 and 1.3 and choose to use 1.2 for some reason. Or maybe you need to say in the Abstract/Introduction that although this document obsoletes TLS 1.2 it also specifies new requirements on TLS 1.2 implementations. (So it is sort of both \"Obsoletes\" and \"Updates\" TLS 1.2 RFC.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-07 07:30:36-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-06 11:28:17-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-06 11:28:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-03-06 11:11:54-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-06 11:11:54-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-03-07 10:58:57-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-07 10:58:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-03-06 09:27:36-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-06 09:27:36-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-03-06 12:28:18-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-06 12:28:18-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-03-02 16:46:19-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-02 16:46:19-08:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-01 13:17:30-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-01 13:17:30-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-03-06 07:44:46-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-06 07:44:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-03-07 21:24:49-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-07 21:24:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-03-07 14:38:21-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-07 14:38:21-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-03-06 22:15:17-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-06 22:15:17-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-03-06 10:48:52-08:00",
+        "end_reason": "new_position",
+        "start": "2018-03-01 13:17:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-03-21 03:02:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-06 10:48:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8446",
+  "evaluation_end": "2018-03-21 03:02:00-07:00",
+  "evaluation_start": "2018-03-01 13:17:29-08:00"
+}
