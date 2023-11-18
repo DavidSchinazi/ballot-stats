@@ -1,0 +1,307 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-09-22 08:53:31-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-22 08:53:31-07:00",
+        "text": "I understand that L3NM is not a device model and that, as such, it is not intended to include every possible parameter.\u00a0  However, not leveraging existing work has resulted in inconsistencies: from using different names to changing implementation expectations.\u00a0 I believe that this result impacts the implementation-specific work needed to derive device-specific actions (using existing models) and potentially reduces the value of using this network model. Many WGs in the routing area work on related technology, including bess, idr, lsr, pim, bfd, rtgwg, and teas. However, I found no evidence in the archives that any of these WGs were consulted or asked to review this work. Both points (lack of reuse and lack of review) have been mentioned in the mailing list, so I assume they have been considered.\u00a0 This fact and the existence of multiple implementations lead me to ABSTAIN.",
+        "type": "Abstain"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-09-23 01:45:11-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-09-27 17:10:12-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-09-23 01:45:11-07:00",
+        "text": "(1) I think there may be some ambiguity we need to resolve, relating to per-AF router IDs and other per-AF lists: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  list router-id { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  key \"address-family\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Router-id per address family.\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  leaf address-family { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type identityref { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  base vpn-common:address-family; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Indicates the address family for which the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Router-ID applies.\"; What actually gets used as the router-id for a given address family if both \"dual-stack\" and that address family are present in this list? There's some similar potential for amiguity in the \"redistribute-connected\" list for BGP routing, that is also keyed on an address-family identityref. (2) In a similar vein as Roman's Discuss (and perhaps obviated by it?), if we're going to allow raw keys to be specified, as a string type, we should be very clear about whether the string is hex-encoded, base64-encoded, etc., in light of deployed experience with devices that take the string and use it as the raw key (thereby eliminating a good chunk of the key space from potential use). (2.5) For raw keys, should we be using nacm:default-deny-all? (3) the ipsec authentication option for the various routing protocols uses a string to identify an (IKE, unspecified version thereof) SA.\u00a0  RFC 7296  doesn't have the concept of a name for an IKE SA itself, so I think we need to provide more details on what is being named and what the naming authority is.\u00a0 IKE does have identities for the peers, if the goal is to refer to the peer's identity for the SA. (4) I'd also like to have a discussion about the NTP configuration options; in particular, we currently have an enumeration to select between broadcast client and broadcast server, with no option apparent for symmetric or other NTP modes.\u00a0 Given the rigidity of YANG enumerations, I'd like to confirm that no other NTP modes could be appropriate on the network access before we lock in to this model.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-09-28 16:45:58-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-27 17:10:12-07:00",
+        "text": "(3) the ipsec authentication option for the various routing protocols uses a string to identify an (IKE, unspecified version thereof) SA.\u00a0  RFC 7296  doesn't have the concept of a name for an IKE SA itself, so I think we need to provide more details on what is being named and what the naming authority is.\u00a0 IKE does have identities for the peers, if the goal is to refer to the peer's identity for the SA. [I'd like to see clarified that these human-readable names are administrator-assigned]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-28 16:45:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-09-22 13:35:38-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-09-23 07:20:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-22 13:35:38-07:00",
+        "text": "[general] * I'm sure there are plenty things I'm not understanding, and probably \u00a0 these things are easy to address.\u00a0 But in general I feel like there \u00a0 could be some tension between needing to specify/model the L3 \u00a0 attributes that are used to provision both the endpoint and the \u00a0 clients with a possibly somewhat cleaner separation for holding client \u00a0 IP provisioning info.\u00a0 At what point, for example, should there be \u00a0 something like a separate \"client-ip-provisioning-profile\" string \u00a0 that is referenced?\u00a0 I think some of the richness of what can be \u00a0 expressed in IPv6 RAs may be bringing these ideas up, some of which \u00a0 can be expressed in DHCP as well but operationally may be less common. \u00a0 The contents of RIOs in particular seem like a bit of client \u00a0 provisioning information that an endpoint might need to be aware \u00a0 of as well. [S7.6.2] * Provisioning IPv6 clients can be more rich than the DHCPv6/SLAAC \u00a0 model noted here (and much more so than IPv4/DHCPv4). \u00a0 Since you document how local-address/prefix-length becomes a PIO, \u00a0 should there be other related IP connectivity provisioning information \u00a0 in here, like: \u00a0 \u00a0 \u00a0 * more than just one PIO? (is this just repeated \u00a0 \u00a0 \u00a0 \u00a0 ip-connection/ipv6 entries, one for each on-link prefix?) \u00a0 \u00a0 \u00a0 * one or more RIOs that might need to be advertised to clients? \u00a0 \u00a0 \u00a0 * others (PVDIO, ...)? \u00a0 If this is \"out of scope\" for this document, where does it belong \u00a0 in the overall provisioning of an L3VPN service (out of curiosity, \u00a0 given that this document kinda models DHCP IP allocation ranges)? [S8] * Under provider DHCPv6 servers, the server definition has an \u00a0 \"address-assign\" choice of \"number\" with a \u00a0 \"number-of-dynamic-address\" (defaulting to \"1\"), but the description \u00a0 talks about the number of allocated prefixes.\u00a0 Should this value be \u00a0 \"number-of-dynamic-prefixes\" instead?  * Which of these elements describes whether or not DHCPv6 PD \u00a0  (Prefix Delegation) is enabled, and the prefix pools used?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-23 07:20:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-10-04 03:51:17-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-10-04 05:21:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-10-04 03:51:17-07:00",
+        "text": "Thank you for the work on this document, and apologies for the delayed review. I have one DISCUSS point, a couple of comments. As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise. I have divided comments into \"minor\" (including the questions) and \"nits\". Neither require replies strictly speaking, please feel free to address as you see fit. I will appreciate answers to my questions, to improve my understanding. If any clarification comes out of it, I hope it will help improve the document. Francesca 1. ----- \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  leaf holdtime { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type uint32; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  units \"msec\"; FP: This might be me not finding the right reference (or little knowledge of YANG), but I was wondering if \"msec\" was defined somewhere as a unit (note that the description does not mention that the unit is milliseconds either). While doing my due diligence to see if I missed or misunderstood something, I researched the RFCs mentioned in the beginning of the YANG module: \u00a0  This module uses types defined in [ RFC6991 ] and [ RFC8343 ].\u00a0 It also \u00a0  uses groupings defined in [ RFC8519 ], [ RFC8177 ], and [ RFC8294 ]. And found no use of the \"msec\" unit. A quick google search shows that  RFC 8299  uses it, so there is precedence for it, but I couldn't find its definition from that document either. All the other leaves use \"milliseconds\" (which is defined in  RFC 8294 ), so my preference would be to have consistency, if \"msec\" was defined and I just missed it. (Note that a similar remark could be made for \"bps\" used, which does not appear in the description text, and is also used in  RFC 8466 , however there is no issue about consistency there).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-04 05:21:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-09-20 05:39:06-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-20 05:39:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-09-19 10:55:15-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-09-27 10:20:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-19 10:55:15-07:00",
+        "text": "(7.6.3) Is there a reason the TCP-AO model in this draft is different from the one in  draft-ietf-idr-bgp-model-11 ? That draft is using a model developed in the TCPM WG ( draft-ietf-tcpm-yang-tcp ) specifically for that purpose. If there is no compelling requirement for something different, or the TCPM modelling work can be stretched to cover this use case as well, it would be far better than rolling a totally separate TCP YANG model here.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-27 10:20:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-10-05 01:03:20-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-05 01:03:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-09-22 23:43:37-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-22 23:43:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-09-10 08:30:35-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-10 08:30:35-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-09-19 14:20:00-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-09-29 13:16:50-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-19 14:20:00-07:00",
+        "text": "**  RFC8177  already defines a container to represent an individual key -- key-string \u2013 as both a string and hex format. Additionally, this representation has built in ACLs to protect it.\u00a0 This model appears to maximize flexibility by supporting both key-chains and an explicit key for protocols like BGP, RIP and ISIS.\u00a0 Is there a reason why this model does not (or perhaps cannot) reuse the key-string representation from  RFC8177  (the same way key-chain is)? And/or to not provide the flexibility for a hex encoded key?  ** Section 9.\u00a0 The text notes that \u2018vpn-service\u2019 is sensitive to write operations.\u00a0 Wouldn\u2019t \u2018vpn-profiles\u2019 be equally sensitive to alterations with similar consequences?\u00a0 For example, altering an encryption-profile-identifier could change the algorithm chosen or the key.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-29 13:16:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-09-22 15:31:39-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-09-23 07:21:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-22 15:31:39-07:00",
+        "text": "I am abstaining for similar reasons to Alvaro -- there are inconsistencies that make deriving the mapping between the model and implementations tricky. However, I don't really think that that is the \"fault\" of this document, but rather is an artifact of the fact that there are so many different \"types\" of VPNs, and every standard/implementation/vendor has their own special knobs and features. This makes creating a generic model largely impossible - it either needs to be so restrictive that it is basically pointless, or so comprehensive that it is unwieldily. I think that this document did a good job of trying to thread this needle (and I thank/congratulate the authors), but I still think that it is not really usable.  I also support Erik's discuss on Sec 7.6.2 -- this is also (I think) an artifact of trying to cover both too much and too little.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-23 07:21:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-09-22 01:15:59-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-10 08:30:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-09-27 04:53:00-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-22 01:15:59-07:00",
+        "text": "This specification refers to ietf-opsawg-vpn-common for qos related matching, hence I am raising similar discussion as I had for ietf-opsawg-vpn-common (see here  https://datatracker.ietf.org/doc/draft-ietf-opsawg-vpn-common/ ). This specification specifies qos classification based on L4 criteria and describes the procedure for TCP and UDP. It is possible that new L4 protocols (for example QUIC) use UDP as substrate hence can create ambiguity based of the procedure described in the specification. This specification should consider such potential substrate usage of L4 protocols (specially UDP) and hint on the potential augmentations (there might be several ways to do that) or scope it down to not support such cases.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-10-08 07:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-27 04:53:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9182",
+  "evaluation_end": "2021-10-08 07:49:51-07:00",
+  "evaluation_start": "2021-09-10 08:30:34-07:00"
+}

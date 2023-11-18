@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-07-12 15:02:18-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 15:02:18-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-05 04:07:18-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-09 07:40:56-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-08-05 04:07:18-07:00",
+        "text": "This is a fine document and I only found a few minor things that should be easy to fix. In 4.1: \u00a0  The candidate attribute can itself be extended.\u00a0 The grammar allows \u00a0  for new name/value pairs to be added at the end of the attribute. \u00a0  Such extensions MUST be made through IETF Review or IESG Approval \u00a0  [ RFC8126 ] and the assignments MUST contain the specific extension and \u00a0  a reference to the document defining the usage of the extension. This is effectively creating a new registry, but this information is not present in the IANA Considerations section.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-14 10:33:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-09 07:40:56-07:00",
+        "text": "This is a fine document and I only found a few minor things that should be easy to fix. Thank you for addressing my comments. Unfortunately it doesn't look like my DISCUSS point was addressed yet. Also, your IANA change introduced another issue. 1) In 5.1: \u00a0  The candidate attribute can itself be extended.\u00a0 The grammar allows \u00a0  for new name/value pairs to be added at the end of the attribute. \u00a0  Such extensions MUST be made through IETF Review or IESG Approval \u00a0  [ RFC8126 ] and the assignments MUST contain the specific extension and \u00a0  a reference to the document defining the usage of the extension. This is effectively creating a new registry, but this information is not present in the IANA Considerations section. So you need to do one of the following: a) Remove the last sentence b) Reword it to only talk about IETF stream documents for defining extensions (IESG can't really do what you ask, unless you have an IANA registry established for these.) c) Move this text to the IANA considerations and update it to properly define a new IANA registry. 2) In 10.2: You removed the following text: \u00a0  o\u00a0 Name, Email, and Address of a contact person for the registration\t \t\t   \u00a0  o\u00a0 Organization or individuals having the change control I think removing (postal) Address is a good thing. However the rest of this is still needed, as IANA uses this information to decide whether a person/organization is allowed to update an existing registry entry. So please consider adding it back or explain why this information is not needed for a registry where external organizations can add value (without publishing an RFC).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-14 10:33:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-06 08:47:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-06 08:59:20-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-06 08:47:30-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-09 05:56:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-06 08:59:20-07:00",
+        "text": "Apologies for multiple ballot emails, wrapped up a bit too soon the first time. I'm confused about Section 7. The mechanisms in  RFC 4091  and  RFC 4092  were deprecated in  RFC 5245 , and this is mentioned in  RFC 8445 . Why does this specification then need to additionally normatively recommend the use of ICE for dual-stack scenarios? This could be interpreted as saying that ANAT is an alternative option for this use case, but it shouldn't be according to  RFC 8445 .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-09 05:56:23-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-06 14:46:59-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-06 14:46:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-07 20:54:00-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-07 20:54:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-05 17:14:00-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-09 11:38:44-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-08-05 17:14:00-07:00",
+        "text": "A fairly minor point, but the example in Section 4.6 is not compliant with the rest of the document.\u00a0 Specifically, any implementation *of this document* must include the \"ice2\" ice-option in addition to any other option being used, per Section 3.2.1.5.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-13 18:25:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-09 11:38:44-07:00",
+        "text": "A fairly minor point, but the example in Section 5.6 is not compliant with the ABNF for the ice-options production, which uses SP to separate different ice-option-tag values; the example uses a comma.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-13 18:25:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-05 06:11:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-05 06:11:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-07-13 08:30:53-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-13 08:30:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-05 10:18:40-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-05 10:18:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-05 19:28:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-13 18:34:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-05 19:28:32-07:00",
+        "text": "(1) Section 8.1. Per \u201cThese require techniques for message integrity and encryption for offers and answers, which are satisfied by the TLS mechanism [ RFC3261 ] when SIP is used\u201d, the guidance is right (use TLS), but this reference is outdated.\u00a0 Section 26.2.1 of  RFC3261  provides rather old guidance on the ciphersuite.\u00a0 Is there a reason why not to use  BCP195  for guidance on versions/ciphersuites? (2) Section 8.2.1, The \u201cvoice hammer attack\u201d appears to be an artifact of SDP.\u00a0 The text explicitly notes that this attack is not \u201cspecific to ICE but that ICE can help provide a remediation\u201d (aside, should \u201cremediation\u201d be \u201cmitigation\u201d).\u00a0 However, the preceding introductory section (8.2) explicitly says \u201cthere are several attacks possible with ICE\u201d.\u00a0 These two statements aren\u2019t consistent. (3) Section 8.2.2.\u00a0 This section reads like an operational consideration.\u00a0 The setup scoped in the parent Section 8.2, \u201cthere are several attacks possible with ICE when the attacker is an authenticated and valid participant in the ICE exchange\u201d, isn\u2019t discussed here (i.e., how is the presence or absence of an ALG germane to an attacker who is a participant in the ICE exchange) (4) Section 8.\u00a0 Is there a reason why the security considerations from  RFC8445  are not noted as also applying (e.g., Section 19.1 - .4.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-13 18:34:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-06 20:07:00-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-06 20:07:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-06 14:52:26-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 15:02:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-14 12:02:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-06 14:52:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8839",
+  "evaluation_end": "2019-08-14 12:02:15-07:00",
+  "evaluation_start": "2019-07-12 15:02:17-07:00"
+}

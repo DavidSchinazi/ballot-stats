@@ -1,0 +1,291 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-06-01 14:29:51-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-01 14:29:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-06-02 19:08:01-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-22 11:29:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-06-02 19:08:01-07:00",
+        "text": "In Section 3.1.2, we say that: \u00a0  o\u00a0 If the target SID (2001:db8:B:4::) is not locally instantiated, \u00a0 \u00a0 \u00a0 the packet is discarded However,  RFC 8754  \u00a74.3.2 seems to say that the next header is processed in this case.\u00a0  Only if the target SID is both not locally instantiated and does not represent a local interface will the packet be discarded, if I understand correctly.\u00a0 (Similarly for the analogous statement in \u00a73.2.2.) There's also quite a few other internal incosistencies in this document, such as copy/paste chunks that refer to \"N4\" as executing a given SID in a scenario where it is actually a different node doing so, many instances where a given IP address or SID does not match up with the addressing structure listed in Section 1.3, places where we seem to say that an SR ingress node can be a classic IPv6 node that lacks SRv6 capabilities, etc.\u00a0 Individually, many of these would be nit-level (and indeed are called out specifically in the NITS section of my ballot comment), but collectively they seem to indicate a document that is not yet in publishable state.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-22 11:29:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-06-01 14:48:10-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-06-02 11:50:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-06-01 14:48:10-07:00",
+        "text": "Thank you for the work put into this document. It is comforting (even if not surprising) that the simple \"good old\" ping/traceroute work on a SRv6 network ;-) Thanks to Carlos Bernardos for his INT-REVIEW at  https://datatracker.ietf.org/doc/review-ietf-6man-spring-srv6-oam-10-intdir-telechat-bernardos-2021-05-28/ Thanks to Ole Tr\u00f8an for his shepherd document even if I regret the lack of justification for 'standards track'. Especially, because the abstract is mainly about ping/traceroute, hence should be informational but the O-flag is indeed standard track. So, all in all, this is OK. Please find below two blocking but trivial DISCUSS points, some non-blocking COMMENT points (but replies would be appreciated), and one nit. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == -- Section 2.1 -- As \"a penultimate segment SHOULD NOT be a Penultimate Segment Pop (PSP) SID\" is normative, then the network programming  RFC 8986  should be a normative reference. Trivial to fix. -- Section 9.2 -- Trivial to fix,  RFC 8174  should be normative.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-02 11:50:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-05-21 13:36:14-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-21 13:36:14-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-06-02 13:50:38-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-02 13:50:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-06-02 18:48:03-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-01-31 13:16:51-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-06-02 18:48:03-07:00",
+        "text": "I can't get past the feeling this document is really two different documents mashed together. One is a Standards Track, 6man document, that defines the O-flag. All the meat of that document is in \u00a72.1 and \u00a72.2, it would make a nice, compact, readable 3 or 4 page RFC (maybe a little more once all the boilerplate was in). The other is an Informational, SPRING document, that talks about use cases at some length. It seems both cruel and counterproductive to force SRv6 implementors who are implementing the O-flag to read through the entire balance of the document just to be sure they haven't missed something important. Remember these documents will live a long time, and it seems irresponsible to clutter the essential document set with inessential use cases. My suggestion is to split the document as outlined above.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-31 13:16:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-26 02:53:32-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-26 02:53:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-05-24 11:52:38-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-06-02 09:47:03-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-24 11:52:38-07:00",
+        "text": "I would like to clarify that when the pseudocode says \"Send the copied packet, along with a timestamp to the OAM process for telemetry data collection and export,\" that this \"process\" is colocated on the router, and that this process further digests the data so that there is much less than 1 packet going out of the box per O-bit packet processed. If there is a case where each O-bit packet generates an entire packet going off the router to a controller or external OAM process, there are extremely unfortunate corner cases that are not sufficiently mitigated by rate-limiting.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-02 09:47:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-06-01 14:05:03-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-01 14:05:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-06-02 23:49:00-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-02 23:49:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-06-03 03:45:22-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-03 03:45:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-06-02 18:42:57-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-01-10 11:47:01-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-06-02 18:42:57-07:00",
+        "text": "The privacy implications of the O-flag needs to be more clearly articulated.\u00a0 It provides a dual use capability -- there is tangible benefit for OAM use cases, but also reduces the friction for surveillance uses cases. The SECDIR review ( https://mailarchive.ietf.org/arch/msg/secdir/FeTu7x7-okw7w7-T6dZRFhJHpAo/ ) pointed this out in -09.\u00a0 The changes made to the Security Considerations in -10 were helpful, but primarily focused on reiterating the security assumptions of the SR domain boundary and the degree of protection of the SRH.\u00a0  My recommendation would be for an explicit Privacy Considerations section with the following (approximate) text: NEW 7.\u00a0 Privacy Considerations The per-packet marking capabilities of the O-flag provides a granular mechanism to collect telemetry.\u00a0 When this collection is deployed by an operator with knowledge and consent of the users, it will enable a variety of diagnostics and monitoring to support the OAM and security operations use cases needed for resilient network operations.\u00a0 However, this collection mechanism will also provide an explicit protocol mechanism to operators for surveillance and pervasive monitoring use cases done contrary to the users\u2019 consent.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-10 11:47:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-06-02 11:41:47-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-02 11:41:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-03-23 02:59:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-21 13:36:13-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9259",
+  "evaluation_end": "2022-03-23 02:59:46-07:00",
+  "evaluation_start": "2021-05-21 13:36:13-07:00"
+}

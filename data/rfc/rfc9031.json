@@ -1,0 +1,317 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-30 15:10:17-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-05 14:54:23-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-30 15:10:17-07:00",
+        "text": "Thanks to everyone who invested their time in this document. I have one blocking comment that I believe should be easy to resolve, and one fairly major comment that should be trivial to fix. \u00a78.1.1: >\u00a0 o\u00a0 The Uri-Path option is set to \"j\". COAP URIs are generally subject to  BCP 190  restrictions, which would require the path to either be provisioned, discovered, or under the \".well-known\" tree. The use of a reserved domain name here may change the rationale; but for the sake of not establishing a precedent for path squatting in CoAP, this document needs to clearly explain the rationale of why  BCP 190  should not apply in this case. Alternately, the implied URI can be changed to something like \"coap:// 6tisch.arpa/.well-known/j \"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-05 14:54:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-31 04:39:46-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-31 04:39:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-30 08:09:10-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-30 08:09:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-30 07:04:03-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-30 07:04:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-10-30 07:32:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-11-01 15:04:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-30 07:32:08-07:00",
+        "text": "I have some issues with the references here, which should be resolvable simply by making some normative. RFC 8505  provides terminology as well as neighbor discovery (in Sections 4.2 and 6), so it seems to me that it should be a normative reference. As  draft-ietf-6tisch-architecture  is used for both necessary terminology and concepts, I can\u2019t see how it isn\u2019t normative.\u00a0 I did find that I had to check it during my review. In Section 5: \u00a0  In an operational 6TiSCH network, all frames MUST use link-layer \u00a0  frame security [ RFC8180 ]. This would seem to be a MUST referring to 8180, making that a normative reference as well.\u00a0 But possibly this might not really be a MUST imposed here, and is instead citing a requirement from elsewhere.\u00a0 In that case, I would simply remove the word \u201cMUST\u201d, so it is stating a fact, rather than a new requirement.\u00a0 You might similarly consider the subsequent sentence.\u00a0 In any case, I do wonder whether\u00a0 7554 and 8180 should be normative.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-01 15:04:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-30 23:24:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-09 10:27:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-30 23:24:32-07:00",
+        "text": "Thanks for this generally well-written document!\u00a0 It does a great job at making these fairly difficult topics accessible to the reader.\u00a0 I have a few points that should be fairly easy to address, but do need to be addressed before the document should advance. My comment on Section 8.4.4 tries to walk through some scenarios involving a finite lease time on a short address; as a result of that I think it's necessary to direct the 6LN to interpret the time in units of ASN as opposed to wall-clock time. The \"parameter_addinfo\" field in Unsupported_Parameter (Section 8.4.5) feels underspecified to me.\u00a0 The inline text says that only a subset of the link-layer key set from the Configuration could be included here, but how is that formally specified? The string COJP_MAX_JOIN_ATTEMPTS appears only twice in the text, once in Section 8.3.1 and again in the table in Section 8.5.\u00a0 The former text leaves me confused as to what counts as a \"join attempt\" for this purpose, and in particular how it differs from the MAX_RETRANSMIT timer mentioned in the previous sentence. I couldn't find a clear statement that any node sending EBs needs to be prepared to act as a join proxy; Section 4.1 notes that: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 During the remainder of the join process, the node \u00a0  that has sent the EB to the pledge acts as the JP. but I couldn't find where that was enforced. I think we may need to say more about how a JP knows that \"secExempt\" is in effect (see comment in Section 5), since that affects a critical piece of the security posture of the network. Finally, can we discuss whether a 32-bit MIC is the most appropriate default for the key usage?\u00a0 I lack the domain background to know how much impact there is in going to an ENC-MIC64 or ENC-MIC128 scheme.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-09 10:27:48-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-10-28 12:15:03-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-28 12:15:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-10-31 03:04:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-31 03:04:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-10-31 06:49:47-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-31 06:49:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-10-30 14:11:57-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-30 14:11:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-10-29 04:12:49-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-10-29 09:43:04-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-10-29 04:12:49-07:00",
+        "text": "1) I hope this point can be resolved quickly as it seems to only need a bit more specifics but I think this part is not sufficient: Sec 6.1: \"The Join Proxy implements a data cap on outgoing \u00a0  join traffic through CoAP's congestion control mechanism.\" I think this needs an normative requirement here. Congestion control is supposed to avoid network overload but also to make use available resources. The congestion control as currently defined\u00a0 for CoAP would probably limit the join traffic appropriately (to something like one packet per RTT likely) but CoAP could in theory use any time a different more aggrieve congestion and therefore just relying on congestion control generically doesn't seem to be sufficient. I recommend to define a hard limit, e.g. 1 packet per RTT or 1 packet per 3 seconds if RTT is unknown (as recommended in  RFC8085 ) and say that this can be achieved by congestion control as specified in the base CoAP spec. 2) Also, not\u00a0 sure if this editorial or a real issue but I'm not sure I fully understand this sentence: Sec 6.1.1: \"A Join Proxy that does not set the DSCP on traffic \u00a0  forwarded should set it to zero so that it is compressed out.\" If the proxy does NOT SET DSCP, why should it SET it to zero? I would think it either sets it to AF43 or it does nothing about it because DSCP is not really used in that network. I guess it's not a big issue and setting to zero seems fine as well but I'm afraid I don't understand the intent here and when exactly the Proxy is supposed to set to AF43 or bleach. 3) This may also be mostly editorial but just to be sure. Section 7.2 provide default value for some of the CoAP transport parameter (where 2 or 3 are the same as defined in  RFC7252 ) but not for all. Why is that? And then finally on reference again: Given that use of  I-D.ietf-core-stateless  is recommend, I believe it should be normative (and wait for publication of that doc).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-10-30 07:10:17-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-10-29 09:43:04-07:00",
+        "text": "1) I hope this point can be resolved quickly as it seems to only need a bit more specifics but I think this part is not sufficient: Sec 6.1: \"The Join Proxy implements a data cap on outgoing \u00a0  join traffic through CoAP's congestion control mechanism.\" I think this needs an normative requirement here. Congestion control is supposed to avoid network overload but also to make use available resources. The congestion control as currently defined\u00a0 for CoAP would probably limit the join traffic appropriately (to something like one packet per RTT likely) but CoAP could in theory use any time a different more aggrieve congestion and therefore just relying on congestion control generically doesn't seem to be sufficient. I recommend to define a hard limit, e.g. 1 packet per RTT or 1 packet per 3 seconds if RTT is unknown (as recommended in  RFC8085 ) and say that this can be achieved by congestion control as specified in the base CoAP spec.  Further there seems to be an implicit requirement that the JP MUST implement rate limit using the PROBING_RATE parameter, however that is never explicitly spelled out as a normative requirement. However, if this rate is not provided by the JRC, it doesn't seem that any rate limiting has to enforced. So maybe it would be good to be more strict here. 2) Also, not\u00a0 sure if this editorial or a real issue but I'm not sure I fully understand this sentence: Sec 6.1.1: \"A Join Proxy that does not set the DSCP on traffic \u00a0  forwarded should set it to zero so that it is compressed out.\" If the proxy does NOT SET DSCP, why should it SET it to zero? I would think it either sets it to AF43 or it does nothing about it because DSCP is not really used in that network. I guess it's not a big issue and setting to zero seems fine as well but I'm afraid I don't understand the intent here and when exactly the Proxy is supposed to set to AF43 or bleach. 3) This may also be mostly editorial but just to be sure. Section 7.2 provide default value for some of the CoAP transport parameter (where 2 or 3 are the same as defined in  RFC7252 ) but not for all. Why is that? 4 ) And then finally on references (again): Given that use of  I-D.ietf-core-stateless  is recommend, I believe it should be normative (and wait for publication of that doc).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-05 06:29:59-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-30 07:10:17-07:00",
+        "text": "1) I hope this point can be resolved quickly as it seems to only need a bit more specifics but I think this part is not sufficient: Sec 6.1: \"The Join Proxy implements a data cap on outgoing \u00a0  join traffic through CoAP's congestion control mechanism.\" I think this needs an normative requirement here. Congestion control is supposed to avoid network overload but also to make use available resources. The congestion control as currently defined\u00a0 for CoAP would probably limit the join traffic appropriately (to something like one packet per RTT likely) but CoAP could in theory use any time a different more aggrieve congestion and therefore just relying on congestion control generically doesn't seem to be sufficient. I recommend to define a hard limit, e.g. 1 packet per RTT or 1 packet per 3 seconds if RTT is unknown (as recommended in  RFC8085 ) and say that this can be achieved by congestion control as specified in the base CoAP spec.  Further on there seems to be an implicit requirement that the JP MUST implement rate limit using the PROBING_RATE parameter, however, that is never explicitly spelled out as a normative requirement. However, if this rate is not provided by the JRC, it doesn't seem that any rate limiting has to be enforced. So maybe it would be good to be more strict here. 2) Also, not\u00a0 sure if this editorial or a real issue but I'm not sure I fully understand this sentence: Sec 6.1.1: \"A Join Proxy that does not set the DSCP on traffic \u00a0  forwarded should set it to zero so that it is compressed out.\" If the proxy does NOT SET DSCP, why should it SET it to zero? I would think it either sets it to AF43 or it does nothing about it because DSCP is not really used in that network. I guess it's not a big issue and setting to zero seems fine as well but I'm afraid I don't understand the intent here and when exactly the Proxy is supposed to set to AF43 or bleach. 3) This may also be mostly editorial but just to be sure: Section 7.2 provides default values for some of the CoAP transport parameter (where 2 of 3 are the same as defined in  RFC7252 ) but not for all. Why is that? 4 ) And then finally on references (again): Given that use of  I-D.ietf-core-stateless  is recommend, I believe it should be normative (and wait for publication of that doc).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-05 06:29:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-30 14:21:40-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-30 14:21:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-10-23 22:24:14-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-23 22:24:14-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-30 10:38:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-23 22:24:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-12-11 12:08:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-30 10:38:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9031",
+  "evaluation_end": "2019-12-11 12:08:53-08:00",
+  "evaluation_start": "2019-10-23 22:24:13-07:00"
+}

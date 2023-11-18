@@ -1,0 +1,283 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-04-05 14:53:29-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-05 14:53:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-04-07 21:46:51-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-06-09 15:59:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-04-07 21:46:51-07:00",
+        "text": "This document requires the use of per-delegation-object URLs in the order request object but does not provide a way to obtain such URLs (only a URL for a list of delegations associated to an account is available, not per-delegation URLs). I agree with Francesca and the DE that attaching the \"delegation\" attribute to the identifier makes less sense than attaching it to the order; accordingly, I support Francesca's Discuss. Similarly (and relatedly), there seems to be an object structure mismatch while using a CSR to finalize an order, that may merit some discussion.\u00a0 Each delegation can have its own CSR template, but if a single order is to have the possibility to incorporate multiple identifiers, and each identifier has its own delegation, then there's no reason to expect that a single CSR can be compatible with the templates from the disparate delegations invoked in a single order.\u00a0 We could in principle just require that the CSR templates must be \"consistent\" (and define what that means) in scenarios with multiple identifiers in a single order, but it seems better if we can restructure the object model so things are more naturally aligned.\u00a0 Taken to an extreme, this would entirely divorce CSR template objects from delegation objects, with a URL for the associated CSR template object being an attribute of a delegation.\u00a0 Then we could have something like multiple identifiers and multiple delegations in an order, provided that they all refer to the same CSR template object. I also don't think I understand the need for having \"allow-certificate-get\" in the Order Object (nor its semantics) -- what do we gain from having it in the Object itself that is not achieved by the existing newOrder request payload?\u00a0 As far as I can tell the we only talk about writing to it in the rest of the document, and never have to read or consult its value.\u00a0 If it is necessary, it seems like the document needs to be more clear about why.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-09 15:59:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-04-07 14:01:47-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-07 14:01:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-04-05 15:58:04-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-05 15:58:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-04-06 03:37:26-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-04-06 10:08:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-04-06 03:37:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-04-07 00:43:07-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-04-06 10:08:38-07:00",
+        "text": "EDIT (06-04-2021): Thank you very much to Carsten Bormann for the CDDL review:  https://mailarchive.ietf.org/arch/msg/cbor/23A-PFhRY-pdkg2-Kgcd4jqySVo/  Authors - please make sure to answer Carsten's comments (and keep me in cc so I can clear my DISCUSS).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-05-12 14:12:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-04-07 00:43:07-07:00",
+        "text": "EDIT (06-04-2021): Thank you very much to Carsten Bormann for the CDDL review:  https://mailarchive.ietf.org/arch/msg/cbor/23A-PFhRY-pdkg2-Kgcd4jqySVo/  Authors - please make sure to answer Carsten's comments (and keep me in cc so I can clear my DISCUSS). EDIT (07-04-2021): Also wanted to point out the IANA Designated Expert review to make sure it is addressed (found in the datatracker, but which I report here for simplicity as well) - thank you to Richard Barnes for it:   1. The \"delegation\" field is currently attached to the \"identifier\" object, which is a bad semantic fit in a few ways. ACME orders can have multiple identifiers, and delegations can describe multiple SAN values, yet this design assumes singularity on both sides. This field should be moved to the order object; in fact, if you wanted to be more radical, you could even use it to replace the \"identifiers\" field in the newOrder request. 2. The \"allow-certificate-get\" field is listed as configurable. It seems like this is a matter of CA policy, so it should either be non-configurable, or if you allow the client to request a value for it, there should be a clear specification that the server is allowed to ignore the client's preference.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-12 14:12:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-04-06 05:41:09-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-10 12:02:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-04-06 05:41:09-07:00",
+        "text": "Section 5.1, paragraph 4, discuss: >\u00a0 \u00a0 This document requests that IANA create the following new registry >\u00a0 \u00a0 under the Automated Certificate Management Environment (ACME) >\u00a0 \u00a0 Protocol: > >\u00a0 \u00a0 *\u00a0 ACME Identifier Object Fields > >\u00a0 \u00a0 This registry is administered under a Specification Required policy >\u00a0 \u00a0 [ RFC8126 ]. RFC8126  strongly suggests that guidance needs to be given to expert reviewers that are supposed to review and approve requests for \"Expert Review\" and \"Specification Required\" registries. This guidance is missing here. What's also missing are designated contact persons and a change controller. Section 5.6, paragraph 2, discuss: > 5.6.\u00a0 CSR Template Extensions > >\u00a0 \u00a0 IANA is requested to establish a registry \"STAR Delegation CSR >\u00a0 \u00a0 Template Extensions\", with \"Expert Review\" as its registration >\u00a0 \u00a0 procedure. Same as above.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-10 12:02:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-04-02 10:36:50-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-02 10:36:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-04-06 07:57:15-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-06 07:57:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-04-07 23:46:54-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-07 23:46:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-04-07 14:11:22-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-07 14:11:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-03-30 11:17:09-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-30 11:17:09-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-04-08 01:01:45-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 11:17:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-06-21 09:14:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-08 01:01:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9115",
+  "evaluation_end": "2021-06-21 09:14:55-07:00",
+  "evaluation_start": "2021-03-30 11:17:08-07:00"
+}

@@ -1,0 +1,299 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-04-03 00:29:46-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-05-01 15:48:58-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-04-03 00:29:46-07:00",
+        "text": "Thanks to everyone who worked on this document. I have a couple of concerns that need to be cleared up before the document can move forward. --------------------------------------------------------------------------- \u00a74.3.4 discusses the interaction of 3PCC with the trickle ICE mechanism. Unfortunately, the diagrams used in this section do not show a 3PCC signaling flow; they show a two-party call flow with an offerless INVITE. A 3PCC call flow would necessarily involve a 3PCC controller sending an offerless INVITE to one party, receiving an offer from that party (typically in a reliable provisional response or in a 200 OK), and then sending an INVITE to the other party containing that offer. The text in this section matches the diagrams, and consequently does not appear to be an analysis of 3PCC behavior. It is an analysis of two-party offerless INVITE behavior. If this section remains, it needs to be substantially re-worked: the diagrams need to show three parties, with a 3PCC controller performing the controlling role as described in  RFC 3725 . While I haven't stepped through the implications for Trickle ICE when a controller is actually involved and is moving offers and answers around between different message types, I suspect that the analysis in here is substantially different once this starts happening. I would personally be okay if the entire section were removed; however, I have no desire to override working group consensus regarding the value of a section dealing with 3PCC considerations. --------------------------------------------------------------------------- The second issue doesn't necessarily pertain to this document per se as much as it does the interaction among this document,  draft-ietf-ice-trickle  (Trickle ICE),  draft-ietf-mmusic-ice-sip-sdp  (ICE SDP), and  draft-ietf-rtcweb-jsep (JSEP). The problem doesn't lie with any single document, but in the overall result of how they're currently structured. JSEP (in the RFC editor queue) refers to the \"a=end-of-candidates\" SDP attribute as appearing in Trickle ICE, section 9.3, which was true at one point in time. Somewhere along the line, this attribute's definition was moved from there into this document. There are several ways to fix this, each with their own drawbacks: 1. Move the SDP syntax for \"a=end-of-candidates\" back into the Trickle ICE \u00a0  draft. Drawback: Trickle ICE does not currently define any normative SDP \u00a0  behavior; and, in fact, could work in a system that doesn't use SDP at all. 2. Move the SDP syntax into the ICE SDP draft. This is pretty elegant from the \u00a0  perspective that ICE SDP defines SDP syntax for ICE in general (for both \u00a0  SIP and JSEP), and such a move aggregates all of the SDP syntax into a \u00a0  single document that is already necessary to reference from any document \u00a0  that uses SDP for Trickle ICE. Drawback: the document doesn't presently \u00a0  discuss Trickle ICE at all, and this would require a somewhat awkward \u00a0  section that basically says \"If you use [Trickle ICE] with SDP, the syntax \u00a0  for the end-of-candidate marker is...\" 3. Change JSEP to normatively depend on this document for the \u00a0  \"a=end-of-candidates\" syntax. Drawback: This document is extremely \u00a0  SIP-specific, while JSEP is based solely on  RFC 4566  syntax and  RFC 3264 \u00a0  behavior, independent of any SIP semantics.\u00a0 Forcing JSEP to normatively \u00a0  depend on a SIP specific document for a simple attribute syntax definition \u00a0  seems to be letting the tail wag the dog. I believe that #2 is the least inelegant option, but I'm open to #1 and #3. However, The *current* situation -- in which JSEP normatively points to a document from which the text is cites has been removed out from under it -- is clearly wrong.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-06-22 13:43:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-05-01 15:48:58-07:00",
+        "text": "Thanks to everyone who worked on this document. I have a couple of concerns that need to be cleared up before the document can move forward. --------------------------------------------------------------------------- \u00a74.3.4 discusses the interaction of 3PCC with the trickle ICE mechanism. Unfortunately, the diagrams used in this section do not show a 3PCC signaling flow; they show a two-party call flow with an offerless INVITE. A 3PCC call flow would necessarily involve a 3PCC controller sending an offerless INVITE to one party, receiving an offer from that party (typically in a reliable provisional response or in a 200 OK), and then sending an INVITE to the other party containing that offer. The text in this section matches the diagrams, and consequently does not appear to be an analysis of 3PCC behavior. It is an analysis of two-party offerless INVITE behavior. If this section remains, it needs to be substantially re-worked: the diagrams need to show three parties, with a 3PCC controller performing the controlling role as described in  RFC 3725 . While I haven't stepped through the implications for Trickle ICE when a controller is actually involved and is moving offers and answers around between different message types, I suspect that the analysis in here is substantially different once this starts happening. I would personally be okay if the entire section were removed; however, I have no desire to override working group consensus regarding the value of a section dealing with 3PCC considerations. [document reference issue removed -- this document will probably not need to change to address the issue]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-22 13:43:11-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-04-03 07:14:36-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 07:14:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-04-03 06:54:09-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 06:54:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-02-26 13:08:41-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-26 13:08:41-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-29 14:05:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-04-03 12:08:25-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 12:08:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-04-02 15:54:24-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-06-29 14:35:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-02 15:54:24-07:00",
+        "text": "\u00a0  the Offer (as would be the case when Half Trickle is performed or \u00a0  when new candidates have not been learned since then). IMPORTANT: They must be in order, right? \u00a0  'application/trickle-ice-sdpfrag' bodies do not interfere with the \u00a0  Offer/Answer procedures as specified in [ RFC3264 ]. IMPORTANT: \"pseudo\" m= lines are not defined in 5888 so this is very unclear. \u00a0  sent under the same combination of \"a=ice-pwd:\" and \"a=ice-ufrag:\" in \u00a0  the same order as they were gathered.\u00a0 In other words, the sequence \u00a0  of a previously sent list of candidates MUST NOT change in subsequent IMPORTANT: This appears to conflict with the guidance in Section 6 of the trickle document, which is about reordering candidates from how they were gathered.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-29 14:35:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-05 06:59:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-05 02:57:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-04-03 07:36:54-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-07-02 01:49:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-03 07:36:54-07:00",
+        "text": "Thanks for the well-written doc and the quick response to the initial tsv review. Also thanks to J\u00f6rg for the thorough and very helpful review! As flagged by the tsv review, there can be an issue with the aggregation of candidates in one INFO message when rate limited and the path MTU/UPD fragmentation. While this is a small point only and I'm sure it can be easily addressed, it important enough that I decided to put a discuss in. I'm sure this can be resolved quickly as well.  Also if the document could give further guidance on an acceptable maximum for the rate of INFO requests that be even better!",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-02 01:49:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-04-02 19:08:21-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-02 19:08:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-04-04 19:57:39-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-04 19:57:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-04-03 12:16:04-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-26 13:08:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-07-02 12:53:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 12:16:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8840",
+  "evaluation_end": "2018-07-02 12:53:23-07:00",
+  "evaluation_start": "2018-02-26 13:08:40-08:00"
+}

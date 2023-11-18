@@ -1,0 +1,283 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-05-18 06:55:52-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-18 06:55:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-20 00:47:41-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-25 19:55:35-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-05-20 00:47:41-07:00",
+        "text": "Roman and Russ did the heavy lifting already, but I think I have a bit more fiddling to do regarding the validation procedures (just getting them internally consistent, I think)... (1) Here: \u00a0  As the signer specifies the covered RPKI resources relevant to the \u00a0  signature, the RPKI certificate covering the inetnum: object's \u00a0  address range is included in the [ RFC5652 ] CMS SignedData \u00a0  certificates field. we say that the signing certificate is included in the SignedData certificates field.\u00a0 That makes sense, as SignedData is a SEQUENCE including \"certificates [0] IMPLICIT CertificateSet OPTIONAL\", and CertificateSet, as a SET OF CertificateChoices, allows for the literal \"Certificate\" branch of CertificateChoices. But later on, we say that: \u00a0  1.\u00a0 Obtain the signer's certificate from an RPKI Repository.\u00a0 The \u00a0 \u00a0 \u00a0  certificate SubjectKeyIdentifier extension [ RFC5280 ] MUST match \u00a0 \u00a0 \u00a0  the SubjectKeyIdentifier in the CMS SignerInfo SignerIdentifier \u00a0 \u00a0 \u00a0  [ RFC5286 ].\u00a0 If the key identifiers do not match, then validation \u00a0 \u00a0 \u00a0  MUST fail. which entails fetching the certificate from a directory, based on the SubjectKeyIdentifier. Why do we need to obtain the certificate twice in two different ways? (2) We are careful to note that: \u00a0  The bracketing \"# RPKI Signature:\" and \"# End Signature:\" MUST be \u00a0  present exactly as shown. How do we construct the bits (CIDR block?) that come after the quoted strings?\u00a0 Do they only matter for matching start/end, or are we supposed to check them in the validation procedure?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-25 21:15:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-25 19:55:35-07:00",
+        "text": "Roman and Russ did the heavy lifting already, but I think I have a bit more fiddling to do regarding the validation procedures (just getting them internally consistent, I think)... (2) We are careful to note that: \u00a0  The bracketing \"# RPKI Signature:\" and \"# End Signature:\" MUST be \u00a0  present exactly as shown. How do we construct the bits (address range?) that come after the quoted strings?\u00a0 Do they only matter for matching start/end, or are we supposed to check them in the validation procedure?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-25 21:15:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-05-19 03:34:15-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-19 03:34:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-05-14 19:20:24-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-14 19:20:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-05-18 14:17:04-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-05-20 13:08:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-18 14:17:04-07:00",
+        "text": "Thank you for the work on this document, and thank you to the shepherd for a very well-written and in-depth shepherd write up: it was very informative and very appreciated. I have one DISCUSS point (that should be easy to fix) and a question. Francesca 1. ----- \u00a0  then BASE64 encoded and line wrapped to 72 or fewer characters. FP: Please add a (normative) reference to  RFC 4648  and specify if Section 4 (\"base64\") or Section 5 (\"base64url\") is to be used.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-20 13:08:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-19 18:39:00-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-19 18:39:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-12 00:00:09-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-12 00:00:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-05-14 09:21:21-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-14 09:21:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-20 00:36:43-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-21 16:00:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-20 00:36:43-07:00",
+        "text": "I may have missed something, but why does Section 5 advocate for use of HTTPS to fetch geofeed files in the second paragraph, and then FTP in the seventh?\u00a0 Which is right?\u00a0 Or perhaps both are right, but there's some context being assumed here that I don't have.\u00a0 In any case, please clarify.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-21 16:00:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-05-11 03:26:44-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-11 03:26:44-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-18 14:06:33-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-20 06:52:37-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-18 14:06:33-07:00",
+        "text": "The validation process for the signature computed in Section 4 seems underspecified.\u00a0  For example, let\u2019s consider the example in Appendix A.\u00a0 Through a whois query for 192.0.2.0 one finds a \u201cremarks:\u00a0 \u00a0 \u00a0 \u00a0 Geofeed \u201d field which leads to a geofeed file which had the detached CMS signature blob \u201c# RPKI Signature: 192.0.2.0/24\u201d depicted at the end of Appendix A.\u00a0 What reference or text guides how to validate that signature in the RPKI (akin to the level of detail in Section 3.3 of  RFC7909  or  RFC6125 )? I\u2019m inferring that the steps would roughly be: ** Download the end-entity certificate identified by the subjectKeyIdentifier field via the pointer/URI in the \u201csubjectInfoAccess\u201d\u00a0 field extracted from the CMS signature blob ** Download the intermediate certificate identified by the authorityKeyIdentifier field via the pointer/URI in the \u201ccaIssuer\u201d field extracted from the CMS signature blob ** Based on the RIR identified in the whois query, download the RPKI trust anchor of the RIR ** Validate the certificate chain from the RPKI trust anchor down to the end-entity certificate.\u00a0 Check that all of the basicConstraints, certificatePolicies, etc. are accurate.\u00a0 Check the CRL. ** Verify that the end-entity certificate contains the IP address of interest (192.0.2.0) in the sbgp-ipAddrBlock field ** Validate the signature using the algorithm identified in the CMS signature blog using the end-entity certificate Is that the process?\u00a0 Is that stated somewhere in the document or available via reference?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-20 06:52:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-05-11 07:08:04-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-11 07:08:04-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-05-26 06:07:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-11 03:26:43-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9092",
+  "evaluation_end": "2021-05-26 06:07:59-07:00",
+  "evaluation_start": "2021-05-11 03:26:43-07:00"
+}

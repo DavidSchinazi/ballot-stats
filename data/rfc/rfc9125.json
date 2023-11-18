@@ -1,0 +1,291 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-05-17 13:31:36-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-17 13:31:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-24 20:42:38-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-21 10:22:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-24 20:42:38-07:00",
+        "text": "Thanks for having the discussion with John and updating the document already; I benefitted a lot from being able to read the -11 that has started rolling in fixes from the prior discussion.\u00a0 My one new discuss point is relatively minor, all things considered, and is really just trying to nail down an aspect of internal consistency.\u00a0 (I also support Roman's disuss, but we don't need to rehash that here.) When we introduce the concept of gateways, we say that they can be attached to the Internet or a backbone network.\u00a0 We then go on to provide a mechanism for gateways to advertise to some tunnel ingress node the complete set of gateways for a given site.\u00a0 It seems that we do fairly consistently refer to this advertisement as being over \"the backbone network\", but I'm not seeing anything that clearly disclaims the applicability of this technique over the Internet itself.\u00a0 However, I think we need to have such a disclaimer, since we do have a clearly stated assumption that \"the connected set of DCs *and the backbone network connecting them* are part of the same SR BGP Link State (LS) instance ([ RFC7752 ] and [ I-D.ietf-idr-bgpls-segment-routing-epe ])\" (emphasis mine).\u00a0 If the intent is to only use this mechanism over \"in-BGP-LS-instance\" backbones and not over the Internet, we should explicitly set the scope of applicability and contrast a gateway as a generic concept and the gateway scenarios that this mechanism applies to.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-21 10:22:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-05-17 02:04:32-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-17 02:04:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-05-17 23:24:10-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-17 23:24:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-13 14:38:18-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-13 14:40:20-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-05-13 14:38:18-07:00",
+        "text": "I have several points I\u2019d like to discuss, listed below from most general to most specific. 1. There\u2019s surprisingly little in this document that seems to be SR-specific (and what there is, has some problems, see below). Is there some reason you rule out interconnecting domains using other tunneling technologies? I ask this question first because if the answer were to be \u201coh huh, we don\u2019t need to make this SR-specific after all\u201d some of the other things I\u2019m asking about might go away. 2. There\u2019s no discussion about what trust model you\u2019re assuming. SR brings with it its own assumed trust model, laid out in  RFC 8402  as \u201cSR operates within a trusted domain\u201d (whatever *that* means). On the one hand, given you\u2019re tying yourself to SR you presumably are tied to its trust model. On the other hand, there are some tantalizing tidbits that suggest otherwise. I would be happier if there were some explicit description of the trust model you\u2019re presuming. It\u2019s hard to evaluate some aspects of the document without knowing if you\u2019re assuming the  RFC 8402  closed domain model, or something else. 3. The use of the term \u201cSR domain\u201d in this document appears inconsistent with its definition in  RFC 8402 . Here\u2019s that definition, from \u00a72: \u00a0  Segment Routing domain (SR domain): the set of nodes participating in \u00a0  the source-based routing model.\u00a0 These nodes may be connected to the \u00a0  same physical infrastructure (e.g., a Service Provider's network). \u00a0  They may as well be remotely connected to each other (e.g., an \u00a0  enterprise VPN or an overlay).\u00a0 If multiple protocol instances are \u00a0  deployed, the SR domain most commonly includes all of the protocol \u00a0  instances in a network.\u00a0 However, some deployments may wish to \u00a0  subdivide the network into multiple SR domains, each of which \u00a0  includes one or more protocol instances.\u00a0 It is expected that all \u00a0  nodes in an SR domain are managed by the same administrative entity. And notably, later in 8402 \u00a78 we are told that \u00a0  By default, SR operates within a trusted domain.\u00a0 Traffic MUST be \u00a0  filtered at the domain boundaries. Which specifically means, to take the MPLS instantiation of SR (\u00a78.1): \u00a0  SR domain boundary routers MUST filter any external traffic destined \u00a0  to a label associated with a segment within the trusted domain.\u00a0 This \u00a0  includes labels within the SRGB of the trusted domain, labels within \u00a0  the SRLB of the specific boundary router, and labels outside either \u00a0  of these blocks.\u00a0 External traffic is any traffic received from an \u00a0  interface connected to a node outside the domain of trust. More simply put, 8402 says you can\u2019t send an SR packet from outside an SR domain, into that domain. But your document is written in terms of a multiplicity of SR domains, for example this in Section 1: \u00a0  Tunnel Encapsulation attribute.\u00a0 The gateway in the ingress SR domain \u00a0  can now see all possible paths to X in the egress SR domain Maybe a quick fix, assuming you really do subscribe to the  RFC 8402  trust model, is to invent, define, and use the term \u201cSR subdomain\u201d and deem all the subdomains to be one SR domain, in the sense of  RFC 8402  \u00a72 \u2014 \u201cThey may as well be remotely connected to each other (e.g., an enterprise VPN or an overlay)\u201d seems to describe your situation pretty well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-06-01 12:05:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-13 14:40:20-07:00",
+        "text": "I have several points I\u2019d like to discuss, listed below from most general to most specific. 1. There\u2019s surprisingly little in this document that seems to be SR-specific (and what there is, has some problems, see below). Is there some reason you rule out interconnecting domains using other tunneling technologies? I ask this question first because if the answer were to be \u201coh huh, we don\u2019t need to make this SR-specific after all\u201d some of the other things I\u2019m asking about might go away. 2. There\u2019s no discussion about what trust model you\u2019re assuming. SR brings with it its own assumed trust model, laid out in  RFC 8402  as \u201cSR operates within a trusted domain\u201d (whatever *that* means). On the one hand, given you\u2019re tying yourself to SR you presumably are tied to its trust model. On the other hand, there are some tantalizing tidbits that suggest otherwise. I would be happier if there were some explicit description of the trust model you\u2019re presuming. It\u2019s hard to evaluate some aspects of the document without knowing if you\u2019re assuming the  RFC 8402  closed domain model, or something else. 3. The use of the term \u201cSR domain\u201d in this document appears inconsistent with its definition in  RFC 8402 . Here\u2019s that definition, from \u00a72: \u00a0  Segment Routing domain (SR domain): the set of nodes participating in \u00a0  the source-based routing model.\u00a0 These nodes may be connected to the \u00a0  same physical infrastructure (e.g., a Service Provider's network). \u00a0  They may as well be remotely connected to each other (e.g., an \u00a0  enterprise VPN or an overlay).\u00a0 If multiple protocol instances are \u00a0  deployed, the SR domain most commonly includes all of the protocol \u00a0  instances in a network.\u00a0 However, some deployments may wish to \u00a0  subdivide the network into multiple SR domains, each of which \u00a0  includes one or more protocol instances.\u00a0 It is expected that all \u00a0  nodes in an SR domain are managed by the same administrative entity. And notably, later in 8402 \u00a78 we are told that \u00a0  By default, SR operates within a trusted domain.\u00a0 Traffic MUST be \u00a0  filtered at the domain boundaries. Which specifically means, to take the MPLS instantiation of SR (\u00a78.1): \u00a0  SR domain boundary routers MUST filter any external traffic destined \u00a0  to a label associated with a segment within the trusted domain.\u00a0 This \u00a0  includes labels within the SRGB of the trusted domain, labels within \u00a0  the SRLB of the specific boundary router, and labels outside either \u00a0  of these blocks.\u00a0 External traffic is any traffic received from an \u00a0  interface connected to a node outside the domain of trust. More simply put, 8402 says you can\u2019t send an SR packet from outside an SR domain, into that domain. But your document is written in terms of a multiplicity of SR domains, for example this in Section 1: \u00a0  Tunnel Encapsulation attribute.\u00a0 The gateway in the ingress SR domain \u00a0  can now see all possible paths to X in the egress SR domain Maybe a quick fix, assuming you really do subscribe to the  RFC 8402  trust model, is to invent, define, and use the term \u201cSR subdomain\u201d and deem all the subdomains to comprise one SR domain, in the sense of  RFC 8402  \u00a72 \u2014 \u201cThey may as well be remotely connected to each other (e.g., an enterprise VPN or an overlay)\u201d seems to describe your situation pretty well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-01 12:05:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-18 00:30:41-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-18 00:30:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-05-14 10:22:30-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-14 10:22:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-05-12 11:31:16-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-20 00:11:19-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-20 00:11:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-05-19 06:19:47-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-19 06:19:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-19 13:02:41-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-06-11 08:03:31-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-19 13:02:41-07:00",
+        "text": "RFC8402  tells us: (a)\u201cSegment Routing domain (SR domain): the set of nodes participating in the source-based routing model \u2026\u00a0  (a.1) \u201cThese nodes may be connected to the same physical infrastructure (e.g., a Service Provider's network).\u201d (a.2) \u201cThey may as well be remotely connected to each other (e.g., an\u00a0 enterprise VPN or an overlay).\u201d (b) \u201cBy default, SR operates within a trusted domain.\u00a0 Traffic MUST be filtered at the domain boundaries.\u201d My understanding of this document is that it is an enabling capability to help establish SR domains of the like described in (a.2).\u00a0 What I see missing is text that provides the confidence suggested by the language of \u201ctrusted domain\u201d in (b). -- Section 1 hints at various VPN technologies perhaps being used\u00a0 \u201cThe various ASes that provide connectivity between the Ingress and Egress\u00a0  Domains could each be constructed differently and use different technologies such as IP, MPLS with global table routing native BGP to the edge, MPLS IP VPN, SR-MPLS IP VPN, or SRv6 IP VPN.\u201d\u00a0 However, the security properties of all of those aren\u2019t clear to a degree that would seem consistent with being a \u201ctrusted domain\u201d.\u00a0 For example, saying \u201cIP\u201d might suggest that naked IP packets with SR headers (with no additional security primitives) could be dropped onto the open Internet, or at least through networks not under the control the \u201cdata centers\u201d use case suggested by the name of the document.\u00a0  -- The discussion at  https://mailarchive.ietf.org/arch/msg/bess/zY783PgnXSCp6GNSRF4kY0diLYs/  around the forwarding plane trust model is also informative.\u00a0  It is noted that that the \u201ctransit nodes of the AS are not part of the domain.\u201d\u00a0 I could agree, but only to the degree that the SR packets are tunneled in such as way that suggested a trusted domain at least of equal security as (a.1). I think language is needed to describe the normative security requirements of the tunnels that will be created on top of the routes enables by this work to substantiate the claim that at a \u201ctrusted domain\u201d is being maintained.\u00a0 This has some overlap with John\u2019s text about clarify the proposed trust model.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-11 08:03:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-05-18 17:02:59-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-05-18 17:03:26-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-05-18 17:02:59-07:00",
+        "text": "I hope that I'm just misunderstanding something obvious, but I strongly support John's DISCUSS -- when SR was \"approved\" it was with the understanding that it would only be used within \"real\" limited domains, and would never be sent outside of closed/limited network. The document says: \"The solution defined in this document can be seen in the broader context of SR domain interconnection in [ I-D.farrel-spring-sr-domain-interconnect ]. \", which says: \" Traffic originating in one SR domain often terminates in another SR domain, but must transit a backbone network that provides interconnection between those domains.\" -- is it unclear to me if this is really what is being proposed...",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-05-27 07:57:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-18 17:03:26-07:00",
+        "text": "I hope that I'm just misunderstanding something obvious, but I strongly support John's DISCUSS -- when SR was \"approved\" it was with the understanding that it would only be used within \"real\" limited domains, and would never be sent outside of closed/limited network. The document says: \"The solution defined in this document can be seen in the broader context of SR domain interconnection in [ I-D.farrel-spring-sr-domain-interconnect ]. \", which says: \" Traffic originating in one SR domain often terminates in another SR domain, but must transit a backbone network that provides interconnection between those domains.\" -- is it unclear to me if this is really what is being proposed... I'm hoping that I'm really misunderstanding something here -- please educate me.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-27 07:57:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-07-28 15:33:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-12 11:31:16-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9125",
+  "evaluation_end": "2021-07-28 15:33:28-07:00",
+  "evaluation_start": "2021-05-12 11:31:16-07:00"
+}

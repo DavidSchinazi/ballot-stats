@@ -1,0 +1,291 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-02-02 06:44:08-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-02 06:44:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-01-25 17:03:20-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-25 17:03:20-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-02-01 03:00:09-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-02-01 23:52:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-01 03:00:09-08:00",
+        "text": "Thank you for the work put into this document.  Please find below one blocking DISCUSS points (probably easy to address as I am not a YANG expert), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education). Please also have a look at Ted Lemon's INT directorate review at . I share Ted's concern about have three independent topics in a single document rather than in 3 documents. Special thanks to Valery Smyslov for the shepherd's write-up including the section about the WG consensus even if I had appreciated a justification for the PS status.  I hope that this helps to improve the document, Regards, -\u00e9ric ## Section 8.1.5 (and others) Please note that I am not a YANG expert, but it seems to me that \"attack-detail* [vendor-id attack-id]\" indicates that vendor-id & attack-id are the keys to attack-detail, i.e., there can only have one attack-detail per pair of vendor-id & attack-id. So, there is no way to have multiple sequential/simultaneous attacks, i.e., should the start-time be also part of the key? As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-01 23:52:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-02-02 22:17:58-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-02 22:17:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-02-01 04:30:41-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-02-03 01:54:20-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-01 04:30:41-08:00",
+        "text": "Thank you for the work on this document, which I found particularly well written and easy to read despite its length. Many thanks to James Gruessing for the ART ART review:  https://mailarchive.ietf.org/arch/msg/art/MbTX3xfg6tMeG6mieAsT7hA3gXs/ , and to the authors for addressing James' comments.  I have an easy to fix DISCUSS concerning the examples, and a point about a MUST which should not be there IMO. I also have a number of comments and question that I hope will help improving the document (or my understanding of it). I support Roman's DISCUSS, see  https://trac.ietf.org/trac/art/wiki/TypicalARTAreaIssues#LanguageTags . To answer Ben's note - IMO the text about \"enterprise numbers\" and \"Private Enterprise Numbers\" is clear enough. As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise. Francesca 1. ----- \u00a0  JSON encoding of YANG-modeled data is used to illustrate the various \u00a0  telemetry operations. FP: There is an inconsistency between this text and the use of \"application/dots+cbor\" in the examples. Either the Content-Format should be changed, or all the examples should be adapted to JSON Content-Format (I am not sure about what Content-Format you should use then, you probably know better). My preference is to keep CBOR and keep the Content-Format. I went through all the examples and reported below the inconsistencies. Section 7.1.2, Figure 4, 5, FP: If in CBOR, the percentiles should be expressed with the tagged item Decimal fraction (represented as a tagged array). 2. ----- Section 7.2.1, Figure 11, 13, 15, 17 FP: Same comment as 1: unit and peak-g should be unsigned in CBOR. 3. ----- Section 7.3.1, Figure 19, 20 FP: Same comment as 1: capacity and unit should be unsigned in CBOR. 4. ----- Section 7.2.1, Figure 11, 13, 15, 17 FP: Same comment as 1: unit and peak-g should be unsigned in CBOR. 5. ----- Section 7.3.1, Figure 19, 20 FP: Same comment as 1: capacity and unit should be unsigned in CBOR. 6. ----- Figure 36, figure 43 FP: Same comment as 1: unit, mid-percentile-g, start-time and attack-severity should be unsigned in CBOR. 7. ----- Figure 45, 47 FP: attack-status, unit, mid-percentile-g, peak-g should be unsigned. I also note that some of the attributes defined in 9132 are used here and on previous examples and have for values the full spelled out meaning for readability, instead of the actual parameter (for example \"status\", that should have value 2 for \"attack-successfully-mitigated\"), and I think that should be at least noted in the text before the example, or if you want to be more precise the \"attack-successfully-mitigated\" could be a comment next to the value 2. 8. ----- Section 7.1.3 \u00a0  client, it MUST respond with a 4.04 (Not Found) error Response Code. FP: I have a preference to remove this MUST here - it is expected behavior that if a resource is not present the server responds with 4.04, so it is not necessary to add the requirement here, actually redefining the response code (although it is the expected one in this case) should be discouraged. I suggest replacing: s/it MUST respond/it responds. (Note that 7.1.4 has the text I would expect, describing the behavior but not adding any already existing requirements).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-02-03 07:26:06-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-03 01:54:20-08:00",
+        "text": "Thank you for the work on this document, which I found particularly well written and easy to read despite its length. Many thanks to James Gruessing for the ART ART review:  https://mailarchive.ietf.org/arch/msg/art/MbTX3xfg6tMeG6mieAsT7hA3gXs/ , and to the authors for addressing James' comments.  To answer Ben's note - IMO the text about \"enterprise numbers\" and \"Private Enterprise Numbers\" is clear enough. I will keep this DISCUSS as a placeholder to discuss my concerns with the responsible AD during the telechat, but expect to remove it afterward, given that the additions in v-21 mostly address 1-7 and 8 has precedent for it in 9132. Francesca",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-03 07:26:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-02-03 01:58:24-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-02-03 06:56:39-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-03 01:58:24-08:00",
+        "text": "The protocol uses traffic capacities in various ways (for pipe, baseline and connection capacity, etc.) but doesn't indicate at what layer these capacities are to be interpreted? L2? L3? (L1??) Would the difference in header overhead cause issues when senders and receivers use different interpretations here?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-03 06:56:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-02-01 14:42:45-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-01 14:42:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-02-03 01:19:07-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-03 01:19:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-02-03 03:25:55-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-03 03:25:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-01-31 12:37:57-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-02-03 07:06:34-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-01-31 12:37:57-08:00",
+        "text": "** Sections 8.1.5 and 9.1. These sections describe a human readable text field, \u201cattack-description\u201d.\u00a0 Per Section 4.2 of  BCP 18 , \u201c[p]rotocols that transfer text MUST provide for carrying information about the language of that text.\u201d.\u00a0 Practically, can a field to list a language tag field ( RFC 5646  and  https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry ) be added in all places that \u201cattack-description\u201d is defined or at the top level?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-03 07:06:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-02-02 08:59:43-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-02-02 11:10:37-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-02 08:59:43-08:00",
+        "text": "Please note: This really is just a DISCUSSion - I'm happy to be educated / wrong, but I do think that it is important enough that it gets addressed. The 'unit-class' and 'unit' enumerations seems like they add a large amount of complexity for (AFAICT) very little gain.  Do you really need: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Packets per second (pps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Bits per Second (bps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Bytes per second (Bps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Kilo packets per second (kpps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Kilobits per second (kbps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Kilobytes per second (kBps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Mega packets per second (Mpps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Megabytes per second (MBps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Giga packets per second (Gpps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Gigabits per second (Gbps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Gigabytes per second (GBps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Tera packets per second (Tpps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Terabits per second (Tbps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Terabytes per second (TBps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Peta packets per second (Ppps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Petabits per second (Pbps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Petabytes per second (PBps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Exa packets per second (Epps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Exabits per second (Ebps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Exabytes per second (EBps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Zetta packets per second (Zpps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Zettabits per second (Zbps).\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Zettabytes per second (ZBps).\" when just Packets Per Second and Bits Per Second would work? Yes, you might have to have a really large number in BPS, but that seems much much less likely to lead to errors than having parsers have to deal with this. When a user enters a number their glass would presumably allow them to use a more convenient unit, but having it encoded and decoded into this seems needlessly complex. I did look through the document and list to try and find discussions on this point - I'm happy to be pointed at a place where it was discussed and agreed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-02 11:10:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-02-01 06:16:29-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-25 17:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-03-22 02:29:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-01 06:16:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9244",
+  "evaluation_end": "2022-03-22 02:29:09-07:00",
+  "evaluation_start": "2022-01-25 17:03:19-08:00"
+}

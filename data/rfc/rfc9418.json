@@ -1,0 +1,251 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-12-15 06:11:12-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-15 06:11:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-12-13 00:12:16-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-01-04 01:14:33-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-13 00:12:16-08:00",
+        "text": "# \u00c9ric Vyncke, INT AD, comments for  draft-ietf-opsawg-service-assurance-yang-10 CC @evyncke Thank you for the work put into this document. A very interesting piece of work and a well-written piece of text (even if I am balloting DISCUSS). The examples are also helping. Please find below some DISCUSS points (+ suggestions), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education). Special thanks to Michael Richardson for the shepherd's detailed write-up including the WG consensus *but* it lacks the justification of the intended status. It would have been nice to list the implementations (even if I know one). Please note that Tommy Pauly is the Internet directorate reviewer (at my request) and you may want to consider this int-dir reviews as well when Tommy will complete the review (no need to wait for it though): https://datatracker.ietf.org/doc/draft-ietf-opsawg-service-assurance-yang/reviewrequest/16806/ Also, thanks to the WG chairs and the responsible AD to bundle this I-D and its companion to the same IESG telechat: it helps a lot! I hope that this review helps to improve the document, Regards, -\u00e9ric ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ###  BCP14  template As noted by  https://author-tools.ietf.org/api/idnits?url=https://www.ietf.org/archive/id/draft-ietf-opsawg-service-assurance-yang-10.txt  and Lars, the  BCP14  template is not correct even if it is required for a proposed standard (it mentions  BCP13  ;-) ). As I have further DISCUSS issues below, I am raising the trivial  BCP14  issue to a blocking DISCUSS. ### Section 3.3 To my SQL eyes, it hurts to use a -1 value for health-score when there is no value. There is no \"mandatory true\" statement for this leaf, i.e., it can be absent in the telemetry. Is there a semantic difference between the absence of health-score and the value of -1 ? Is the SAIN collector expected to process those 2 cases differently ? Suggest to either remove the -1 sentinel value, or add \"mandatory true\" attribute, or be specific about the difference (if any). ### Section 4 It is unclear from this section whether it applies to IETF-specified YANG modules only? I.e., may a vendor augment this IETF YANG module in its own namespace ? I guess so, but worth writing it (or restrict this section to future IETF work only).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-04 01:14:33-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-12-13 22:17:47-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-13 22:17:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-12-15 06:56:29-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-15 06:56:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-12-12 05:07:21-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-12 05:07:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-12-15 00:22:37-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-12-15 07:33:08-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-15 00:22:37-08:00",
+        "text": "We can probably sort this out during the IESG telechat, but I want to be sure it's flagged. A number of the shepherd writeup questions were hastily answered and the information we need is largely missing.\u00a0 For instance: -- > What type of RFC publication is being requested on the IETF stream (Best > Current Practice, Proposed Standard, Internet Standard, > Informational, Experimental or Historic)? Why is this the proper type > of RFC? Do all Datatracker state attributes correctly reflect this intent? yes. -- There are three questions here, and only the last of them can be answered \"yes\".\u00a0 The second one is the most interesting one. -- > Several IETF Areas have assembled lists of common issues that their > reviewers encounter. For which areas have such issues been identified > and addressed? For which does this still need to happen in subsequent > reviews? no. -- I don't understand. -- > Have reasonable efforts been made to remind all authors of the intellectual > property rights (IPR) disclosure obligations described in  BCP 79 ? To > the best of your knowledge, have all required disclosures been filed? If > not, explain why. If yes, summarize any relevant discussion, including links > to publicly-available messages when applicable. yes. -- So something's been filed, or reasonable reminders were sent?\u00a0 The datatracker appears to imply this must mean the latter, but it would be great to be clear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-15 07:33:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-12-14 16:01:51-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 16:01:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-11-30 11:51:52-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-30 11:51:52-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-12-14 06:26:07-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 06:26:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-12-12 10:15:02-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-12 10:15:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-12-14 13:20:07-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-30 11:51:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-01-26 11:17:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 13:20:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9418",
+  "evaluation_end": "2023-01-26 11:17:57-08:00",
+  "evaluation_start": "2022-11-30 11:51:51-08:00"
+}

@@ -1,0 +1,305 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-03-23 10:57:43-07:00",
+        "end_reason": "new_position",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-23 10:57:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-03-23 21:43:27-07:00",
+        "end_reason": "new_position",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-11 15:29:47-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-03-23 21:43:27-07:00",
+        "text": "I think we need some greater clarity on the relationship between IOAM \"layers\" and IOAM-Namespaces.\u00a0 For example, in Section 4 there is a principle of \"Layering\" that seems to indicate that different layers operate entirely independently, such as might occur when traffic from one operator that uses IOAM is conveyed in a tunnel over a different operator's network and both operators use IOAM independently.\u00a0 But in Section 5.3 we seem to see some discussion that IOAM-Namespaces can be used to enforce a separation of layers (\"IOAM-Namespaces provide additional context [...] e.g. if an operator wishes to use different node identifiers for different IOAM layers\"), and that namespace identifiers allow for determination of which IOAM-Option-Types need to be processed \"in case of a layered IOAM deployment\". I think there is also some internal inconsistency relating to the role of IOAM transit nodes.\u00a0 This may be localised in Section 5.2 where we see both that a transit node is one that \"read and/or write or process [the] IOAM data\" and that a transit node \"updates one or more of the IOAM-Data-Fields\" (i.e., always writes), but I did not attempt an exhaustive check for other instances. I don't think the definition of the POSIX epoch is correct -- it seems to be copied (roughly) from the definition of the PTP epoch (i.e., using midnight TAI as the reference) but all the references I consulted indicate that the POSIX epoch started at midnight UTC. As foreshadowed in https://mailarchive.ietf.org/arch/msg/last-call/Ak2NAIKQ7p4Rij9jfv123xeTXQY/ I think we need to have a discussion about the expectations and provisions for cryptographic (e.g., integrity) protection of IOAM data. From my perspective, IOAM is a new (class of) protocols that is seeking publication on the IETF stream as Proposed Standard.\u00a0 While we do make exceptions for modifications to protocols that were developed before we realized how important integrated security mechanisms are, it's generally the case that new protocols are held to the current IETF expectations for what security properties are provided; the default expectation is that a protocol is expected to provide secure operation in the internet threat model of  RFC 3552 .\u00a0 This draft currently only provides a brief note in the security considerations that there exists an individual draft ( draft-brockners-ippm-ioam-data-integrity ) that might provide ways to protect the integrity of IOAM data fields. Shouldn't the security mechanisms be getting developed side-by-side by the protocol mechanisms, to ensure that they are properly integrated and fit for purpose?\u00a0 (This does not necessarily have to be in the same document and could be part of a cluster of related documents, but I don't think that an informative reference to a non-WG draft really qualifies.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-12-08 14:38:52-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-10-11 15:29:47-07:00",
+        "text": "Thanks for the many updates and email discussion about the relationship between limited (network) domains, IOAM domains, IOAM namespaces, and the like -- I think I do now have a pretty clear picture of how they're expected to interact!\u00a0 However, I think there may still be a couple places in the document that need to get updated in order to match that vision.\u00a0 One point here, and some (more minor) instances in the COMMENT section... Section 5.2 has: \u00a0  The role of an IOAM-encapsulating, IOAM-transit or IOAM-decapsulating \u00a0  node is always performed within a specific IOAM-Namespace.\u00a0 This \u00a0  [...] \u00a0  described above, that is added in a future revision.\u00a0 An IOAM \u00a0  decapsulating node situated at the edge of an IOAM domain MUST remove \u00a0  all IOAM-Option-Types and associated encapsulation headers for all \u00a0  IOAM-Namespaces from the packet. The \"MUST remove [...] for all IOAM-Namespaces\" at the end seems to conflict with the notion of the role of IOAM-decapsulating node being performed within a specific IOAM-Namespace.\u00a0 Indeed, later on in Section 5.3 we see that namespace identifiers \"allow devices which are IOAM capable to determine: [...] o\u00a0 whether IOAM-Option-Type(s) have to be removed from the packet, e.g., at a domain edge or domain boundary.\"\u00a0 If a decapsulating node always had to remove IOAM options from all namespaces, then the namespace identifier is irrelevant to whether option type(s) are removed from the packet. [the following paragraph is retained unchanged from my ballot position on the -12, since the topic seems to still be open.] As foreshadowed in https://mailarchive.ietf.org/arch/msg/last-call/Ak2NAIKQ7p4Rij9jfv123xeTXQY/ I think we need to have a discussion about the expectations and provisions for cryptographic (e.g., integrity) protection of IOAM data. From my perspective, IOAM is a new (class of) protocols that is seeking publication on the IETF stream as Proposed Standard.\u00a0 While we do make exceptions for modifications to protocols that were developed before we realized how important integrated security mechanisms are, it's generally the case that new protocols are held to the current IETF expectations for what security properties are provided; the default expectation is that a protocol is expected to provide secure operation in the internet threat model of  RFC 3552 .\u00a0 This draft currently only provides a brief note in the security considerations that there exists an individual draft ( draft-brockners-ippm-ioam-data-integrity ) that might provide ways to protect the integrity of IOAM data fields. Shouldn't the security mechanisms be getting developed side-by-side by the protocol mechanisms, to ensure that they are properly integrated and fit for purpose?\u00a0 (This does not necessarily have to be in the same document and could be part of a cluster of related documents, but I don't think that an informative reference to a non-WG draft really qualifies.) [new disucssion on this topic as of the -15] The discussion on this topic was over a rather protracted timescale, for which I share much of the blame.\u00a0 I think that the latest message is https://mailarchive.ietf.org/arch/msg/ippm/POycw2NpSl5cIruqSimTa_4WrwI/ where I make a proposal to have some text about how actual use of these data fields in a protocol or encapsulation needs to provide some (possibly optional) mechanism for cryptographic integrity protection, which could be  draft-brockners-ippm-ioam-data-integrity  but could also be native to the encapsulation format.\u00a0 I think that such a construction would allow this document to proceed to RFC without waiting for the other one to be complete.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-08 14:38:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-03-25 01:34:42-07:00",
+        "end_reason": "new_position",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-25 01:34:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-03-23 18:27:24-07:00",
+        "end_reason": "new_position",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-23 18:27:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-03-26 07:28:53-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-03-24 12:04:41-07:00",
+        "text": "Thank you for this document. I think that the discussion on point 5. about referencing normatively IEEE 1588, and 11. about IANA Expert guidelines are worth having, and hope we can get them cleared before the document moves forward. Also, please find some minor comments below.  Francesca",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-06-24 11:24:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-03-26 07:28:53-07:00",
+        "text": "EDIT(2021-03-26): I removed the question about IEEE1588v2 being normative. I look forward to discussion about 11., i.e. more details about IANA Expert guidelines. ---------- (2021-03-24) Thank you for this document. I think that the discussion on point 5. about referencing normatively IEEE 1588, and 11. about IANA Expert guidelines are worth having, and hope we can get them cleared before the document moves forward. Also, please find some minor comments below.  Francesca",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-24 11:24:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-08-18 23:24:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-03-25 05:29:41-07:00",
+        "text": "Section 5.4, paragraph 6, discuss: >\u00a0 \u00a0 A particular implementation of IOAM MAY choose to support only one of >\u00a0 \u00a0 the two trace option types.\u00a0 In the event that both options are Not requiring at least one mandatory-to-implement trace option type is highly problematic, since it creates two incompatible flavors of this standard. Preventing bifurcation seems to trump the desire for allowing (minor?) optimizations.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-08-18 23:24:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-22 11:56:41-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-03-25 00:15:03-07:00",
+        "end_reason": "new_position",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-03-25 00:47:57-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-03-25 00:15:03-07:00",
+        "text": "I'd also like to discuss what's going on in Section 8. Section 8.1, for instance, says that the registry covers 128 code points.\u00a0 The first seven entries are given, but it's not explicit that a registration comprises a code point and (apparently) a name.\u00a0 It's more typical to include a template that a new registration needs to include.\u00a0 You might require a requested code point number and a name at minimum, but also commonly included in such a template is a reference to the registering RFC.\u00a0 If I were to register a code point here in some later RFC, it would be awfully convenient to have the registry include a reference to that defining document.\u00a0 As it stands, the registry will only ever point to this one.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-08-11 22:07:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-03-25 00:47:57-07:00",
+        "text": "I'd also like to discuss what's going on in Section 8. Section 8.1, for instance, says that the registry covers 128 code points.\u00a0 The first seven entries are given, but it's not explicit that a registration comprises a code point and (apparently) a name.\u00a0 It's more typical to include a template that a new registration needs to include.\u00a0 You might require a requested code point number and a name at minimum, but also commonly included in such a template is a reference to the registering RFC.\u00a0 If I were to register a code point here in some later RFC, it would be awfully convenient to have the registry include a reference to that defining document.\u00a0 As it stands, the registry will only ever point to this one. You might want to give  RFC 8126  a once-over, at least Section 2.2.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-08-11 22:07:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-03-25 05:50:30-07:00",
+        "end_reason": "new_position",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-25 05:50:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-03-24 08:05:49-07:00",
+        "end_reason": "new_position",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-10-04 04:56:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-03-24 08:05:49-07:00",
+        "text": "Please clarify what constitutes the edge or boundary of the IOAM domain.\u00a0 Consider: (a) Section 4.\u00a0   IOAM is a \u00a0  network domain focused feature, with \"network domain\" being a set of \u00a0  network devices or entities within a single administration.\u00a0  \u2026 Designers of  \u00a0  protocol encapsulations for IOAM specify mechanisms to ensure that \u00a0  IOAM data stays within an IOAM domain.\u00a0 In addition, the operator of \u00a0  such a domain is expected to put provisions in place to ensure that \u00a0  IOAM data does not leak beyond the edge of an IOAM domain. (b) Section 5.3.\u00a0  Namespace identifiers allow devices which are IOAM capable to \u00a0  determine: \u2026 whether IOAM-Option-Type(s) has to be removed from the packet, \u00a0 \u00a0 \u00a0 e.g. at a domain edge or domain boundary. (a) suggests that the filtering occurs on the basis of the single administrative domain.\u00a0 However, (b) suggests that namespace identifiers are part of the filtering decision; which suggests that sub-domains can be created in a given domain which should be partitioned from each other. The Security Considerations should be clearer on who does the IOAM information filtering, on what criteria and on what boundary.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-04 04:56:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-22 11:56:41-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-12-13 10:33:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-25 07:04:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9197",
+  "evaluation_end": "2021-12-13 10:33:11-08:00",
+  "evaluation_start": "2021-02-22 11:56:41-08:00"
+}

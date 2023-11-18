@@ -1,0 +1,259 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-01-03 05:16:22-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-03 05:16:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-01-05 00:56:52-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-05 00:56:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-01-02 05:59:21-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-02 05:59:21-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-12-22 12:02:40-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-22 12:02:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-12-22 04:22:01-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-22 04:22:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-12-28 14:29:34-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-12-31 14:47:43-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-12-28 14:29:34-08:00",
+        "text": "This is cool stuff.\u00a0 I assure you I'm going to ballot \"Yes\" after what's below is cleared up. There's no IANA Considerations section.\u00a0 Was this intentional?\u00a0 I ask for a few reasons: (1) It's expected (required?), with no actions for IANA, to expressly include a section that says so.\u00a0 It's conspicuously missing here. (2) Why is there no registry for custom properties?\u00a0 I can see that Section 4.5 takes a run at dealing with the collision risk by SHOULDing a particular way of naming custom properties, but it feels to me like a registry is the right way to deal with this.\u00a0 As a consumer of this work, I might not want to reveal (via names) which DNS implementation I'm using, for example. (3) I have a similar question about groups in Section 4.4.2; \"nodnssec\" is an example of something that we might want to register with global semantics, or more generally, that some values might be common in implementations and therefore worth documenting. (4) Do we need a registry of names that are special in the context of catalog zones, e.g., \"zones\", \"ext\", \"group\", \"version\", \"coo\", \"invalid\"? Separately: What action should be taken if a nameserver is already authoritative for a zone (say, is a primary), yet it receives a catalog update that now contains that same zone?\u00a0 This seems like a possible attack that should be discussed.\u00a0 I guess the second-last paragraph of Section 7 covers this, though indirectly.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-02-14 10:57:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-31 14:47:43-08:00",
+        "text": "This is cool stuff.\u00a0 I assure you I'm going to ballot \"Yes\" after what's below is cleared up. There's no IANA Considerations section.\u00a0 Was this intentional?\u00a0 I ask for a few reasons: (1) It's expected (\"should\", per  BCP 26 ), with no actions for IANA, to expressly include a section that says so.\u00a0 It's conspicuously missing here. (2) Why is there no registry for custom properties?\u00a0 I can see that Section 4.5 takes a run at dealing with the collision risk by SHOULDing a particular way of naming custom properties, but it feels to me like a registry is the right way to deal with this.\u00a0 As a consumer of this work, I might not want to reveal (via names) which DNS implementation I'm using, for example. (3) I have a similar question about groups in Section 4.4.2; \"nodnssec\" is an example of something that we might want to register with global semantics, or more generally, that some values might be common in implementations and therefore worth documenting. (4) Do we need a registry of names that are special in the context of catalog zones, e.g., \"zones\", \"ext\", \"group\", \"version\", \"coo\", \"invalid\"? Separately: What action should be taken if a nameserver is already authoritative for a zone (say, is a primary), yet it receives a catalog update that now contains that same zone?\u00a0 This seems like a possible attack that should be discussed.\u00a0 I guess the second-last paragraph of Section 7 covers this, though indirectly.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-14 10:57:48-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-01-03 20:05:35-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-02-07 07:46:54-08:00",
+        "end_reason": "position_updated",
+        "start": "2023-01-03 20:05:35-08:00",
+        "text": "# Sec AD review of  draft-ietf-dnsop-dns-catalog-zones-08 CC @paulwouters Please refer to  https://www.ietf.org/about/groups/iesg/statements/handling-ballot-positions/  for more information about how to handle DISCUSS and COMMENT positions.  This review uses the format specified in  https://github.com/mnot/ietf-comments/  which allows automated tools to process items (eg to produce github issues) Note that I am a happy user of catalog zones since a few months. While I originally thought this seemed like an \"if all you have is a DNS hammer\" solution, it actually has some very clear advantages over other configuration synchronization methods. Thanks for this work, I am a fan! I do have some issues I'd like to discuss though :) ## DISCUSS ### Section 4.3.1 Versioning What should one do if the version supported is lower than the version of zone received? Attempt to understand it? preventively fail? Are version 1 and 2 compatible? In what ways are they not? Should perhaps version 1 catalog zones always be ignored ? ### Group Properties It seems like Section 4.4.2 defines \"group properties\" that are standardized, while Section 4.5 specifies Private Use group properties. But there is actually no registry created for Group Properties, and no definitions other than \"examples\" are given. This makes the status of, for example \"nodnssec\", unclear. Is this a custom (eg bind implementation only) property or is this really a custom private use entry, in which case the example is bad as it belongs under .bind.ext. Since \"nodnssec\" seems a real use case, why does this document not create an IANA registry for Catalog Zone Group Properties and places \"nodnssec\" in it? ### 5.3 \"MUST be removed\"? ``` \u00a0 \u00a0 \u00a0 \u00a0 Only when the zone was configured from a specific catalog zone, \u00a0 \u00a0 \u00a0 \u00a0 and the zone is removed as a member from that specific catalog \u00a0 \u00a0 \u00a0 \u00a0 zone, the zone and associated state (such as zone data and DNSSEC \u00a0 \u00a0 \u00a0 \u00a0 keys) MUST be removed. ``` What is \"removed\" here? I think perhaps it should be limited to \"MUST no longer be served\". For example, it would be bad if the operator made an error, and ended up briefly removing the zone and \"removing\" (aka destroying) some private DNSSEC keys, complicating the zone restoration. Also, perhaps the implementation wants to simply keep the state on disk but move it to a /var/lib/xxx/zones/archived/ directory. The use of \"remove\" sounds like that might not be allowed. ### Operational Considerations What are the risks and benefits of Extension group properties? Should one try to standardize these instead? Why is this document not doing that based on its operational experience with eg bind and knot and powerdns ? ### Security Considerations Dealing with high value domains eg  gmail.com  is missing. If a large DNS hoster would enable catalog zones for its customers, how can it prevent rogue takeovers? If fully automated, it can never be safely deployed. If each zone needs a manual check, well than we don't really have \"catalog zones\" auto-populating name servers. Is there an expectation that nameservers can do some authorization call before adding a new domain that is already delegated elsewhere? Eg if GoDaddy uses catalog zones, and I am their tiny customer with \" nohats.ca \" and then add a new zone \" gmail.com \", that could cause a significant disruption. Especially if the malicious person would create another domain that depends on \" gmail.com \" in such a way that GoDaddy's servers will start sending \" gmail.com \" data in their additional data reply for other domains. The section only has a \"consumer(s) MAY \", which in my opinion, is far too weak as a security control. As the above example shows, it is just too easy to start poisoning nameservers via implementations that skip this one MAY clause in the Security Considerations.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-07 07:46:54-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-01-05 04:22:55-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-05 04:22:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-12-30 15:16:38-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-30 15:16:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-12-14 09:34:13-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-01-03 07:37:09-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-14 09:34:13-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-02-24 08:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-03 07:37:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9432",
+  "evaluation_end": "2023-02-24 08:54:34-08:00",
+  "evaluation_start": "2022-12-14 09:34:13-08:00"
+}

@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-01-04 13:47:24-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-01-04 17:34:31-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-04 13:47:24-08:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-01-05 08:29:39-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-04 17:34:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-05 08:29:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-01-05 12:45:07-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-05 12:45:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-01-05 08:40:10-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-05 08:40:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-04 20:53:14-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-14 22:01:53-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-04 20:53:14-08:00",
+        "text": "(1) Rather a \"discuss-discuss\", but we seem to be requiring some changes to TLS 1.3 that are arguably out of charter.\u00a0 In particular, in Section 8.3 we see that clients are forbidden from sending EndOfEarlyData and it (accordingly) does not appear in the handshake transcript.\u00a0 The reasoning for this is fairly sound; we explicitly index our application data streams and any truncation will be filled in as a normal part of the recovery process, so the attack that EndOfEarlyData exists to prevent instrinsically cannot happen.\u00a0 However, the only reason we'd be required to send it in the first place is if the server sends the \"early_data\" extension in EncryptedExtensions ... and we already have a bit of unpleasantness relating to the \"early_data\" extension, in that we have to use a sentinel value for max_early_data_size in NewSessionTicket to indicate that the ticket is good for 0-RTT, with the actual maximum amount of data allowed indicated elsewhere.\u00a0 TLS extensions are cheap, so a new \"quic_early_data\" flag extension valid in CH, EE, and NST would keep us from conflating TLS and QUIC 0-RTT semantics, thus solving both problems at the same time.\u00a0 On the other hand, that would be requiring implementations to churn just for process cleanliness, so we might also consider other alternatives, such as finessing the language and/or document metadata for how this specification uses TLS 1.3. (There are a couple other places in the COMMENT where we might suffer from scope creep regarding TLS behavior as well, but I did not mark them as DISCUSS since they are not changing existing specified behavior.) (2) Let's check whether the quic_transport_parameters TLS extension should be marked as Recommended or not.\u00a0 The document currently says \"Yes\", and the live registry say 'N'.\u00a0 That said, the earliest mention I can see of using 'N' in the archives is in https://mailarchive.ietf.org/arch/msg/tls-reg-review/z8MOW0bYNP2KIj4XcCXBe2IOKfI/ which seems to just be stating what IANA did when they changed what codepoint (since there were issues with the initially selected value '46') and not a reasoned decision. The perhaps haphazard nature of that change notwithstanding, in my opinion the 'N' actually is correct, since the extension is not appropriate for general use *of TLS* (indeed, we require that TLS implementations that support this document abort the connection if it is used for non-QUIC connections).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-14 22:01:53-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-01-04 11:09:35-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-04 11:09:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-01-06 19:39:33-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-06 19:39:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-12-14 02:46:57-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-12-22 15:18:55-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-22 15:18:55-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-01-06 07:25:56-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-06 07:25:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-01-07 07:22:53-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-07 07:22:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-05 10:15:14-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-05 10:15:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-01-05 14:38:47-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-05 14:38:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-01-06 11:08:55-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:46:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-02-03 09:18:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-06 11:08:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9001",
+  "evaluation_end": "2021-02-03 09:18:38-08:00",
+  "evaluation_start": "2020-12-14 02:46:57-08:00"
+}

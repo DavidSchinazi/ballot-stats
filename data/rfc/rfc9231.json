@@ -1,0 +1,259 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-01-17 15:15:59-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-17 15:15:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-01-18 15:15:16-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-02-22 20:26:58-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-01-18 15:15:16-08:00",
+        "text": "These should be quite straightforward to resolve, but do need to be addressed before publication: (1) Section 2.6.4 lists some KEM identifiers and says that \"these algorithms ... are key encapsulation mechanisms using elliptic curve encryption\".\u00a0 But RSAES-KEM is in the list, which is based on RSA encryption, not elliptic-curve encryption.\u00a0 (I note that the example in \u00a72.6.4 has an\u00a0 element, which seems to make it not a terribly useful example for RSAEA-KEM usage.) (2) Section 2.3 also makes this interesting statement: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  That is to say, the verification \u00a0  key is different from and not feasibly derivable from the signing \u00a0  key. This is demonstrably false; e.g., for the Edwards-Curve methods, where \u00a75.1.5 of  RFC 8032  provides a step-by-step procedure for determining the verification key from the signing key.\u00a0 If the statement was reversed (\"signing key is not feasibly derivable from the verification key\"), it would seem unobjectionable.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-19 11:56:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-22 20:26:58-08:00",
+        "text": "Thanks for the updates in the -23 through -25, they include many good fixes.\u00a0 Unfortunately, the changes introduced a new issue, and in reviewing around that I noticed another thing that seems problematic. The XMSS and XMSSMT identifiers listed don't match up with the prose and are hard to match up to FIPS 202, the stated reference for the SHAKE XOF(s).\u00a0 Specifically, FIPS 202 defines *two* XOFs, SHAKE128 and SHAKE256, not the (one) \"SHAKE extensible output function\" mentioned in the prose. The tabulated identifiers include in the second token of the URI anchor both \"shake\" and \"shake256\", which one might presume to indicate SHAKE128 and SHAKE256, respectively, but we should really be more explicit about what the \"shake\" token means (or just switch to \"shake128\"). We definitely need to correct the prose to indicate that there are two XOFs, though. I'm also a bit confused by the options given for 192-bit output sizes. The prose indicates that there should be a \"SHA2 output size\" of 192 bits, but the listed reference for SHA2 ( RFC 6234 ) does not offer a native 192-bit hash function, and if a truncated version of a SHA2 family hash function is desired, we would need to indicate which member of the SHA2 family is to be used prior to truncation.\u00a0 My apologies for not having noticed this previously. (The SHAKE functions, as XOFs, of course have no difficulty producing a 192-bit output, though the security strength of such an offering is low enough that it's unclear whether we actually want to provide that option.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-19 11:56:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-01-17 05:33:07-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-17 05:33:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-01-17 21:47:22-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-17 21:47:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-01-19 15:22:12-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-19 15:22:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-01-14 12:29:51-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-14 12:29:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-01-20 05:14:34-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-20 05:14:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-01-18 05:09:58-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-18 05:09:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-01-20 00:31:46-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-20 00:31:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-01-18 09:35:48-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-18 09:35:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-01-05 08:35:02-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-01-20 00:32:55-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-05 08:35:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-03-20 02:16:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-20 00:32:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9231",
+  "evaluation_end": "2022-03-20 02:16:46-07:00",
+  "evaluation_start": "2022-01-05 08:35:02-08:00"
+}

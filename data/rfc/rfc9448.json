@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-11-27 14:41:40-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-11-27 14:41:40-08:00",
+        "text": "(0) As written, the validation procedures for the authority token contain a gaping security hole.\u00a0 In particular, \u00a76 has us use the public key of the certificate referenced by the token's \"x5u\" parameter, without checking that that \"x5u\" value (or the certificate it references) is a trusted issuer of authority tokens.\u00a0 This in essence boils down to \"go fetch a certificate from an attacker provided location and verify that the signature over the attacker-provided token was made by that attacker-provided certificate\".\u00a0 This is trivial for an attacker to achieve and provides no security value.\u00a0 We need to know that the token issuer is trusted and authorized to issue this class of token. The companion document  draft-ietf-acme-authority-token  does describe the need for this mutual trust relationship, but it is negligent for us to provide a step-by-step procedure here that omits this step. (1) Related to my discuss on  draft-ietf-acme-authority-token , we should be clear on which document is the authoritative specification for \"token-authority\" usage; at present the description seems to be split across the two documents. (2) Section 3 \u00a0  The format of the string that represents the TNAuthList MUST be \u00a0  constructed as a base64 [ RFC4648 ] encoding of the TN Authorization \u00a0  List certificate extension ASN.1 object.\u00a0 The TN Authorization List \u00a0  certificate extension ASN.1 syntax is defined in [ RFC8226 ] section 9. Does it need to be the (base64 encoding of the) DER encoding of the ASN.1 object?\u00a0 Or do we allow less stringent ASN.1 encoding rules? (Similarly in \u00a75.4.) (3) I think my discuss point on  draft-ietf-acme-authority-token  about how the issuer is identified will also apply (with slight modification) to this document -- in \u00a75.1 we have text that indicates either \"iss\" or \"x5u\" identifies the issuer, which I do not believe to be accurate. (4) This document claims to define the \"atc\" claim, but draft-ietf-acme-authority-token  also claims to do so.\u00a0 I note that the IANA registration is currently in the other document, but this one has a more accurate/fleshed-out description of the contents, including the various keys that are present in the JSON object.\u00a0 (The other document says it's an \"array\", not an object!) (5) The end of \u00a75.5 has some guidance on HTTP response codes in various failure cases.\u00a0 The proposed behavior provides a trivial side channel to an attacker as to whether a given account ID exists (404 vs 403), and I think we should avoid providing such a side channel, returning 403 for most failures. (6) The validation procedure in \u00a76 just says to check that the \"fingerprint\" claim is \"valid\".\u00a0 I think we should be more specific and say that it must match the account key of the client making the request.",
+        "type": "Discuss"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-11-26 23:52:31-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-20 12:47:32-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-11-26 23:52:31-08:00",
+        "text": "Thank you for the work put into this document.  Please find below one blocking DISCUSS point (but trivial to fix), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education). Special thanks to Rich Salz for the shepherd's write-up about the WG consensus (and I noted the mix of STIR & ACME). I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == A very trivial one: please use the more recent  BCP14  template (incl.  RFC 8174 ) ;-)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-20 12:47:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-11-30 23:24:24-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-30 23:24:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-11-30 03:23:14-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-12-01 14:36:39-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-11-30 03:23:14-08:00",
+        "text": "Thank you for the work on this document. Many thanks to Sean Turner for his in-depth review, which uncovered a number of points worth fixing:  https://mailarchive.ietf.org/arch/msg/art/6gRj3ieBe2mIdCa10IfOIoFf7Eg/ Additionally, I have one more non blocking comment below. Francesca",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-06-30 09:11:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-01 14:36:39-08:00",
+        "text": "Thank you for the work on this document. Many thanks to Sean Turner for his in-depth review, which uncovered a number of points worth fixing:  https://mailarchive.ietf.org/arch/msg/art/6gRj3ieBe2mIdCa10IfOIoFf7Eg/ Additionally, I have one more non blocking comment below. As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise. Francesca",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-30 09:11:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-12-01 15:21:42-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-01 15:21:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-11-29 03:37:10-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-29 03:37:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-11-19 15:21:30-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-19 15:21:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-12-01 05:52:17-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-12-01 05:52:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-12-01 21:30:43-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-23 08:35:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-01 21:30:43-08:00",
+        "text": "A couple of easy but necessary ones: Please use the correct  BCP 14  boilerplate in Section 2, and I believe those references need to be normative. Also, I think this document, like  draft-ietf-acme-authority-token , needs a normative reference to  RFC 4648  if it's going to use base64url().",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-23 08:35:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-02-07 18:50:09-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-30 09:10:25-07:00",
+        "text": "Picking up a Discuss for Francesca: Many thanks to Sean Turner for his in-depth review, which uncovered a number of points worth fixing:  https://mailarchive.ietf.org/arch/msg/art/6gRj3ieBe2mIdCa10IfOIoFf7Eg/ Additionally, I have one more non blocking comment below. As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise. Francesca",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-07 18:50:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-12-01 10:39:37-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-01 10:39:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-11-16 12:50:47-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-11-30 09:57:44-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-30 09:57:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-12-02 06:00:05-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:50:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-02-16 06:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-02 06:00:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9448",
+  "evaluation_end": "2023-02-16 06:20:19-08:00",
+  "evaluation_start": "2021-11-16 12:50:47-08:00"
+}

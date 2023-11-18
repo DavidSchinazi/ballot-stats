@@ -1,0 +1,259 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-06-28 06:32:44-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-28 06:32:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-06-29 23:42:39-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-07-24 10:02:47-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-29 23:42:39-07:00",
+        "text": "Hi, Thanks for the work on this document. While I am supporting the other discusses on this document, I would also like to discuss some of the language in section 8. Specifically:  In order to mitigate the performance-related attacks described above, \u00a0  as described in Section 7 it should be possible for IOAM-enabled \u00a0  devices to selectively apply the mechanisms that use the flags \u00a0  defined in this document to a subset of the traffic, and to limit the \u00a0  performance of synthetically generated packets to a configurable \u00a0  rate.\u00a0 Specifically, IOAM nodes should be able to: Considering the serious security considerations in play here - can we consider making the should here a MUST in both the second and final lines of the above.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-24 10:02:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-06-28 22:42:01-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-08-22 00:22:53-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-28 22:42:01-07:00",
+        "text": "# \u00c9ric Vyncke, INT AD, comments for  draft-ietf-ippm-ioam-flags-09 CC @evyncke Thank you for the work put into this document.  Please find below some blocking DISCUSS points (easy to address as it is about clarifications), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Thanks to Pascal Thubert for his internet directorate review at: https://datatracker.ietf.org/doc/review-ietf-ippm-ioam-flags-09-intdir-telechat-thubert-2022-06-28/  (please consider Pascal's comments as mine). Special thanks to Tommy Pauly for the shepherd's detailed write-up including the WG consensus and the justification of the intended status.  I hope that this helps to improve the document, Regards, -\u00e9ric ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Section 4.2 which address `The address of the node performing the copy operation` is confusing in the case of multiple interfaces (typical for a transit device BTW)... Which address should be used ? If the packet was received through an interface with a global address, then this should be the obvious choice or a loopback interface or ??? ### Section 4.2 just truncation ? ``` \u00a0  The copy is also truncated, i.e., any payload that \u00a0  resides after the IOAM option(s) is removed before transmitting the \u00a0  looped back packet back towards the encapsulating node. ``` It is unclear what happens to the IPv6 Next header field... Should the IP header length field be modified ? ### Section 4.2 forwarding ? It is unclear whether the packet is sent back to the source via the received interface or whether the packet is forwarded based on the FIB. ### IANA considerations conflicting text ? In section 4.1: ``` \u00a0  An IOAM trace option that has the Loopback flag set MUST have the \u00a0  value '1' in the most significant bit of IOAM-Trace-Type, and '0' in \u00a0  the rest of the bits of IOAM-Trace-Type.  ``` but in section 6: ``` \u00a0  IANA is requested to allocate the following bits in the \"IOAM Trace \u00a0  Flags Registry\" as follows: \u00a0  Bit 1\u00a0 \"Loopback\" (L-bit) \u00a0  Bit 2\u00a0 \"Active\" (A-bit) \u00a0  Note that bit 0 is the most significant bit in the Flags Registry. ``` Is it bit 0 or bit 1 ?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-22 00:22:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-06-29 21:33:30-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-29 21:33:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-29 10:40:25-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-08-18 12:08:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-29 10:40:25-07:00",
+        "text": "Thanks for this document. I have one issue I'd like to be sure we clear up. 1. In \u00a74.1.1, \u00a0  The loopback flag MUST NOT be set if it is not guaranteed that there \u00a0  is a return path from each of the IOAM transit and IOAM decapsulating \u00a0  nodes,  \u00a0   This is heartwarming but I can\u2019t see how you could guarantee this property at all times in any network using dynamic routing or even subject to dynamic conditions (and that would be all networks), and for that matter I\u2019m not sure how to write code to even determine this in any general way. Is it your intention that this MUST NOT is directed to the operator and not to the code implementor? Or perhaps is it for very small values of \u201cguarantee\u201d? That is, is this an aspirational MUST and not a MUST MUST? In general it's a little problematic when we use  RFC 2119  keywords in a protocol document, to express desires about how a protocol's operator should deploy it. They are at their best when used to express requirements for how a coder should implement the protocol. Please consider creating an operational considerations section, and grouping operational requirements and advice there, at least in that case it becomes clear to whom the  RFC 2119  keywords are speaking.  Alternately, please qualify the keywords appropriately in-line, e.g. in the above text you could say something like \u00a0  The domain MUST be configured such that there is expected to be a return \u00a0  path from each of the IOAM transit and IOAM decapsulating nodes; if this \u00a0  expectation does not apply then configuration MUST NOT enable the loopback \u00a0  flag to be set, \u00a0   To me it seems as though it might be less painful to group these into an operational considerations section, but whatever works for you, as long as it's clear. I did a cursory check over the document with this in mind, the other place I identified what looks like operational guidance to me is also in \u00a74.1.1, the paragraph about how you \"SHOULD NOT exceed 1/N of the interface capacity\". At first blush that looks like something that could be computed automatically by inspection of the router's hardware, but by the time we get to the end of the paragraph we see that \"prior knowledge about the network topology or size\" is needed, so it must really be operational guidance. (Possibly this applies to the 1/N paragraphs in \u00a74.2 and \u00a75 also, although it's less clearly the case.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-18 12:08:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-06-14 10:11:39-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-06-29 23:55:14-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-29 23:55:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-06-28 18:21:53-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-28 18:21:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-06-30 03:49:19-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-30 03:49:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-06-29 10:12:30-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-29 10:12:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-06-28 06:17:37-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-14 10:11:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-08-29 15:11:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-28 06:17:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9322",
+  "evaluation_end": "2022-08-29 15:11:41-07:00",
+  "evaluation_start": "2022-06-14 10:11:39-07:00"
+}

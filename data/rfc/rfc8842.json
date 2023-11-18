@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-08-16 16:04:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-08-17 15:53:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-16 16:04:48-07:00",
+        "text": "Section 5.4 says: \u00a0  NOTE: A new DTLS association can be established based on changes in \u00a0  either an SDP offer or answer.\u00a0 When communicating with legacy \u00a0  endpoints, an offerer can receive an answer that includes the same \u00a0  fingerprint set and setup role.\u00a0 A new DTLS association MUST still be \u00a0  established if such an answer was received as a response to an offer \u00a0  which requested the establishment of a new DTLS association. Unless I've misunderstood something important, this isn't going to work with legacy implementations, unless you also specify that an \"offer which requested the establishment of a new DTLS association\" must also change something else that the legacy answerer will recognize as requiring a new DTLS association. For example, if I send a re-offer with a changed tls-id but the same fingerprint, setup, and transport, the far end will have no reason to think it needs to establish a new DTLS association. So I'll sit there waiting for a new association to be established, and the remote side will never send one. This doesn't seem backwards-compatible. At the very least, more text needs to be added explaining how this is intended to work.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-17 15:53:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-08-14 03:09:50-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-08-31 04:00:56-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-14 03:09:50-07:00",
+        "text": "This is a fine document, but I have one [hopefully easy to answer] question and a couple of other minor ones: In Section 5.1.\u00a0 General \u00a0  Endpoints MUST support the cipher suites as defined in [ RFC8122 ]. I don't see any ciphers specified in that RFC. Can you clarify what you mean?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-31 04:00:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-08-11 15:03:32-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-11 15:03:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-07-24 15:22:27-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-08-14 13:12:12-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-14 13:12:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-08-15 16:06:59-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-10-27 12:10:50-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-15 16:06:59-07:00",
+        "text": "1. Assuming I understand this document correctly, it conflicts with the guidance in JSEP. Specifically, S 4 says: \u00a0  No default value is defined for the SDP 'tls-id' attribute. \u00a0  Implementations that wish to use the attribute MUST explicitly \u00a0  include it in SDP offers and answers.\u00a0 If an offer or answer does not \u00a0  contain a 'tls-id' attribute (this could happen if the offerer or \u00a0  answerer represents an existing implementation that has not been \u00a0  updated to support the 'tls-id' attribute), unless there is another \u00a0  mechanism to explicitly indicate that a new DTLS association is to be \u00a0  established, a modification of one or more of the following \u00a0  characteristics MUST be treated as an indication that an endpoint \u00a0  wants to establish a new DTLS association: \u00a0  o\u00a0 DTLS setup role; or \u00a0  o\u00a0 fingerprint set; or \u00a0  o\u00a0 local transport parameters; or \u00a0  o\u00a0 ICE ufrag value This seems to say that if there is no tls-id attribute, then an ICE restart (which necessitates a ufrag change) requires a DTLS restart. JSEP isn't incredibly clear on this point, but 5.7.3 seems to say that tls-id neeed not be present: \u00a0 \u00a0 \u00a0 *\u00a0 tls-id value, which MUST be set according to \u00a0 \u00a0 \u00a0 \u00a0  [ I-D.ietf-mmusic-dtls-sdp ], Section 5.\u00a0 If this is a re-offer \u00a0 \u00a0 \u00a0 \u00a0  and the tls-id value is different from that presently in use, \u00a0 \u00a0 \u00a0 \u00a0  the DTLS connection is not being continued and the remote \u00a0 \u00a0 \u00a0 \u00a0  description MUST be part of an ICE restart, together with new \u00a0 \u00a0 \u00a0 \u00a0  ufrag and password values.\u00a0 If this is an answer, the tls-id \u00a0 \u00a0 \u00a0 \u00a0  value, if present, MUST be the same as in the offer. I believe that the first sentence is in error, as we clearly can't have JSEP implementations requiring that tls-id be present. \u00a0  ... \u00a0   \u00a0  o\u00a0 If the remote DTLS fingerprint has been changed or the tls-id has \u00a0 \u00a0 \u00a0 changed, tear down the DTLS connection.\u00a0 This includes the case \u00a0 \u00a0 \u00a0 when the PeerConnection state is \"have-remote-pranswer\".\u00a0 If a \u00a0 \u00a0 \u00a0 DTLS connection needs to be torn down but the answer does not \u00a0 \u00a0 \u00a0 indicate an ICE restart or, in the case of \"have-remote-pranswer\", \u00a0 \u00a0 \u00a0 new ICE credentials, an error MUST be generated.\u00a0 If an ICE \u00a0 \u00a0 \u00a0 restart is performed without a change in tls-id or fingerprint, \u00a0 \u00a0 \u00a0 then the same DTLS connection is continued over the new ICE \u00a0 \u00a0 \u00a0 channel. \u00a0 \u00a0 \u00a0  I think the best interpretation of this is that if tls-id is not present (and hence unchanged) then ICE restart does not cause DTLS restart. This is also my memory of the consensus in RTCWEB. In any case, these two documents clearly must match. 2. S 4 says: \u00a0  The mux category [ I-D.ietf-mmusic-sdp-mux-attributes ] for the 'tls- \u00a0  id' attribute is 'IDENTICAL', which means that the attribute value \u00a0  must be identical across all media descriptions being multiplexed \u00a0  [ I-D.ietf-mmusic-sdp-bundle-negotiation ]. This is not actually what JSEP requires: \u00a0  different categories.\u00a0 To avoid unnecessary duplication when \u00a0  bundling, attributes of category IDENTICAL or TRANSPORT MUST NOT be \u00a0  repeated in bundled m= sections, repeating the guidance from \u00a0  [ I-D.ietf-mmusic-sdp-bundle-negotiation ], Section 8.1.\u00a0 This includes I suspect this is old text. 3. S 7.1 says: \u00a0  If DTLS is transported on top of a connection-oriented transport \u00a0  protocol (e.g., TCP or SCTP), where all IP packets are acknowledged, This is incorrect, because none of these protocols ack all IP packets. \u00a0  all DTLS packets associated with a previous DTLS association MUST be \u00a0  acknowledged (or timed out) before a new DTLS association can be \u00a0  established on the same instance of that transport (5-tuple). More generally, I'm not sure that this is useful, because the required semantic isn't *acknowledged* but rather that the receiver can appropriately demux. So, say you just stop sending DTLS on connection A and start sending on B, what's the delimiter, given that you don't require close_notify here? IIRC, we just decided to punt on this whole thing. Does anyone try to have successive connections over the same transport, even when it's connection oriented? 4. The demux instructions seem to have gotten lost from 6.7.1. At minimum these need a reference to  RFC 7983 .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-27 12:10:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-08-16 13:28:51-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-16 13:28:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-08-15 07:37:23-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-08-15 07:47:15-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-08-15 07:37:23-07:00",
+        "text": "This is nothing big and should be easy to fix: On section 7.1, of course... \"If DTLS is transported on top of a connection-oriented transport \u00a0  protocol (e.g., TCP or SCTP), where all IP packets are acknowledged, \u00a0  all DTLS packets associated with a previous DTLS association MUST be \u00a0  acknowledged (or timed out) before a new DTLS association can be \u00a0  established on the same instance of that transport (5-tuple).\" I don't think this would be nessecary for QUIC. The point here is, I believe, not the fact that TCP and SCTP are connection-oriented, but that re-transmissions cannot be easily distinguished from the original packets. So the point is rather the use of a reliable protocol that retransmits in a specific way. However, why would you use DTLS with TCP instead of TLS? And I also don't think you want to use DTLS with QUIC because it has it's own crypto. I guess the recommendation should rather be that reliable transports should use TLS, and if DTLS is needed a new DTLS connection can only be established if there is not retransmission ambiguity which is always the case when all outstanding packets are ack'ed or considered lost (timed out).\u00a0 Or am I missing the point?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-10-05 05:34:59-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-15 07:47:15-07:00",
+        "text": "This is nothing big and should be easy to fix: On section 7.1, of course... \"If DTLS is transported on top of a connection-oriented transport \u00a0  protocol (e.g., TCP or SCTP), where all IP packets are acknowledged, \u00a0  all DTLS packets associated with a previous DTLS association MUST be \u00a0  acknowledged (or timed out) before a new DTLS association can be \u00a0  established on the same instance of that transport (5-tuple).\" I don't think this would be necessary for QUIC. The point here is, I believe, not the fact that TCP and SCTP are connection-oriented, but that re-transmissions cannot be easily distinguished from the original packet. So the point is rather the use of a reliable protocol that retransmits in a specific way. However, why would you use DTLS with TCP instead of TLS? And I also don't think you want to use DTLS with QUIC because it has it's own crypto. I guess the recommendation should rather be that reliable transports should use TLS, and if DTLS is needed a new DTLS connection can only be established if there is not retransmission ambiguity which is always the case when all outstanding packets are ack'ed or considered lost (timed out).\u00a0 Or am I missing the point?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-05 05:34:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-08-16 15:37:20-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-16 15:37:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-08-15 12:16:59-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 15:22:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-11-02 14:04:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-15 12:16:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8842",
+  "evaluation_end": "2017-11-02 14:04:01-07:00",
+  "evaluation_start": "2017-07-24 15:22:27-07:00"
+}

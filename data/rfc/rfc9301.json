@@ -1,0 +1,451 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-02-04 21:39:45-08:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-04 21:39:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-09-27 06:27:22-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-10-14 05:41:00-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-09-27 06:27:22-07:00",
+        "text": "I have a list of smaller points that should be relatively easy to address. The two main ones: I believe [ I-D.ietf-lisp-sec ] needs to be a Normative Reference for this document. This will address some of the issues raised by Benjamin, but will also make description of various security bits meaningful. Similarly, in Section 5.6: \u00a0  I: This is the xTR-ID bit.\u00a0 When this bit is set, what is appended to \u00a0 \u00a0 \u00a0 the Map-Register is a 128-bit xTR router-ID and then a 64-bit \u00a0 \u00a0 \u00a0 site-ID.\u00a0 See LISP NAT-Traversal procedures in \u00a0 \u00a0 \u00a0 [ I-D.ermagan-lisp-nat-traversal ] for details. This description makes [ I-D.ermagan-lisp-nat-traversal ] a normative reference.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-02-07 03:21:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-10-14 05:41:00-07:00",
+        "text": "I have a list of smaller points that should be relatively easy to address. The two main ones: I believe [ I-D.ietf-lisp-sec ] needs to be a Normative Reference for this document. This will address some of the issues raised by Benjamin, but will also make description of various security bits meaningful.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-07 03:21:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-09-27 06:17:17-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-27 06:17:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-09-10 14:43:37-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-10 14:43:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 19:59:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-09-27 06:57:39-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-27 06:57:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-09-26 21:51:32-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-02-07 05:50:27-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-09-26 21:51:32-07:00",
+        "text": "See my ballot position on rfc6830bis for some more general notes. I did most of my review on the -15, though I attempted to note when the -16 has changed the text. I am concerned about the handling procedures for Map-Requests that are encapsulated with the 'S' bit present.\u00a0 In particular, the ITR is required to discard non-secure responses, which is necessary in order to avoid a downgrade attack (in the current architecture).\u00a0 However, it seems that ETRs are not required to enable security in their registrations, and Map-Servers are supposed to strip the security flag when forwarding Map-Requests to ETRs that do not register as supporting LISP-SEC, and the resulting Map-Reply messages would thus not be secured, and dropped by the initiating ITR.\u00a0 So support for LISP-SEC would need to be mandatory for all ETRs in order for any ITR to be able to enforce the downgrade-protection behavior, which is a pretty bad deployment story.\u00a0 Making LISP-SEC mandatory everywhere would, of course, avoid this issue. I do not understand the procedure for allocation of EIDs.\u00a0 In a global mapping database, there needs to be some authoritative procedure for determining what ETRs and/or Map-Servers are authoritative for a given subset of EID space.\u00a0 All I've seen so far to do this effectively boils down to manual configuration, whether explicitly on a Map-Server or just as a mapping of what keys are authorized to advertise which EIDs. A 64-bit (or in some cases 24-bit) nonce is used, apparently as a request/response correlator, but the actual (cryptographic?) properties required from the nonce in the protocol are not clearly covered.\u00a0 In some cryptographic contexts a 64-bit nonce may be too short; I do not believe that this is the case here, but without a clear picture of what the requirements are it's hard to say for sure.\u00a0 24 bits, on the other hand, is quite small. The layout of the document is somewhat confusing, in a way that could arguably lead to noninteroperable implemnetations.\u00a0 For example, the section on the Map-Register message format includes descriptions of the fields in the records and locators therein, and the section on Map-Notify reuses that portion of the structure, incorporating the field descriptions by reference.\u00a0 But the Map-Register section does not indicate that its descriptions are to apply in both cases, leading to confusing text that talks about values being set or cases that are not possible for a Map-Register (i.e., the section nominally being described).\u00a0 It would be most clear to have a dedicated subsection for the portion of the structure(s) that is being reused, which would allow for the per-field descriptions to clearly indicate in which scope they are defined.\u00a0 But the more minimal change of just indicating that the primary definition will be \"dual use\" would probably suffice as well. The Map-Reply record/locator descriptions are reused similarly; I made a comment on section 5.4 that lists a specific instance, though I believe the phenomenon is more general. Similarly, there are many instances (some noted in my Comment) where a bidirectional interaction between two xTRs is described, yet the peers are identified as \"ITR\" and \"ETR\".\u00a0 This is very confusing when the entity named as \"ITR\" is described as performing ETR functionality, or vice versa; pedagogically, it would be much better to use non-role-based names for the entities while describing these exchanges. While I see that there is an entire document dedicated to Map-Versioning and thus we do not need to fully cover everything here, I think it is critically important to be clear that there are consistency requirements attached to map versions, as relating to the stability of membership of RLOCs in a given record, etc.\u00a0 (I cannot be very clear hear since I am not entirely confident of the details of the consistency requirements yet.) The Map-Register message format field descriptions includes: \u00a0  Nonce:\u00a0 This 8-octet 'Nonce' field is set to 0 in Map-Register \u00a0 \u00a0 \u00a0 messages if no Map-Notify message is expected to acknowledge it. \u00a0 \u00a0 \u00a0 Since the Map-Register message is authenticated, the 'Nonce' field \u00a0 \u00a0 \u00a0 is not currently used for any security function but may be in the \u00a0 \u00a0 \u00a0 future as part of an anti-replay solution. Having the map registrations subject to replay seems like a critical flaw that would allow an attacker to disrupt any sort of mobility situation, even in the presence of LISP-SEC.\u00a0 I cannot see how this protocol could be suitable for Proposed Standard status with such a susceptibility to replay. I think we need more details on the expected Map-Register/Map-Notify and Map-Notify/Map-Notify-Ack message flows.\u00a0 In what cases is the ack not needed, and why? I think we need greater clarity on the 'E' and 'M' bits in the ECM format; more in the Comment section. I am concerned that the extensibility mechanism for ECM encapsulation is insufficiently well specified.\u00a0 Is a registry needed?\u00a0 Will new message types need to Update: this document to indicate the extension?\u00a0 What attributes make a message (un)suitable for encapsulation? Section 8.1 says: \u00a0  o\u00a0 A Negative Map-Reply, with action code of \"Natively-Forward\", from \u00a0 \u00a0 \u00a0 a Map-Server that is authoritative for an EID-Prefix that matches \u00a0 \u00a0 \u00a0 the requested EID but that does not have an actively registered, \u00a0 \u00a0 \u00a0 more-specific ID-prefix. This document provides no mechanism to establish that a Map-Server is authoritative for a given EID-Prefix, so this entire case is non-actionable. Section 8.2 says: \u00a0  An ETR publishes its EID-Prefixes on a Map-Server by sending LISP \u00a0  Map-Register messages.\u00a0 A Map-Register message includes \u00a0  authentication data, so prior to sending a Map-Register message, the \u00a0  ETR and Map-Server SHOULD be configured with a shared secret or other \u00a0  relevant authentication information. This cannot be a SHOULD if things are to work properly; it has to be MUST. Section 8.2 also says: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 As developers \u00a0  and operators gain experience with the mapping system, additional, \u00a0  stronger security measures may be added to the registration process. This kind of language for forward-looking guidance indicates that the current security properties are not well-understood by the authors and is inconsistent with Proposed Standard status. Perhaps I am misunderstanding the desired behavior but when Section 8.4 says: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  To do this, it forwards the unencapsulated Map-Request, \u00a0  with the original ITR RLOC as the source, to the mapping database \u00a0  system.\u00a0 [...] doesn't this carry substantial risk of running afoul of  BCP 38  filtering? I think the MUST and SHOULD requirements for implementing cryptographic primitives are generally swapped; the more-secure ones (e.g., HMAC-SHA-256-128) should be MUST, and the legacy algorithms needed for compatibility with existing deployments would be SHOULD. Section 9 currently states: \u00a0  [a]s noted in Section 8.2, a Map-Server SHOULD verify that all EID- \u00a0  Prefixes registered by an ETR match the configuration stored on the \u00a0  Map-Server. I think we need a MUST-level requirement for verifying authorization for a given EID-Prefix, with one way of satisfying the requirement being checking configuration, but allowing for other means as well. In the -15, Section 9 also stated: \u00a0  The currently defined authentication mechanism for Map-Register \u00a0  messages does not provide protection against \"replay\" attacks by a \u00a0  \"man-in-the-middle\".\u00a0 Additional work is needed in this area. I don't understand how this sort of statement can be present in a document targetting Proposed Standard status, in effect admitting that there are grave deficiencies in the security posture of the protocol.\u00a0 The -16 has gained some language indicating that LISP-SEC mitigates many attacks in this space, but that is hardly of much use when LISP-SEC is not a mandatory protocol feature. I'm disappointed that there is no Privacy Considerations section, though given that  RFC 7835  seems to attempt to disclaim privacy considerations entirely, perhaps I should not be surprised.\u00a0 Tying devices to persistent Endpoint IDentifiers and using them in mobility situations inherently raises privacy concerns.\u00a0 These are not necessarily fatal to a protocol, but they do need to be discussed and the benefits weighed against the costs.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-30 11:53:57-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-02-07 05:50:27-08:00",
+        "text": "This document has normative dependencies on other WG drafts that are not yet mature (one could perhaps define this as having completed IETF LC).\u00a0 In particular, I believe there is a nontrivial chance that either or both of lisp-sec and 6834bis could require changes to this document in order to be fit for purpose, and thus that this document cannot safely be approved for publication until these normative dependencies are closer to publication. In particular, I have done a fairly full review of lisp-sec and have DISCUSS-worthy points with it (I have not done much review of 6834bis yet). This document includes a mechansism to use HMAC keyed by a pre-shared key to authenticate messages (Map-Register and Map-Notify*); it is directly using the long-term PSK as the HMAC key.\u00a0 This is not really consistent with current IETF best practices (e.g,.  BCP 107 ), which tend to not use the long-term key directly for keying messages, but rather to incorporate some form of key derivation step, to protect the long-term key from cryptanalysis and reduce the need to track long-term per-key data usage limits.\u00a0 It is probably not feasible to directly require all LISP implementations to switch keying strategy, but it seems quite advisable to define new algorithm ID types that include a key derivation step before the HMAC, and to begin efforts to convert the ecosystem to the more sustainable cryptographic usage.\u00a0 I would like to discuss what actions are reasonable to take at this time, on this front. As implied by my previous discuss ballot position, I think Section 5.4 should grow a statement (akin to the one added in Section 5.6) that the \"Record\" format is also used in the \"Map-Reply Record\" field of the Map-Request message, and that the field definitions are reused wholesale for the Map-Register message. In Section 5.6, this text seems internally inconsistent: \u00a0 \u00a0 \u00a0 can continue using an incrementing nonce.\u00a0 If the the ETR cannot \u00a0 \u00a0 \u00a0 support saving the nonce, then when it restarts it MUST use a new \u00a0 \u00a0 \u00a0 authentication key to register to the mapping system.\u00a0 A Map- \u00a0 \u00a0 \u00a0 Server MUST track and save in persistent storage the last nonce \u00a0 \u00a0 \u00a0 received for each ETR xTR-ID that registers to it.\u00a0 If a Map- \u00a0 \u00a0 \u00a0 Register is received with a nonce value that is not greater than \u00a0 \u00a0 \u00a0 the saved nonce, it drops the Map-Register message and logs the \u00a0 \u00a0 \u00a0 fact a replay attack could have occurred. In order for a new key to be useful as stated, the Map-Server must do the nonce tracking per\u00a0 pair and not just per xTR-ID. Also, guidance is needed on what scope of uniqueness is needed for the Key ID to function properly -- unique per Map-Server?\u00a0 Per  pair?\u00a0 Per LISP domain? Also in Section 5.6: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Implementations of this \u00a0 \u00a0 \u00a0 specification MUST include support for either HMAC-SHA-1-96 \u00a0 \u00a0 \u00a0 [ RFC2404 ] and HMAC-SHA-256-128 [ RFC4868 ] where the latter is \u00a0 \u00a0 \u00a0 RECOMMENDED. I don't think this sort of \"mandatory to choose\" is  BCP 201 -compliant. I think there needs to be more description of Site-ID usage and scoping in order to be fully interoperable (more in the COMMENT section). There are multiple places where we talk about message contents being copied from a corresponding request (e.g., from Map-Request to Map-Notify); we need to explicitly state that the authentication data is recomputed to match, e.g., the new message type.\u00a0 I've tried to note these occurrences in the COMMENT section. The condition for Map-Notify-Ack terminating Map-Notify retransmission seems incomplete (more in the COMMENT). In Section 8.2: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  A Map-Register message includes \u00a0  authentication data, so prior to sending a Map-Register message, the \u00a0  ETR and Map-Server SHOULD be configured with a shared secret or other \u00a0  relevant authentication information.\u00a0 [...] We require authentication for Map-Register and do not provide any alternative mechanism for key distribution, so why is this only a SHOULD? \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 As developers \u00a0  and operators gain experience with the mapping system, additional, \u00a0  stronger security measures may be added to the registration process. This text does not add confidence to the \"proposed standard\" label. In Section 9: \u00a0  A complete LISP threat analysis can be found in [ RFC7835 ].\u00a0 In what As I have stated previously, the threat analysis in  RFC 7835  is not complete and it should not be referred to as such. \u00a0  3.\u00a0 LISP-SEC [ I-D.ietf-lisp-sec ] MUST be implemented.\u00a0 Network \u00a0 \u00a0 \u00a0  operartors should carefully weight how the LISP-SEC threat model \u00a0 \u00a0 \u00a0  applies to their particular use case or deployment.\u00a0 If they \u00a0 \u00a0 \u00a0  decide to ignore a particular recommendation, they should make \u00a0 \u00a0 \u00a0  sure the risk associated with the corresponding threats is well \u00a0 \u00a0 \u00a0  understood. I'm concerned enough about the risk of having a \"ITR requests lisp-sec but ETR didn't use it\" case that causes complete breakage, that I want to talk about this a bit more.\u00a0 We currently in this document say that lisp-sec is mandatory to implement (which presumably covers at least ITRs, ETRs, Map-Resolvers, and Map-Servers).\u00a0 LISP-SEC itself says that \"and ETR that supports LISP-SEC MUST set the S bit in its Map-Register messages\".\u00a0 Is it possible that an ETR might \"implement\" but then not \"support\" LISP-SEC?\u00a0 If so, then we should consider the possibility that we need an authenticated signal (from the mapping system to the ITR) that downgrading from lisp-sec is allowed.\u00a0 There seem to be several possibilities for how one might construct such a signal; two that came to mind to me would be (1) to define a new ACT value for \"repeat without lisp-sec\" that could be returned as a negative Map-Response directly from the mapping system wherever the mapping system is able to discern that the ETR in question does not support lisp-sec (I don't actually know if this could happen at Map-Resolver or would need to be delayed until the final Map-Server) and (2) to have an optional Map-Request field that the ETR is required to copy unchanged to the Map-Reply; this could then include a message HMAC'd in the ITR-OTK that indicates lisp-sec non-support and binds to the nonce in the request. Whether these are workable ideas seems to depend on aspects of the mapping system to which I cannot speak. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  The LISP-SEC \u00a0  protocol defines a mechanism for providing origin authentication, \u00a0  integrity, anti-replay, protection, and prevention of 'man-in-the- \u00a0  middle' and 'prefix overclaiming' attacks on the Map-Request/Map- \u00a0  Reply exchange.\u00a0 [...] Does LISP-SEC actually provide any additional anti-replay protection not present in the base protocol?\u00a0 I do not remember any such additional protection. \u00a0  A complete LISP threat analysis has been published in [ RFC7835 ]. \u00a0  Please refer to it for more detailed security related details. (1) you already said that above, (2) it's still not complete. Section 11 (\"Changes since  RFC 6833 \") is inaccurate (see COMMENT).\u00a0 I did not check whether it is complete, but someone needs to do so before final publication. The following items were present in my original DISCUSS position and still have not been resolved.\u00a0 Note that I copy below the previous ballot text even for some issues that are described above already in different words. A 64-bit nonce is used, apparently as a request/response correlator, but the actual (cryptographic?) properties required from the nonce in the protocol are not clearly covered.\u00a0 In some cryptographic contexts a 64-bit nonce may be too short; I do not believe that this is the case here, but without a clear picture of what the requirements are it's hard to say for sure.\u00a0  [ed. there was some previous discussion about 24-bit nonces that has been removed from the text, but the core question of what properties the nonce is required to provide remains unaddressed in the document text.\u00a0 There is also a field called 'Nonce' that is used as a s equence number, the requirements for which are partially described in the new text.] The layout of the document is somewhat confusing, in a way that could arguably lead to noninteroperable implemnetations.\u00a0 For example, the section on the Map-Register message format includes descriptions of the fields in the records and locators therein, and the section on Map-Notify reuses that portion of the structure, incorporating the field descriptions by reference.\u00a0 But the Map-Register section does not indicate that its descriptions are to apply in both cases, leading to confusing text that talks about values being set or cases that are not possible for a Map-Register (i.e., the section nominally being described).\u00a0 It would be most clear to have a dedicated subsection for the portion of the structure(s) that is being reused, which would allow for the per-field descriptions to clearly indicate in which scope they are defined.\u00a0 But the more minimal change of just indicating that the primary definition will be \"dual use\" would probably suffice as well. The Map-Reply record/locator descriptions are reused similarly; I made a comment on section 5.4 that lists a specific instance, though I believe the phenomenon is more general. [ed. this was partially addressed, but the request to examine all data structure reuse (note that \"for example\" was used) was not heeded] Similarly, there are many instances (some noted in my Comment) where a bidirectional interaction between two xTRs is described, yet the peers are identified as \"ITR\" and \"ETR\".\u00a0 This is very confusing when the entity named as \"ITR\" is described as performing ETR functionality, or vice versa; pedagogically, it would be much better to use non-role-based names for the entities while describing these exchanges. [ed. there was some improvement here; I still note some potential sites for confusion in the COMMENT] While I see that there is an entire document dedicated to Map-Versioning and thus we do not need to fully cover everything here, I think it is critically important to be clear that there are consistency requirements attached to map versions, as relating to the stability of membership of RLOCs in a given record, etc.\u00a0 (I cannot be very clear hear since I am not entirely confident of the details of the consistency requirements yet.) I think we need greater clarity on the 'E' and 'M' bits in the ECM format; more in the Comment section. [ed. the reader will need to consult the original ballot's COMMENT section and not the current one] Section 8.1 says: \u00a0  o\u00a0 A Negative Map-Reply, with action code of \"Natively-Forward\", from \u00a0 \u00a0 \u00a0 a Map-Server that is authoritative for an EID-Prefix that matches \u00a0 \u00a0 \u00a0 the requested EID but that does not have an actively registered, \u00a0 \u00a0 \u00a0 more-specific ID-prefix. This document provides no mechanism to establish that a Map-Server is authoritative for a given EID-Prefix, so this entire case is non-actionable. [ed. I think there may have been some previous discussion on this (e.g., that might render it moot) but couldn't find it quickly] Section 8.2 says: \u00a0  An ETR publishes its EID-Prefixes on a Map-Server by sending LISP \u00a0  Map-Register messages.\u00a0 A Map-Register message includes \u00a0  authentication data, so prior to sending a Map-Register message, the \u00a0  ETR and Map-Server SHOULD be configured with a shared secret or other \u00a0  relevant authentication information. This cannot be a SHOULD if things are to work properly; it has to be MUST. Section 8.2 also says: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 As developers \u00a0  and operators gain experience with the mapping system, additional, \u00a0  stronger security measures may be added to the registration process. This kind of language for forward-looking guidance indicates that the current security properties are not well-understood by the authors and is inconsistent with Proposed Standard status. I think the MUST and SHOULD requirements for implementing cryptographic primitives are generally swapped; the more-secure ones (e.g., HMAC-SHA-256-128) should be MUST, and the legacy algorithms needed for compatibility with existing deployments would be SHOULD. Section 9 currently states: \u00a0  [a]s noted in Section 8.2, a Map-Server SHOULD verify that all EID- \u00a0  Prefixes registered by an ETR match the configuration stored on the \u00a0  Map-Server. I think we need a MUST-level requirement for verifying authorization for a given EID-Prefix, with one way of satisfying the requirement being checking configuration, but allowing for other means as well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-30 17:24:33-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-08-30 11:53:57-07:00",
+        "text": "Updating for the -25 by removing points that are fully addressed but leaving points that I still want to have further discussion on.\u00a0 It may be most expedient to continue discussion on my -24 ballot thread.\u00a0 There are a couple of new items to the -25, that I attempt to call out as such (they appear right before the \"the following items were present in my original DISCUSS position\" section). Please also note that the COMMENT section was entirely refreshed for the -24, and I make some additions for the -25. This document has normative dependencies on other WG drafts that are not yet mature (one could perhaps define this as having completed IETF LC).\u00a0 In particular, I believe there is a nontrivial chance that either or both of lisp-sec and 6834bis could require changes to this document in order to be fit for purpose, and thus that this document cannot safely be approved for publication until these normative dependencies are closer to publication. In particular, I have done a fairly full review of lisp-sec and have DISCUSS-worthy points with it (I have not done much review of 6834bis yet). Also in Section 5.6: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Implementations of this \u00a0 \u00a0 \u00a0 specification MUST include support for either HMAC-SHA-1-96 \u00a0 \u00a0 \u00a0 [ RFC2404 ] and HMAC-SHA-256-128 [ RFC4868 ] where the latter is \u00a0 \u00a0 \u00a0 RECOMMENDED. I don't think this sort of \"mandatory to choose\" is  BCP 201 -compliant, since we need to have at least one MTI, strong, algorithm, and this text did not pick one to be MTI.\u00a0 Now (-25) we're at \"SHOULD include support for HMAC-SHA256-128-HKDF-SHA256\", which is also not quite MTI (but is definitely strong).\u00a0 Of course, I personally won't complain if we just go with the new HKDF stuff, but I recognize that it would be a big change for implementations and deployments, and don't think we need to make the spec completely disjoint from reality just to check a box.\u00a0 So we could make HMAC-SHA-256-128 MTI and leave the new one as SHOULD, for example. I think there needs to be more description of Site-ID usage and scoping in order to be fully interoperable (more in the COMMENT section). [ed. Even focusing on the scoping while leaving the detailed usage as deployment-specific would be okay] There are multiple places where we talk about message contents being copied from a corresponding request (e.g., from Map-Request to Map-Notify); we need to explicitly state that the authentication data is recomputed to match, e.g., the new message type.\u00a0 I've tried to note these occurrences in the COMMENT section. [ed. I think just from Map-Notify to Map-Notify-Ack is all that's left] The condition for Map-Notify-Ack terminating Map-Notify retransmission seems incomplete.\u00a0 Specifically, we should only accept the Map-Notify-Ack to stop retransmission if the authentication data validates (and maybe that it uses the same Key-ID as the Map-Notify, though that might be overkill).\u00a0 So just \"a Map-Notify-Ack is received by the  Map-Server with the same nonce\" is not quite enough. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  The LISP-SEC \u00a0  protocol defines a mechanism for providing origin authentication, \u00a0  integrity, anti-replay, protection, and prevention of 'man-in-the- \u00a0  middle' and 'prefix overclaiming' attacks on the Map-Request/Map- \u00a0  Reply exchange.\u00a0 [...] Does LISP-SEC actually provide any additional anti-replay protection not present in the base protocol?\u00a0 I do not remember any such additional protection. [ed. specifically, the nonce mechanism already in this document provides a decent level of replay protection, so I am trying to nail down how LISP-SEC does incrementally better than what's already here, for the specific case of an attacker literally recording a Map-Reply and replaying it, bit-for-bit, at a later time. Section 11 (\"Changes since  RFC 6833 \") is inaccurate (see COMMENT).\u00a0 I did not check whether it is complete, but someone needs to do so before final publication. [ed. Waiting to do this until all other changes are in is fine.] New in the -25, there's an internal inconsistency between Section 5.6's description of the Authentication Data procedure, that says implementations \"SHOULD include support for HMAC-SHA256-128+HKDF-SHA256\", and Section 9's \"[a]n implementation MUST support HMAC-SHA256-128+HKDF-SHA256\". Not new in the -25, but IIRC not previously discussed, how does a Map-Server pick a Nonce value for unsolicited Map-Notify messages? The following items were present in my original DISCUSS position and still have not been resolved.\u00a0 Note that I copy below the previous ballot text even for some issues that are described above already in different words. I think we need greater clarity on the 'E' and 'M' bits in the ECM format; more in the Comment section [of the ballot on -16], quoted here for clarity: >\u00a0  E:\u00a0 \u00a0 This is the to-ETR bit.\u00a0 When set to 1, the Map-Server's >\u00a0 \u00a0 \u00a0 \u00a0  intention is to forward the ECM to an authoritative ETR. > > I think this needs to say more about which message flows this bit is > defined for.\u00a0 Presumably the ITR will never use it for sending an > encapsulated Map-Request to a Map-Resolver, but there seem to be plenty of > places where ECM wrapping is used. > >\u00a0  M:\u00a0 \u00a0 This is the to-MS bit.\u00a0 When set to 1, a Map-Request is being >\u00a0 \u00a0 \u00a0 \u00a0  sent to a co-located Map-Resolver and Map-Server where the >\u00a0 \u00a0 \u00a0 \u00a0  message can be processed directly by the Map-Server versus the >\u00a0 \u00a0 \u00a0 \u00a0  Map-Resolver using the LISP-DDT procedures in [ RFC8111 ]. > > How does the sender know that its configured Map-Resolver is also a > Map-Server?\u00a0 It's unclear to me why this needs a bit in the message as > opposed to just happening based on the attributes of the receiving > Map-Server.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-07-08 21:25:47-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-12-30 17:24:33-08:00",
+        "text": "It looks like an edit or two that was supposed to be in the -26 didn't make it by accident, so sorry for the repeat comments; hopefully the writing work in question will be easy to retrieve. Other than that we're down to just a few remaining points, two of which I believe should be trivial to resolve. In Section 5.6 we say that \"implementations of this spsecification SHOULD include support for HMAC-SHA256-128+HKDF-SHA256 but section 9 says \"implementation MUST support HMAC-SHA256-128+HKDF-SHA256\", which is internally inconsistent; my understanding from a previous discussion with the authors was that HMAC-SHA256-128+HKDF-SHA256 would be a SHOULD and it was HMAC-SHA256-128 that was MUST. The condition for Map-Notify-Ack terminating Map-Notify retransmission seems incomplete.\u00a0 Specifically, we should only accept the Map-Notify-Ack to stop retransmission if the authentication data validates (and maybe that it uses the same Key-ID as the Map-Notify, though that might be overkill).\u00a0 So just \"a Map-Notify-Ack is received by the  Map-Server with the same nonce\" is not quite enough; we'd want to say \"an authenticated Map-Notify-Ack is received by the Map-Server with the same nonce\". In Section 9: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  The LISP-SEC \u00a0  protocol defines a mechanism for providing origin authentication, \u00a0  integrity, anti-replay, protection, and prevention of 'man-in-the- \u00a0  middle' and 'prefix overclaiming' attacks on the Map-Request/Map- \u00a0  Reply exchange.\u00a0 [...] I think this document provides anti-replay protection for the Map-Request/Map-Reply exchange (by virtue of the single-use nonce), so we should remove \"anti-replay\" from the list of features LISP-SEC provides for the Map-Request/Map-Reply exchange. I think we need greater clarity on the 'E' and 'M' bits in the ECM format; are we perhaps defining them now in anticipation of future usage by other documents (e.g., ones that define specific mapping system implementations)? in particular (with quotes from my ballot position on the -24 for context): >\u00a0  E:\u00a0 \u00a0 This is the to-ETR bit.\u00a0 When set to 1, the Map-Server's >\u00a0 \u00a0 \u00a0 \u00a0  intention is to forward the ECM to an authoritative ETR. > > I think this needs to say more about which message flows this bit is > defined for.\u00a0 Presumably the ITR will never use it for sending an > encapsulated Map-Request to a Map-Resolver, but there seem to be plenty of > places where ECM wrapping is used. IIUC, the main ECM-wrapped messages we consider in this document are ITR-to-Map-Resolver Map-Requests and Map-Server-to-ETR Map-Requests. Is it an invariant that the ECM 'E' and 'M' bits can never be set at the same time (as they are only defined to have meaning for the different flows I list)? In an off-list discussion I got a clarification that \"The ETR bit is used so the Map-Server knows that the entity registering is an xTR versus a SDN or other type of controller that is registering mappings but doesn\u2019t have a full LISP protocol engine implementation and can\u2019t send Map-Replies\" which sounds like it applies to a Map-Register (\"is registering mappings\") but I didn't think that Map-Register was defined as a possible LCM to be in an ECM.\u00a0 (Maybe I'm just confused about that.) The main thing I still don't understand here is: what entity is going to interpret the E-bit and change behavior depending on its value? > >\u00a0  M:\u00a0 \u00a0 This is the to-MS bit.\u00a0 When set to 1, a Map-Request is being >\u00a0 \u00a0 \u00a0 \u00a0  sent to a co-located Map-Resolver and Map-Server where the >\u00a0 \u00a0 \u00a0 \u00a0  message can be processed directly by the Map-Server versus the >\u00a0 \u00a0 \u00a0 \u00a0  Map-Resolver using the LISP-DDT procedures in [ RFC8111 ]. > > How does the sender know that its configured Map-Resolver is also a > Map-Server?\u00a0 It's unclear to me why this needs a bit in the message as > opposed to just happening based on the attributes of the receiving > Map-Server. It sounds like this is only useful when the ECM contains a Map-Request from ITR to Map-Resolver, but I don't know how an ITR would know to (not) set this bit or what entity is going to change behavior depending on the value of the bit.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-27 18:04:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-07-08 21:25:47-07:00",
+        "text": "(1) The -27 brought back the \"MUST\" for HMAC-SHA256-128 in Section 5.6 per my ballot on the -26, but left unchanged section 9, so we still have a SHOULD vs. MUST inconsistency w.r.t. implementing HMAC-SHA256-128+HKDF-SHA256.\u00a0 (I would of course prefer the same resolution of the inconsistency that Roman does, but have forgotten to what extent we have to defer to the deployed reality.) (2) It looks like the update in Section 5.7 is attempting to address my point about only terminating Map-Notify retransmission when the authentication data of the Map-Notify-Ack validates, but the added text is either misplaced or malformed.\u00a0 Perhaps CURRENT: \u00a0  The Map-Notify-Ack message has the same contents as a Map-Notify \u00a0  message.\u00a0 It is used to acknowledge the receipt of a Map-Notify and \u00a0  for the sender to stop retransmitting a Map-Notify with the same \u00a0  nonce and the authentication data validates.\u00a0 [...] NEW: \u00a0  The Map-Notify-Ack message has the same contents as a Map-Notify \u00a0  message.\u00a0 It is used to acknowledge the receipt of a Map-Notify and, \u00a0  once the the authentication data is validated, allows for the \u00a0  Map-Notify sender to stop retransmitting a Map-Notify with the same \u00a0  nonce. [...] (3) I think that Eric Rescorla's concern about a misbehaving ETR being able to prevent an ITR from learning that the ETR is no longer the appropriate ETR for a given prefix remains unaddressed.\u00a0 I wrote up a longer description at https://mailarchive.ietf.org/arch/msg/lisp/O2ycn4CkWsPhFyqrZuB4ZJBNnl0/ but in short, we only require the ITR to send its Map-Request through the mapping system (vs. directly to the ETR) when SMR is sent from an address not in the current mapping data for that prefix -- if the SMR is sent from an address in the current mapping data, we allow sending Map-Request directly to the ETR, outside the mapping system.\u00a0 I don't see a mechanism that guarantees that such a \"revocation\" event is noticed by the ITR. (4) The specification of the MAC+KDF algorithms doesn't seem detailed enough to be implementable.\u00a0  RFC 4868  is attempted to be used as a reference for both HMAC-SHA256-128 (er, and the one-character-off HMAC-SHA-256-128) and HKDF-SHA2562 (note spurious final '2'), but I think it can only work as a reference for the MAC algorithm.\u00a0 Presumably we need  RFC 5869  or such for the KDF part (5) This is probably my fault, but we're missing a step with how we describe the Map-Notify/Map-Notify-Ack per-message authentication. Specifically, while we do say that the authentication data needs to be recomputed each time, we don't clearly state that this is because the correct per-message key is different, because we are using a different 's' input to the KDF function for the different messages.\u00a0 In line with the \"Map-Register Authentication\" used for Map-Register, this would presumably be \"Map-Notify Authentication\" and \"Map-Notify-Ack Authentication\", but neither of those strings appear in this document. We might be able to localize the change to Section 5.6, akin to OLD: \u00a0 \u00a0 \u00a0 4:\u00a0 The derived per-message key is computed as: per-msg- \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 key=KDF(nonce+s+PSK[Key ID]).\u00a0 Where the nonce is the value in \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 the Nonce field of the Map-Register and 's' is a string equal \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 to \"Map-Register Authentication\".\u00a0 [...] NEW: \u00a0 \u00a0 \u00a0 4:\u00a0 The derived per-message key is computed as: per-msg- \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 key=KDF(nonce+s+PSK[Key ID]).\u00a0 Where the nonce is the value in \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 the Nonce field of the Map-Register and 's' is a string that \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 corresponds to the message type being authenticated.\u00a0 For \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Map-Register messages, it is equal to \"Map-Register \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Authentication\".\u00a0 Similarly, for Map-Notify and Map-Notify-Ack \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 messages, it is \"Map-Notify Authentication\" and \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"Map-Notify-Ack Authentication\", respectively. However, I think the rhetoric would be more robust if we also modified Section 5.7 to mention the existence of the different 's' values (or, rather, the different per-message key) when we say that the authentication data is recomputed.\u00a0 Perhaps, s/is recomputed/is recomputed using the corresponding per-message key/ (twice).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-27 18:04:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-08-28 10:18:35-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-09-27 06:58:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-11-30 12:41:00-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-09-27 06:58:05-07:00",
+        "text": "ANA has requested a Temporary Discuss related to issue with port assignments.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-30 12:41:00-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-09-27 05:14:42-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-27 05:14:42-07:00",
+        "text": "This DISCUSS is somewhat arbitratrily on 6833bis, but many of the same issues apply to 6830bis. I concur with Ben's DISCUSS. I do not believe that these documents have adequate security to advance to Proposed Standard. I thought it might be helpful for me to lay out my starting assumptions and threat model and what I think the appropriate standard is here. That gives us an opportunity to discuss them prior to getting into the specific security issues I raise below. SYSTEM ARCHITECTURE Per offline discussion, I understand that despite some of the introductory material, LISP is not currently intended to be Internet scale but rather to run in what seem to be fairly tightly controlled environments. Thus, I am assuming the following facts about the system: - The Mapping Service itself is secure and trusted.\u00a0 For the purposed \u00a0 of this discussion, I'm modelling all the entities in the services \u00a0 as one trusted element. - The ETRs have a preconfigured relationship with the Mapping Service, \u00a0 which includes some sort of shared key and an ACL on the Mapping \u00a0 Service which tells it which EIDs anm ETR can advertise. How \u00a0 this gets established is out of scope of this discussion. Note that neither of these assumptions would be reasonable in an Internet scale system, but I'm assuming that the text about that in these documents will be removed. Because it's not in the document set before us, nor is it a normative reference, I am disregarding LISP-SEC and only analyzing the system as specified in these documents. THREAT MODEL I'm assuming the usual  RFC 3552  threat model, I.e., - All non-Map Server elements in the system (specifically, endpoints \u00a0 and the xTRs are potentially malicious). \u00a0  - Aside from the links between the Map Server elements, the network \u00a0 is controlled by the attacker. Against this background, my expectation is that the attacker should not be able to affect traffic in any fashion significantly more effective than tampering with the data plane. For instance, it's clearly the case that an on-path attacker between two xTRs can drop all the packets or forward them to some third xTR, but it should not be able to send a small number of packets which would then affect the routing of a large number of packets. I do not expect that the data plane should have better security than native (non-IPsec) traffic. Given the nature of LISP and the existence of a mapping system, it seems like it's kind of a missed opportunity to deploy a credentials system that would support IPsec-style data plane security, but given that this isn't a generally safe assumption for IP traffic, and therefore you need to provide some sort of transport or application security anyway, I don't think it's the right standard to hold LISP to. ATTACKS LISP appears to be vulnerable to a number of routing attacks that I claim above it should not be subject to. For example: 1. An on-path attacker can forge Map Replys to the ITR, \u00a0  thus redirecting traffic. 2. An ETR can perform an \"overclaiming\" attack in which it \u00a0  claims to be responsible for EIDs which it is not actually \u00a0  responsible for. 3. An off-path attacker can temporarily reroute traffic by exploiting \u00a0  the \"gleaning\" feature to cache poison an ITR. In addition, the \u00a0  \"echo noncing\" feature does not appear to have a sufficiently strong \u00a0  nonce to protect against forgery, and thus turning this into a \u00a0  long-term attack 4. An attacker may be able to perform a number of cache invalidation \u00a0  and contamination attacks by exploiting the Map-Version and \u00a0  Locator-Status bits. This may lead to DoS. 5. An attacker who was at time T responsible for an EID block \u00a0  can probably prolong its ability to respond for that block \u00a0  even after it is no longer responsible. \u00a0  6. A number of the components appear to be subject to various replay \u00a0  attacks. I note that many of these attacks are documented in the Security Considerations for these documents. Also, I doubt this list is exhaustive. As noted above, I have spent no time on the data plane protocol. DEFENSES When looking at attacks, it's important to determine whether there are plausible defenses. For most of these, I believe that the answer is \"yes\", at varying levels of cost. As noted above, LISP-SEC appears to be intended to address a number of these issues, so it's possible that requiring LISP-SEC would go a fair ways towards addressing these issues. A cursory look at LISP-SEC turns up some somewhat concerning design choices, so I would have to examine it more closely to give a real opinion. I do not believe that LISP-SEC will address the attacks that do not involve the Mapping Server. For instance, the gleaning contamination/nonce attacks (3) would not appear to be fixed by LISP-SEC. However, it's probably possible to fix them by lengthening the nonce. With that said, I tend to think that the overall authentication architecture here would benefit from a rethink. At a high level, the source of most of these problems is the \"non-transferability\" of the mapping information from the Map Server. If the Map Server instead had an asymmetric key pair which it used to sign mappings, then almost all of these attacks would not work. Specifically: - The map server could send signed Map Replys so forgery wouldn't work - Map Replys from ETRs would be signed, so you couldn't overclaim - Gleaning attacks would sort of work, but because the probe would \u00a0 elicit a Map Reply, you couldn't persist them - Map Versions could be tied to signed objects, so you couldn't do \u00a0 cache invalidation by version. You'd probably need some other \u00a0 approach for Locator Status bits. And so on. Detailed review below, with some duplication.... Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D4115 IMPORTANT S 5.2. >\u00a0 \u00a0 \u00a0 s: This is the SMR-invoked bit.\u00a0 This bit is set to 1 when an xTR is >\u00a0 \u00a0 \u00a0 \u00a0  sending a Map-Request in response to a received SMR-based Map- >\u00a0 \u00a0 \u00a0 \u00a0  Request. >\u00a0   >\u00a0 \u00a0 \u00a0 m: This is the LISP mobile-node m-bit.\u00a0 This bit is set by xTRs that >\u00a0 \u00a0 \u00a0 \u00a0  operate as a mobile node as defined in [ I-D.ietf-lisp-mn ]. This would appear to create a normative reference to this document. To avoid that, you need to specify how I behave if I receive it but I don't implement lisp-mn. S 5.2. >\u00a0 \u00a0 \u00a0 m: This is the LISP mobile-node m-bit.\u00a0 This bit is set by xTRs that >\u00a0 \u00a0 \u00a0 \u00a0  operate as a mobile node as defined in [ I-D.ietf-lisp-mn ]. >\u00a0   >\u00a0 \u00a0 \u00a0 I: This is the xTR-ID bit.\u00a0 When this bit is set, what is appended to >\u00a0 \u00a0 \u00a0 \u00a0  the Map-Request is a 128-bit xTR router-ID.\u00a0 See LISP PubSub usage >\u00a0 \u00a0 \u00a0 \u00a0  procedures in [ I-D.ietf-lisp-pubsub ] for details. here too you seem to be creating a normative reference. S 5.5. >\u00a0 \u00a0 \u00a0 \u00a0  is being mapped from a multicast destination EID. >\u00a0   >\u00a0  5.5.\u00a0 EID-to-RLOC UDP Map-Reply Message >\u00a0   >\u00a0 \u00a0 \u00a0 A Map-Reply returns an EID-Prefix with a prefix length that is less >\u00a0 \u00a0 \u00a0 than or equal to the EID being requested.\u00a0 The EID being requested is How do I behave if I receive an EID-Prefix that is less than any of my mappings. So, I might have mappings for 10.1.0.0/16 and 10.2.0.0/16 and someone asks me for 10.0.0.0/8? Also, when you talk about prefix length, I assume you mean the length fo the mask? S 5.6. >\u00a0 \u00a0 \u00a0 Authentication Data:\u00a0 This is the message digest used from the output >\u00a0 \u00a0 \u00a0 \u00a0  of the MAC algorithm.\u00a0 The entire Map-Register payload is >\u00a0 \u00a0 \u00a0 \u00a0  authenticated with this field preset to 0.\u00a0 After the MAC is >\u00a0 \u00a0 \u00a0 \u00a0  computed, it is placed in this field.\u00a0 Implementations of this >\u00a0 \u00a0 \u00a0 \u00a0  specification MUST include support for HMAC-SHA-1-96 [ RFC2404 ], >\u00a0 \u00a0 \u00a0 \u00a0  and support for HMAC-SHA-256-128 [ RFC4868 ] is RECOMMENDED. What prevents replay attacks here? I'm guessing it's the Map-Version- Number, but as I understand it, I can set this to 0. S 6.1. >\u00a0 \u00a0 \u00a0 receives an SMR-based Map-Request and the source is not in the >\u00a0 \u00a0 \u00a0 Locator-Set for the stored Map-Cache entry, then the responding Map- >\u00a0 \u00a0 \u00a0 Request MUST be sent with an EID destination to the mapping database >\u00a0 \u00a0 \u00a0 system.\u00a0 Since the mapping database system is a more secure way to >\u00a0 \u00a0 \u00a0 reach an authoritative ETR, it will deliver the Map-Request to the >\u00a0 \u00a0 \u00a0 authoritative source of the mapping data. If I'm understanding this correctly, this allows an ETR to prevent an ITR from learning that it is no longer the appropriate ETR for a prefix. The way this attack works is that before the topology shift, I send SMRs, thus causing Map-Requests, which, because my entry is cached, refresh the cache on the ITR past the topology shift. I can keep doing this indefinitely. Am I missing something S 8.2. >\u00a0 \u00a0 \u00a0 authentication data, so prior to sending a Map-Register message, the >\u00a0 \u00a0 \u00a0 ETR and Map-Server SHOULD be configured with a shared secret or other >\u00a0 \u00a0 \u00a0 relevant authentication information.\u00a0 A Map-Server's configuration >\u00a0 \u00a0 \u00a0 SHOULD also include a list of the EID-Prefixes for which each ETR is >\u00a0 \u00a0 \u00a0 authoritative.\u00a0 Upon receipt of a Map-Register from an ETR, a Map- >\u00a0 \u00a0 \u00a0 Server accepts only EID-Prefixes that are configured for that ETR. How does it know?",
+        "type": "Discuss"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-09 04:36:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-06 13:29:59-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-07-09 01:19:28-07:00",
+        "text": "[ __all__ ] * Is there somewhere a broad prohibition for all IPv6 EID addresses and IPv6 \u00a0 EID prefixes that they MUST NOT be IPv6 link-local addresses? \u00a0 Related: are there any use cases for an IPv6 link-local RLOC?\u00a0 Perhaps in \u00a0 some IXP scenarios? [ section 5.5 ] * Are these example prefixes correct?\u00a0 2001:db8::/16 is really just 2001::/16, \u00a0 right? Similarly, I think /24 should be /48 and /32 should be /64, yes? \u00a0 I feel like I must be misunderstanding something important...",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-06 13:29:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-02-07 06:19:33-08:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-07 06:19:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-10-28 09:03:30-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-06 15:51:22-07:00",
+        "text": "Two issues rise to DISCUSS level, IMO: Sec 5.7. Is the intent that the Map-Notifies are only retransmitted if they are unsolicited? If not, repeated Map-Registers could result in a storm of Map-Notifies. Sec 7.1. I very well may have missed something, but it doesn't look like the Map-Request is authenticated. So how can the ETR safely update its Map Cache based on the information in the Map-Reply?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-24 15:24:43-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-10-28 09:03:30-07:00",
+        "text": "Two issues rise to DISCUSS level, IMO: Sec 5.7. Is the intent that the Map-Notifies are only retransmitted if they are unsolicited? If not, repeated Map-Registers could result in a storm of Map-Notifies. Thanks for addressing the second DISCUSS.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-24 15:24:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-09-27 06:36:37-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-27 06:36:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-09-11 08:01:43-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-11 08:01:43-07:00",
+        "text": "1) Versioning and backward compatibility Section 5.2 says: \"Support for requesting multiple EIDs in a single Map-Request \u00a0 \u00a0 \u00a0 message will be specified in a future version of the protocol.\" However, there is no versioning mechanism for this protocol specified. How is versioning supposed to work? Further given there is no new version, I wonder if the changes as outlined in section 10 are all backward-compatible? Especially for the introduction of the Message-Notify-Ack message, I guess there is no problem if a server sends it, however, as the sender of the Message-Notify message might not know if the other end supports sending of the Message-Notify-Ack it can't rely on it. This should be further discussed in the doc! Or is there another strategy to achieve backward compatibility? 2) Size and MTU As outlined in the TSV-ART review (Thanks Colin!) this document does not discuss fragmentation or Path MTU discovery.  RFC8085  recommends to either perform Path MTU discovery or limit the message to 576 bytes for IPv4 or 1280 bytes for IPv6 (minus any static header). As this seems to be an appropriate size for LISP messages, I would recommend this approach. Relying on IP fragmentation (as indicated in the reply to the TSV-ART review) is not recommended by  RFC8085  as this would lead to IP packet without a UDP header, in the case of LISP, which can cause problem and loss when NATs are involved. In any case the chosen approach needs to be further discussed in the doc. 3) Rate-limiting and congestion control Sec 5.3: \"Map-Requests MUST be rate-limited.\u00a0 It is RECOMMENDED that a Map- \u00a0  Request for the same EID-Prefix be sent no more than once per second.\" As already noted by the TSV-ART review (Thanks Colin!),  RFC8085  actually recommends to not send more the one packet per 3 seconds, and that is a restriction for all traffic not on a per-receiver base, or implement congestion control. This limit is meant to not only protect the receiver but also the network from overloading. Why do you use a smaller interval here? Also if (appropriate) rate limiting is used, this should either be a MUST or more explanation when it is okay to use a smaller rate limit should be provided. However, after all, I don't think you those the right approach here for rate limiting. A Map-Request is always expected to be followed by some reply. For these kind of communication pattern,  RFC8085  recommends to limit the number of outstanding requests to 1 (see sec 3.1.1 of  RFC8085  recommending one packet per RTT), also for all traffic and not only per receiver. However, this would also require to implement some simple mechanism to detect a message as lost (see also further below in point 4). Similarly I'm not sure about the intent of this requirement in section 5.5: \"Map-Replies SHOULD be sent for an EID-Prefix no more often than once \u00a0  per second to the same requesting router. \" My understanding is that Replies are only sent when a request is received. Why is this additional rate limit needed? Again if used it should be 3 seconds for all traffic to be inline with  RFC8085 . Also again, why is that not a MUST? Further recommendation are needed here. Further section 6.1 say \"Both the SMR sender and the Map-Request responder MUST rate-limit \u00a0  these messages.\u00a0 Rate-limiting can be implemented as a global rate- \u00a0  limiter or one rate-limiter per SMR destination.\" This seems to be the same rate limit as mention above, or not...? It would probably make sense to rate limit the SMR even further. Please clarify and provide more guidance, e.g. what should the value of a potential additional rate limit for SMR be? Respectively the following sentence in section 6.1 is also unclear: \"The remote ITR MUST rate-limit the Map-Request until it gets a Map-Reply\" Why is the rate-limit as currently proposed depend on the fact if a Map-Reply is received? Is the ITR supposed to retransmit the Map-Request...?  And finally the Map-Register, Map-Notify and Map-Notify-Ack messages does not seem to have any rate-limits. Recommendations inline with  RFC8085  should be provided for the total traffic and not only for a few message types. Again, Map-Notify and Map-Notify-Ack messages should be send only once per RTT as there is a feedback mechanism. For Map-Register sec 8.2 say: \"Map-Register messages are sent periodically from an ETR to a Map- \u00a0  Server with a suggested interval between messages of one minute.\" However, this a rather a low bound than an upper bound. A required (MUST) rate limit is still needed. 4) Loss detection and retransmission As also mention by the TSV-ART review (Once more thanks to Colin!), this spec has an ACK mechanism for Map-Requests and now also for Map-Notify, however, it does not specify what to do if the ACK is not received (loss detection and retransmission scheduling). This makes the spec incomplete and needs to be further specified in the doc (and also has a relation to the point 3 above of course).",
+        "type": "Discuss"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-09 07:46:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 08:29:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-18 06:38:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-07-07 20:04:32-07:00",
+        "text": "** The applicability statement in Section 1.1. notes that this will be used on the \u201cpublic Internet\u201d.\u00a0 Therefore, I think we need to consider the use of \u201csecure defaults\u201d.\u00a0 Making lisp-sec and a strong MAC-KDF mandatory to implement is helpful.\u00a0 However, it\u2019s use must also be normatively specified.\u00a0 Specifically, stronger guidance needs to be given when communicating over the public Internet.\u00a0 My thinking would be something like: -- lisp-sec SHOULD (MUST?) be used in for Map-Reply, Map-Notify, Map-Notify-Ack and ECM (i.e. SHOULD/MUST set S=1) -- Map-Register SHOULD (MUST?) use HMAC-SHA256-128+HKDF-SHA256 -- MUST NOT use Algorithm ID = 0 and 1",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-18 06:38:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-02-05 07:55:06-08:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-05 07:55:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-09-26 22:29:00-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-26 22:29:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-09-26 19:48:31-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-26 19:48:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-02-06 14:55:33-08:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:18:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-02-11 12:30:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-06 14:55:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9301",
+  "evaluation_end": "2021-02-11 12:30:16-08:00",
+  "evaluation_start": "2018-08-28 10:18:35-07:00"
+}

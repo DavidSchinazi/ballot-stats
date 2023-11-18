@@ -1,0 +1,323 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-02-15 09:58:55-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-03-17 10:42:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-15 09:58:55-08:00",
+        "text": "I am balloting DISCUSS because the document underspecifies the use of Endpoint Behaviors. As a result, it is unclear when they should be checked, enforced,  or needed. Details follow. The descriptions of the TLVs in \u00a72 say (twice) that the \"SRv6 Endpoint  behaviors which MAY be encoded, but not limited to, are...etc.\" \u00a0  The text above ends with \"etc.\" which means there are other possible  \u00a0  behaviors. That's not a great use of normative language, even if optional.  \u00a0  My initial instinct was to ask you to be specific, BUT... \u00a0  The description of the SRv6 SID Information Sub-TLV (\u00a73.1) says that \"an \u00a0  unrecognized endpoint behavior MUST NOT be considered invalid\", which seems \u00a0  to mean that any behavior is ok, AND... \u00a0  There's no validation specified, except for the description of the SRv6 SID \u00a0  Structure Sub-Sub-TLV (\u00a73.2.1), where it says that the \"Argument length  \u00a0  MUST be set to 0 for SIDs where the Argument is not applicable\". AND... \u00a0  Several of the service descriptions in \u00a75/\u00a76 say that \"The SRv6 Endpoint \u00a0  behavior of the SRv6 SID is entirely up to the originator of the \u00a0  advertisement. In practice, the SRv6 Endpoint behavior is...\" The result is that any endpoint behavior (even unrecognized) can be used,  while also requiring a specific setting for the argument length in some cases. How can the argument length be validated if the endpoint behavior is unknown? Clearly (from looking at  rfc8986 ), not all endpoint behaviors apply to the services defined in this document. Should a receiver accept any endpoint behavior? What should a receiver do if a known but unrelated behavior (End,  for example) is received? What should the receiver do if the endpoint behavior is known and applicable, but the attribute length is not set correctly? For any specific service (IPv4 VPN Over SRv6 Core, for example, to pick one), should the behaviors used \"in practice\" be enforced? What if different behavior is advertised? Can it safely be ignored? Why is the Endpoint Behavior included in the Sub-TLV if (from the above) it looks like it doesn't matter?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-17 10:42:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-02-07 13:46:28-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-02-10 14:18:58-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-07 13:46:28-08:00",
+        "text": "Thank you for the work put into this document. This protocol is important for scalable and deployable SRv6 services. Please find below some blocking DISCUSS points (easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education). Special thanks to Matthew Bocci for the shepherd's write-up including the section about the WG consensus and document history.  Please also expect an INT directorate review before the IESG telechat (I may update this ballot accordingly). I hope that this helps to improve the document, Regards, -\u00e9ric # DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ## Section 3.1 \"IANA registry defined in section 9.2 of [ RFC8986 ]\" but there is no section 9.2 in  RFC 8986 . I guess it is section 10.2. Moreover, IANA registries are usually referred to via their name/URL, e.g.,  https://www.iana.org/assignments/segment-routing/segment-routing.xhtml , and not by a section of the RFC that created them. ## Section 3.2.1 Where is \"locator node\" defined ? \"locator block\" is defined in section 3.1 of  RFC 8986  but not the node (I can only guess that this is the \"N\" in the \"B:N\" notation used in  RFC 8986 ). ## Section 6 Section 9 of  draft-ietf-bess-evpn-igmp-mld-proxy-16  indeed defines route types 7 and 8 but it uses non IPv4-only wording. So, s/IGMP join sync route/Multicast Membership Report Synch Route/ + same for type 8.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-10 14:18:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-02-16 22:03:05-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-03-21 21:20:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-16 22:03:05-08:00",
+        "text": "I have little to add to the DISCUSSes held by others beyond my support. However, I would like to discuss having SRv6 control plane information, i.e. SIDs and their behaviours etc., being isolated by associating it with a separate SAFI.\u00a0 Any other protocol element that needs to refer to such information can make reference to it through context-appropriate extensions. {AFI=IPv6, SAFI=unicast} is a valid way to advertise an SRv6 locator prefix, for example, as that's just IPv6 forwarding information.\u00a0 If SRv6-specific information where separately advertised as {AFI=IPv6, SAFI=SRv6} then I suspect it would be simpler to filter out that information, detect leaks, and generally help the SRv6 domain fail closed more easily. But I'm prepared to learn why this wouldn't work or would be somehow worse.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-21 21:20:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 13:33:55-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 13:34:23-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 13:33:55-08:00",
+        "text": "1. The shepherd writeup for this document says \u201cIt also received an RTG DIR review and cross-reviewed with the IDR working group\u201d. Searching in my IDR inbox and the IDR mailing list archives, I don\u2019t find any sign of the cross-review \u2014 can you please point me to it?\u2028 2. One area of concern I would have hoped IDR might have looked into is, the document makes a creative use of the MPLS Label field of the NLRI to carry the Function part of the SID. This means the SID is effectively split across the NLRI and the Prefix-SID attribute. What are the potential error modes if the Prefix-SID attribute should be lost from the route, while the NLRI is retained? \u2028\u2028(An obvious way of addressing this particular concern would be to define a new NLRI type with the desired semantics, instead of creatively repurposing fields within an existing NLRI type contrary to their definitions. Such an NLRI type would, for example, presumably state in its specification that if it was received without an accompanying Prefix-SID attribute, that would constitute an error.)\u2028 3. As Warren Kumari points out in his DISCUSS, \u201cleaks happen\u201d. Subsequent discussion turned quickly to the assertion that no, they don\u2019t, in VPN address families. Let\u2019s accept that claim for the sake of conversation. It\u2019s still the case that sometimes (often?) routes are distributed from VPN address families into the Global Internet table. When this is done, by default, all the path attributes come along for the ride. Anyone who thinks this is just a hypothetical case might want to look back to (for example) significant network outages that were caused around a decade ago by leakage of BGP Attribute 128 (ATTR_SET,  RFC 6368 ) into the global Internet.\u2028\u2028 The SIDs contained in these if-they-were-to-leak routes potentially give an attacker a means of directing packets into a VPN customer\u2019s internal network.\u2028 4. Speaking of Warren\u2019s DISCUSS, the shepherd\u2019s writeup indicates \u201csolid [WG] consensus\u201d; however, there doesn\u2019t seem to be consensus even amongst the authors as to whether Sections 5.3 and 5.4 are appropriate. This is a fairly fundamental disagreement! An illustration of the disagreement is  https://mailarchive.ietf.org/arch/msg/bess/K1JKxGn19BXALs3rUzUAaGTZi0Y/: \u2028\u2028 \u201cSo I can see why some people may have thought oh since transport in SRv6 comes for free let's load it with services in an attribute and be done. Yes I can see that flattening this make it potentially easier (one less SAFI to enable), *but I am not sure we have reached a broad agreement here.* This comes as a consequence of moving service prefixes from MP_REACH_NLRI (perhaps new format and new SAFI) to an attribute.\u201d\u2028\u2028 (Emphasis added.) Considering that the disagreement is amongst the authors and not just WG contributors at large, I have to question the strength of the consensus behind this document, and ask the WG chairs to weigh in regarding whether consensus on at least this point needs to be checked before we proceed forward.\u2028 5. Finally, I have to question the length of the author list. As I\u2019m sure you know, the guidance is to limit author lists to no more than five, other than under unusual circumstances. I would have expected to find an explanation of the circumstances around the author list of this document in the shepherd writeup; there is none. (It\u2019s a specific check item in Guidelines to Authors of Internet-Drafts,  https://www.ietf.org/how/ids/guidelines/ )\u2028\u2028 The easiest way to resolve this would be to trim the author list per the suggestions in  RFC 7322  \u00a74.1.1, of course.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 13:34:43-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 13:34:23-08:00",
+        "text": "1. The shepherd writeup for this document says \u201cIt also received an RTG DIR review and cross-reviewed with the IDR working group\u201d. Searching in my IDR inbox and the IDR mailing list archives, I don\u2019t find any sign of the cross-review \u2014 can you please point me to it?\u2028 2. One area of concern I would have hoped IDR might have looked into is, the document makes a creative use of the MPLS Label field of the NLRI to carry the Function part of the SID. This means the SID is effectively split across the NLRI and the Prefix-SID attribute. What are the potential error modes if the Prefix-SID attribute should be lost from the route, while the NLRI is retained? \u2028\u2028(An obvious way of addressing this particular concern  (would be to define a new NLRI type with the desired semantics, instead of creatively repurposing fields within an existing NLRI type contrary to their definitions. Such an NLRI type would, for example, presumably state in its specification that if it was received without an accompanying Prefix-SID attribute, that would constitute an error.)\u2028 3. As Warren Kumari points out in his DISCUSS, \u201cleaks happen\u201d. Subsequent discussion turned quickly to the assertion that no, they don\u2019t, in VPN address families. Let\u2019s accept that claim for the sake of conversation. It\u2019s still the case that sometimes (often?) routes are distributed from VPN address families into the Global Internet table. When this is done, by default, all the path attributes come along for the ride. Anyone who thinks this is just a hypothetical case might want to look back to (for example) significant network outages that were caused around a decade ago by leakage of BGP Attribute 128 (ATTR_SET,  RFC 6368 ) into the global Internet.\u2028\u2028 The SIDs contained in these if-they-were-to-leak routes potentially give an attacker a means of directing packets into a VPN customer\u2019s internal network.\u2028 4. Speaking of Warren\u2019s DISCUSS, the shepherd\u2019s writeup indicates \u201csolid [WG] consensus\u201d; however, there doesn\u2019t seem to be consensus even amongst the authors as to whether Sections 5.3 and 5.4 are appropriate. This is a fairly fundamental disagreement! An illustration of the disagreement is  https://mailarchive.ietf.org/arch/msg/bess/K1JKxGn19BXALs3rUzUAaGTZi0Y/: \u2028\u2028 \u201cSo I can see why some people may have thought oh since transport in SRv6 comes for free let's load it with services in an attribute and be done. Yes I can see that flattening this make it potentially easier (one less SAFI to enable), *but I am not sure we have reached a broad agreement here.* This comes as a consequence of moving service prefixes from MP_REACH_NLRI (perhaps new format and new SAFI) to an attribute.\u201d\u2028\u2028 (Emphasis added.) Considering that the disagreement is amongst the authors and not just WG contributors at large, I have to question the strength of the consensus behind this document, and ask the WG chairs to weigh in regarding whether consensus on at least this point needs to be checked before we proceed forward.\u2028 5. Finally, I have to question the length of the author list. As I\u2019m sure you know, the guidance is to limit author lists to no more than five, other than under unusual circumstances. I would have expected to find an explanation of the circumstances around the author list of this document in the shepherd writeup; there is none. (It\u2019s a specific check item in Guidelines to Authors of Internet-Drafts,  https://www.ietf.org/how/ids/guidelines/ )\u2028\u2028 The easiest way to resolve this would be to trim the author list per the suggestions in  RFC 7322  \u00a74.1.1, of course.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 13:34:57-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 13:34:43-08:00",
+        "text": "1. The shepherd writeup for this document says \u201cIt also received an RTG DIR review and cross-reviewed with the IDR working group\u201d. Searching in my IDR inbox and the IDR mailing list archives, I don\u2019t find any sign of the cross-review \u2014 can you please point me to it?\u2028 2. One area of concern I would have hoped IDR might have looked into is, the document makes a creative use of the MPLS Label field of the NLRI to carry the Function part of the SID. This means the SID is effectively split across the NLRI and the Prefix-SID attribute. What are the potential error modes if the Prefix-SID attribute should be lost from the route, while the NLRI is retained? \u2028\u2028(An obvious way of addressing this particular concern  (An obvious way of addressing this particular concern would be to define a new NLRI type with the desired semantics, instead of creatively repurposing fields within an existing NLRI type contrary to their definitions. Such an NLRI type would, for example, presumably state in its specification that if it was received without an accompanying Prefix-SID attribute, that would constitute an error.)\u2028 3. As Warren Kumari points out in his DISCUSS, \u201cleaks happen\u201d. Subsequent discussion turned quickly to the assertion that no, they don\u2019t, in VPN address families. Let\u2019s accept that claim for the sake of conversation. It\u2019s still the case that sometimes (often?) routes are distributed from VPN address families into the Global Internet table. When this is done, by default, all the path attributes come along for the ride. Anyone who thinks this is just a hypothetical case might want to look back to (for example) significant network outages that were caused around a decade ago by leakage of BGP Attribute 128 (ATTR_SET,  RFC 6368 ) into the global Internet.\u2028\u2028 The SIDs contained in these if-they-were-to-leak routes potentially give an attacker a means of directing packets into a VPN customer\u2019s internal network.\u2028 4. Speaking of Warren\u2019s DISCUSS, the shepherd\u2019s writeup indicates \u201csolid [WG] consensus\u201d; however, there doesn\u2019t seem to be consensus even amongst the authors as to whether Sections 5.3 and 5.4 are appropriate. This is a fairly fundamental disagreement! An illustration of the disagreement is  https://mailarchive.ietf.org/arch/msg/bess/K1JKxGn19BXALs3rUzUAaGTZi0Y/: \u2028\u2028 \u201cSo I can see why some people may have thought oh since transport in SRv6 comes for free let's load it with services in an attribute and be done. Yes I can see that flattening this make it potentially easier (one less SAFI to enable), *but I am not sure we have reached a broad agreement here.* This comes as a consequence of moving service prefixes from MP_REACH_NLRI (perhaps new format and new SAFI) to an attribute.\u201d\u2028\u2028 (Emphasis added.) Considering that the disagreement is amongst the authors and not just WG contributors at large, I have to question the strength of the consensus behind this document, and ask the WG chairs to weigh in regarding whether consensus on at least this point needs to be checked before we proceed forward.\u2028 5. Finally, I have to question the length of the author list. As I\u2019m sure you know, the guidance is to limit author lists to no more than five, other than under unusual circumstances. I would have expected to find an explanation of the circumstances around the author list of this document in the shepherd writeup; there is none. (It\u2019s a specific check item in Guidelines to Authors of Internet-Drafts,  https://www.ietf.org/how/ids/guidelines/ )\u2028\u2028 The easiest way to resolve this would be to trim the author list per the suggestions in  RFC 7322  \u00a74.1.1, of course.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 13:38:37-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 13:34:57-08:00",
+        "text": "1. The shepherd writeup for this document says \u201cIt also received an RTG DIR review and cross-reviewed with the IDR working group\u201d. Searching in my IDR inbox and the IDR mailing list archives, I don\u2019t find any sign of the cross-review \u2014 can you please point me to it?\u2028 2. One area of concern I would have hoped IDR might have looked into is, the document makes a creative use of the MPLS Label field of the NLRI to carry the Function part of the SID. This means the SID is effectively split across the NLRI and the Prefix-SID attribute. What are the potential error modes if the Prefix-SID attribute should be lost from the route, while the NLRI is retained? (An obvious way of addressing this particular concern would be to define a new NLRI type with the desired semantics, instead of creatively repurposing fields within an existing NLRI type contrary to their definitions. Such an NLRI type would, for example, presumably state in its specification that if it was received without an accompanying Prefix-SID attribute, that would constitute an error.)\u2028 3. As Warren Kumari points out in his DISCUSS, \u201cleaks happen\u201d. Subsequent discussion turned quickly to the assertion that no, they don\u2019t, in VPN address families. Let\u2019s accept that claim for the sake of conversation. It\u2019s still the case that sometimes (often?) routes are distributed from VPN address families into the Global Internet table. When this is done, by default, all the path attributes come along for the ride. Anyone who thinks this is just a hypothetical case might want to look back to (for example) significant network outages that were caused around a decade ago by leakage of BGP Attribute 128 (ATTR_SET,  RFC 6368 ) into the global Internet.\u2028\u2028 The SIDs contained in these if-they-were-to-leak routes potentially give an attacker a means of directing packets into a VPN customer\u2019s internal network.\u2028 4. Speaking of Warren\u2019s DISCUSS, the shepherd\u2019s writeup indicates \u201csolid [WG] consensus\u201d; however, there doesn\u2019t seem to be consensus even amongst the authors as to whether Sections 5.3 and 5.4 are appropriate. This is a fairly fundamental disagreement! An illustration of the disagreement is  https://mailarchive.ietf.org/arch/msg/bess/K1JKxGn19BXALs3rUzUAaGTZi0Y/: \u2028\u2028 \u201cSo I can see why some people may have thought oh since transport in SRv6 comes for free let's load it with services in an attribute and be done. Yes I can see that flattening this make it potentially easier (one less SAFI to enable), *but I am not sure we have reached a broad agreement here.* This comes as a consequence of moving service prefixes from MP_REACH_NLRI (perhaps new format and new SAFI) to an attribute.\u201d\u2028\u2028 (Emphasis added.) Considering that the disagreement is amongst the authors and not just WG contributors at large, I have to question the strength of the consensus behind this document, and ask the WG chairs to weigh in regarding whether consensus on at least this point needs to be checked before we proceed forward.\u2028 5. Finally, I have to question the length of the author list. As I\u2019m sure you know, the guidance is to limit author lists to no more than five, other than under unusual circumstances. I would have expected to find an explanation of the circumstances around the author list of this document in the shepherd writeup; there is none. (It\u2019s a specific check item in Guidelines to Authors of Internet-Drafts,  https://www.ietf.org/how/ids/guidelines/ )\u2028\u2028 The easiest way to resolve this would be to trim the author list per the suggestions in  RFC 7322  \u00a74.1.1, of course.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-03-22 16:19:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-16 13:38:37-08:00",
+        "text": "1. The shepherd writeup for this document says \u201cIt also received an RTG DIR review and cross-reviewed with the IDR working group\u201d. Searching in my IDR inbox and the IDR mailing list archives, I don\u2019t find any sign of the cross-review \u2014 can you please point me to it?\u2028 2. One area of concern I would have hoped IDR might have looked into is, the document makes a creative use of the MPLS Label field of the NLRI to carry the Function part of the SID. This means the SID is effectively split across the NLRI and the Prefix-SID attribute. What are the potential error modes if the Prefix-SID attribute should be lost from the route, while the NLRI is retained? (An obvious way of addressing this particular concern would be to define a new NLRI type with the desired semantics, instead of creatively repurposing fields within an existing NLRI type contrary to their definitions. Such an NLRI type would, for example, presumably state in its specification that if it was received without an accompanying Prefix-SID attribute, that would constitute an error.)\u2028 3. As Warren Kumari points out in his DISCUSS, \u201cleaks happen\u201d. Subsequent discussion turned quickly to the assertion that no, they don\u2019t, in VPN address families. Let\u2019s accept that claim for the sake of conversation. It\u2019s still the case that sometimes (often?) routes are distributed from VPN address families into the Global Internet table. When this is done, by default, all the path attributes come along for the ride. Anyone who thinks this is just a hypothetical case might want to look back to (for example) significant network outages that were caused around a decade ago by leakage of BGP Attribute 128 (ATTR_SET,  RFC 6368 ) into the global Internet.\u2028\u2028 The SIDs contained in these if-they-were-to-leak routes potentially give an attacker a means of directing packets into a VPN customer\u2019s internal network.\u2028 4. Speaking of Warren\u2019s DISCUSS, the shepherd\u2019s writeup indicates \u201csolid [WG] consensus\u201d; however, there doesn\u2019t seem to be consensus even amongst the authors as to whether Sections 5.3 and 5.4 are appropriate. This is a fairly fundamental disagreement! An illustration of the disagreement is  https://mailarchive.ietf.org/arch/msg/bess/K1JKxGn19BXALs3rUzUAaGTZi0Y/: \u2028\u2028 \u201cSo I can see why some people may have thought oh since transport in SRv6 comes for free let's load it with services in an attribute and be done. Yes I can see that flattening this make it potentially easier (one less SAFI to enable), *but I am not sure we have reached a broad agreement here.* This comes as a consequence of moving service prefixes from MP_REACH_NLRI (perhaps new format and new SAFI) to an attribute.\u201d\u2028\u2028 (Emphasis added.) It's of course possible for an author to be in the rough as regards consensus, just as any other WG contributor, but it's a little unusual, and this disagreement doesn't even seem to have been previously aired. For this reason, I have to question the strength of the consensus behind this document, and ask the WG chairs to weigh in regarding whether consensus on at least this point needs to be checked before we proceed forward.\u2028 5. Finally, I have to question the length of the author list. As I\u2019m sure you know, the guidance is to limit author lists to no more than five, other than under unusual circumstances. I would have expected to find an explanation of the circumstances around the author list of this document in the shepherd writeup; there is none. (It\u2019s a specific check item in Guidelines to Authors of Internet-Drafts,  https://www.ietf.org/how/ids/guidelines/ )\u2028\u2028 The easiest way to resolve this would be to trim the author list per the suggestions in  RFC 7322  \u00a74.1.1, of course.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-22 16:19:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-02-22 17:32:34-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-03-17 19:26:35-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-22 17:32:34-08:00",
+        "text": "(3.2.1) \"BGP speakers that do not support this specification may misinterpret, \u00a0  on the reception of an SRv6-based BGP service route update, the part \u00a0  of the SRv6 SID encoded in MPLS label field(s) as MPLS label values \u00a0  for MPLS-based services.\u00a0 Implementations supporting this \u00a0  specification MUST provide a mechanism to control the advertisement \u00a0  of SRv6-based BGP service routes on a per-neighbor and per-service \u00a0  basis.\u00a0 The details of deployment designs and implementation options \u00a0  are outside the scope of this document.\" The idea that BGP hosts are going to be made non-interoperable because you're re-purposing the MPLS label, and so hosts are just going to have to remember who it's OK to exchange this TLV with, sounds unsatisfactory to me. Is there no way to negotiate this? Perhaps the solution John Scudder proposes in his second DISCUSS would solve this problem too: just have a new type for these overloaded MPLS labels.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-17 19:26:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-01-31 04:29:02-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-31 04:29:02-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-02-16 22:13:59-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-16 22:13:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-03-05 04:13:46-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-05 04:13:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-02-15 19:16:56-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-15 19:16:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-02-11 14:55:43-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-02-11 15:03:04-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-11 14:55:43-08:00",
+        "text": "The Security Considerations section says: \"The service flows between PE routers using SRv6 SIDs advertised via BGP are expected to be limited within the trusted SR domain (e.g., within a single AS or between multiple ASes within a single provider network).\u00a0 Precaution should be taken to ensure that the BGP service information (including associated SRv6 SID) advertised via BGP sessions are limited to peers within this trusted SR domain.\" This is related to (from  RFC8402 ): \"Therefore, by default, the explicit routing information MUST NOT be leaked through the boundaries of the administered domain.\" However, we all know that BGP leaks happen -- and when they do, the SID\u2019s contained in the leak will be logged by various systems and hence available to the public into perpetuity. While the document states that border filtering should protect against traffic injection, this does not cover the case of internal compromise. Sure, there is the argument that once there is an internally compromised system, all bets are off -- but with this, an attacker that knows the SIDs in use can perform injection attacks in addition to routing traffic however they like.  So, not only does an operator have to ensure that BGP leaks never occur, they have to then ensure that at no point can there be any filter lapses at any border node, and be able to guarantee the security of every device, server and machine within the domain in order for a secure posture to be maintained.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-03-07 12:54:53-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-11 15:03:04-08:00",
+        "text": "The Security Considerations section says: \"The service flows between PE routers using SRv6 SIDs advertised via BGP are expected to be limited within the trusted SR domain (e.g., within a single AS or between multiple ASes within a single provider network).\u00a0 Precaution should be taken to ensure that the BGP service information (including associated SRv6 SID) advertised via BGP sessions are limited to peers within this trusted SR domain.\" This is related to (from  RFC8402 ): \"Therefore, by default, the explicit routing information MUST NOT be leaked through the boundaries of the administered domain.\" However, we all know that BGP leaks happen -- and when they do, the SID\u2019s contained in the leak will be logged by various systems and hence available to the public into perpetuity. While the document states that border filtering should protect against traffic injection, this does not cover the case of internal compromise. Sure, there is the argument that once there is an internally compromised system, all bets are off -- but with this, an attacker that knows the SIDs in e.g inject traffic into a VPN. This seems to me to significantly expand the attack surface to include the customer's networks too.  Not only does an operator have to ensure that BGP leaks never occur, they have to then ensure that at no point can there be any filter lapses at any border node, and be able to guarantee the security of every device, server and machine within the domain in order for a secure posture to be maintained. Simply saying that precautions should be taken to make sure that route leak don't occur, when the consequences of doing so are a: severe and b: hard to recover from seems to not really cover it. In addition, it seems that the blast radius from a missing ACL seems much larger if it allows injections.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-07 12:54:53-08:00",
+        "text": "With the updated text in the Security Considerations in Version 12, I'm clearing my DISCUSS. I still don't love this (hence the Abstain), but my disquiet is caused caused by the security considerations in SRv6, not this document itself. I'd like to specifically call out and thank Ketan Talaulikar, who did an outstanding job at communicating, addressing the concerns, and defusing the situation in general.",
+        "type": "Abstain"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-02-17 07:19:16-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:29:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-03-23 03:09:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-17 07:19:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9252",
+  "evaluation_end": "2022-03-23 03:09:30-07:00",
+  "evaluation_start": "2022-01-31 04:29:00-08:00"
+}

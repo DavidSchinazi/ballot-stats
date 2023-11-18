@@ -1,0 +1,283 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-08 14:48:10-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-08 14:48:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-03 21:23:36-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-03 21:23:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-09 20:59:22-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 20:59:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-08-25 12:50:21-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-07 02:38:08-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-07 02:38:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-07 14:59:06-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-07 14:59:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-08 08:08:49-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-10 06:23:38-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-09-08 08:08:49-07:00",
+        "text": "I like to thank the TSV-ART reviewer for helping me consider one aspect of the issue I see needing some discussion for this document. This relates to Section 4.2.2.2. and 4.2.2.3.  So both of these section discuss the use of the sequence number for removing packet duplicates and handling reorder. As the text discusses there can be a configured limit for how deep the buffer and state are for performing these operations. We all know that the implementation of this will have a practical limit in both buffer space for reordering as well as state for tracking which sequence numbers that have been forwarded. I think that should be more clearly expressed in the document that these practical limits exists. Thus, the implementations will have tracking and determination of what are new packets (increasing sequence number within a window higher than previous largest seen. And consider sequence number form currently highest seen and a bit backwards as older packets. Thus how this is implemented will impact how this acts in cases of disruptions of the packet flow. Thus, I wonder if there is actually need to be\u00a0 a bit more specific in how classification should be done. Especially if the wrap-around of the sequence number space approaches a small multiple of round trip times for the path which is likely for the 16-bit space.  Then\u00a0 sections fails to discuss how the duplication removal, the reordering buffering and bound latency interacts and affet each other.\u00a0 So if the latency is bounded then the reordering has an hard time limit for the maximum delay. If there is a boundary for reordering then there are no point in de-duplicating packets that will not be forwarded due to the reordering. And even if there are no bounded latency the reordering buffer size will still impact the depth of de-duplication. These practical limits will also be limitations on the guarantees that can be provided.  Thus, from my perspective there is need for more text on the requirements of the implementation of these functions and their interactions of creating limitations.  Another point on 4.2.2.2: When configured, the \u00a0  implementation MUST track the sequence number contained in received \u00a0  d-CWs and MUST ensure that duplicate (replicated) instances of a \u00a0  particular sequence number are discarded. That second MUST I think is possible to meet given that one discard all packets outside of the current window where one have information if a packet sequence number have been forwarded or not. Given that a very late packet beyond the amount of state for the flow likely anyway have little utility that is likely the right choice. However, I think it needs to be made explicit that this is okay.  In Section 4.2.2.3:  When configured, the \u00a0  implementation MUST track the sequence number contained in received \u00a0  d-CWs and MUST ensure that packets are processed in the order \u00a0  indicated in the received d-CW sequence number field, which may not \u00a0  be in the order the packets are received.  I think this part needs to be explicit that packets that are to fare out of order for the implementation to handle will/shall be dropped. \u00a0  Note that an implementation MAY wish to constrain the maximum number \u00a0  of out of order packets that can be processed, on platform-wide or \u00a0  per flow basis.\u00a0 Some implementations MAY support the provisioning of \u00a0  this number on either a platform-wide or per flow basis.\u00a0 The number \u00a0  of out of order packets that can be processed also impacts the \u00a0  latency of a flow. If there exists a latency requirement then that will interact with this when it comes to reordering. In fact a significant issue here is that if the packet flow is not periodic at a steady pace the maximum latency in the reordering buffers based on packet sequence numbers can not be ensured. Instead some form of time limit needs to exist also. If that time limit is only local then there exists a risk that over multiple reordering buffers if multiple independent service labels are used the jitter and latency becomes cumulative. If the goal is to avoid this then the individual packets would need to carry a time stamp to ensure that from ingress of the service label path until the egress a maximum latency is added.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-10-12 01:41:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-10 06:23:38-07:00",
+        "text": "I like to thank\u00a0 TSV-ART reviewer Michael T\u00fcxen for helping me consider one aspect of the issue I see needing some discussion for this document. Updated and extended discuss to clarify the issues I see. Please note that D below is new and a consequence in my trying to clarify C. why it matters.  A. The need for latency bounding the POF to enable the MPLS S-Label path to be bounded if reordering protection service is needed. To my understanding in an MPLS network the controller can determine an upper bound of the latency for a path by adding together the path latencies, the packet buffer depths based on the forwarding behavior applied, and the POF buffer depth. However, as currently described it is not made clear that the POF needs to have a configuration for an upper bound of how long a packet may maximum remain in the buffer since arrival. This requirement is somewhat discussed in  So  https://datatracker.ietf.org/doc/draft-ietf-detnet-data-plane-framework/: 3.5.2.2.\u00a0 Path Differential Delay \u00a0  In the preceding example, proper working of duplicate elimination and \u00a0  reordering of packets are dependent on the number of out-of-order \u00a0  packets that can be buffered and the delay difference of arriving \u00a0  packets.\u00a0 DetNet uses flow-specific requirements (e.g., maximum \u00a0  number of out-of-order packets, maximum latency of the flow) for \u00a0  configuration of POF-related buffers.\u00a0 If the differential delay \u00a0  between paths is excessively large or there is excessive mis-ordering \u00a0  of the packets, then packets may be dropped instead of being \u00a0  reordered.\u00a0 Likewise, PEF uses the sequence number to identify \u00a0  duplicate packets, and large differential delays combined with high \u00a0  numbers of packets may exceed the ability of the PEF to work \u00a0  properly. So this configuration needs to be required on the MPLS POF implementation to enable the controller to bound the latency between ingress and egress when POF is used. And it needs to be done in time, per the below paragraph. So given that the buffer is specified in either bytes or simply packets to be buffered will result in that the POF buffering time becomes packet flow dependent and not bounded in time. So if you make the calculation for a DETNET flow thinking it will send 500 packets per second evenly spaced. Then the a buffer of 5 packets would represent an upper limit 1/100th of second. If then the flow sends only 100 packet per second then suddendly the 5-packet buffering would represent 1/20th of a second. Thus defining it in packets or size doesn't work, the upper buffering time needs to be defined in time to provide a bounded latency.  I would note that soley configuring an upper bound between arrival in POF buffer until latest release is more fragile than actually having actual timestamp applied at egress to each packet. But, it can ensure bounded delay as long as the other functions do keep to their boundary.  However, I think the solution here is to clarify the configuration requirement on the POF in Section 4.2.2.3. B. On the relation of the PEF to the POF.  The document does not discuss this, and maybe this is fairly obvious but a relation ship exists. The PEF state needs to be deeper than the POFs when both are used. Otherwise duplicates may be forwarded. If the PEF is at least as deep as the POF, then any duplicate that is more out of order than what the POF allows will be discarded. However, as the POF is not that explicitly specified, even if the information document do define that is what should be done.  I would recommend that the text is made more clear on this relationship and also are explicit about the discard of out of order in the POF.  C. On the implementation details of the PEF and POF in regards to how they accept packets.  So the PEF is likely implemented with a basic data structure which tracks the N latest received packets and keep state if these packets have been seen or not. However, an important implementation detail for this is how this handles when a packet received are significantly higher than previous seen. So does that result in that highest seen are advanced forward to this value? So the 16-bit and 28-bit sequence numbers define a circular space. I assume one tracks the highest sequence number received (H_SN). Based on that one usually consider packets in the range [(H_SN-2^15) MOD 2^16, HSN-1] as older packets not updating the H_SN (for 16-bit sequence numbers) and can consider packets in the range [H_SN+1, H_SN + 2^15-1] as newer. However as N (number of actually tracked packets) are only a sub-set of the fully sequence number the PEF will consider a packet that falls into the range of older packets but outside of the N packets where one have state as to old, and will discard as one lack information about if it is a duplicate or not.  As you may seen this implementation would cause packet loss in the event that packets for this S-Label has passed the ingress and the PRF have put in sequence number and duplicating them and then the packet have been lost due to failure in forwarding the traffic. Then when the network have recovered from this failure there are a significant risk that the packets are outside of the window of validity that would trigger the H_SN to be updated and instead cause all packets to be dropped.  Thus in case of failures there appear to exist a need to be able to reset this state and require the sequence number that is current. And if the details of how these filters are impelementation specific and do not use the ranges I specify the controller would have to potentially cause a reset of the functions for any disturbance as the impact is unknown.  Maybe this is a minor risk in this environment, but the need to reset the POF and PEF state appears necessary for recovery.  D. Denial of service risk with attacker modifying sequence number or performing packet injection between ingress and egrees. Based on what is written in C I would also note that there exist a serious Denial of Service attack on the Detnet flow. If the attacker is capable of either periodically modify the sequence number of an MPLS packet for a particular S-label or inject a MPLS packet into the system that will traverse to the S-Labels PEF or POF at egress with a crafted sequence number. In either of these cases the attacker can advance the acceptance window periodically so that the actual traffic falls into the range that is discarded by the PEF and POF. Thus, cheaply accomplishing a total denial of service. I think this risk due to the PEF and POF should be made explicit in the security considerations. Mitigations needs to be in place to prevent packet modification or injection inside the MPLS network. Some of these appears to be already discussed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-12 01:41:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-08-28 19:57:05-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-28 19:57:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-09-09 15:47:54-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 15:47:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-09-10 07:12:48-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-10 07:12:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-09-10 03:06:55-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-09-10 05:56:43-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-10 03:06:55-07:00",
+        "text": "Hi, Thank you for this document. Hopefully a trivial discuss to resolve ... 4.2.1.\u00a0 DetNet Control Word and the DetNet Sequence Number Does this section need to specify the initial value for the sequence number for a new flow? Regards, Rob",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-10 05:56:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-08 11:10:47-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-10-12 08:33:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-08 11:10:47-07:00",
+        "text": "** (Discuss-discuss) Section 6.\u00a0 Per \u201cTo prevent DetNet packets from being delayed by an entity external to a DetNet domain, DetNet technology definition can allow for the mitigation of MiTM attacks, for example through the use of authentication and authorization of devices within the DetNet domain\u201d, can this attack scenario or the appropriate mitigation be clarified.\u00a0 If packets are coming from or going across the DetNet boundary how can any assurances be made?\u00a0 What is architecture element is the \u201cMiTM\u201d (relay? transit? per Figure 2)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-12 08:33:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-09 12:40:49-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-25 12:50:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-10-27 11:52:02-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 12:40:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8964",
+  "evaluation_end": "2020-10-27 11:52:02-07:00",
+  "evaluation_start": "2020-08-25 12:50:21-07:00"
+}

@@ -1,0 +1,261 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-07-17 12:22:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-17 12:22:30-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-04 11:29:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-04 11:29:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-06 09:50:20-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-06 09:50:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-06 14:38:19-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-06 14:38:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-07 20:48:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-07 20:48:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-05 09:27:48-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-09 20:22:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-05 09:27:48-07:00",
+        "text": "There are both pretty minor points, in the grand scheme of things, but I do think it would be hazardous to publish the document without addressing them. The semantics surrounding the \"external_id_hash\" TLS extension seem insufficiently specified to admit interoperable implementation.\u00a0 In Section 3.2 we read that it \"carries a hash of the identity assertion that communicating peers have exchanged\", as if there was a single distinguished identity assertion for the session.\u00a0 But, if we read on, we learn that there is not one identity assertion, but (in the general case) two, one for each party, and that what seems to actually be intended is that each party sends the hash of the identity assertion corresponding to the sender's identity, with the requirements to send an empty external_id_hash if the party in question is not providing identity bindings.\u00a0 Additionally, the text about having an empty \"external_id_hash\" extension in ClientHello or ServerHello/EncryptedExtensions is written in a way that implies that all parties generate a ClientHello and all parties generate a ServerHello or EncryptedExtensions message, whereas these are actually conditional on whether the party is acting as (D)TLS client or server. Similarly, the current text for the last sentence of Section 3.2 (\"In TLS 1.3, the \"external_id_hash\" extension MUST be sent in the EncryptedExtensions message.\") can be (mis)read as implying that all EncryptedExtensions messages sent by TLS servers that implement this specification must include this extension, which would violate the TLS extension-negotiation model since it mandates the server sending an extension without regard to the client having indicated support for the extension.\u00a0 Perhaps \"MUST NOT be sent in the TLS 1.3 ServerHello message\" conveys the restriction more clearly? (A similar comment applies to the corresponding statement in Section 4.3, which interestingly enough already has a \"In TLS 1.3, the \"external_session_id\" extension MUST NOT be included in a ServerHello.\" disclaimer in addition to the problematic sentence.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-09 20:22:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-05 06:10:27-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-05 06:10:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-05 08:36:05-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-05 08:36:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-05 19:24:16-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-12 16:01:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-05 19:24:16-07:00",
+        "text": "(1) Section 3.2.\u00a0 There are a few places where further clarity on error handling would be helpful:  -- Per \u201cA peer that receives an \"external_id_hash\" extension that does not match the value of the identity binding from its peer MUST immediately fail the TLS handshake with an error\u201d, which TLS error alert? -- Per \u201cA peer that receives an identity binding, but does not receive an \u2018external_id_hash\u2019extension MAY choose to fail the connection\u201d, if it does \u201cfail the connection\u201d, with which error alert?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-12 16:01:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-07 13:04:50-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-07 13:04:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-07 13:55:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-17 12:22:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-13 15:16:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-07 13:55:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8844",
+  "evaluation_end": "2019-08-13 15:16:55-07:00",
+  "evaluation_start": "2019-07-17 12:22:28-07:00"
+}

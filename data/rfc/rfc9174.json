@@ -1,0 +1,395 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-19 13:39:27-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-19 13:39:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-02-19 07:36:30-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-19 07:36:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-30 13:29:45-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-30 13:29:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-02-13 15:12:57-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-13 15:12:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-19 14:45:35-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-30 18:57:11-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-02-19 14:45:35-08:00",
+        "text": "In Section 4.2 we say that \"If an entity is capable of [...] TLS 1.2 or any successors [...], the CAN_TLS flag within its contanct [sic] header SHALL be set to 1.\"\u00a0 I don't understand why we should allow in the spec for an entity to not be capable of TLS 1.2+.\u00a0 Can you give me some examples of situations when you would want to use a TCPCL but cannot use TLS with it?\u00a0 A new major version of TCPCL would be the least-bad time to make a clean break and mandate TLS... There's some good discussion in Section 4.4.2 of the mechanics of TLS X.509 certificate authentication; thanks for that!\u00a0 I do think that there's a fairly critical omission, though, namely that the BP agent needs to provide to the TCPCL Entity the Node ID of the expected next hop from the routing decision (in addition to the hostname/IP address to which to initiate a TCP connection), and this Node ID must also be validated against the TLS certificate and the SESS_INIT from the peer. Otherwise we are in effect falling back to an authorization policy of \"anyone with a cert with a uniformResourceIdentifier SAN of the expected scheme is authorized to do anything\", which is a pretty weak policy. (In some sense, if we require this, then the Node ID in the SESS_INIT becomes redundant, though I think there are some edge cases where it would still be needed in order for both endpoints to agree on the communicating identities.) I also think we need to discuss the TLS X.509 authentication model that will be used, i.e., \"what PKI is being used?\".\u00a0 (To be clear, I don't know that any changes to the text will be required, but do think we should be sure we have a clear picture of what the expected deployment strategies are.) The usage of SNI to pick a cert and the DNS-ID ( RFC 6125 ) to authenticate a hostname might imply that the typical \"Web PKI\" (that deals in hostnames) is intended, but the URIs we need to authenticate Node IDs are not commonly certified by that PKI.\u00a0 Since the server has to present a single certificate even if it is attempting to authenticate as both DNS-ID and the NodeID URI, it seems like it would be challenging to use this scheme in practice against the Web PKI roots. This hybrid of hostname and Node-ID authentication also suffers from an awkward ordering issue when the TLS handshake occurs before the SESS_INIT messages that convey what Node ID is intended to be authenticated -- this requires implementations to use a TLS stack that preserves the peer's certificate and perform name validation after a completed TLS handshake, which is moving more of the complications out of the TLS stack and into the application logic (which introduces risk of security-relevant bugs).\u00a0 It also means that certificate selection must be based solely on SNI hostname and cannot involve the requested Node ID.\u00a0 [There is in theory the selectable name_type field in the TLS server_name extension, but in practice that joint has rusted shut and it seems unlikely that there would be much implementation traction to define a name type for DTN Node ID;  RFC 6066  also fails to give a clear indication of the intended semantics when multiple name types are present.] Please double-check for lingering text that assumes the  RFC 7242 behaviors where all parameters are in the contact header (vs. SESS_INIT) and use of SDNV encoding vs. fixed-lengths.\u00a0 I noted several instances in the COMMENT section, but do not claim to have made an exhaustive review.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-02 22:47:59-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-09-30 18:57:11-07:00",
+        "text": "[This is essentially a restatement of the comments at https://mailarchive.ietf.org/arch/msg/dtn/jnafmsDt0OXUhYlBwT_U9PuNV5c/ but rephrased to be a standalone review rather than continuation of an existing conversation.] I'm really impressed by the new text about PKIX environments/CA policy, and entity identification; thank you! I suspect that, with one exception, we have similar understandings of what is supposed to happen, but may need to wrangle the actual text on the page a little more to get to the right place. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% The one exception relates to the security properties of having the certificate validation procedure be a prioritized list of steps with which steps to use being dependent on the contents of the received certificate.\u00a0 Specifically, if we will end up letting a peer with a DNS-ID cert authenticate as any node ID, then there is no security gain from having the node ID in the cert in the first place, since the attacker will just skip that step.\u00a0 The value of NODE-ID comes into play when we know, before we go into the validation procedure, that the legitimate peer will have the expected NODE-ID in their certificate. Obviously we cannot expect that to always be the case, given that we aim to be compatible with DTN-Ignorant CAs, so we will need to specify some granularity for when we do or do not require the NODE-ID to be present. There are a number of possibilities here and I don't know which is going to be best for the broadest group of deployments.\u00a0 Some simple ideas for consideration include: (a) any given node either always or never requires NODE-ID (b) any given interface either always or never requires NODE-ID (c) push it to the discovery protocol/\"out of band configuration\" (d) a trust-on-first-use-like option of \"once you've seen a NODE-ID for \u00a0 a given node ID, always require NODE-ID in the future for that node \u00a0 ID.\u00a0 (This has pretty significant risks without a way to \"undo the \u00a0 latch\" but if generating a new node ID is cheap they may be \u00a0 tolerable.) (e) define new URI scheme(s) that have similar semantics to the current \u00a0 ones but require NODE-ID for authentication. (f) similar to (e), apply additional granularity based on URI scheme or \u00a0 scheme-specific structure (e.g., certain prefixes/suffixes of names \u00a0 but not others In theory there are similar considerations between DNS-ID and NETWORK-ID (see below for comment about the \"NETWORK-ID\" name), but since they are both expected to be coming from the Web PKI and both have similarly weak models for node authentication it's not clear to me that we should spend much effort on a complicated procedure for there.\u00a0 Something simple like \"if you have a (stable) name for the peer, expect DNS-ID; if you only have an IP address, use NETWORK-ID\" should work quite well (and may even be what you intended anyway). %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% The main place where I'm still seeing a need for wordsmithing is in the authentication procedures in Section 4.4.3.\u00a0 I see from the previous discussion that the intent of \"SHALL attempt to authenticate [...] If  and security policy disallows an unauthenticated , the entity SHALL terminate the session\" is for security policy to be able to say \"yes, there's no -ID and I'm fine with that (or potentially even \"the -ID that is present failed validation and I'm fine with that\"), which is a surprising wording to me but I guess technically okay.\u00a0 (The current wording strongly implies, to me, that  if validation fails, the session gets terminated; maybe it's something about the double negative in \"disallows an unauthenticated\" that makes the \"security policy\" aspect feel very weak.)\u00a0 What seems significantly problematic to me, though, is the requirement as-written to attempt validation of all three types of ID (NODE-ID, DNS-ID, and NETWORK-ID). In the expected case where a peer's certificate contains only one of the three (or, perhaps, a NODE-ID and one other name type), this means that security policy would have to be some complex matrix with interdependencies between the various types (allow unauthenticated host by DNS-ID if NETWORK-ID present and valid, etc.) that prevents validation of each type of name being performed independently. In particular, this \"must attempt all three types\" logic seems at odds with the first paragraph of the section that says that attempting host name validation is optional. So, I would have expected the text to flow more along the lines of (but written less hastily) \"security policy determines, for a given connection, which identity type(s) is expected, and validation is attempted for those specific type(s).\u00a0 Failed authentication results in session termination.\" It is okay with me for security policy to allow continuing with the connection even when validation is attempted but fails, but I'm not sure that we currently have a fully consistent picture about how/when this happens.\u00a0 In particular, I see a note in Section 8.10.1 that using TLS in a way which does not authenticate both peers is out of scope of this document\" along with a mention of similarities to opportunistic security, yet letting security policy proceed with an unauthenticated peer seems at odds with that \"out of scope\".\u00a0 We should have a clearer picture of whether opportunistic security with no or failed authentication of one or both peers is permitted by this document. I think we can also wordsmith the setting of CAN_TLS a little more; previous discussion indicated a desire to (e.g.) not require TLS when operating over IPsec, but that's a different criterion than \"capable of exchanging messages [with TLS]\".\u00a0 It's also inconsistent with a desire to make TLS support mandatory to implement (but not mandatory to use), since mandatory to implement implies mandatory to be \"capable of exchanging messages with TLS\", thus mandatory to use.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-27 21:03:31-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-12-02 22:47:59-08:00",
+        "text": "[retaining discuss section unchanged from the -21 in order to update the comment section, even though much progress has been made on this front at IETF 109 and via email.\u00a0 IIRC we have a thread open with the PKIX extended key purpose DE for how to modify the TLS certificate validation procedures.] ========================== discuss section from -21 below ==================== [This is essentially a restatement of the comments at https://mailarchive.ietf.org/arch/msg/dtn/jnafmsDt0OXUhYlBwT_U9PuNV5c/ but rephrased to be a standalone review rather than continuation of an existing conversation.] I'm really impressed by the new text about PKIX environments/CA policy, and entity identification; thank you! I suspect that, with one exception, we have similar understandings of what is supposed to happen, but may need to wrangle the actual text on the page a little more to get to the right place. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% The one exception relates to the security properties of having the certificate validation procedure be a prioritized list of steps with which steps to use being dependent on the contents of the received certificate.\u00a0 Specifically, if we will end up letting a peer with a DNS-ID cert authenticate as any node ID, then there is no security gain from having the node ID in the cert in the first place, since the attacker will just skip that step.\u00a0 The value of NODE-ID comes into play when we know, before we go into the validation procedure, that the legitimate peer will have the expected NODE-ID in their certificate. Obviously we cannot expect that to always be the case, given that we aim to be compatible with DTN-Ignorant CAs, so we will need to specify some granularity for when we do or do not require the NODE-ID to be present. There are a number of possibilities here and I don't know which is going to be best for the broadest group of deployments.\u00a0 Some simple ideas for consideration include: (a) any given node either always or never requires NODE-ID (b) any given interface either always or never requires NODE-ID (c) push it to the discovery protocol/\"out of band configuration\" (d) a trust-on-first-use-like option of \"once you've seen a NODE-ID for \u00a0 a given node ID, always require NODE-ID in the future for that node \u00a0 ID.\u00a0 (This has pretty significant risks without a way to \"undo the \u00a0 latch\" but if generating a new node ID is cheap they may be \u00a0 tolerable.) (e) define new URI scheme(s) that have similar semantics to the current \u00a0 ones but require NODE-ID for authentication. (f) similar to (e), apply additional granularity based on URI scheme or \u00a0 scheme-specific structure (e.g., certain prefixes/suffixes of names \u00a0 but not others In theory there are similar considerations between DNS-ID and NETWORK-ID (see below for comment about the \"NETWORK-ID\" name), but since they are both expected to be coming from the Web PKI and both have similarly weak models for node authentication it's not clear to me that we should spend much effort on a complicated procedure for there.\u00a0 Something simple like \"if you have a (stable) name for the peer, expect DNS-ID; if you only have an IP address, use NETWORK-ID\" should work quite well (and may even be what you intended anyway). %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% The main place where I'm still seeing a need for wordsmithing is in the authentication procedures in Section 4.4.3.\u00a0 I see from the previous discussion that the intent of \"SHALL attempt to authenticate [...] If  and security policy disallows an unauthenticated , the entity SHALL terminate the session\" is for security policy to be able to say \"yes, there's no -ID and I'm fine with that (or potentially even \"the -ID that is present failed validation and I'm fine with that\"), which is a surprising wording to me but I guess technically okay.\u00a0 (The current wording strongly implies, to me, that  if validation fails, the session gets terminated; maybe it's something about the double negative in \"disallows an unauthenticated\" that makes the \"security policy\" aspect feel very weak.)\u00a0 What seems significantly problematic to me, though, is the requirement as-written to attempt validation of all three types of ID (NODE-ID, DNS-ID, and NETWORK-ID). In the expected case where a peer's certificate contains only one of the three (or, perhaps, a NODE-ID and one other name type), this means that security policy would have to be some complex matrix with interdependencies between the various types (allow unauthenticated host by DNS-ID if NETWORK-ID present and valid, etc.) that prevents validation of each type of name being performed independently. In particular, this \"must attempt all three types\" logic seems at odds with the first paragraph of the section that says that attempting host name validation is optional. So, I would have expected the text to flow more along the lines of (but written less hastily) \"security policy determines, for a given connection, which identity type(s) is expected, and validation is attempted for those specific type(s).\u00a0 Failed authentication results in session termination.\" It is okay with me for security policy to allow continuing with the connection even when validation is attempted but fails, but I'm not sure that we currently have a fully consistent picture about how/when this happens.\u00a0 In particular, I see a note in Section 8.10.1 that using TLS in a way which does not authenticate both peers is out of scope of this document\" along with a mention of similarities to opportunistic security, yet letting security policy proceed with an unauthenticated peer seems at odds with that \"out of scope\".\u00a0 We should have a clearer picture of whether opportunistic security with no or failed authentication of one or both peers is permitted by this document. I think we can also wordsmith the setting of CAN_TLS a little more; previous discussion indicated a desire to (e.g.) not require TLS when operating over IPsec, but that's a different criterion than \"capable of exchanging messages [with TLS]\".\u00a0 It's also inconsistent with a desire to make TLS support mandatory to implement (but not mandatory to use), since mandatory to implement implies mandatory to be \"capable of exchanging messages with TLS\", thus mandatory to use.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-27 21:03:31-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-02-19 06:32:11-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-19 06:32:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-02-20 05:52:50-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-20 05:52:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 22:34:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-02-12 02:25:43-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-02-20 06:48:15-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-02-25 00:38:21-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-20 06:48:15-08:00",
+        "text": "eed to confirm that reassigning the TCP Port 4556 is okay with the official assigne Simon Perreault.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-04 06:50:57-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-25 00:38:21-08:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-06-23 01:52:34-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-04 06:50:57-08:00",
+        "text": "eed to resolve Mirja's discuss.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-06-23 06:56:13-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-23 01:52:34-07:00",
+        "text": "irja's discuss is now resolved except for a single item regarding the aspect of session policies for TCPclv4.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-30 00:43:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-23 06:56:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-30 00:43:57-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-07 16:41:31-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-07 16:38:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-23 10:28:02-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-07 16:41:31-08:00",
+        "text": "Sec 6.1. I read this sentence several times and could not figure out what it is saying, and fear there could be interoperability problems. \"When performing an unclean termination, a \u00a0  transmitting node SHALL treat either sending or receiving a SESS_TERM \u00a0  message (i.e., before the final acknowledgment) as a failure of the \u00a0  transfer.\u00a0 Any delay between request to close the TCP connection and \u00a0  actual closing of the connection (a \"half-closed\" state) MAY be \u00a0  ignored by the TCPCL entity.\" First of all, \"failure of the transfer\" is ambiguous because there may be two transfers going on, one in each direction. Second, I would like further clarity on what it means that nodes \"SHALL\" consider it \"a failure of the transfer\". What is actionable if it's a failure? If nothing is actionable, it shouldn't be a SHALL. Does this mean that in subsequent sessions I must resend the whole bundle? Can you list some reasons why an endpoint would choose to close uncleanly? Some motivation might provide helpful context. Moreover the \"sending or receiving\" bit is confusing. - So one option is that I'm a session that has decided to do an unclean termination rather than a clean one. So I send SESS_TERM and then close (FIN? RST?) the TCP connection. So if it's a FIN, I might very well get the last XFER_ACK.\u00a0 If I RST or don't get that ACK, then I do think it's clear that the transfer is a failure, whatever that means. - But as a receiver, how do I know that the termination is unclean? Have I made an independent decision to close uncleanly? Am I to take the receipt of a SESS_TERM without my having sent XFER_ACK as an unclean close? If I sent XFER_ACK, how do I know that the sender sent it? And what does it mean, as a receiver, that the transfer \"failed\" if I have all the data?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-23 10:28:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-02-19 15:41:23-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-19 15:41:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-20 05:06:19-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-20 05:06:19-08:00",
+        "text": "Thanks for this well-written document. I have a couple of thing in the comment section below that should be clarified. But there is one point which does not seem correct to me and therefore I'm raising it at thee discuss level: Sec 5.1.1: \"Both sides SHALL send a KEEPALIVE message whenever the negotiated interval \u00a0  has elapsed with no transmission of any message (KEEPALIVE or other). \u00a0  If no message (KEEPALIVE or other) has been received in a session \u00a0  after some implementation-defined time duration, then the node SHALL \u00a0  terminate the session by transmitting a SESS_TERM message (as \u00a0  described in Section 6.1) with reason code \"Idle Timeout\". \" It is not necessary that both endpoints send keepalives when TCP is used underneath as data is transmitted reliably. If one end sends keepalives and transmission fails it will close the TCP connection no matter what. Therefore the case where no keepalive is received, can only happen if no keepalive was send by the application, however, if the own keepalives are send successfully it is also received and the TCP connection is alive. If this is only to test liveness of the TCP connection, why don't you use TCP keepalives instead? Further what happens when a keepalive fails? Should one endpoint try to reconnect, immediately or later when new data is available? And one more small thing: sec 6.1: \"However, an entity MUST always send \u00a0  the contact header to its peer before sending a SESS_TERM message.\" This normative requirement seems contradicting the way version failures are handled earlier on in the doc.",
+        "type": "Discuss"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 01:54:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-19 12:13:02-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-19 12:13:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-02-18 19:34:45-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-02-18 19:35:28-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-02-18 19:34:45-08:00",
+        "text": "* Section 4.2: \" TLS 1.2 [ RFC5246 ] or any successors [ RFC8446 ] that are compatible with TLS 1.2\" Hopefully this is easy to resolve but I am not sure what exactly you intended to say with this phrase \"that are compatible with TLS 1.2\". Can you please clarify? (I think going through Appendix D of  RFC8446  may bring up specific things you might be looking for). A similar construct is also used in Section 4.4.1.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-13 11:48:37-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-18 19:35:28-08:00",
+        "text": "* Section 4.2: \" TLS 1.2 [ RFC5246 ] or any successors [ RFC8446 ] that are compatible with TLS 1.2\" Hopefully this is easy to resolve but I am not sure what exactly you intended to say with this phrase \"that are compatible with TLS 1.2\". Can you please expand and clarify? (I think going through Appendix D of  RFC8446  may bring up specific things you might be looking for). A similar construct is also used in Section 4.4.1.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-03-13 11:48:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-12-02 14:01:38-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 02:25:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-02-17 05:57:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 14:01:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9174",
+  "evaluation_end": "2021-02-17 05:57:23-08:00",
+  "evaluation_start": "2020-02-12 02:25:43-08:00"
+}

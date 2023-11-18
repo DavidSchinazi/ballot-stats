@@ -1,0 +1,291 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-04-23 13:46:17-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-23 13:46:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-04-22 06:43:21-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-22 06:43:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-04-20 22:49:38-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-04-21 12:59:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-04-20 22:49:38-07:00",
+        "text": "Thanks for this document.\u00a0 Enabling Open-ID and OAUTH with SIP is quite useful. This document specifically calls out single sign-on as a reason to use this mechanism, and SSO has a host of serious security and privacy issues.\u00a0 As those issues are not discussed in the referenced documents, I think they need to be raised here.\u00a0 Recommended usage/configuration to avoid or mitigate the issues would be ideal, but at the very least I think they need to be documented, as it\u2019s clear that implementors are not aware of them or don\u2019t think they\u2019re important enough to worry about.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-21 12:59:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-04-23 12:25:03-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-05-05 11:46:23-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-04-23 12:25:03-07:00",
+        "text": "I support Roman's Discuss. The \"Bearer\" authentication challenge includes the address (or name?) of an authorization server to contact to obtain tokens, as mentioned in multiple places in the document (noted in the COMMENT section).\u00a0 Our experience in the OAuth world has shown that several classes of vulnerabilities are possible when the client blindly attempt to use any provided AS, and that a whitelist of \"allowed\" or \"trusted\" ASes is needed for secure operation.\u00a0 I believe that the same is true for the SIP usage, and we should mention this requirement explicitly. Section 1.2 tries to apply the OAuth confidential/public client distinction to SIP UACs, but it does so in a non-analogous fashion: the OAuth distinction is for the client's ability to protect credentials that identify the client itself; the usage in this document refers to protecting *user* credentials and obtained tokens.\u00a0 I don't think that it's appropriate to invoke the OAuth terminology when using it for a different meaning. Both Public and Confidential OAuth clients are capable of providing the necessary protections for *user* credentials (though they are of course not guaranteed to do so), which leaves me unclear on what the intended requirements actually are. Section 2.3 states that: \u00a0  When a proxy wishes to authenticate a received request, it MUST \u00a0  search the request for Proxy-Authorization header fields with 'realm' \u00a0  parameters that match its realm.\u00a0 It then MUST successfully validate https://tools.ietf.org/html/rfc7235#section-4.4  suggests that it is not expected to have a sequence or list of Proxy-Authorization header fields present in a single request that are intended to be interpreted by different proxies.\u00a0 Is this text compatible with that part of  RFC 7235 ?\u00a0 Furthermore, I didn't find much guidance in 7235 or 3261 about when to include the \"realm\" parameter in Proxy-Authorization; do we want to give any guidance here?\u00a0 (That is to say, I almost didn't find where it was even defined as possible to do so...) I'm also not sure if we're attempting to profile  RFC 6749  and always require a refresh token to be issued, or just have some editorial tweaks to make to avoid suggesting that we do have such a requirement (noted in the COMMENT).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-05-05 15:12:45-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-05-05 11:46:23-07:00",
+        "text": "Thanks for the updates in the -14 (and -15); they cover most of my points. Unfortunately, the new security considerations text seems to introduce a problematic recommendation: \u00a0  Because of that, it is critical to make sure that extra security \u00a0  measures be taken to safeguard credentials used for Single Sign-On. \u00a0  Examples of such measures include long passphrase instead of a \u00a0  password, enabling multi-factor factor authentication, and the use of \u00a0  embedded browser when possible, as defined in [ RFC8252 ]. Looking at  RFC 8252  (Section 8.12), it seems to be rather strongly recommending to *not* use an embedded browser, which is the opposite of the apparent recommendation here.\u00a0 Are we missing a word \"avoiding\" or similar? Also, I am not 100% sure my note about refresh tokens was fully addressed; in Section 2.1.1 we see: \u00a0  The refresh token is only used between the UAC and the AS.\u00a0 If the AS \u00a0  provides a refresh token to the UAC, the UAC uses it to request a new \u00a0  access token and refresh token from the AS before the currently used \u00a0  access token expires ([ RFC6749 ], Section 1.5).\u00a0 If the AS does not Is it accurate to say that the refresh token is used \"to request a new access token and refresh token\" (specifically the \"and refresh token\" part)?\u00a0 I know that it is not always returned, but am less sure about whether the semantics always include an (implicit) request for a new one.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-05 15:12:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-04-21 14:20:27-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-21 14:20:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-04-23 05:25:09-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-23 05:25:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-04-23 18:50:41-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-23 18:50:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-04-23 06:31:42-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-04-28 02:00:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-04-23 06:31:42-07:00",
+        "text": "I think these resolution for this is rather straight forward, however the implications of one is going to break deployed implementations.  1. Section 4: This is rather straight forward to resolve but you do have a SIP syntax violation in these rules.  \u00a0 \u00a0 \u00a0  challenge\u00a0 =/\u00a0 (\"Bearer\" LWS bearer-cln *(COMMA bearer-cln)) \u00a0 \u00a0 \u00a0  bearer-cln = realm / scope / authz-server / error / \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 auth-param \u00a0 \u00a0 \u00a0  authz-server = \"authz_server\" EQUAL authz-server-value \u00a0 \u00a0 \u00a0  authz-server-value = https-URI \u00a0 \u00a0 \u00a0  realm =  \u00a0 \u00a0 \u00a0  auth-param =  \u00a0 \u00a0 \u00a0  scope =  \u00a0 \u00a0 \u00a0  error =  \u00a0 \u00a0 \u00a0  https-URI =  So  RFC 3261  defines the Challenge construct as:  challenge\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  =\u00a0 (\"Digest\" LWS digest-cln *(COMMA digest-cln)) \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  / other-challenge Where this extension needs to match the syntax of the other-challenge: other-challenge\u00a0 \u00a0  =\u00a0 auth-scheme LWS auth-param \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  *(COMMA auth-param) Where we need to look at: auth-param\u00a0 \u00a0 \u00a0 \u00a0 =\u00a0 auth-param-name EQUAL \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ( token / quoted-string ) Please note what is included in the \"token\" rule.  \u00a0 \u00a0 \u00a0 token\u00a0 \u00a0 \u00a0  =\u00a0 1*(alphanum / \"-\" / \".\" / \"!\" / \"%\" / \"*\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  / \"_\" / \"+\" / \"`\" / \"'\" / \"~\" ) the allowed syntax for https-URI in  RFC 7230  is: \u00a0 \u00a0 https-URI = \"https:\" \"//\" authority path-abempty [ \"?\" query ] \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  [ \"#\" fragment ] Which include both \"/\", \"?\" and \"#\" that are not allowed in token. Thus, the URI included in the authz-server-value\u00a0 MUST be converted into a quoted-string matching syntax rule.  2. In addition should not the \"authz_server\" be registered in the  https://www.iana.org/assignments/sip-parameters/sip-parameters.xhtml#sip-parameters-12  registry?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-28 02:00:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-04-20 07:55:00-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-20 07:55:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-04-15 15:34:03-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-04-20 05:24:25-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-20 05:24:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-04-22 08:01:38-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-05-05 06:11:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-04-22 08:01:38-07:00",
+        "text": "The use of the OpenID ID token appears to be underspecified.\u00a0 Section 1.3 notes the possibility of using it as one of the three possible tokens.\u00a0 However, the SIP procedures in Section 2 makes no note of it, only covering the use of the \u201caccess token\u201d and the \u201crefresh token\u201d.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-05 06:11:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-04-22 12:10:51-07:00",
+        "end_reason": "new_position",
+        "start": "2020-04-15 15:34:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-05-05 16:37:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-22 12:10:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8898",
+  "evaluation_end": "2020-05-05 16:37:05-07:00",
+  "evaluation_start": "2020-04-15 15:34:03-07:00"
+}

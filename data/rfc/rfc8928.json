@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-04 22:01:17-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-04 22:01:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-02-07 04:12:11-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-07 04:12:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-02-04 08:33:12-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-04 08:33:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-02-04 14:40:48-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-04 14:40:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-02-05 20:59:44-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-05 20:59:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-31 15:19:02-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-03 10:09:59-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-01-31 15:19:02-08:00",
+        "text": "The CIPO description specifies that a 5-bit Reserved1 field and a 13-bit Public Key Length field are combined to fit into a 16 (not 18)-bit space. (The Figure shows the Public Key Length field as 11 bits.) Why do we need to allow ambiguity/flexibility as to the point representation within a given Crypto-Type value (as opposed to fixing the representation as a parameter of the Crypto-Type)?\u00a0 Alternately, what does \"(un)compressed\" mean, as it's not really clarified directly?\u00a0 Furthermore, Table 2 lists an \"(un)compressed\" representation for type 0 (over P-256), but  RFC 7518  notes that the compressed representation is not supported for P-256 (Section 6.2.1.1).\u00a0 I also am not finding the needed codepoints registered in the JOSE registries to use ECDSA25519 (crypto-type 2) -- do we need to register anything there? Per my comment on Section 4.4, there may be some implicit expectation/requirement of 128+-bit ROVRs for AP-ND, but I didn't find where such a requirement was stated.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-06 16:05:38-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-02-03 10:09:59-08:00",
+        "text": "Why do we need to allow ambiguity/flexibility as to the point representation within a given Crypto-Type value (as opposed to fixing the representation as a parameter of the Crypto-Type)?\u00a0 Alternately, what does \"(un)compressed\" mean, as it's not really clarified directly?\u00a0 Furthermore, Table 2 lists an \"(un)compressed\" representation for type 0 (over P-256), but  RFC 7518  notes that the compressed representation is not supported for P-256 (Section 6.2.1.1).\u00a0 I also am not finding the needed codepoints registered in the JOSE registries to use ECDSA25519 (crypto-type 2) -- do we need to register anything there?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-17 14:54:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-06 16:05:38-08:00",
+        "text": "We need to indicate somehow that the needed codepoints will be registered in the JOSE registries to use ECDSA25519 (crypto-type 2), whether by doing it ourself or by depending on another doc that does so.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-17 14:54:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-02-04 13:35:44-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-04 13:35:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-01-29 06:18:38-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-02-01 00:40:15-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-29 06:18:38-08:00",
+        "text": "Thank you for the work put into this document. I found the document easy to read. Please find below a trivial-to-fix DISCUSS (and I am requesting a reply and/or action on this one) plus some non-blocking COMMENTs and NITs. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == -- Section 4.4 -- The length of the reserved field is not specified. Or am I missing something obvious ?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-01 00:40:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-02-04 15:30:27-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-04 15:30:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-01-31 02:42:37-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-31 02:42:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-05 14:46:56-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-05 14:46:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-01-17 14:41:02-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-02-05 09:34:52-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 14:41:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-18 09:14:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-05 09:34:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8928",
+  "evaluation_end": "2020-03-18 09:14:32-07:00",
+  "evaluation_start": "2020-01-17 14:41:02-08:00"
+}

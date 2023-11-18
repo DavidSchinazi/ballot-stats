@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-09-13 00:56:56-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-13 00:56:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-09-12 12:22:32-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-09-19 09:55:40-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-09-12 12:22:32-07:00",
+        "text": "I was wondering about why this document is going for informational rather than proposed standard. I see that  draft-ietf-taps-interface-01  has a normative reference to it, so this is effectively setting up a downref situation. That isn't necessarily a problem, but if the point is for this document to recommend an actual minimal set of transport services to be supported and exposed via the API specified in  draft-ietf-taps-interface  and other APIs, shouldn't that set be normative?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-19 09:55:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-09-11 11:51:34-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-11 11:51:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-09-11 19:43:28-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-11 19:43:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-09-12 17:38:45-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-09-18 17:19:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-09-12 17:38:45-07:00",
+        "text": "[My general summary view of this document is not really relevant to these Discuss points and appears in the COMMENT section.] This document includes a general discussion of the features/services that IETF transport protocols (TCP, MPTCP, SCTP, UDP, etc.) provide ... and also throws in LEDBAT congestion control, with no real coverage of all the other congestion control schemes the IETF provides.\u00a0 It seems that there should be some text/justification of why LEDBAT (but none of the others) fall into the same categorization as the general transport features.\u00a0 As far as I can tell, the idea is that there can be a \"low-impact background data transfer\" feature/service, which LEDBAT attempts to provide, but I'm basing that on  inference and not something explictily stated in the document. Section 3.3.2 and Appendix A.3.1 are limiting this \"minimal set\" of transport services to exclude discrete messages and allow only the provisioning for TCP-like byte streams.\u00a0 While I can understand the desire to make TCP the \"gold standard\", the surrounding discussion, particularly in A.3.1, seems to be a layering violation.\u00a0 That is, we are hearing that AFra-Bytestream requires receivers (i.e., applications) to be able to consume contiguous bytestreams.\u00a0 But this seems to really be a requirement on the application protocol to be self-framing (and to provide its own sequence numbers if needed)!\u00a0 Normally we think of an application protocol placing requirements on the transport, or a particular transport as being inappropriate for use with a given application protocol.\u00a0 So I think this document needs to more explicitly acknowledge that this is not a \"generic minimal set\" of transport features, but rather a minimal set that is applicable for many, but not all, applications: some application protocols have requirements that are not met by this \"minimal set\". In Section A.3.6, \"Data encryption\" and \"source authenticity\" are absent from the list of \"security related transport features\" (that are relegated to the other document); this seems like a fatal omission.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-18 17:19:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-09-12 12:02:49-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-12 12:02:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-09-12 22:35:01-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-12 22:35:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-09-13 01:15:35-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-13 01:15:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-09-13 01:32:06-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-13 01:32:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-09-07 07:47:11-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-07 07:47:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-09-04 22:25:59-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-09-13 06:48:47-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-13 06:48:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-09-12 03:57:26-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-12 03:57:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-10-01 12:57:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-04 22:25:59-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8923",
+  "evaluation_end": "2018-10-01 12:57:54-07:00",
+  "evaluation_start": "2018-09-04 22:25:59-07:00"
+}

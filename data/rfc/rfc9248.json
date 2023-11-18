@@ -1,0 +1,291 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-12-15 13:07:38-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-15 13:07:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-12-15 13:21:56-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-02-06 11:17:12-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-15 13:21:56-08:00",
+        "text": "Thanks for writing this document; it's an important topic and I look forward to seeing interoperability in this space. However, I don't think this document is quite ready for publication yet, as it has a number of internal inconsistencies (and at least one external inconsistency with IETF procedures) that would get in the way of interoperable implementation. (1) The procedure for substituting an entryPoint from the provider list into the OpenAPI interface description for obtaining configuration data appears to be incompatible with  BCP 190 .\u00a0 Though there's not quite enough detail for me to be able to tell exactly what behavior is intended, the procedure of \"replace localhost in the template with the value from provider discovery\" seems like it implies that the value from provider discovery is just a hostname, and that we are requiring the RUM services to be accessible via HTTP at path /rum/v1 on that machine.\u00a0 The URI path namespace is under control of the owner of the host, and we cannot assert that we will occupy that portion of the namespace.\u00a0 The current version of  BCP 190 ,  RFC 8820 , does allow us to say (effectively) \"delegate a subtree of the path namespace to the protocol\" by letting the owner of the host pick what base path to use for the protocol (even that would not have been allowed by its predecessor,  RFC 7320 ), but we do need to let that host-specific path prefix be indicated somehow, whether by URL template or allowing a base path to be indicated in the provider discovery process. (2) There are a lot of inconsistencies about the parameters and data format of the various API responses as specified in prose, OpenAPI description, and examples.\u00a0 In particular, we also fail to make a clear statement about whether the prose or the OpenAPI description is normative and takes precedence in case of disagreement. I'll list a bunch of things here; I made a fairly careful reading but am not willing to assert that this is a comprehensive listing.\u00a0 (A number of them also get comments in the section-by-section comments; sorry about that duplication.) Sections 9.2.1 and 9.2.2 list configuration data items in the \"configuration data for new user sign up and dial around\" and \"configuration data for the RUE\" configuration retrieval APIs, and per the note at the end of \u00a79.2 they include the REQUIRED data items. However, there are a couple data items that are mentioned elsewhere in the document as if they are always going to be present, but are not present in these lists of required configuration parameters.\u00a0 In particular we talk about the \"provider-domain\" as coming from the configuration, and it appears in examples, but is not mentioned in the prose or OpenAPI format description. The prose (and some examples) refer to an \"outbound-proxies\" RUE configuration element, but \u00a79.2.2 and the OpenAPI description list the singular \"outbound-proxy\" (and with the corresponding difference in format/structure). The prose mentions \"credentials\" from the configuration, but no parameter of that name appears (there is some mention of password under \"carddav\" but that seems insufficiently generic to match all instances; sip-password also exists). \"display-name\" appears in the example in Figure 5 but is not listed in \u00a79.2.2 The prose for the provider configuration resource indicates that the dialAround property is mandatory (it is not marked as \"(OPTIONAL)\"), but the OpenAPI specification does not list this property as required. The prose for the provider configuration's \"signup\" property says that it is an array of JSON objects, but the OpenAPI description says that it is just a single object (not an array).\u00a0 Likewise for \"dialAround\" and \"helpDesk\". The prose for \"phone-number\" specifies E.164 format, but the OpenAPI description does not. \"carddav\" is triply inconsistent: the prose says username, password, and domain name are separated by \"@\" (presumably, in a single string), but the example only shows username and domain name in user@domain form, and the OpenAPI description says it should be an object with separate properties for username/password/domain, as well as an additional \"sendLocationWithRegistration\" property that is probably not supposed to be a child of \"carddav\". (repeating from the previous), the \"sendLocationWithRegistration\" property is listed as belonging to the \"carddav\" object in the OpenAPI description, though the prose and example indicate it should be a property of the toplevel configuration object. The prose and OpenAPI description indicate that \"ice-servers\" is an array of strings, but the example has an array of objects that use the dictionary key to indicate whether each URI is a TURN or STUN server.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-06 11:17:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-12-16 02:45:16-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-16 02:45:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-12-10 23:04:37-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-10 23:04:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-12-16 04:40:29-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-16 04:40:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-12-15 15:31:31-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-15 15:31:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-12-16 06:29:22-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-16 06:29:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-12-07 10:00:07-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-01-24 12:51:42-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-07 10:00:07-08:00",
+        "text": "Thanks to Bernard Adoba for the TSVART review. It largely informs my DISCUSS. 1. If I understand correctly, this draft is not at all about interoperating with a WebRTC endpoint, instead borrowing some requirements from that family of specs rather than re-inventing the wheel. That's great, but putting that explicitly in the intro would be helpful. 2. In particular, the statement that RUE is a \"non-browser endpoint\" is confusing if it's not actually meant to interoperate with WebRTC. I *think* you're attempting to distinguish between WebRTC's browser-only requirements and endpoint requirements, but I could be wrong here. 3. In Section 5.5, you require conformance with  RFC8835  with a few vaguely worded exceptions. It would be helpful to actually go through that document enumerate exactly which normative statements in 8835 do not apply. That said, I'm not sure I agree with Bernard that 8835 requires *use* of ICE, rather than support, but maybe we can clarify this in the TSVART thread. 4. As Bernard points out, this ambiguity extends to IPv4 and 6 support. The 8835 requirements are specific to browsers, so they might not apply. If you require support for both, but not necessarily on the same device, it would be good to say so. 5. In Sec. 6, it says \"This specification adopts the media specifications for WebRTC ([ RFC8825 ]).\" Is this a normative statement? Must RUEs comply with the entirety of that document, or is this an informative statement and the real requirements are in the subsections of Sec 6? From the discussion, it sounds like you want to include the requirements for WebRTC \"endpoints\", but not for WebRTC \"browsers\". It would help to clarify all this. It's also possible that my initial understanding is incorrect, in which case the later points don't make any sense and some explanatory text is needed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-24 12:51:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-11-18 21:25:39-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-12-15 04:37:08-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-01-20 06:58:34-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-15 04:37:08-08:00",
+        "text": "There are a couple of points related to versioning that I would like to see clarified, but I hope that it should be fairly easy to do so. 1. \u00a0  This means an implementation of a \u00a0  specific major version and minor version is backwards compatible with \u00a0  all minor versions of the major version. Is it actually compatible with all other minor versions, or only other minor versions with a greater minor version number.\u00a0 E.g., could an implementation be coded to use/expect a object added in a minor version but that is not present in preceding minor versions? 2. \u00a0  The configuration API also provides the same version mechanism as \u00a0  specified above in Section 9.1.\u00a0 The version of the configuration \u00a0  service MAY be different than the version of the provider list \u00a0  service. It wasn't obvious to me, that for a given provider, how this is communicated.\u00a0 I'm not that familiar with OpenAPI, but looks like the /Versions path is a top level API path, and the data that is contains seems to just be version numbers.\u00a0 Hence, how would a client know which versions apply to provider list service and/or which versions apply to the provide configuration service.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-20 06:58:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-12-15 14:07:32-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-02-07 13:13:12-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-15 14:07:32-08:00",
+        "text": "** Is there a reason that credential re-use is being suggested as a fall back.\u00a0 It seems risky to reuse the credentials across services.\u00a0 This fall-back also appears to contradict the guidance in Section 5.1. which says \u201cThis username/password combination SHOULD NOT be the same as that used for other purposes, such as retrieving the RUE configuration\u201d.\u00a0 See: -- Section 7.1.\u00a0 Per access to the CardDAV server, \u201c[i]f no matching credentials are configured, the RUE MUST use the SIP credentials from the configuration.\u201d\u00a0  -- Section 9.2.2.\u00a0 sip-password says \u201cIf it was never supplied, the password used to authenticate to the configuration service is used for SIP, STUN and TURN.\u201d -- Section 9.2.2.\u00a0 carddav field says that \u201cIf username or password are not supplied, the main account credentials are used. \u201c ** Is there a reason that a minimum transport requirements of using HTTPS is not defined for accessing the SIP-supporting elements of this architecture. -- Section 7.1.\u00a0 Access to the CardDAV service?\u00a0 Does the guidance in Section 7.2 (The RUE stores/retrieves the contact list (address book) by issuing an HTTPS POST or GET request.) imply that? -- Section 9.\u00a0 Using the overall API? Does the guidance in Section 9.2 (A RUE device may retrieve a provider configuration the using a simple HTTPs web service) imply that? -- Section 9.2.1.\u00a0 For the URI configuration options noted in this section (e.g., the uri in signup)? ** Section 11.\u00a0 There are more than 10 20 normative SIP protocol references in this document.\u00a0 Which of their security considerations apply?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-07 13:13:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-12-15 13:47:45-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-15 13:47:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-12-14 13:43:34-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-18 21:25:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-01-20 01:50:10-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-14 13:43:34-08:00",
+        "text": "First of all thanks for working on this technology to make communication available and easy for special human beings. (I have worked with them to converter text to sign language in my bachelor hence had a special feeling while reading this specification).  I understood from the email discussions on the TSVART review ( https://mailarchive.ietf.org/arch/msg/tsv-art/Z_Ne5au4rCHwcig8bospMcLyzTc/ ) that in the system RUI is deployed, we will have gateway(s) with two legs - one with WebRTC (client <--> gateway) and one with RUI client communicating with RUI server (gateway <--> server). With this understanding I have some points which I believe worth discussing.  \u00a0 - WebRTC communication will be congestion and rate controlled. This will use RTCP feedbacks to make the rate control and congestion control happen in the WebRTC peers. On the WebRTC part of the leg, this RTCP feedbacks will be available according to the WebRTC specification. However, this specification does not discuss how those RTCP feedback will be converted from the RUI server to RUI client (i.e the gateway) direction and vice versa. This will require the gateway to have such conversion functions to actually work. what is the thinking here? has this been considered? as I am not sure how is the network looks like between the RUI client and RUI server, there might be the Internet connecting them hence need to have congestion controlled traffic. \u00a0 - Thanks to Bernard Aboba for a comprehensive TSVART review of this draft and I would like to bring some issues, identified in that review, here to make sure they are addressed- \u00a0 \u00a0 * clarification on the use of ICE \u00a0 \u00a0 * clarification on what is a WebRTC client, WebRTC server, gateway, RUI client and RUI server. I believe all four have been conceptually used in the specification without concretely defining their roles. for example - if server is mentioned it need to be distinguishable if it is WebRTC server or RUI server ( I noted that there are servers in this specification which are clearly understandable).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-02-23 14:24:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-20 01:50:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9248",
+  "evaluation_end": "2022-02-23 14:24:32-08:00",
+  "evaluation_start": "2021-11-18 21:25:39-08:00"
+}

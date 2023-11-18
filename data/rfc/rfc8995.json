@@ -1,0 +1,485 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-07-10 23:37:07-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-29 14:19:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-10 23:37:07-07:00",
+        "text": "Thanks to everyone who invested time in developing this mechanism. I have two blocking comments that should be quite easy to resolve. --------------------------------------------------------------------------- \u00a75: >\u00a0 MASA URI is \"https://\" iauthority \"/.well-known/est\". This doesn't make sense: iauthority is a component of IRIs, not of URIs. In URIs this is simply an \"authority.\" It's not simply a terminology distinction: converting from an iauthority to an authority requires idna encoding. Please consult with an IRI expert (which I do not consider myself to be) to work out the proper terminology and procedures here.\u00a0 If you need help finding an expert, please let me know and I'll track someone down for you. --------------------------------------------------------------------------- \u00a75.8: >\u00a0 Rather than returning the audit log as a response to the POST (with a >\u00a0 return code 200), the MASA MAY instead return a 201 (\"Created\") >\u00a0 RESTful response ([ RFC7231 ] section 7.1) containing a URL to the >\u00a0 prepared (and easily cachable) audit response. The DISCUSS portion of my comment on this text is that it is unclear about how the URL is to be returned. It can just as easily be interpreted as returning it in a \"Location\" header field as it could as returning it in the response body -- or maybe somewhere else entirely (e.g., a link relation).\u00a0 This ambiguity will cause an interop issue. Please be explicit about precisely how the value is conveyed. While not part of the DISCUSS, I also have a fairly serious comment on the phrasing and citation of\u00a0 \"return a 201 (\"Created\") RESTful response ([ RFC7231 ] section 7.1)\". Section 7.1 points to the top-level discussion of Control Data header fields, rather than any general discussion of RESTful responses.\u00a0 It's worth noting that the term \"RESTful\" never appears in  RFC 7231 , so it's really unclear what section this was attempting to target. Perhaps 6.3.2?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-08-29 14:19:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-07-11 06:20:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-07-11 06:23:05-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-07-11 06:20:30-07:00",
+        "text": "Thank you for this document. Despite comments/DISCUSSes raised, this was a good read. 1) In Section 5: \u00a0  o\u00a0 In the language of [ RFC6125 ] this provides for a SERIALNUM-ID \u00a0 \u00a0 \u00a0 category of identifier that can be included in a certificate and \u00a0 \u00a0 \u00a0 therefore that can also be used for matching purposes.\u00a0 The \u00a0 \u00a0 \u00a0 SERIALNUM-ID whitelist is collated according to manufacturer trust \u00a0 \u00a0 \u00a0 anchor since serial numbers are not globally unique. I think now you are just inventing things. Please define what exactly SERIALNUM-ID is. Cut & paste text from  RFC 6125 , if needed. 2) In 5.6: \u00a0  assertion:\u00a0 The method used to verify assertion.\u00a0 See Section 5.5.5. Section 5.5.5 doesn't define syntax of this field in enough details to implement. Can it contain one of the allowed values (like C enum)? 3) In 5.8 \u00a0  This is done with an HTTP GET using the operation path value of \u00a0  \"/.well-known/est/requestauditlog\". Here you say to use HTTP GET. \u00a0  The registrar SHOULD HTTP POST the same registrar voucher-request as But you only define how to use POST. I think the first \"GET\" is supposed to be \"POST\". 4) In 5.8.1: Format of different fields is not defined, so this is not interoperable. 5) In 8.1: \u00a0  This document extends the definitions of \"est\" (so far defined via \u00a0   RFC7030 ) in the \" https://www.iana.org/assignments/well-known-uris/ \u00a0  well-known-uris.xhtml\" registry as follows: \u00a0  o\u00a0 add /.well-known/est/requestvoucher (see Section 5.5 ) \u00a0  o\u00a0 add /.well-known/est/requestauditlog (see Section 5.7) The .well-known URIs IANA registry doesn't list anything below the first level (i.e. \"est\" in your case). So I think you really want to have 2 IANA actions here: a) Add the reference to this document as another reference for \"est\". b) create a new registry of \"est\" URIs and add your 2 URIs above to it and also populate other entries from the original EST RFC.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-07-15 02:30:30-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-07-11 06:23:05-07:00",
+        "text": "Thank you for this document. Despite comments/DISCUSSes raised, this was a good read. I agree with DISCUSS points from Alissa, Adam and Roman. 1) In Section 5: \u00a0  o\u00a0 In the language of [ RFC6125 ] this provides for a SERIALNUM-ID \u00a0 \u00a0 \u00a0 category of identifier that can be included in a certificate and \u00a0 \u00a0 \u00a0 therefore that can also be used for matching purposes.\u00a0 The \u00a0 \u00a0 \u00a0 SERIALNUM-ID whitelist is collated according to manufacturer trust \u00a0 \u00a0 \u00a0 anchor since serial numbers are not globally unique. I think now you are just inventing things. Please define what exactly SERIALNUM-ID is. Cut & paste text from  RFC 6125 , if needed. 2) In 5.6: \u00a0  assertion:\u00a0 The method used to verify assertion.\u00a0 See Section 5.5.5. Section 5.5.5 doesn't define syntax of this field in enough details to implement. Can it contain one of the allowed values (like C enum)? 3) In 5.8 \u00a0  This is done with an HTTP GET using the operation path value of \u00a0  \"/.well-known/est/requestauditlog\". Here you say to use HTTP GET. \u00a0  The registrar SHOULD HTTP POST the same registrar voucher-request as But you only define how to use POST. I think the first \"GET\" is supposed to be \"POST\". 4) In 5.8.1: Format of different fields is not defined, so this is not interoperable. 5) In 8.1: \u00a0  This document extends the definitions of \"est\" (so far defined via \u00a0   RFC7030 ) in the \" https://www.iana.org/assignments/well-known-uris/ \u00a0  well-known-uris.xhtml\" registry as follows: \u00a0  o\u00a0 add /.well-known/est/requestvoucher (see Section 5.5 ) \u00a0  o\u00a0 add /.well-known/est/requestauditlog (see Section 5.7) The .well-known URIs IANA registry doesn't list anything below the first level (i.e. \"est\" in your case). So I think you really want to have 2 IANA actions here: a) Add the reference to this document as another reference for \"est\". b) create a new registry of \"est\" URIs and add your 2 URIs above to it and also populate other entries from the original EST RFC.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-16 09:14:15-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-07-15 02:30:30-07:00",
+        "text": "Thank you for this document. Despite comments/DISCUSSes raised, this was a good read. I agree with DISCUSS points from Alissa, Adam and Roman. 1) In Section 5: \u00a0  o\u00a0 In the language of [ RFC6125 ] this provides for a SERIALNUM-ID \u00a0 \u00a0 \u00a0 category of identifier that can be included in a certificate and \u00a0 \u00a0 \u00a0 therefore that can also be used for matching purposes.\u00a0 The \u00a0 \u00a0 \u00a0 SERIALNUM-ID whitelist is collated according to manufacturer trust \u00a0 \u00a0 \u00a0 anchor since serial numbers are not globally unique. I think now you are just inventing things. Please define what exactly SERIALNUM-ID is. Cut & paste text from  RFC 6125 , if needed. 2) In 5.6: \u00a0  assertion:\u00a0 The method used to verify assertion.\u00a0 See Section 5.5.5. Section 5.5.5 doesn't define syntax of this field in enough details to implement. Can it contain one of the allowed values (like C enum)? 3) Resolved 4) In 5.8.1: Format of different fields is not defined, so this is not interoperable. 5) In 8.1: \u00a0  This document extends the definitions of \"est\" (so far defined via \u00a0   RFC7030 ) in the \" https://www.iana.org/assignments/well-known-uris/ \u00a0  well-known-uris.xhtml\" registry as follows: \u00a0  o\u00a0 add /.well-known/est/requestvoucher (see Section 5.5 ) \u00a0  o\u00a0 add /.well-known/est/requestauditlog (see Section 5.7) The .well-known URIs IANA registry doesn't list anything below the first level (i.e. \"est\" in your case). So I think you really want to have 2 IANA actions here: a) Add the reference to this document as another reference for \"est\".  -- This was addressed. b) create a new registry of \"est\" URIs and add your 2 URIs above to it and also populate other entries from the original EST RFC.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-16 09:22:17-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-09-16 09:14:15-07:00",
+        "text": "Thank you for this document. Despite comments/DISCUSSes raised, this was a good read. I agree with DISCUSS points from Alissa, Adam and Roman. 1) Resolved 2) In 5.6: \u00a0  assertion:\u00a0 The method used to verify assertion.\u00a0 See Section 5.5.5. Section 5.5.5 doesn't define syntax of this field in enough details to implement. Can it contain one of the allowed values (like C enum)? \u2014 I couldn\u2019t quite figure out what was changed from wdiff. I don\u2019t think this was addressed. 3) Resolved 4) In 5.8.1: Format of different fields is not defined in enough details, so this is not interoperable. Please specify what format is used for dates and nonces. 5) Resolved",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-17 04:17:15-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-09-16 09:22:17-07:00",
+        "text": "Thank you for this document. Despite comments/DISCUSSes raised, this was a good read. I agree with DISCUSS points from Alissa, Adam and Roman. 1) Resolved 2) Resolved 3) Resolved 4) In 5.8.1: Format of different fields is not defined in enough details, so this is not interoperable. Please specify what format is used for dates and nonces. 5) Resolved",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-16 03:42:49-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-17 04:17:15-07:00",
+        "text": "Thank you for this document. Despite comments/DISCUSSes raised, this was a good read. I agree with DISCUSS points from Alissa, Adam and Roman. 1) Resolved 2) Resolved 3) Resolved 4) In 5.8.1: Format of different fields is not defined in enough details, so this is not interoperable. Are numeric fields always represented as JSON numbers? 5) Resolved",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-10-16 03:42:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-07-10 13:42:22-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-16 07:49:58-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-10 13:42:22-07:00",
+        "text": "I apologize if I'm misunderstanding how this works, but I didn't see much discussion in the document about the implications of the manufacturer going out of business. Specifically, it seems like if a device ships with BRSKI as its only available mechanism for bootstrapping and the manufacturer goes out of business before the device is enrolled, the ability for the device to function securely on the network may be significantly impaired if not impossible. It seems like this document needs to make clear to manufacturers that a fallback manual enrollment mechanism of some sort needs to be implemented along with BRSKI in order to avoid this situation. = Section 1.3.1 = \"But this solution is not exclusive to large equipment: it is intended \u00a0  to scale to thousands of devices located in hostile environments, \u00a0  such as ISP provided CPE devices which are drop-shipped to the end \u00a0  user.\" I don't quite understand how this squares with the scope limitation described in Section 1 and Section 9. If the whole network is professionally managed by the ISP, what part would be the \"hostile environment\"?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-16 07:56:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-16 07:49:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-24 10:49:43-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-16 07:56:11-07:00",
+        "text": "Apologies for the multiple emails, I failed to realize there was a new Gen-ART review for this document. The follow-up from the Gen-ART review seems to indicate that a YANG doctor review of this document is needed and/or that the YANG issues raised by Tom Petch need fixing. Is there a plan to get either of those done?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-04-09 08:43:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-24 10:49:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-16 08:07:29-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-04-09 08:43:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-16 08:07:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-07-10 21:36:58-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-04-09 08:43:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-10 21:36:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-10 22:30:04-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-17 07:08:34-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-07-10 22:30:04-07:00",
+        "text": "(1) The text of the document suffers from lack of clarity throughout about whether the nonce-ful operation is mandatory or not, with several figures and discussions making declarative statements about nonce usage and others saying that nonce usage is optional. (See COMMENT.) (2) There also seems to be internal inconsistency about the proximity assertion process (and, any sort of assertion in a voucher-request at all, it seems).\u00a0 I've tried to note some locations in the Comment section. (3) There are other internal inconsistencies as well, including about section references for when various behaviors occur (see COMMENT). (4) In Section 5.6.1 \u00a0  The pledge MUST verify that the voucher nonce field is accurate and \u00a0  matches the nonce the pledge submitted to this registrar, or that the \u00a0  voucher is nonceless (see Section 7.2). Is the pledge supposed to accept a nonceless voucher in response to a nonce-ful voucher request? (5)  RFC7951  is cited for the audit log response, but I cannot find the underlying YANG module that is JSON-encoded using the  RFC 7951 procedures. Furthermore, I don't think the \"nonce\" handling (with explicit \"NULL\" string where base64-encoded binary data might be expected) would be consistent with the 7951 rules. (5) the new /enrollstatus EST endpoint seems under-specified. (6) In Section 7.2: \u00a0  The pledge can choose to accept vouchers using less secure methods. \u00a0  These methods enable offline and emergency (touch based) deployment \u00a0  use cases: \u00a0  1.\u00a0 The pledge MUST accept nonceless vouchers.\u00a0 This allows for a use It's very unclear to me what this \"MUST\" means, especially so given that the entire section 7 is declared to be non-normative.\u00a0 Is it that the client \"can choose\" whether it \"MUST accept nonceless vouchers\"? That would seem to make the MUST basically ineffective. More broadly, if the entire Section 6 is non-normative, why is there any normative language in it? (7) the new /enrollstatus and /voucher_status well-known EST endpoints are not registered in Section 8.1 (7.1) I think we also need to register the \"urn:ietf:params:xml:ns:yang:ietf-mud-brski-masa\"\u00a0 XML namespace. (8) The versioning mechanism for Pledge BRSKI Status Telemetry is underspecified, including the interaction with new registered values. (9) The versioning mechainsm for the MASA audit log response is underspecified, including whether a registry of field names is appropriate. (10) The term PKIX seems to be incorrectly used a few times; it refers to the Internet PKI, and so things like a private PKI internal to a manufacturer would probably not be best described as such.\u00a0 Such private PKIs can of course still reuse the protocols and mechanisms developed for PKIX, and it's accurate to describe them as such. (11) In a few places we describe the voucher-request in terms of its YANG structure but do not say that it has to be wrapped in a signed CMS object as is done for the  RFC 8366  voucher. (12) Maybe this is a \"discuss discuss\", but why do we need SHA-1 in the domainID calculation? (13) In Section 5.5.1: \u00a0  As described in [ RFC8366 ] vouchers are normally short lived to avoid \u00a0  revocation issues.\u00a0 If the request is for a previous (expired) \u00a0  voucher using the same registrar then the request for a renewed \u00a0  voucher SHOULD be automatically authorized.\u00a0 The MASA has sufficient I don't understand what \"for a previous (expired) voucher\" means. Is it something like \"containing the same content as a previous voucher request for which a voucher was issued\", with the presumption that the voucher expired before the pledge could successfully imprint, so it needs to try again?\u00a0 Or does this extend to longer timescales, like a device that gets deployed for a couple years and is\u00a0 then reset to factory settings and has to rebootstrap but is still by the same registrar? (14) In Section 5.6: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 The server MUST answer with a suitable 4xx \u00a0  or 5xx HTTP [ RFC2616 ] error code when a problem occurs.\u00a0 In this \u00a0  case, the response data from the MASA MUST be a plaintext human- \u00a0  readable (ASCII, English) error message containing explanatory \u00a0  information describing why the request was rejected. It seems hard to support this stance on internationalization in 2019. (15) In Section 5.9.4: \u00a0  To indicate successful enrollment the client SHOULD re-negotiate the \u00a0  EST TLS session using the newly obtained credentials.\u00a0 This occurs by \u00a0  the client initiating a new TLS ClientHello message on the existing \u00a0  TLS connection.\u00a0 The client MAY simply close the old TLS session and \u00a0  start a new one.\u00a0 The server MUST support either model. Is this supposed to be sending a new TLS ClientHello in the application data channel or as a new handshake message (aka \"renegotiation\")?\u00a0 The latter is not possible in TLS 1.3 and is generally disrecommended anyways even in TLS 1.2.\u00a0 I would strongly suggest to remove the \"renegotiation\" option and just leave \"close the connection and start a new connection/handshake\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-17 18:25:00-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-10-17 07:08:34-07:00",
+        "text": "Thanks for the time and attention to detail put into addressing my previous Discuss and Comment points.\u00a0 I have one new Discuss-level point and one that I think may have been missed (probably because I inadvertently numbered two points with the same number). (16) The audit log response (Section 5.8.1) describes the nonce as a JSON string, but the  RFC 8366  nonce is a binary value.\u00a0 I think we need to describe some mapping procedure (such as always base64-encoding as is done for domainID, even if the original nonce is itself base64-encoded random data) in order to be fully functional. % (1) The text of the document suffers from lack of clarity throughout about % whether the nonce-ful operation is mandatory or not, with several % figures and discussions making declarative statements about nonce usage % and others saying that nonce usage is optional. (See COMMENT.) [keep in mind when reading] % (5.1) the new /enrollstatus EST endpoint seems under-specified. Shame on me, I reused (5) for two points and have renumbered this to (5.1) so we don't miss it again.\u00a0 We don't anywhere give a formal description of the contents of the POST body; there's just an example JSON object.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-23 22:35:24-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-10-17 18:25:00-07:00",
+        "text": "Thanks for the time and attention to detail put into addressing my previous Discuss and Comment points.\u00a0 I have one new Discuss-level point and one that I think may have been missed (probably because I inadvertently numbered two points with the same number). (16) The audit log response (Section 5.8.1) describes the nonce as a JSON string, but the  RFC 8366  nonce is a binary value.\u00a0 I think we need to describe some mapping procedure (such as always base64-encoding as is done for domainID, even if the original nonce is itself base64-encoded random data) in order to be fully functional. % (5.1) the new /enrollstatus EST endpoint seems under-specified. Shame on me, I reused (5) for two points and have renumbered this to (5.1) so we don't miss it again.\u00a0 We don't anywhere give a formal description of the contents of the POST body; there's just an example JSON object.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-28 20:53:53-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-10-23 22:35:24-07:00",
+        "text": "Thanks for the time and attention to detail put into addressing my previous Discuss and Comment points.\u00a0 I have one new Discuss-level point and one that I think may have been missed (probably because I inadvertently numbered two points with the same number). (16) The audit log response (Section 5.8.1) describes the nonce as a JSON string, but the  RFC 8366  nonce is a binary value.\u00a0 I think we need to describe some mapping procedure (such as always base64-encoding as is done for domainID, even if the original nonce is itself base64-encoded random data) in order to be fully functional. % (5.1) the new /enrollstatus EST endpoint seems under-specified. Shame on me, I reused (5) for two points and have renumbered this to (5.1) so we don't miss it again.\u00a0 We don't anywhere give a formal description of the contents of the POST body; there's just an example JSON object. Email exchange with mcr notes: >\u00a0 \u00a0  > An RFC Editor note about the  RFC 8366  assignment of OID >\u00a0 \u00a0  > 1.2.840.113549.1.9.16.1.40 was removed from -23 to -28; do the examples >\u00a0 \u00a0  > properly use that assigned OID now? >  > We got a MASA URL Extension OID for: >\u00a0 \u00a0 1.3.6.1.5.5.7.1.32 >  > the examples date from before that, and do not use it yet. We need to fix the examples before publication.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-20 14:31:04-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-10-28 20:53:53-07:00",
+        "text": "% (5.1) the new /enrollstatus EST endpoint seems under-specified. Shame on me, I reused (5) for two points and have renumbered this to (5.1) so we don't miss it again.\u00a0 We don't anywhere give a formal description of the contents of the POST body; there's just an example JSON object. The -29 reworks the definition of the 'nonce' field to be: \u00a0 \u00a0 \u00a0 strong random or pseudo-random number nonce (see [ RFC4086 ] section \u00a0 \u00a0 \u00a0 6.2).\u00a0 As the nonce is usually generated very early in the boot \u00a0 \u00a0 \u00a0 sequence there is a concern that the same nonce might generated \u00a0 \u00a0 \u00a0 across multiple boots, or after a factory reset.\u00a0 Difference \u00a0 \u00a0 \u00a0 nonces MUST NOT generated for each bootstrapping attempt, whether \u00a0 \u00a0 \u00a0 in series or concurrently.\u00a0 The freshness of this nonce mitigates \u00a0 \u00a0 \u00a0 against the lack of real-time clock as explained in Section 2.6.1. This needs to either be \"Different nonces MUST be generated\" or \"the same nonce MUST NOT be reused\"; this mashup is no good. Email exchange with mcr notes: >\u00a0 \u00a0  > An RFC Editor note about the  RFC 8366  assignment of OID >\u00a0 \u00a0  > 1.2.840.113549.1.9.16.1.40 was removed from -23 to -28; do the examples >\u00a0 \u00a0  > properly use that assigned OID now? >  > We got a MASA URL Extension OID for: >\u00a0 \u00a0 1.3.6.1.5.5.7.1.32 >  > the examples date from before that, and do not use it yet. We need to fix the examples before publication.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-03 10:43:47-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-12-20 14:31:04-08:00",
+        "text": "Thanks for providing a clear specification of the /enrollstatus EST endpoint in the -30.\u00a0 The following two points still seem unaddressed, though. The -29 reworks the definition of the 'nonce' field to be: \u00a0 \u00a0 \u00a0 strong random or pseudo-random number nonce (see [ RFC4086 ] section \u00a0 \u00a0 \u00a0 6.2).\u00a0 As the nonce is usually generated very early in the boot \u00a0 \u00a0 \u00a0 sequence there is a concern that the same nonce might generated \u00a0 \u00a0 \u00a0 across multiple boots, or after a factory reset.\u00a0 Difference \u00a0 \u00a0 \u00a0 nonces MUST NOT generated for each bootstrapping attempt, whether \u00a0 \u00a0 \u00a0 in series or concurrently.\u00a0 The freshness of this nonce mitigates \u00a0 \u00a0 \u00a0 against the lack of real-time clock as explained in Section 2.6.1. This needs to either be \"Different nonces MUST be generated\" or \"the same nonce MUST NOT be reused\"; this mashup is no good. Email exchange with mcr notes: >\u00a0 \u00a0  > An RFC Editor note about the  RFC 8366  assignment of OID >\u00a0 \u00a0  > 1.2.840.113549.1.9.16.1.40 was removed from -23 to -28; do the examples >\u00a0 \u00a0  > properly use that assigned OID now? >  > We got a MASA URL Extension OID for: >\u00a0 \u00a0 1.3.6.1.5.5.7.1.32 >  > the examples date from before that, and do not use it yet. We need to fix the examples before publication.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-24 11:25:17-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-01-03 10:43:47-08:00",
+        "text": "I think we're down to just: Email exchange with mcr notes: >\u00a0 \u00a0  > An RFC Editor note about the  RFC 8366  assignment of OID >\u00a0 \u00a0  > 1.2.840.113549.1.9.16.1.40 was removed from -23 to -28; do the examples >\u00a0 \u00a0  > properly use that assigned OID now? >  > We got a MASA URL Extension OID for: >\u00a0 \u00a0 1.3.6.1.5.5.7.1.32 >  > the examples date from before that, and do not use it yet. We need to fix the examples before publication.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-30 17:03:27-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-02-24 11:25:17-08:00",
+        "text": "Thanks for the updated examples using the allocated MASA URL extension OID! Unfortunately, I think there are still some inconsistencies in the examples to resolve: The MASA cert/key is identical to the \"manufacturer key pair for IDevID signatures\" (C.1.1 and C.1.2).\u00a0 (It shows the MASA Subject CN, so maybe  just the included file was typo'd?)\u00a0 The example IDevID cert shows an issuer name that doesn't match the cert given. (Also the MASA cert doesn't have a randomized serial number but the registrar one does.) The registrar-to-MASA voucher request in C.2.2 seems to have a CMS SignedData with the SignerIdentifier identifying the \"Unstrung Fountain Root\" (i.e,. the root CA used for these examples) instead of the expected \" fountain-test.example.com \".\u00a0 Am I misreading the ASN.1 dump? (We do seem to send both certificates.) The voucher response from MASA to Registrar seems to be signed by the \" highway-test.example.com  CA\" (which would be the \"manufacturer key pair for IDevID signatures\" that we don't have in the -35 since the MASA certificate is repeated), not the MASA's cert from C.1.1.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-04-02 18:56:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-30 17:03:27-07:00",
+        "text": "Thanks for the updates leading to the -39; I believe we're almost there! Unfortunately, it seems that the \"pinned-domain-cert\" in the issued voucher is the registrar's cert, not the CA cert.\u00a0 (Given that the documented workflow is to extract this CA cert from the registrar-voucher-request CMS object, and the registrar-voucher-request in our examples does include both the registrar cert and the CA cert, I wonder if this reflects a bug in the code itself used to generate the examples, in that it picks the wrong cert?)\u00a0 My understanding is that the protocol requires this field to be populated by a CA cert, and the registrar's cert is not a CA cert. I am very hopeful that we can just regenerate the voucher without having to redo the rest of the examples, since we have all the keys and certificate enshrined in the document already, and my apologies for not noticing whether this issue was present in previous revisions as well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-04-09 08:43:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-02 18:56:08-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-07-08 06:10:52-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-04-09 08:43:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-08 06:10:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-07-10 03:25:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-30 00:47:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-10 03:25:08-07:00",
+        "text": "Thank you (and so many friends in the authors' list!) for the work put into this document; it took a while to get to this stage ;-) The intersection with MUD is also a nice feature. I have a couple of DISCUSSes (probably easy to fix) and _several_ COMMENTs and some nits (after a couple of nits, I stopped marking them). I also stopped writing COMMENTs after section 5.3. Regards, -\u00e9ric == DISCUSS == TLS is assumed to be used but I failed to find WHICH version of TLS MUST be used. The only reference in the reference section is version 1.2. Probably worth to refer to this version in the text as well and use version 1.3 of TLS. -- Section 2.3.1 -- Does the \"serial number\" need to be unique per vendor ? I guess so then I strongly suggest to use a different word than \"serial number\" (e.g. unique device ID) as a vendor can have multiple products in its portfolio, each having a different set of unique \"serial numbers\". -- Section 3.3 -- The example 1 does not include the mandatory (per YANG module) serial-number. It should also state that the cert is not included for saving space in this document. -- Section 4.1 -- There are TWO back-off mechanisms: one for the method and one for the proxy but no description on how those mechanisms interact together. -- Section 4.3 -- Probably a naive question about GRASP (that I do not know), but in the example there is \"IPPROTO_TCP, 80\" that seems to indicate the use of plain HTTP and no TLS at all. Is it an issue ? Is there a reason why IPv6 ULA are used rather than the documentation prefix ?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-04-09 08:43:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-30 00:47:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-07-02 06:06:49-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-07-02 06:06:49-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-07-11 06:40:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-07-15 02:43:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-11 06:40:28-07:00",
+        "text": "Hi,  A. This is really a discuss discuss. With to little time to dig into the details it appears that this protocol is making i hack of its interface towards the its transport. It appears to attempt to use an HTTP rest interface, but then it is also have a lot of talking about requirement for the TLS connection underlying the HTTP. So to illustrate the issue I see here is what happens if one like to use QUIC as the underlying transport for the rest interface rather than TCP/TLS? So can this document achieve a clearer interface to the lower layers so that it will be simpler to move the protocol to another underlying version of the HTTP \"transport\"?  B. Section 5.6:  The server MUST answer with a suitable 4xx \u00a0  or 5xx HTTP [ RFC2616 ] error code when a problem occurs. Referencing  RFC 2616  that has been obsolete by  RFC 7230  and companions. I do note that there are no normative reference for that part in this document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-04-09 08:43:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-15 02:43:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-10-17 04:00:52-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-04-09 08:43:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-17 04:00:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-07-11 06:38:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-07-11 06:38:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-07-10 09:13:50-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-07-10 09:14:30-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-07-10 09:13:50-07:00",
+        "text": "I support Eric\u2019s Discuss position. Also a big thanks to Christian Huitema\u2019s thorough SECDIR reviews and the associated improvements made as a result.\u00a0 I have a few more items:  (1) Section 5.7.\u00a0 The format of a pledge status telemetry message seems underspecified.  ** what are all of the fields (e.g., version appears in the example but no the text) ** what are the field formats (e.g., the format of the status field is inferred from the unlabeled example ** which fields are mandatory? ** Per the JSON snippet, is that normative is some way in describing the format? ** Also, how does a server receiving the telemetry messages behave when receiving unexpected JSON attributes?  (2) Section 5.8.1.\u00a0 The format of the MASA audit log seems underspecified.\u00a0 Is the JSON snippet presented here normative to describe the MASA audit log response? (3) Why is Section 7.x in this document if it explains how to use BRSKI but is considered non-normative?  -- How should implementers take this language? -- Why are normative sections, like Section 11, discussing it? (4) Thank you for documenting \u201cmanufacturer control issues\u201d in Sections 10.3 and 10.4.\u00a0 It helpfully lays justifies the current design approach.\u00a0 I strongly concur with the premise that \u201cfacilitate[ing] a few new operat[i]onal modes without making any changes to the BRSKI protocol\u201d is exactly what is needed.\u00a0  My concern is that even with the current applicability statement in Section 9, the current text appears to have only standardized the first part of the lifecycle that BRSKI equipment might see -- equipment on first sale as long as the manufacturer supports it or stays in business.\u00a0 The text doesn\u2019t appear to cover the practical aspects of the proposed mitigations in Section 10.5 or the situations described in Section 10.3/10.4 \u2013 various situations possible in the full lifecycle usage of a BRSKI device and needed support the \u201cadditional operational modes\u201d.\u00a0 Specifically: ** There appears to be little discussion on how owners/manufacturers/vendors can facilitate second sale/used equipment beyond narrative words (in Section 10.3 and 10.4) ** There is appears to be little discussion on how to practically implement a MASA (i.e., the offline use case).\u00a0 For example, (Per Section 10.5) \u201cA manufacturer could provide a mechanism to manage the trust anchors and built-in certificates (IDevID) as an extension.\u00a0 This is a substantial amount of work, and may be an area for future standardization work\u201d.\u00a0 Without the ability to change anchors on the device the additional operational modes such as offline mode seems challenging.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-16 18:08:51-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-07-10 09:14:30-07:00",
+        "text": "I support Eric\u2019s Discuss position. Also a big thanks to Christian Huitema\u2019s thorough SECDIR reviews and the associated improvements made as a result.\u00a0 I have a few more items:  (1) Section 5.7.\u00a0 The format of a pledge status telemetry message seems underspecified.  ** what are all of the fields (e.g., version appears in the example but no the text) ** what are the field formats (e.g., the format of the status field is inferred from the unlabeled example ** which fields are mandatory? ** Per the JSON snippet, is that normative is some way in describing the format? ** Also, how does a server receiving the telemetry messages behave when receiving unexpected JSON attributes?  (2) Section 5.8.1.\u00a0 The format of the MASA audit log seems underspecified.\u00a0 Is the JSON snippet presented here normative to describe the MASA audit log response? (3) Why is Section 7.x in this document if it explains how to use BRSKI but is considered non-normative?  -- How should implementers take this language? -- Why are normative sections, like Section 11, discussing it? (4) Thank you for documenting \u201cmanufacturer control issues\u201d in Sections 10.3 and 10.4.\u00a0 It helpfully lays justifies the current design approach.\u00a0 I strongly concur with the premise that \u201cfacilitate[ing] a few new operat[i]onal modes without making any changes to the BRSKI protocol\u201d is exactly what is needed.\u00a0  My concern is that even with the current applicability statement in Section 9, the current text appears to have only standardized the first part of the lifecycle that BRSKI equipment might see -- equipment on first sale as long as the manufacturer supports it or stays in business.\u00a0 The text doesn\u2019t appear to cover the practical aspects of the proposed mitigations in Section 10.5 or the situations described in Section 10.3/10.4 \u2013 various situations possible in the full lifecycle usage of a BRSKI device and needed support the \u201cadditional operational modes\u201d.\u00a0 Specifically: ** There appears to be little discussion on how owners/manufacturers/vendors can facilitate second sale/used equipment beyond narrative words (in Section 10.3 and 10.4) ** There is appears to be little discussion on how to practically implement a MASA (i.e., the offline use case).\u00a0 For example, (Per Section 10.5) \u201cA manufacturer could provide a mechanism to manage the trust anchors and built-in certificates (IDevID) as an extension.\u00a0 This is a substantial amount of work, and may be an area for future standardization work\u201d.\u00a0 Without the ability to change anchors on the device the additional operational modes such as offline mode seems challenging.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-11-05 15:21:22-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-16 18:08:51-07:00",
+        "text": "One remaining item of clarity in the Section 7 from my previous DISCUSS position: ** Section 7.\u00a0 Per \u201cThis section is considered non-normative in the generality of the protocol.\u00a0 Use of the suggested mechanism here MUST be detailed in specific profiles of BRSKI, such as in Section 9.\u201d -- Can you please clarify \u201cnon-normative in the generality of the protocol\u201d?\u00a0 If I take the perspective of an implementer, it seems like a black-and-white issue \u2013 either this section is normative or not (I either have to conform or not).\u00a0  -- what this MUST is requiring isn\u2019t clear.\u00a0 Practically, why would using any of these mechanisms in this section require further elaboration? I\u2019d offer an alternative introduction to this section to address these ambiguities: OLD \u00a0  A common requirement of bootstrapping is to support less secure \u00a0  operational modes for support specific use cases.\u00a0 The following \u00a0  sections detail specific ways that the pledge, registrar and MASA can \u00a0  be configured to run in a less secure mode for the indicated reasons. \u00a0  This section is considered non-normative in the generality of the \u00a0  protocol.\u00a0 Use of the suggested mechanism here MUST be detailed in \u00a0  specific profiles of BRSKI, such as in Section 9. NEW A common requirement of bootstrapping is to support less secure operational modes for support specific use cases.\u00a0 This section suggests a range of mechanisms that would alter the security assurance of BRSKI to accommodate alternative deployment architectures and mitigate lifecycle management issues identified in Section 10.4 \u2013 10.7.\u00a0 They are presented here as informative (non-normative) design guidance for future standardization activities.\u00a0 It would be expected that subsets of these mechanisms could be profiled with an accompanying applicability statements similar to the one described in Section 9.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-04-09 08:43:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-05 15:21:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-07-10 21:05:04-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-07-10 21:05:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-07-04 10:04:36-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-02 06:06:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-15 02:53:56-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-04 10:04:36-07:00",
+        "text": null,
+        "type": "Recuse"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-04-02 16:35:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-15 02:53:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-04-09 08:43:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-02 16:35:41-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc8995",
+  "evaluation_end": "2020-04-09 08:43:29-07:00",
+  "evaluation_start": "2019-07-02 06:06:48-07:00"
+}

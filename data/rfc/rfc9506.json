@@ -1,0 +1,245 @@
+{
+  "all_ballots": {
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-25 06:10:40-07:00",
+        "text": "# \u00c9ric Vyncke, INT AD, comments for  draft-ietf-ippm-explicit-flow-measurements-03 Thank you for the work put into this document.  Please find below some non-blocking COMMENT points (but replies would be appreciated even if only for my own education). I strongly support Jim Guichard's original DISCUSS point on squatting on bits that may be used by the network. I read the follow-up email conversation and then I now wonder what it the point of publishing this I-D as a RFC *in the IETF stream* (as opposed to the *IRTF stream*) to describe a potential plan. Hence, my current ABSTAIN ballot about the stream selection. Other thanks to Pascal Thubert, the Internet directorate reviewer (at my request), please consider this int-dir review: https://datatracker.ietf.org/doc/review-ietf-ippm-explicit-flow-measurements-03-intdir-telechat-thubert-2023-05-11/  (and I have seen the email exchange with Giuseppe) Special thanks to Marcus Ihlar for the shepherd's detailed write-up including the WG consensus and the justification of the intended status (and the explanation for 8 authors)  I hope that this review helps to improve the document and possibly trigger a change of stream, Regards, -\u00e9ric # COMMENTS ## Section 1 `can be prevented because of the encrypted transport-layer headers (e.g. QUIC, TCP)` since when TCP is encrypted ? ;-) ## Section 8 While it is not really related to privacy, if there is some experimental traffic over an ISP network with those bit sets, the ISP could put this marked traffic in a priority queue to deliver a better service and so 'cheat' on an experiment that would benchmark ISP (e.g.,  speedtest.net  and others).",
+        "type": "Abstain"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-05-23 20:13:42-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-23 20:13:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-05-01 07:19:56-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-06-30 05:48:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-05-01 07:19:56-07:00",
+        "text": "I am wondering why this is an informational document when it uses reserved bits from both QUIC and TCP headers (?). If those reserved bits are used by the mechanisms described in this document but there is no \"official\" allocation of the bits then future documents that wish to use these bits will be limited and/or clash with an Informational RFC. Adding a DISCUSS as although this is not a technical area of expertise for me, it seems unusual and I would like to better understand the document track selection.  I also do not see a transport area directorate review and in fact the document shepherd highlights that the document could benefit from such a review. Given that the bits introduced in the document are suggested to be carried in the QUIC and TCP headers using their reserved bits, then a review by the area responsible for those transport protocols seems mandatory.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-30 05:48:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-24 14:32:12-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-24 14:32:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-05-25 01:49:00-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-25 01:49:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-04-20 13:48:07-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-05-24 22:26:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-24 22:26:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-05-24 20:33:02-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-24 20:33:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-05-23 18:57:27-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-23 18:57:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-05-24 06:55:13-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-08-16 01:49:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-05-24 06:55:13-07:00",
+        "text": "Thanks for working on this specification. I hope it will be helpful for the valid network observer who does the flow measurement (given that the end-points actually implements the markings). Thanks to Colin Perkins for the TSVART review ( https://mailarchive.ietf.org/arch/msg/ippm/OMrRG_0CG8uRHVz0o6ivqRD8T6g/  ) and also Lucas Pardue ( https://mailarchive.ietf.org/arch/msg/ippm/RgtxAHmJfANjlfPkn1Jb4Hbbcs8/  ) for his review of the document. Both reviews had led to changes in the document which should improve and clarify the specification even more. As I agree with both the reviewers , even though I have already see some resolutions, I am holding this discuss to make sure agreed resolutions are landed in the document we approve.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-16 01:49:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "\u00c9ric Vyncke": [
+      {
+        "ad": "\u00c9ric Vyncke",
+        "end": "2023-08-16 14:30:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-20 13:48:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9506",
+  "evaluation_end": "2023-08-16 14:30:03-07:00",
+  "evaluation_start": "2023-04-20 13:48:07-07:00"
+}

@@ -1,0 +1,235 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-05 18:36:26-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 18:36:26-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-04 00:50:01-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-04 00:50:01-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-09-30 01:15:14-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-30 01:15:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-09-29 05:30:41-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-09-30 06:17:24-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-05 00:52:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-09-30 06:17:24-07:00",
+        "text": "# GEN AD review of  draft-ietf-lsr-ospf-l2bundles-06 CC @larseggert Thanks to Paul Kyzivat for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/IqLhVi63YKAt6GINPOKUQ0sGt3g ). I'm raising Paul's review comment as a DISCUSS: ``` 2) MINOR: Section 2: Normative requirements on future documents While I don't fully understand all the document dependencies, the following normative requirement: \u00a0 ... Specifications that introduce new sub-TLVs of the Extended Link \u00a0 TLV MUST indicate their applicability for the L2 Bundle Member \u00a0 Attributes Sub-TLV.\u00a0 An implementation MUST ignore any sub-TLVs \u00a0 received that are not applicable in the context of the L2 Bundle \u00a0 Member Attribute Sub-TLV. looks to me like it may be imposing requirements on future work that may not itself be aware of or normatively linked to this document. The registry in question is defined only by  RFC7684 . Figure 2 further supports this point by effectively revising the format for the registry, adding an additional column. I suggest it would be appropriate to formally update the registry to reference this document to impose requirements on future registrations, and add a column indicating applicability in the context of the L2 Bundle Member Attribute Sub-TLV. The same logic applies to Figure 3 and the IANA OSPFv3 Extended-LSA Sub-TLVs registry. I suggest the same sort of fix for it. ```",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 00:52:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-05 17:44:47-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 17:44:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-06 06:42:57-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-06 06:42:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-04 02:44:07-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-04 02:44:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-04 13:09:00-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-04 13:09:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-05 03:58:27-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-29 05:30:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-07 11:55:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 03:58:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9356",
+  "evaluation_end": "2022-10-07 11:55:14-07:00",
+  "evaluation_start": "2022-09-29 05:30:41-07:00"
+}

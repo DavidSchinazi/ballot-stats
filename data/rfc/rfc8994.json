@@ -1,0 +1,551 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-08-01 20:31:51-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-08-01 20:31:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-08-02 05:39:55-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-08-02 05:39:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-08-01 08:52:08-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-01 11:02:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-08-01 08:52:08-07:00",
+        "text": "Section 6.10.4: \"The value of the Interface Identifier is left for future definitions.\" I don't understand how this is usable without some definition. I.e., if I assign every interface ID in my ACP to be 0, it's not going to work. Could you elaborate about what is expected in this field?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-01 11:02:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-08-12 12:14:36-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-12 12:14:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-08-12 20:46:02-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-08-12 08:42:37-07:00",
+        "text": "I still have more to review here -- I'm about \u2153 of the way through -- but I wanted to get this in sooner, rather than waiting. This DISCUSS should be easy to resolve: it's mostly that I find the text in Section 6.5 related to Bob and Alice to be confusing and unclear.\u00a0 I see that EKR also found it so and asked for the step-by-step diagram, which does help.\u00a0 But I find the whole Bob/Alice thing to be messy and wish you could instead use some functionally descriptive terms for the roles, rather than using arbitrary names that aren't meaningful and lead the reader to say, \"Wait, which one is Bob now?\" Specifically: \u2014 Section 6.5 \u2014 \u00a0 \u00a0 \u00a0 The node with the \u00a0 \u00a0 \u00a0 lower Node-ID in the ACP address of its ACP certificate becomes \u00a0 \u00a0 \u00a0 Bob, the one with the higher Node-ID in the certificate Alice.\u00a0 A \u00a0 \u00a0 \u00a0 peer with an empty ACP address field in its ACP certificate \u00a0 \u00a0 \u00a0 becomes Bob (this specification does not define such peers, only \u00a0 \u00a0 \u00a0 the interoperability with them). What\u2019s with \u201cbecomes Bob\u201d and \u201cAlice\u201d here?\u00a0 Without any introduction I don\u2019t know what\u2019s going on.\u00a0 Do you mean something like, \u2018One node has a lower Node-ID in the ACP address of its ACP certificate than the other.\u00a0 For this discussion, we will call that node \u201cBob\u201d, and the other \u201cAlice\u201d.\u2019 ?\u00a0 Or do you mean something else?\u00a0 And then what does the next sentence mean? \u00a0  For example, originally Bob could have been the initiator of one ACP \u00a0  secure channel protocol that Bob prefers and the security association \u00a0  succeeded.\u00a0 The roles of Bob and Alice are then assigned and the \u00a0  connection setup is completed. Again I\u2019m confused: you\u2019re talking about Bob doing something, and *then* the role of Bob is assigned?\u00a0 What does that mean?\u00a0 How can we talk about Bob doing something before we know who Bob is? And are there no more descriptive terms to use here, as opposed to \u201cBob\u201d and \u201cAlice\u201d?\u00a0 Something like \u201cinitiator\u201d and \u201cresponder\u201d, or whatever, which might be easier to follow? I also have an easy-to-address issue here: \u2014 Section 6.7.3.1.2 \u2014 \u00a0  The IKEv2 Diffie-Hellman key exchange group 19 (256-bit random ECP), \u00a0  listed as a SHOULD, is to be configured, along with the 2048-bit MODP \u00a0  (group 14). I don\u2019t understand the requirement level here, because I\u2019m not sure what \u201cis to be configured\u201d means.\u00a0 You mention \u201cSHOULD\u201d, but then \u201cis to be configured\u201d seems to say that it has to be supported.\u00a0 And you seem to be saying that he same requirement, whatever it is, applies to both group 19 and group 14... but I\u2019m not certain about that.\u00a0 Can you please rephrase this to make the requirements clearer?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-11 08:35:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-12 20:46:02-07:00",
+        "text": "This DISCUSS should be easy to resolve: it's mostly that I find the text in Section 6.5 related to Bob and Alice to be confusing and unclear.\u00a0 I see that EKR also found it so and asked for the step-by-step diagram, which does help.\u00a0 But I find the whole Bob/Alice thing to be messy and wish you could instead use some functionally descriptive terms for the roles, rather than using arbitrary names that aren't meaningful and lead the reader to say, \"Wait, which one is Bob now?\" Specifically: \u2014 Section 6.5 \u2014 \u00a0 \u00a0 \u00a0 The node with the \u00a0 \u00a0 \u00a0 lower Node-ID in the ACP address of its ACP certificate becomes \u00a0 \u00a0 \u00a0 Bob, the one with the higher Node-ID in the certificate Alice.\u00a0 A \u00a0 \u00a0 \u00a0 peer with an empty ACP address field in its ACP certificate \u00a0 \u00a0 \u00a0 becomes Bob (this specification does not define such peers, only \u00a0 \u00a0 \u00a0 the interoperability with them). What\u2019s with \u201cbecomes Bob\u201d and \u201cAlice\u201d here?\u00a0 Without any introduction I don\u2019t know what\u2019s going on.\u00a0 Do you mean something like, \u2018One node has a lower Node-ID in the ACP address of its ACP certificate than the other.\u00a0 For this discussion, we will call that node \u201cBob\u201d, and the other \u201cAlice\u201d.\u2019 ?\u00a0 Or do you mean something else?\u00a0 And then what does the next sentence mean? \u00a0  For example, originally Bob could have been the initiator of one ACP \u00a0  secure channel protocol that Bob prefers and the security association \u00a0  succeeded.\u00a0 The roles of Bob and Alice are then assigned and the \u00a0  connection setup is completed. Again I\u2019m confused: you\u2019re talking about Bob doing something, and *then* the role of Bob is assigned?\u00a0 What does that mean?\u00a0 How can we talk about Bob doing something before we know who Bob is? And are there no more descriptive terms to use here, as opposed to \u201cBob\u201d and \u201cAlice\u201d?\u00a0 Something like \u201cinitiator\u201d and \u201cresponder\u201d, or whatever, which might be easier to follow? I also have a few easy-to-address issues here: \u2014 Section 6.7.3.1.2 \u2014 \u00a0  The IKEv2 Diffie-Hellman key exchange group 19 (256-bit random ECP), \u00a0  listed as a SHOULD, is to be configured, along with the 2048-bit MODP \u00a0  (group 14). I don\u2019t understand the requirement level here, because I\u2019m not sure what \u201cis to be configured\u201d means.\u00a0 You mention \u201cSHOULD\u201d, but then \u201cis to be configured\u201d seems to say that it has to be supported.\u00a0 And you seem to be saying that he same requirement, whatever it is, applies to both group 19 and group 14... but I\u2019m not certain about that.\u00a0 Can you please rephrase this to make the requirements clearer? \u2014 Section 6.7.5 \u2014 \u00a0  A baseline ACP node MUST support IPsec natively and MAY support IPsec \u00a0  via GRE.\u00a0 If GRE is supported, it MAY be preferred over native IPec. But Section 6.7.3.2 says: \u00a0  If IKEv2 initiator and responder support IPsec over GRE, it has to be \u00a0  preferred over native IPsec. Which is it?\u00a0 \u201cMAY\u201d be preferred?\u00a0 Or \u201chas to be preferred\u201d? \u2014 Section 6.10.6 \u2014 \u00a0  IANA is asked need to assign a new \"type\" for each new addressing \u00a0  sub-scheme.\u00a0 With the current allocations, only 2 more schemes are \u00a0  possible, so the last addressing scheme MUST provide further \u00a0  extensions (e.g., by reserving bits from it for further extensions). I don\u2019t understand the first sentence.\u00a0 It doesn\u2019t parse, for one thing, so please fix that.\u00a0 And it would be better to clearly match it with the corresponding request in the IANA Considerations section. For the second sentence (the DISCUSS part), I\u2019m very skeptical that this is the right approach: if you\u2019re already acknowledging that \u201conly\u201d 2 schemes are possible now, it seems time *now* to prepare the way for additional ones, rather than waiting.\u00a0 What\u2019s the reasoning for putting in a warning rather than just doing it, especially as you\u2019re setting up a new registry anyway?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-11 08:35:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-08-01 15:17:04-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-08-01 15:17:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-08-01 17:29:51-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-16 15:42:01-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-08-01 17:29:51-07:00",
+        "text": "This is a really exciting protocol to read about -- the prospect of dropping a bunch of just-manufactured devices in place, spinning up a registrar (and maybe a MASA), and getting a control plane like magic is pretty impressive.\u00a0 That said, I don't believe that this document is ready to publish as-is.\u00a0 I have a list of specific points below for discussion, but it may be more effective to strip down the document a lot (providing a well-defined core protocol and leaving out speculative future work, along the lines of Alissa's comments) and only then start to work on specific rough spots. In particular, in its current form, it's not clear to me why this document is targeting the standards-track -- there are lots of places where determinations of what works best or how to do some things is left for future work.\u00a0 Are there lots of implementations or consumers clamoring for this stuff that it makes sense to go for PS as opposed to Experimental (so as to figure out what works and nail down a slimmer protocol for the standards track)?\u00a0 I see in A.4 that the choice of RPL was motivated by experience with a pre-standard version of ACP; it would have been great to hear more about those deployments in an Implementation Status section (per RFC 7942 ) or the Shepherd writeup. I also think the document needs to be more clear about what security properties it does or does not intend to provide: we hear in the abstract and introduction that ACP will be \"secure\" (and similar platitudes are repeated throughout), but we don't really get a sense of the specifics until Section 4, with ACP5.\u00a0 This has a MUST for authenticated and \"SHOULD (very strong SHOULD)\" be encrypted.\u00a0 But text elsewhere in the document seems to be using \"secure\" to also mean encrypted, and there is even one place that flatly asserts that \"ACP mandates the use of encryption\".\u00a0 This internal inconsistency needs to be resolved, at a minimum, and ideally the intended posture more clearly conveyed.\u00a0 (It's also not really stated under what cases encryption would not be used, so that the \"very strong SHOULD\" could not be a MUST.) Section 3.2 claims that the ACP provides \"additional security\" for bootstrap mechanisms due to the hop-by-hop encryption.\u00a0 But in what sense is actual additional security gained?\u00a0 Against an attacker with what capabilities?\u00a0 If there is security gain from such hop-by-hop encryption, doesn't that point to a weakness in the bootstrap scheme? I think there needs to be some justification of why rfc822Name is chosen over a more conventional structure in the otherName portion of the subjectAltName, which is explicitly designed to be extensible. The requirement in Section 6.1.2 for CRL and OCSP checks seem impossible to satisfy for a greenfield node without non-ACP connectivity, as it must join the ACP domain (and supposedly validate the CRL and OCSP validity before doing so) before establishing an ACP link with its peer, but cannot validate anything with no connectivity. Throughout, the document seems to implicitly conflate authentication with authorization.\u00a0 I understand that the main authorization check is just the domain membership test in Section 6.1.2; nonetheless, as a pedagogical matter I cannot support propagating their conflation. In a few places, the MTI cryptographic mechanisms are under-specified, whether the cipher mode for IKE or the TLS ciphersuites.\u00a0 I have attempted to note these locations in my section-by-section comments. Section 6.11.1.14 places a normative (\"SHOULD\") requirement on the RPL root, but if I understand correctly the RPL root is automatically determined within the ACP, and thus the operator does not a priori know which node will become the RPL root.\u00a0 Am I misunderstanding, or is this effectively placing this requirement on all ACP nodes? The IANA considerations specifically do register SRV.est in the GRASP Objective Names Table, and then follows up with a paragraph that this is only a \"proposed update\".\u00a0 I don't know if there's actually anything problematic here, but the document does need clarity on what is proposed for future work and what is to be done now.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-07-22 08:50:22-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-16 15:42:01-07:00",
+        "text": "[trimming to just the topics still under discussion; no change to the text of the remaining items even though some changes have been made to the document] I think there needs to be some justification of why rfc822Name is chosen over a more conventional structure in the otherName portion of the subjectAltName, which is explicitly designed to be extensible. In a few places, the MTI cryptographic mechanisms are under-specified, whether the cipher mode for IKE or the TLS ciphersuites.\u00a0 I have attempted to note these locations in my section-by-section comments. Section 6.11.1.14 places a normative (\"SHOULD\") requirement on the RPL root, but if I understand correctly the RPL root is automatically determined within the ACP, and thus the operator does not a priori know which node will become the RPL root.\u00a0 Am I misunderstanding, or is this effectively placing this requirement on all ACP nodes?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-08-12 16:46:20-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-07-22 08:50:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-01 15:36:19-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-12 16:46:20-07:00",
+        "text": "Hopefully just a couple easy ones... I made a pass over Ekr's ballot comments (nominally on the -16, though some of the quoted text doesn't seem to match up with that version). We're generally in good shape there, but I wanted to check on the point regarding a \"downgrade defense on the meta-negotiation between the protocols\", which in theory would allow an attacker to force the use of IPsec or DTLS or whatever other protocol has a weakness.\u00a0 It seems like there may have been some confusion about DULL vs ACP GRASP in play here, especially with respect to when there might be the possibility of multiple secure channels.\u00a0 My current understanding is that there is not a major issue here, but let's confirm that: DULL GRASP runs only over a local link (using link-local addresses), and as currently defined has the option of flooding advertisements that use either DTLS or IKEv2 to establish the ACP secure channel.\u00a0 DULL GRASP has no cryptographic protections at all, so if there is somehow (e.g., on a multi-access link) an attacker on the link, they could drop or rewrite some announcements to force either DTLS or IKEv2 to be used for secure channel establishment even if the other would normally have been preferred.\u00a0 On directly-connected wired links, such tampering may be unlikely (but not beyond the capabilities of, e.g., a nation-state or well-funded attacker, especially for, e.g., long fiber runs.)\u00a0 By itself, this is not useful, since both DTLS and IKEv2+ESP are believed to be secure, but if some future vulnerability is discovered the downgrade might allow for the vulnerability to be exploited in cases it would not otherwise have been usable.\u00a0 Countermeasures to allow detection of this kind of tampering are possible -- include as part of the DTLS or IKEv2 exchange (or the first operation after it) a preference-ordered list of supported secure channel mechanisms, and bail out if the mechanism being used is not the most-preferred shared mechanism -- but will still fail if the vulnerability in question is sufficiently severe to allow handshake forgery. ACP GRASP is different, in that it (1) runs over the ACP, so any on-path attack to drop/rewrite GRASP would have as a prerequisite an attacker in the ACP, and (2) unicast GRASP is protected end-to-end by TLS.\u00a0 However, it seems like broadcast/flooded ACP GRASP objectives will only have the hop-by-hop ACP protection and so would in theory also be subject to a downgrade attack if there was an in-ACP on-path attacker.\u00a0 It also seems like there's a general expectation that ACP services will run over TLS, and the option of \"TLS *or* DTLS (or something else)\" is not expected to be common, so the existence of a downgrade to a different protocol is rare as well. While I would like to be able to defend against downgrade attacks by an in-ACP on-path attacker, I recognize that it's a defensible position to take that we assume all entities in the ACP to remain secure and just accept the corresponding risks in the case of compromise.\u00a0 Similarly, for \"big iron\" router deployments, physical links are the norm and the DULL GRASP downgrade attack may not be a practical concern; I would again like to have the mechanisms in place to be able to detect downgrade if, for example, deployments broaden to the use of radio technologies, but the absence of such a mechanism does not seem like a critical flaw at this time.\u00a0 So, to be clear, the DISCUSS here is just to be sure that we're all on the same page as to what point Ekr was making and the current state of affairs; given my current understanding, I'm not holding a DISCUSS point for \"add the downgrade-detection mechanism\" (though I do encourage it). It looks like Section 6.1.3 is missing a \"rule 6: verify that the acp-address/prefix in the certificate matches the address being used to talk to the peer\", if I'm reading between the lines properly.\u00a0 (If not, and this is just skew introduced by editing, my comments about references to a non-existent rule 6 apply, see COMMENT.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-01 15:36:19-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-05-21 13:58:35-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-21 13:58:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-08-01 16:56:34-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-08-01 16:56:34-07:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D9959 I found this document extremely hard to follow due to a large number of grammar errors. It really needs a very thorough copy-edit pass, which I believe is beyond the RFC-editor's usual process. Ideally, the WG would do this. DETAIL S 6.1.1. >\u00a0 \u00a0 \u00a0 each other.\u00a0 See Section 6.1.2.\u00a0 Acp-domain-name SHOULD be the FQDN >\u00a0 \u00a0 \u00a0 of a DNS domain owned by the operator assigning the certificate. >\u00a0 \u00a0 \u00a0 This is a simple method to ensure that the domain is globally unique >\u00a0 \u00a0 \u00a0 and collision of ACP addresses would therefore only happen due to ULA >\u00a0 \u00a0 \u00a0 hash collisions.\u00a0 If the operator does not own any FQDN, it should >\u00a0 \u00a0 \u00a0 choose a string (in FQDN format) that intends to be equally unique. These rules do not seem to be strong enough. Unless you have disjoint trust anchors, there is a potential for cross-domain attac. S 6.1.2. >\u00a0 \u00a0 \u00a0 See section 4.2.1.6 of [ RFC5280 ] for details on the subjectAltName >\u00a0 \u00a0 \u00a0 field. >\u00a0   >\u00a0  6.1.2.\u00a0 ACP domain membership check >\u00a0   >\u00a0 \u00a0 \u00a0 The following points constitute the ACP domain membership check of a What is the relationship of these rules to the existing 5280 rules? S 6.1.2. >\u00a0   >\u00a0 \u00a0 \u00a0 o\u00a0 The peer has proved ownership of the private key associated with >\u00a0 \u00a0 \u00a0 \u00a0  the certifictes public key. >\u00a0   >\u00a0 \u00a0 \u00a0 o\u00a0 The peer's certificate is signed by one of the trust anchors >\u00a0 \u00a0 \u00a0 \u00a0  associated with the ACP domain certificate. So you don't allow chaining? It seems later that you say you do, but this language prohibits it. S 6.1.3.1. >\u00a0 \u00a0 \u00a0 The objective value \"SRV.est\" indicates that the objective is an >\u00a0 \u00a0 \u00a0 [ RFC7030 ] compliant EST server because \"est\" is an [ RFC6335 ] >\u00a0 \u00a0 \u00a0 registered service name for [ RFC7030 ].\u00a0 Future backward compatible >\u00a0 \u00a0 \u00a0 extensions/alternatives to [ RFC7030 ] may be indicated through >\u00a0 \u00a0 \u00a0 objective-value.\u00a0 Future non-backward compatible certificate renewal >\u00a0 \u00a0 \u00a0 options must use a different objective-name. EST runs over HTTPS. What is the certificate that the server presents? S 6.4. >\u00a0 \u00a0 \u00a0 information in the ACP Adjacency table. >\u00a0   >\u00a0 \u00a0 \u00a0 The ACP is by default established exclusively between nodes in the >\u00a0 \u00a0 \u00a0 same domain.\u00a0 This includes all routing subdomains.\u00a0 Appendix A.7 >\u00a0 \u00a0 \u00a0 explains how ACP connections across multiple routing subdomains are >\u00a0 \u00a0 \u00a0 special. I must be missing something, but how do you know what the routing domain is of an ACP node? I don't see it in the message above. Is it in some common header? S 6.5. >\u00a0   >\u00a0 \u00a0 \u00a0 o\u00a0 Once the first secure channel protocol succeeds, the two peers >\u00a0 \u00a0 \u00a0 \u00a0  know each other's certificates because they must be used by all >\u00a0 \u00a0 \u00a0 \u00a0  secure channel protocols for mutual authentication.\u00a0 The node with >\u00a0 \u00a0 \u00a0 \u00a0  the lower Node-ID in the ACP address becomes Bob, the one with the >\u00a0 \u00a0 \u00a0 \u00a0  higher Node-ID in the certificate Alice. A ladder diagram would really help me here, because I'm confused about the order of events. As I understand it, Alice and Bob are both flooding their AN_ACP objectives. So, Alice sees Bob's and starts trying to connect to Bob. But Bob may not have Alice's objective, right? So, in the case you describe below, she just has to wait for it before she can try the remaining security protocols? I note that you have no downgrade defense on the meta-negotiation between the protocols, so an attacker could potentially force you down to the weakest joint protocol. Why did you not provide a defense here? S 6.7.1.1. >\u00a0 \u00a0 \u00a0 To run ACP via IPsec natively, no further IANA assignments/ >\u00a0 \u00a0 \u00a0 definitions are required.\u00a0 An ACP node that is supporting native >\u00a0 \u00a0 \u00a0 IPsec MUST use IPsec security setup via IKEv2, tunnel mode, local and >\u00a0 \u00a0 \u00a0 peer link-local IPv6 addresses used for encapsulation.\u00a0 It MUST then >\u00a0 \u00a0 \u00a0 support ESP with AES256 for encryption and SHA256 hash and MUST NOT >\u00a0 \u00a0 \u00a0 permit weaker crypto options. This is not sufficient to guarantee interop. Also, this is an odd cipher suite chioice. \u00a0 \u00a0 Why are you requiring AES-256 rather than AES-128? \u00a0 \u00a0 Why aren't you requiring AES-GCM? \u00a0 \u00a0 Why aren't you requiring specific key establishment methods (e.g., ECDHE with P-256...) S 6.7.2. >\u00a0   >\u00a0 \u00a0 \u00a0 To run ACP via UDP and DTLS v1.2 [ RFC6347 ] a locally assigned UDP >\u00a0 \u00a0 \u00a0 port is used that is announced as a parameter in the GRASP AN_ACP >\u00a0 \u00a0 \u00a0 objective to candidate neighbors.\u00a0 All ACP nodes supporting DTLS as a >\u00a0 \u00a0 \u00a0 secure channel protocol MUST support AES256 encryption and MUST NOT >\u00a0 \u00a0 \u00a0 permit weaker crypto options. This is not sufficiently specific to guarantee interoperability. Which cipher suites? Also, why are you requiring AES-256 and not AES-128? S 6.7.3. >\u00a0   >\u00a0 \u00a0 \u00a0 A baseline ACP node MUST support IPsec natively and MAY support IPsec >\u00a0 \u00a0 \u00a0 via GRE.\u00a0 A constrained ACP node that can not support IPsec MUST >\u00a0 \u00a0 \u00a0 support DTLS.\u00a0 An ACP node connecting an area of constrained ACP >\u00a0 \u00a0 \u00a0 nodes with an area of baseline ACP nodes MUST therefore support IPsec >\u00a0 \u00a0 \u00a0 and DTLS and supports threefore the baseline and constrained profile. These MTIs do not provide interop between constrained and baseline nodes, because a baseline node might do IPsec and the constrained node DTLS. S 6.10.2. >\u00a0 \u00a0 \u00a0 \u00a0  hash of the routing subdomain SHOULD NOT be assumed by any ACP >\u00a0 \u00a0 \u00a0 \u00a0  node during normal operations.\u00a0 The hash function is only executed >\u00a0 \u00a0 \u00a0 \u00a0  during the creation of the certificate.\u00a0 If BRSKI is used then the >\u00a0 \u00a0 \u00a0 \u00a0  BRSKI registrar will create the domain information field in >\u00a0 \u00a0 \u00a0 \u00a0  response to the EST Certificate Signing Request (CSR) Attribute >\u00a0 \u00a0 \u00a0 \u00a0  Request message by the pledge. you need to lay out the security assumptions here. It's not difficult to create a new domain with the same 40bit hash. If you have a private CA, this probably isn't an issue, but if you are sharing a public CA, it would allow me to produce a domain with other people's addresses. S 8.1.1. >\u00a0 \u00a0 \u00a0 configured to be put into the ACP VRF.\u00a0 The ACP is then accessible to >\u00a0 \u00a0 \u00a0 other (NOC) systems on such an interface without those systems having >\u00a0 \u00a0 \u00a0 to support any ACP discovery or ACP channel setup.\u00a0 This is also >\u00a0 \u00a0 \u00a0 called \"native\" access to the ACP because to those (NOC) systems the >\u00a0 \u00a0 \u00a0 interface looks like a normal network interface (without any >\u00a0 \u00a0 \u00a0 encryption/novel-signaling). This seems pretty unclear. Is the idea that you connect natively to the ACP Connect node and then it forwards your packets over the ACP? Does that mean they need to be GRASP or whatever? I think that's what you are saying below. S 8.1.5. >\u00a0 \u00a0 \u00a0 interface is physically protected from attacks and that the connected >\u00a0 \u00a0 \u00a0 Software or NMS Hosts are equally trusted as that on other ACP nodes. >\u00a0 \u00a0 \u00a0 ACP edge nodes SHOULD have options to filter GRASP messages in and >\u00a0 \u00a0 \u00a0 out of ACP connect interfaces (permit/deny) and MAY have more fine- >\u00a0 \u00a0 \u00a0 grained filtering (e.g., based on IPv6 address of originator or >\u00a0 \u00a0 \u00a0 objective). Given that this is an important security requirement, it seems like it should be a normative requirement that it be filtered. S 9.1. >\u00a0 \u00a0 \u00a0 same trust anchor, a re-merge will be smooth. >\u00a0   >\u00a0 \u00a0 \u00a0 Merging two networks with different trust anchors requires the trust >\u00a0 \u00a0 \u00a0 anchors to mutually trust each other (for example, by cross-signing). >\u00a0 \u00a0 \u00a0 As long as the domain names are different, the addressing will not >\u00a0 \u00a0 \u00a0 overlap (see Section 6.10). Why does it require the *trust anchors* to trust each other? Can't the endpoints just have the union of the trust anchors. This is way underspecified for actual implementation. S 10.2.1. >\u00a0 \u00a0 \u00a0 registrar can rely on the ACP and use Proxies to reach the candidate >\u00a0 \u00a0 \u00a0 ACP node, therefore allowing minimum pre-existing (auto-)configured >\u00a0 \u00a0 \u00a0 network services on the candidate ACP node.\u00a0 BRSKI defines the BRSKI >\u00a0 \u00a0 \u00a0 proxy, a design that can be adopted for various protocols that >\u00a0 \u00a0 \u00a0 Pledges/candidate ACP nodes could want to use, for example BRSKI over >\u00a0 \u00a0 \u00a0 CoAP (Constrained Application Protocol), or proxying of Netconf. I am finding it very difficult to work out the security properties of this mechanism and the security considerations do not help. What can a malicious registrar do? For that matter, you say \"uncoordinated\", so does that mean anyone in the ACP can just decide to be a registrar? S 11. >\u00a0   >\u00a0  11.\u00a0 Security Considerations >\u00a0   >\u00a0 \u00a0 \u00a0 An ACP is self-protecting and there is no need to apply configuration >\u00a0 \u00a0 \u00a0 to make it secure.\u00a0 Its security therefore does not depend on >\u00a0 \u00a0 \u00a0 configuration. This is not true. You need to configure the trust anchor and the domain name. S 11. >\u00a0 \u00a0 \u00a0 \u00a0  all products. >\u00a0   >\u00a0 \u00a0 \u00a0 There is no prevention of source-address spoofing inside the ACP. >\u00a0 \u00a0 \u00a0 This implies that if an attacker gains access to the ACP, it can >\u00a0 \u00a0 \u00a0 spoof all addresses inside the ACP and fake messages from any other >\u00a0 \u00a0 \u00a0 node. You need to be clear that the security is just group security and that any compromised ACP node compromises the entire system.",
+        "type": "Discuss"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-02 06:09:32-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-10-07 17:07:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-13 01:19:01-07:00",
+        "text": "[ section 2 ] * \"It is the approximate IPv6 counterpart of the IPv4 private address \u00a0 ([ RFC1918 ]).\" \u00a0 I understand the intent but I don't think this statement is complete. I \u00a0 think we shouldn't let this sentence out into the wild as is since it could \u00a0 be read without any context nor even any pretense of interest in nuance. \u00a0 May I suggest: \u00a0 \"It is often thought of as the approximate IPv6 counterpart of the IPv4 \u00a0 private address space ([ RFC1918 ]), though it is in fact meaningfully \u00a0 different in important and subtle ways [and upon which this document relies].\" [ section 6.10.2 ] * Please clarify the table at the end of this section.\u00a0 It looks like only \u00a0 two Types are listed, but should all 4 bit values be present?\u00a0 Where are the \u00a0 Z, F, and V bits in the address? \u00a0 I realize these are defined in the following sections, so it probably \u00a0 suffices to say something like \"The Z, F, and V bits are allocated from \u00a0 within the sub-scheme portion of the address according to the following \u00a0 sections...\" or something. \u00a0 Unassigned/unused Type values should maybe be listed in the table as \u00a0 \"Reserved\"? [ section 8.1.3 ] * Why is an RIO for ::/0 with a lifetime of 0 required?\u00a0 Doesn't it suffice \u00a0 it set the default router lifetime to 0?\u00a0 Separately, are all nodes required \u00a0 to be Type C?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-07 17:07:09-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-08-02 07:09:04-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-08-02 07:09:04-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-12 16:01:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-05-18 09:04:00-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-05-18 09:04:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-10 11:24:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-07-14 20:02:50-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-14 20:01:33-07:00",
+        "text": "** As normative behavior is specific for BRSKI (e.g., Section 6.1.5 and 6.1.5.5), please make it a normative reference ** Figure 2\u2019s definition of acp-address is \u2018acp-address = 32HEXLC | \"0\"\u2019.\u00a0 The following text references a 32HEXDIG but that isn\u2019t in the definition of acp-address. -- Section 6.1.2.\u00a0 \u2018Nodes complying with this specification MUST be able to receive their ACP address through the domain certificate, in which case their own ACP domain certificate MUST have the 32HEXDIG \"acp-address\" field.\u2019 -- Section 6.1.3.\u00a0 \u2018The candidate peer certificate's acp-node-name has a non-empty acp-address field (either 32HEXDIG or 0, according to Figure 2).\u2019 ** Precision in bounding the cipher selection.  -- Section 6.7.2.\u00a0 Per \u201cSymmetric encryption for the transmission of secure channel data MUST use encryption schemes considered to be security wise equal to or better than AES256\u201d, which property of AES-256 is being considered for this assessment? -- Section 6.8.2.\u00a0 Per \u201cTLS for GRASP MUST offer TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 and TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 and MUST NOT offer options with less than 256bit AES or less than SHA384\u201d, please state this more precisely. -- Is it that AES-128 shouldn\u2019t be used or that that AES-256 has a certain key strength to which to adhere to? -- Is it that SHA-224 or SHA256 shouldn\u2019t be used (staying in the SHA-2 family) or is it a certain number of bits of security ? ** The text specifies the need for physical controls.\u00a0 Please be more specific on the appropriate degree of that physical control or how that decision should be made; and explicitly explain threat of concern. -- Section 8.1.1.\u00a0 \u201cThus, the ACP connect interface and NOC systems connected to it needs to be physically controlled/secured.\u201d -- Section 8.1.5.\u00a0 \u201c\u2026 the ACP connect link and the nodes connecting to it must be in a contiguous secure\u00a0  environment, hence assuming there can be no physical attack against the devices.\u201d ** (\u201cdiscuss discuss\u201d) Section 8.1.2.\u00a0 What is the normative behavior being specified in this section?\u00a0 Specifically, what is the additional or more restrictive behavior for the circumstance is where an ACP node is virtualized. ** Section 8.2.1.\u00a0 (I\u2019m no ABNF expert \u2026) Per the ABNF in Figure 17, the \u201c//=\u201d notation isn\u2019t valid.\u00a0 I think you want: OLD \u00a0 \u00a0  method //= [ \"DTLS\",\u00a0 \u00a0 port ] NEW \u00a0 \u00a0  method =/ [ \"DTLS\",\u00a0 \u00a0 port ] ** Section 10.2.1.\u00a0 Per \u201cAn attacker will not be able to join the ACP unless having a valid domain certificate, also packet injection and sniffing traffic will not be possible due to the security provided by the encryption protocol.\u201d, please be clearer: -- on path attacker = no packet injection -- on path attacker = only traffic analysis when sniffing -- compromised node = can inject traffic ** Section 11.\u00a0 Per \u201can ACP is self-protecting and there is no need to apply configuration to make it secure\u201d, if this assertion is going to be made: -- please specify the security services/properties in a normative section (not in the informative text in Section 10). -- please also be clear on what configuration is being referenced. ** Section 11.\u00a0 Per the list of factors on which ACP depends, it seems like the following are missing: -- the security properties of the enrollment protocol  -- that the security considerations of EST and BRSKI apply (or if not, why not)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-08-10 18:29:12-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-14 20:02:50-07:00",
+        "text": "** As normative behavior is specific for BRSKI (e.g., Section 6.1.5 and 6.1.5.5), please make it a normative reference ** Figure 2\u2019s definition of acp-address is \u2018acp-address = 32HEXLC | \"0\"\u2019.\u00a0 The following text references a 32HEXDIG but that isn\u2019t in the definition of acp-address. -- Section 6.1.2.\u00a0 \u2018Nodes complying with this specification MUST be able to receive their ACP address through the domain certificate, in which case their own ACP domain certificate MUST have the 32HEXDIG \"acp-address\" field.\u2019 -- Section 6.1.3.\u00a0 \u2018The candidate peer certificate's acp-node-name has a non-empty acp-address field (either 32HEXDIG or 0, according to Figure 2).\u2019 ** Precision in bounding the cipher selection.  -- Section 6.7.2.\u00a0 Per \u201cSymmetric encryption for the transmission of secure channel data MUST use encryption schemes considered to be security wise equal to or better than AES256\u201d, which property of AES-256 is being considered for this assessment? -- Section 6.8.2.\u00a0 Per \u201cTLS for GRASP MUST offer TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 and TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 and MUST NOT offer options with less than 256bit AES or less than SHA384\u201d, please state this more precisely. -- Is it that AES-128 shouldn\u2019t be used or that that AES-256 has a certain key strength to which to adhere to? -- Is it that SHA-224 or SHA256 shouldn\u2019t be used (staying in the SHA-2 family) or is it a certain number of bits of security ? ** The text specifies the need for physical controls.\u00a0 Please be more specific on the appropriate degree of that physical control or how that decision should be made; and explicitly explain threat of concern. -- Section 8.1.1.\u00a0 \u201cThus, the ACP connect interface and NOC systems connected to it needs to be physically controlled/secured.\u201d -- Section 8.1.5.\u00a0 \u201c\u2026 the ACP connect link and the nodes connecting to it must be in a contiguous secure\u00a0  environment, hence assuming there can be no physical attack against the devices.\u201d ** (\u201cdiscuss discuss\u201d) Section 8.1.2.\u00a0 What is the normative behavior being specified in this section?\u00a0 Specifically, what is the additional or more restrictive behavior for the circumstance is where an ACP node is virtualized. ** Section 8.2.1.\u00a0 (I\u2019m no ABNF expert \u2026) Per the ABNF in Figure 17, the \u201c//=\u201d notation isn\u2019t valid.\u00a0 I think you want: OLD \u00a0 \u00a0  method //= [ \"DTLS\",\u00a0 \u00a0 port ] NEW \u00a0 \u00a0  method =/ [ \"DTLS\",\u00a0 \u00a0 port ] ** Section 10.2.1.\u00a0 Per \u201cAn attacker will not be able to join the ACP unless having a valid domain certificate, also packet injection and sniffing traffic will not be possible due to the security provided by the encryption protocol.\u201d, please be clearer: -- on path attacker = no packet injection -- on path attacker = only traffic analysis when sniffing -- compromised node = can inject traffic ** Section 11.\u00a0 Per \u201can ACP is self-protecting and there is no need to apply configuration to make it secure\u201d, if this assertion is going to be made: -- please specify the security services/properties in a normative section (not in the informative text in Section 10). -- please also be clear on what configuration is being referenced. ** Section 11.\u00a0 Per the list of factors on which ACP depends, it seems like the following are missing: -- the security properties of the enrollment protocol  -- that the security considerations of EST and BRSKI apply (or if not, why not)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-18 06:14:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-10 18:29:12-07:00",
+        "text": "(pruned down to the remaining issue) ** Section 11.\u00a0 Per the list of factors on which ACP depends, it seems like the following are missing: -- the security properties of the enrollment protocol -- that the security considerations of EST and BRSKI apply (or if not, why not)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-18 06:14:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-05-21 19:07:05-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-05-21 19:07:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-08-01 22:35:58-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-08-01 22:35:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-03-21 04:32:01-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:32:01-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": null,
+        "end_reason": null,
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-06-06 10:34:46-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:32:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-06-08 17:40:03-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-06-06 10:34:46-07:00",
+        "text": "I'm balloting DISCUSS, but I think that this should be relatively simple to address: The document says things like:\"Today, the management and control plane of networks typically runs in the global routing table, which is dependent on correct configuration and routing.\" and \"Context separation improves security, because the ACP is not \u00a0  reachable from the global routing table. \" The term \"global routing table\" is widely used and understood to mean the global BGP routing table, or Internet global routing table. I understand that you are using it in the \"default VRF\" meaning, but I think that it is really important to clarify / disambiguate this the first time you use it.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-11-02 06:55:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-08 17:40:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8994",
+  "evaluation_end": "2020-11-02 06:55:39-08:00",
+  "evaluation_start": "2018-03-21 04:32:00-07:00"
+}

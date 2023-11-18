@@ -1,0 +1,295 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-17 21:24:50-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-17 21:24:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-12-18 06:17:00-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-18 06:17:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-17 18:08:25-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-08-27 10:01:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-17 18:08:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-18 18:56:17-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-08-20 13:30:34-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-18 18:56:17-08:00",
+        "text": "(1) Controllers and other nodes. Background: This document defines the new SFC NLRI, which has two distinct route types, originated by either a node hosting an SFI or a Controller.\u00a0 Each route type has a specific function and it is reasonable to expect that the originators represent different nodes in the network, with different functions, location, etc..\u00a0 BGP Capabilities Advertisement doesn't have a route type granularity; instead, a BGP speaker known to support the SFC NLRI could originate any type of route. The facts above open the possibility that any node in the network can originate an SFPR and take over an SFP.\u00a0 \u00a73.2.2 does a very good job of explaining the potential existence of multiple Controllers and even offers the appropriate tie breaker to take control of the SFP: \"MUST use the SFPR with the numerically lowest SFPR-RD\".\u00a0  The document proposes no mitigation to the possibility of any node (a rogue node, for example) issuing SFPRs.\u00a0 The assumption (\u00a72.2) of \"BGP connectivity between the Controllers and all SFFs\" introduces also the ability to locate a rogue controller anywhere; I interpret \"BGP connectivity\" to include the presence of a router reflector (for example), which then allows distribution of SFPRs without going through a central policy point.  On one hand I think this condition is a feature (the Controller can be anywhere), but the case of a rogue node that wants to act as a controller is not considered. To address this issue, I would like to see text that (1) acknowledges the issue (maybe in the security considerations section), and (2) discusses operational considerations for the placement, control, filtering, etc. of Controllers and the corresponding UPDATES from them and/or other nodes in the network.\u00a0 IOW, the considerations around proper initial setup of the system should be clear. (2) New Flow Specification Traffic Filtering Action \u00a77.4 (Flow Spec for SFC Classifiers) defines a new Traffic Filtering Action to be used with the Flow Specification NLRI.\u00a0 rfc5775bis allows for any combination of Traffic Filtering Actions to be present, but this document says that \"other action extended communities MUST NOT be present\".\u00a0 I believe that specifying the use of treat-as-withdraw is ok as a case of Traffic Filtering Action Interference -- I just say \"ok\" because it is not clear to me (nor explained anywhere) why other Traffic Filtering Actions cannot be used; for example, I could imagine rate-limiting the traffic into an SFP. What concerns me more (and the reason for this DISCUSS point) is that  rfc5575 -only implementations will not consider the new Traffic Filtering Action, but could, depending on the components encoded in the NLRI, take actions based on other Traffic Filtering Actions.\u00a0 The result can then be an inconsistent application of Traffic Filtering Actions in the network -- for example, some nodes may want to drop the matching traffic (traffic-rate of 0), while others may want to have the same traffic entering an SFP. What are the operational considerations of using the new Traffic Filtering Action in a network where \"legacy\" (rfc5575bis-only) nodes exist?\u00a0 Is there a potential migration path?\u00a0 What might be the impact?\u00a0 How can correct operation be verified? (3) Use of the Control Plane This last point is not specifically for the authors, but for the Responsible AD and the Chairs for the sfc WG (cc'd). The SFPRs are built on, among other things, knowledge of the SFT(s) supported at a specific node.\u00a0 I note that only one Special Purpose SFT is defined in this document.\u00a0 The lack of SFT definitions means that no actual SFP can be instantiated.\u00a0 IOW, without additional work to define new SFTs it seems to me that the control plane as specified in this document cannot be used. :-( I couldn't find any related work (referencing this document) where new SFTs are proposed/defined.\u00a0 What are the plans to develop that work?\u00a0 Is there interest in the sfc WG to take advantage of the control plane?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-08-27 10:01:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-20 13:30:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-17 21:50:01-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-08-27 10:01:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-17 21:50:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-18 15:01:48-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-06-21 14:12:34-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-12-18 15:01:48-08:00",
+        "text": "Section 3.2.1.3 seems to talk about intermingling SFIR-RDs and SFIR Pool Identifiers in a common list, but I do not see how it's defined to intermingle the (six-octet) Pool Identifier Value with the (eight-octet) RDs. Section 3.1 seems to allow multiple SFIRs associated with a given RD, but the rest of the document seems to assume that any RD has at most one associated SFIR (as is stated explicitly for SFPRs).\u00a0 (A few specific mentions in the COMMENT.) Within my own limited understanding, it seems like this document is expanding the boundaries of the SFC Architecture in ways not envisioned by  RFC 7665  or 8300, and the shepherd writeup is pretty quiet on to what extent this architectural change is accepted by the WG (as opposed to being contained to just the BGP control plane mechanism).\u00a0 I'd like to get a positive affirmation from someone more familiar with the discussions that this is moving the architecture in the right direction with respect to things like: - the introduction of the Service Function Type intermediate \u00a0 classification - the more prominent treatment of looping, jumping, and branching as \u00a0 operations within a single SFP without reclassification by using the \u00a0 \"Change Sequence\" SFT entries to indicate these behaviors within the \u00a0 SFP definition itself (I note that  RFC 7665  does not mention \"jump\" at all) - the introduction of \"gaps\" in the SI sequence of a given SFP With respect to SFT in particular, it sounds like this is intended to help with scalability, which makes the genart reviewer's comment about lack of implementation experience particularly poingant.\u00a0 It seems like SFIR pools perform a similar role, though of course not identical; I didn't get a clear sense of why pools without SFTs are insufficient.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-08-21 15:15:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-21 14:12:34-07:00",
+        "text": "I think we may still need some text changes to clarify how the joint list of SFIR-RD and SFIR Pool Identifier Extended Communities is constructed and interpreted, and potentially need to register an RD Type matching the other (TBD6+TBD7) values we allocate. (I'm also not entirely clear how the IPv6 addresses interact with 8-byte RDs.) A longer description of these topics is written up at https://mailarchive.ietf.org/arch/msg/bess/wVDRF4ni0bGhNazvWoFi8BwJ_Vg/ but is not quite appropriate for this standalone context.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-08-27 10:01:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-21 15:15:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-12-19 05:58:46-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-08-27 10:01:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-19 05:58:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-12-18 08:33:01-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-08-27 10:01:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 08:33:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-19 06:30:12-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-08-27 10:01:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-19 06:30:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-12-13 13:28:54-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-08-27 10:01:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-08-27 10:01:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-27 07:33:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-18 11:15:00-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-08-25 05:10:28-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-18 11:15:00-08:00",
+        "text": "* Section 9 cites a number of references (which cite additional references) on BGP security.\u00a0 My summary of the highlights is: (1)  RFC4271  => TCP MD5 ( RFC2385 ) is a MUST  (2)  RFC4271  => consider  RFC 3562  for key management guidance (3) ietf-idr-tunnel-encaps => caution on Tunnel Encapsulation attribute (4)  rfc4364  => TCP MD5 is a non-rfc2119 \u201cshould\u201d (5)  rfc4364  => don\u2019t make connections with untrusted peers (6)  RFC7432  => references the utility of TCP-AO ( RFC5925 ) - Could the text articulate more clearly de-conflict (1), (4) and (6) \u2013 what is the recommended approach? - a discuss-discuss \u2013 Given the green field nature of this specification (the shepherd\u2019s report notes no implementation) and the assumed SFC deployment model (not the internet; a single provider\u2019s operational domain where key management should be easier), could a more robust transport security option such as BGP over IPSec be RECOMMENDED?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-08-27 10:01:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-25 05:10:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-19 06:53:33-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-19 06:53:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-08-27 10:01:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-13 13:28:54-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9015",
+  "evaluation_end": "2020-08-27 10:01:08-07:00",
+  "evaluation_start": "2019-12-13 13:28:54-08:00"
+}

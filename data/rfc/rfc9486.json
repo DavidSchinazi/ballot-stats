@@ -1,0 +1,323 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-11-30 07:19:52-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-03-20 23:11:34-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-11-30 07:19:52-08:00",
+        "text": "Hi There, Firstly thanks for the document.\u00a0 I have two issues I'd like to discuss and see if we can find some clarity on. The first stems from  RFC8200  Section 4.8 Third Paragraph, which reads: New hop-by-hop options are not recommended because nodes may be \u00a0  configured to ignore the Hop-by-Hop Options header, drop packets \u00a0  containing a Hop-by-Hop Options header, or assign packets containing \u00a0  a Hop-by-Hop Options header to a slow processing path.\u00a0 Designers \u00a0  considering defining new hop-by-hop options need to be aware of this \u00a0  likely behavior.\u00a0 There has to be a very clear justification why any \u00a0  new hop-by-hop option is needed before it is standardized. I believe that the document potentially needs to spell out a clearer justification to meet the requirements laid out in the above text. The second question relates to dealing with IOAM in the context of SRv6.\u00a0 With the HbH option - this is processed on a hop-by-hop basis and, as per  RFC8200 , is placed directly after the IPv6 header.\u00a0 This I don't see as a problem.\u00a0 My question comes in the case of the destination option.\u00a0 In SRv6, where a SID is, for all intents and purposes, acting like an address - I'd like to see some text dealing with what happens when the DO is applied in the context of the SRv6 where the destination address is not a normal address - but rather an IPv6 SID.\u00a0  Does the router drop the entire packet?\u00a0 Does the router \"de-encap\" as if it were a tunneled packet? Basically - I see a situation where that could lead to undefined behavior that always makes me nervous.  Could the authors, therefore, expand slightly on how the destination option is handled in the context of SRv6 and its various flavors?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-20 23:11:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-11-29 04:53:22-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-06 02:17:14-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-11-29 04:53:22-08:00",
+        "text": "# \u00c9ric Vyncke, INT AD, comments for  draft-ietf-ippm-ioam-ipv6-options-09 CC @evyncke Thank you for the work put into this document.  Please find below one blocking DISCUSS points (easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to Marcus Ihlar for the shepherd's detailed write-up including the WG consensus *and* the justification of the intended status.  Please note that Dave Thaler is the Internet directorate reviewer (at my request) and you may want to consider this int-dir reviews as well when Tim will complete the review (no need to wait for it though): https://datatracker.ietf.org/doc/draft-ietf-ippm-ioam-ipv6-options/reviewrequest/16642/ I hope that this review helps to improve the document, Regards, -\u00e9ric ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Section 5.1 ``` \u00a0 \u00a0 \u00a0 Operators of an IOAM \u00a0 \u00a0 \u00a0 domain SHOULD ensure that the addition of OAM information does not \u00a0 \u00a0 \u00a0 lead to fragmentation of the packet, e.g., by configuring the MTU \u00a0 \u00a0 \u00a0 of transit routers and switches to a sufficiently high value. ``` Should it be a MUST as IPv6 routers are unable to fragment an IPv6 packet ? Should \"e.g.\" be replaced by \"i.e.\" ?  Roman's DISCUSS points are also sensible.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2023-03-06 02:17:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-11-30 22:02:50-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-04-08 21:51:47-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-11-30 22:02:50-08:00",
+        "text": "# Internet AD comments for  draft-ietf-ippm-ioam-ipv6-options-09 CC @ekline * Thanks to 6MAN chairs Bob, Ole, and Jen for their last-minute \u00a0 \"IPv6 Directorate\" reviews.\u00a0 Some of their comments are reflected below. * There was kind of leaning toward concluding that the rewriting of a \u00a0 Hop-by-Hop option's size was both against the spirit of  RFC 8200  and \u00a0 not actually against the letter.\u00a0 I'm not sure that's actually the case \u00a0 and so my biggest DISCUSS is this point (more below). ## Discuss ### S4 * I don't think the Incremental Trace Option is something that can be \u00a0 supported by current text in  RFC 8200 .\u00a0 While is makes sense to have this \u00a0 behavior described in  RFC 9197 , I don't think IPv6 HbH can support it. \u00a0 My rationale for seeing this as a protocol violation is as follows. \u00a0 \u00a0 -  RFC 8200  S4.2 says this about the on-path mutability bit and the \u00a0 \u00a0 \u00a0 expectations that result: \u00a0 \u00a0 \u00a0 \"\"\" \u00a0 \u00a0 \u00a0 The third-highest-order bit of the Option Type specifies whether or \u00a0 \u00a0 \u00a0 not the Option Data of that option can change en route to the \u00a0 \u00a0 \u00a0 packet's final destination.\u00a0 When an Authentication header is present \u00a0 \u00a0 \u00a0 in the packet, for any option whose data may change en route, its \u00a0 \u00a0 \u00a0 entire Option Data field must be treated as zero-valued octets when \u00a0 \u00a0 \u00a0 computing or verifying the packet's authenticating value. \u00a0 \u00a0 \u00a0 \"\"\" \u00a0 \u00a0 - Specifically, only the Option Data (not Option Length) is allowed to \u00a0 \u00a0 \u00a0 change.\u00a0 Any AH header, for example, would still have processed the \u00a0 \u00a0 \u00a0 entire option with only the Data being zeroed -- the existence of the \u00a0 \u00a0 \u00a0 option and the length of it would still have been part of the AH \u00a0 \u00a0 \u00a0 computation. \u00a0 Unless there's some misunderstanding here I think this option would need \u00a0 removing from the document. * I think text needs to be added to make it clear that whatever options are \u00a0 used they MUST be added, though not necessarily \"filled in\", by the \u00a0 originator of the packet (the node bearing the interface assigned the \u00a0 outermost Source Address). \u00a0 The reasoning here again is the defined behavior of AH processing.\u00a0 Any \u00a0 options, even on-path mutable ones, MUST be present in the Hop-by-Hop \u00a0 option when an AH is computed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-08 21:51:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-11-29 10:30:36-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-11-29 10:31:37-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-11-29 10:30:36-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-ippm-ioam-ipv6-options-09 CC @jgscudder ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Structure of the document; Section 5 is vague The first part of the document, through Section 4, is unproblematic for me -- you're simply allocating some IPv6 extension header option types and defining how to use them to transport fields you defined in  RFC 9197 . Fine. But Section 5 is giving me a headache. For some reason, even though this is a Standards Track document, you've structured it as some rather high-level \"considerations\" (or are they \"requirements\"? It's unclear) and then some generally-worded polite suggestions about how you could deploy it this way or that way. Is there some reason you've shied away from being prescriptive in Section 5? As the document stands, I felt a bit like I'd been presented with a puzzle. \"The solution of this problem is left as an exercise for the student\" is great in textbooks, but not so wonderful in Standards Track documents. ### Section 5.1, C5 is problematic ``` An Autonomous System (AS) that inserts and leaks the IOAM data needs to be easy to identify for the purpose of troubleshooting, due to the high complexity in identifying the source of the leak. Such a troubleshooting process might require coordination between multiple operators, complex configuration verification, packet capture analysis, etc. This requirement may require additional option or fields to be defined to identify the domain that inserted the IOAM data, this is out of the scope of this document. ``` First, just as in C4, the underlying assumption that it's OK if an AS \"leaks the IOAM data\" appears problematic. Second, how can you both say \"this is a requirement\" and in the same paragraph \"it's out of scope\"? Surely, if this functionality is required, a finished spec is required to support it. And if the spec isn't finished, we shouldn't be advancing it, the WG should take it up and finish it, then send it back when done. Is it that this isn't truly a requirement? Or is the spec incomplete? If neither, please help me understand.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-11-29 10:31:49-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-11-29 10:31:37-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-ippm-ioam-ipv6-options-09 CC @jgscudder ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Structure of the document; Section 5 is vague The first part of the document, through Section 4, is unproblematic for me -- you're simply allocating some IPv6 extension header option types and defining how to use them to transport fields you defined in  RFC 9197 . Fine. But Section 5 is giving me a headache. For some reason, even though this is a Standards Track document, you've structured it as some rather high-level \"considerations\" (or are they \"requirements\"? It's unclear) and then some generally-worded polite suggestions about how you could deploy it this way or that way. Is there some reason you've shied away from being prescriptive in Section 5? As the document stands, I felt a bit like I'd been presented with a puzzle. \"The solution of this problem is left as an exercise for the student\" is great in textbooks, but not so wonderful in Standards Track documents. ### Section 5.1, C5 is problematic ``` An Autonomous System (AS) that inserts and leaks the IOAM data needs to be easy to identify for the purpose of troubleshooting, due to the high complexity in identifying the source of the leak. Such a troubleshooting process might require coordination between multiple operators, complex configuration verification, packet capture analysis, etc. This requirement may require additional option or fields to be defined to identify the domain that inserted the IOAM data, this is out of the scope of this document. ``` First, just as in C4, the underlying assumption that it's OK if an AS \"leaks the IOAM data\" appears problematic. Second, how can you both say \"this is a requirement\" and in the same paragraph \"it's out of scope\"? Surely, if this functionality is required, a finished spec is required to support it. And if the spec isn't finished, we shouldn't be advancing it, the WG should take it up and finish it, then send it back when done. Is it that this isn't truly a requirement? Or is the spec incomplete? If neither, please help me understand.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-11-29 10:32:07-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-11-29 10:31:49-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-ippm-ioam-ipv6-options-09 CC @jgscudder ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Structure of the document; Section 5 is vague The first part of the document, through Section 4, is unproblematic for me -- you're simply allocating some IPv6 extension header option types and defining how to use them to transport fields you defined in  RFC 9197 . Fine. But Section 5 is giving me a headache. For some reason, even though this is a Standards Track document, you've structured it as some rather high-level \"considerations\" (or are they \"requirements\"? It's unclear) and then some generally-worded polite suggestions about how you could deploy it this way or that way. Is there some reason you've shied away from being prescriptive in Section 5? As the document stands, I felt a bit like I'd been presented with a puzzle. \"The solution of this problem is left as an exercise for the student\" is great in textbooks, but not so wonderful in Standards Track documents. ### Section 5.1, C5 is problematic ``` An Autonomous System (AS) that inserts and leaks the IOAM data needs to be easy to identify for the purpose of troubleshooting, due to the high complexity in identifying the source of the leak. Such a troubleshooting process might require coordination between multiple operators, complex configuration verification, packet capture analysis, etc. This requirement may require additional option or fields to be defined to identify the domain that inserted the IOAM data, this is out of the scope of this document. ```  First, just as in C4, the underlying assumption that it's OK if an AS \"leaks the IOAM data\" appears problematic. Second, how can you both say \"this is a requirement\" and in the same paragraph \"it's out of scope\"? Surely, if this functionality is required, a finished spec is required to support it. And if the spec isn't finished, we shouldn't be advancing it, the WG should take it up and finish it, then send it back when done. Is it that this isn't truly a requirement? Or is the spec incomplete? If neither, please help me understand.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-11-29 10:32:35-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-11-29 10:32:07-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-ippm-ioam-ipv6-options-09 CC @jgscudder ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Structure of the document; Section 5 is vague The first part of the document, through Section 4, is unproblematic for me -- you're simply allocating some IPv6 extension header option types and defining how to use them to transport fields you defined in  RFC 9197 . Fine. But Section 5 is giving me a headache. For some reason, even though this is a Standards Track document, you've structured it as some rather high-level \"considerations\" (or are they \"requirements\"? It's unclear) and then some generally-worded polite suggestions about how you could deploy it this way or that way. Is there some reason you've shied away from being prescriptive in Section 5? As the document stands, I felt a bit like I'd been presented with a puzzle. \"The solution of this problem is left as an exercise for the student\" is great in textbooks, but not so wonderful in Standards Track documents. ### Section 5.1, C5 is problematic ``` An Autonomous System (AS) that inserts and leaks the IOAM data needs to be easy to identify for the purpose of troubleshooting, due to the high complexity in identifying the source of the leak. Such a troubleshooting process might require coordination between multiple operators, complex configuration verification, packet capture analysis, etc. This requirement may require additional option or fields to be defined to identify the domain that inserted the IOAM data, this is out of the scope of this document.  ``` First, just as in C4, the underlying assumption that it's OK if an AS \"leaks the IOAM data\" appears problematic. Second, how can you both say \"this is a requirement\" and in the same paragraph \"it's out of scope\"? Surely, if this functionality is required, a finished spec is required to support it. And if the spec isn't finished, we shouldn't be advancing it, the WG should take it up and finish it, then send it back when done. Is it that this isn't truly a requirement? Or is the spec incomplete? If neither, please help me understand.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-11-29 10:47:35-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-11-29 10:32:35-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-ippm-ioam-ipv6-options-09 CC @jgscudder ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Structure of the document; Section 5 is vague The first part of the document, through Section 4, is unproblematic for me -- you're simply allocating some IPv6 extension header option types and defining how to use them to transport fields you defined in  RFC 9197 . Fine. But Section 5 is giving me a headache. For some reason, even though this is a Standards Track document, you've structured it as some rather high-level \"considerations\" (or are they \"requirements\"? It's unclear) and then some generally-worded polite suggestions about how you could deploy it this way or that way. Is there some reason you've shied away from being prescriptive in Section 5? As the document stands, I felt a bit like I'd been presented with a puzzle. \"The solution of this problem is left as an exercise for the student\" is great in textbooks, but not so wonderful in Standards Track documents. ### Section 5.1, C5 is problematic ``` An Autonomous System (AS) that inserts and leaks the IOAM data needs to be easy to identify for the purpose of troubleshooting, due to the high complexity in identifying the source of the leak. Such a troubleshooting process might require coordination between multiple operators, complex configuration verification, packet capture analysis, etc. This requirement may require additional option or fields to be defined to identify the domain that inserted the IOAM data, this is out of the scope of this document. ``` First, just as in C4, the underlying assumption that it's OK if an AS \"leaks the IOAM data\" appears problematic. Second, how can you both say \"this is a requirement\" and in the same paragraph \"it's out of scope\"? Surely, if this functionality is required, a finished spec is required to support it. And if the spec isn't finished, we shouldn't be advancing it, the WG should take it up and finish it, then send it back when done. Is it that this isn't truly a requirement? Or is the spec incomplete? If neither, please help me understand.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-03-08 12:28:24-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-11-29 10:47:35-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-ippm-ioam-ipv6-options-09 CC @jgscudder ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Structure of the document; Section 5 is vague The first part of the document, through Section 4, is unproblematic for me -- you're simply allocating some IPv6 extension header option types and defining how to use them to transport fields you defined in  RFC 9197 . Fine. But Section 5 is giving me a headache. For some reason, even though this is a Standards Track document, you've structured it as some rather high-level \"considerations\" (or are they \"requirements\"? It's unclear) and then some generally-worded polite suggestions about how you could deploy it this way or that way. Is there some reason you've shied away from being prescriptive in Section 5? As the document stands, I felt a bit like I'd been presented with a puzzle. \"The solution of this problem is left as an exercise for the student\" is great in textbooks, but not so wonderful in Standards Track documents. ### Section 5.1, C5 is problematic ``` An Autonomous System (AS) that inserts and leaks the IOAM data needs to be easy to identify for the purpose of troubleshooting, due to the high complexity in identifying the source of the leak. Such a troubleshooting process might require coordination between multiple operators, complex configuration verification, packet capture analysis, etc. This requirement may require additional option or fields to be defined to identify the domain that inserted the IOAM data, this is out of the scope of this document.  ```  First, just as in C4, the underlying assumption that it's OK if an AS \"leaks the IOAM data\" appears problematic. Second, how can you both say \"this is a requirement\" and in the same paragraph \"it's out of scope\"? Surely, if this functionality is required, a finished spec is required to support it. And if the spec isn't finished, we shouldn't be advancing it, the WG should take it up and finish it, then send it back when done. Is it that this isn't truly a requirement? Or is the spec incomplete? If neither, please help me understand.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-05 13:49:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-03-08 12:28:24-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-ippm-ioam-ipv6-options-10 CC @jgscudder ## DISCUSS Thanks for taking care of my previous DISCUSS! I'm so sorry to have to raise another one, related to the new text.  \u00a0  C1\u00a0 IOAM MUST be deployed as a limited domain feature as defined in \u00a0 \u00a0 \u00a0 [ RFC8799 ]. I applaud your desire to be prescriptive and concise. Unfortunately, I think there are a few problems here. First the small ones: you have  RFC 8799  as an Informative reference, which is problematic since you want to make adherence to it mandatory. But, if you move it to be a Normative reference (as seems indicated), then we encounter two further issues: first and less importantly, it\u2019s not an IETF document, so possibly needs to be treated as a downref?  But most importantly, as far as I can tell  RFC 8799  does not define \u201ca limited domain feature\u201d. It provides a taxonomy for talking about limited domains and various considerations, but nothing I would call a \u201cdefinition\u201d. I confess I\u2019ve only briefly reviewed 8799 just now, not fully re-read it, so maybe you will be able to point me to a clear and actionable definition, that an implementor of your spec could apply in order to comply with C1. If so, please do let me know what that definition is, and also update your reference to cite it specifically, rather than just the RFC number. In my own review of 8799, the closest I see is Section 6, \"Functional Requirements of Limited Domains\u201d. I will be a little surprised if you really want to require adherence requirements 1-11 in that section, though. Sadly, I suspect that you\u2019ll end up concluding that  RFC 8799  isn\u2019t fit for the purpose you\u2019re trying to use it for and that you\u2019ll need to write out in your own words what the specific requirements are for your case. It looks to me as though the taxonomy section of  RFC 8799  might be quite useful to you in that respect, indeed that seems to be partly what it\u2019s for: ``` A.9. Making Use of This Taxonomy This taxonomy could be used to design or analyze a specific type of limited domain. ``` It\u2019s unfortunate that we don\u2019t have a good, citable definition of \u201climited domain\u201d in our document set... but we don\u2019t. This might be merely because nobody has bothered to write it yet, although I think the real reason is more likely that it turns out to be a sticky problem to nail it down to a definition that is both general enough to be broadly applicable and specific enough to be actionable.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-05 13:49:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-12-07 03:39:24-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-07 03:39:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-31 15:52:17-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-11-30 23:17:10-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-30 23:17:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-11-24 17:48:47-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-24 17:48:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-12-01 03:47:07-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-01 03:47:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-11-22 12:09:24-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-03-01 19:01:11-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-11-22 12:09:24-08:00",
+        "text": "Section 4 and  RFC9197  seem clear that IOAM traffic cannot leave the IOAM domain.\u00a0 However, this document seems to be suggesting behavior that violates this guidance.\u00a0 Specifically, in Section 5.1, it allows for the possibility of leaks per (a) and explicitly describe a use case where leaks are intentional (b). (a) Section 5.1.\u00a0 C3. \u00a0 \u00a0 \u00a0 IOAM domains MUST \u00a0 \u00a0 \u00a0 provide a mechanism to prevent data leaks or be able to ensure \u00a0 \u00a0 \u00a0 that if a leak occurs, network elements outside the domain are not \u00a0 \u00a0 \u00a0 affected (i.e., they continue to process other valid packets). (b) Section 5.1. C5. \u00a0 \u00a0 \u00a0 An Autonomous System (AS) that inserts and leaks the IOAM data \u00a0 \u00a0 \u00a0 needs to be easy to identify for the purpose of troubleshooting,... Furthermore, per (a), why are \u201cIOAM domains \u2026 provid[ing] a mechanism\u201d which suggests a feature rather than a required to explicitly prevent this behavior.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-01 19:01:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-11-29 13:55:09-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-29 13:55:09-08:00",
+        "text": "I spent a while oscillating between DISCUSS and NoObjection when balloting on this document, before finally settling on Abstain (a non-blocking position). Like others, I have concerns about what happens when IOAM EH packets invariably leak outside the IOAM domain. My views align very strongly with John Scudder's, but seeing as he is already carrying the DISCUSS, I'm going to cowardly abstain and hide behind him. The document feels like it is creating something very similar to a \"limited domain\"; the reason that I'm not balloting DISCUSS is that the document \"feels\" like it is trying to minimize the damage when IOAM packets do leak. This includes \"failing closed\" ('IOAM MUST be explicitly enabled per interface on every node within the IOAM domain'). I am, however, quite troubled by the \"As additional security, IOAM domains MUST provide a mechanism to prevent unauthorized injections at ingress or leaks at egress.\" without actually stating how this would be performed. The fact that the IOAM data is information (it doesn't obfuscate the source of the traffic, nor (hopefully!) change routing / forwarding) also helps push this from DISCUSS to Abstain for me - when a domain *does* leak packets with IOAM info, they will either exceed the MTU and so be dropped, or will \"just\" be leaking traffic stats from that domain, and should otherwise be forwarded OK. There are some Considerations in Sec 5 which I think are unrealistic, but not harmful - for example: * I suspect that in some cases adding IOAM will change ECMP hashing (C1); * they *will* leak (C3), but this shouldn't break things;  * they *will* leak (C4), but I suspect that external devices will simply ignore the EH header; I have a horrible feeling that I'm being inconsistent with my balloting: normally I would ballot DISCUSS on documents which either add information to an in-flight packet, or which create any sort of closed domain, but in this case I feel that the document has sufficiently attempted to mitigate the (external) consequences of leaks that I'm choosing Abstain instead.",
+        "type": "Abstain"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-05-19 15:33:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-31 15:52:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9486",
+  "evaluation_end": "2023-05-19 15:33:47-07:00",
+  "evaluation_start": "2022-10-31 15:52:17-07:00"
+}

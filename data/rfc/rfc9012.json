@@ -1,0 +1,307 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-12-02 13:33:38-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 13:33:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-13 12:42:34-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-13 12:42:34-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-12-01 21:12:32-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-01 21:12:32-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-01 10:18:09-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-03 06:05:47-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-12-01 10:18:09-08:00",
+        "text": "I support Erik's discuss. I see that Roman has already suggested adding normative language regarding the limitation to a single administrative domain (in addition to the \"MUST filter by default for EBGP sessions\"), which I agree with. However, I think there is an additional consideration regarding the limitation of use to a single administrative domain, wherein the domain of use for the tunnel encapsulation attribute may diverge from the domain of use of segment routing, that seems to place this document in conflict with the requirements of  RFC 8402 .\u00a0 In particular, RFC 8402  says, for SR-MPLS and SRv6, that boundary routers \"MUST filter any external traffic\", and additionally for SRv6 that \"explicit routing information MUST NOT be leaked through the boundaries of the administrered domain\".\u00a0 In \u00a73.7 of this document, though, we find that for the Prefix-SID sub-TLV, \"the receiving BGP speaker need not even be in the same Segment Routing Domain as the tunnel's egress endpoint, and there is no implication that the prefix-SID for the advertised prefix is the same in the Segment Routing domains of the BGP speaker that originated the sub-TLV and the BGP speaker that received it\", which seems to suggest violation of the  RFC 8402  requirement.\u00a0 I think we need to have greater clarity on what relationship is actually intended between the SR domain and the tunnel encapsulation usage domain, and if they are to diverge, we need to both somehow rectify this behavior with RFC 8402  and to very clearly document how the 8402-mandated filtering at the SR domain boundary is supposed to happen when the boundary includes tunneled traffic. I also would like to ensure that we have had adequate discussion of the relationship between this document and  RFC 8365 .\u00a0 The IESG has received comments recently (in the context of a different document) that it is irresponsible to effectively obsolete or deprecate existing work without identifying or explicitly updating such work, and without indicating whose responsibility it is to find discrepancies.\u00a0 That seems like it might apply to what's currently in Appendix A, which on first reading suggests \"there might be a problem here, but we aren't saying exactly what or how to fix it, or even who is going to do that work\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-11 14:58:44-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-12-03 06:05:47-08:00",
+        "text": "[Updated to remove the point about the \"relationship between this document and  RFC 8365 \"; no other changes] I support Erik's discuss. I see that Roman has already suggested adding normative language regarding the limitation to a single administrative domain (in addition to the \"MUST filter by default for EBGP sessions\"), which I agree with. However, I think there is an additional consideration regarding the limitation of use to a single administrative domain, wherein the domain of use for the tunnel encapsulation attribute may diverge from the domain of use of segment routing, that seems to place this document in conflict with the requirements of  RFC 8402 .\u00a0 In particular, RFC 8402  says, for SR-MPLS and SRv6, that boundary routers \"MUST filter any external traffic\", and additionally for SRv6 that \"explicit routing information MUST NOT be leaked through the boundaries of the administrered domain\".\u00a0 In \u00a73.7 of this document, though, we find that for the Prefix-SID sub-TLV, \"the receiving BGP speaker need not even be in the same Segment Routing Domain as the tunnel's egress endpoint, and there is no implication that the prefix-SID for the advertised prefix is the same in the Segment Routing domains of the BGP speaker that originated the sub-TLV and the BGP speaker that received it\", which seems to suggest violation of the  RFC 8402  requirement.\u00a0 I think we need to have greater clarity on what relationship is actually intended between the SR domain and the tunnel encapsulation usage domain, and if they are to diverge, we need to both somehow rectify this behavior with RFC 8402  and to very clearly document how the 8402-mandated filtering at the SR domain boundary is supposed to happen when the boundary includes tunneled traffic.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-11 14:58:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-12-02 13:31:18-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 13:31:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-30 08:15:45-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-30 08:15:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-30 21:28:25-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-01-09 22:55:49-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-30 21:28:25-08:00",
+        "text": "[ section 3.3.1 ] * The text about \"[a]ny one-octet value can be transported\" leaves me \u00a0 wondering about how values that result in ECN bits being set should be \u00a0 treated. \u00a0 I think there needs to be some recognition here that the DSCP part of \u00a0 the octet is only 6 bits (2474 section 3), and that bits 6 & 7 \"MUST/SHOULD \u00a0 be zero on transmission and MUST/SHOULD be ignored by the recipient\". \u00a0 Another way to ask the question here is: if ECN is not to be specified as \u00a0 part of this octet (and IMHO it should not be), which ranges of 6 bit \u00a0 values are permitted: [0..63], with the understanding this will be shifted \u00a0 before setting the octet, or [0,4,8,12,...,252]?\u00a0 Given the text \"It \u00a0 specifies the setting of the one-octet...\", I think it implies the latter, \u00a0 but some clarification would, I think, be helpful.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-09 22:55:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-12-03 02:52:15-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-01-15 08:51:54-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-12-03 02:52:15-08:00",
+        "text": "So this is really to start a discussion of how the framework approach of this document may not be explicit enough on what combination is actually viable combination and have existing specification for how to deal with a number of behaviors for tunnels. So my view after having read this one is that the signalling is specified in a two tier fashion, with an outer encapsulation that can be IPvX, IPvX/UDP for example and then a tunnel protocol like GRE, VXLAN, L2TPv3. So I don't believe all combinations of outer encapsulation and tunnel protocol is actually defined. This document does not provide a table with the reference for where the actual data plan specification for combinations are provided. I think it would be good if there actually existed such a table/list.  The next aspect of this discuss is the difficulty in determining if the provided sub-TLVs are sufficient. I will mention a number of potential ones that I wonder if they are necessary to configure these combinations.  To build on Erik Kline's discuss. So are for all these combinations when IP is the outer encapsulation is the egress ECN behavior to correctly mark or drop inner payload well defined. If the egress is not guaranteed to do the correct, then I think a configuration option is required.  When using UDP encapsulation combined with IPv6 there is the question if one can safely use zero-checksum. Per  RFC 6935  and  RFC 6936  some consideration is needed to determine if the inner payload is safe to combine with zero checksum. So this requires the combination of tunnel protocol and inner payload to determine this. So I think some of these tunnel protocols have text on this, but I don't know which combinations have this specified. And also here arise a question if some of these will also need a configuration option as there exist some inner payloads that could not be safe and thus a different tunnel with checksum enabled may be required.  When using UDP encapsulation I am wondering over source port usage. To my knowledge some of these protocols like VXLAN do defines that source ports are picked randomly to ensure header hashing will provide different values for different inner flows. So is there a need in any of this cases to identify a single source port?  So I at least are unable to determine if this specification are containing all necessary attributes when it doesn't have identification of what combinations it expect to work, and what behavior on the above aspects is just working.  So lets start discussing what needs to be addressed here if any.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-15 08:51:54-08:00",
+        "text": "This document fails massively the alone on an island test. No one can implement this without having the specification from an operator for what they actually want to establish.  This in its turn makes it impossible to answer if there are issues or not and additional configuration are needed for things like UDP zero-checksum, ECN, ICMP processing etc. All these nitty gritty details that can make a tunnel work good or not from an upper layer protocol perspective.",
+        "type": "Abstain"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-12-01 13:24:02-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-01 13:24:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-11-29 14:02:43-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-29 14:02:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-12-02 23:20:26-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 23:20:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-30 09:34:57-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-30 09:34:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-30 12:54:30-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-12-03 07:02:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-30 12:54:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-01-07 14:02:52-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-12-03 07:02:48-08:00",
+        "text": "Per the conversation on my original COMMENT (thanks for the quick response),  https://mailarchive.ietf.org/arch/msg/idr/hV2t6-8mq2dOvmXO-PvLuiON5o4/ , I'm escalating this item to a DISCUSS.\u00a0  Section 11 However, it is intended that the Tunnel Encapsulation  attribute be used only within a well-defined scope, e.g., within a set of Autonomous Systems that belong to a single administrative entity. As this applicability text should be read as a normative SHOULD, please provide a discussion on the risks of open Internet usage in the Security Considerations.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-07 14:02:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-11-30 15:17:43-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-13 12:42:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-01-15 12:03:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-30 15:17:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9012",
+  "evaluation_end": "2021-01-15 12:03:27-08:00",
+  "evaluation_start": "2020-11-13 12:42:33-08:00"
+}

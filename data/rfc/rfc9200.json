@@ -1,0 +1,371 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-03-23 14:42:28-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-23 14:42:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-03-08 15:40:11-08:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-08 15:40:11-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-03-22 07:56:12-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-22 07:56:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-03-22 15:49:10-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-22 15:49:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-03-24 07:48:59-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-05-10 11:49:20-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-03-24 07:48:59-07:00",
+        "text": "Thank you for this document. I think this is an important document which should move forward, but I would like to discuss some points before it does so. These might result in simple clarifications, or might require more discussion, but I do hope they help improve the document. General comments: I found confusing to understand how optional or mandatory is the use of CBOR for profiles of this specification compared to the transport used. I understand the need for flexibility, but maybe it should be clarified the implication of using CoAP (is CBOR mandatory then?) vs HTTP (is CBOR always permitted? How is the encoding in that case? Is the same media type application/ace+cbor used in that case?). Note also that while requests include the content type to use, both in case HTTP or CoAP+CBOR are used, the response don't seem to include this information.  I would like it to be clarified what requirements (or even just recommendations) are there to use CoAP vs HTTP for different legs of the exchange - not necessarily remove the flexibility but to clarify for implementers what can be done and what would be the reasoning to do that: for example if both endpoints support HTTP with the AS, most likely you can have HTTP between C and RS, so does it really make sense to run this instead of OAuth 2.0? Right now all is permitted, but does it all make sense? I feel like this type of considerations are missing. As a note - I am not sure what allowing a different encoding than CBOR for any leg of the exchange adds to the specification - it makes things more confusing, and if needed it could be specified in another document. While going through and thinking about encodings (assuming we keep the doc as is with regards to allowing more than just CBOR), I wondered if it would be better to define a new media type to use when the ACE framework is used with HTTP, to differentiate from OAuth 2.0, since some of the endpoints used are the same (/token and /introspect at the AS). I am interested to hear more from my co-AD as well if this would be an OK use of a new media type - I am thinking of the case where AS is supporting both OAuth 2.0 and the Ace framework - or if it is unnecessary, since the encodings are the same, and the parameters are registered in OAuth 2.0 registry.  More detailed comments below. Francesca",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-10 11:49:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-03-25 03:06:26-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-25 03:06:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-03-17 16:16:46-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-17 16:16:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-03-25 04:06:46-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-25 04:06:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-03-25 00:45:23-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-25 00:45:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-03-25 04:30:14-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-25 04:30:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-03-22 20:04:45-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-22 20:04:45-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-03-23 18:26:14-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 15:40:10-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-07-22 13:51:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-23 18:26:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9200",
+  "evaluation_end": "2021-07-22 13:51:15-07:00",
+  "evaluation_start": "2021-03-08 15:40:10-08:00"
+}

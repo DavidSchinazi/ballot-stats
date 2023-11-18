@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-04 22:19:37-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-04 22:19:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-02-06 05:33:47-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-06 05:33:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-02-06 03:10:16-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-06 03:10:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-02-05 21:21:00-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-05 21:21:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-05 19:15:28-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-23 13:13:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-05 19:15:28-08:00",
+        "text": "I think we need to discuss how this document refers to the level of security provided by the network, \"insecure network\"s or portions thereof, etc..\u00a0 In the normal  RFC 3552  threat model, we assume the entire network is under the control of an attacker.\u00a0 Any exception to that is going to be treated as a special case (usually only grudgingly so), e.g., if a portion of a network is under administrative control of a single entity and physically controlled as well, or if a network uses MAC-layer security technologies.\u00a0 I don't think this mindset is well-reflected in the current text. I agree with Mirja that we need more clarity on usable security contexts for interoperable implementation.\u00a0 My suggestion would be to define a security context that is usable for normal Internet hosts over the normal Internet (i.e., not a stressed network) to have as a baseline secure configuration, and customizations for other environments would be treated as deviations from that well-established baseline in terms of algorithms and security strength.\u00a0 I furthermore note that even after reading draft-ietf-dtn-bpsec-interop-sc  I do not have a clear picture of exactly which bytes are used as input to the various cryptographic algorithms and how the output is encoded.\u00a0 For example, is the block data contents of a target block always going to be a fixed-length bstr?\u00a0 Can the process of applying protection change whether the #6.24 tag is present? I understand the need to provide a defined processing order for message deprotection (and thus to avoid having the same operation applied to the same target), but I still don't have a clear picture of why we can't define things in such a way that allows (e.g.) nested signatures over the same content block.\u00a0 I understand the current mechanics where in the abstract model we only can protect a single block at a time (not a combination of blocks), so that blindly applying the current mechanics to an attempt at a nested signature would produce the problematic ambiguity of processing order, but I don't understand why it has to be that way.\u00a0 Relatedly, I think that the current formulation where the target list can be freely modified/split into separate BIB/BCBs by any waypoint will probably leave us open to some semantic attacks that drop some blocks but not others, when there is supposed to be semantic interdependence between those blocks. The diagram in Figure 2 seems to incorrectly indicate a degree of freedom in the number of results per target: if we are applying the same operation to all blocks in the target array, the operation should produce the same number of results for all target blocks, thus constraining 'K' to be equal to 'M'. Exclusion of most of the block parameters from confidentiality processing seems to be a critical flaw in the cryptographic hygeine; I think we should include the Block Type Code, Block Number, possibly Block Processing Control Flags, CRC Type and CRC Field (if present), and Block Data Length fields as \"additional data\" input to the AEAD to provide integrity protection, as well as use them as input to BIB calculation.\u00a0 Failing to include these parameters seems to leave us prone to \"slice and dice\" style attacks.\u00a0 Also, the description in Section 4 is unclear about whether the surrounding CBOR array encoding is excluded from AEAD iput (though it doesn't really seem like it would make sense to re-encode as a one-item CBOR array prior to applying message protection, the current text is worded such that one might think the array framing is not explicitly excluded). Section 9.1 gives an example of using a (presumed unprotected in the absence of any disclaimer) cryptographic key as a security context parameter; given that (per Section 3.6) the parameters are included in the wire-format abstract security block, and not subject to BCB protection, this is wholly insecure and cannot reasonably be used as an example.\u00a0 (At least draft-ietf-dtn-bpsec-interop-sc  had a bit of note about \"encoded or protected by the key management system\" to give this a veneer of respectability.) There's a couple places (noted in the COMMENT) where we claim some combination of things to be \"insecure\" without justification; in the noted instances this doesn't seem to be immediately obvious, so I think the justification is needed (or the claim should be removed). Section 7 includes a note that \"It is recommended that security operations only be applied to the blocks that absolutely need them.\u00a0 If a BPA were to apply security operations such as integrity or confidentiality to every block in the bundle, regardless of need, there could be downstream errors processing blocks whose contents must be inspected or changed at every hop along the path.\"\u00a0 While this statement, taken literally, is true, it also seems inconsistent with, e.g.,  BCP 188 , as well as the  RFC 3552  threat model, let alone the BPSec threat model of Section 8.\u00a0 I suggest phrasing that makes applying security operations the default behavior and requiring justification to diverge from that.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-23 13:13:17-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-02-05 12:58:56-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-05 12:58:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-02-06 03:11:01-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-06 03:11:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 22:33:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-01-23 02:43:18-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-23 02:43:18-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-12-10 11:38:48-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-11-30 15:08:20-08:00",
+        "text": "- Is this meant to obsolete  RFC 6257 ? - Section 3.8 says \"BCB blocks MUST NOT have the 'block must be removed from bundle if \u00a0 \u00a0 \u00a0 it can't be processed' flag set.\" However, the notes for this section ask that \"designers carefully consider the effect\" of setting this flag. I presume the latter should have been deleted? - Sec 11.3 specifies an unsigned integer with certain meanings attached to negative values.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-12-10 11:38:55-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-12-10 11:38:48-08:00",
+        "text": "hanks for addressing (and correcting) my DISCUSS.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-10 11:38:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-12-03 06:40:45-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-03 06:40:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-03 03:17:07-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-03 03:17:07-08:00",
+        "text": "Sec 1.2 says: \"A sample security \u00a0  context has been defined ([ I-D.ietf-dtn-bpsec-interop-sc ]) to support \u00a0  interoperability testing and serve as an exemplar for how security \u00a0  contexts should be defined for this specification.\" However I don't really understand how interoperability can be reached if there is not at least one security context that is mandatory to implement in this draft (especially as ietf-dtn-bpsec-interop-sc is expired for more than half a year already)...?",
+        "type": "Discuss"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 22:53:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-03 04:27:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-03 19:26:29-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-03 19:26:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-02-05 18:55:49-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-12-02 14:01:57-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-23 02:43:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-02-17 06:00:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 14:01:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9172",
+  "evaluation_end": "2021-02-17 06:00:11-08:00",
+  "evaluation_start": "2020-01-23 02:43:17-08:00"
+}

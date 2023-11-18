@@ -1,0 +1,251 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-01-20 07:35:42-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-20 07:35:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-01-19 10:05:11-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-19 10:05:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-21 01:07:37-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-21 01:07:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-01-20 10:09:19-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-20 10:09:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-01-14 05:43:39-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-01-14 05:45:46-08:00",
+        "end_reason": "comment_updated",
+        "start": "2021-01-14 05:43:39-08:00",
+        "text": "Thank you for the work put into this document even if I am balloting ABSTAIN, this is useful piece and it should really be improved to fix my ABSTAIN reasons so that I could actively support it. Read my ABSTAIN ballot as \"I oppose this document but understand that others differ and am not going to stand in the way of the others\" per  https://www.ietf.org/standards/process/iesg-ballots/  . Please note that I am neither a YANG expert nor a segment routing one (hence my ABSTAIN rather than a DISCUSS). Based on title, I was expecting this document to be generic and to see companion YANG models for the MPLS and IPv6 data planes but it seems that this document also augments *only* the MPLS one. The asymmetry does not look good to me... Are the authors/WG sure that the IPv6 YANG model can also be specified by augmenting this model ( draft-ietf-spring-srv6-yang-00  is still a -00 ...) and relying on types defined in ietf-segment-routing-common ? Especially when noting that the authors are different ? The YANG model for SR is really short (mostly meaning less except to add one tag in the namespace tree): \u00a0  \"module: ietf-segment-routing \u00a0 \u00a0  augment /rt:routing: \u00a0 \u00a0 \u00a0  +--rw segment-routing\" To be honest, I strongly dislike the fact that there is no common element between the YANG modules for MPLS and IPv6 data planes inside ietf-segment-routing. I admit that I am not an SR expert but I would have expected more common elements: policies, routing protocols, SID, bundlings, ... even if the leaves could be instantiated as generic types to be augmented later. One additional regret is that the document shepherd write-up is really really short. But it includes the most important element (to my eyes): the WG feedback & consensus. Regards, -\u00e9ric",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-14 05:45:46-08:00",
+        "text": "Thank you for the work put into this document even if I am balloting ABSTAIN, this is useful piece and it should really be improved to fix my ABSTAIN reasons so that I could actively support it. Read my ABSTAIN ballot as \"I oppose this document but understand that others differ and am not going to stand in the way of the others\" per  https://www.ietf.org/standards/process/iesg-ballots/  . Please note that I am neither a YANG expert nor a segment routing one (hence my ABSTAIN rather than a DISCUSS). Based on title, I was expecting this document to be generic and to see companion YANG models for the MPLS and IPv6 data planes but it seems that this document also augments *only* the MPLS one. The asymmetry does not look good to me... Are the authors/WG sure that the IPv6 YANG model can also be specified by augmenting this model ( draft-ietf-spring-srv6-yang-00  is still a -00 ...) and relying on types defined in ietf-segment-routing-common ? Especially when noting that the authors are different ? The YANG model for SR is really short (mostly meaningless except for one more tag in the namespace tree): \u00a0  \"module: ietf-segment-routing \u00a0 \u00a0  augment /rt:routing: \u00a0 \u00a0 \u00a0  +--rw segment-routing\" To be honest, I strongly dislike the fact that there is no common element between the YANG modules for MPLS and IPv6 data planes inside ietf-segment-routing. I admit that I am not an SR expert but I would have expected more common elements: policies, routing protocols, SID, link bundles, ... even if the leaves could be instantiated as generic types to be augmented later. One additional regret is that the document shepherd write-up is really really short. But it includes the most important element (to my eyes): the WG feedback & consensus. Regards, -\u00e9ric",
+        "type": "Abstain"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-01-18 21:26:45-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-18 21:26:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-01-21 05:14:09-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-21 05:14:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-01-06 06:26:31-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-06 06:26:31-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-01-20 21:34:59-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-20 21:34:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-21 01:51:23-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-21 01:51:23-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-01-20 19:12:54-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-01-26 15:23:11-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-20 19:12:54-08:00",
+        "text": "Section 9.\u00a0 The primary impact of the manipulating writable nodes appears to be characterized as DoS.\u00a0 Don\u2019t the possible consequences also include the ability to leak traffic outside the trusted domain or to route traffic through arbitrary paths of the attackers choosing potentially enable on-path inspection or manipulation of traffic; or avoidance of security controls?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-26 15:23:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-02-02 08:20:53-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-06 06:26:30-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9020",
+  "evaluation_end": "2021-02-02 08:20:53-08:00",
+  "evaluation_start": "2021-01-06 06:26:30-08:00"
+}

@@ -1,0 +1,283 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-06-30 04:36:28-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-30 04:36:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-06-30 06:12:53-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-30 06:12:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-06-13 18:51:04-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-06-26 21:59:29-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-26 21:59:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-06-30 03:31:57-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-30 03:31:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-29 09:02:10-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-07-11 06:48:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-29 09:02:10-07:00",
+        "text": "1. In \u00a73.2, \u00a0  The following HHIT Suite IDs are defined: \u00a0 \u00a0 \u00a0 \u00a0 HHIT Suite\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Value \u00a0 \u00a0 \u00a0 \u00a0 RESERVED\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 0 \u00a0 \u00a0 \u00a0 \u00a0 RSA,DSA/SHA-256\u00a0 \u00a0  1\u00a0 \u00a0 [ RFC7401 ] \u00a0 \u00a0 \u00a0 \u00a0 ECDSA/SHA-384\u00a0 \u00a0 \u00a0  2\u00a0 \u00a0 [ RFC7401 ] \u00a0 \u00a0 \u00a0 \u00a0 ECDSA_LOW/SHA-1\u00a0 \u00a0  3\u00a0 \u00a0 [ RFC7401 ] \u00a0 \u00a0 \u00a0 \u00a0 EdDSA/cSHAKE128\u00a0 \u00a0  TBD3 (suggested value 5)\u00a0  (RECOMMENDED) What, exactly, does the notation \"RECOMMENDED\" on the last quoted line mean? AFAICT there's no unambiguous way to parse this. My guess is that it's meant to mean \"this is the suite we think you should use\". Whatever the intended meaning, please elaborate to make the meaning clear. I suggest removing the notation from the table, and providing prose in some appropriate section instead, with \"RECOMMENDED\" if you think the  RFC 2119  keyword is needed. If desired, you could xref that section from the table, although I don't think that's really necessary. This comment also applies to the similar lines in \u00a73.4.1, \u00a73.4.1.1, and \u00a73.4.2. The use in \u00a73.4.1.1 is especially confounding, since the prose right before the table tells us that (all of) \"the following EdDSA curves are required\" (but evidently not REQUIRED)... but only some of the required curves are RECOMMENDED? I definitely have no clue, then, what \"RECOMMENDED\" means in this section.  RFC 2119  basically defines RECOMMENDED as a weaker form of REQUIRED, but that doesn't seem to be how you're using it. Similarly, I have no clue what \"RECOMMENDED\" is meant to mean in its several uses in \u00a78.2 and \u00a78.4. I suggest simply removing it from those sections entirely. (Taken together, this comment covers every use of RECCOMMENDED in the document.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-11 06:48:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-06-30 11:29:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-07-13 12:06:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-30 11:29:55-07:00",
+        "text": "John raised this in a comment, and I agree with it: Please provide proper guidance for your new registry's designated experts, or let's discuss why you think what's there is sufficient.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-13 12:06:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-06-29 19:07:44-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-08-18 18:21:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-29 19:07:44-07:00",
+        "text": "#1 \u00a0  Note that if the zone  hhit.arpa  is ultimately used, some registrar \u00a0  will need to manage this for all HHIT applications. Regardless of what zone is used, someone needs to keep it operational. It might be an attractive target to attack, eg to try and avoid drones being shut down. I would feel much better if this zone was optional, not mandatory. (but if optional, one could also argue maybe not have it at all?) \u00a0  If the HHITs cannot be \u00a0  looked up with services provided by the registrar identified via the \u00a0  embedded hierarchical information or its registration validated by \u00a0  registration attestations messages [drip-authentication], then the \u00a0  HHIT is either fraudulent or revoked/expired. That's quite catastrophic if there is a Registrar/Registry outage. Would all the drones get shot down or would they all be ignored (so they can fly to their terrorism target) #2 As DISCUSS'ED by others,  https://www.iana.org/assignments/hip-parameters/hip-parameters.xhtml#hi-algorithm  does not seem to have a third field for \"status\" to denotate RECOMMENDED, REQUIRED, etc, even though  RFC 7401  creates the registry, uses the terms too but doesn't populate a status field. Perhaps this or another short RFC could do so. Also, 3.4.1 calls this \"Algorithm profiles\" and \"Values\" but the IANA registry calls it \"Algorithm Profile\" (singular) and \"Value\" (singular) #3 Section 3.4.1.1. has a NULL field of variable length ? Or perhaps the slash and pipe symbols on those first and second lines got swapped by accident? #4 \u00a0  The new EdDSA HI uses [ RFC8080 ] for the IPSECKEY RR encoding: \u00a0 \u00a0 \u00a0 Value\u00a0 Description \u00a0 \u00a0 \u00a0 TBD2 (suggested value 4) \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  An EdDSA key is present, in the format defined in [ RFC8080 ] I have asked the Expert of this Registry whether they are okay with this entry to the ipseckey-rr-parameters registry. It might be confusing for IKE.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-18 18:21:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-06-30 06:55:19-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-30 06:55:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-06-28 12:02:22-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-13 13:02:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-28 12:02:22-07:00",
+        "text": "** With updates tag for  RFC7343 , I read the text in Section 3.5.* as providing a generic description of a new ORCHID computation techniques.\u00a0 Other parts of the text describe how to use it for HIT and HHIT.\u00a0 If that interpretation is correct: -- Section 3.5.1.\u00a0  \u00a0  With a 28-bit IPv6 prefix, the \u00a0  remaining 100 bits can be divided in any manner between the \u00a0  additional information (\"Info\"), OGA ID, and the hash output. Since this section is describing a generic ORCHID technique, does this mean one could potentially choose a 0 or 1 bit hash output size?\u00a0 All the provided security analysis is predicated on a 64-bit HIT.\u00a0 What is associated analysis and security considerations for smaller HITs? -- Section 3.5.1. \u00a0  The header content consists \u00a0  of the Prefix, the Additional Information (\"Info\"), and OGA ID (HIT \u00a0  Suite ID).\u00a0  Secondly, the length of the resulting hash is set by sum \u00a0  of the length of the ORCHID header fields.\u00a0  The second sentence is true only if ORCHID setup is according to the DRIP spec: p=28, info=28, OGA-ID=8 to make 64 bits.\u00a0 However, this is a generic update to define an ORCHID.\u00a0 The previous text said that an OGA-ID could be 4 bits \u2013 28+28+4 = 60, so if the \u201cresulting hash should be set by the length of the ORCHID header field\u201d, it would be off by 4 bits. ** Section 4.2 \u00a0  A mapping service (e.g., DNS) MUST provide a trusted (e.g., via \u00a0  DNSSEC [ RFC4034 ]) conversion of the 4-character Manufacturer Code to \u00a0  high-order 58 bits (Prefix | HID) of the HHIT. Can this \u201ctrust\u201d be described in more detail?\u00a0 Section 4.4 makes it a point to say \u201ccryptographically bind all content in the ORCHID through the hashing function.\u00a0 A recipient of a DET that has the underlying HI can directly trust and act on all content in the HHIT\u201d.\u00a0 Here this information is being split.\u00a0 Is the out-of-scope mechanism expected to provide a similar guarantee? ** Section 4.6 \u00a0  The EdDSA25519 HI (Section 3.4) underlying the DET can be used in an \u00a0  84-byte self-proof attestation (timestamp, HHIT, and signature of \u00a0  these) to provide proof of Remote ID ownership (GEN-1 in [ RFC9153 ]). \u00a0  In practice, the Wrapper and Manifest authentication formats \u00a0  (Sections 6.3.3 and 6.3.4 of [drip-authentication]) implicitly \u00a0  provide this self-attestation.\u00a0 A lookup service like DNS can provide \u00a0  the HI and registration proof (GEN-3 in [ RFC9153 ]). \u00a0  Similarly, for Observers without Internet access, a 200-byte offline \u00a0  self-attestation could provide the same Remote ID ownership proof. \u00a0  This attestation would contain the HDA's signing of the UA's HHIT, \u00a0  itself signed by the UA's HI.\u00a0 Only a small cache that contains the \u00a0  HDA's HI/HHIT and HDA meta-data is needed by the Observer.\u00a0 However, \u00a0  such an object would just fit in the ASTM Authentication Message \u00a0  (Section 2.2 of [ RFC9153 ]) with no room for growth.\u00a0 In practice, \u00a0  [drip-authentication] provides this offline self-attestation in two \u00a0  authentication messages: the HDA's certification of the UA's HHIT \u00a0  registration in a Link authentication message whose hash is sent in a \u00a0  Manifest authentication message. I\u2019m having trouble following along on where the guidance for offline verification is described \u2013 who exactly signs what with what key and in what format is this stored.\u00a0 Is this considered in-scope for this document?\u00a0 Given the asserted security properties,  -- I\u2019ll note that  draft-ietf-drip-auth  is an informative reference. -- What exactly needs to be in the offline Observer\u2019s cache?\u00a0 I couldn\u2019t find that in draft-ietf-drip-auth. -- Why is the first sentence in the first paragraph present?\u00a0 It is describing a hypothetical situation that isn\u2019t used in DRIP.\u00a0 Likewise, the first sentence of the second paragraph also seems like a hypothetical using verbs like \u201ccould provide\u201d -- The text reference a lookup service, how does that service an offline Observer?   ** Section 9.\u00a0  \u00a0  Therefore, the HHIT registration and HHIT/HI registration validation \u00a0  is strongly recommended. If validation isn\u2019t done, who are the promised security guarantees of global non-collision possible?\u00a0 Practically, why isn\u2019t this a MUST? ** Section 9.5. \u00a0  The UAS/USS registration \u00a0  process should include registering the DET and MUST reject a \u00a0  collision, forcing the UAS to generate a new HI and thus HHIT and \u00a0  reapplying to the DET registration process. How does a UAS \u201cgenerate a new HI\u201d in the case of a CTA2063A or manufacturer hard-coding the HHIT per Section 3.2 of  draft-ietf-drip-arch-24 ?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-13 13:02:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-06-29 09:01:06-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-07-14 11:38:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-29 09:01:06-07:00",
+        "text": "Apologies for the terse / rushed tone of this ballot - I'm currently traveling and really short on time.  1: \"A mapping service (e.g., DNS) MUST provide a trusted (e.g., via DNSSEC [ RFC4034 ]) conversion of the 4-character Manufacturer Code to high-order 58 bits (Prefix | HID) of the HHIT.\u00a0 Definition of this mapping service is currently out of scope of this document.\" -- this feels really underspecified, especially because it is a MUST. DNSSEC provides channel security, but by itself doesn't provide \"trusted\" data, nor provide a \"conversion\", etc.  Where is the \"trust\" here? (Sec 9 doesn't really answer this) Who is supposed to run this? Even more so, why is this a \"just stick it in the DNS\" type solution (see comment #2).  2: \"Now it should be noted that the 2^64 attempts is for stealing a specific HHIT.\u00a0 Consider a scenario of a street photography company with 1,024 UAs (each with its own HHIT); you'd be happy stealing any one of them.\" This is only true if I want to steal one for this specific street photography company - surely I'd be perfectly happy \"stealing\" any HHIT that works? Doesn't that make it more on the order of (number of units), not 1024? Also, the \"Therefore, the HHIT registration and HHIT/HI registration validation is strongly recommended.\" bit seems underspecified.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-14 11:38:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-06-29 08:14:23-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-13 18:51:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-12-02 15:50:49-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-29 08:14:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9374",
+  "evaluation_end": "2022-12-02 15:50:49-08:00",
+  "evaluation_start": "2022-06-13 18:51:04-07:00"
+}

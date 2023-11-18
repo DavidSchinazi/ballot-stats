@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-04-27 03:04:13-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-27 03:04:13-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-05-04 23:08:44-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-05-01 23:46:33-07:00",
+        "text": "Thank you for the work put into this document.  Please find below one blocking DISCUSS points (easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to Greg Mirsky for the shepherd's detailed write-up including the WG consensus ***and*** the justification of the intended status.  I hope that this review helps to improve the document, Regards, -\u00e9ric # DISCUSS (blocking) As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is just a request to have a discussion on the following topics: ## Section 3 This is probably due to my lack of knowledge about NSH... So, a simple discussion over email will probably be enough to clear my DISCUSS points. RFC 9197  has an incremental tracing (section 4.4.1), how does it impact the length of the IOAM header in this case? Assuming that this header size is increased, I suggest to add some text about increasing the length field of IOAM header. `When a packet with IOAM is received at an NSH based forwarding node such as an Service Function Forwarder (SFF) that does not understand IOAM header, it SHOULD drop the packet.` is actually a copy of  RFC 8300  ```\u00a0  Packets with Next Protocol values not supported SHOULD be silently dropped \u00a0 \u00a0 \u00a0 by default, although an implementation MAY provide a configuration \u00a0 \u00a0 \u00a0 parameter to forward them. ``` and not a new behaviour. So, let's rather be clear and use a structure like \"Per section 2.2 of  RFC 8300 , ...\" followed by the  RFC 8300  text. While very similar to Jim Guichard's DISCUSS point, it is related to another part of the document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-04 23:08:44-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-04-30 20:10:19-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-30 20:10:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-04-28 12:29:29-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-05-04 15:27:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-04-28 12:29:29-07:00",
+        "text": "- Section 3:  \u00a0  The IOAM-Data-Fields MUST follow the definitions corresponding to \u00a0  IOAM-Option-Types (e.g., see Section 5 of [ RFC9197 ] and Section 3.2 \u00a0  of [ I-D.ietf-ippm-ioam-direct-export ]) The above reference to  RFC9197  is incorrect although a simple fix. The IOAM-Option-Types are defined in Section 4 of that document not Section 5. Adding a DISCUSS as this reference is important enough to not just be a comment. Note that the same incorrect reference is used later on in Section 3 and must be corrected also.  - Section 3: \u00a0  The operator MUST ensure that all nodes along the service path support IOAM.\u00a0 Otherwise \u00a0  packets with IOAM are likely to be dropped per [ RFC8300 ]. This text needs clarification as  RFC8300  says nothing about IOAM specifically and dropping of OAM packets is discussed in that RFC here ->  https://www.rfc-editor.org/rfc/rfc8300#:~:text=O%20bit%3A%20%20Setting,disabled%20by%20default . The authors should clarify exactly what they mean by the above text and clarify what specifically in  RFC8300  would cause packets to be dropped if a node does not support IOAM.  - IANA Considerations: The text says \"IANA is requested to allocate protocol numbers for the following \"NSH Next Protocol\" related to IOAM\" but there is no reference to the correct registry. NSH Next Protocol allocations can be found here: https://www.iana.org/assignments/nsh/nsh.xhtml#next-protocol  and they are part of the Network Service Header (NSH) Parameters registry. Please provide an accurate reference to the Network Service Header (NSH) Parameters registry for IANA. - Section 5: Another incorrect reference needs to be corrected. \"For additional IOAM related security considerations, see Section 10 in [ RFC9197 ].\". It is actually section 9 of that RFC so please correct the reference.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-04 15:27:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-01 07:37:28-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-01 07:37:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-05-01 14:20:32-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-01 14:20:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-05-03 23:09:17-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-03 23:09:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-05-02 10:21:37-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-02 10:21:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-05-02 05:52:37-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-05-05 02:42:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-05-02 05:52:37-07:00",
+        "text": "Hi, Thanks for this document. A couple of discuss points that I raised only because I find the spec to be unclear which should be be easy to clarify: (1) p 2, sec 3.\u00a0 IOAM encapsulation with NSH \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  The operator MUST \u00a0  ensure that all nodes along the service path support IOAM. Is it actually 'all nodes along the service path' or \"SFC aware nodes along the service path\" that MUST support IOAM? (2) p 3, sec 3.\u00a0 IOAM encapsulation with NSH \u00a0 \u00a0 \u00a0 IOAM HDR Len:\u00a0 8 bit Length field contains the length of the IOAM \u00a0 \u00a0 \u00a0 \u00a0  header in 4-octet units. Does this mean quantized to 4 byte units, or that the actual length in bytes is 4 * \"Hdr Len\" field?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-05 02:42:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-05-01 05:58:32-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-05-01 07:36:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-05-01 05:58:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-05-04 13:49:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-05-01 07:36:02-07:00",
+        "text": "(revised ballot) ** Section 5. \u00a0  IOAM is considered a \"per domain\" feature, where one or several \u00a0  operators decide on leveraging and configuring IOAM according to \u00a0  their needs. This seems like an an expansion of the applicability statement of IOAM.\u00a0 I don\u2019t see reference to multiple operators in Section 3 of  RFC9197 .\u00a0 Please explicitly cite the  RFC9197  applicability statement to be clear that scope is not being expanded and and consider if discussion of multiple operators is needed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-04 13:49:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-05-04 07:23:55-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-04 07:23:55-07:00",
+        "text": "I believe that the Security Considerations section is very underspecified - simply saying that \"operators need to properly secure the IOAM domain to avoid malicious configuration\" feels like it is sidestepping the issues / absolving itself of responsibility.",
+        "type": "Abstain"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-05-03 08:17:56-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-03 08:17:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "\u00c9ric Vyncke": [
+      {
+        "ad": "\u00c9ric Vyncke",
+        "end": "2023-05-08 07:19:31-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-27 03:04:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9452",
+  "evaluation_end": "2023-05-08 07:19:31-07:00",
+  "evaluation_start": "2023-04-27 03:04:12-07:00"
+}

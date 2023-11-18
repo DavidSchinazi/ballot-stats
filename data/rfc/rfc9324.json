@@ -1,0 +1,291 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-08-22 14:12:24-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-08-24 06:37:31-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-22 14:12:24-07:00",
+        "text": "(1) [I'm raising this point to be a discussion -- it may not end with changes to the document.] This document recommends that route refresh not be used when inbound policies change at a relatively high rate.\u00a0 ROV validation is \"only\" an example. As Jeff Haas wrote on the idr list [1]: \u00a0  This isn't any different than any other over-aggressive  \u00a0  provisioning tool's impact.\u00a0  Was there any consideration given to making a general recommendation and not just limiting it to ROV?\u00a0 I can see the direct impact on  rfc6811 /rfc8481, and how general BGP advice is out of scope for sidrops.\u00a0 However, I am primarily curious whether there is anything particular to ROV to focus the recommendation this way.\u00a0 I couldn't find a related discussion (beyond Jeff's message) in the archive, but I may have missed it. [1]  https://mailarchive.ietf.org/arch/msg/idr/F3w0RDyv9dK4w15fzuDZx3P4Jw0 (2) I have a couple of issues with this paragraph from \u00a74.\u00a0 Addressing them should be relatively easy: \u00a0  When RPKI data cause one or more paths to be dropped due to ROV, \u00a0  those paths MUST NOT be evaluated for best path, but MUST be saved \u00a0  (either separately or marked) so they may be reevaluated with respect \u00a0  to new RPKI data. (2a) \"paths to be dropped due to ROV, those paths MUST NOT be evaluated for best path\" Neither  rfc6811  nor  rfc8481  require that routes be \"dropped due to ROV\".\u00a0  rfc8481  requires that \"Absent specific operator configuration, policy MUST NOT be applied.\" Please clarify that the trigger above (\"dropped due to ROV\") is defined by the operator and is not just a result of ROV. (b) \"MUST be saved (either separately or marked)\" For a required action, the description is not clear.\u00a0 For starters, \"marked\" how?\u00a0 Separately where? From \u00a71.1/rfc4271: \u00a0  The Adj-RIBs-In contains unprocessed routing information that has \u00a0  been advertised to the local BGP speaker by its peers. The RIB structures in  rfc4271  are conceptual -- but since this document requires keeping information (presumably in the Adj-RIB-In), please be more specific about where and marked how. (3) The following requirement from \u00a75 is outside the scope of this document: \u00a0  If the BGP speaker has insufficient resources to support either of \u00a0  the two proposed options, it MUST NOT be used for Route Origin \u00a0  Validation.\u00a0 I.e. the knob in Section 4 should only be used in very \u00a0  well known and controlled circumstances. Requiring a node not to be used for ROV is a powerful statement.\u00a0 It basically invalidates the base operation specified on  rfc6811 /rfc8481 by always requiring the mechanism in this document.\u00a0 While I understand the potential resource demands, selecting a node to perform a specific operation in a particular operator's network is outside the scope of this document. Instead, I would like to see guidance to the operator to consider not using the specific piece of equipment to perform a particular function.\u00a0 This can be as easy as: \u00a0 \u00a0 If the BGP speaker has insufficient resources to support either  \u00a0 \u00a0 of the two proposed options, the operator is strongly encouraged  \u00a0 \u00a0 to consider an alternate piece of equipment to perform Route Origin  \u00a0 \u00a0 Validation. The second part of the sentence (\"I.e. ...\") sounds like a better recommendation -- and, clearly, not the same as \"MUST NOT be used\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-24 06:37:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-08-25 06:22:15-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-09-08 03:35:58-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-25 06:22:15-07:00",
+        "text": "Hi Authors, Thanks for the document, for the most part I find it clear and easy to understand. I however would like to discuss the following:  If the BGP speaker's equipment has insufficient resources to support \u00a0  either of the two proposed options, it MUST NOT be used for Route \u00a0  Origin Validation.\u00a0 The equipment should either be replaced with \u00a0  capable equipment or ROV not used.\u00a0 I.e. the knob in Section 4 should \u00a0  only be used in very well known and controlled circumstances. My concerns with this are two fold - firstly - it's entirely unclear what is meant by \"well known and controlled circumstances\". More importantly, I'm concerned that this paragraph as written could lead to a situation that where people read this as \"if you can't support this behavior - forget BGP security\" - and that I would think would be a more dangerous situation than the route refresh behavior. I'd be happier if we could  a.) Either say that operators should plan for upgrades - but turn off RPKI in the meantime or b.) Change the wording such that it says something along the lines of \"it MUST not be used for ROV without the informed consent of the peers\" - meaning that peer that takes the brunt of the refreshes has to consent explicitly. Either option prevents the position where operators running smaller older hardware are handed an excuse to forgo RPKI entirely - or to turn it off - because in my experience once someone turns something off, getting them to turn it back on again, can be a tricky proposition. Let's discuss! Thanks Andrew",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-08 03:35:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-08-22 07:07:59-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-22 07:07:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-08-13 21:48:17-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-13 21:48:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-08-24 13:45:40-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-08-24 13:46:54-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-08-24 13:45:40-07:00",
+        "text": "I'm strongly in favor of this work and glad to see it here.\u00a0 I do want to DISCUSS Section 4, though.\u00a0 I apologize for not having reviewed and commented on this section before now. My concern can be summed up as, some of the language of Section 4 while well-intentioned, can mislead the reader into thinking it's fine to continue sending Route Refreshes after all.\u00a0 If you could see your way clear to taking a swing at reorganizing it to  mitigate that, it would be great.\u00a0 The most notable example of a place where the reader could be misled is the third paragraph, which has the clause \"... MUST issue a route refresh\".\u00a0 I think  you are probably meaning to say that such a route refresh would be a natural consequence of not following this spec (and not saving the ineligible routes) -- but by using the 2119 keyword you  create a different expectation. Please let me know if you want to talk this through in more detail.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-08-24 14:07:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-24 13:46:54-07:00",
+        "text": "I'm strongly in favor of this work and glad to see it here.\u00a0 I do want to DISCUSS Section 4, though.\u00a0 I apologize for not having reviewed and commented on this section before now. My concern can be summed up as, some of the language of Section 4 while well-intentioned, can mislead the reader into thinking it's fine to continue sending Route Refreshes after all.\u00a0 If you could take a swing at reorganizing it to mitigate that, it would be great. The most notable example of a place where the reader could be misled is the third paragraph, which has the clause \"... MUST issue a route refresh\".\u00a0 I think you are probably meaning to say that such a route refresh would be a natural consequence of not following this spec (and not saving the ineligible routes) -- but by using the 2119 keyword you create a different expectation. Please let me know if you want to talk this through in more detail.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-24 14:07:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-08-24 03:31:26-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-08-24 07:02:27-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-24 03:31:26-07:00",
+        "text": "# GEN AD review of  draft-ietf-sidrops-rov-no-rr-03 CC @larseggert Thanks to Paul Kyzivat for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/Qhb_8-Kc5e5QEE47En6NhULHnjI ). ## Discuss ### Unclear RFC status ``` \u00a0 Intended status: Standards Track\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Arrcus, Inc. ``` The datatracker metadata for this document indicated a intended status of \"Internet Standard\". I assume this is incorrect and needs to be changed (probably to \"Proposed Standard\".)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-24 07:02:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-08-24 23:30:21-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-08-25 07:48:43-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-24 23:30:21-07:00",
+        "text": "This should be easy to resolve, but it's a necessary process check:\u00a0 The shepherd writeup says this is going for Internet Standard status, but the other metadata and the document itself seems to be set for Proposed Standard.\u00a0 Which is right?\u00a0 I believe there are other incantations that have to be done if the former is true.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-25 07:48:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-08-24 08:10:03-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-24 08:10:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-08-25 03:34:25-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-25 03:34:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-08-24 12:50:21-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-24 12:50:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-08-08 12:50:39-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-08-24 09:19:17-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-08 12:50:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-09-22 06:19:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-24 09:19:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9324",
+  "evaluation_end": "2022-09-22 06:19:53-07:00",
+  "evaluation_start": "2022-08-08 12:50:39-07:00"
+}

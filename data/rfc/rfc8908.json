@@ -1,0 +1,259 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-06-09 13:25:45-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-09 13:25:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-05-11 06:08:29-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-11 06:08:29-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-06-09 12:15:22-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-09 12:15:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-06-10 15:20:56-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-10 15:20:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-06-07 08:09:31-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-07 08:09:31-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-06-11 02:04:14-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-11 02:04:14-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-06-11 06:38:35-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-06-22 01:30:50-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-11 06:38:35-07:00",
+        "text": "Section 4.1: \u00a0  The API server endpoint MUST be accessed using HTTP over TLS (HTTPS) \u00a0  and SHOULD be served on port 443 [ RFC2818 ]. I have another reason than Roman to discuss this particular sentence. First of all what is the intention of which HTTP version should be supported here?  And which protocol are the port 443 you are recommending, TCP, UDP or SCTP? This also relates to HTTP/3 as it is getting close to being published, we can expect that in the future maybe people would like to upgrade to HTTP/3. Already now I am wondering if the written allow for HTTP/2 over TLS/TCP? Note, that I am mostly commenting from the perspective if you want to be specific that it is HTTP/1.1. over TLS/TCP that is the goal. Then this document should make certain changes in the formulation. If you want to be unspecific and don't think that will hurt interoperability, then another formulation that the current is also needed. Likely also a discussion about how a client will figure out what versions are supported. And maybe one of the ART ADs can help untangle if  RFC 2818  really is the right normative reference here? Or if it should be  RFC 7230  and possibly additional references for HTTP/2?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-22 01:30:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-06-06 14:48:48-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-06-08 08:08:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-06 14:48:48-07:00",
+        "text": "Unless I am misinterpreting the language here, there is a disconnect between this document and the architecture document. Sec 2.3 of -architecture says: At minimum, the API MUST provide: (1) the state of captivity and (2) a URI for the Captive Portal Server. But in section 5 user-portal-url is an optional field. Is -architecture actually levying a requirement on the api spec, or the api server? I am also confused by this sentence at the end of section 4.1 about failed authentication: \u201cIt may still be possible for the user to access the network by being redirected to a web portal.\u201d Who is doing the redirecting here? If authentication has failed, how is this redirect authenticated and secure against theft of credentials?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-08 08:08:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-05-13 00:45:13-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-13 00:45:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-06-11 04:11:00-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-11 04:11:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-06-09 19:51:18-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-06-19 05:42:50-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-09 19:51:18-07:00",
+        "text": "\u201cDiscuss discuss\u201d.\u00a0 Section 4 says \u201cThe API server endpoint MUST be accessed using HTTP over TLS (HTTPS) and SHOULD be served on port 443 [ RFC2818 ].\u201d\u00a0 There is also various guidance on verifying the API server identity and access to revocation and time resources.\u00a0 However, the way I read the definition of the \u201cCaptive Portal API Server\u201d per Section 2 and per Figure 1 of  draft-ietf-capport-architecture , the API server is logically different than the service at the user-portal-url URL (i.e., Web Portal Server in the architecture).\u00a0  Section 7.1 helpfully points out \u201cInformation passed between a client and a Captive Portal system may include a user's personal information, such as a full name and credit card details.\u00a0 Therefore, it is important that Captive Portal API Servers do not allow access to the Captive Portal API over unencrypted sessions.\u201d\u00a0 The first sentence is makes sense, but the second, while true, doesn\u2019t follow the first for me.\u00a0 PII and credit card information would be the kind of input you would provide to the _Web Portal Server_ not the Captive Portal API (of course both are part of the overall Captive Portal system).\u00a0 I feel there is missing guidance roughly on the order of the user-portal-url \u201cprovides the URL of a web portal _that MUST be accessed over TLS_ with which a user can interact.\u201d (and the venue-info-url SHOULD use TLS too).\u00a0  Both this draft and  draft-ietf-capport-rfc7710bis-07  are fundamentally providing pointers to other resources.\u00a0 Would it be out of scope for this document to place restrictions on what the API is capable of pointing to?\u00a0 If not here, then where?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-19 05:42:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-07-02 06:17:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-11 06:08:26-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8908",
+  "evaluation_end": "2020-07-02 06:17:05-07:00",
+  "evaluation_start": "2020-05-11 06:08:26-07:00"
+}

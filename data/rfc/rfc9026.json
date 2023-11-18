@@ -1,0 +1,259 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-12-15 15:08:19-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-01-21 12:48:36-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-12-15 15:08:19-08:00",
+        "text": "(1) This document describes several methods to determine the status of a  tunnel (in \u00a73), none of which \"provide a \"fast failover\" solution when used  alone, but can be used together with the mechanism described in Section 4\"  (\u00a71).\u00a0 \u00a73 also says this: \u00a0  An implementation may support any combination of the methods \u00a0  described in this section and provide a network operator with control \u00a0  to choose which one to use in the particular deployment. While \u00a73.1 is clear in the fact that it is not a requirement for all  downstream PEs to use the same mechanism, there are no guidelines to aid the  operator to chose which mechanism to use.\u00a0 Some cases may be obvious (e.g.  \u00a73.1.3 applies to tunnels of a specific type), but others are not.\u00a0 I would  like to see deployment considerations related to the advantages/disadvantages  that each method may have in specific situations (including their possible  combination). (2) The BFD Discriminator Attribute has a very narrow application in this document when compared to the potential other uses given the extensibility possibilities related to bootstrapping BFD.\u00a0 I have serious concerns about  the attribute being defined in this document, amongst a series of other  mechanisms. (2a) The tunnel can be monitored without the new BGP Attribute (assuming  proper configuration of course).\u00a0 Why is that option is not even mentioned in  the document?\u00a0   In fact, the document recommends deleting the BFD session if the Attribute is not present.\u00a0 Why is that recommendation in place, and what are the cases when it can not be followed? (2b) The fact that BFD monitoring can be achieved without the new attribute makes me think that the bootstrapping of BFD using BGP would be better served  in a document produced by the BFD WG.\u00a0 One of the editors has expressed the  same opinion [1] [2].\u00a0 Has a discussion taken place in the BFD WG (or at least  with the Chairs) about this work?\u00a0 Why was it not taken up there? [1]  https://mailarchive.ietf.org/arch/msg/rtg-bfd/T1jVpgyXuPatTpuD_wA0JC3CT1c/ [2]  https://tools.ietf.org/wg/bess/minutes?item=minutes-96-bess.html",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-21 12:48:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-12-16 21:20:02-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-16 21:20:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-14 16:51:00-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-23 16:52:15-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-12-14 16:51:00-08:00",
+        "text": "Let's talk about what the requirements are for consistency across PEs in the algorithm for selecting the Primary Upstream PE.\u00a0 Section 4 notes that \"all the PEs of that MVPN [are required] to follow the same UMH selection procedure\", but leaves the option of non-revertive behavior as something that \"MAY also be supported by an implementation\", without requirement for consistency across all PEs.\u00a0 It seems to me that if some PEs use non-revertive behavior and others do not, then they will disagree as to which PE is the Primary (or active) PE in some cases, which seems to conflict with the initial guidance that all PEs needed to pick the same one.\u00a0 Is it perhaps that the PEs need to agree on which PE is to be advertised as Primary but not necessarily to actually be using that one for traffic?\u00a0 Or am I missing something?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-23 16:52:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-12-15 12:25:31-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-15 12:25:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-12-16 02:05:19-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-12-21 03:19:17-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-12-16 02:05:19-08:00",
+        "text": "Thank you for the work put into this document.  I have balloted ABSTAIN in the sense of \"I oppose this document but understand that others differ and am not going to stand in the way of the others.\" because of the use outside of a node of the IPv4-mapped IPv6 addresses in section 3.1.6.1. A reply on this topic will be welcome. St\u00e9phane in his doc shepherd's write up states that no implementation is known for a document born in 2008... Does the IETF really want to have this on the proposed standards track ? Please find below my ABSTAIN point, some non-blocking COMMENT points (but replies would be appreciated), and one nits. I hope that this helps to improve the document, Regards, -\u00e9ric == ABSTAIN == -- Section 3.1.6.1 -- I appreciate that the BFD WG relies on \"::ffff:127.0.0.0/104\" but those IPv4-mapped IPv6 addresses are assumed to never leave a node and should never be transmitted over the Internet (see  https://tools.ietf.org/html/rfc5156#section-2.2 ). This is the cause of my ABSTAIN. As the inner packet is sent over a tunnel, why not using the a link-local address or the ff02::1 link-local multicast group ? == COMMENTS == -- Section 2.3 -- The use of \"upstream\" and \"Upstream\" could be confusing... The latter could have been \"Upstream PE/ABSR\" (often used later in the document) or \"ingress node\"  -- Section 3.1.6 -- Could the \"BFD Discreminator\" attribute be used for other purpose than this document? If so, then why not specifying it in *another* document? Should this document clearly state that it does not define any TLV ? == NITS == As I am probably not the only reader have difficulties to remember RFC contents by their number, may I suggest to prefix the RFC numbers with their titles ? Esp in the introduction ;-)",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-21 03:19:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-12-16 22:49:09-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-16 22:49:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-12-17 06:41:18-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-17 06:41:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-12-15 12:07:52-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-15 12:07:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-11-17 06:38:07-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-12-16 21:48:38-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-16 21:48:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-12-16 14:38:14-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-16 14:38:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-02-02 08:26:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-17 06:38:07-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9026",
+  "evaluation_end": "2021-02-02 08:26:19-08:00",
+  "evaluation_start": "2020-11-17 06:38:07-08:00"
+}

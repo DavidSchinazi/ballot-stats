@@ -1,0 +1,625 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-02-16 01:49:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-02-16 03:42:49-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-02-16 01:49:29-08:00",
+        "text": "FC 6125 use needs more details. <>",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-04-24 03:16:18-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-02-16 03:42:49-08:00",
+        "text": "When referencing  RFC 6125  you need to provide more details. In particular, you need to pretty much answer every question in section 3 of  RFC 6125 :  One example of how this might look like is in Section 9.2 of . For your convenience the relevant text is pasted below: \u00a0  Routers MUST also verify the cache's TLS server certificate, using \u00a0  subjectAltName dNSName identities as described in [ RFC6125 ], to avoid \u00a0  man-in-the-middle attacks.\u00a0 The rules and guidelines defined in \u00a0  [ RFC6125 ] apply here, with the following considerations: \u00a0 \u00a0 \u00a0 Support for DNS-ID identifier type (that is, the dNSName identity \u00a0 \u00a0 \u00a0 in the subjectAltName extension) is REQUIRED in rpki-rtr server \u00a0 \u00a0 \u00a0 and client implementations which use TLS.\u00a0 Certification \u00a0 \u00a0 \u00a0 authorities which issue rpki-rtr server certificates MUST support \u00a0 \u00a0 \u00a0 the DNS-ID identifier type, and the DNS-ID identifier type MUST be \u00a0 \u00a0 \u00a0 present in rpki-rtr server certificates. \u00a0 \u00a0 \u00a0 DNS names in rpki-rtr server certificates SHOULD NOT contain the \u00a0 \u00a0 \u00a0 wildcard character \"*\". \u00a0 \u00a0 \u00a0 rpki-rtr implementations which use TLS MUST NOT use CN-ID \u00a0 \u00a0 \u00a0 identifiers; a CN field may be present in the server certificate's \u00a0 \u00a0 \u00a0 subject name, but MUST NOT be used for authentication within the \u00a0 \u00a0 \u00a0 rules described in [ RFC6125 ]. The only thing missing from the above is explicit mentioning that SRV-ID and URI-ID are not used. (I think the same should apply to your document.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-07-21 04:08:03-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-04-24 03:16:18-07:00",
+        "text": "Thank you for addressing my DISCUSS about use of  RFC 6125 . I have one\u00a0 new small issue from your recent change in In 5.2.3 (that was addressing my comment to include a response example): the example doesn't include Content-Type and (possibly) Transfer-Encoding header fields. Without these it doesn't look syntactically correct.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-07-21 04:08:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-02-15 12:53:52-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-15 12:53:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-02-15 16:50:31-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-15 16:50:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-02-14 14:36:14-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-08-21 08:29:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-14 14:36:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-04-06 10:55:12-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-06 10:55:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-06-05 12:01:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-02-15 19:26:26-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-15 19:26:26-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-03 11:58:53-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-07-02 13:20:42-07:00",
+        "text": "This is a \"discuss discuss\" -- it's an important question and I'd like to talk about it, but it's not clear that any change to the document will be needed. Once this (and some of the more substantive items in the Comment section) is resolved, I'd be happy to ballot Yes. The introduction notes as an advantage of JWT that: \u00a0  (d)\u00a0 (collection minimization) The request can be signed by a third \u00a0 \u00a0 \u00a0 \u00a0 party attesting that the authorization request is compliant with \u00a0 \u00a0 \u00a0 \u00a0 a certain policy.\u00a0 For example, a request can be pre-examined by \u00a0 \u00a0 \u00a0 \u00a0 a third party that all the personal data requested is strictly \u00a0 \u00a0 \u00a0 \u00a0 necessary to perform the process that the end-user asked for, \u00a0 \u00a0 \u00a0 \u00a0 and statically signed by that third party.\u00a0 The authorization \u00a0 \u00a0 \u00a0 \u00a0 server then examines the signature and shows the conformance \u00a0 \u00a0 \u00a0 \u00a0 status to the end-user, who would have some assurance as to the \u00a0 \u00a0 \u00a0 \u00a0 legitimacy of the request when authorizing it.\u00a0 In some cases, \u00a0 \u00a0 \u00a0 \u00a0 it may even be desirable to skip the authorization dialogue \u00a0 \u00a0 \u00a0 \u00a0 under such circumstances. I'm pretty uncomfortable about suggesting that the authorization dialogue can/should be skipped; do we need to keep this example? Maybe just talking about what an expected use case could be would help alleviate my unease.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-08-11 08:52:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-03 11:58:53-07:00",
+        "text": "My apologies; my previous position was incomplete.\u00a0 Updated to note namespacing issues, and one minor terminology nit about \"DNS-ID\". There seem to be some pretty serious namespacing issues that are not discussed at all in this document.\u00a0 Specifically, using JWT as a container for OAuth 2.0 authorization request parameters (including extension parameters) introduces the usage of many new names (of JSON name/value pairs) into the JWT claims namespace.\u00a0 Furthermore, the addition is not bounded, as any new OAuth extension parameters are implicitly permitted to be used as well!\u00a0 The IANA Considerations make no mention of the collapsed namespace for JWT claims and OAuth 2.0 (authorization request) parameters, leaving substantial potential for collisions in the future. Relatedly, using \"application/jwt\" as the Content-type of the HTTP response from dereferencing the request_uri with no explicit indication of the type/profile of JWT used (whether in the content type or in the JWT claims themselves) gives some risk of misinterpretation of the content.\u00a0 Consider, for example, when that request_uri is dereferenced not by the authorization server in the process of fulfilling an authorization request, but instead by some other service that expects a different type of JWT. This second point is a \"discuss discuss\" -- it's an important question and I'd like to talk about it, but it's not clear that any change to the document will be needed. The introduction notes as an advantage of JWT that: \u00a0  (d)\u00a0 (collection minimization) The request can be signed by a third \u00a0 \u00a0 \u00a0 \u00a0 party attesting that the authorization request is compliant with \u00a0 \u00a0 \u00a0 \u00a0 a certain policy.\u00a0 For example, a request can be pre-examined by \u00a0 \u00a0 \u00a0 \u00a0 a third party that all the personal data requested is strictly \u00a0 \u00a0 \u00a0 \u00a0 necessary to perform the process that the end-user asked for, \u00a0 \u00a0 \u00a0 \u00a0 and statically signed by that third party.\u00a0 The authorization \u00a0 \u00a0 \u00a0 \u00a0 server then examines the signature and shows the conformance \u00a0 \u00a0 \u00a0 \u00a0 status to the end-user, who would have some assurance as to the \u00a0 \u00a0 \u00a0 \u00a0 legitimacy of the request when authorizing it.\u00a0 In some cases, \u00a0 \u00a0 \u00a0 \u00a0 it may even be desirable to skip the authorization dialogue \u00a0 \u00a0 \u00a0 \u00a0 under such circumstances. I'm pretty uncomfortable about suggesting that the authorization dialogue can/should be skipped; do we need to keep this example?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-08-21 08:29:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-11 08:52:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-04-06 11:39:00-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-06 11:39:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-02-16 00:37:38-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-16 00:37:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-02-14 13:35:51-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-14 13:35:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-08-21 08:29:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-05 01:46:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-04-06 07:49:14-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-06 07:49:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-08-21 08:29:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-12 13:00:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-04-07 20:12:17-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-07 20:12:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-04-07 03:28:17-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-07 03:28:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-02-16 03:55:58-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-16 03:55:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-02-16 00:03:15-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-16 00:03:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-04-07 18:00:24-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-07 18:00:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-02-14 08:13:00-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-14 08:13:00-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-04-06 05:19:20-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-06 05:19:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-04-06 12:12:42-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-06 12:12:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-04-06 08:19:26-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-06 08:19:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-02-16 02:31:16-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-16 02:31:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-08-21 08:29:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-12 00:55:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-04-07 23:42:36-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-07 23:42:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-08-21 08:29:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-12 11:53:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-04-08 05:45:41-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-08 05:45:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-08-21 08:29:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-16 12:31:47-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-03-30 05:38:40-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-02-15 21:29:25-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-15 21:29:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-02-15 16:20:36-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-15 16:20:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-02-14 19:41:57-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-14 19:41:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-02-15 17:34:02-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-14 08:12:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-02-15 17:34:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-08-21 08:29:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-05 10:35:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-04-08 06:06:38-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-30 05:38:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-04-15 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-08 06:06:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9101",
+  "evaluation_end": "2021-04-15 13:41:22-07:00",
+  "evaluation_start": "2021-03-30 05:38:40-07:00"
+}

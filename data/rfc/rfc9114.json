@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-01-20 17:58:13-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-20 17:58:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-01-20 13:11:46-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-20 13:11:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-01-19 21:32:34-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-02 16:15:46-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-19 21:32:34-08:00",
+        "text": "Thanks, Mike, for the excellent editing work on a very clear and well written document. In Section 4.1.1 I\u2019m confused by the combination of the following two paragraphs, and would like to discuss what I\u2019m missing: \u00a0  Like HTTP/2, HTTP/3 does not use the Connection header field to \u00a0  indicate connection-specific fields; in this protocol, connection- \u00a0  specific metadata is conveyed by other means.\u00a0 An endpoint MUST NOT \u00a0  generate an HTTP/3 field section containing connection-specific \u00a0  fields; any message containing connection-specific fields MUST be \u00a0  treated as malformed (Section 4.1.3). ... \u00a0  This means that an intermediary transforming an HTTP/1.x message to \u00a0  HTTP/3 will need to remove any fields nominated by the Connection \u00a0  field, along with the Connection field itself.\u00a0 Such intermediaries \u00a0  SHOULD also remove other connection-specific fields, such as Keep- \u00a0  Alive, Proxy-Connection, Transfer-Encoding, and Upgrade, even if they \u00a0  are not nominated by the Connection field. Given the MUST in the first, how can the second only be SHOULD?\u00a0 Wouldn\u2019t such an intermediary, acting as the HTTP/3 client, be producing a malformed message if it did not \u201cremove other connection-specific fields\u201d?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-02 16:15:46-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-20 10:29:16-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-02 16:28:49-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-20 10:29:16-08:00",
+        "text": "[note to Lucas/chairs: a few (three, I think) of these discusses/comments have preexisting github issues created by the editors over the past couple days due to some out of band discussions; if we can easily reuse them instead of creating new ones that would be preferred] (discuss point 1) Mike already filed  https://github.com/quicwg/base-drafts/issues/4761 and I think we can keep the discussion there. But to reiterate, we reference [SEMANTICS] for certificate validation and use in determining authority for the \"https\" scheme, yet the additional prose discussion we offer (with CN-ID and DNS-ID as the certificate fields to validate against, though not by that name) does not match what's currently present in [SEMANTICS].\u00a0 Discussion so far on the linked issue against [SEMANTICS] suggests that [SEMANTICS] will change, but we should not go forward with this document until we've resolved the disparity.\u00a0 (One might also wonder whether we need to duplicate the content ourselves or should just reference the other document(s).) There is a related topic in that our current formulation in this document treats CN-ID and DNS-ID as equivalently recommended, but current recommendations (including in  RFC 6125 ) are to prefer SAN-based names over the (legacy) CN-ID.\u00a0 I believe there are even some efforts underway in the Web ecosystem to move to fully deprecating the use of CN-ID; at present I believe that some entities require that any name present in the CN-ID be replicated as a DNS-ID as well.\u00a0 If we are to proceed with giving equal preference to CN-ID and DNS-ID, I think that we need to justify or at least call out the divergence from current IETF guidance. [Martin filed  https://github.com/quicwg/base-drafts/issues/4769  for the topic regarding whether CN-ID is mandatory or even recommended.] (discuss point 2) I also think that the procedure, as written, for coalescing HTTP requests against different URI authority components onto a single HTTP/3 connection is under-specified and seems inconsistent both with earlier WG conclusions and with previous IETF-mandated practices for certificate validation. [begin historical tracethrough] There appears to be quite a long history in this space (and I probably missed some of it, even).\u00a0 The idea of coalescing has been around back from the days when we only allowed Alt-Svc as discovery for using QUIC (no direct access), with https://github.com/quicwg/base-drafts/issues/940  being an early issue leading to  https://github.com/quicwg/base-drafts/pull/1024/files , with text that requires both Alt-Svc and valid certificate in order to be authoritative.\u00a0 Then we had https://github.com/quicwg/base-drafts/issues/2223  that notes that this Alt-Svc requirement is more restrictive than  RFC 7540 , which allegedly only requires the certificate to match a given name.\u00a0 (One might argue that 7540's \"additionally depends on having a certificate that is valid\" implies the \"depends on the host having resolved to the same IP address\" still applies, though of course ORIGIN weakens that if it was ever present and this is not terribly relevant to the current question.) Comments on #2223 seem to confirm that the intent is to largely parallel what HTTP/2 does; I'll come back to that in a bit.\u00a0 The corresponding text changes here are https://github.com/quicwg/base-drafts/pull/3558/files  that brings in the concept that \"a server is considered authoritative for all URIs with the 'https' scheme for which the hostname in the URI is present in the authenticated certificate provided by the server, either as [...]\". This text got moved a bit and reworded slightly in response to the secdir review ( https://github.com/quicwg/base-drafts/pull/4419/files ), but the intent is largely still present as \"If a server presents a valid certificate and proof that it controls the corresponding private key, then a client will accept a secured TLS session with that server as being authoritative for all origins with the \"https\" scheme and a host identified in the certificate.\" [end historical tracethrough] So now we have text that says: \u00a0  If a server presents a valid certificate and proof that it controls \u00a0  the corresponding private key, then a client will accept a secured \u00a0  TLS session with that server as being authoritative for all origins \u00a0  with the \"https\" scheme and a host identified in the certificate. This seems problematic to me, and divergent from HTTP/2, in that it focuses on the contents of a certificate *all* being valid/authoritative, as opposed to a certificate being valid for a given host/name.\u00a0 To quote \u00a79.1.1 of  RFC 7540 : \u00a0  For \"https\" resources, connection reuse additionally depends on \u00a0  having a certificate that is valid for the host in the URI.\u00a0 The \u00a0  certificate presented by the server MUST satisfy any checks that the \u00a0  client would perform when forming a new TLS connection for the host \u00a0  in the URI. A representative discussion of these checks is included in  RFC 6125 , and the general procedure for (server) certificate validation takes as input a candidate name of a service or entity that the client is attempting to contact, a certificate (chain) and signature presented by the server, and the application context in which the decision is being made [0].\u00a0 In short, the question is always \"do I (as the client) trust the peer entity to act as this specific name?\", and the answer may differ across names present in a single certificate!\u00a0 So I think we need to refresh this text once more, to bring back the sense that for each name that we might want to allow the server to act as an authority for, we have to do the normal validation checks.\u00a0 Saying that we validate a certificate once along with proof of possession of its private key and then the holder of the key is a valid authority for all names in the certificate invites violation of the client's security policy.\u00a0 For example, the client's trust database might not allow the CA(s) in the presented chain to certify some of the names contained in the certificate, among other reasons. (discuss point 2.1) There is probably some extra excitement surrounding revocation, in that the \"normal certificate validation procedures\" typically involve some form of attempt at a revocation check.\u00a0 What should happen if this check determines that the certificate has been revoked is not entirely clear. Presumably the attempt to use a new name from the certificate would fail, but does it also imply that the entire connection should be torn down, since it was built using the now-revoked certificate? (discuss point 2.2) In practice, the procedure of \"check the name in question against the certificate chain\" seems to mean that a client that is willing to coalesce connections needs to retain the certificate and chain presented by the peer, so that it is available as input to the certificate validation engine (typically accessed via the TLS stack, I suppose) at the time when an authentication decision needs to be made for a given name.\u00a0 This operational practice, as well as the actual mechanics of running a fresh certificate validation procedure, should probably be mentioned down in Section 3.3 where we discuss the actual connection reuse procedures.\u00a0 In particular, I think it would be very benficial to indicate what protocol interactions trigger an attempt by the client to validate a new name from the certificate for use as the authority for HTTP responses, as well as to note clearly that the certificate+chain have to be retained in order to run these checks. (discuss point 2.3) I think we should also look at the procedures for server push as they relate to coalescing; my understanding is that pushed responses are allowed to be for requests to a different authority, and thus that a client will need to discard or reject pushes that are from an authority that the client does not accept the peer as being authoritative for.\u00a0 I guess this is in some sense a check that the client always has to do for all pushed responses, but I'm not entirely sure whether or where that is currently described. [0] This context includes things like the set of trust anchors, as well as potentially information about restrictions on trust anchors, revocation checks, pinning or other restrictive information that reduces the set of CAs that might be allowed to certify a given name, etc.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-02 16:28:49-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-01-20 10:10:24-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-20 10:10:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-01-19 05:54:38-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-19 05:54:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-01-17 23:01:49-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-17 23:01:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-12-17 08:36:09-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-01-11 12:50:15-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-11 12:50:15-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-01-19 06:37:05-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-19 06:37:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-01-21 07:11:26-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-21 07:11:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-21 05:24:24-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-21 05:24:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-01-19 15:28:06-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-19 15:28:06-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-01-20 11:36:58-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-17 08:36:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-02-18 08:06:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-20 11:36:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9114",
+  "evaluation_end": "2021-02-18 08:06:12-08:00",
+  "evaluation_start": "2020-12-17 08:36:09-08:00"
+}

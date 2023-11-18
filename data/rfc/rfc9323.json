@@ -1,0 +1,251 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-09-06 14:38:03-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-06 14:38:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-09-08 04:33:44-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-08 04:33:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-09-06 07:28:19-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-06 07:28:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-08-27 00:14:11-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-27 00:14:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-09-06 13:16:26-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-06 13:16:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-09-07 10:35:43-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-07 10:35:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-09-08 00:44:27-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-09-08 08:33:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-09-08 00:44:27-07:00",
+        "text": "Let's chat about IANA Considerations, which I think needs some work.\u00a0 Fortunately, I think these all have straightforward fixes. First, the easy stuff: \"Required parameters\" and \"Optional parameters\" should probably not be \"None\"; see  RFC 6838  Section 5.6. The \"Security Considerations\" field simply states what the payload is.\u00a0 I think, at a minimum, this should specifically refer to the Security Considerations in the referenced document.\u00a0 Moreover, note this from  RFC 6838 : \u00a0  o\u00a0 Any security analysis MUST state whether or not they employ such \u00a0 \u00a0 \u00a0 \"active content\"; if they do, they MUST state what steps have been \u00a0 \u00a0 \u00a0 taken, or MUST be taken by applications of the media type, to \u00a0 \u00a0 \u00a0 protect users of the media type from harm. This required content is absent.\u00a0 In the referenced document I don't see any evidence that there's active content (i.e., the payload is not directly executable as far as I can tell), but it would be a good idea to say so, at least because the BCP requires it. Finally, as this is a standards action with IETF consensus, the change controller is supposed to be the IETF. Separately, the double \"SHOULD\" in bullet #1 of Section 6 leaves the possibility that an implementation does neither of those things.\u00a0 Is that what you intended to allow?\u00a0 If not, some revised guidance here is probably in order.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-08 08:33:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-09-07 19:43:12-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-07 19:43:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-09-05 05:55:19-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-05 05:55:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-09-06 19:32:47-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-06 19:32:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-08-10 12:53:47-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-09-08 00:00:21-07:00",
+        "end_reason": "new_position",
+        "start": "2022-08-10 12:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-09-12 12:52:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-08 00:00:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9323",
+  "evaluation_end": "2022-09-12 12:52:39-07:00",
+  "evaluation_start": "2022-08-10 12:53:47-07:00"
+}

@@ -1,0 +1,283 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-10-22 08:15:29-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-10-31 19:56:48-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-11-01 07:32:00-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-10-31 19:56:48-07:00",
+        "text": "This should be extremely straightforward: either there\u2019s a typo... or I simply don\u2019t understand.\u00a0 In the Abstract: \u00a0  Dissemination of Flow Specification Rules provides a Border Gateway \u00a0  Protocol extension for the propagation of traffic flow information \u00a0  for the purpose of rate limiting or filtering IPv4 protocol data \u00a0  packets. Is that supposed to say \u201cIPv6\u201d?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-01 07:32:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-03 10:26:51-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-16 01:45:18-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-03 10:26:51-08:00",
+        "text": "A fairly minor point, but I think that allowing Type 13 (flow label) component values to be encoded as 2-byte quantities encourages the selection of non-random flow label values, and thus violates the guidance from  RFC 6437  that these values \"should be chosen such that their bits exhibit a high degree of variability\" and that \"third parties should be unlikely to be able to guess the next value that a source of flow labels will choose.\"\u00a0 While having the short 1-byte encoding for a flow label of 0 might be reasonable, a 2-byte label can represent at most 16 bits of the 20-bit identifier space, discouraging the use of the high 4 bits, when such bits of unpredictability are scarce already. Let's discuss how big an issue this is and what might be done to mitigate it. Please also confirm that we are providing all the information required of us by  RFC 5701  and 5575bis (see comments on Section 6.1); I am not sure whether I am reading the references correctly in these regards. There seems to be an error in the sample code (flow_rule_cmp_v6()): the snippet \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  if comp_a.offset < comp_b.offset: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  return A_HAS_PRECEDENCE \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  if comp_a.offset < comp_b.offset: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  return B_HAS_PRECEDENCE duplicates the condition, whereas the condition should be swapped for correct operation.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-16 01:45:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-11-04 14:54:57-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 14:54:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-03 23:34:49-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-24 07:52:22-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-03 23:34:49-08:00",
+        "text": "Thank you for the work put into this document. It is indeed due time to filter also those IPv6 packets ;-) Please find below one blocking DISCUSS point, some non-blocking COMMENT points, and some nits. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == I am puzzled by the absence of a flow spec for the first Next-Header being a specific value and by the absence of a flowspec for the occurence of any extension header in the extension header chain. Extension headers are an important difference compared to IPv4 and could be 'nasty' as well (e.g., hop-by-hop header). Why was this not considered by the authors ? Or is there another document in the WG to address this issue ?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-24 07:52:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-04 22:15:20-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 22:15:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-11-04 09:32:29-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 09:32:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-10-28 11:05:57-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-28 11:05:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-11-05 05:20:31-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-05 05:20:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-11-04 22:12:21-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 22:12:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-04 02:51:31-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-04 02:51:47-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-04 02:51:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 02:51:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-02 14:37:10-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-02 14:37:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-11-04 13:15:43-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-22 08:15:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-11-25 12:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 13:15:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8956",
+  "evaluation_end": "2020-11-25 12:47:37-08:00",
+  "evaluation_start": "2020-10-22 08:15:29-07:00"
+}

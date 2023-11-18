@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-03 23:48:21-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 23:48:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-12-03 09:31:11-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 09:31:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-04 08:12:03-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-24 10:59:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-04 08:12:03-08:00",
+        "text": "I support Alvaro's DISCUSS point #2. I'm confused about what the registration policy is for metrics in the new registry. If it is Specification Required, then the places in the document that assume new metrics are defined in an RFC need to be generalized, because Specification Required need not involve any RFC at all. I have an additional concern about this text: \"If the proposed registry entry is defined in an RFC but is not yet \u00a0  widely deployed, there SHOULD be a statement in the RFC that says the \u00a0  proposed registry entry is not ready for registration, and use SHOULD \u00a0  employ a private/experimental ID.\u00a0 It is the responsibility of the \u00a0  document authors to submit the request to IANA when the proposed \u00a0  registry entry is ready for official registration.\" This appears to put a requirement on RFCs to include language that is not timeless and may later become out of date. That is, if this guidance is followed but a metric is later widely deployed, the RFC would have to be updated just to remove the text about the metric not being ready for registration. It seems better to just give guidance about which identifier range registration requests should target, and to give guidance to the designated experts about how to evaluate requests in different ranges.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-24 10:59:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-03 14:37:11-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-05 10:00:20-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-03 14:37:11-08:00",
+        "text": "I have two separate issues that I would like to DISCUSS. (1) Approval of the initial performance metrics entries (in  draft-ietf-ippm-initial-registry ). This document describes the format of the registry, and the initial entries are defined in draft-ietf-ippm-initial-registry.\u00a0 However, the registration policy of Specification Required would not be met if the entries in  draft-ietf-ippm-initial-registry  are approved without expert review. As I mentioned in my ballot for  draft-ietf-ippm-initial-registry , I believe that because both documents are being processed at the same time, and the new entries have been reviewed by the WG, IESG Approval [ rfc8126 ] can be used.\u00a0  I can think of at least three ways to address this DISCUSS point (there may be others): a. Designated Experts for this document can be assigned and the formal review can be done. b. The text in this document can explicitly say that the entries in  draft-ietf-ippm-initial-registry  are to be approved using IESG Approval. c. The Responsible AD can add a Management Item to the Telechat for the IESG to explicitly approve (beyond approval for the publication of  draft-ietf-ippm-initial-registry ) the new entries. I am ok with either choice, but would prefer Option c because it would be faster and cause less churn. (2) \u00a78.1 (Adding new Performance Metrics to the Performance Metrics Registry) defines the following process for entries that are \"not yet widely deployed\": \u00a0  If the proposed registry entry is defined in an RFC but is not yet \u00a0  widely deployed, there SHOULD be a statement in the RFC that says the \u00a0  proposed registry entry is not ready for registration, and use SHOULD \u00a0  employ a private/experimental ID.\u00a0 It is the responsibility of the \u00a0  document authors to submit the request to IANA when the proposed \u00a0  registry entry is ready for official registration. Considering the Specification Required policy and the fact that the RFC has already gone through all the reviews required for publication (including expert review, as mentioned in the same section), how will it work for the \"authors to submit the request to IANA when the proposed registry entry is ready for official registration\"?\u00a0 What specification will be presented to IANA to satisfy the registration requirement?\u00a0  It seems to me that the statement mentioned above would prevent the official registration in the first place, and that same statement (still present in the RFC) should prevent a second review of the same document from resulting in an official registration. This process needs more discussion and clarity for it to work. [Not part of this DISCUSS point, but related.]\u00a0  a. Section 8 talks about instructions about handling of the registry.\u00a0 Perhaps it should be part of the IANA Considerations section. b. \u00a77.1.1 contains additional instructions for IANA, including the reservation of a private/experimental range of Identifiers.\u00a0 This test should also be part of the IANA Considerations section.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-05 10:00:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-04 19:51:00-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 19:51:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-04 23:58:03-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 23:58:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-12-04 09:29:59-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 09:29:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-12-03 05:35:56-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 05:35:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-03 06:37:41-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 06:37:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-12-03 07:04:59-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 07:04:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-11-29 09:05:30-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-03 11:20:24-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 11:20:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-04 08:29:34-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 08:29:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-12-03 08:17:29-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-29 09:05:30-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-13 08:56:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 08:17:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8911",
+  "evaluation_end": "2020-03-13 08:56:40-07:00",
+  "evaluation_start": "2019-11-29 09:05:30-08:00"
+}

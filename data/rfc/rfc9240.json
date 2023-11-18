@@ -1,0 +1,251 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-12-01 15:00:23-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-01-27 20:24:51-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-01 15:00:23-08:00",
+        "text": "(1) Section 8.6 seems to have some conflicting requirements.\u00a0 The filtered property map response \"MUST include all the inherited property values for the requested entities and all the entities which are able to inherit property values from the requested entities.\"\u00a0 We then go on to say that to do this, the server MAY follow three rules, that themselves include SHOULD-level guidance, but don't say how the MUST is achieved if the SHOULDs or MAY are ignored.\u00a0 I was expecting to see a construction of the form \"SHOULD do X, but if not, MUST do Y\". (2) Many of the examples in Sections 10.X do not seem to match up with the prose that describes them and the previous data tables that they are intended to illustrate (see COMMENT).\u00a0 We should make sure that the examples are internally consistent. (3) Section 4.6.2 says: \u00a0  *\u00a0 Last, the entity domain types \"asn\" and \"countrycode\" defined in \u00a0 \u00a0 \u00a0 [ I-D.ietf-alto-cdni-request-routing-alto ] do not have a defining \u00a0 \u00a0 \u00a0 information resource.\u00a0 Indeed, the entity identifiers in these two \u00a0 \u00a0 \u00a0 entity domain types are already standardized in documents that the \u00a0 \u00a0 \u00a0 Client can use. But earlier we said that \"the defining information resource of a resource-specific entity domain D is unique\", but this seems to be saying that the defining information resource of domains of the \"asn\" and \"contrycode\" type are *not* unique, by virtue of not existing at all.\u00a0 How can we rectify these two statements?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-27 20:24:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-11-22 02:00:46-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-22 02:00:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-11-29 16:55:52-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-29 16:55:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-12-01 10:35:38-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-12-01 14:37:53-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-12-01 10:35:38-08:00",
+        "text": "Thank you for the work on this document. Many thanks to Spencer Dawkins for his thoughtful review:  https://mailarchive.ietf.org/arch/msg/art/BcZimefF1WXXgcmg0qjc3P__EGg/  , and thanks to the authors for addressing it. I have two blocking comments, and some non blocking comments (to which I would still appreciate answers) below. Francesca 1. ----- Media type registration FP: I haven't seen the media type being reviewed by the media-type mailing list, as requested by  RFC 6838 . Before progressing the document, I would really appreciate the authors to post the registrations to the media-type mailing list for review. 2. ----- Sections 4.6.1, 12.2.2 and 12.3 FP: The use of the term \"unique\" when referred to media types and entity domains (or properties) is confusing - it makes it sound as if the authors mean that each different entity domain (or property) is to be associated with a different unique media type, which doesn't seem to be the intent. As this is related to the media type registration, I believe this should be clarified and possibly checked with the media type experts (so it would be good to copy paste the relevant text in the email to the media-type mailing list).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-01-25 05:58:04-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-01 14:37:53-08:00",
+        "text": "Thank you for the work on this document. Many thanks to Spencer Dawkins for his thoughtful review:  https://mailarchive.ietf.org/arch/msg/art/BcZimefF1WXXgcmg0qjc3P__EGg/  , and thanks to the authors for addressing it. I have two blocking comments, and some non blocking comments (to which I would still appreciate answers) below. As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise. Francesca 1. ----- Media type registration FP: I haven't seen the media type being reviewed by the media-type mailing list, as requested by  RFC 6838 . Before progressing the document, I would really appreciate the authors to post the registrations to the media-type mailing list for review. 2. ----- Sections 4.6.1, 12.2.2 and 12.3 FP: The use of the term \"unique\" when referred to media types and entity domains (or properties) is confusing - it makes it sound as if the authors mean that each different entity domain (or property) is to be associated with a different unique media type, which doesn't seem to be the intent. As this is related to the media type registration, I believe this should be clarified and possibly checked with the media type experts (so it would be good to copy paste the relevant text in the email to the media-type mailing list).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-25 05:58:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-10-25 17:32:34-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-12-14 05:11:59-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-14 05:11:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-12-04 23:20:29-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-04 23:20:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-12-06 06:11:44-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-06 06:11:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-11-30 19:44:55-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-30 19:44:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-12-02 04:54:36-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-25 17:32:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-02-28 09:35:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-02 04:54:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9240",
+  "evaluation_end": "2022-02-28 09:35:39-08:00",
+  "evaluation_start": "2021-10-25 17:32:34-07:00"
+}

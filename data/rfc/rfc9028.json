@@ -1,0 +1,713 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-05-09 22:43:07-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-19 17:40:42-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-05-09 22:43:07-07:00",
+        "text": "I share Ben's concerns about the disjointedness of this document's specification, and am likewise abstaining. My reasons for abstaining are deeper than Ben's, however. I recognize that the effort put into this document is substantial, and that the recommendations I make are unlikely to be taken at this point in time, but I believe that the HIP ecosystem would be far better served by an \"RFC 5570 bis\" approach rather than a modified form of ICE recast using HIP messages. Among other reasons: several companies already offer geographically-distributed hosted TURN solutions, largely due to the relative popularity of WebRTC. HIP will have to reach a similar level of popularity before HIP-specific relay nodes are similarly commercially available.\u00a0 Using ICE as-is would allow HIP to use those services that are available today. As a further concern, I worry that this pattern may end up replicated in other protocols. For example, although ICE was initially developed with RTP/RTCP in mind, it was not implemented as a series of extensions to RTP or RTCP; instead, it is its own protocol, intended to be re-used in other contexts. I would not like to see, e.g., ICE-like extensions to the QUIC protocol to enable its use in peer-to-peer situations; I would certainly hope that such an effort would use ICE as currently defined. Given that the headline rationale offered in this document is that \"Implementing a full ICE/STUN/TURN protocol stack as specified in Legacy ICE-HIP results in a considerable amount of effort and code which could be avoided by re-using and extending HIP messages and state machines for the same purpose,\" this document puts forth an implication that all protocols could benefit from similar not-quite-ICE-but-almost-ICE extensions. I believe this implication is harmful. I also believe this analysis overlooks the availability of multiple existing, open-source, already-debugged, and \"compatible with commercial use\" ICE implementations. It is not clear that the four additional reasons offered in Appendix B are sufficient to justify the design. Taken in turn: >\u00a0 For example, ICE is meant for application-layer protocols, whereas HIP >\u00a0 operates at layer 3.5 between transport and network layers. This doesn't have practical effect: ICE is designed to work with generic UDP packet flows, subject only to the ability to demultiplex STUN from such packets. >\u00a0 This is particularly problematic because the implementations employ IPsec >\u00a0 ESP as their data plane: demultiplexing of incoming ESP, HIP and TURN >\u00a0 messages required capturing of all UDP packets destined to port 10500 to >\u00a0 the userspace, thus causing additional software complexity and an >\u00a0 unnecessary latency/throughput bottleneck for the dataplane performance. This doesn't seem like a foregone consequence. If you're using user-space HIP implementations, this user-space diversion is already necessary. If you're using kernel-space HIP implementations, it seems a modest step to add minimal STUN demultiplexing to the kernel implementation that is already performing ESP/HIP demultiplexing.\u00a0 It's possible that I'm misunderstanding some subtle aspect of the way these protocols interact with each other, but isn't this described performance impact simply the result of specific implementation design decisions rather than inherent to the design of  RFC 5570 's mechanism? >\u00a0 Also, relaying of ESP packets via TURN relays was not >\u00a0 considered that simple because TURN relays require adding and >\u00a0 removing extra TURN framing for the relayed packets. While it's been a while since I've looked at network kernel code, my recollection is that implementation of the POSIX \"sendmsg()\" system call generally maintains scatter/gather buffers all the way down the stack until such bytes are copied from system memory to the network hardware. Stripping such headers on receipt can be accomplished with simple pointer arithmetic. It's not clear what aspect of the system \"simple\" is intended to refer to, but both implementation and performance impacts should be immeasurably small when implemented in this way, unless I'm missing something. >\u00a0 Finally, the developers of the two Legacy ICE-HIP implementations concluded >\u00a0 that \"effort needed for integrating an ICE library into a HIP >\u00a0 implementation turned out to be quite a bit higher that initially >\u00a0 estimated.\u00a0 Also, the amount of extra code (some 10 kLoC) needed for all >\u00a0 the new parsers, state machines, etc., is quite high and by re-using the >\u00a0 HIP code one should be able to do with much less.\u00a0 This should result in >\u00a0 smaller binary size, less bugs, and easier debugging.\". Such size is not inherent in the implementation of ICE: for example, the ICE stack used by Firefox is 2.2 kLoC in size (if you ignore the ~1.2 kLoC of boilerplate copyright notice). Having seen the debugging of an ICE stack up-close-and-personal, I'm pretty comfortable saying that the effort to integrate a working stack has to be orders of magnitude less than implementing even the simplified ICE procedures defined in this document correctly. There are a lot of surprising corner cases that don't really turn up until you get into production. For the foregoing reasons, it is my conclusion that publication of this document is harmful for HIP and is harmful as a precedent that other protocols may mistakenly emulate. I believe that a restructuring of the document to more clearly explain why HIP chose this path while other protocols should not would limit some of these concerns. However, I do not believe that the fundamental flaw -- a partial respecification of ICE for the cited reasons --\u00a0 can be fixed. I do not support publication of a document describing this mechanism, and encourage the working group to withdraw the document from consideration for publication. To be clear: despite the length and detail of my preceding objections, I recognize that I may be off in the weeds. I am happy to be corrected about any of the assertions I make above, up to and including corrections that make my conclusion incorrect. I will further note that this is not a blocking ballot position, and that, procedurally, the document can be published despite my misgivings. =========================================================================== I have included some additional comments below. --------------------------------------------------------------------------- \u00a71: >\u00a0 As one solution, the HIP experiment report [ RFC6538 ] mentions that >\u00a0 Teredo based NAT traversal for HIP and related ESP traffic (with >\u00a0 double tunneling overhead). This isn't a sentence. Perhaps remove \"that\"? Also: \"Teredo-based\" --------------------------------------------------------------------------- \u00a74.6: >\u00a0 The connectivity checks follow the ICE methodology [MMUSIC-ICE], but >\u00a0 UDP encapsulated HIP control messages are used instead of ICE >\u00a0 messages.\u00a0 Only normal nomination MUST be used for the connectivity >\u00a0 checks, i.e., aggressive nomination MUST NOT be employed. The cited document does not describe aggressive nomination, and deprecates its use. Consider removing the mention of aggressive nomination in this document. --------------------------------------------------------------------------- \u00a75.4: >\u00a0 \u00a0 The following NAT traversal mode IDs are defined: > >\u00a0 \u00a0 \u00a0 \u00a0 ID name\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Value >\u00a0 \u00a0 \u00a0 \u00a0 RESERVED\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  0 >\u00a0 \u00a0 \u00a0 \u00a0 UDP-ENCAPSULATION\u00a0 \u00a0 1 >\u00a0 \u00a0 \u00a0 \u00a0 ICE-STUN-UDP\u00a0 \u00a0 \u00a0 \u00a0  2 >\u00a0 \u00a0 \u00a0 \u00a0 ICE-HIP-UDP\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 3 This should probably point to the IANA table rather than replicating a snapshot of its contents. --------------------------------------------------------------------------- Appendix B: >\u00a0 o\u00a0 Unlike in ICE, the addresses are not XOR-ed in Native ICE-HIP >\u00a0 \u00a0  protocol in order to avoid middlebox tampering. This bullet should explain why such obfuscation is unnecessary.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-21 04:38:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-19 17:40:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-24 09:15:39-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-24 09:15:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-02-21 04:38:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-05-09 08:39:23-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-02-21 04:38:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-09 08:39:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-03 17:20:38-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 17:20:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-05-09 13:44:09-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-02-21 04:38:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-09 13:44:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-03 12:04:30-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 12:04:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-04 21:06:59-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-04 21:06:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-05-09 19:05:14-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-05-09 19:05:14-07:00",
+        "text": "I support all points of Ekr's discuss and comment points. I think this either needs to use ICE mostly as is (maybe with some minor profiling) or it needs to be self-contained here. I understand the material in appendix B, but the current mix seems untenable for implementors. Therefore I am balloting \"abstain\".\u00a0 I will reconsider that position if there is a substantial reorganization. Substantive Comments: I share Alissa's question about why this is standard track when the previous work has been experimental. \u00a71, second paragraph: The citation for the version of ICE used by \"legacy ICE-HIP\" should be  RFC5245 , not the bis version. \u00a72: There are a number of lower-case keywords. Please use the  RFC 8174  boilerplate. \u00a74.2:  - paragraph 5: Is everything in this paragraph from the ICE specification? I suspect not, but it's hard to tease out what is from ICE and what is new specification. It would be helpful to reference the ICE bits by section number. - paragraph 6: I'm confused in that I thought the previous text said that native ICE-HIP does not use STUN. \u00a76: I am skeptical of the assertion that the security considerations for Native ICE-HIP are no different than those for Legacy ICE-HIP. Editorial Comments: \u00a71, 2nd paragraph:  - \"responsible of NAT traversal\": s/of/to - \"responsible of end-host\": s/of/to \u00a74.3: \"This section describes the usage of a new non-critical parameter type. \": Which is? \u00a74.6, first paragraph: 2nd sentence is hard to parse.",
+        "type": "Abstain"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-05-09 08:02:34-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-21 04:38:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-09 08:02:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-03 20:08:10-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-03 20:08:51-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-03 20:08:10-08:00",
+        "text": "One fairly minor point to start: Section 4.3 says that we define a new mode (ICE-HIP-UDP) for the NAT_TRAVERSAL_MODE parameter type, but then goes on to say that \"the presence of the parameter in a HIP base exchange means that the end-host supports NAT traversal extensions defined in this document\".\u00a0 If I undrestand correctly, only the specific presence of the ICE-HIP-UDP mode of the NAT_TRAVERSAL_MODE parameter does so, and so to say that the present of \"the [NAT_TRAVERSAL_MODE] parameter\" indicates support for this document would be backwards incompatible with  RFC 5770 . I'd also like to delve a little further into the potential \"cross-protocol\" attack (same protocol, really, but the same attack) that Ekr raised, between RVS_HMAC and RELAY_HMAC.\u00a0 This is probably a \"discuss discuss\", so let's see where it leads... The semantics for either type of HMAC is that it is an HMAC over the HIP packet excluding itself and subsequent parameters.\u00a0 Pulling up the HIP packet format from  RFC 7401 , that looks like: \u00a0 \u00a0 0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  1\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  2\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  3 \u00a0 \u00a0 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0  | Next Header\u00a0  | Header Length |0| Packet Type |Version| RES.|1| \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Checksum\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Controls\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Sender's Host Identity Tag (HIT)\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Receiver's Host Identity Tag (HIT)\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  /\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 HIP Parameters\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  / \u00a0  /\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  / \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ The HMAC key is the integrity key for that direction of traffic between HITs, so the \"cross-protocol\" part can only come in by confusing the packet recipient into confusion as to whether it is processing an RVS_HMAC or a RELAY_HMAC (but any other entity will reject the packet by virtue of it using the wrong key).\u00a0 Modern best practices are to go through a key derivation step that incorporates as much information as possible about what the derived key will be used for, which would in this case include the TLV type of the HMAC parameter and presumably the HITs in question as well. In particular, the TLV type of the HMAC parameter is *not* input into the HMAC calculation (at least for RVS_HMAC), so the trivial discriminator is not present.\u00a0 The \"packet type\" in the header in the header is potentially going to differ across usages, so I think that's a good place to focus discussion.\u00a0 Unfortunately, Section 4.2.1 of  RFC 8004  suggests that RVS_HMAC is going to be present a lot of the time, so it's not really clear to me what packet types either RVS_HMAC and/or REPLAY_HMAC are expected to occur in.\u00a0 Could a HIP expert please jump in and help clarify?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-07-15 18:32:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-03 20:08:51-08:00",
+        "text": "One fairly minor point to start: Section 4.3 says that we define a new mode (ICE-HIP-UDP) for the NAT_TRAVERSAL_MODE parameter type, but then goes on to say that \"the presence of the parameter in a HIP base exchange means that the end-host supports NAT traversal extensions defined in this document\".\u00a0 If I undrestand correctly, only the specific presence of the ICE-HIP-UDP mode of the NAT_TRAVERSAL_MODE parameter does so, and so to say that the presence of \"the [NAT_TRAVERSAL_MODE] parameter\" indicates support for this document would be backwards incompatible with  RFC 5770 . I'd also like to delve a little further into the potential \"cross-protocol\" attack (same protocol, really, but the same attack) that Ekr raised, between RVS_HMAC and RELAY_HMAC.\u00a0 This is probably a \"discuss discuss\", so let's see where it leads... The semantics for either type of HMAC is that it is an HMAC over the HIP packet excluding itself and subsequent parameters.\u00a0 Pulling up the HIP packet format from  RFC 7401 , that looks like: \u00a0 \u00a0 0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  1\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  2\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  3 \u00a0 \u00a0 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0  | Next Header\u00a0  | Header Length |0| Packet Type |Version| RES.|1| \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Checksum\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Controls\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Sender's Host Identity Tag (HIT)\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Receiver's Host Identity Tag (HIT)\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  /\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 HIP Parameters\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  / \u00a0  /\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  / \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ The HMAC key is the integrity key for that direction of traffic between HITs, so the \"cross-protocol\" part can only come in by confusing the packet recipient into confusion as to whether it is processing an RVS_HMAC or a RELAY_HMAC (but any other entity will reject the packet by virtue of it using the wrong key).\u00a0 Modern best practices are to go through a key derivation step that incorporates as much information as possible about what the derived key will be used for, which would in this case include the TLV type of the HMAC parameter and presumably the HITs in question as well. In particular, the TLV type of the HMAC parameter is *not* input into the HMAC calculation (at least for RVS_HMAC), so the trivial discriminator is not present.\u00a0 The \"packet type\" in the header in the header is potentially going to differ across usages, so I think that's a good place to focus discussion.\u00a0 Unfortunately, Section 4.2.1 of  RFC 8004  suggests that RVS_HMAC is going to be present a lot of the time, so it's not really clear to me what packet types either RVS_HMAC and/or REPLAY_HMAC are expected to occur in.\u00a0 Could a HIP expert please jump in and help clarify?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-15 18:32:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-05-09 12:32:39-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-02-21 04:38:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-09 12:32:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-04 13:11:29-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-04 13:11:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-05-04 12:34:27-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-05-04 12:34:27-07:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D3099 I am very familiar with ICE and yet I found this document extremely hard to follow. The problem is that it cherry-picks pieces of ICE and I'm just not sure that it's a complete specification when put all together. I have noted a number of places where I actually am not sure how to implement something, and fixing those will resolve this DISCUSS, but IMO you really should totally rewrite this document either (a) as a variant of ICE or (b) as an entirely new document not with a pile of new text and then references out to ICE sections. DETAIL S 4.2. >\u00a0 \u00a0 \u00a0 request type SHOULD NOT create any state at the Control Relay Server. >\u00a0   >\u00a0 \u00a0 \u00a0 ICE guidelines [ I-D.ietf-ice-rfc5245bis ] for candidate gathering are >\u00a0 \u00a0 \u00a0 followed here.\u00a0 A number of host candidates (loopback, anycast and >\u00a0 \u00a0 \u00a0 others) should be excluded as described in the ICE specification >\u00a0 \u00a0 \u00a0 [ I-D.ietf-ice-rfc5245bis ].\u00a0 Relayed candidates SHOULD be gathered in If you're going to normatively cherry-pick ICE, you need to note specific sections, I think. S 4.6.2. >\u00a0   >\u00a0 \u00a0 \u00a0 A host may receive a connectivity check before it has received the >\u00a0 \u00a0 \u00a0 candidates from its peer.\u00a0 In such a case, the host MUST immediately >\u00a0 \u00a0 \u00a0 generate a response, and then continue waiting for the candidates.\u00a0 A >\u00a0 \u00a0 \u00a0 host MUST NOT select a candidate pair until it has verified the pair >\u00a0 \u00a0 \u00a0 using a connectivity check as defined in Section 4.6.1. Are you supposed to put this on a TODO check list as with ICE? S 5.8. >\u00a0   >\u00a0  5.8.\u00a0 RELAY_HMAC Parameter >\u00a0   >\u00a0 \u00a0 \u00a0 As specified in Legacy ICE-HIP [ RFC5770 ], the RELAY_HMAC parameter >\u00a0 \u00a0 \u00a0 value has the TLV type 65520.\u00a0 It has the same semantics as RVS_HMAC >\u00a0 \u00a0 \u00a0 [ RFC8004 ]. What key is used for the HMAC?",
+        "type": "Discuss"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-02-21 04:39:08-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-21 04:39:08-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-16 01:43:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-02-21 04:38:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-04 08:23:25-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-04 08:45:11-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-04 08:23:25-08:00",
+        "text": "So this discuss should be relatively easy to address.  So this document recommends the usage of port 10500 as default listening port. A port registered by Ari and also used for  RFC 5770 . I get the impression that the port was registered separately from  RFC 5770 . So the port is assigned to Ari. Would Ari be willing to release the port for re-assignment to IESG control.  RFC 6335  has the recommendation for ports for IETF protocols that the assignee is IESG and the contact  chair@ietf.org . This to have the change control with IETF as body rather than with individuals.  If Ari agrees to this, I think it would be good to have the IANA section be updated to note the re-assignment and provide the necessary information.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-05 02:55:03-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-04 08:45:11-08:00",
+        "text": "So this discuss should be relatively easy to address.  1. So this document recommends the usage of port 10500 as default listening port. A port registered by Ari and also used for  RFC 5770 . I get the impression that the port was registered separately from  RFC 5770 . So the port is assigned to Ari. Would Ari be willing to release the port for re-assignment to IESG control.  RFC 6335  has the recommendation for ports for IETF protocols that the assignee is IESG and the contact  chair@ietf.org . This to have the change control with IETF as body rather than with individuals.  If Ari agrees to this, I think it would be good to have the IANA section be updated to note the re-assignment and provide the necessary information. 2. Secondly, as this solution is different from the  RFC 5770  should this solution have a different service name?  3. So I don't quite understand what the co-existance story are for the relay having an listener on port 10500? Is that port only used for UDP/HIPv1 ( RFC5770 ) and UDP/HIPv2 (This doc). And the listening stack can determine which version is used to determine which of the protocol is run. And the issue with multiplexing is only existing for the ports that one gathers?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-05 03:08:02-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-05 02:55:03-08:00",
+        "text": "So this discuss should be relatively easy to address.  1. So this document recommends the usage of port 10500 as default listening port. A port registered by Ari and also used for  RFC 5770 . I get the impression that the port was registered separately from  RFC 5770 . So the port is assigned to Ari. Would Ari be willing to release the port for re-assignment to IESG control.  RFC  6335  has the recommendation for ports for IETF protocols that the assignee is IESG and the contact  chair@ietf.org . This to have the change control with IETF as body rather than with individuals.  If Ari agrees to this, I think it would be good to have the IANA section be updated to note the re-assignment and provide the necessary information. 2. Secondly, as this solution is different from the  RFC 5770  should this solution have a different service name? The reason I am asking is that it depends on how for example how an initiator determine which of the NAT traversal solution. If there is any intention to use DNS SRV for example different service name would make sense. This is primarily to verify that this has been considered.  3. So I don't quite understand what the co-existance story are for the relay having an listener on port 10500? Is that port only used for UDP/HIPv1 ( RFC5770 ) and UDP/HIPv2 (This doc). And the listening stack can determine which version is used to determine which of the protocol is run. And the issue with multiplexing is only existing for the ports that one gathers? Can you please add a paragraph or two somewhere in the document. I think it should be referenced by the port registration update.  4. MTU impact of NAT traversal.  Section 5.1 states\u00a0   \"It is worth noting that UDP encapsulation of HIP packets reduces the \u00a0  Maximum Transfer Unit (MTU) size of the control plane by 12 bytes.\" There is also a similar text in Section 5.11: \u00a0  It is worth noting that UDP encapsulation of ESP reduces the MTU size \u00a0  of data plane by 8 bytes. I think the document needs a discussion and impact on MTU which this NAT traversal has on the HIP packets being sent.  - First of all there appears to be more packet expansions happening in some cases, for example the RELAY_HMAC option expands packets on one leg. - Secondly, HIP requires IP fragementation support, however IP fragmentation through NAT is commonly not working. Thus an HIP packet being UDP encapsulated that results in packet exceeding MTU will likely end up in an MTU black hole on path.  The addition of the NAT traversal encapsulation actually increases the need for MTU discovery or care in MTU handling by the HIP initiator. I think there need to be discussion of that in the document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-07-28 07:44:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-05 03:08:02-08:00",
+        "text": "So I think the below are important things that needs to be discussed before proceeding. However, I might have missed things as I didn't have time to read the whole document in detail. Several of the issues are pieces for discussion to ensure that the right thing really is done.  1. So this document recommends the usage of port 10500 as default listening port. A port registered by Ari and also used for  RFC 5770 . I get the impression that the port was registered separately from  RFC 5770 . So the port is assigned to Ari. Would Ari be willing to release the port for re-assignment to IESG control.  RFC  6335  has the recommendation for ports for IETF protocols that the assignee is IESG and the contact  chair@ietf.org . This to have the change control with IETF as body rather than with individuals.  If Ari agrees to this, I think it would be good to have the IANA section be updated to note the re-assignment and provide the necessary information. 2. Secondly, as this solution is different from the  RFC 5770  should this solution have a different service name? The reason I am asking is that it depends on how for example how an initiator determine which of the NAT traversal solution. If there is any intention to use DNS SRV for example different service name would make sense. This is primarily to verify that this has been considered.  3. So I don't quite understand what the co-existance story are for the relay having an listener on port 10500? Is that port only used for UDP/HIPv1 ( RFC5770 ) and UDP/HIPv2 (This doc). And the listening stack can determine which version is used to determine which of the protocol is run. And the issue with multiplexing is only existing for the ports that one gathers? Can you please add a paragraph or two somewhere in the document. I think it should be referenced by the port registration update.  4. MTU impact of NAT traversal.  Section 5.1 states\u00a0   \"It is worth noting that UDP encapsulation of HIP packets reduces the \u00a0  Maximum Transfer Unit (MTU) size of the control plane by 12 bytes.\" There is also a similar text in Section 5.11: \u00a0  It is worth noting that UDP encapsulation of ESP reduces the MTU size \u00a0  of data plane by 8 bytes. I think the document needs a discussion and impact on MTU which this NAT traversal has on the HIP packets being sent.  - First of all there appears to be more packet expansions happening in some cases, for example the RELAY_HMAC option expands packets on one leg. - Secondly, HIP requires IP fragementation support, however IP fragmentation through NAT is commonly not working. Thus an HIP packet being UDP encapsulated that results in packet exceeding MTU will likely end up in an MTU black hole on path.  The addition of the NAT traversal encapsulation actually increases the need for MTU discovery or care in MTU handling by the HIP initiator. I think there need to be discussion of that in the document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-28 07:44:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-07-27 14:21:44-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-07-15 23:16:24-07:00",
+        "text": "Sec 4.2 and 4.6.2 specify a minimum of RTO of 500ms. There\u2019s no way you would know this,\u00a0 but  draft-ietf-tcpm-rto-consider  is close to IESG approval and specifies a minimum of 1 second without more information about the path. I would prefer that we change these minimums but perhaps there\u2019s a compelling reason for 500ms?   RFC 5770  is a normative downref. I couldn\u2019t find indication the procedures in  RFC 3967  or 4897 were followed to address this. One solution would be to downgrade this document to Experimental.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-27 14:21:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-05-10 07:13:49-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-02-21 04:38:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-10 07:13:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-05 02:12:02-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-05 02:12:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-05-10 03:00:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-07-30 06:17:14-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-05-10 03:00:05-07:00",
+        "text": "1) This document should also update the IANA port registry to add a reference to this RFC-to-be to the existing entry for port 10500 (eventually even with note that this RFC-to-be discusses how to distinguish the services using NAT_TRAVERSAL_MODE). 2) Sec 4.4: \"Hosts SHOULD NOT use values smaller than 5 ms for the minimum Ta,...\" In rfc5245bis this is a MUST. Why is this a SHOULD here? Also in sec 4.6.2.: \"If neither one of the hosts announced a minimum pacing value, a value of 50 ms SHOULD be used.\" This must be a MUST to be inline with sec 4.4. 3) Appendix A: \"Ta value so that only two connectivity check messages are sent on every RTT.\" Why two?  RFC8085  recommends (SHOULD) at may one packet per RTT for non-congestion control transmissions",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-21 04:38:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-30 06:17:14-07:00",
+        "text": "1) This document should also update the IANA port registry to add a reference to this RFC-to-be to the existing entry for port 10500 (eventually even with note that this RFC-to-be discusses how to distinguish the services using NAT_TRAVERSAL_MODE). 2) Sec 4.4: \"Hosts SHOULD NOT use values smaller than 5 ms for the minimum Ta,...\" In rfc5245bis this is a MUST. Why is this a SHOULD here? Also in sec 4.6.2.: \"If neither one of the hosts announced a minimum pacing value, a value of 50 ms SHOULD be used.\" This must be a MUST to be inline with sec 4.4. 3) Appendix A: \"Ta value so that only two connectivity check messages are sent on every RTT.\" Why two?  RFC8085  recommends (SHOULD) at most one packet per RTT for non-congestion control transmissions",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-26 09:11:32-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-26 09:11:32-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-16 01:59:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-03 13:48:11-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 13:48:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-05-09 18:18:50-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-05-09 18:18:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-05-10 06:28:07-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-02-21 04:38:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-10 06:28:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-04 21:19:42-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-03-04 21:19:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-03-21 04:21:54-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": null,
+        "end_reason": null,
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-02-21 04:38:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-21 04:21:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-03 10:42:09-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-21 04:38:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-08-04 09:24:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 10:42:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9028",
+  "evaluation_end": "2020-08-04 09:24:57-07:00",
+  "evaluation_start": "2020-02-21 04:38:16-08:00"
+}

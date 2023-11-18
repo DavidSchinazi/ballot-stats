@@ -1,0 +1,299 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-05-07 06:57:20-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-07 06:57:20-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-18 13:29:48-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-21 15:28:20-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-18 13:29:48-07:00",
+        "text": "The prose and tabular IANA considerations in \u00a711.3 are inconsistent about whether the End.X/LAN End.X SID sub-TLVs are allowed to appear in TLV 25.\u00a0 (I may have noted all instances in the prose, in my COMMENT, but it's worth checking for others.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-21 15:28:20-07:00",
+        "text": "Thank you for addressing my discuss point and comments. The relationship of SRv6 SIDs to the IPv6 addressing architecture ( RFC 4291 ) was quite controversial during the processing of what since became  RFC 8986 .\u00a0 I was able to reconcile the two at the time by virtue of noting that the substructure of the SID can be considered to be logically local to the node advertising the SID and therefore not an observable part of the protocol.\u00a0 In that sense, the wire-visible use and processing of SIDs remains that of normal IPv6 addresses.\u00a0 However, introducing a sub-sub-TLV to specifically carry the structure of the SID causes that reasoning to no longer apply, and seemingly re-opens the question of whether the SID substructure is consistent with the IPv6 addressing architecture.\u00a0 In the absence of some compelling use case, I cannot support publishing a mechanism that triggers this controversy. Indeed, no motivating use case is presented in the document at all (the usage is \"outside of the scope of this document\"), which invites questions about why this mechanism should be defined in a standards-track RFC at all (the relevant registry procedures are merely \"expert review\").",
+        "type": "Abstain"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-05-18 09:05:48-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-18 09:05:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-05-18 18:58:26-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-06-21 15:48:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-18 18:58:26-07:00",
+        "text": "[ section 9 ] * I share the concerns of several of the others here about SRv6 SIDs being \u00a0 claimed to be IPv6 addresses but kinda not really being IPv6 addresses \u00a0 if their internal structure is exposed outside of the given SR router. \u00a0 If \"[i]t's usage is outside of the scope of this document\", can this be \u00a0 removed for now, and maybe take up the issue at some point in the future \u00a0 by which time a motivating use case might have presented itself?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-21 15:48:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-10-18 14:57:43-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-10-20 01:39:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-10-18 14:57:43-07:00",
+        "text": "Thanks for the work on this document. I was not around for  RFC 8986 , and I am not sure I understand the use case fully (I agree with Ben there), but I'll trust the responsible AD and the wg. I'll also note that I was hoping to see \"Implementation status report\" in the draft, as mentioned in the shepherd writeup, and was disappointed not to find any. However, I'd like to discuss a number of points, mostly on the IANA considerations and on detailed fields descriptions. I also want to bring 7. below regarding the IANA registries names to your attention, although it's not a hill I am willing to die on (that one is a \"let's talk\" DISCUSS, the rest I hope can be acted upon). As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise. Francesca 1. ----- Section 7.1 FP: The locator entries ASCII figure is not consistent with the descriptive text following it: specifically, Loc Size should follow Algorithm directly; instead, the picture seems to show there are 2 octets unused between Algorithm and Loc Size. 2. ----- \u00a0 \u00a0 \u00a0 Type: 5. FP: For consistency (and to make sure implementers don't rely on the ASCII figure), it would be good to indicate Type's length (1 octet I assume). 3. ----- \u00a0 \u00a0 Length: variable. FP: This does not help much understanding what this field is supposed to contain. 4. ----- Section 7.2 FP: Same issue as in 1. for the ASCII figure. 5. ----- Sections 8.1 and 8.2 FP: Same comments as 1. 2. and 3. 6. ----- \u00a0 If a behavior is advertised it MUST \u00a0  only be advertised in the TLV[s] as indicated by \"Y\" in the table \u00a0  below, and MUST NOT be advertised in the TLV[s] as indicated by \"N\" \u00a0  in the table below. FP: I find the sentence after the comma confusing, and don't understand the presence of the MUST NOT here. 7. ----- Section 11.1.1 FP: It sounds like a bad idea in general to have to rename the registry every time a TLV needs to be added to the registry... Maybe the wg and the AD should consider renaming the registries so not to have this sort of dependency. (I understand that this is a low priority comment, but still, it feels wrong to put in titles what would fit really well in a registry itself). This very much applies to Section 11.6 as well: the registry's name with the hierarchy of TLVs as part of the name feels like a really bad idea. That is typically data that goes into registries. 8. ----- Section 11.3 FP: The registry needs to be defined in the document. In particular, I see that IANA is interpreting the columns as \"Value\" \"Description\" \"Reference\"; is that right or should this be \"Type\" \"Description\" \"Reference\" (I see a mix of the two for different IANA registries)? 9. ----- Section 11.8 FP: Are bits 0, 2-15 reserved or unassigned? The terminology in section 2 is ambiguous, as it talks about \"reserved for future use\" (but the IANA section leaves them unassigned). Please clarify for IANA. 10. ----- Section 11.10 FP: Please define the registry (I assume it is going to be \"Bit #\", \"Name\", \"Reference\").",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-20 01:39:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-13 08:43:04-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-13 08:43:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-10 03:47:50-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-10 03:47:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-05-12 10:31:28-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-12 10:31:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-05-20 01:56:32-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-20 01:56:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-20 01:38:18-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-20 08:24:36-07:00",
+        "end_reason": "comment_updated",
+        "start": "2021-05-20 01:38:18-07:00",
+        "text": "I'm balloting ABSTAIN for the reasons cited by Warren (and, hence, Ben). Some other unrelated comments: I suggest asking IANA to review your IANA Considerations section sooner rather than later to be sure they know what you're after.\u00a0 I found this section somewhat hard to follow. I concur with John, who suggested that this document doesn't actually update  RFC 7370 .\u00a0 I'm aware of the conversation that happened afterwards; just going on the record here. Section 9: * \"It's usage is outside of the scope of this document.\" -- s/It's/Its/",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-20 08:24:36-07:00",
+        "text": "I'm balloting ABSTAIN for the reasons cited by Warren (and, hence, Ben). I support Erik Kline's DISCUSS position. Some other unrelated comments: I suggest asking IANA to review your IANA Considerations section sooner rather than later to be sure they know what you're after.\u00a0 I found this section somewhat hard to follow. I concur with John, who suggested that this document doesn't actually update  RFC 7370 .\u00a0 I'm aware of the conversation that happened afterwards; just going on the record here. Section 9: * \"It's usage is outside of the scope of this document.\" -- s/It's/Its/",
+        "type": "Abstain"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-05-20 02:10:44-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-20 02:10:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-19 14:48:25-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-20 05:20:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-19 14:48:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-20 05:20:26-07:00",
+        "text": "(updated position) I'm balloting ABSTAIN for the reasons already eloquently stated by Ben; and with follow-up from Warren and Murray. I support Eric Kline's Discuss position.",
+        "type": "Abstain"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-05-18 17:21:11-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-05-20 07:59:58-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-18 17:21:11-07:00",
+        "text": "I have stolen this text from Ben, because it's well written and reflects my position: \"The relationship of SRv6 SIDs to the IPv6 addressing architecture ( RFC 4291 ) was quite controversial during the processing of what since became  RFC 8986 .\u00a0 I was able to reconcile the two at the time by virtue of noting that the substructure of the SID can be considered to be logically local to the node advertising the SID and therefore not an observable part of the protocol.\u00a0 In that sense, the wire-visible use and processing of SIDs remains that of normal IPv6 addresses.\u00a0 However, introducing a sub-sub-TLV to specifically carry the structure of the SID causes that reasoning to no longer apply, and seemingly re-opens the question of whether the SID substructure is consistent with the IPv6 addressing architecture.\u00a0 In the absence of some compelling use case, I cannot support publishing a mechanism that triggers this controversy.\" My view is somewhat stronger - a number of people agreed to\u00a0 ABSTAINED on  RFC 8986  instead of DISCUSSing because it was agreed that it did not try and redefine what an IPv6 address is. This document (section 9) tries to implement structure.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-20 07:59:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-10-20 11:55:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-07 06:57:19-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9352",
+  "evaluation_end": "2021-10-20 11:55:13-07:00",
+  "evaluation_start": "2021-05-07 06:57:19-07:00"
+}

@@ -1,0 +1,323 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-23 10:24:58-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-23 10:24:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-23 13:56:38-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-10-07 09:10:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-23 13:56:38-07:00",
+        "text": "I am balloting DISCUSS because I find the document unclear and lacking proper technical details around significant functionality, as reflected in my first 3 points.\u00a0 The fourth point is related to the registration policy (which doesn't match the definition in  rfc8126 ), and my last point is for the IESG to consider. (1) Pseudocode and normative behavior The use of pseudocode was chosen as the mechanism to specify behavior, as explained in \u00a74: \u00a0  An implementation of the pseudocode is compliant as long as the externally \u00a0  observable wire protocol is as described by the pseudocode. Clarity in the pseudocode is essential because it is used to determine compliance.\u00a0 Several places need improvement: (1a) In \u00a74.1/\u00a74.13/\u00a74.15, the pseudocode is missing an ELSE after S04, to include the error conditions if SL != 0.\u00a0 A check for an error condition when SL is decremented is also needed.\u00a0 As written, the pseudocode could process the packet (SL == 0) *and* send an ICMP time exceeded message... :-( I'm using as a reference the pseudocode in \u00a74.3.1.1/rfc8754, which includes the same initial statement. (1b) It would be nice if the behavior in \u00a74.1.1 were also specified using pseudocode.\u00a0 As written, I am not sure if the intent is to process any upper-layer header or only specific ones.\u00a0 Is the objective for this operation to be similar to the one in \u00a74.3.1.2/rfc8754?\u00a0 Please be specific on what is meant by \"allowed by local configuration\". [Note: this point by itself is not DISCUSS-worthy, but \u00a74.1.1 is used, for different reasons, in some of the other items I point to below.\u00a0 That is why I include it here.] (1c) \u00a74.4/\u00a74.6: S01 of the second piece of pseudocode is an instruction for processing a non-IPv6 upper header.\u00a0 However, earlier in that section, it is specified that the SID \"is associated with one or more L3 IPv6 adjacencies/an IPv6 FIB table\".\u00a0 How can the upper header not be IPv6 if the specification explicitly says it has to be? (1d) \u00a74.5/\u00a74.7 have the same issue but related to IPv4. (1e) \u00a74.9 also has the same issue when it specifies that \"End.DX2 SID...is associated with one outgoing interface I\", but allows for the processing of non-ethernet payloads which could then be forwarded through a different outgoing interface. (1f) \u00a74.11/\u00a74.12 allows the processing of non-ethernet payloads, which will not be \"associated with an L2 Table T\" as described. (2) \u00a74.12 describes the only behavior that can carry an ARG.\u00a0 I don't understand how it works: \u00a0 \u00a0 \u00a0 Arg.FE2 is encoded in the SID as an (k*x)-bit value.\u00a0 These bits \u00a0 \u00a0 \u00a0 represent a list of up to k OIFs, each identified with an x-bit \u00a0 \u00a0 \u00a0 value.\u00a0 Values k and x are defined on a per End.DT2M SID basis.\u00a0 The \u00a0 \u00a0 \u00a0 interface identifier 0 indicates an empty entry in the interface \u00a0 \u00a0 \u00a0 list. Let's assume a router has 10 possible OIFs, and the operator uses 4-bit values to identify them; then, the ARG would take 40 bits of the SID.\u00a0 Is that how the math works? Assuming my interpretation is correct, for 20 OIFs and 5-bit values we would need 100 bits.\u00a0 Considering the examples in \u00a73.2, where a /64 is allocated to a router, this behavior wouldn't have enough bits!\u00a0 I realize that maybe a better encoding would be to use a 20-bit field, each representing an interface.\u00a0 However, there would still be a limit of < 64 OIFs.\u00a0 Am I missing something? I'm trying to ultimately get to the fact that there are limits to this behavior, but they are not described in the document.\u00a0 Please clearly explain any limitations and any possible workaround. (3) The description of the flavors in \u00a74.16 is also unclear. The section starts with this introduction: \u00a0  The PSP, USP and USD flavors are variants of the End, End.X and End.T \u00a0  behaviors.\u00a0 For each of these behaviors these flavors MAY be \u00a0  supported for a SID either individually or in combinations. By being \"variants\", I interpret that the behavior is different than what is specified in \u00a74.1.\u00a0  (3a) Some of the behaviors, as listed in Table 4, include an indication of the flavors.\u00a0 How are the values interpreted?\u00a0 For example, the Table lists 8 different behaviors related to End: | 1\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | 0x0001 |\u00a0  End (no PSP, no USP)\u00a0 |\u00a0 \u00a0 [ This.ID ]\u00a0 \u00a0  | | 2\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | 0x0002 |\u00a0 \u00a0 \u00a0  End with PSP\u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 [ This.ID ]\u00a0 \u00a0  | | 3\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | 0x0003 |\u00a0 \u00a0 \u00a0  End with USP\u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 [ This.ID ]\u00a0 \u00a0  | | 4\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | 0x0004 |\u00a0 \u00a0  End with PSP&USP\u00a0 \u00a0 |\u00a0 \u00a0 [ This.ID ]\u00a0 \u00a0  | ... | 28\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | 0x001C |\u00a0 \u00a0 \u00a0  End with USD\u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 [ This.ID ]\u00a0 \u00a0  | | 29\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | 0x001D |\u00a0 \u00a0  End with PSP&USD\u00a0 \u00a0 |\u00a0 \u00a0 [ This.ID ]\u00a0 \u00a0  | | 30\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | 0x001E |\u00a0 \u00a0  End with USP&USD\u00a0 \u00a0 |\u00a0 \u00a0 [ This.ID ]\u00a0 \u00a0  | | 31\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | 0x001F | End with PSP, USP & USD |\u00a0 \u00a0 [ This.ID ]\u00a0 \u00a0  | Is value 1 what is specified in \u00a74.1?\u00a0 Or does it include USD, which is not explicitly excluded)? (3b) If a behavior with more than one flavor is signaled, how should the receiving node determine which one to apply?\u00a0 I guess that the application of behaviors 4 or 29 depends on the number of SLs -- the expected behavior should be clearly specified. (3c) Is it assumed that all nodes support all behaviors?\u00a0 Are there mandatory to implement behaviors?\u00a0 Should the behavior be advertised before it is used? (3d) \u00a74.16.1.2:  \u00a0  When a SID of PSP-flavor is processed at a non-penultimate SR Segment \u00a0  Endpoint Node, the PSP behavior is not performed as described in the \u00a0  pseudocode below since Segments Left would not be zero. For example, for the End behavior, I'm assuming that behavior 1 is performed instead of 2 (or 4, or 29, or 31) if SL != 0.\u00a0 Should this be done even if the node did not advertise the non-PSP flavor?\u00a0 If the node is not known to support the PSP flavor, should it be an error to receive a packet requesting that behavior? If only the PSP flavor is advertised, can the Source assume that the node also supports the non-PSP flavor? \u00a0 [BTW, I'm asking about advertisement because \u00a74.16.1.1 makes the statement \u00a0 that the nodes \"advertise the SIDs instantiated on them via control plane \u00a0 protocols as described in Section 9\".\u00a0 Even though \u00a79 talks about control \u00a0 plane protocols are \"not necessary for an SDN control plane\" because \"one \u00a0 expects the controller to explicitly provision the SIDs\".] (3e) \u00a74.16.2 describes the USP flavor, which is one where the endpoint consumes the packet by processing the next header.\u00a0 I don't understand how the outcome due to the extended process is different from the original one in \u00a74.1.\u00a0 Can you please explain?\u00a0 It seems to me that the externally observable result is the same. I have the same question about the USD flavor and the externally observable behavior related to \u00a74.1. In general, the observable behavior of \u00a74.1, USP, and USD seem the same to me.\u00a0 The next two points are related. (3f) \u00a74.16.3 describes the USD flavor, which assumes that the decapsulation results in a packet that can be forwarded.\u00a0 Can the FIB lookup result in a local destination? (3g) Does the USD flavor mean that, for the End behavior (as described in \u00a74.1), the action of \"process the next header in the packet\" cannot result in a forwarded packet?\u00a0 Same question for the USP behavior? (3h) The last paragraph in \u00a74.16.3: \u00a0  An implementation that supports the USD flavor in conjunction with \u00a0  the USP flavor MAY optimize the packet processing by first looking \u00a0  whether the conditions for the USD flavor are met, in which case it \u00a0  can proceed with USD processing else do USP processing. What are the \"conditions for the USD flavor\"?\u00a0 As far as I can tell from the document, the only condition is for the specific behavior to be signaled.\u00a0 What else? Going back to the questions above...\u00a0 When is the option to optimize possible?\u00a0 Does a specific behavior have to be used?\u00a0 Behavior 30 (End with USP&USD)?\u00a0 Or can it also optimize if behavior 3 (End with USP) is signaled? (4) \u00a710.2 creates a new registry with an \"FCFS\" registration procedure.\u00a0 I am assuming that this is the same as the \"First Come First Served\" (no abbreviation!) policy from  rfc8126 ; please add a reference if that is the case.\u00a0 The description used is not the same as what  rfc8126  specifies: - \"Requests for allocation...must include a...preferably also a brief \u00a0 description of how the value will be used.\"\u00a0  Using \"preferably\" indicates \u00a0 that a description is optional.\u00a0 However, it is not optional in  rfc8126 . - \"...brief description...may be provided with a reference to an Internet \u00a0 Draft or an RFC or in some other documentation that is permanently and \u00a0 readily available.\"\u00a0 There is no such requirement in  rfc8126 .\u00a0 For example, \u00a0 the \"Specification Required\" policy requires \"a permanent and readily \u00a0 available public specification\".\u00a0 Is that what you want\u00a0 instead? (5) This point is for the IESG to discuss. \u00a74.16.1.2: \u00a0 \u00a0 \u00a0 The End, End.X and End.T behaviors with PSP do not contravene \u00a0 \u00a0 \u00a0 Section 4 of [ RFC8200 ] because the destination address of the \u00a0 \u00a0 \u00a0 incoming packet is the address of the node executing the behavior. The spring WG's interpretation of  rfc8200  was a central point in the appeal presented against the WG consensus on this document.\u00a0 The text above, I believe, reflects that consensus.\u00a0  However, given that the document relies on the spring WG's interpretation of  rfc8200 , I think it would be better if the text is explicit.\u00a0  Suggestion: to add at the end of the paragraph>   \u00a0  This conclusion represents the consensus interpretation of the spring WG.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-07 09:10:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-21 10:17:00-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-21 10:17:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-24 00:43:29-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-24 00:52:05-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-09-24 00:43:29-07:00",
+        "text": "The current requirement that IANA-assigned SRv6 Endpoint Behavior codepoints are used, with no range reserved for local assignment, seems to be inviting codepoint squatting from the nominally reserved range. Why is there an absolute requirement for registration (even FCFS) without ranges for local or experimental use?\u00a0 (What are the various reserved ranges reserved for?) The (normative) pseudocode does not seem to handle the case when the SRH is omitted for the degenerate case where there is only a single segment, or for the PSP flavor. The pseudocode for the PSP and USP procedures seem incorrect -- Hdr Ext Len is measured in units of 8 octets, and does not include the first 8 octets of the extension header, but Payload Length is measured in octets.\u00a0 Literally decreasing the Payload Length by the Hdr Ext Len value will produce a malformed IPv6 packet. If \"PSP operation is deterministically controlled by the SR Source Node\", why do we need to define behavior codepoints that (for example) use both PSP and USP?\u00a0 I don't see how there is full determinism in this case while being different from the \"PSP only\" flavor. There are numerous factual errors and un/under-specified protocol behavior (see COMMENT), including: how to set the outer Hop Limit (multiple instances), the order of segments in the SRH, specification of headend behavior by reference to informal example, L2 frame en/decapsulation procedures, and the \"Opaque\" note for endpoint behavior 65535. A discussion topic, which may or may not entail changes to this document:  RFC 8200  notes that specifications of new extension headers need to indicate their ordering constraints with respect to the other extension headers, but  RFC 8754  makes no such indications.\u00a0 Are there in practice ordering constraints that we should attempt to document?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-09 09:04:52-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-09-24 00:52:05-07:00",
+        "text": "[edited to remove nonsensical point that had crept in about the SRH being a new extension header; it's \"just\" a routing header] The current requirement that IANA-assigned SRv6 Endpoint Behavior codepoints are used, with no range reserved for local assignment, seems to be inviting codepoint squatting from the nominally reserved range. Why is there an absolute requirement for registration (even FCFS) without ranges for local or experimental use?\u00a0 (What are the various reserved ranges reserved for?) The (normative) pseudocode does not seem to handle the case when the SRH is omitted for the degenerate case where there is only a single segment, or for the PSP flavor. The pseudocode for the PSP and USP procedures seem incorrect -- Hdr Ext Len is measured in units of 8 octets, and does not include the first 8 octets of the extension header, but Payload Length is measured in octets.\u00a0 Literally decreasing the Payload Length by the Hdr Ext Len value will produce a malformed IPv6 packet. If \"PSP operation is deterministically controlled by the SR Source Node\", why do we need to define behavior codepoints that (for example) use both PSP and USP?\u00a0 I don't see how there is full determinism in this case while being different from the \"PSP only\" flavor. There are numerous factual errors and un/under-specified protocol behavior (see COMMENT), including: how to set the outer Hop Limit (multiple instances), the order of segments in the SRH, specification of headend behavior by reference to informal example, L2 frame en/decapsulation procedures, and the \"Opaque\" note for endpoint behavior 65535.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-28 15:19:25-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-12-09 09:04:52-08:00",
+        "text": "Thanks for the updates through to the -26; they help a lot. However, I do think there is one final Discuss-level point that needs to be resolved: it's mostly a process point, to make sure that what we say in this document complies to the requirements that were laid out in  RFC 8754  for the procedure we're trying to follow.\u00a0 Specifically, in the process of trying to finalize my review comments, I ended up doing a lot of background reading, in which I noticed that  RFC 8754  says: \u00a0  New SIDs defined in the future MUST specify the mutability properties \u00a0  of the Flags, Tag, and Segment List and indicate how the Hashed \u00a0  Message Authentication Code (HMAC) TLV (Section 2.1.2) verification \u00a0  works.\u00a0 Note that, in effect, these fields are mutable. This is a bit confusing to me, in that the SIDs themselves appear as entries in the Segment List, and it's not quite clear when or how a per-SID behavior relating to fields in the containing SRH might come into play.\u00a0 However, given that we allocate a behavior codepoint for \"the SID defined in  RFC 8754 \", I am forced to conclude that the behaviors specified in this document meet the definition of \"new SIDs\" that are being defined \"in the future\" (from the reference point of  RFC 8754 ), and therefore that they must specify the indicated properties. I'm told out of band that the intent is to do the same thing that  RFC 8754  does for the SID it defines, and so this should be trivial to resolve just by adding a brief note that (e.g.) \"the SIDs specified in this document have the same HMAC TLV handling and mutability properties of the Flags, Tag, and Segment List field as the SID specified in  RFC 8754 \".\u00a0 However, I believe that such an explicit statement is required, and that we would introduce an internal inconsistency between this document and  RFC 8754  if we say nothing on this topic.\u00a0 In particular, I think that we would not inherit that behavior as some kind of default behavior if we make no statement at all. I am sorry that I did not notice this earlier, but I feel that it is important to remain consistent with the requirements of  RFC 8754  and thus that this is appropriate to raise as a Discuss-level point, even if I have previously reviewed the text in question.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-28 15:23:04-08:00",
+        "end_reason": "comment_updated",
+        "start": "2020-12-28 15:19:25-08:00",
+        "text": "The -26 resolved my Discuss point from the -25; thank you. I retain my other comments from the -25 unchanged, below, for posterity. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% [note: I originally prepared these comments when looking at the -24.\u00a0 I tried to remove comments about things fixed in the -25 or -26, but may have missed a couple; please ignore any such already-addressed comments. There are also a couple points that we have already been discussing in the other thread but I retain as a \"placeholder\"; hopefully we can keep the actual discussion about them in just one place.] As mentioned in the Discuss section, I did a lot of background reading while preparing this updated ballot position.\u00a0 Another thing I noticed while doing that reading is that the pseudocode in https://tools.ietf.org/html/rfc8754#section-4.3.1.1  explicitly mentions \"perform TLV processing\"; we might consider repeating that step in our pseudocode procedures, and otherwise making our procedures as analogous as possible to the  RFC 8754  procedures, just from the perspective of keeping the writing style as consistent as possible across the related documents.\u00a0 However, that's entirely an editorial matter and thus left to the discretion of the authors/AD. Section 2 \u00a0  The following terms used within this document are defined in \u00a0  [ RFC8754 ]: SRH, SR Source Node, Transit Node, SR Segment Endpoint \u00a0  Node, Reduced SRH, Segments Left and Last Entry. It's slightly unfortunate that 8754 didn't have a dedicated terminology section containing these, though it's too late to really do anything about it now. Section 3 \u00a0  The term \"function\" refers to the bit-string in the SRv6 SID.\u00a0 The \u00a0  term \"behavior\" identifies the behavior bound to the SID.\u00a0 The \u00a0  behaviors are defined in Section 4 of this document. (nit) using \"the behaviors\" to some extent implies that these are the only ones allowed or defined, which is not true.\u00a0 Perhaps \"some behaviors\" would be more accurate (or some other phrasing would also cover the expected evolution of the ecosystem)? Section 3.3 \u00a0  A packet could be steered to a non-routed SID 2001:db8:b:2:101:: by \u00a0  using a SID list <...,2001:db8:b:1:100::,2001:db8:b:2:101::,...> \u00a0  where the non-routed SID is preceded by a routed SID to the same \u00a0  node.\u00a0 Routed and non-routed SRv6 SIDs are the SRv6 instantiation of \u00a0  global and local segments, respectively [ RFC8402 ]. If it's (also) possible to steer a packet to a non-routed SID without a preceding routed SID for the same node (e.g., via End.X), it seems like that might be worth listing an example of as well.\u00a0 Otherwise a reader might assume that the global segment is a necessary part of using the non-routed SID. Section 4 \u00a0 End.DT2U\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Endpoint with decaps and unicast MAC L2table lookup \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  e.g. EVPN Bridging unicast use-case (nit) we seem to put a space in \"L2 table\" the other times it appears. \u00a0  The list is not exhaustive.\u00a0 In practice, any function can be \u00a0  attached to a local SID: e.g. a node N can bind a SID to a local VM \u00a0  or container which can apply any complex processing on the packet. (nit) the preceding list was a list of well-known behaviors, not a list of functions.\u00a0 IIUC, it is more appropriate to use \"behavior\" here than \"function\", since the \"function\" is just the opaque bitstring. Section 4.1.1, ... \u00a0  When processing the Upper-layer Header of a packet matching a FIB \u00a0  entry locally instantiated as an SRv6 End SID do the following: (editorial, I think) I find it interesting to compare the phrasing here to what was used in \u00a74.1 (when processing an SRH), where the text is \"receives a packet whose IPv6 DA is S and S is a local End SID\".\u00a0 Why the distinction between \"End SID\" and 'SRv6 End SID\"?\u00a0 IIUC the distinction between checking \"IPv6 DA\" and \"matching a FIB entry locally instantiated\" is important and the language should not be harmonized between occurrences. The \"...\" in the Section number listing indicates that this (or similar) phrasing appears throughout, whenever we talk about processing an upper-layer header. Section 4.2 \u00a0  Note that if N has an outgoing interface bundle I to a neighbor Q \u00a0  made of 10 member links, N may allocate up to 11 End.X local SIDs: \u00a0  one for the bundle itself and then up to one for each Layer-2 member \u00a0  link.\u00a0 The flows steered using the End.X SID corresponding to the (nit) I think that while \"up to 11\" might be the situation that makes the most sense (in that having many distinct subgroups with 1 < n < 10 member links doesn't make sense), it is not strictly speaking a physical or protocol requirement.\u00a0 Perhaps \"might allocate 11\" is better than \"may allocate up to 11\" for that reason. Section 4.4, ... \u00a0  When N receives a packet destined to S and S is a local End.DX6 SID, \u00a0  N does the following processing: (nit) we have a mismatch of \"N does the following processing\" (like appears here) and \"N does\" or similar; it is probably worth normalizing on one phrasing. \u00a0  When processing the Upper-layer header of a packet matching a FIB \u00a0  entry locally instantiated as an SRv6 End.DX6 SID, the following is \u00a0  done: Similarly here, we use \"the following is done\" but the \"N does the following\" phrasing used in some other sections is probably preferred, as it avoids the passive voice. Section 4.12 We might give some mnemonic explanation for how the name \"FE2\" was chosen to identify the argument value. \u00a0  table T flooding.\u00a0 The allocation of the argument values is local to \u00a0  the SR Endpoint Node instantiating this behavior and the signaling of \u00a0  the argument to other nodes for the EVPN functionality via control \u00a0  plane. nit(?): s/via control plane/occurs via the control plane/? Section 4.13 \u00a0 S05.\u00a0  If (IPv6 Hop Limit <= 1) { \u00a0 S06.\u00a0 \u00a0 \u00a0  Send an ICMP Time Exceeded message to the Source Address, \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Code 0 (Hop limit exceeded in transit), (nit) the indentation seems off by one space in the first line of S06 (it doesn't match the other two places where this chunk occurs). \u00a0  S14.\u00a0 The SRH MAY be omitted when the SRv6 Policy B only contains one \u00a0  SID and there is no need to use any flag, tag or TLV. \u00a0  S17.\u00a0 The Payload Length, Traffic Class, Hop Limit and Next-Header \u00a0  fields are set as per [ RFC2473 ].\u00a0 The Flow Label is computed as per \u00a0  [ RFC6437 ]. (These look to be S15 and S18, respectively, now.) Section 4.14 \u00a0  The SRH MAY be omitted when the SRv6 Policy only contains one segment \u00a0  and there is no need to use any flag, tag or TLV. (nit) it's probably worth harmonizing the phrasing between here and the note on S15 in \u00a74.13 (specifically, \"only contains one SID\" vs \"only contains one segment\"). Section 4.15 (nit) there's a blank line at the end of S06 that doesn't occur in the other two locations where this pseudocode appears. \u00a0 S16.\u00a0  Submit the packet to the MPLS engine for transmission to the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 topmost label. (nit) I suggest rewording slightly so as to not imply that the node to transmit to is determined by the topmost label -- IIUC it's determined by the MPLS policy, since the interpretation of the label is in general local to the receiving node. Section 4.16.1.2 \u00a0  As a reminder, [ RFC8754 ] defines in section 5 the SR Deployment Model \u00a0  within the SR Domain [ RFC8402 ].\u00a0 Within this framework, the \u00a0  Authentication Header (AH) is not used to secure the SRH as described \u00a0  in Section 7.5 of [ RFC8754 ]. (repeating from the previous thread as a placeholder) I think we need another sentence or clause here to clarify why this statement is relevant, e.g., \"Thus, while the AH can detect changes to the IPv6 header chain, it will not be used in combination with the SRH, so use of PSP will not cause delivery failure due to AH validation checks.\" Section 5 (editorial) This is the first place in the document that we talk about the \"headend\" or its policy at all, so a bit of background on why it's useful to tabulate potential headend policy/behaviors might be helpful. Section 5.x Tying the other policies more precisely to the pseudocode for H.Encaps (e.g., replacing S01) seems like it would be useful, to avoid the appearance of specifying behavior by appealing to examples. Section 5.1 \u00a0  Note: \u00a0  S03: As described in [ RFC6437 ] (IPv6 Flow Label Specification). We need to pull in  RFC 2473  for payload length, traffic class, and next-header, IIUC.\u00a0 (hop-limit is covered a few paragraphs down.) Also to say how the next-header value is selected. Section 8.1 \u00a0  The presence of SIDs in the IGP does not imply any routing semantics \u00a0  to the addresses represented by these SIDs.\u00a0 The routing reachability \u00a0  to an IPv6 address is solely governed by the non-SID-related IGP \u00a0  prefix reachability information that includes locators.\u00a0 Routing is \u00a0  neither governed nor influenced in any way by a SID advertisement in \u00a0  the IGP. It seems like this is trying to say \"the IGP must not advertise prefixes contained within the LOC part of an SID\", but in a very roundabout way. Section 8.3 \u00a0  The End.DX4, End.DX6, End.DT4, End.DT6, End.DT46, End.DX2, End.DX2V, \u00a0  End.DT2U and End.DT2M SIDs can be signaled in BGP. Since we said earlier that the signaling of SIDs needs to include the behavior codepoint for each function bitstring, it seems like we should provide a reference to how BGP will encode the behavior codepoint. Section 9 There seem to be some security considerations relating to the use of PSP, in that the egress node loses visibility into which policy was used for a given packet, so all packets from all policies that egress via that SID are in the same anonymity (and policy!) set.\u00a0 In particular, even if an HMAC TLV was present in the SRH, it is not available and cannot be validated.\u00a0 I recognize that the headend (or whatever entity is assigning SR policy) should know when such validation would be intended to occur and not assign a policy incompatible with it, but there are still new considerations in the sense that the headend needs to be aware of these considerations. (repeating as a placeholder from the previous thread) I think we should also say that in the absence of the HMAC TLV, valid FUNC and ARG values on any given node may be guessable and spoofable, along with the standard disclaimer that risks are minimal since all nodes in the SR domain are assumed to be trusted.\u00a0 This is distinct from the already-extant ability to spoof a SID in that the underlying structure in the SID may allow the attacker to induce behavior that was never intended to be a SID, for example if the implementation logically separates FUNC and ARG processing and the attacker makes a combination that was never advertised. Also, IIUC, the \"Segments Left == 0\" handling for, e.g., End.X is important to prevent traffic loops -- if a node fails to perform that check and blindly sends the packet to the interconnect it will get returned to that node/SID and loop until the IP hop limit is exhausted.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-28 15:23:04-08:00",
+        "text": "The -27 resolved my Discuss point from the -26; thank you. I retain my other comments from the -26 unchanged, below, for posterity. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% [note: I originally prepared these comments when looking at the -24.\u00a0 I tried to remove comments about things fixed in the -25 or -26, but may have missed a couple; please ignore any such already-addressed comments. There are also a couple points that we have already been discussing in the other thread but I retain as a \"placeholder\"; hopefully we can keep the actual discussion about them in just one place.] As mentioned in the Discuss section, I did a lot of background reading while preparing this updated ballot position.\u00a0 Another thing I noticed while doing that reading is that the pseudocode in https://tools.ietf.org/html/rfc8754#section-4.3.1.1  explicitly mentions \"perform TLV processing\"; we might consider repeating that step in our pseudocode procedures, and otherwise making our procedures as analogous as possible to the  RFC 8754  procedures, just from the perspective of keeping the writing style as consistent as possible across the related documents.\u00a0 However, that's entirely an editorial matter and thus left to the discretion of the authors/AD. Section 2 \u00a0  The following terms used within this document are defined in \u00a0  [ RFC8754 ]: SRH, SR Source Node, Transit Node, SR Segment Endpoint \u00a0  Node, Reduced SRH, Segments Left and Last Entry. It's slightly unfortunate that 8754 didn't have a dedicated terminology section containing these, though it's too late to really do anything about it now. Section 3 \u00a0  The term \"function\" refers to the bit-string in the SRv6 SID.\u00a0 The \u00a0  term \"behavior\" identifies the behavior bound to the SID.\u00a0 The \u00a0  behaviors are defined in Section 4 of this document. (nit) using \"the behaviors\" to some extent implies that these are the only ones allowed or defined, which is not true.\u00a0 Perhaps \"some behaviors\" would be more accurate (or some other phrasing would also cover the expected evolution of the ecosystem)? Section 3.3 \u00a0  A packet could be steered to a non-routed SID 2001:db8:b:2:101:: by \u00a0  using a SID list <...,2001:db8:b:1:100::,2001:db8:b:2:101::,...> \u00a0  where the non-routed SID is preceded by a routed SID to the same \u00a0  node.\u00a0 Routed and non-routed SRv6 SIDs are the SRv6 instantiation of \u00a0  global and local segments, respectively [ RFC8402 ]. If it's (also) possible to steer a packet to a non-routed SID without a preceding routed SID for the same node (e.g., via End.X), it seems like that might be worth listing an example of as well.\u00a0 Otherwise a reader might assume that the global segment is a necessary part of using the non-routed SID. Section 4 \u00a0 End.DT2U\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Endpoint with decaps and unicast MAC L2table lookup \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  e.g. EVPN Bridging unicast use-case (nit) we seem to put a space in \"L2 table\" the other times it appears. \u00a0  The list is not exhaustive.\u00a0 In practice, any function can be \u00a0  attached to a local SID: e.g. a node N can bind a SID to a local VM \u00a0  or container which can apply any complex processing on the packet. (nit) the preceding list was a list of well-known behaviors, not a list of functions.\u00a0 IIUC, it is more appropriate to use \"behavior\" here than \"function\", since the \"function\" is just the opaque bitstring. Section 4.1.1, ... \u00a0  When processing the Upper-layer Header of a packet matching a FIB \u00a0  entry locally instantiated as an SRv6 End SID do the following: (editorial, I think) I find it interesting to compare the phrasing here to what was used in \u00a74.1 (when processing an SRH), where the text is \"receives a packet whose IPv6 DA is S and S is a local End SID\".\u00a0 Why the distinction between \"End SID\" and 'SRv6 End SID\"?\u00a0 IIUC the distinction between checking \"IPv6 DA\" and \"matching a FIB entry locally instantiated\" is important and the language should not be harmonized between occurrences. The \"...\" in the Section number listing indicates that this (or similar) phrasing appears throughout, whenever we talk about processing an upper-layer header. Section 4.2 \u00a0  Note that if N has an outgoing interface bundle I to a neighbor Q \u00a0  made of 10 member links, N may allocate up to 11 End.X local SIDs: \u00a0  one for the bundle itself and then up to one for each Layer-2 member \u00a0  link.\u00a0 The flows steered using the End.X SID corresponding to the (nit) I think that while \"up to 11\" might be the situation that makes the most sense (in that having many distinct subgroups with 1 < n < 10 member links doesn't make sense), it is not strictly speaking a physical or protocol requirement.\u00a0 Perhaps \"might allocate 11\" is better than \"may allocate up to 11\" for that reason. Section 4.4, ... \u00a0  When N receives a packet destined to S and S is a local End.DX6 SID, \u00a0  N does the following processing: (nit) we have a mismatch of \"N does the following processing\" (like appears here) and \"N does\" or similar; it is probably worth normalizing on one phrasing. \u00a0  When processing the Upper-layer header of a packet matching a FIB \u00a0  entry locally instantiated as an SRv6 End.DX6 SID, the following is \u00a0  done: Similarly here, we use \"the following is done\" but the \"N does the following\" phrasing used in some other sections is probably preferred, as it avoids the passive voice. Section 4.12 We might give some mnemonic explanation for how the name \"FE2\" was chosen to identify the argument value. \u00a0  table T flooding.\u00a0 The allocation of the argument values is local to \u00a0  the SR Endpoint Node instantiating this behavior and the signaling of \u00a0  the argument to other nodes for the EVPN functionality via control \u00a0  plane. nit(?): s/via control plane/occurs via the control plane/? Section 4.13 \u00a0 S05.\u00a0  If (IPv6 Hop Limit <= 1) { \u00a0 S06.\u00a0 \u00a0 \u00a0  Send an ICMP Time Exceeded message to the Source Address, \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Code 0 (Hop limit exceeded in transit), (nit) the indentation seems off by one space in the first line of S06 (it doesn't match the other two places where this chunk occurs). \u00a0  S14.\u00a0 The SRH MAY be omitted when the SRv6 Policy B only contains one \u00a0  SID and there is no need to use any flag, tag or TLV. \u00a0  S17.\u00a0 The Payload Length, Traffic Class, Hop Limit and Next-Header \u00a0  fields are set as per [ RFC2473 ].\u00a0 The Flow Label is computed as per \u00a0  [ RFC6437 ]. (These look to be S15 and S18, respectively, now.) Section 4.14 \u00a0  The SRH MAY be omitted when the SRv6 Policy only contains one segment \u00a0  and there is no need to use any flag, tag or TLV. (nit) it's probably worth harmonizing the phrasing between here and the note on S15 in \u00a74.13 (specifically, \"only contains one SID\" vs \"only contains one segment\"). Section 4.15 (nit) there's a blank line at the end of S06 that doesn't occur in the other two locations where this pseudocode appears. \u00a0 S16.\u00a0  Submit the packet to the MPLS engine for transmission to the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 topmost label. (nit) I suggest rewording slightly so as to not imply that the node to transmit to is determined by the topmost label -- IIUC it's determined by the MPLS policy, since the interpretation of the label is in general local to the receiving node. Section 4.16.1.2 \u00a0  As a reminder, [ RFC8754 ] defines in section 5 the SR Deployment Model \u00a0  within the SR Domain [ RFC8402 ].\u00a0 Within this framework, the \u00a0  Authentication Header (AH) is not used to secure the SRH as described \u00a0  in Section 7.5 of [ RFC8754 ]. (repeating from the previous thread as a placeholder) I think we need another sentence or clause here to clarify why this statement is relevant, e.g., \"Thus, while the AH can detect changes to the IPv6 header chain, it will not be used in combination with the SRH, so use of PSP will not cause delivery failure due to AH validation checks.\" Section 5 (editorial) This is the first place in the document that we talk about the \"headend\" or its policy at all, so a bit of background on why it's useful to tabulate potential headend policy/behaviors might be helpful. Section 5.x Tying the other policies more precisely to the pseudocode for H.Encaps (e.g., replacing S01) seems like it would be useful, to avoid the appearance of specifying behavior by appealing to examples. Section 5.1 \u00a0  Note: \u00a0  S03: As described in [ RFC6437 ] (IPv6 Flow Label Specification). We need to pull in  RFC 2473  for payload length, traffic class, and next-header, IIUC.\u00a0 (hop-limit is covered a few paragraphs down.) Also to say how the next-header value is selected. Section 8.1 \u00a0  The presence of SIDs in the IGP does not imply any routing semantics \u00a0  to the addresses represented by these SIDs.\u00a0 The routing reachability \u00a0  to an IPv6 address is solely governed by the non-SID-related IGP \u00a0  prefix reachability information that includes locators.\u00a0 Routing is \u00a0  neither governed nor influenced in any way by a SID advertisement in \u00a0  the IGP. It seems like this is trying to say \"the IGP must not advertise prefixes contained within the LOC part of an SID\", but in a very roundabout way. Section 8.3 \u00a0  The End.DX4, End.DX6, End.DT4, End.DT6, End.DT46, End.DX2, End.DX2V, \u00a0  End.DT2U and End.DT2M SIDs can be signaled in BGP. Since we said earlier that the signaling of SIDs needs to include the behavior codepoint for each function bitstring, it seems like we should provide a reference to how BGP will encode the behavior codepoint. Section 9 There seem to be some security considerations relating to the use of PSP, in that the egress node loses visibility into which policy was used for a given packet, so all packets from all policies that egress via that SID are in the same anonymity (and policy!) set.\u00a0 In particular, even if an HMAC TLV was present in the SRH, it is not available and cannot be validated.\u00a0 I recognize that the headend (or whatever entity is assigning SR policy) should know when such validation would be intended to occur and not assign a policy incompatible with it, but there are still new considerations in the sense that the headend needs to be aware of these considerations. (repeating as a placeholder from the previous thread) I think we should also say that in the absence of the HMAC TLV, valid FUNC and ARG values on any given node may be guessable and spoofable, along with the standard disclaimer that risks are minimal since all nodes in the SR domain are assumed to be trusted.\u00a0 This is distinct from the already-extant ability to spoof a SID in that the underlying structure in the SID may allow the attacker to induce behavior that was never intended to be a SID, for example if the implementation logically separates FUNC and ARG processing and the attacker makes a combination that was never advertised. Also, IIUC, the \"Segments Left == 0\" handling for, e.g., End.X is important to prevent traffic loops -- if a node fails to perform that check and blindly sends the packet to the interconnect it will get returned to that node/SID and loop until the IP hop limit is exhausted.",
+        "type": "Abstain"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-22 12:56:11-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 12:56:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-22 12:19:05-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 12:19:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-23 23:40:28-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-10-29 22:29:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-23 23:40:28-07:00",
+        "text": "I support Alvaro's and others' discuss points.\u00a0 I have only a few points that I think are easily cleared. [ section 3.2 ] * I'm a bit concerned about this first example, as it might give the mistaken \u00a0 impression that fc00::/7 is free for anyone to carve up as they wish \u00a0 (I say this regardless of what this operator may or may not have done). \u00a0 Per 4193, operators are supposed to generate random /48s from fd00::/8. \u00a0 I think this is easily corrected though, and I'd suggest: \u00a0 OLD: \u00a0 .....\u00a0 The provider historically deployed IPv6 and assigned \u00a0 infrastructure addresses from a portion of the fc00::/7 prefix.\u00a0 They \u00a0 further subdivided the prefix into three /48 prefixes (Country X, \u00a0 Country Y, Country Z) to support their SRv6 infrastructure.\u00a0 From \u00a0 those /48 prefixes each router is assigned a /64 prefix from which \u00a0 all SIDs of that router are allocated. \u00a0 NEW: \u00a0 .....\u00a0 The provider historically deployed IPv6 and assigned \u00a0 infrastructure addresses from ULA space [ RFC 4193 ].\u00a0 They specifically \u00a0 allocated three /48 prefixes (Country X, Country Y, Country Z) to \u00a0 support their SRv6 infrastructure.\u00a0 From those /48 prefixes each router \u00a0 was assigned a /64 prefix from which all SIDs of that router are allocated. [ section 4.16.2 ] * I'm not sure I understand what the value of specifying USP is.\u00a0 This looks \u00a0 to me like an implementation detail and seems unnecessary.\u00a0 In all cases \u00a0 where the S03 code block is entered it's the processing of the remainder of \u00a0 the inner packet that's important, I would think. \u00a0 I guess, what's the value of specifying the way in which an implementation \u00a0 can begin to process the next header?\u00a0 Is this for chained SRHs and thus \u00a0 resubmitting the inner SRH to the same SID processing (8200 says that the \u00a0 RH 'should appear at most once', but that's as strong as the text gets)? [ section 4.16.3 ] * This too seems like an implementation detail, and it's not clear what it's \u00a0 adding to the document.\u00a0 But I must be misunderstanding something. [ section 7 ] * What flow label is included in hashing where End.DX4 is concerned?\u00a0 If \u00a0 it's the flow label of the outermost IPv6 header, then the same question \u00a0 comes to mind for End.X and End.DX6; I'd assumed it would be the inner \u00a0 packet's flow label (and src/dst addresses) that would factor into the \u00a0 flow hashing. [ section 8 ] * Of what value to the ingress node is knowledge of USP or USD behaviour \u00a0 at the terminus?\u00a0 That still seems like exposing an implementation detail.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-29 22:29:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-24 05:40:49-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-24 07:18:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-24 05:40:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-24 07:18:36-07:00",
+        "text": null,
+        "type": "Abstain"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-09-14 17:16:16-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-14 17:16:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-09-08 10:14:57-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-08 10:14:57-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-12-13 22:41:16-08:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-13 22:41:16-08:00",
+        "text": null,
+        "type": "Abstain"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-09-22 02:14:23-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 02:14:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-21 11:23:16-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-28 09:21:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-21 11:23:16-07:00",
+        "text": "Section 3.1.\u00a0 (In case I missed it, please provide the obvious reference) Per \u201cIn such a case, the semantics and format of the ARG bits are defined as part of the SRv6 endpoint behavior specification\u201d, is \u201cendpoint behavior specification\u201d Section 4 or another document?\u00a0 If the former, I don\u2019t see any references to argument bits in the pseudo-code of the Section 4.* subsections.\u00a0 If the latter, what document?\u00a0 Can the behaviors be polymorphic (i.e., same network behavior accepting different arguments)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-28 09:21:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-21 09:31:46-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:14:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-01-06 07:16:04-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-21 09:31:46-07:00",
+        "text": null,
+        "type": "Abstain"
+      }
+    ]
+  },
+  "doc_name": "rfc8986",
+  "evaluation_end": "2021-01-06 07:16:04-08:00",
+  "evaluation_start": "2020-09-08 10:14:56-07:00"
+}

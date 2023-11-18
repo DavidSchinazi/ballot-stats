@@ -1,0 +1,235 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-12-16 03:32:00-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-16 03:32:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-12-16 20:28:23-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-16 20:28:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-17 02:27:40-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-17 02:27:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-12-02 14:58:32-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-12-17 03:25:45-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-17 03:25:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-12-17 00:10:55-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-17 00:10:55-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-12-08 13:02:07-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-12-14 20:17:11-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-12-08 13:02:07-08:00",
+        "text": "Secs 5.9.6 defines Maximum Reordering Tolerance with an example: \"The difference of sequence number values in \u00a0  consecutive packets at the Egress cannot be bigger than \u00a0  \"MaxMisordering + 1\".\" While this definition is actionable, it interacts uncomfortably with Maximum Consecutive Loss. If MCL < MRT, there are cases where it will violate MRT but not MCL, which would subvert the usually understood meaning of reordering. Moreover, if MaxMisordering is 3, the sequence 6, 4, 0 would not trigger this definition even though there is very significant reordering here. A better example would be \"When a packet arrives at the egress after a packet with a higher sequence number, the difference between the sequence number values cannot be bigger than \u00a0  \"MaxMisordering + 1\".\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-14 20:17:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-12-15 23:14:06-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-15 23:14:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-12-17 02:21:45-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-17 02:21:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-12-16 10:26:20-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-16 10:26:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-01-25 13:15:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 14:58:32-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9016",
+  "evaluation_end": "2021-01-25 13:15:01-08:00",
+  "evaluation_start": "2020-12-02 14:58:32-08:00"
+}

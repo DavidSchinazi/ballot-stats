@@ -1,0 +1,253 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-04-13 04:40:19-07:00",
+        "end_reason": "new_position",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-13 04:40:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-04-14 06:56:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-04-11 04:28:48-07:00",
+        "text": "Thank you for the work put into this document. I *really* find the idea and the protocol interesting and useful. The text is also easy to read and to understand (albeit underspecified in some cases -- hence my DISCUSS). Please find below some blocking DISCUSS points (easy to address by adding some text), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to Chris Wood for the shepherd's detailed write-up including the WG consensus *but* it lacks the justification of the intended status.  Other thanks to Tim Winters, the Internet directorate reviewer (at my request): https://datatracker.ietf.org/doc/review-ietf-masque-connect-ip-09-intdir-telechat-winters-2023-04-07/  (and I have read the email exchange, thanks to all) I hope that this review helps to improve the document, Regards, -\u00e9ric # DISCUSS (blocking) As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ## Section 8 Several parts of this section are unspecified, see below. `Note that ICMP messages can originate from a source address different from that of the IP proxying peer.` is of course obvious, but I think that this case (ICMP originating from the global Internet to the proxy client) deserves a section on its own. Notably whether this source must be within the target ? The source address to be used by the proxy when originating an ICMP should also be specified, even if just a reference to  RFC 6724  for IPv6. ## Section 9.2 In the example where the IP proxy has an IP address in the same prefix as the legacy client (there is no on-link / off-link state for IPv4 as opposed to IPv6), the encapsulation behavior of section 7 requires the TTL to be decremented before entering the tunnel, which is really wrong as it this case it is not formally a routing to a different prefix and some protocols may expect TTL=255, which won't be the case. Request to add some text about this \"issue\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-14 06:56:57-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-04-12 01:05:08-07:00",
+        "end_reason": "new_position",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-12 01:05:08-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-10 05:25:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-04-06 14:35:26-07:00",
+        "end_reason": "new_position",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-06 14:35:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-04-12 05:59:24-07:00",
+        "end_reason": "new_position",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-12 05:59:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-03-15 07:12:32-07:00",
+        "end_reason": "new_position",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-04-12 22:24:32-07:00",
+        "end_reason": "new_position",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-12 22:24:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-04-13 06:46:21-07:00",
+        "end_reason": "new_position",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-13 06:46:21-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-04-13 05:25:35-07:00",
+        "end_reason": "new_position",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-13 05:25:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-04-12 18:44:11-07:00",
+        "end_reason": "new_position",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-12 18:44:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-04-13 04:37:55-07:00",
+        "end_reason": "new_position",
+        "start": "2023-03-15 07:12:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-05-12 12:33:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-13 04:37:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9484",
+  "evaluation_end": "2023-05-12 12:33:06-07:00",
+  "evaluation_start": "2023-03-15 07:12:32-07:00"
+}

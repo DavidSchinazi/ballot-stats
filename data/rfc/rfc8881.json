@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-18 20:30:12-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 20:30:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-12-16 06:40:32-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-16 06:40:32-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-18 13:57:13-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 13:57:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-19 06:21:05-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-19 06:21:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-18 08:53:39-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 08:53:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-18 00:31:01-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-01 20:39:28-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-18 00:31:01-08:00",
+        "text": "Thank you for this document (and its predecessor); it's important to get these points clarified, and sooner rather than later.\u00a0 I expect that the following few issues should be quickly resolvable. Section 11.10.1 includes a reference to \"Section 11.7.2.1 of  RFC5661 \", but this document is obsoleting that document.\u00a0 It seems internally inconsistent to both obsolete and depend on the same source -- if we rely on that content, it should be included in this document. This is somewhat awkward since the limited nature of the update results in my not having the full context of the rest of the document; with that limitation in my understanding in mind, I'd like to confirm that we're comfortable with the use of \"network address\" in the context of trunking/migration, specifically the extent to which we do not discuss port numbers.\u00a0 The relevant XDR types do allow for optional port numbers to be included, with a default to be used when not specified, but in this document we do have a new note that different ports may be used for different connection types to the same logical server, and also that different ports \"is not the essence of the distinction between the two endpoints\".\u00a0 I think there might be cases where the port is relevant for a distinction, but the main ones I can think of are of questionable relevance (essentially, roughly equivalent to multiple userspace NFS servers on a single host but in different trust/privilege domains) -- I'd like another opinion or several. In a similar \"discuss discuss\" vein, Section 11.10.8 describes a scenario that does not give much clarity, at a protocol level, into what degree of replication synchronization a client can expect from a given file system that advertises multiple replicas.\u00a0 I recognize that this is de facto just stating the deployed reality, but it's also hard to feel good about having this level of ambiguity in a propsed standard, and the (unchanged) text in Section 11.5.5 seems to impose a stricter consistency requirement, at least on potential migration targets.\u00a0 (A bit more detail in the COMMENT section.) Section 11.13.2 mentions that \"[i]ssues connected with a client impersonating another by presenting another client's id string are discussed in Section 21\", but I failed to find this discussion in Section 21.\u00a0 (The discuss-level issue is just the internal inconsistency; there's a decent argument that this is covered by Appendix C's \"not written in accord with  RFC3552 \".\u00a0 Though if the text was already written for  draft-ietf-nfsv4-mv1-msns-update , not including it here seems a little silly.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-01 20:39:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-12-12 07:43:44-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-12 07:43:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-04 01:25:15-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 01:25:15-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-12-18 15:25:11-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 15:25:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-17 07:40:02-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-17 07:40:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-17 18:05:34-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-17 18:05:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-15 20:10:12-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-15 20:10:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-12-18 12:16:17-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-04 01:25:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-02 07:05:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 12:16:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8881",
+  "evaluation_end": "2020-03-02 07:05:25-08:00",
+  "evaluation_start": "2019-12-04 01:25:09-08:00"
+}

@@ -1,0 +1,339 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-02-16 13:58:12-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-03-11 10:20:28-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-16 13:58:12-08:00",
+        "text": "(1) This specification should formally Update  rfc8402 . What is the relationship between this document and  rfc8402 ?\u00a0 If this document details the concept introduced in  rfc8402 , why isn't there a formal Update relationship? Even the initial definition of SR Policy in this document (\u00a72) doesn't match what  rfc8402  says.\u00a0 This document defines it as \"a framework that enables the instantiation of an ordered list of segments\", while  rfc8402  states it is \"an ordered list of segments.\"\u00a0 In \u00a72.2, this document uses the term  \"segment-list\" for that. Besides the general topic of clarifying and updating what an SR Policy is, this document also includes other items that were not present in  rfc8402 ; the list includes: \u00a0  \u00a72.1: \"SR Policy MUST be identified through the tuple .\"\u00a0  There's not even a mention of \"color\" in  rfc8402 . \u00a0  \u00a72.1: \"The headend is specified as an IPv4 or IPv6 address and is expected  \u00a0  to be unique in the domain.\"\u00a0 Neither the mechanism to identify a node nor  \u00a0  the expectation is present in  rfc8402 . \u00a0  \u00a72.1: \"The endpoint is specified as an IPv4 or IPv6 address and is expected \u00a0  to be unique in the domain.\"\u00a0  Same as above. The SR Database is a new element not in the base architecture.\u00a0 The text in \u00a73 says that \"use of the SR-DB for computation and validation of SR Policies is outside the scope of this document\", but it is then mentioned and used in \u00a75.1/\u00a75.2. Accordingly, the added details require additional Security and Manageability considerations. I couldn't find a related discussion in the archive.\u00a0 If I missed it, please point me in the right direction. (2) \u00a75.1: \u00a0  Types A or B MUST be used for the SIDs for which the reachability \u00a0  cannot be verified.\u00a0 Note that the first SID MUST always be reachable \u00a0  regardless of its type. These two requirements and the text in the description of these types (\"...does not require the headend to perform SID resolution.\") results in a  contradiction: Types A and B are not to be resolved, but if they are the first  SID then they MUST.\u00a0 If it's not a contradiction, then Types A and B would not  be allowed to be the first SID, which is not correct because the most  straightforward mechanism to define a path is to list SR-MPLS Labels or SRv6  SIDs.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-11 10:20:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-02-16 22:16:18-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-02-24 18:04:55-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 22:16:18-08:00",
+        "text": "(1) I may just be misunderstanding things, but I'd like to pull on a thread in \u00a78.4 a bit more.\u00a0 We say that the headend H learns a BGP route that has a VPN label V, but then the following procedures seem to say that we install a route on the appropriate SR Policy P and that when we receive a packet that matches the route in question, push a label stack including the VPN label, and send the resulting packet out.\u00a0 Nowhere do we say to check the VPN status of the incoming packet, so this seems like it would open a hole in the VPN by allowing \"arbitrary\" incoming traffic (not marked as specific to V) to enter that VPN.\u00a0 Is the label V filling some other role than identifying a specific VPN of many VPNs that could run along the route R/r? (This is the only instance of the phrase \"VPN label\" in the document, and no reference is given, so I'm relying heavily on instinct to ascertain the intent here.) (2) The security considerations says that this document does not define any new protocol extensions and (accordingly) does not introduce any further security considerations.\u00a0 The first part of this seems false, not least since we define the meaning of the \"CO\" bits in the Color Extended Community.\u00a0 I'm pretty sure that makes the second part also false, and we need to discuss the security considerations relating to imposing SR Policies based only on color and not next-hop.\u00a0 Alvaro has also noted additional aspects where security considerations are missing. (3) The Discriminator as defined in \u00a72.5 does not seem wide enough to be able to provide the needed properties.\u00a0 Some later clarification in \u00a72.6 implies that the definition in \u00a72.5 is incomplete and the width is actually appropriate, but in either case \u00a72.5 seems inadequate in its current form. (Details in the COMMENT.) (4) Section 2.11 contains the statement, \"A valid SR Policy is instantiated in the forwarding plane.\" Is this a statement of fact (i.e., a consequence of the definition of \"valid\") or a mandate for something (e.g., the headend) to take action to make it so?\u00a0 Given that the point of SR is to be stateless on nodes other than the headend, I suspect the former, but if we are relying on the headend (or some other entity) to take action to ensure this is the case, that needs to be a clearly stated normative requirement. (5) Section 8.4 uses the phrase \"any AFI/SAFI of LISP [ RFC6830 ].\" There's nothing in the IANA registry for SAFI ( https://www.iana.org/assignments/safi-namespace/safi-namespace.xhtml ) about LISP, and  RFC 6830  doesn't talk about SAFI.\u00a0 What is this referring to?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-19 20:33:03-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-24 18:04:55-08:00",
+        "text": "[removing topics that are addressed; the below are (verbatim) copies from my ballot on the -17, for topics that remain open] (3) The Discriminator as defined in \u00a72.5 does not seem wide enough to be able to provide the needed properties.\u00a0 Some later clarification in \u00a72.6 implies that the definition in \u00a72.5 is incomplete and the width is actually appropriate, but in either case \u00a72.5 seems inadequate in its current form. (Details in the COMMENT.) (4) Section 2.11 contains the statement, \"A valid SR Policy is instantiated in the forwarding plane.\" Is this a statement of fact (i.e., a consequence of the definition of \"valid\") or a mandate for something (e.g., the headend) to take action to make it so?\u00a0 Given that the point of SR is to be stateless on nodes other than the headend, I suspect the former, but if we are relying on the headend (or some other entity) to take action to ensure this is the case, that needs to be a clearly stated normative requirement.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-19 20:33:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-02-17 06:52:44-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-17 06:52:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-02-10 21:10:21-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-10 21:10:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-02-15 15:41:04-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-15 15:41:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 08:51:37-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 08:52:06-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 08:51:37-08:00",
+        "text": "I\u2019ve done an initial review of this document and have several concerns I\u2019d like to discuss. I apologize for not also providing a full review as comments in this ballot, I judged it more important to begin the discussion about these points timely, than to provide all comments in a single message.  1. The shepherd writeup indicates that \u201cStandard Track is requested and indicated in the title page header. This is appropriate for a specification of packet steering into an SR policy needing interoperability between the ingress/source of the policy instantiation and the egress/destination of the policy termination.\u201d\u2028\u2028  I realize it\u2019s unusual to ask to discuss a shepherd writeup rather than the spec itself, but I think this one rises to the level. My concern is that this description (needing interoperability between the ingress and the egress) doesn\u2019t comport with my understanding of the Segment Routing architecture. Surely, one of the key value propositions of SR is that it\u2019s stateless everywhere other than the headend? Indeed, that\u2019s stated in the abstract. SR doesn\u2019t require the egress to even understand that it IS an egress of a SR Policy, it just does what the headers tell it to, right? \u2028\u2028If that\u2019s so, then the rationale given for the requested track must be wrong. :-( And that in turn leads me to ask, whether the track really is right. It seems to me that in most respects this is more an Informational document than a standards track one. That\u2019s not a value judgement in any respect, just a statement of fact \u2014 for the most part, it doesn\u2019t seem as though the information found in this document is needed in order to interoperate with another system. (Section 8.8 is an exception, I discuss that separately.)\u2028\u2028 Anyway, not to get too far ahead of myself, let\u2019s start by working on this question: is the shepherd writeup correct in saying that interoperability between headend and tailend is required? If so, can someone please characterize the nature of that interoperability, and put it in the context of SR\u2019s stateless nature? 2. It seems to me an unusual practice for this document to be defining semantics and even reserving values in a field allocated by a different document, by a different WG. I\u2019m referring here to the so-called \u201c\u2018Color-Only\u2019 bits\u201d discussed in Section 8.8. \u2028\u2028 - I would be more comfortable if the work were all done in one place, to the extent possible. \u2028- Given the fact this document is reaching in to a registry normally managed by IDR, was there any discussion with the IDR group? I don\u2019t see any evidence of a courtesy notification of the last call when I look at the IDR mailing list archive.\u2028\u2028  I\u2019ve also emailed the IDR list about this in connection with  draft-ietf-idr-segment-routing-te-policy , see  https://mailarchive.ietf.org/arch/msg/idr/yCcZdStmTR-FLUYGHTsLLBv5aWo/ \u2028\u2028 Relating this back to my previous question, it\u2019s evident that if this document is going to define semantics for the Color Extended Community Flags, then that makes it Standards Track because there is an interoperability factor to take into account (that's been imported from IDR). A more ideal solution would be to take care of that in the IDR document rather than putting it in this \u201carchitecture\u201d document, though. Surely, this kind of detail is implementation, not architecture?\u2028 Indeed, Ketan said in his reply to Matthew Bocci's RTG review, \"Given that this is an architecture document, it describes the architecture and not really the protocol mechanisms\"... but this section seems to be an exception to that aspiration. 3. Related to the above, at least one of the references listed as informational clearly has to be normative with the document as it stands.  draft-ietf-idr-segment-routing-te-policy  is the one I\u2019m thinking of, for example its use in \u00a72.4 seems like it may rise to the \"normative\" level, \u00a72.5 almost surely does, \u00a74.1 surely does, and \u00a78.8.1 is the icing on the cake because this document defines semantics for a field that isn\u2019t even allocated until and unless  draft-ietf-idr-segment-routing-te-policy  is published.\u2028 4. In \u00a72.1 you talk about the signaling of symbolic names for candidate paths. Although you are careful to say that such symbolic names are only used for presentation purposes, it seems to me they still could be considered a new potential source of vulnerability, since a string that has no sanity-checking whatsoever applied by the protocol can display literally anything to an operator viewing it. Shouldn\u2019t this be addressed in your Security Considerations? (For an example of a related Security Considerations, see  RFC 9003 . It\u2019s probably not the best example, but it\u2019s the one I had at my fingertips\u2026)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 08:52:45-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 08:52:06-08:00",
+        "text": "I\u2019ve done an initial review of this document and have several concerns I\u2019d like to discuss. I apologize for not also providing a full review as comments in this ballot, I judged it more important to begin the discussion about these points timely, than to provide all comments in a single message.  1. The shepherd writeup indicates that \u201cStandard Track is requested and indicated in the title page header. This is appropriate for a specification of packet steering into an SR policy needing interoperability between the ingress/source of the policy instantiation and the egress/destination of the policy termination.\u201d\u2028\u2028  I realize it\u2019s unusual to ask to discuss a shepherd writeup rather than the spec itself, but I think this one rises to the level. My concern is that this description (needing interoperability between the ingress and the egress) doesn\u2019t comport with my understanding of the Segment Routing architecture. Surely, one of the key value propositions of SR is that it\u2019s stateless everywhere other than the headend? Indeed, that\u2019s stated in the abstract. SR doesn\u2019t require the egress to even understand that it IS an egress of a SR Policy, it just does what the headers tell it to, right? \u2028\u2028If that\u2019s so, then the rationale given for the requested track must be wrong. And that in turn leads me to ask, whether the track really is right. It seems to me that in most respects this is more an Informational document than a standards track one. That\u2019s not a value judgement in any respect, just a statement of fact \u2014 for the most part, it doesn\u2019t seem as though the information found in this document is needed in order to interoperate with another system. (Section 8.8 is an exception, I discuss that separately.)\u2028\u2028 Anyway, not to get too far ahead of myself, let\u2019s start by working on this question: is the shepherd writeup correct in saying that interoperability between headend and tailend is required? If so, can someone please characterize the nature of that interoperability, and put it in the context of SR\u2019s stateless nature? 2. It seems to me an unusual practice for this document to be defining semantics and even reserving values in a field allocated by a different document, by a different WG. I\u2019m referring here to the so-called \u201c\u2018Color-Only\u2019 bits\u201d discussed in Section 8.8. \u2028\u2028 - I would be more comfortable if the work were all done in one place, to the extent possible. \u2028- Given the fact this document is reaching in to a registry normally managed by IDR, was there any discussion with the IDR group? I don\u2019t see any evidence of a courtesy notification of the last call when I look at the IDR mailing list archive.\u2028\u2028  I\u2019ve also emailed the IDR list about this in connection with  draft-ietf-idr-segment-routing-te-policy , see  https://mailarchive.ietf.org/arch/msg/idr/yCcZdStmTR-FLUYGHTsLLBv5aWo/ \u2028\u2028 Relating this back to my previous question, it\u2019s evident that if this document is going to define semantics for the Color Extended Community Flags, then that makes it Standards Track because there is an interoperability factor to take into account (that's been imported from IDR). A more ideal solution would be to take care of that in the IDR document rather than putting it in this \u201carchitecture\u201d document, though. Surely, this kind of detail is implementation, not architecture?\u2028 Indeed, Ketan said in his reply to Matthew Bocci's RTG review, \"Given that this is an architecture document, it describes the architecture and not really the protocol mechanisms\"... but this section seems to be an exception to that aspiration. 3. Related to the above, at least one of the references listed as informational clearly has to be normative with the document as it stands.  draft-ietf-idr-segment-routing-te-policy  is the one I\u2019m thinking of, for example its use in \u00a72.4 seems like it may rise to the \"normative\" level, \u00a72.5 almost surely does, \u00a74.1 surely does, and \u00a78.8.1 is the icing on the cake because this document defines semantics for a field that isn\u2019t even allocated until and unless  draft-ietf-idr-segment-routing-te-policy  is published.\u2028 4. In \u00a72.1 you talk about the signaling of symbolic names for candidate paths. Although you are careful to say that such symbolic names are only used for presentation purposes, it seems to me they still could be considered a new potential source of vulnerability, since a string that has no sanity-checking whatsoever applied by the protocol can display literally anything to an operator viewing it. Shouldn\u2019t this be addressed in your Security Considerations? (For an example of a related Security Considerations, see  RFC 9003 . It\u2019s probably not the best example, but it\u2019s the one I had at my fingertips\u2026)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 08:53:04-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 08:52:45-08:00",
+        "text": "I\u2019ve done an initial review of this document and have several concerns I\u2019d like to discuss. I apologize for not also providing a full review as comments in this ballot, I judged it more important to begin the discussion about these points timely, than to provide all comments in a single message.  1. The shepherd writeup indicates that \u201cStandard Track is requested and indicated in the title page header. This is appropriate for a specification of packet steering into an SR policy needing interoperability between the ingress/source of the policy instantiation and the egress/destination of the policy termination.\u201d\u2028\u2028  I realize it\u2019s unusual to ask to discuss a shepherd writeup rather than the spec itself, but I think this one rises to the level. My concern is that this description (needing interoperability between the ingress and the egress) doesn\u2019t comport with my understanding of the Segment Routing architecture. Surely, one of the key value propositions of SR is that it\u2019s stateless everywhere other than the headend? Indeed, that\u2019s stated in the abstract. SR doesn\u2019t require the egress to even understand that it IS an egress of a SR Policy, it just does what the headers tell it to, right? \u2028\u2028If that\u2019s so, then the rationale given for the requested track must be wrong.And that in turn leads me to ask, whether the track really is right. It seems to me that in most respects this is more an Informational document than a standards track one. That\u2019s not a value judgement in any respect, just a statement of fact \u2014 for the most part, it doesn\u2019t seem as though the information found in this document is needed in order to interoperate with another system. (Section 8.8 is an exception, I discuss that separately.)\u2028\u2028 Anyway, not to get too far ahead of myself, let\u2019s start by working on this question: is the shepherd writeup correct in saying that interoperability between headend and tailend is required? If so, can someone please characterize the nature of that interoperability, and put it in the context of SR\u2019s stateless nature? 2. It seems to me an unusual practice for this document to be defining semantics and even reserving values in a field allocated by a different document, by a different WG. I\u2019m referring here to the so-called \u201c\u2018Color-Only\u2019 bits\u201d discussed in Section 8.8. \u2028\u2028 - I would be more comfortable if the work were all done in one place, to the extent possible. \u2028- Given the fact this document is reaching in to a registry normally managed by IDR, was there any discussion with the IDR group? I don\u2019t see any evidence of a courtesy notification of the last call when I look at the IDR mailing list archive.\u2028\u2028  I\u2019ve also emailed the IDR list about this in connection with  draft-ietf-idr-segment-routing-te-policy , see  https://mailarchive.ietf.org/arch/msg/idr/yCcZdStmTR-FLUYGHTsLLBv5aWo/ \u2028\u2028 Relating this back to my previous question, it\u2019s evident that if this document is going to define semantics for the Color Extended Community Flags, then that makes it Standards Track because there is an interoperability factor to take into account (that's been imported from IDR). A more ideal solution would be to take care of that in the IDR document rather than putting it in this \u201carchitecture\u201d document, though. Surely, this kind of detail is implementation, not architecture?\u2028 Indeed, Ketan said in his reply to Matthew Bocci's RTG review, \"Given that this is an architecture document, it describes the architecture and not really the protocol mechanisms\"... but this section seems to be an exception to that aspiration. 3. Related to the above, at least one of the references listed as informational clearly has to be normative with the document as it stands.  draft-ietf-idr-segment-routing-te-policy  is the one I\u2019m thinking of, for example its use in \u00a72.4 seems like it may rise to the \"normative\" level, \u00a72.5 almost surely does, \u00a74.1 surely does, and \u00a78.8.1 is the icing on the cake because this document defines semantics for a field that isn\u2019t even allocated until and unless  draft-ietf-idr-segment-routing-te-policy  is published.\u2028 4. In \u00a72.1 you talk about the signaling of symbolic names for candidate paths. Although you are careful to say that such symbolic names are only used for presentation purposes, it seems to me they still could be considered a new potential source of vulnerability, since a string that has no sanity-checking whatsoever applied by the protocol can display literally anything to an operator viewing it. Shouldn\u2019t this be addressed in your Security Considerations? (For an example of a related Security Considerations, see  RFC 9003 . It\u2019s probably not the best example, but it\u2019s the one I had at my fingertips\u2026)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 08:53:30-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 08:53:04-08:00",
+        "text": "I\u2019ve done an initial review of this document and have several concerns I\u2019d like to discuss. I apologize for not also providing a full review as comments in this ballot, I judged it more important to begin the discussion about these points timely, than to provide all comments in a single message.  1. The shepherd writeup indicates that \u201cStandard Track is requested and indicated in the title page header. This is appropriate for a specification of packet steering into an SR policy needing interoperability between the ingress/source of the policy instantiation and the egress/destination of the policy termination.\u201d\u2028\u2028  I realize it\u2019s unusual to ask to discuss a shepherd writeup rather than the spec itself, but I think this one rises to the level. My concern is that this description (needing interoperability between the ingress and the egress) doesn\u2019t comport with my understanding of the Segment Routing architecture. Surely, one of the key value propositions of SR is that it\u2019s stateless everywhere other than the headend? Indeed, that\u2019s stated in the abstract. SR doesn\u2019t require the egress to even understand that it IS an egress of a SR Policy, it just does what the headers tell it to, right? \u2028\u2028If that\u2019s so, then the rationale given for the requested track must be wrong. :-( And that in turn leads me to ask, whether the track really is right. It seems to me that in most respects this is more an Informational document than a standards track one. That\u2019s not a value judgement in any respect, just a statement of fact \u2014 for the most part, it doesn\u2019t seem as though the information found in this document is needed in order to interoperate with another system. (Section 8.8 is an exception, I discuss that separately.)\u2028\u2028 Anyway, not to get too far ahead of myself, let\u2019s start by working on this question: is the shepherd writeup correct in saying that interoperability between headend and tailend is required? If so, can someone please characterize the nature of that interoperability, and put it in the context of SR\u2019s stateless nature? 2. It seems to me an unusual practice for this document to be defining semantics and even reserving values in a field allocated by a different document, by a different WG. I\u2019m referring here to the so-called \u201c\u2018Color-Only\u2019 bits\u201d discussed in Section 8.8. \u2028\u2028 - I would be more comfortable if the work were all done in one place, to the extent possible. \u2028- Given the fact this document is reaching in to a registry normally managed by IDR, was there any discussion with the IDR group? I don\u2019t see any evidence of a courtesy notification of the last call when I look at the IDR mailing list archive.\u2028\u2028  I\u2019ve also emailed the IDR list about this in connection with  draft-ietf-idr-segment-routing-te-policy , see  https://mailarchive.ietf.org/arch/msg/idr/yCcZdStmTR-FLUYGHTsLLBv5aWo/ \u2028\u2028 Relating this back to my previous question, it\u2019s evident that if this document is going to define semantics for the Color Extended Community Flags, then that makes it Standards Track because there is an interoperability factor to take into account (that's been imported from IDR). A more ideal solution would be to take care of that in the IDR document rather than putting it in this \u201carchitecture\u201d document, though. Surely, this kind of detail is implementation, not architecture?\u2028 Indeed, Ketan said in his reply to Matthew Bocci's RTG review, \"Given that this is an architecture document, it describes the architecture and not really the protocol mechanisms\"... but this section seems to be an exception to that aspiration. 3. Related to the above, at least one of the references listed as informational clearly has to be normative with the document as it stands.  draft-ietf-idr-segment-routing-te-policy  is the one I\u2019m thinking of, for example its use in \u00a72.4 seems like it may rise to the \"normative\" level, \u00a72.5 almost surely does, \u00a74.1 surely does, and \u00a78.8.1 is the icing on the cake because this document defines semantics for a field that isn\u2019t even allocated until and unless  draft-ietf-idr-segment-routing-te-policy  is published.\u2028 4. In \u00a72.1 you talk about the signaling of symbolic names for candidate paths. Although you are careful to say that such symbolic names are only used for presentation purposes, it seems to me they still could be considered a new potential source of vulnerability, since a string that has no sanity-checking whatsoever applied by the protocol can display literally anything to an operator viewing it. Shouldn\u2019t this be addressed in your Security Considerations? (For an example of a related Security Considerations, see  RFC 9003 . It\u2019s probably not the best example, but it\u2019s the one I had at my fingertips\u2026)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 08:54:00-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 08:53:30-08:00",
+        "text": "I\u2019ve done an initial review of this document and have several concerns I\u2019d like to discuss. I apologize for not also providing a full review as comments in this ballot, I judged it more important to begin the discussion about these points timely, than to provide all comments in a single message.  1. The shepherd writeup indicates that \u201cStandard Track is requested and indicated in the title page header. This is appropriate for a specification of packet steering into an SR policy needing interoperability between the ingress/source of the policy instantiation and the egress/destination of the policy termination.\u201d\u2028\u2028  I realize it\u2019s unusual to ask to discuss a shepherd writeup rather than the spec itself, but I think this one rises to the level. My concern is that this description (needing interoperability between the ingress and the egress) doesn\u2019t comport with my understanding of the Segment Routing architecture. Surely, one of the key value propositions of SR is that it\u2019s stateless everywhere other than the headend? Indeed, that\u2019s stated in the abstract. SR doesn\u2019t require the egress to even understand that it IS an egress of a SR Policy, it just does what the headers tell it to, right? \u2028\u2028If that\u2019s so, then the rationale given for the requested track must be wrong. :-( And that in turn leads me to ask, whether the track really is right. It seems to me that in most respects this is more an Informational document than a standards track one. That\u2019s not a value judgement in any respect, just a statement of fact \u2014 for the most part, it doesn\u2019t seem as though the information found in this document is needed in order to interoperate with another system. (Section 8.8 is an exception, I discuss that separately.)\u2028\u2028 Anyway, not to get too far ahead of myself, let\u2019s start by working on this question: is the shepherd writeup correct in saying that interoperability between headend and tailend is required? If so, can someone please characterize the nature of that interoperability, and put it in the context of SR\u2019s stateless nature? 2. It seems to me an unusual practice for this document to be defining semantics and even reserving values in a field allocated by a different document, by a different WG. I\u2019m referring here to the so-called \u201c\u2018Color-Only\u2019 bits\u201d discussed in Section 8.8. \u2028\u2028 - I would be more comfortable if the work were all done in one place, to the extent possible. \u2028- Given the fact this document is reaching in to a registry normally managed by IDR, was there any discussion with the IDR group? I don\u2019t see any evidence of a courtesy notification of the last call when I look at the IDR mailing list archive.\u2028\u2028  I\u2019ve also emailed the IDR list about this in connection with  draft-ietf-idr-segment-routing-te-policy , see  https://mailarchive.ietf.org/arch/msg/idr/yCcZdStmTR-FLUYGHTsLLBv5aWo/ \u2028\u2028 Relating this back to my previous question, it\u2019s evident that if this document is going to define semantics for the Color Extended Community Flags, then that makes it Standards Track because there is an interoperability factor to take into account (that's been imported from IDR). A more ideal solution would be to take care of that in the IDR document rather than putting it in this \u201carchitecture\u201d document, though. Surely, this kind of detail is implementation, not architecture?\u2028 Indeed, Ketan said in his reply to Matthew Bocci's RTG review, \"Given that this is an architecture document, it describes the architecture and not really the protocol mechanisms\"... but this section seems to be an exception to that aspiration. 3. Related to the above, at least one of the references listed as informational clearly has to be normative with the document as it stands.  draft-ietf-idr-segment-routing-te-policy  is the one I\u2019m thinking of, for example its use in \u00a72.4 seems like it may rise to the \"normative\" level, \u00a72.5 almost surely does, \u00a74.1 surely does, and \u00a78.8.1 is the icing on the cake because this document defines semantics for a field that isn\u2019t even allocated until and unless  draft-ietf-idr-segment-routing-te-policy  is published.\u2028 4. In \u00a72.1 you talk about the signaling of symbolic names for candidate paths. Although you are careful to say that such symbolic names are only used for presentation purposes, it seems to me they still could be considered a new potential source of vulnerability, since a string that has no sanity-checking whatsoever applied by the protocol can display literally anything to an operator viewing it. Shouldn\u2019t this be addressed in your Security Considerations? (For an example of a related Security Considerations, see  RFC 9003 . It\u2019s probably not the best example, but it\u2019s the one I had at my fingertips\u2026)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 08:54:31-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 08:54:00-08:00",
+        "text": "I\u2019ve done an initial review of this document and have several concerns I\u2019d like to discuss. I apologize for not also providing a full review as comments in this ballot, I judged it more important to begin the discussion about these points timely, than to provide all comments in a single message.  1. The shepherd writeup indicates that \u201cStandard Track is requested and indicated in the title page header. This is appropriate for a specification of packet steering into an SR policy needing interoperability between the ingress/source of the policy instantiation and the egress/destination of the policy termination.\u201d\u2028\u2028  I realize it\u2019s unusual to ask to discuss a shepherd writeup rather than the spec itself, but I think this one rises to the level. My concern is that this description (needing interoperability between the ingress and the egress) doesn\u2019t comport with my understanding of the Segment Routing architecture. Surely, one of the key value propositions of SR is that it\u2019s stateless everywhere other than the headend? Indeed, that\u2019s stated in the abstract. SR doesn\u2019t require the egress to even understand that it IS an egress of a SR Policy, it just does what the headers tell it to, right? And that in turn leads me to ask, whether the track really is right. It seems to me that in most respects this is more an Informational document than a standards track one. That\u2019s not a value judgement in any respect, just a statement of fact \u2014 for the most part, it doesn\u2019t seem as though the information found in this document is needed in order to interoperate with another system. (Section 8.8 is an exception, I discuss that separately.)\u2028\u2028 Anyway, not to get too far ahead of myself, let\u2019s start by working on this question: is the shepherd writeup correct in saying that interoperability between headend and tailend is required? If so, can someone please characterize the nature of that interoperability, and put it in the context of SR\u2019s stateless nature? 2. It seems to me an unusual practice for this document to be defining semantics and even reserving values in a field allocated by a different document, by a different WG. I\u2019m referring here to the so-called \u201c\u2018Color-Only\u2019 bits\u201d discussed in Section 8.8. \u2028\u2028 - I would be more comfortable if the work were all done in one place, to the extent possible. \u2028- Given the fact this document is reaching in to a registry normally managed by IDR, was there any discussion with the IDR group? I don\u2019t see any evidence of a courtesy notification of the last call when I look at the IDR mailing list archive.\u2028\u2028  I\u2019ve also emailed the IDR list about this in connection with  draft-ietf-idr-segment-routing-te-policy , see  https://mailarchive.ietf.org/arch/msg/idr/yCcZdStmTR-FLUYGHTsLLBv5aWo/ \u2028\u2028 Relating this back to my previous question, it\u2019s evident that if this document is going to define semantics for the Color Extended Community Flags, then that makes it Standards Track because there is an interoperability factor to take into account (that's been imported from IDR). A more ideal solution would be to take care of that in the IDR document rather than putting it in this \u201carchitecture\u201d document, though. Surely, this kind of detail is implementation, not architecture?\u2028 Indeed, Ketan said in his reply to Matthew Bocci's RTG review, \"Given that this is an architecture document, it describes the architecture and not really the protocol mechanisms\"... but this section seems to be an exception to that aspiration. 3. Related to the above, at least one of the references listed as informational clearly has to be normative with the document as it stands.  draft-ietf-idr-segment-routing-te-policy  is the one I\u2019m thinking of, for example its use in \u00a72.4 seems like it may rise to the \"normative\" level, \u00a72.5 almost surely does, \u00a74.1 surely does, and \u00a78.8.1 is the icing on the cake because this document defines semantics for a field that isn\u2019t even allocated until and unless  draft-ietf-idr-segment-routing-te-policy  is published.\u2028 4. In \u00a72.1 you talk about the signaling of symbolic names for candidate paths. Although you are careful to say that such symbolic names are only used for presentation purposes, it seems to me they still could be considered a new potential source of vulnerability, since a string that has no sanity-checking whatsoever applied by the protocol can display literally anything to an operator viewing it. Shouldn\u2019t this be addressed in your Security Considerations? (For an example of a related Security Considerations, see  RFC 9003 . It\u2019s probably not the best example, but it\u2019s the one I had at my fingertips\u2026)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 08:55:40-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 08:54:31-08:00",
+        "text": "I\u2019ve done an initial review of this document and have several concerns I\u2019d like to discuss. I apologize for not also providing a full review as comments in this ballot, I judged it more important to begin the discussion about these points timely, than to provide all comments in a single message.  1. The shepherd writeup indicates that \u201cStandard Track is requested and indicated in the title page header. This is appropriate for a specification of packet steering into an SR policy needing interoperability between the ingress/source of the policy instantiation and the egress/destination of the policy termination.\u201d\u2028\u2028  I realize it\u2019s unusual to ask to discuss a shepherd writeup rather than the spec itself, but I think this one rises to the level. My concern is that this description (needing interoperability between the ingress and the egress) doesn\u2019t comport with my understanding of the Segment Routing architecture. Surely, one of the key value propositions of SR is that it\u2019s stateless everywhere other than the headend? Indeed, that\u2019s stated in the abstract. SR doesn\u2019t require the egress to even understand that it IS an egress of a SR Policy, it just does what the headers tell it to, right? If that's so, then the rationale given for the requested track must be wrong. :-( And that in turn leads me to ask, whether the track really is right. It seems to me that in most respects this is more an Informational document than a standards track one. That\u2019s not a value judgement in any respect, just a statement of fact \u2014 for the most part, it doesn\u2019t seem as though the information found in this document is needed in order to interoperate with another system. (Section 8.8 is an exception, I discuss that separately.)\u2028\u2028 Anyway, not to get too far ahead of myself, let\u2019s start by working on this question: is the shepherd writeup correct in saying that interoperability between headend and tailend is required? If so, can someone please characterize the nature of that interoperability, and put it in the context of SR\u2019s stateless nature? 2. It seems to me an unusual practice for this document to be defining semantics and even reserving values in a field allocated by a different document, by a different WG. I\u2019m referring here to the so-called \u201c\u2018Color-Only\u2019 bits\u201d discussed in Section 8.8. \u2028\u2028 - I would be more comfortable if the work were all done in one place, to the extent possible. \u2028- Given the fact this document is reaching in to a registry normally managed by IDR, was there any discussion with the IDR group? I don\u2019t see any evidence of a courtesy notification of the last call when I look at the IDR mailing list archive.\u2028\u2028  I\u2019ve also emailed the IDR list about this in connection with  draft-ietf-idr-segment-routing-te-policy , see  https://mailarchive.ietf.org/arch/msg/idr/yCcZdStmTR-FLUYGHTsLLBv5aWo/ \u2028\u2028 Relating this back to my previous question, it\u2019s evident that if this document is going to define semantics for the Color Extended Community Flags, then that makes it Standards Track because there is an interoperability factor to take into account (that's been imported from IDR). A more ideal solution would be to take care of that in the IDR document rather than putting it in this \u201carchitecture\u201d document, though. Surely, this kind of detail is implementation, not architecture?\u2028 Indeed, Ketan said in his reply to Matthew Bocci's RTG review, \"Given that this is an architecture document, it describes the architecture and not really the protocol mechanisms\"... but this section seems to be an exception to that aspiration. 3. Related to the above, at least one of the references listed as informational clearly has to be normative with the document as it stands.  draft-ietf-idr-segment-routing-te-policy  is the one I\u2019m thinking of, for example its use in \u00a72.4 seems like it may rise to the \"normative\" level, \u00a72.5 almost surely does, \u00a74.1 surely does, and \u00a78.8.1 is the icing on the cake because this document defines semantics for a field that isn\u2019t even allocated until and unless  draft-ietf-idr-segment-routing-te-policy  is published.\u2028 4. In \u00a72.1 you talk about the signaling of symbolic names for candidate paths. Although you are careful to say that such symbolic names are only used for presentation purposes, it seems to me they still could be considered a new potential source of vulnerability, since a string that has no sanity-checking whatsoever applied by the protocol can display literally anything to an operator viewing it. Shouldn\u2019t this be addressed in your Security Considerations? (For an example of a related Security Considerations, see  RFC 9003 . It\u2019s probably not the best example, but it\u2019s the one I had at my fingertips\u2026)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-16 08:55:57-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-02-16 08:55:40-08:00",
+        "text": "I\u2019ve done an initial review of this document and have several concerns I\u2019d like to discuss. I apologize for not also providing a full review as comments in this ballot, I judged it more important to begin the discussion about these points timely, than to provide all comments in a single message.  1. The shepherd writeup indicates that \u201cStandard Track is requested and indicated in the title page header. This is appropriate for a specification of packet steering into an SR policy needing interoperability between the ingress/source of the policy instantiation and the egress/destination of the policy termination.\u201d\u2028\u2028  I realize it\u2019s unusual to ask to discuss a shepherd writeup rather than the spec itself, but I think this one rises to the level. My concern is that this description (needing interoperability between the ingress and the egress) doesn\u2019t comport with my understanding of the Segment Routing architecture. Surely, one of the key value propositions of SR is that it\u2019s stateless everywhere other than the headend? Indeed, that\u2019s stated in the abstract. SR doesn\u2019t require the egress to even understand that it IS an egress of a SR Policy, it just does what the headers tell it to, right? If that's so, then the rationale given for the requested track must be wrong. :-( And that in turn leads me to ask, whether the track really is right. It seems to me that in most respects this is more an Informational document than a standards track one. That\u2019s not a value judgement in any respect, just a statement of fact \u2014 for the most part, it doesn\u2019t seem as though the information found in this document is needed in order to interoperate with another system. (Section 8.8 is an exception, I discuss that separately.)\u2028\u2028 Anyway, not to get too far ahead of myself, let\u2019s start by working on this question: is the shepherd writeup correct in saying that interoperability between headend and tailend is required? If so, can someone please characterize the nature of that interoperability, and put it in the context of SR\u2019s stateless nature? 2. It seems to me an unusual practice for this document to be defining semantics and even reserving values in a field allocated by a different document, by a different WG. I\u2019m referring here to the so-called \u201c\u2018Color-Only\u2019 bits\u201d discussed in Section 8.8. \u2028\u2028 - I would be more comfortable if the work were all done in one place, to the extent possible. - Given the fact this document is reaching in to a registry normally managed by IDR, was there any discussion with the IDR group? I don't see any evidence of a courtesy notification of the last call when I look at the IDR mailing list archive.  \u2028- Given the fact this document is reaching in to a registry normally managed by IDR, was there any discussion with the IDR group? I don\u2019t see any evidence of a courtesy notification of the last call when I look at the IDR mailing list archive.\u2028\u2028  I\u2019ve also emailed the IDR list about this in connection with  draft-ietf-idr-segment-routing-te-policy , see  https://mailarchive.ietf.org/arch/msg/idr/yCcZdStmTR-FLUYGHTsLLBv5aWo/ \u2028\u2028 Relating this back to my previous question, it\u2019s evident that if this document is going to define semantics for the Color Extended Community Flags, then that makes it Standards Track because there is an interoperability factor to take into account (that's been imported from IDR). A more ideal solution would be to take care of that in the IDR document rather than putting it in this \u201carchitecture\u201d document, though. Surely, this kind of detail is implementation, not architecture?\u2028 Indeed, Ketan said in his reply to Matthew Bocci's RTG review, \"Given that this is an architecture document, it describes the architecture and not really the protocol mechanisms\"... but this section seems to be an exception to that aspiration. 3. Related to the above, at least one of the references listed as informational clearly has to be normative with the document as it stands.  draft-ietf-idr-segment-routing-te-policy  is the one I\u2019m thinking of, for example its use in \u00a72.4 seems like it may rise to the \"normative\" level, \u00a72.5 almost surely does, \u00a74.1 surely does, and \u00a78.8.1 is the icing on the cake because this document defines semantics for a field that isn\u2019t even allocated until and unless  draft-ietf-idr-segment-routing-te-policy  is published.\u2028 4. In \u00a72.1 you talk about the signaling of symbolic names for candidate paths. Although you are careful to say that such symbolic names are only used for presentation purposes, it seems to me they still could be considered a new potential source of vulnerability, since a string that has no sanity-checking whatsoever applied by the protocol can display literally anything to an operator viewing it. Shouldn\u2019t this be addressed in your Security Considerations? (For an example of a related Security Considerations, see  RFC 9003 . It\u2019s probably not the best example, but it\u2019s the one I had at my fingertips\u2026)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-03-22 11:18:40-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-16 08:55:57-08:00",
+        "text": "I\u2019ve done an initial review of this document and have several concerns I\u2019d like to discuss. I apologize for not also providing a full review as comments in this ballot, I judged it more important to begin the discussion about these points timely, than to provide all comments in a single message.  1. The shepherd writeup indicates that \u201cStandard Track is requested and indicated in the title page header. This is appropriate for a specification of packet steering into an SR policy needing interoperability between the ingress/source of the policy instantiation and the egress/destination of the policy termination.\u201d\u2028\u2028  I realize it\u2019s unusual to ask to discuss a shepherd writeup rather than the spec itself, but I think this one rises to the level. My concern is that this description (needing interoperability between the ingress and the egress) doesn\u2019t comport with my understanding of the Segment Routing architecture. Surely, one of the key value propositions of SR is that it\u2019s stateless everywhere other than the headend? Indeed, that\u2019s stated in the abstract. SR doesn\u2019t require the egress to even understand that it IS an egress of a SR Policy, it just does what the headers tell it to, right? If that's so, then the rationale given for the requested track must be wrong. :-( And that in turn leads me to ask, whether the track really is right. It seems to me that in most respects this is more an Informational document than a standards track one. That\u2019s not a value judgement in any respect, just a statement of fact \u2014 for the most part, it doesn\u2019t seem as though the information found in this document is needed in order to interoperate with another system. (Section 8.8 is an exception, I discuss that separately.)\u2028\u2028 Anyway, not to get too far ahead of myself, let\u2019s start by working on this question: is the shepherd writeup correct in saying that interoperability between headend and tailend is required? If so, can someone please characterize the nature of that interoperability, and put it in the context of SR\u2019s stateless nature? 2. It seems to me an unusual practice for this document to be defining semantics and even reserving values in a field allocated by a different document, by a different WG. I\u2019m referring here to the so-called \u201c\u2018Color-Only\u2019 bits\u201d discussed in Section 8.8. \u2028\u2028 - I would be more comfortable if the work were all done in one place, to the extent possible. - Given the fact this document is reaching in to a registry normally managed by IDR, was there any discussion with the IDR group? I don't see any evidence of a courtesy notification of the last call when I look at the IDR mailing list archive.  I\u2019ve also emailed the IDR list about this in connection with  draft-ietf-idr-segment-routing-te-policy , see  https://mailarchive.ietf.org/arch/msg/idr/yCcZdStmTR-FLUYGHTsLLBv5aWo/ \u2028\u2028 Relating this back to my previous question, it\u2019s evident that if this document is going to define semantics for the Color Extended Community Flags, then that makes it Standards Track because there is an interoperability factor to take into account (that's been imported from IDR). A more ideal solution would be to take care of that in the IDR document rather than putting it in this \u201carchitecture\u201d document, though. Surely, this kind of detail is implementation, not architecture?\u2028 Indeed, Ketan said in his reply to Matthew Bocci's RTG review, \"Given that this is an architecture document, it describes the architecture and not really the protocol mechanisms\"... but this section seems to be an exception to that aspiration. 3. Related to the above, at least one of the references listed as informational clearly has to be normative with the document as it stands.  draft-ietf-idr-segment-routing-te-policy  is the one I\u2019m thinking of, for example its use in \u00a72.4 seems like it may rise to the \"normative\" level, \u00a72.5 almost surely does, \u00a74.1 surely does, and \u00a78.8.1 is the icing on the cake because this document defines semantics for a field that isn\u2019t even allocated until and unless  draft-ietf-idr-segment-routing-te-policy  is published.\u2028 4. In \u00a72.1 you talk about the signaling of symbolic names for candidate paths. Although you are careful to say that such symbolic names are only used for presentation purposes, it seems to me they still could be considered a new potential source of vulnerability, since a string that has no sanity-checking whatsoever applied by the protocol can display literally anything to an operator viewing it. Shouldn\u2019t this be addressed in your Security Considerations? (For an example of a related Security Considerations, see  RFC 9003 . It\u2019s probably not the best example, but it\u2019s the one I had at my fingertips\u2026)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-22 11:18:40-07:00",
+        "text": "Thanks for resolving my discuss concern #4 and working with me on the other three. I'm choosing to abstain because I'm not happy with the outcome of #2 and especially #3; however I won't stand in the way of the document's advancement for these reasons. ---previous discuss, for posterity: I\u2019ve done an initial review of this document and have several concerns I\u2019d like to discuss. I apologize for not also providing a full review as comments in this ballot, I judged it more important to begin the discussion about these points timely, than to provide all comments in a single message.  1. The shepherd writeup indicates that \u201cStandard Track is requested and indicated in the title page header. This is appropriate for a specification of packet steering into an SR policy needing interoperability between the ingress/source of the policy instantiation and the egress/destination of the policy termination.\u201d\u2028\u2028  I realize it\u2019s unusual to ask to discuss a shepherd writeup rather than the spec itself, but I think this one rises to the level. My concern is that this description (needing interoperability between the ingress and the egress) doesn\u2019t comport with my understanding of the Segment Routing architecture. Surely, one of the key value propositions of SR is that it\u2019s stateless everywhere other than the headend? Indeed, that\u2019s stated in the abstract. SR doesn\u2019t require the egress to even understand that it IS an egress of a SR Policy, it just does what the headers tell it to, right? If that's so, then the rationale given for the requested track must be wrong. :-( And that in turn leads me to ask, whether the track really is right. It seems to me that in most respects this is more an Informational document than a standards track one. That\u2019s not a value judgement in any respect, just a statement of fact \u2014 for the most part, it doesn\u2019t seem as though the information found in this document is needed in order to interoperate with another system. (Section 8.8 is an exception, I discuss that separately.)\u2028\u2028 Anyway, not to get too far ahead of myself, let\u2019s start by working on this question: is the shepherd writeup correct in saying that interoperability between headend and tailend is required? If so, can someone please characterize the nature of that interoperability, and put it in the context of SR\u2019s stateless nature? 2. It seems to me an unusual practice for this document to be defining semantics and even reserving values in a field allocated by a different document, by a different WG. I\u2019m referring here to the so-called \u201c\u2018Color-Only\u2019 bits\u201d discussed in Section 8.8. \u2028\u2028 - I would be more comfortable if the work were all done in one place, to the extent possible. - Given the fact this document is reaching in to a registry normally managed by IDR, was there any discussion with the IDR group? I don't see any evidence of a courtesy notification of the last call when I look at the IDR mailing list archive.  I\u2019ve also emailed the IDR list about this in connection with  draft-ietf-idr-segment-routing-te-policy , see  https://mailarchive.ietf.org/arch/msg/idr/yCcZdStmTR-FLUYGHTsLLBv5aWo/ \u2028\u2028 Relating this back to my previous question, it\u2019s evident that if this document is going to define semantics for the Color Extended Community Flags, then that makes it Standards Track because there is an interoperability factor to take into account (that's been imported from IDR). A more ideal solution would be to take care of that in the IDR document rather than putting it in this \u201carchitecture\u201d document, though. Surely, this kind of detail is implementation, not architecture?\u2028 Indeed, Ketan said in his reply to Matthew Bocci's RTG review, \"Given that this is an architecture document, it describes the architecture and not really the protocol mechanisms\"... but this section seems to be an exception to that aspiration. 3. Related to the above, at least one of the references listed as informational clearly has to be normative with the document as it stands.  draft-ietf-idr-segment-routing-te-policy  is the one I\u2019m thinking of, for example its use in \u00a72.4 seems like it may rise to the \"normative\" level, \u00a72.5 almost surely does, \u00a74.1 surely does, and \u00a78.8.1 is the icing on the cake because this document defines semantics for a field that isn\u2019t even allocated until and unless  draft-ietf-idr-segment-routing-te-policy  is published.\u2028 4. In \u00a72.1 you talk about the signaling of symbolic names for candidate paths. Although you are careful to say that such symbolic names are only used for presentation purposes, it seems to me they still could be considered a new potential source of vulnerability, since a string that has no sanity-checking whatsoever applied by the protocol can display literally anything to an operator viewing it. Shouldn\u2019t this be addressed in your Security Considerations? (For an example of a related Security Considerations, see  RFC 9003 . It\u2019s probably not the best example, but it\u2019s the one I had at my fingertips\u2026) ---comments: As noted in my DISCUSS, these comments are unfinished but I thought I\u2019d give you what I have. 1. I see that Cullen Jennings referred to this in his ART review, but I\u2019d like to talk about it a little more: why have you chosen to restrict symbolic names to ASCII? UTF-8 is the more usual choice in this context; indeed implementations may have to go to extra effort to scrub their input to insure that only ASCII is present.  BCP 18  doesn\u2019t require you to internationalize your strings, of course, it gives you two options, of which you have (sort of, you don't have the \"US-\") followed the latter: \u00a0  This document does not mandate a policy on name internationalization, \u00a0  but requires that all protocols describe whether names are \u00a0  internationalized or US-ASCII. But in 2022 the choice to restrict symbolic names to ASCII seems unusual enough to invite the question.  If you do stick with ASCII as currently written, might you add text mandating that implementations scrub their input to prevent non-ASCII characters from being accepted?",
+        "type": "Abstain"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-01-31 04:28:32-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-31 04:28:32-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-02-16 22:36:09-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-16 22:36:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-02-15 04:22:24-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-15 04:22:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-02-16 14:05:57-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-03-20 06:38:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-16 14:05:57-08:00",
+        "text": "There appear to be a few places where additional pointers or specification is needed to ensure interoperability. ** Section 2.5 \u00a0  When signaling is via PCEP, the method to uniquely signal an \u00a0  individual candidate path along with its discriminator is described \u00a0  in [ I-D.ietf-pce-segment-routing-policy-cp ].\u00a0  Where is the explanation of discriminator in this reference?\u00a0 \u201cDiscriminator\u201d appears in Sections 3.1, 3.2, 4.1.2, and 5.2.2.\u00a0 In the first three section it is simply named but not explained.\u00a0 In the last section, it isn\u2019t explained beyond being defined as 32-bits. ** Section 2.6.\u00a0  \u00a0 Candidate paths MAY also be assigned or signaled with a symbolic name \u00a0  comprising printable ASCII [ RFC0020 ] [ RFC5234 ] characters How these candidate paths names are signaled isn\u2019t defined.\u00a0 I believe it is per Section 5.2.3 of  draft-ietf-pce-segment-routing-policy-cp  and Section 2.4.7 of draft-ietf-idr-segment-routing-te-policy. ** Section 2.7.\u00a0 How is the candidate path preference signaled?\u00a0 Is that  draft-ietf-idr-segment-routing-te-policy-14 #section-2.4.1 and  https://datatracker.ietf.org/doc/html/draft-ietf-idr-segment-routing-te-policy-14#section-2.4.1?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-20 06:38:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-02-16 11:26:31-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-31 04:28:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-03-23 04:48:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-16 11:26:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9256",
+  "evaluation_end": "2022-03-23 04:48:25-07:00",
+  "evaluation_start": "2022-01-31 04:28:31-08:00"
+}

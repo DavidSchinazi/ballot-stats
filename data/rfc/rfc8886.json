@@ -1,0 +1,283 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-05-20 18:10:08-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-20 18:10:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-05-19 07:58:23-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-19 07:58:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-05-19 21:27:07-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-19 21:27:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-05-20 09:52:19-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-06-19 15:22:24-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-05-20 09:52:19-07:00",
+        "text": "I support Roman's discuss. I don't think this document is sufficiently clear about the limits of the scope of what it's trying to do. An ideal solution in this space would protect both the confidentiality of device configuration in transit and the authenticity (and authorization status) of configuration to be used by the device.\u00a0 This document makes no real effort to do the latter, with the device accepting any configuration file that comes its way and is encrypted to the device's key (or not encrypted, as the case may be), and with no attempt to keep the device's public key secret (which is just as well). I would expect some disucssion of this being highly desirable, but also requiring more complicated machinery (per, e.g., BRSKI and other voucher-based methods) and that this document aims to provide something much simpler, at the cost of only providing limited protection. However, even the confidentiality protection has only a limited realm of applicability, and it seems to fall apart in some plausible threat models. The security considerations rightly note that an attacker with physical access can likely extract the device private key, retrieve the encrypted configuration file, and decrypt the configuration contents.\u00a0 However, I don't think this possibility is necessarily limited to an attacker with physical access.\u00a0 An attacker on the network in the IXP/POP has several routes to getting attacker-controlled configuration on the device, whether by uploading to the configuration server, spoofing the DHCP response to point to the attacker's configuration server, rewriting traffic between the device and the configuration server, etc.\u00a0 Once the attacker has configuration on the device, they have a foothold by which to gain remote access and use whatever interfaces the device provides for decrypting configuration files and learning their contents (potentially even by installing a \"backdoor-type\" access mechanism and then running the normal install process for the legitimate encrypted configuration, and using the backdoor to return and retrieve the plaintext configuration information). While this level of attacker control taking over a device in the process of being installed is not a new attack with the encrypted configuration, it does still limit the extent to which confidentiality protection for configuration data is actually achievable, and I don't think the current document text provides an accurate description of the risk and what protection is provided.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-19 15:22:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-05-20 08:28:32-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-20 08:28:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-05-19 07:21:12-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-19 07:21:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-05-20 17:57:52-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-20 17:57:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-05-21 05:10:28-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-21 05:10:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-05-20 21:35:50-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-20 21:35:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-05-19 05:57:44-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-19 05:57:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-05-16 22:45:35-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-16 22:45:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-05-11 08:24:26-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-11 08:24:26-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-05-18 15:19:21-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-05-18 15:19:40-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-05-18 15:19:21-07:00",
+        "text": "** Section 3.2.\u00a0 If keying material is being distributed as a certificate, do the expected behaviors of certificate process apply?\u00a0 For example, how is expiration handled? --\u00a0 If a customer downloads a certificate from the publication server and it is expired, what should be done? -- If a certificate is loaded in the TPM of the device, should the client stop accepting configurations if it expires? ** Section 4.3.\u00a0 \u201cAfter retrieving the config file, the device needs to determine if it is encrypted or not.\u00a0 If it is not encrypted, the existing behavior is used.\u201d\u00a0 What downgrade protection is assumed or recommended here.\u00a0 A rogue data center employee could re-target a DHCP response to a server of choice which provides only unencrypted, tainted configuration.\u00a0 It would seem that a device expecting an encrypted configuration should not accepted unencrypted ones (or at least this should be a policy consideration).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-06-24 07:06:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-05-18 15:19:40-07:00",
+        "text": "** Section 3.2.\u00a0 If keying material is being distributed as a certificate, do the expected behaviors of certificate process apply?\u00a0 For example, how is expiration handled? --\u00a0 If a customer downloads a certificate from the publication server and it is expired, what should be done? -- If a certificate is loaded in the TPM of the device, should the client stop accepting configurations if it expires? ** Section 4.3.\u00a0 \u201cAfter retrieving the config file, the device needs to determine if it is encrypted or not.\u00a0 If it is not encrypted, the existing behavior is used.\u201d\u00a0 What downgrade protection is assumed or recommended here.\u00a0 A rogue data center employee could re-target a DHCP response to a server of choice which provides only unencrypted, tainted configuration.\u00a0 It would seem that a device expecting an encrypted configuration should not accepted unencrypted ones (or at least this should be a policy consideration).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-24 07:06:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-05-11 13:28:56-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-11 08:24:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-06-24 11:15:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-11 13:28:56-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ]
+  },
+  "doc_name": "rfc8886",
+  "evaluation_end": "2020-06-24 11:15:11-07:00",
+  "evaluation_start": "2020-05-11 08:24:25-07:00"
+}

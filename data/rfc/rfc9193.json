@@ -1,0 +1,259 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-09-22 12:07:18-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-22 12:07:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-09-22 10:40:00-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-13 12:15:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-22 10:40:00-07:00",
+        "text": "I have a couple points for discussion, essentially relating to how much we're diverging from HTTP and to what extent the specifics of the divergence should be specifically mentioned in the document. (1) I'd like to dig a little more into the analogy with HTTP and whether we are artificially limiting ourselves: currently we only allow 0 or 1 content-codings to be specified, but per https://www.ietf.org/archive/id/draft-ietf-httpbis-semantics-19.html#name-content-encoding the HTTP ecosystem permits multiple codings to be applied in turn to the same representation.\u00a0 While the sensor data values are likely to be relatively small and applying multiple content-codings is not likely to be useful in such a scenario, this seems like something where we should only consciously diverge from HTTP, rather than inadvertently doing so. (2) Let's also discuss whether we want to reuse ABNF rule names from HTTP while having the rule content diverge, without specific enumeration of the divergence.\u00a0 So far I found instances where this document does not allow HTAB or obs-text in places that  draft-ietf-httpbis-semantics does, which may well be the right way to spell the rule, but seems to merit a little discussion.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-13 12:15:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-09-22 14:27:02-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-22 14:27:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-09-15 07:15:14-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-09-21 13:55:01-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-21 13:55:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-09-20 05:08:26-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-20 05:08:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-09-17 13:20:25-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-17 13:20:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-09-21 13:12:18-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-21 13:12:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-09-22 22:02:45-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-10-21 08:23:13-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-22 22:02:45-07:00",
+        "text": "This should be easy to resolve: The SenML Labels registry specifies a column called \"EXT ID\" (or actually just \"EI\" in  RFC 8428 ) that is absent from the registrations in Section 8.\u00a0 If that column should be empty for these new registrations, that should be explicit rather than implicit.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-21 08:23:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-09-21 01:38:26-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-21 01:38:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-09-18 12:15:06-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-18 12:15:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-09-20 16:04:57-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-20 16:04:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-10-22 14:02:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-15 07:15:14-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9193",
+  "evaluation_end": "2021-10-22 14:02:33-07:00",
+  "evaluation_start": "2021-09-15 07:15:14-07:00"
+}

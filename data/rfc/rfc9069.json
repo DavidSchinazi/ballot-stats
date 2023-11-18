@@ -1,0 +1,267 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-04-05 12:42:28-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-05-03 14:18:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-04-05 12:42:28-07:00",
+        "text": "I am balloting DISCUSS because there are significant clarity issues.  (1) 4.2.\u00a0 Peer Flags \u00a0  In section 4.2 of [ RFC7854 ], the \"locally sourced routes\" comment \u00a0  under the L flag description is removed.\u00a0 If locally sourced routes \u00a0  are communicated using BMP, they MUST be conveyed using the Loc-RIB \u00a0  instance peer type. This change is bigger than simply removing a comment: it is changing the behavior.\u00a0 Note that \u00a78.2/rfc7854 also talks about the L flag.\u00a0 Do the same considerations apply?\u00a0  I would like to see a clearer treatment of the change related to locally sourced routes -- a separate section/sub-section seems appropriate. (2) \u00a74.2/8.2: Peer Flags \u00a74.2 defines a new Flag as follows: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 0 1 2 3 4 5 6 7 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  +-+-+-+-+-+-+-+-+ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |F|\u00a0 Reserved\u00a0  | \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  +-+-+-+-+-+-+-+-+ But it doesn't mention that this field is intended to be specific to the Loc-RIB peer-type.\u00a0 OTOH, \u00a78.2 (IANA Considerations) does:  \u00a0  This document defines a new flag (Section 4.2) and proposes that peer \u00a0  flags are specific to the peer type: The registry [1] shows that the early allocation was made in the \"generic\" (not per-peer-type) Peer Flags field.\u00a0 The flags defined in  rfc7854  and  rfc8671  both assume the same set of Flags for all peer types. [1]  https://www.iana.org/assignments/bmp-parameters/bmp-parameters.xhtml#peer-flags (3) \u00a75.4 (Route Monitoring)\u00a0 The implication in this section is that a BGP UPDATE includes the route information -- but the information in the Loc-RIB may not have come from BGP, so there is no BGP UPDATE to propagate.\u00a0 This clearly is a case where the UPDATE is fabricated.\u00a0 Please provide specific instructions on how this UPDATE is constructed, including any path attributes.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-03 14:18:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-04-07 09:45:52-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-07 09:45:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-04-06 04:58:02-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-06 04:58:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-04-04 17:37:17-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-04 17:37:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-04-04 12:58:55-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-04 12:58:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-04-06 12:39:20-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-06 12:39:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-04-06 04:58:23-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-06 04:58:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-03-30 12:51:45-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-30 12:51:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-04-07 08:13:00-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-07 08:13:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-04-07 22:37:07-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-07 22:37:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-04-08 04:34:23-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-08 04:34:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-04-07 18:25:04-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-07 18:25:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-03-29 12:57:35-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-04-06 05:47:40-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-29 12:57:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-07-12 08:58:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-06 05:47:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9069",
+  "evaluation_end": "2021-07-12 08:58:20-07:00",
+  "evaluation_start": "2021-03-29 12:57:35-07:00"
+}

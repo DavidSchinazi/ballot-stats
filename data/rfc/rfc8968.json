@@ -1,0 +1,299 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-07-30 10:34:49-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-07-30 10:34:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-08 06:11:42-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-08 06:11:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-06 15:30:02-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-06 15:30:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-07 19:34:45-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-07 19:34:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-07 14:29:29-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-14 08:35:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-07 14:29:29-07:00",
+        "text": "I support Roman's Discuss point (1) (and basically cover the same as his (2) below). Let's have a discussion about (DTLS) identity. Section 2.1 says that we use mutual authentication and that implementations \"MUST support authenticating peers against a local store of credentials\"; also that \"if a node receives a new DTLS connection from a neighbour to whom it already has a connection, the node MUST NOT discard the older connection until it has completed the handshake of the new one and validated the identity of the peer\".\u00a0 But how does this authentication occur, and what constitutes the identity of the peer.\u00a0 We will frequently have (D)TLS consumers cite  RFC 6125  and say that (e.g.) DNS-ID or SRV-ID must match the name obtained in some fashion.\u00a0 But for Babel, we are authenticating routers -- router identity is usually in the form of just an IP address on a loopback interface!\u00a0 Are we expected to get certificates that certify IP addresses as identity, or use some sort of PSK or password-based TLS authentication?\u00a0 (The last two are not really compatible with the \"MUST send a CertificateRequest\", BTW.)\u00a0 Raw public keys?\u00a0 I think we can give a more clear picture of how to build a secure system. Relatedly, once DTLS authenticates an identity, what level of authorization checks are performed?\u00a0 Are we still in a single authorization domain, where any router that authenticates as being part of a given domain is implictily authorized to be a babel peer and convey any and all routing information? We should also give some guidance on ciphers and algorithms where we discuss the DTLS details ( BCP 195  is probably the safest bet here, even if it's a little in need of an update).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-14 08:35:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-05 05:56:39-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-05 05:56:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-05 00:37:40-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-05 00:37:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-16 19:19:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-15 10:55:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-07-12 14:40:14-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 14:40:14-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-07 05:40:29-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-14 07:54:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-07 05:40:29-07:00",
+        "text": "Unfortunately I need to discuss the port request again.  First of all I would like to comment on the shepherd write-up which says: \"The document requires only the allocation of a port number for Babel over DTLS. Having such a second port for the secured version of a protocol is a fairly common practice. This is shown in the IANA Considerations section.\" This is not correct. Having a second port for the secured version of a protocol WAS common practice. However  RFC6335  say now \"The use of separate \u00a0  service name or port number assignments for secure and insecure \u00a0  variants of the same service is to be avoided in order to discourage \u00a0  the deployment of insecure services.\" Anyway, in this case I understand that a different port is desired because unencrypted HELLO messages are still received over the default babel port. However, it is not clear to me why a fixed/default port is needed. The neighbour needs to be discovered in some why, no matter what, before a DTLS connection can be established and this discovery procedure could indicate a dynamic port number that the peer is listening on for babel over DTLS. E.g. the multicast HELLO could have a new TLV with this port information. Please clarify why this option is not suitable! Thanks!",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-08-14 07:54:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-27 15:01:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-07 12:25:53-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-27 10:57:45-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-07 12:25:53-07:00",
+        "text": "(1) Section 1. These are different than the ones listed in Section 6 of  draft-ietf-babel-rfc6126bis  and Section 1 of draft-ietf-babel-dtls.\u00a0 As DTLS and HMAC are mitigations for attacks in  draft-ietf-babel-rfc6126bis , they really should be harmonized. (2) Section 2.1.\u00a0 Per \u201cImplementations MUST support authenticating peers against a local store of credentials\u201d, what does that credentialing look like?\u00a0 Is it certificates, PSK, etc?\u00a0 What validation procedure is being used for this authentication?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-27 10:57:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-08 05:49:34-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-08-08 05:49:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-03 07:41:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 14:40:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8968",
+  "evaluation_end": "2020-09-03 07:41:43-07:00",
+  "evaluation_start": "2019-07-12 14:40:12-07:00"
+}

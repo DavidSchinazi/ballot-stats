@@ -1,0 +1,283 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-05-18 11:18:27-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-18 11:18:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-05-19 08:47:10-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-19 08:47:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-05-04 12:53:54-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-04 12:53:54-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-05-18 19:53:19-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-06-06 18:54:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-05-18 19:53:19-07:00",
+        "text": "Thanks for this document; it will be very nice to have this more-structured mechanism available for future HTTP header (and trailer) fields. (0) There seem to still be a few lingering internal inconsistencies that merit further discussion. Most notably, there is the inherent risk of skew when both prose algorithms and ABNF constructions are provided for the same structures. While Section 1.2 is careful to disclaim that the prose algorithm takes precedence over the ABNF for parsing, to my reading the coverage in the following paragraph of serialization procedures imply that it is the ABNF that is authoritative.\u00a0 In particular, \"[i]mplementations MAY vary from the specified behavior so long as the output still matches the ABNF\" seems to admit deviations from the prose algorithms but require compliance with the ABNF, in effect making the ABNF take precedence over the prose algorithm.\u00a0 Having a different description of the procedure normative for generation vs. consumption invites interoperability-affecting feature skew, such as the handling of empty lists as Julian noted on the list. Similarly, Section 3.1.1's prose says that inner lists are delimited \"by a single space\", but the ABNF uses (1*SP), allowing for more than one space. Additionally, when Section 4.2.3.2 discusses parsing parameter map keys, the handling for duplicate map key names is specified as overwriting the previous value, in contrast to the prose description (Section 3.1.2) that describes these keys as \"unique within the scope [of] the Parameters they occur within\".\u00a0 (While dictionary key names might be expected to have a similar behavior, I did not find conflicting text for that behavior.) Finally, at a prose level we employ needlessly different descriptions in several places for what is effectively the same procedure; while I do not think any of these affect interoperability (and thus the full details are in the COMMENT section), it does seem to be continuing the theme.\u00a0 (These are things like how we describe the algorithm to skip implicit-true for booleans, whether we initialize the output string to the empty string only to immediately add a constant literal character to it vs. initializing the output string to that literal character, etc.) A couple other points that may need further discussion: (1) What aspect(s) of structured field processing are case (in)sensitive? The only mentions I see of case sensitivity are in Section 4.2 discussing header field names and (implicitly) Section 4.2.2 discussing a \"character-for-character\" comparison of dictionary key names, but of course we cite  RFC 5234  for ABNF, which uses case-insensitive matching. On the other hand, base64 encoding requires case sensitivity for successful round-tripping of arbitrary binary data. (2) One of the stated goals of this document is to define intentionally strict processing rules, but there are several places where we could have removed additional optionality but elected to not do so.\u00a0 What is the criterion for \"too far\" towards strictness?\u00a0 For example, Section 4.2.7 gives optionality with respect to base64 padding (see COMMENT).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-06 18:54:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-05-20 08:23:51-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-20 08:23:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-05-20 05:09:03-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-20 05:09:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-05-17 17:19:55-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-17 17:19:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-05-20 09:14:08-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-06-04 02:02:53-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-05-20 09:14:08-07:00",
+        "text": "A. Section 3.1: \u00a0  The ABNF for Lists in HTTP fields is: \u00a0  sh-list\u00a0 \u00a0 \u00a0  = list-member *( *SP \",\" *SP list-member ) \u00a0  list-member\u00a0  = sh-item / inner-list \u00a0  Each member is separated by a comma and optional whitespace. To me there is a clarity issue that could lead to interoperability issues. Namely the difference in the meaning of whitespace between  RFC 7230  and this document. Structured headers appear to not allow the HTAB that  RFC7230  allows. And that is fine, but I would expect this to be more clearly discussed. If the intention was to allow for HTAB you need to use WSP rather than SP in above rule.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-04 02:02:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-05-17 15:17:15-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-05-20 08:25:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-05-17 15:17:15-07:00",
+        "text": "This is probably a simple one, and perhaps I'm missing something obvious: Throughout Section 3, the document specifies minimum data structure sizes (1024 list members, 256 inner list members, 64-character keys, etc.) that the receiver MUST be able to process. What is the desired behavior if any of these data structures exceeds what the receiver can process? Must it skip the entire field, or can it process the first N entries and then ignore the rest? Given the \"Intentionally Strict Processing\" principle, it would be good to spell this out.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-20 08:25:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-05-21 00:06:06-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-21 00:06:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-05-20 07:15:57-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-20 07:15:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-05-20 13:29:32-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-05-21 05:31:59-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-05-20 13:29:32-07:00",
+        "text": "(I appreciate that this is pseudo-code which has inherent ambiguity sometimes, so please let me know if I've interpreted it in an unintended way) ** Section 4.2.6.\u00a0 There appears to be an inconsistency here in my reading of the algorithm given the ABNF in Section 3.3.4 -- Let\u2019s assume of token of input_string =\u201c*foo\u201d -- Step 1: pass since input_string[0] = \u201c*\u201d -- Step 2: Set output_string = \u201c\u201d -- Step 3: pass since input_string[0] = \u201c*\u201d, -- Step 3.1: input_string[0] is still \u201c*\u201d and not a tchar, \u201c:\u201d or \u201c/\u201d causing a output_string=\u201d\u201d to be returned  This doesn\u2019t seem correct. ** Section 4.2.7.\u00a0 The parsing guidance doesn\u2019t follow for me given the ABNF in Section 3.3.5. -- Let\u2019s assume input_string = \u201c:cHJldGVuZCB0aGlzIGlzIGJpbmFyeSBjb250ZW50Lg==:\u201d, the example in Section 3.3.5 -- Step 1: pass since input_string[0] = \u201c:\u201d -- Step 2: Set input_string = \u201ccHJldGVuZCB0aGlzIGlzIGJpbmFyeSBjb250ZW50Lg==:\u201d -- Step 3: pass since the last character of input_string is \u201c:\u201d -- Step 4: Set b64_content = \u201ccHJldGVuZCB0aGlzIGlzIGJpbmFyeSBjb250ZW50Lg==\u201d -- Step 5 says \u201cconsume the \u201c:\u201d character at the beginning of the input_string, but there is no such character.\u00a0 It was discarded in Step 2.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-21 05:31:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-05-20 05:30:55-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-04 12:53:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-07-10 08:16:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-20 05:30:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8941",
+  "evaluation_end": "2020-07-10 08:16:59-07:00",
+  "evaluation_start": "2020-05-04 12:53:53-07:00"
+}

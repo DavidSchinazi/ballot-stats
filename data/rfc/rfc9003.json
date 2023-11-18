@@ -1,0 +1,267 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-10-07 14:15:12-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-10-07 17:09:54-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-10-07 14:15:12-07:00",
+        "text": "\"If a Shutdown Communication longer than 128 octets is sent to a BGP \u00a0  speaker that implements [ RFC8203 ], then that speaker will treat it as \u00a0  an error, the consequence of which is a log message.\u00a0 For this \u00a0  reason, operators would be wise to keep shutdown communications to \u00a0  less than 128 octets when feasible.\" I have a similar question to what \u00c9ric asked. Doesn't the above mostly undercut the value of doing this bis at all? If operators can't expect longer messages to be understood, under what circumstances will they send them? I'm not at all steeped in BGP operations, but was it considered to instead add a new subcode to the BGP Cease NOTIFICATION subcode registry to capture this case (admin reset or shutdown with long shutdown message)? That way at least those who want to use it can differentiate between recipients that don't support  RFC 8203 , those that do, and those that support longer communications.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-11-25 11:21:41-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-10-07 17:09:54-07:00",
+        "text": "\"If a Shutdown Communication longer than 128 octets is sent to a BGP \u00a0  speaker that implements [ RFC8203 ], then that speaker will treat it as \u00a0  an error, the consequence of which is a log message.\u00a0 For this \u00a0  reason, operators would be wise to keep shutdown communications to \u00a0  less than 128 octets when feasible.\" I have a similar question to what \u00c9ric asked. Doesn't the above mostly undercut the value of doing this bis at all? If operators can't expect longer messages to be understood, will they implement some kind of policy logic or heuristics to decide when to try to send them and when not? Otherwise, under what circumstances will they send them? Was it considered to instead add a new subcode to the BGP Cease NOTIFICATION subcode registry to capture this case (admin reset or shutdown with long shutdown message)? That way at least those who want to use it can differentiate between recipients that don't support  RFC 8203 , those that do, and those that support longer communications. I'm not at all steeped in BGP so I'm happy to drop this if it's unworkable, but I wanted to ask.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-25 11:21:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-24 08:59:03-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-24 08:59:03-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-10-07 20:38:19-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-07 20:38:19-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-02 15:43:00-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-02 15:43:00-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-10-02 11:36:28-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-02 11:36:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-10-02 06:50:20-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-02 06:50:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-10-06 15:35:16-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-06 15:35:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-09-29 22:03:19-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-29 22:03:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-10-06 08:40:37-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-06 08:40:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-09-29 08:26:29-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-29 08:26:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-10-05 08:00:26-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-05 08:00:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-10-05 09:32:20-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-05 09:32:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-10-05 07:13:50-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-24 08:59:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-11-27 21:04:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-05 07:13:50-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc9003",
+  "evaluation_end": "2020-11-27 21:04:59-08:00",
+  "evaluation_start": "2020-09-24 08:59:01-07:00"
+}

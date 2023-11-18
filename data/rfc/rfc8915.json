@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-11 21:02:23-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-11 21:02:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-16 02:06:10-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-16 02:06:10-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-09 09:54:39-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-09 09:54:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-16 11:32:40-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-16 11:32:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-11 19:31:39-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-11 19:31:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-10 17:22:08-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-19 14:22:59-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-10 17:22:08-07:00",
+        "text": "Thank you for this document; it has been a long time coming and is much awaited.\u00a0 That said, I have a few points I'd like to discuss before I can comfortably ballot Yes: I'm happy to see prominent references to RFCs 7525 and 6125. Unfortunately, merely citing  RFC 6125  does not provide a usable specification for an application to implement; we need to additionally state what type of name (e.g., SRV-ID or DNS-ID) is used as input to the validation process and how the application obtains that name.\u00a0 Given that we are defining a service name (and port number) for ntske, SRV-ID might be appropriate (DNS-ID is the most common form I see consumers of  RFC 6125  using). In a related vein, if ALPN is necessary for confirming ntske operation, it's not entirely clear to me that a dedicated port (in addition to service name) is required, and  RFC 6335  discourages fixed port numbera llocations.\u00a0 Perhaps it's not intended that DNS-SD is used to discover NTS-KE servers, though -- there's no reference to  RFC 6763  in this document, or other discussion of server discovery that I can see. We seem to be internally inconsistent about whether the Cookie extension can be encrypted -- Section 5.7 says \"MUST NOT be encrypted\", but Section 5.2 implies that it could be encrypted: \u00a0  Always included among the authenticated or authenticated-and- \u00a0  encrypted extension fields are a cookie extension field and a unique \u00a0  identifier extension field.\u00a0 [...] Section 7.6 says that applications for new record types need to specify the contents of the \"Set Critical Bit\" field, but this field is not included in the table of initial entries.\u00a0 Additionally, there doesn't seem to be a clear description of what the semantics of the \"Set Critical Bit\" field should be.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-22 16:01:53-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-19 14:22:59-07:00",
+        "text": "[updated for -25] Thank you for this document; it has been a long time coming and is much awaited.\u00a0 That said, I have a few points I'd like to discuss before I can comfortably ballot Yes: I'm happy to see prominent references to RFCs 7525 and 6125. Unfortunately, merely citing  RFC 6125  does not provide a usable specification for an application to implement; we need to additionally state what type of name (e.g., SRV-ID or DNS-ID) is used as input to the validation process and how the application obtains that name.\u00a0 Given that we are defining a service name (and port number) for ntske, SRV-ID might be appropriate (DNS-ID is the most common form I see consumers of  RFC 6125  using).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-22 16:01:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-11 12:37:58-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-11 12:37:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-10 07:00:08-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-10 07:00:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-18 07:24:58-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-20 03:28:34-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-18 07:24:58-07:00",
+        "text": "Two issues I would like to discucss: 4.1.7.\u00a0 NTPv4 Server Negotiation The \u00a0  contents of the string SHALL be either an IPv4 address, an IPv6 \u00a0  address, or a fully qualified domain name (FQDN). The client MUST NOT send more than one \u00a0  record of this type. I get there are assumptions about which address family to use for this record. Is it assumed that one the KE server will chose what address family the clien'ts request is coming in over? Do there need to be more discussion of this assumption in the document? For example an client indication of an IPv4 address can the server respond with an IPv6? And maybe even more relevant, what if the client has included an IPv6 address in the field in the request, even if the connection to the KE is over IPv4. I would appreciate some clarification or recommendation on how to select what family to use so that the protocol achieve the least amount of surprise here.  Secondly, I struggle to full understand the implementation requirements of the replay protection.  5.7:  \u00a0 \u00a0 \u00a0 Exactly one Unique Identifier extension field which MUST be \u00a0 \u00a0 \u00a0 authenticated, MUST NOT be encrypted, and whose contents MUST NOT \u00a0 \u00a0 \u00a0 duplicate those of any previous request. Is the last \"MUST NOT\" really a MUST NOT in the most strict sense? It could require a client to keep a history of all used Unique Identifiers since it started. I think that would be a significant state management task for the client. I would expect that a client could work well with a window of N packets, where N is in the range hundreds to thousands and using a RNG for the Unique Id field. By tracking requests sent, their timestamp and Unique Id the client wouldn't the client be able to protect against replays? Discard any unknown unique IDs, discard any second reception of Unique IDs. This also depends on that replay packets outside of the window can be detected even if the RNG generated a duplicate ID. I assume so is possible based on that the NTP timestamps that are authenticated will be outside of the window of what is acceptable and not match the request.  To summarize can we get some more clarity on how the client process of replay protection.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-20 03:28:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-19 06:10:07-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-24 11:17:18-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-19 06:10:07-07:00",
+        "text": "Two rather small and hopefully quick-to-address points that I think must be clarified before publication of this spec: 1) Sec 5.7: \"In that \u00a0  case, it MUST be able to detect and stop looping between the NTS-KE \u00a0  and NTP servers by rate limiting the retries using e.g. exponential \u00a0  retry intervals.\" Yes, rate limiting and exponential back-off is good here. However, you anyway need to define a maximum number of retries (to actually make it stop at some point) and further given some recommendation for an appropriate rate limit (e.g. initial retry after 3 seconds...?). 2) Sec 4.1.3: \"\u00a0 \u00a0 \u00a0 Error code 2 means \"Internal Server Error\".\u00a0 The server MUST \u00a0 \u00a0 \u00a0 respond with this error if it is unable to respond properly due to \u00a0 \u00a0 \u00a0 an internal condition.\" At least for this error, I think you need to specify what the client should do on reception. Retry? Immediately? How often? Or wait for a while?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-24 11:17:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-10 20:02:53-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-10 20:02:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-03 09:23:31-08:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 09:23:31-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-11 12:38:45-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:23:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-25 08:11:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-11 12:38:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8915",
+  "evaluation_end": "2020-03-25 08:11:21-07:00",
+  "evaluation_start": "2020-03-03 09:23:29-08:00"
+}

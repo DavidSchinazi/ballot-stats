@@ -1,0 +1,299 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-05-24 08:39:34-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-06-02 04:56:10-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-02 04:56:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-05-31 00:54:21-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-31 00:54:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-05-31 20:51:12-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-31 20:51:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-01 12:32:07-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-01 12:52:11-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-06-01 12:32:07-07:00",
+        "text": "This spec makes liberal use of the approach of dropping any packet received with an unloved Map-Version number, for example (but not limited to) \u00a0  2.\u00a0 The packet arrives with a Dest Map-Version number newer (as \u00a0 \u00a0 \u00a0  defined in Section 6) than the one stored in the EID-to-RLOC \u00a0 \u00a0 \u00a0  Database.\u00a0 Since the ETR is authoritative on the mapping, meaning \u00a0 \u00a0 \u00a0  that the Map-Version number of its mapping is the correct one, \u00a0 \u00a0 \u00a0  this implies that someone is not behaving correctly with respect \u00a0 \u00a0 \u00a0  to the specifications.\u00a0 In this case, the packet carries a \u00a0 \u00a0 \u00a0  version number that is not valid and packet MUST be silently \u00a0 \u00a0 \u00a0  dropped. Isn\u2019t it the case that by definition the packet has arrived at a valid ETR for the mapping (since as the text says, \u201cthe ETR is authoritative\u201d)? Isn\u2019t the map-version more in the nature of a hint than a critical-for-correctness field? What bad behavior is being protected against by silently dropping this traffic, that has arrived at a correct endpoint albeit with an incorrect hint? At various points in the document there's a kind of vague assertion that incorrect map-versions could be an attack. While I don't deny that, the assertion isn't supported or elaborated on anywhere that I saw, which is worrying and also makes it less convincing. Shouldn't the Security Considerations talk about this? I did also go have a look at the Security Considerations in  draft-ietf-lisp-rfc6833bis-31 , which also didn't help me.  RFC 7835  \u00a73.3 does touch on this, suggesting that maybe an attacker could use a spoofed Map-Version to trigger a DoS attack. But this, too, is an unsatisfying rationale, since as you take pains to point out, rate limiting of Map-Requests and such is required.  When this was an Experimental protocol this kind of thing was probably less crucial to justify and explain, but I would have expected the experiment to produce results that could be fed into this document. At the moment, the \"drop any packet that doesn't comply with expectations\" design feels arbitrary and potentially brittle. I would appreciate some discussion of this design choice. (I do acknowledge that security matters can be subtle, and I'm not a SEC AD after all... but all the more reason for the document to be explicit about what the security concerns are instead of just vaguely gesturing toward them and leaving the reader to guess.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-01 12:52:42-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-06-01 12:52:11-07:00",
+        "text": "This spec makes liberal use of the approach of dropping any packet received with an unloved Map-Version number, for example (but not limited to) \u00a0  2.\u00a0 The packet arrives with a Dest Map-Version number newer (as \u00a0 \u00a0 \u00a0  defined in Section 6) than the one stored in the EID-to-RLOC \u00a0 \u00a0 \u00a0  Database.\u00a0 Since the ETR is authoritative on the mapping, meaning \u00a0 \u00a0 \u00a0  that the Map-Version number of its mapping is the correct one, \u00a0 \u00a0 \u00a0  this implies that someone is not behaving correctly with respect \u00a0 \u00a0 \u00a0  to the specifications.\u00a0 In this case, the packet carries a \u00a0 \u00a0 \u00a0  version number that is not valid and packet MUST be silently \u00a0 \u00a0 \u00a0  dropped. Isn\u2019t it the case that by definition the packet has arrived at a valid ETR for the mapping (since as the text says, \u201cthe ETR is authoritative\u201d)? Isn\u2019t the map-version more in the nature of a hint than a critical-for-correctness field? What bad behavior is being protected against by silently dropping this traffic, that has arrived at a correct endpoint albeit with an incorrect hint? At various points in the document there's a kind of vague assertion that incorrect map-versions could be an attack. While I don't deny that, the assertion isn't supported or elaborated on anywhere that I saw, which is worrying and also makes it less convincing. Shouldn't the Security Considerations talk about this? I did also go have a look at the Security Considerations in  draft-ietf-lisp-rfc6833bis-31 , which also didn't help me.  RFC 7835  \u00a73.3 does touch on this, suggesting that maybe an attacker could use a spoofed Map-Version to trigger a DoS attack. But this, too, is an unsatisfying rationale, since as you take pains to point out, rate limiting of Map-Requests and such is required. Furthermore, if triggering Map-Requests is the concern, couldn't the packet still be delivered, without triggering a Map-Request? When this was an Experimental protocol this kind of thing was probably less crucial to justify and explain, but I would have expected the experiment to produce results that could be fed into this document. At the moment, the \"drop any packet that doesn't comply with expectations\" design feels arbitrary and potentially brittle. I would appreciate some discussion of this design choice. (I do acknowledge that security matters can be subtle, and I'm not a SEC AD after all... but all the more reason for the document to be explicit about what the security concerns are instead of just vaguely gesturing toward them and leaving the reader to guess.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-01 12:52:57-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-06-01 12:52:42-07:00",
+        "text": "This spec makes liberal use of the approach of dropping any packet received with an unloved Map-Version number, for example (but not limited to) \u00a0  2.\u00a0 The packet arrives with a Dest Map-Version number newer (as \u00a0 \u00a0 \u00a0  defined in Section 6) than the one stored in the EID-to-RLOC \u00a0 \u00a0 \u00a0  Database.\u00a0 Since the ETR is authoritative on the mapping, meaning \u00a0 \u00a0 \u00a0  that the Map-Version number of its mapping is the correct one, \u00a0 \u00a0 \u00a0  this implies that someone is not behaving correctly with respect \u00a0 \u00a0 \u00a0  to the specifications.\u00a0 In this case, the packet carries a \u00a0 \u00a0 \u00a0  version number that is not valid and packet MUST be silently \u00a0 \u00a0 \u00a0  dropped. Isn\u2019t it the case that by definition the packet has arrived at a valid ETR for the mapping (since as the text says, \u201cthe ETR is authoritative\u201d)? Isn\u2019t the map-version more in the nature of a hint than a critical-for-correctness field? What bad behavior is being protected against by silently dropping this traffic, that has arrived at a correct endpoint albeit with an incorrect hint? At various points in the document there's a kind of vague assertion that incorrect map-versions could be an attack. While I don't deny that, the assertion isn't supported or elaborated on anywhere that I saw, which is worrying and also makes it less convincing. Shouldn't the Security Considerations talk about this? I did also go have a look at the Security Considerations in  draft-ietf-lisp-rfc6833bis-31 , which also didn't help me.  RFC 7835  \u00a73.3 does touch on this, suggesting that maybe an attacker could use a spoofed Map-Version to trigger a DoS attack. But this, too, is an unsatisfying rationale, since as you take pains to point out, rate limiting of Map-Requests and such is required. Furthermore, if triggering Map-Requests is the concern, couldn't the packet still be delivered, without triggering a Map-Request? When this was an Experimental protocol this kind of thing was probably less crucial to justify and explain, but I would have expected the experiment to produce results that could be fed into this document. At the moment, the \"drop any packet that doesn't comply with expectations\" design feels arbitrary and potentially brittle. I would appreciate some discussion of this design choice. (I do acknowledge that security matters can be subtle, and I'm not a SEC AD after all... but all the more reason for the document to be explicit about what the security concerns are instead of just gesturing toward them and leaving the reader to guess.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-24 14:15:16-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-01 12:52:57-07:00",
+        "text": "This spec makes liberal use of the approach of dropping any packet received with an unloved Map-Version number, for example (but not limited to) \u00a0  2.\u00a0 The packet arrives with a Dest Map-Version number newer (as \u00a0 \u00a0 \u00a0  defined in Section 6) than the one stored in the EID-to-RLOC \u00a0 \u00a0 \u00a0  Database.\u00a0 Since the ETR is authoritative on the mapping, meaning \u00a0 \u00a0 \u00a0  that the Map-Version number of its mapping is the correct one, \u00a0 \u00a0 \u00a0  this implies that someone is not behaving correctly with respect \u00a0 \u00a0 \u00a0  to the specifications.\u00a0 In this case, the packet carries a \u00a0 \u00a0 \u00a0  version number that is not valid and packet MUST be silently \u00a0 \u00a0 \u00a0  dropped. Isn\u2019t it the case that by definition the packet has arrived at a valid ETR for the mapping (since as the text says, \u201cthe ETR is authoritative\u201d)? Isn\u2019t the map-version more in the nature of a hint than a critical-for-correctness field? What bad behavior is being protected against by silently dropping this traffic, that has arrived at a correct endpoint albeit with an incorrect hint? At various points in the document there's a kind of vague assertion that incorrect map-versions could be an attack. While I don't deny that, the assertion isn't supported or elaborated on anywhere that I saw, which is worrying and also makes it less convincing. Shouldn't the Security Considerations talk about this? I did also go have a look at the Security Considerations in  draft-ietf-lisp-rfc6833bis-31 , which also didn't help me.  RFC 7835  \u00a73.3 does touch on this, suggesting that maybe an attacker could use a spoofed Map-Version to trigger a DoS attack. But this, too, is an unsatisfying rationale, since as you take pains to point out, rate limiting of Map-Requests and such is required. Furthermore, if triggering Map-Requests is the concern, couldn't the packet still be delivered, without triggering a Map-Request? When this was an Experimental protocol this kind of thing was probably less crucial to justify and explain, but I would have expected the experiment to produce results that could be fed into this document. At the moment, the \"drop any packet that doesn't comply with expectations\" design feels arbitrary and potentially brittle. I would appreciate some discussion of this design choice, thanks in advance. (I do acknowledge that security matters can be subtle, and I'm not a SEC AD after all... but all the more reason for the document to be explicit about what the security concerns are instead of just gesturing toward them and leaving the reader to guess.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-24 14:15:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-05-25 01:57:45-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-25 01:57:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-06-01 11:08:16-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-01 11:08:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-06-01 23:29:16-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-01 23:29:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-05-31 13:02:39-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-06-01 08:43:15-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-05-31 13:02:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-06-23 19:11:19-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-01 08:43:15-07:00",
+        "text": "Changed my comments to a DISCUSS, as Donald Eastlake also pointed these out in his secdir review, and I am now convinced we need better text to address this. #1\u00a0 map-version rollover is defined (to skip the 0 version) but I also see: The packet arrives with a Dest Map-Version number greater (i.e., \u00a0 \u00a0 \u00a0  newer) than the one stored in the EID-to-RLOC Database.\u00a0 Since \u00a0 \u00a0 \u00a0  the ETR is authoritative on the mapping, meaning that the Map- \u00a0 \u00a0 \u00a0  Version number of its mapping is the correct one This would imply rollover to a smaller number is not expected to occur ? #2 MUST NOT or SHOULD ? Map-Versioning MUST NOT be used over the public Internet and SHOULD only be used in trusted and closed deployments. This sentence seems to contradict itself. I would turn the SHOULD into a MUST",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-23 19:11:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-06-02 05:11:10-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-02 05:11:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-06-01 11:54:49-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-07-13 14:04:50-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-01 11:54:49-07:00",
+        "text": "On the -11 document, I initial wrote the following: The SECDIR review by Donald Eastlake asked about handling roll-over/wrap-around of the Map Version Number.\u00a0 Specifically, can a \u201cMap Version Number advance[e] \u2026 so quickly that an old version number is encountered that appears to be newer than or equal to the current version number. Why can't this happen? Or if it can, why doesn't that hurt?\u201d\u00a0 It would appear that a number of the conclusions of the ITR or ETR on arriving packets in Section 7.1 and 7.2 wouldn\u2019t be correct. I then saw the -12 document published on June 1 which added the following text to Section 7: \u00a0  Map Version Number incrementing \u00a0  and mappings' TTL MUST be managed so that an old version number will \u00a0  not be confused as a new version number. Thank you for adding this text.\u00a0 Practically, this identifies the desired intent, but doesn\u2019t seem describe the mechanics.\u00a0 Can more be said about how this confusion will be mitigated at the ITR/ETRs?\u00a0 I also don't follow how to use the TTLs here. Consider the situation that Donald noted where the Map Version advanced so quickly that it wraps around so that: (a) the new Map Version Number value equals the old Map Version Number.\u00a0 If one followed the guidance in Section 7.1 of: \u00a0  1.\u00a0 The packet arrives with the same Dest Map-Version number stored \u00a0 \u00a0 \u00a0  in the EID-to-RLOC Database.\u00a0 This is the regular case.\u00a0 The ITR \u00a0 \u00a0 \u00a0  sending the packet has in its EID-to-RLOC Map-Cache an up-to-date \u00a0 \u00a0 \u00a0  mapping.\u00a0 No further actions are needed. It would seem that the ITR wouldn\u2019t do a Map-Request and would misroute the packet based on the old mapping. (b) the new Map Version Number is now smaller (but in fact fresher/newer)\u00a0 If one followed the guidance of Section 7.1. of: 3.\u00a0 The packets arrive with a Dest Map-Version number smaller (i.e., \u00a0 \u00a0 \u00a0  older) than the one stored in the EID-to-RLOC Database.\u00a0 This \u00a0 \u00a0 \u00a0  means that the ITR sending the packet has an old mapping in its \u00a0 \u00a0 \u00a0  EID-to-RLOC Map-Cache containing stale information. Per bullet #3, if there was wrap-around would the ITR in fact be sending stale mapping information?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-13 14:04:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-06-01 07:57:15-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-24 08:39:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-07-14 14:18:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-01 07:57:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9302",
+  "evaluation_end": "2022-07-14 14:18:28-07:00",
+  "evaluation_start": "2022-05-24 08:39:34-07:00"
+}

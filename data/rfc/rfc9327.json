@@ -1,0 +1,267 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-08-26 19:12:05-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-08-26 19:12:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-08-26 14:08:38-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-09-27 09:09:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-26 14:08:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-08-26 20:10:58-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-08-26 20:10:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-08-26 14:28:55-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-06-23 08:58:12-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-08-26 14:28:55-07:00",
+        "text": "There seems to be an internal inconsistency regarding the format of the data payload: at the start of Section 4 we see that \"When present, the data field contains a list of identifiers or assignments in the form <>[=<>],<>[=<>],...\u00a0 where <> is the ASCII name of a system or peer variable specified in  RFC 5905  and <> is expressed as a decimal, hexadecimal or string constant in the syntax of the C programming language\", but later on we see that the Read Status reply \"contains a list of binary-coded pairs <> <>, one for each currently defined association.\u00a0 The \"binary-coded\" (with, apparently, implicit length) seems at odds with the ASCII key/value assignment pairs. The description of the Configure(8) command as \"The command data is parsed and applied as if supplied in the daemon configuration file\" lacks any reference to what that format is or how one might know what format the peer expects.\u00a0 This does not seem sufficiently specified so as to admit interoperable implementation. The description of the Read MRU(10) command also seems underspecified. What name=value pairs affect the selection of records (and how)?\u00a0 Is there a particular name used with name=value pair for the returned nonce, or how is the returned nonce framed?\u00a0 If it's implementation-specific, say so. The only currently specified authentication scheme for these commands appears to be DES-CBC-MAC, from Appendix C of  RFC 1305 .\u00a0 ( RFC 5905 suggests that existing implementations, however, use a different keyed-MD5 scheme that is similarly flawed.)\u00a0 As a CBC-MAC, this mechanism is subject to an extension attack, allowing an attacker to observe an existing valid packet and construct a forged packet with valid MAC by appending additional data at the end.\u00a0 This, therefore, fails to actually provide the key property of authentication.\u00a0 There are additional fundamental issues with the NTP authentication format (independently of the DES-CBC-MAC scheme), which may not quite rise to DISCUSS-level, and accordingly are listed in the COMMENT section.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-22 10:27:22-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-06-23 08:58:12-07:00",
+        "text": "[updating version to which ballot position applies, since the -10 does not seem to have addressed the core topics.\u00a0 \u00a0 Furthermore, a 20- or 24-**bit** authenticator will have its own problems to cover, though 20- or 24-**byte** authenticators would be more reasonable.] There seems to be an internal inconsistency regarding the format of the data payload: at the start of Section 4 we see that \"When present, the data field contains a list of identifiers or assignments in the form <>[=<>],<>[=<>],...\u00a0 where <> is the ASCII name of a system or peer variable specified in  RFC 5905  and <> is expressed as a decimal, hexadecimal or string constant in the syntax of the C programming language\", but later on we see that the Read Status reply \"contains a list of binary-coded pairs <> <>, one for each currently defined association.\u00a0 The \"binary-coded\" (with, apparently, implicit length) seems at odds with the ASCII key/value assignment pairs. The description of the Configure(8) command as \"The command data is parsed and applied as if supplied in the daemon configuration file\" lacks any reference to what that format is or how one might know what format the peer expects.\u00a0 This does not seem sufficiently specified so as to admit interoperable implementation. The description of the Read MRU(10) command also seems underspecified. What name=value pairs affect the selection of records (and how)?\u00a0 Is there a particular name used with name=value pair for the returned nonce, or how is the returned nonce framed?\u00a0 If it's implementation-specific, say so. The only currently specified authentication scheme for these commands appears to be DES-CBC-MAC, from Appendix C of  RFC 1305 .\u00a0 ( RFC 5905 suggests that existing implementations, however, use a different keyed-MD5 scheme that is similarly flawed.)\u00a0 As a CBC-MAC, this mechanism is subject to an extension attack, allowing an attacker to observe an existing valid packet and construct a forged packet with valid MAC by appending additional data at the end.\u00a0 This, therefore, fails to actually provide the key property of authentication.\u00a0 There are additional fundamental issues with the NTP authentication format (independently of the DES-CBC-MAC scheme), which may not quite rise to DISCUSS-level, and accordingly are listed in the COMMENT section.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-03-22 10:27:22-07:00",
+        "text": "[updating version to which ballot position applies, since the -11 does not seem to have addressed the core topics.\u00a0 \u00a0 Furthermore, a 20- or 24-**bit** authenticator will have its own problems to cover, though 20- or 24-**byte** authenticators would be more reasonable.] There seems to be an internal inconsistency regarding the format of the data payload: at the start of Section 4 we see that \"When present, the data field contains a list of identifiers or assignments in the form <>[=<>],<>[=<>],...\u00a0 where <> is the ASCII name of a system or peer variable specified in  RFC 5905  and <> is expressed as a decimal, hexadecimal or string constant in the syntax of the C programming language\", but later on we see that the Read Status reply \"contains a list of binary-coded pairs <> <>, one for each currently defined association.\u00a0 The \"binary-coded\" (with, apparently, implicit length) seems at odds with the ASCII key/value assignment pairs. The description of the Configure(8) command as \"The command data is parsed and applied as if supplied in the daemon configuration file\" lacks any reference to what that format is or how one might know what format the peer expects.\u00a0 This does not seem sufficiently specified so as to admit interoperable implementation. The description of the Read MRU(10) command also seems underspecified. What name=value pairs affect the selection of records (and how)?\u00a0 Is there a particular name used with name=value pair for the returned nonce, or how is the returned nonce framed?\u00a0 If it's implementation-specific, say so. The only currently specified authentication scheme for these commands appears to be DES-CBC-MAC, from Appendix C of  RFC 1305 .\u00a0 ( RFC 5905 suggests that existing implementations, however, use a different keyed-MD5 scheme that is similarly flawed.)\u00a0 As a CBC-MAC, this mechanism is subject to an extension attack, allowing an attacker to observe an existing valid packet and construct a forged packet with valid MAC by appending additional data at the end.\u00a0 This, therefore, fails to actually provide the key property of authentication.\u00a0 There are additional fundamental issues with the NTP authentication format (independently of the DES-CBC-MAC scheme), which may not quite rise to DISCUSS-level, and accordingly are listed in the COMMENT section.",
+        "type": "Discuss"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-08-26 12:48:13-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-08-26 12:48:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-08-21 07:32:43-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-09-27 09:09:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-21 07:32:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-08-10 17:19:49-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-09-27 09:09:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-10 17:19:49-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-08-26 17:06:38-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-08-26 17:06:40-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:06:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-09-27 09:09:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-26 17:06:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-08-27 01:41:52-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-08-27 01:41:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-08-26 12:48:34-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-12-10 07:55:39-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-26 12:48:34-07:00",
+        "text": "I find myself in agreement with Eric Vyncke's remarks about a document claiming to provide \"current but historic\" protocol details.\u00a0 Is this because NTPv3 is still in use?\u00a0 But the title talks about NTPv4.\u00a0 Shouldn't this document have \"Historic\" status?\u00a0 The shepherd writeup says that's the intent, but that's not what the document's title page says. Let's sort this out.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-09-27 09:09:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-10 07:55:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-09-27 09:09:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-08-25 11:39:52-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-09-27 09:09:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-25 11:39:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-09-27 09:09:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-10 17:19:48-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9327",
+  "evaluation_end": "2022-09-27 09:09:48-07:00",
+  "evaluation_start": "2020-08-10 17:19:48-07:00"
+}

@@ -1,0 +1,303 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-24 08:54:31-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-11-29 10:59:15-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-11-29 10:59:15-08:00",
+        "text": "(1)  RFC 8300  is pretty clear that \"Metadata privacy and security considerations are a matter for the documents that define metadata format.\"\u00a0 Some of the metadata context headers defined in this document clearly have privacy considerations that need to be documented (e.g., policy ID and source/destination group serve to concretely identify flows that are related in some way), though some may not have much that needs documenting (e.g., the forwarding context metadata seems to just be extracting out information that is already present in the packet being wrapped).\u00a0 Regardless, we need to have some discussion of the privacy and security considerations of the new metadata context headers, even if that is just \"no new considerations\" for some of them. (2) I think we need to discuss the Flow ID context header further.\u00a0 Is it intended to just be a container to hold a flow identifier already present in the contained packet (such as the IPv6 Flow Label or MPLS Entropy Label that are called out), or can it also be used to apply a new flow identifier at the SFC layer? The named examples of a flow ID are both 20 bits long; if that is an exhaustive listing, shouldn't we update the figure accordingly (to include Length=3, four leading bits of padding, and a trailing byte of padding)?\u00a0 If that is not an exhaustive listing and longer flow identifiers are expected, how do we know what length of flow identifier is being conveyed? (3) If we are to allow for specifying the \"logical grouping of source and/or destination objects\" in \u00a74.6 (emphasis on \"and/or\"), but the context header always conveys both a source group and dest group field, do we need to reserve a dedicated value for \"no group information specified\"?",
+        "type": "Discuss"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-11-16 06:21:46-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-16 06:21:46-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-12-01 00:00:25-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-01 00:00:25-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-11-29 02:59:01-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-12-01 14:38:22-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-11-29 02:59:01-08:00",
+        "text": "Thank you for the work on this document. I have some comments, mostly having to do with clarifications and improvement of text for readability. I'd like answers to two main points: first - I believe the lack of normative references to the documents that define the fields this document registers into IANA is important enough to warrant some discussion. Second - I'd like some clarification about interoperability. More details below. Francesca 1. ----- \u00a0 \u00a0 \u00a0 Tenant ID: Represents an opaque value pointing to Orchestration \u00a0 \u00a0 \u00a0 system-generated tenant identifier.\u00a0 The structure and semantics \u00a0 \u00a0 \u00a0 of this field are deployment specific. FP: I am worried about interoperability, as the field is defined as deployment specific. Could you clarify why you don't think this is an issue? Also, please add a normative reference to the section and document defining tenant identification. 2. ---- Section 4.3 FP: Same comment as above for Node ID: please add a reference and explain interoperability, as this is defined as deployment specific. 3. ----- Sections 4.4, 4.5 FP: I do think these fields need references to the documents they are defined in. (I am aware section 2.1 and the normative references should help, but I think it would be much clearer to have direct links to the right place in the text.) For Flow ID, if I understand correctly, this document defines it high level and gives examples of what value it can take. I would clarify that in the first paragraph of the section (as you do for Section 4.6), instead of having the references only in the \"Length\" paragraph.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-02-11 05:35:42-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-12-01 14:38:22-08:00",
+        "text": "Thank you for the work on this document. I have some comments, mostly having to do with clarifications and improvement of text for readability. I'd like answers to two main points: first - I believe the lack of normative references to the documents that define the fields this document registers into IANA is important enough to warrant some discussion. Second - I'd like some clarification about interoperability. More details below. As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise. Francesca 1. ----- \u00a0 \u00a0 \u00a0 Tenant ID: Represents an opaque value pointing to Orchestration \u00a0 \u00a0 \u00a0 system-generated tenant identifier.\u00a0 The structure and semantics \u00a0 \u00a0 \u00a0 of this field are deployment specific. FP: I am worried about interoperability, as the field is defined as deployment specific. Could you clarify why you don't think this is an issue? Also, please add a normative reference to the section and document defining tenant identification. 2. ---- Section 4.3 FP: Same comment as above for Node ID: please add a reference and explain interoperability, as this is defined as deployment specific. 3. ----- Sections 4.4, 4.5 FP: I do think these fields need references to the documents they are defined in. (I am aware section 2.1 and the normative references should help, but I think it would be much clearer to have direct links to the right place in the text.) For Flow ID, if I understand correctly, this document defines it high level and gives examples of what value it can take. I would clarify that in the first paragraph of the section (as you do for Section 4.6), instead of having the references only in the \"Length\" paragraph.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-03-31 00:49:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-11 05:35:42-08:00",
+        "text": "Thank you for the work on this document, and for partly addressing my previous DISCUSS. I only have the one point about interoperability left, which I believe requires some additional clarification in the text. More details below. As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise. Francesca 1. ----- \u00a0 \u00a0 \u00a0 Tenant ID: Represents an opaque value pointing to Orchestration \u00a0 \u00a0 \u00a0 system-generated tenant identifier.\u00a0 The structure and semantics \u00a0 \u00a0 \u00a0 of this field are deployment specific. FP: I am worried about interoperability, as the field is defined as deployment specific. Could you clarify why you don't think this is an issue? Please see the telechat minutes for more details about the discussion and context of this comment:  https://www6.ietf.org/iesg/minutes/2021/narrative-minutes-2021-12-02.txt",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-31 00:49:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-12-01 11:28:01-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-01-11 06:43:43-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-01 11:28:01-08:00",
+        "text": "1. I notice that in his RTGDIR review of version 08 [*], Stig Venaas suggested some improvements to the security considerations section. This was subsequently discussed and Yuehua Wei proposed some new text [**] for version 09. That text isn\u2019t present, and I don\u2019t see any further resolution on the mailing list either. I\u2019d appreciate it if the topic were closed by either adding the proposed text, or some other text to resolve Stig\u2019s concern, or explanation of why no change was made. [*]  https://datatracker.ietf.org/doc/review-ietf-sfc-nsh-tlv-08-rtgdir-lc-venaas-2021-09-29/ [**]  https://mailarchive.ietf.org/arch/msg/sfc/Q2Snf_ZLTkJ1augbaWpmNYlwFBU/ 2. In \u00a78.2, the two first references, [GROUPBASEDPOLICY] and [GROUPPOLICY] are deficient. At a minimum, a reference should provide enough information to allow a reader to straightforwardly determine how to retrieve it. This is true even if it\u2019s not an openly-available online source. These two references have less than the bare bones, I don\u2019t know how to find them or refer to them.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-11 06:43:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-11-29 05:42:34-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-29 05:42:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-10-31 11:50:33-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-10-31 11:50:33-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-12-01 22:34:21-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-01-27 11:51:35-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-01 22:34:21-08:00",
+        "text": "I'm having trouble understanding the first thing you've got in Section 7.\u00a0 You have one table of assignments to make, but you're referencing two distinct sub-registries under \"Network Service Header (NSH) Parameters\", namely \"NSH MD Class\" and \"NSH IETF-Assigned Optional Variable-Length Metadata Types\".\u00a0 There doesn't appear to be a \"metadata context type registry\".\u00a0 I think this change clarifies what you mean, but please tell me if I'm wrong: OLD: \u00a0  IANA is requested to assign the following types from the \"NSH IETF- \u00a0  Assigned Optional Variable-Length Metadata Types\" (0x0000 IETF Base \u00a0  NSH MD Class) registry available at [IANA-NSH-MD2]: \u00a0  This document defines the following new values (Table 1) in the \u00a0  Network Service Header (NSH) metadata context Type registry: NEW: \u00a0  IANA is requested to assign the following types (Table 1) from the IETF \u00a0  Review range in the \"NSH MD Class\" sub-registry of the \"Network Service \u00a0  Header (NSH) Parameters\" registry:",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-27 11:51:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-04-26 08:36:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-04-20 09:39:51-07:00",
+        "text": "Setting this ballot as DISCUSS for now, pending the resolving of Ben's DISCUSS items. Donald Eastlake communicated changes that will resolve these, so waiting on that new ID.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-04-26 08:36:42-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-12-01 02:45:06-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-01 02:45:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-11-30 08:21:11-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-30 08:21:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-12-01 13:37:56-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-01 13:37:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-05-06 06:28:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-31 11:50:32-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9263",
+  "evaluation_end": "2022-05-06 06:28:55-07:00",
+  "evaluation_start": "2021-10-31 11:50:32-07:00"
+}

@@ -1,0 +1,227 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-06-30 18:33:28-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-14 12:16:30-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-06-30 18:33:28-07:00",
+        "text": "(1) I want to check on the DTLS version compatibility of this protocol.\u00a0 If there is a DTLS version dependency, as I suspect, then we need to document it more clearly or remove it. In particular, the current specification has the Key Distributor sending the MediaKeys message before it sends the DTLS (server) Finished message (\u00a75.4), which requires that the HBH keys are available at that point.\u00a0 While the TLS exporter interface used by  RFC 5764  to output keys is an interface that DTLS 1.3 also supports, that may not be the whole story.\u00a0 In particular, in (D)TLS 1.3 the order of client and server Finished messages is reversed, so that the server Finished is sent before the client has authenticated.\u00a0 When combined with the fact that the TLS 1.3 exporter interface does not incorporate the transcript hash of the client's authentication messages, this seems to imply that the key distributor would be releasing HBH keys prior to the client's authentication and prior to the completion of the DTLS 1.3 handshake. The behavior of the TLS 1.3 exporter was considered safe for regular TLS+TCP since the server will abort the connection and not pass any application data if the client's Finished or authentication is invalid, but it poses problems for applications that use only the TLS handshake and do not use the TLS record protection to cover application data. (EAP-TLS is a notable recent example where the protocol had to be modified in order to be secure when used with TLS 1.3.)\u00a0 DTLS-SRTP is also an application that uses only the (D)TLS handshake, and I am worried that releasing HBH keys prior to authenticating the client will also prove problematic in this situation. (2) I'll also mention here so that the IESG can talk about it during our telechat (but with no intent to insist on a change): this document specifies a versioned protocol and creates a registry.\u00a0 Are we happy with the current Informational status, as opposed to Proposed Standard? I do see that the topic was touched on in the shepherd writeup, but the treatment there did not feel especially compelling to me.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-28 16:05:15-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-10-14 12:16:30-07:00",
+        "text": "Thank you for the updates in the -10; they are improvements. I also see that we had enough discussion of Informational vs Standards-Track for this document, with no one really wanting to push for it to be a Proposed Standard. Unfortunately, I think there are still a couple places remaining that aren't quite compatible with DTLS 1.3, and so an additional revision will be required. Section 5.4 (1) \u00a0 \u00a0 When sending the ServerHello message, the Key Distributor MUST insert \u00a0 \u00a0 its own unique identifier in the external_session_id extension. This \u00a0 \u00a0 value MUST also be conveyed back to the client via SDP as a tls-id \u00a0 \u00a0 attribute. In (D)TLS 1.3, the external_session_id extension goes in the EncryptedExtensions message, not the ServerHello.\u00a0 One way to handle this scenario in a DTLS-version-agnostic manner would be NEW: \u00a0 \u00a0 The Key Distributor MUST report its own unique identifier in the \u00a0 \u00a0 \"external_session_id\" extension.\u00a0 This extension is sent in the \u00a0 \u00a0 EncryptedExtensions message in DTLS 1.3, and the ServerHello in \u00a0 \u00a0 previous DTLS versions.\u00a0 This value MUST also be conveyed back to \u00a0 \u00a0 the client via SDP as a tls-id attribute. (2) \u00a0 \u00a0 The Key Distributor MUST send a MediaKeys message to the Media \u00a0 \u00a0 Distributor as soon as a HBH encryption key is computed. The MediaKeys \u00a0 \u00a0 message includes the selected cipher (i.e. protection profile), MKI \u00a0 \u00a0 [ RFC3711 ] value (if any), SRTP master keys, and SRTP master salt values. \u00a0 \u00a0 The Key Distributor MUST use the same association identifier in the \u00a0 \u00a0 MediaKeys message as is used in the TunneledDtls messages for the given \u00a0 \u00a0 endpoint. \"As soon as a HBH encryption key is computed\" is too soon. The key is available before the endpoint is authenticated, and a properly operating DTLS-SRTP session should not send media before the mutual authentication has completed; sending the HBH encryption key \"when available\" would allow the media distributor (which has no visibility into when the DTLS handshake is completed) to send media even though the authentication is not complete.\u00a0 I think it would be more appropriate to say that the MediaKeys message is sent when the DTLS handshake is complete, which is unambiguous and a condition that is universally applicable to all DTLS versions.\u00a0 That might be written as something like NEW: \u00a0 \u00a0 The Key Distributor MUST send a MediaKeys message to the Media \u00a0 \u00a0 Distributor immediately after the DTLS handshake completes. The MediaKeys \u00a0 \u00a0 message includes the selected cipher (i.e. protection profile), MKI \u00a0 \u00a0 [ RFC3711 ] value (if any), SRTP master keys, and SRTP master salt values. \u00a0 \u00a0 The Key Distributor MUST use the same association identifier in the \u00a0 \u00a0 MediaKeys message as is used in the TunneledDtls messages for the given \u00a0 \u00a0 endpoint.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-28 16:05:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-06-30 09:18:52-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-30 09:18:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-06-28 17:33:45-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-28 17:33:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-07-01 05:19:48-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-01 05:19:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-06-13 19:14:05-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-07-01 04:08:58-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-01 04:08:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-06-30 13:10:57-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-30 13:10:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-07-01 00:48:47-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-13 19:14:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-11-18 07:11:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-01 00:48:47-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ]
+  },
+  "doc_name": "rfc9185",
+  "evaluation_end": "2021-11-18 07:11:00-08:00",
+  "evaluation_start": "2021-06-13 19:14:05-07:00"
+}

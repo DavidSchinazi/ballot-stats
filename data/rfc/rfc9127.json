@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-07-03 15:42:09-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-03 15:42:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-07-04 02:58:04-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-04 02:58:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-07-03 14:18:31-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-07-19 14:06:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-07-03 14:18:31-07:00",
+        "text": "I will apologize in advance because this document may be sort of a casualty of this DISCUSS. I should have raised my point below at least two years ago if not four years ago when the first iana-* YANG module was registered, but the thought did not occur to me until now.  It gives me some pause to see the name \"iana\" embedded in the file name, module name, namespace, and prefix of the module being defined in Sec. 2.12. I realize there is precedent here, but I question whether tying these kinds of modules specifically to IANA as the protocol parameter registry operator by name puts them on the most stable deployment footing under all possible circumstances. I am personally pleased as punch with the service we get from IANA, but that doesn't mean \"IANA\" will always be the name of the registry operator. The more modules that get created with this embedding, the more of them that may need to change in the unlikely event that the name of the registry operator changes. Lots of RFCs would need to change too, but embedding the name extends the potential problem to the modules themselves. It wasn't clear to me whether there is some ops-area-wide convention around the embedding of \"iana\" in the names of modules to be maintained by IANA. I don't see this specifically referenced in  RFC 7950  or  RFC 6020 . So I'd like to discuss whether a different naming convention could be established and used in this document and others going forward.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-19 14:06:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-07-04 13:08:32-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-04 13:08:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-07-02 18:28:01-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-02 18:28:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-07-03 13:21:16-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-08-02 18:18:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-07-03 13:21:16-07:00",
+        "text": "Section 2.1 describes a scheme wherein an IGP may generate events that cause BFD sessions to be created/destroyed; this effectively is proxying commands from IGP over the local BFD API, which brings the authentication and authorization of the IGP into scope, even if the local BFD configuration access is authenticated.\u00a0 (That is, the proxying component is always authenticated, but now bears responsibility for performing authentication/authorization/sanity checks on commands before proxying them.)\u00a0 Since IGP security is a topic for elsewhere, the changes to this document seem scoped to documenting the requirements on the IGP/local proxy for these checks, and arguably for only allowing authenticated IGP events to create authenticated BFD sessions (though arguably not as well, for the latter, since this is a YANG model document and not an architecture document).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-02 18:18:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-07-03 11:57:19-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-03 11:57:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-07-04 15:33:16-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-04 15:33:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-07-05 07:09:24-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-05 07:09:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-06-19 00:20:23-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-19 00:20:23-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-07-04 06:33:45-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-04 06:33:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-07-05 01:49:01-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-05 01:49:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-07-04 19:24:09-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-04 19:24:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-07-04 10:17:20-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-19 00:20:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-07-04 11:17:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-07-04 10:17:20-07:00",
+        "text": "Don't panic, this should be an easy DISCUSS to clear, but I think it important for interoperability. In multiple places, you have: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  +--ro number-of-sessions? \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  +--ro number-of-sessions-up? \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  +--ro number-of-sessions-down? \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  +--ro number-of-sessions-admin-down? I'm a little confused by the meaning of the counters, and didn't see them clearly defined anywhere. Apologies if I missed it... Are \"number-of-sessions-admin-down\" included in \"number-of-sessions-down\"?  Is 'number-of-sessions' always equal to 'number-of-sessions-up' + 'number-of-sessions-down', or is it always equal to 'number-of-sessions-up' + 'number-of-sessions-down' + 'number-of-sessions-admin-down', or are there other cases? E.g: I have created 10 sessions (because I have 10 interfaces). 5 of them are down because there is no peer, 3 of them I've configured to be down (admin down), and so 2 of them are up. What should be in each of: number-of-sessions? number-of-sessions-up? number-of-sessions-down? number-of-sessions-admin-down?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-08-06 08:56:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-04 11:17:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9127",
+  "evaluation_end": "2018-08-06 08:56:55-07:00",
+  "evaluation_start": "2018-06-19 00:20:22-07:00"
+}

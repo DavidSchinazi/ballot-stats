@@ -1,0 +1,333 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-04 21:44:25-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-04 21:44:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-03 11:52:34-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-18 12:18:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-03 11:52:34-08:00",
+        "text": "Exciting to see this work progressing. Section 3.5 (and Section 7): \"Type (8 bits):\u00a0 Type indicating the format of the data contained in \u00a0 \u00a0 \u00a0 this option.\u00a0 Options are primarily designed to encourage future \u00a0 \u00a0 \u00a0 extensibility and innovation and so standardized forms of these \u00a0 \u00a0 \u00a0 options will be defined in a separate document.\" \u00a0 \u00a0  I'm a little confused about what is expected to happen with the option classes and types. Are all future option types in the 0x0000..0x00FF range expected to be specified in a single separate document? If not, that should be clarified. I also think there needs to be a normative requirement that such future specifications define all of the types associated with the option classes. In the registry defined in Section 7, I think the table needs a column for the document to reference for each option class definition. That way when option classes are defined in the 0x0000..0x00FF range, implementers and operators will be able to find the reference and understand the semantics of the types. For the vendor-specific options this can be optional, but still would be nice to list if such documentation exists.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-04-28 07:52:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-18 12:18:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-03 08:44:56-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-04-28 07:52:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 08:44:56-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-04 19:24:19-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-01 08:38:20-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-04 19:24:19-08:00",
+        "text": "This will be trivial to address: \u2014 Section 1.2 \u2014 \u00a0  The NVO3 framework [ RFC7365 ] defines many of the concepts commonly \u00a0  used in network virtualization. Indeed, and it seems a critical normative reference here.\u00a0 So why is it in the informative section?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-04-28 07:52:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-01 08:38:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-04 16:36:32-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-04-27 17:30:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-04 16:36:32-08:00",
+        "text": "This first point is a \"discuss discuss\" for which I'd like to get a sense of what the rest of the IESG feels.\u00a0 I've read the discussion at https://mailarchive.ietf.org/arch/msg/last-call/ywRKREnxWAlunHR7MSaTM4ScsDs but I'm left with a similar sense of uncertainty that Daniel has as to whether the question is fully resolved.\u00a0 Specifically, \"the question\" that I have in mind is to what extent the Geneve architecture includes support for middleboxes that inspect (but do not modify!) the Geneve header and inner payload, to what extent the Geneve architecture is intended to be applicable to scenarios where (end-to-end per-tunnel) underlay confidentiality protection is necessary, and whether those requirements are both strong enough to be deemed an internal inconsistency of requirements/applicability.\u00a0 \"Interposing advanced middleboxes\" and \"service interposition\" are conceived as possible uses for Geneve metadata in Sections 1 and 2.2 as a consideration for why structured tagging is needed on the data plane and not just the control plane, which to me suggests that such usage is considered a first-class use case for Geneve.\u00a0 Section 6.1.1 discusses encryption for traffic traversing untrusted links between geographically separated data centers (though perhaps in this case an encrypted tunnel would be used just for that untrusted transit and leaving the in-datacenter traffic visible to middleboxes), but Section 6.1 discusses cases where the tenant may expect the service provider to provide confidentiality as part of the service.\u00a0 Would this be above or below the Geneve encapsulation? Might some customers insist on one or the other?\u00a0 The consideration from Section 6.1 that the provider of the underlay and the provider of the overlay may not be the same could be taken to imply that the overlay provider itself wants (cryptographic) protection from the underlay provider.\u00a0 I don't have a clear picture of how these considerations interact.\u00a0 (I also note that, since DTLS is mentioned, DTLS 1.3 is going the way of TLS 1.3 and not defining any authentication-only ciphersuites, so if authentication-only service is desired, DTLS may not be the way of the future, leaving IPsec AH as the leading candidate.) Some other section-by-section discuss-level points follow, mostly self-contained/localized issues. Section 3.5.1 \u00a0  o\u00a0 Some options may be defined in such a way that the position in the \u00a0 \u00a0 \u00a0 option list is significant.\u00a0 Options MUST NOT be changed by \u00a0 \u00a0 \u00a0 transit devices. \u00a0  o\u00a0 An option SHOULD NOT be dependent upon any other option in the \u00a0 \u00a0 \u00a0 packet, i.e., options can be processed independently of one \u00a0 \u00a0 \u00a0 another.\u00a0 [...] As was already noted, I don't see how these two requirements are self-consistent. \u00a0  size.\u00a0 A particular option is specified to have either a fixed \u00a0  length, which is constant, or a variable length, which may change \u00a0  over time or for different use cases.\u00a0 This property is part of the \u00a0  definition of the option and conveyed by the 'Type'.\u00a0 For fixed This text is written as if this specification is going to specify further substructure for the \"Type\", with respect to certain types that have fixed length and others that may vary.\u00a0 Otherwise the property would be attached to the option value and not the type value, in my understanding.\u00a0 With the current way the registry is laid out it seems like we need to explicitly say that the entity allocating the option class value needs to specify the interpretation of the 'type' field when used with that option class. Section 4.3.1 \u00a0  2.\u00a0 If Geneve is used with zero UDP checksum over IPv6 then such \u00a0 \u00a0 \u00a0  tunnel endpoint implementation MUST meet all the requirements \u00a0 \u00a0 \u00a0  specified in section 4 of [ RFC6936 ] and requirements 1 as \u00a0 \u00a0 \u00a0  specified in section 5 of [ RFC6936 ]. This seems to implicitly be saying that the other numbered requirements in Section 5 of  RFC 6936  can be ignored, which is updating the behavior of a standards-track document.\u00a0 We need to either be explicit about the update or justify why (the rest of) that applicability statement is not applicable here.\u00a0 If, as the paragraph following the enumerated list says, the requirements specified in  RFC 6936  continue to apply in full, why do we need to call out a MUST-level requirement here? \u00a0  4.\u00a0 The Geneve tunnel endpoint that encapsulates the tunnel MAY use \u00a0 \u00a0 \u00a0  different IPv6 source addresses for each Geneve tunnel that uses \u00a0 \u00a0 \u00a0  Zero UDP checksum mode in order to strengthen the decapsulator's \u00a0 \u00a0 \u00a0  check of the IPv6 source address (i.e the same IPv6 source \u00a0 \u00a0 \u00a0  address is not to be used with more than one IPv6 destination \u00a0 \u00a0 \u00a0  address, irrespective of whether that destination address is a \u00a0 \u00a0 \u00a0  unicast or multicast address).\u00a0 When this is not possible, it is \u00a0 \u00a0 \u00a0  RECOMMENDED to use each source address for as few Geneve tunnels \u00a0 \u00a0 \u00a0  that use zero UDP checksum as is feasible. This functionality is not usable without some mechanism to signal from encapsulator to decapsulator that it is in use. \u00a0  The requirement to check the source IPv6 address in addition to the \u00a0  destination IPv6 address, [...] I do not see this specified as a requirement, only a MAY-level suggestion. Section 4.6 \u00a0  o\u00a0 When performing LSO, a NIC MUST replicate the entire Geneve header \u00a0 \u00a0 \u00a0 and all options, including those unknown to the device, onto each \u00a0 \u00a0 \u00a0 resulting segment.\u00a0 However, a given option definition may \u00a0 \u00a0 \u00a0 override this rule and specify different behavior in supporting \u00a0 \u00a0 \u00a0 devices.\u00a0 [...] This second sentence makes the MUST in the first no longer a MUST.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-04-28 07:52:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-27 17:30:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-12-04 09:25:21-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-04-28 07:52:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 09:25:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-12-04 10:03:52-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-02-29 23:27:04-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-04 10:03:52-08:00",
+        "text": "Thank you for the work put into this document. It solves an interesting problem and the document is easy to read. I have one DISCUSS that is **trivial to fix** and some COMMENTs, feel free to ignore my COMMENTs even if\u00a0 I would appreciate your answers to those COMMENTs. Regards, -\u00e9ric == DISCUSS == -- Section 3.3 -- Please use  RFC 8200  the 'new' IPv6 standard rather than  RFC 2460  ;-)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-04-28 07:52:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-29 23:27:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-05 06:16:23-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-02 06:52:36-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-05 06:16:23-08:00",
+        "text": "I want to discuss the implications of the source port usage and if that needs a bit more consideration of failure cases and ICMP. So Section 3.3 says: \u00a0  Source port:\u00a0 A source port selected by the originating tunnel \u00a0 \u00a0 \u00a0 endpoint.\u00a0 This source port SHOULD be the same for all packets \u00a0 \u00a0 \u00a0 belonging to a single encapsulated flow to prevent reordering due \u00a0 \u00a0 \u00a0 to the use of different paths.\u00a0 To encourage an even distribution \u00a0 \u00a0 \u00a0 of flows across multiple links, the source port SHOULD be \u00a0 \u00a0 \u00a0 calculated using a hash of the encapsulated packet headers using, \u00a0 \u00a0 \u00a0 for example, a traditional 5-tuple.\u00a0 Since the port represents a \u00a0 \u00a0 \u00a0 flow identifier rather than a true UDP connection, the entire \u00a0 \u00a0 \u00a0 16-bit range MAY be used to maximize entropy. I think using the different source ports to enable flow hashing is a nice idea. However, I am a bit worried over the implications of using the full 16-bit range without caveats. Specifically in cases where a network error or other failure to forward the Geneve encapsulated packet and that result in any form a return traffic towards the tunnel ingress. Such as ICMP Packet Too Big messages or Port / Host unreachable. These messages needs to be consumed by the Geneve tunneling endpoint to affect the right response to them. However, if the source port is corresponding to any port where there exist a listenser or bi-directional server on the tunnel ingress host, such as SSH, Echo etc. the ICMP messages may be consumed by the wrong entity that only filter on source port and not the destination port.  I believe this issue may require at least a explicit consideration in the document. Otherwise thanks for thinking through many transport issues for tunnels.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-04-28 07:52:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-02 06:52:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-11-26 03:30:17-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-04-28 07:52:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-03 11:05:02-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-04 10:13:34-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-12-03 11:05:02-08:00",
+        "text": "nline with RFC6335 the Assignee and Contact of the port entry should also be updated to IESG\u00a0 and IETF Chair\u00a0 respectively.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-04 01:29:20-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-04 10:13:34-08:00",
+        "text": "Thanks for the really well written document that addresses all transport related question well (and thanks to David for the early TSV review!). I only have one minor process point that need to be addressed before publication: Inline with  RFC6335  the Assignee and Contact of the port entry should also be updated to IESG\u00a0 and IETF Chair\u00a0 respectively.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-03-04 01:29:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-04 18:03:42-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-03 06:36:46-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-04 18:03:42-08:00",
+        "text": "(1) The threat model assumed by geneve appears to be expressed in conflicting ways.\u00a0 Section 4.1 notes that  RFC8085 \u2019s definition of \u201ccontrolled environment\u201d applies.\u00a0 However,  - Section 6 notes \u201cWhen crossing an untrusted link, such as the public Internet, \u2026\u201d - Section 6.1 notes \u201cGeneve data traffic between tenant systems across such separated networks should be protected from threats when traversing public networks. Any Geneve overlay data leaving the data center network beyond the operator's security domain SHOULD be secured by encryption mechanisms such as IPsec or other VPN mechanisms to protect the communications between the NVEs when they are geographically separated over untrusted network links.\u201d\u00a0  The advice provided in Section 6.x is sound.\u00a0 Nevertheless, it doesn\u2019t appear to describe a \u201ccontrolled environment\u201d. (2) Section 6.\u00a0 Per \u201cCompromised tunnel endpoints may also spoof identifiers in the tunnel header to gain access to networks owned by other tenants\u201d, couldn\u2019t compromised transit devices do the same? (3) Section 6.1.\u00a0 Similar to what is discussed in Section 6.2 (for integrity), please refer to the impact of a compromised node on confidentiality.\u00a0 For example (not verbatim) \u201cA compromised network node or a transit device within a data center may passively monitor Geneve packet data between NVEs; or route traffic for further inspection.\u201d (4) Section 6.1.\u00a0 Per \u201cDue to the nature of multi-tenancy in such environments, a tenant system may expect data confidentiality to ensure its packet data is not tampered with (active attack) in transit or a target of unauthorized monitoring (passive attack).\u201d, please provide additional precision on the confidentiality. It is only relative to other tenants, but not from the provider (who can engage in tampering and passive monitoring).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-04-28 07:52:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 06:36:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-05 05:37:39-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-01 10:28:27-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-05 05:37:39-08:00",
+        "text": "* Section 3.3. This might be an easy DISCUSS to resolve. Since the specification requires the Destination port to be configurable, it is not clear to me how the \"transit\" devices will identify Geneve packets being sent to a non-default port (i.e. not 6081). Can you please clarify?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-03-01 10:28:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-12-04 10:28:20-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-26 03:30:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-04-28 07:52:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 10:28:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8926",
+  "evaluation_end": "2020-04-28 07:52:45-07:00",
+  "evaluation_start": "2019-11-26 03:30:17-08:00"
+}

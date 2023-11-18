@@ -1,0 +1,251 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-17 09:12:12-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 09:12:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-10-20 05:58:38-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-20 05:58:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-17 00:44:46-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 00:44:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-15 17:21:42-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-15 17:21:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-12 10:25:32-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-20 04:18:41-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-23 23:27:58-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-20 04:18:41-07:00",
+        "text": "# GEN AD review of  draft-ietf-pce-lsp-extended-flags-07 CC @larseggert Thanks to Roni Even for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/J2jEQIJoyAsZEbtU5IK14E3yROA ). ## Discuss ### 2119 terms This document has some ambiguities that would be clarified by using RFC2119  terms in a few more places: #### Section 3.2, paragraph 2 ``` -\u00a0 \u00a0 Note that PCEP peers MAY encounter varying lengths of the LSP- -\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^\u00a0 -------- +\u00a0 \u00a0 Note that PCEP peers MUST handle varying lengths of the LSP- +\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^^ +++++ ``` #### Section 3.2, paragraph 3 ``` -\u00a0 \u00a0 than it currently supports or understands, it will simply ignore the -\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^^^^^^^^^^ +\u00a0 \u00a0 than it currently supports or understands, it MUST ignore the +\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^^^ ``` #### Section 3.2, paragraph 4 ``` -\u00a0 \u00a0 than the one supported by the implementation, it will consider the -\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^^^^ ^^^^^^ ^ +\u00a0 \u00a0 than the one supported by the implementation, it MUST treat the +\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^^^^ ^^ ^^ ``` #### Section 5, paragraph 2 ``` -\u00a0 \u00a0 not understood by an implementation would be ignored.\u00a0 It is expected -\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^^^^ +\u00a0 \u00a0 not understood by an implementation MUST be ignored.\u00a0 It is expected +\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^^^ ```",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-23 23:27:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-19 22:51:56-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 22:51:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-17 17:22:31-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 17:22:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-17 02:01:56-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 02:01:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-17 18:45:06-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 18:45:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-17 19:11:16-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 19:11:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-19 06:58:38-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-12 10:25:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-24 10:00:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 06:58:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9357",
+  "evaluation_end": "2022-10-24 10:00:24-07:00",
+  "evaluation_start": "2022-10-12 10:25:32-07:00"
+}

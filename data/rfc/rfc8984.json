@@ -1,0 +1,259 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-23 08:10:59-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-23 08:10:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-24 06:00:13-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-24 06:00:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-06 18:17:22-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-06 18:17:22-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-22 12:31:36-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-13 19:50:30-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-22 12:31:36-07:00",
+        "text": "Thanks for this document; it's generally in good shape even though I do want to discuss a few specific points. (1) I'm a bit confused by the indication that we can use linkIds to link to a vCard representation of a participant or location -- if I understand correctly that representation would occupy the \"description\" property of the linked object, but the \"description\" is (at least for locations) supposed to be \"human-readable\", which is perhaps only debatably an apt description of a vCard object. (2) Given the language in Section 1.4.7 about needing to denote on a per-object basis when Ids have semantic meaning outside of the object in which they are defined, I think we need a stronger/clearer statement in Section 4.2.5 that the location Ids have global semantics within a calendar, Section 4.4.5 that participant Ids have global semantics, within a calendar, etc.\u00a0 (My preference would be to reverse the sense of the language in \u00a71.4.7 rather than add language to each instance of Ids with global semantics; see COMMENT.) (3) We may want to discuss the scheduleSequence semantics/usability in the face of a user/\"participant\" that has multiple clients.\u00a0 It seems to me that there is not much preventing the different clients from sending (different) responses that use the same sequence number, and I'm also not sure whether the client is supposed to keep local state on what sequence number to use next or just to increment any value received from the server. (4) I strongly recommend that all the examples not reuse UUIDs for different things (e.g., I see \"2a358cee-6489-4f14-a57f-c104db4dc2f1\" as all of: simple event, location (FRA Airport), location (Math lab room 1), location (Big Auditorium), and virtualLocation (ChatMe).\u00a0 The Section 6.9 example at least rises to Discuss-level (IIUC) as inconsistent with the protocol requirements, since the location id is used for two different locations in sibling events. (5) Additionally, the Section 6.3 example seems malformed, since the \"entries\" array contains as its second element a key/value pair, not a (jstask) object.\u00a0 (Erik noted this as a Comment-level point, it seems, so this is more a note to myself to confirm that it's fixed than informing you of the issue.) (6) Can we briefly discuss the use of the \"/\" character in time zone identifiers in \u00a74.7.2?\u00a0 Specifically, this text: \u00a0  o\u00a0 It MUST start with the \"/\" character (ASCII decimal 47; also see \u00a0 \u00a0 \u00a0 Sections 3.2.19 of [ RFC5545 ] and 3.6. of [ RFC7808 ] for discussion \u00a0 \u00a0 \u00a0 of the forward slash character in time zone identifiers). (a) I see no discussion of the forward slash character in section 3.6 of  RFC 7808 . (b) Also, Section 3.2.19 of  RFC 5545  seems to basically be saying \"there might one day be one (or more!) global registry for time zones, but we don't know of one and can't point you to it\" ... is this really the semantics we want to continue to enshrine?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-13 19:50:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-22 12:54:04-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 12:54:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-18 01:32:19-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-18 01:32:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-20 17:40:12-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-20 17:40:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-24 05:46:11-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-24 05:46:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-09-24 02:22:17-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-24 02:22:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-09-24 01:59:55-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-24 01:59:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-09-23 04:08:18-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-23 04:08:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-22 11:57:10-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 11:57:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-23 06:29:19-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-06 18:17:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-11-19 02:18:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-23 06:29:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8984",
+  "evaluation_end": "2020-11-19 02:18:33-08:00",
+  "evaluation_start": "2020-09-06 18:17:11-07:00"
+}

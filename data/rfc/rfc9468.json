@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-12-14 07:10:53-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-27 06:16:00-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-14 07:10:53-08:00",
+        "text": "This document attempts to do two things: specify \"unsolicited BFD\" and define a YANG model for its management.\u00a0 I am happy to include both in the same document, but the specification of the protocol mechanisms falls short and results in a document that lacks clarity.\u00a0 While YANG is the preferred management mechanism, it should be possible to implement and manage the feature without the model. Most of my concerns are from Section 2 (line numbers from idnits): 154\t\u00a0  Passive unsolicited BFD support MUST be disabled by default, and MUST 155\t\u00a0  require explicit configuration to be enabled.\u00a0 On the passive side, 156\t\u00a0  the desired BFD parameters SHOULD be configurable.\u00a0 The passive side 157\t\u00a0  MAY also choose to use the parameters that the active side uses in 158\t\u00a0  its BFD Control packets.\u00a0 The \"My Discriminator\", however, MUST be 159\t\u00a0  chosen to allow multiple unsolicited BFD sessions. (A) \"the desired BFD parameters SHOULD be configurable\" Which parameters are those?\u00a0 The YANG model uses bfd-types:base-cfg-parms, which only includes a basic set.\u00a0 The point here is that this document's specification part is incomplete because it doesn't specify which parameters \"SHOULD be configurable\". (B) The YANG model offers global and per-interface configuration options.\u00a0 The specification doesn't discuss hierarchical configuration or whether one type should take precedence over the other.\u00a0 [Related to Rob's DISCUSS.] This point was discussed on the mailing list, where it was pointed out that per-interface configuration should override global configuration [1], but that discussion is not reflected in the document. [1]  https://mailarchive.ietf.org/arch/msg/rtg-bfd/GI_eNtxcEeh2_vTl9zfq7K6V1X4 171\t\u00a0  When the passive side receives an incoming BFD Control packet on a 172\t\u00a0  numbered interfaces, the source address of that packet MUST belong to 173\t\u00a0  the subnet of the interface on which the BFD packet is received.\u00a0 The 174\t\u00a0  source address of the BFD Control packet SHOULD be validated against 175\t\u00a0  expected routing protocol peer addresses on that interface. (C) \"SHOULD be validated\"  What does validating the source address \"against expected routing protocol peer addresses on that interface\" entail?\u00a0 Is it just a comparison?\u00a0 Please be explicit on what the normative behavior should be. When is it ok to not validate?\u00a0 Why is this behavior recommended and not required? If the validation is performed, is there an expected action if the source address does not correspond to an \"expected routing protocol peer addresses on that interface\"?\u00a0 Where does this \"expected\" list come from?\u00a0 On a LAN, it seems like any address would be valid since a router doesn't know the list of IGP neighbors beforehand. 177\t\u00a0  The passive side MUST then start sending BFD Control packets and 178\t\u00a0  perform the necessary procedure for bringing up, maintaining and 179\t\u00a0  tearing down the BFD session.\u00a0 If the BFD session fails to get 180\t\u00a0  established within certain specified time, or if an established BFD 181\t\u00a0  session goes down, the passive side SHOULD stop sending BFD Control 182\t\u00a0  packets and MAY delete the BFD session created until BFD Control 183\t\u00a0  packets are initiated by the active side again. (D) \"If the BFD session fails to get established within certain specified time...\" [nit] s/within certain specified time/within a certain specified time Where does a \"certain specified time\" come from?\u00a0 Is it configurable?\u00a0 Does it correspond to any of the state variables in  rfc5880 ? (E) \"SHOULD stop sending BFD Control packets\" When is it ok not to stop sending BFD control packets?\u00a0 Why would the node continue sending packets if the session is not established (or goes down)?\u00a0 Why is this behavior recommended and not required? 185\t\u00a0  When an Unsolicited BFD session goes down, an implementation MAY 186\t\u00a0  retain the session state for a period of time.\u00a0 Retaining this state 187\t\u00a0  can be useful for operational purposes. (F) Not exactly a contradiction, but confusing normative statements (between this paragraph and the one before): \"MAY delete\" vs \"MAY retain\" for the same event (\"BFD session goes down\").",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2023-03-27 06:16:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-04-18 06:44:08-07:00",
+        "end_reason": "new_position",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-18 06:44:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-12-12 02:41:56-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-12-12 02:41:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-12-10 16:02:07-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-10 16:02:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-10 12:55:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-11-16 12:24:47-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-12-12 06:27:20-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-04-11 07:04:13-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-12 06:27:20-08:00",
+        "text": "# GEN AD review of  draft-ietf-bfd-unsolicited-11 CC @larseggert Thanks to Dan Romascanu for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/2NcfuVBkWLD_CcQyTciwKOz2Xac ). ## Discuss ### Section 7.1, paragraph 3 ``` \u00a0 \u00a0  The same security considerations and protection measures as those \u00a0 \u00a0  described in [ RFC5880 ] and [ RFC5881 ] apply to this document.\u00a0 In \u00a0 \u00a0  addition, with \"unsolicited BFD\" there is potential risk for \u00a0 \u00a0  excessive resource usage by BFD from \"unexpected\" remote systems.\u00a0 To \u00a0 \u00a0  mitigate such risks, the following measures are mandatory: \u00a0 \u00a0  *\u00a0 Limit the feature to specific interfaces, and to single-hop BFD \u00a0 \u00a0 \u00a0 \u00a0 with \"TTL=255\" [ RFC5082 ]. \u00a0 \u00a0  *\u00a0 Apply \"policy\" to allow BFD packets only from certain subnets or \u00a0 \u00a0 \u00a0 \u00a0 hosts. \u00a0 \u00a0  *\u00a0 Deploy the feature only in certain \"trustworthy\" environment, \u00a0 \u00a0 \u00a0 \u00a0 e.g., at an IXP, or between a provider and its customers. \u00a0 \u00a0  *\u00a0 Use BFD authentication, see [ RFC5880 ].\u00a0 In some environments, e.g. \u00a0 \u00a0 \u00a0 \u00a0 when using an IXP, BFD authentication can not be used because of \u00a0 \u00a0 \u00a0 \u00a0 the lack of coordination into the operation of the two endpoints \u00a0 \u00a0 \u00a0 \u00a0 of the BFD session.\u00a0 In other environments, e.g. when BFD is used \u00a0 \u00a0 \u00a0 \u00a0 to track the next hop of static routes, it is possible to use BFD \u00a0 \u00a0 \u00a0 \u00a0 authentication: this comes with the extra cost of configuring \u00a0 \u00a0 \u00a0 \u00a0 matching key-chains at the two endpoints.\u00a0 If BFD authentication \u00a0 \u00a0 \u00a0 \u00a0 is used, the Meticulous Keyed SHA1 mechanism SHOULD be used. ``` BFD can be configured to send large volumes of traffic, and it sends it without congestion control. When a past IESG approved BFD for standardization in that form, it was exactly because both endpoints needed to be configured, which significantly reduces the possibility/impact of unilateral misconfiguration. I don't believe the suggestions above provide nearly the same level of protection. Also, if (all of?) these are mandatory, that needs to be made very clear, i.e., using  RFC2119  terms here and elsewhere in the document (where it currently says these mechanisms are recommended...)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-11 07:04:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-12-14 22:21:34-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 22:21:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-12-12 09:03:13-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-04-18 08:56:16-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-12 09:03:13-08:00",
+        "text": "Hi, Thanks for this document. Please see my comments below for more details, but I'm balloting discuss on 3 points: (1) The document is somewhat unclear as to whether the configuration is applied hierarchically (I presume that it is, if not then my second discuss point is not valid and can be ignored). (2) As specified, I don't think that the hierarchical configuration will work, because the interface level leaf \"defaults\" will override an explicit value configured globally.\u00a0 I.e., logically, the interface level leaf, if in scope, will always have a value. (3) The document should provide an instance-data example in the appendix to illustrate the use of this configuration. Regards, Rob",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-18 08:56:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-12-14 09:00:29-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-03-26 23:47:56-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-14 09:00:29-08:00",
+        "text": "** Section 7.1 Limit the feature to specific interfaces, and to single-hop BFD \u00a0 \u00a0 \u00a0 with \"TTL=255\" [ RFC5082 ]. Section 2.2 of  RFC5082  says \u201cset the TTL on the protocol packets to 255 (the maximum possible for IP) and then reject any protocol packets that come in from configured peers that do NOT have an inbound TTL of 255\u201d. Guidance on dropping the packets based on TTL in  RFC5082  appears to be missing here.\u00a0  ** Section 7.1.\u00a0 The following considerations are inconsistent:  -- \u201cTo mitigate such risks, the following measures are mandatory: \u2026 Apply \"policy\" to allow BFD packets only from certain subnets or hosts.\u201d Editorially (not discuss but related), why is policy in quotes? Requiring this check conflicts with the less rigorous SHOULD in Section 2: \u201cThe source address of the BFD Control packet SHOULD be validated against expected routing protocol peer addresses on that interface.\u201d -- \u201cTo mitigate such risks, the following measures are mandatory: \u2026 Use BFD authentication, see [ RFC5880 ].\u00a0 In some environments, e.g. when using an IXP, BFD authentication can not be used \u2026 If BFD authentication is used, the Meticulous Keyed SHA1 mechanism SHOULD be used.\u201d The text first says using BFD authentication is mandatory, but then says it is not possible in certain environments.\u00a0 Later is states that \u201cif BFD is used\u201d, but the text already said it was mandatory.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-26 23:47:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-12-14 11:32:26-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-16 12:24:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-04-19 01:21:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-14 11:32:26-08:00",
+        "text": "Thanks for working on this specification.  Thanks to Magnus Westerlund for the TSVART review, based on that review and my own read, I am supporting both Lars's and Roman's discuss. On top of that, as this document claims - \"with \"unsolicited BFD\" there is potential risk for excessive resource usage by BFD from \"unexpected\" remote systems\". This translates to me as potential injection of huge amount of traffic which is lacking a self-regulation mechanism in this specification. To large degrees the traffic volume could have random effects on the routing plane and what links are considered up etc. We can hide all these by saying \"Deploy the feature only in certain \"trustworthy\" environment\"\", then I am completely missing the definition of \"trustworthy\" environment\". I would like to discuss that.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-05-03 10:05:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-19 01:21:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9468",
+  "evaluation_end": "2023-05-03 10:05:40-07:00",
+  "evaluation_start": "2022-11-16 12:24:47-08:00"
+}

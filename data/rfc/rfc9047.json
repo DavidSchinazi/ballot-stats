@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-23 14:56:21-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-04-08 06:09:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-23 14:56:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-08 20:34:42-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-09-08 20:34:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-22 16:27:23-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-04-08 06:09:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 16:27:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-22 12:52:04-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-09-22 12:52:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-16 03:18:42-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-04-08 06:09:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-16 03:18:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-22 21:15:01-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-03-30 15:52:40-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-22 21:15:01-07:00",
+        "text": "[ general ] * ND in IPv6 is more than just its analogous ARP function (as immediately \u00a0 evidenced by the need to support passing the NA flags).\u00a0 I'm concerned that \u00a0 this approach isn't actually satisfactory for IPv6, and could end up \u00a0 constraining existing and future ND extensions and uses. \u00a0 [1] New flags \u00a0 As new flags are defined in the NA message, they will not be deployable \u00a0 in these environments until this standard (and possibly others) is updated. \u00a0 A more forward-compatible option might be to just include the whole NA \u00a0 \"flags plus reserved\" word (there is room for it in the format in \u00a0 section 2). \u00a0 [2] Current and new NA ND Options \u00a0 This approach doesn't support sending additional ND Options in the NA, and \u00a0 therefore things like Secure Neighbor Discovery (SeND,  RFC 3971 ) cannot \u00a0 be supported (nor can any future NA option). \u00a0 Arguably, ND proxying might best be disabled when a node is attempting to \u00a0 use SeND and/or whenever a Nonce Option is present an NA.\u00a0 Nevertheless, \u00a0 new ND options might be specified that can be carried in NS/NA messages. \u00a0  RFC 4861  sections 4.2 and 4.3 say that \"[f]uture versions of this protocol \u00a0 may define new option types\", and while it also says that \"[r]eceivers \u00a0 MUST silently ignore any options they do not recognize and continue \u00a0 processing the message\", in this case it would be the infrastructure that \u00a0 would prevent two nodes from attempting to use a newer ND option on either \u00a0 side of this PE/CE proxying boundary and not necessarily a limitation of the \u00a0 nodes themselves. \u00a0 There is no space for these options in the current section 2 format. \u00a0 Can it be extended to optionally carry the ND options that a PE has \u00a0 observed to be sent by the node? \u00a0 Alternatively, I think we'll need some text that ND proxying MUST be \u00a0 disabled if NSes contain any options other things like TLLAO or if NAs are \u00a0 observed to have anything other than SLLAO. \u00a0 Basically, I think we should take care to not impede the deployment of any \u00a0 extensions to ND.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-04-08 06:09:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-30 15:52:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-23 00:58:01-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-09-23 00:58:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-09-14 17:51:51-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-04-08 06:09:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-14 17:51:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-09-08 10:25:04-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-04-08 06:09:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-08 10:25:04-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-09-21 23:24:18-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-04-08 06:09:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-21 23:24:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-09-22 13:44:00-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-12-01 03:24:59-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-22 13:44:00-07:00",
+        "text": "Hi, Hopefully a relatively easy discuss to resolve and this might just be my ignorance here: Section 2 states that I flag is used for an immutable ARP/ND Binding which is for a configured ARP/ND entry. Section 3.2 Reception of the EVPN ARP/ND Extended Community, has the following text: \u00a0 \u00a0 \u00a0 *\u00a0 Receiving multiple EVPN MAC/IP Advertisement routes with I=1 \u00a0 \u00a0 \u00a0 \u00a0  for the same IP but different MAC is considered a \u00a0 \u00a0 \u00a0 \u00a0  misconfiguration. But wouldn't this scenario occur if the configured ARP/ND entry was changed to point to a new MAC address? Regards, Rob",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-04-08 06:09:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-01 03:24:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-22 13:59:27-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-04-08 06:09:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 13:59:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-23 09:16:59-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-08 10:25:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-10-12 07:37:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-23 09:16:59-07:00",
+        "text": "Be ye not afraid! This DISCUSS should be fairly trivial to address... This allows for more information to be carried with MAC/IP Advertisements. It seems to me that this gives a DoS-style attacker more opportunities to exhaust state on routers - I could sit on a wire and create lots of ARP/ND states (make up new IP and MAC combinations), causing this to be propagated and burning memory / state / etc. This is somewhat discussed in  RFC 7432 , but the technique in this document seems like it makes this issue somewhat worse - a single sentence in the Security Considerations noting it would satisfy me (as would an explanation that I'm mistaken :-)). I also support EK & Rob's DISCUSSes",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-04-08 06:09:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-12 07:37:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9047",
+  "evaluation_end": "2021-04-08 06:09:58-07:00",
+  "evaluation_start": "2020-09-08 10:25:03-07:00"
+}

@@ -1,0 +1,259 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-05-13 13:01:44-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-06-02 04:50:28-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-02 04:50:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-05-30 23:05:54-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-30 23:05:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-05-30 16:17:12-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-30 16:17:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-05-31 05:02:35-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-31 05:02:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-05-30 14:37:34-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-24 14:50:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-05-30 14:37:34-07:00",
+        "text": "I'd like to DISCUSS some questions I have about the content of Section 4's IS-IS rules. I don't expect it will be difficult to resolve these, I just want to be sure we have the conversation. 1. In \u00a74 (2.C), \u00a0 \u00a0 \u00a0  C.\u00a0 The SRLGs advertised in IS-IS SRLG ASLA TLVs and the other \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  link attributes advertised in IS-IS ASLA sub-TLVs are \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  REQUIRED to be collated, on a per-application basis, for all \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  applications that have their bit set in the SABM/UDABM in at \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  least one of the aforementioned TLV types. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0   Is there some reason that there's no need to consider the case where both of the TLV types in question have zero-length application bit masks? 2. Later in the same paragraph, \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  When performing \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  this collation, only the TLVs with the application's bit set \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  in SABM/UDABM MUST be used when such TLVs are available from \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  either TLV types. I suspect you aren't saying what you mean, and the \"only... MUST\" construct is hard to puzzle out. Do you perhaps mean TLVs that don\u2019t have the application's bit set MUST NOT be used? Because as you've written it,  - All TLVs with the bit set MUST be collated, - Any TLVs without the bit set MAY be collated (by implication). Which doesn't seem very sensible AFAICT. A possible rewrite, if I've understood your intention correctly, might be \"When performing this collation, every TLV with the application's bit set in SABM/UDABM MUST be included, when such TLVs are available from either TLV type.\" (Note also a minor fix for agreement in number, s/types/type/ in the last word.) 3. And still later in the same paragraph, \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 If the bit for an application is set in \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  the SABM/UDABM of only one of the TLV types, then the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  attributes from the other TLV type with zero-length \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  application bit mask MUST be also collated for that \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  application, if such TLV is available. I'm confused by the reference to a zero-length application bit mask. Can't the other TLV type have a nonzero-length application bit mask, but still have the application bit in question not set within the bit mask? I guess probably what you mean is, if the other TLV type is present and has a zero-length application bit mask, since a zero-length SABM/UDABM basically is a wildcard, the equivalent of all bits being set (as I read  RFC 8920 ).  If that's right, then a change seems in order, along the lines of \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 If the bit for an application is set in \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  the SABM/UDABM of only one of the TLV types, and if the  \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  other TLV type has a zero-length application bit mask, then the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  attributes from the other TLV type with zero-length \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  application bit mask MUST be also collated for that \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  application, if such TLV is available. I just interpolated the \"and\" clause. It's a bit wordy and could probably be further condensed, but I think it clarifies sufficiently. On the other hand, if I'm not right about this (very possible) then I'd appreciate further discussion on what I got wrong, so we can figure out if the text needs clarification or if I just need a clue bat.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-24 14:50:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-05-25 01:31:48-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-25 01:31:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-06-01 23:21:38-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-01 23:21:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-05-30 11:56:30-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-30 11:56:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-05-27 09:11:36-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-27 09:11:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-05-31 18:07:23-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-31 18:07:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-06-01 18:37:00-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-01 18:37:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-06-01 07:45:10-07:00",
+        "end_reason": "new_position",
+        "start": "2022-05-13 13:01:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-07-07 09:27:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-01 07:45:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9294",
+  "evaluation_end": "2022-07-07 09:27:55-07:00",
+  "evaluation_start": "2022-05-13 13:01:44-07:00"
+}

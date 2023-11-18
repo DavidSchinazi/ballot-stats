@@ -1,0 +1,357 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-15 23:03:58-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-23 15:15:08-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-15 23:03:58-07:00",
+        "text": "Thanks to everyone who has worked on documenting the TACACS+ protocol as it is used today. I understand the desire to publish this document as a status other than Historic, as the protocol remains in use today. However, the shortcomings cited in the \"Security Considerations\" section are quite profound, and really bear highlighting in the document way before we get into what is fundamentally end material. I have serious misgivings about publishing this document as anything other than Historic without some prominent text early in the document (e.g., in the Introduction section) that warns implementors of the several caveats detailed in section 10 and its subsections. They don't need to be explained here, but some language along the lines of the following really needs to be present in order to scope the document: \u00a0  Note that the original TACACS+ implementations did not address all of the \u00a0  baseline security concerns which are considered when designing modern \u00a0  protocols.\u00a0 This document does not change this situation, and implementors \u00a0  should use caution when evaluating the suitability of TACACS+ for any given \u00a0  use.\u00a0 Please see section 10 for additional details. --------------------------------------------------------------------------- \u00a74.6: >\u00a0 To ensure interoperability of current deployments, the TACACS+ client >\u00a0 and server MUST handle user fields and those data fields used for >\u00a0 passwords as 8-bit octet strings.\u00a0 The deployment operator MUST >\u00a0 ensure that consistent character encoding is applied from the end >\u00a0 client to the server.\u00a0 The encoding SHOULD be UTF-8, and other >\u00a0 encodings outside printable US-ASCII SHOULD be deprecated. Without specification of preparation profiles for usernames and passwords, this is an incomplete specification of how to transmit non-ASCII usernames and passwords. While there are other solutions, the easy way to address this is to normatively reference  RFC 7613 , and select one of its username preparation profiles, and indicate its password preparation profile. The most basic problem here is that I might create a username and/or password on a machine that uses one mapping for a non-ASCII character, and later try to log in on a machine that uses a different, but semantically equivalent, mapping for that same character. This is a clear interop issue.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-23 15:15:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-15 11:48:29-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-15 23:20:57-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-05-15 11:48:29-07:00",
+        "text": "I appreciate that this is documenting an existing protocol and I am very glad that it is being documented. However there are several things which are still not documented well enough/not in enough details to implement. So I would like to discuss these issues before recommending approval of this document: 1) 4.6.\u00a0 Text Encoding \u00a0  All text fields in TACACS+ MUST be printable US-ASCII, excepting Please add a reference to  RFC 20  (for US-ASCII) here. Without out it \"printable\" has no meaning. \u00a0  special consideration given to user field and data fields used for \u00a0  passwords. \u00a0  To ensure interoperability of current deployments, the TACACS+ client \u00a0  and server MUST handle user fields and those data fields used for \u00a0  passwords as 8-bit octet strings.\u00a0 The deployment operator MUST \u00a0  ensure that consistent character encoding is applied from the end \u00a0  client to the server.\u00a0 The encoding SHOULD be UTF-8, and other Please add Normative  RFC 3629  reference here for UTF-8. \u00a0  encodings outside printable US-ASCII SHOULD be deprecated. I am not sure what this mean. You didn't define allowed encoding (really you mean charsets). 2) In 5.1: \u00a0  The printable US-ASCII name of the client port on which the \u00a0  authentication is taking place, This doesn't mean anything. Is there a registry? It doesn't look like you are using transport service name registry for this. Is it a fixed list? \u00a0  and its length in bytes.\u00a0 The value \u00a0  of this field is client specific.\u00a0 (For example, Cisco uses \"tty10\" \u00a0  to denote the tenth tty line and \"Async10\" to denote the tenth async \u00a0  interface).\u00a0 The port_len indicates the length of the port field, in \u00a0  bytes. 3) Later in 5.1: \u00a0  A printable US-ASCII string indicating the remote location from which \u00a0  the user has connected to the client.\u00a0 It is intended to hold a \u00a0  network address What are the allowed formats for IPv4 and IPv6? Or is this just human readable? \u00a0  if the user is connected via a network, a caller ID \u00a0  is the user is connected via ISDN or a POTS, or any other remote \u00a0  location information that is available. 4) In 5.4: \u00a0  If the information being requested by the server form the client is \u00a0  sensitive, then the server should set the TAC_PLUS_REPLY_FLAG_NOECHO \u00a0  flag.\u00a0 When the client queries the user for the information, the \u00a0  response MUST NOT be echoed as it is entered. What does the last sentence mean? (When is it ever echoed?) Are you missing a forward reference or some explanation of echoing? 5) KRB5 and KRB4 need normative references.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-16 10:26:50-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-05-15 23:20:57-07:00",
+        "text": "(One small addition to my earlier comments, see new DISCUSS point 6) I appreciate that this is documenting an existing protocol and I am very glad that it is being documented. However there are several things which are still not documented well enough/not in enough details to implement. So I would like to discuss these issues before recommending approval of this document: 1) 4.6.\u00a0 Text Encoding \u00a0  All text fields in TACACS+ MUST be printable US-ASCII, excepting Please add a reference to  RFC 20  (for US-ASCII) here. Without out it \"printable\" has no meaning. \u00a0  special consideration given to user field and data fields used for \u00a0  passwords. \u00a0  To ensure interoperability of current deployments, the TACACS+ client \u00a0  and server MUST handle user fields and those data fields used for \u00a0  passwords as 8-bit octet strings.\u00a0 The deployment operator MUST \u00a0  ensure that consistent character encoding is applied from the end \u00a0  client to the server.\u00a0 The encoding SHOULD be UTF-8, and other Please add Normative  RFC 3629  reference here for UTF-8. \u00a0  encodings outside printable US-ASCII SHOULD be deprecated. I am not sure what this mean. You didn't define allowed encoding (really you mean charsets). 2) In 5.1: \u00a0  The printable US-ASCII name of the client port on which the \u00a0  authentication is taking place, This doesn't mean anything. Is there a registry? It doesn't look like you are using transport service name registry for this. Is it a fixed list? \u00a0  and its length in bytes.\u00a0 The value \u00a0  of this field is client specific.\u00a0 (For example, Cisco uses \"tty10\" \u00a0  to denote the tenth tty line and \"Async10\" to denote the tenth async \u00a0  interface).\u00a0 The port_len indicates the length of the port field, in \u00a0  bytes. 3) Later in 5.1: \u00a0  A printable US-ASCII string indicating the remote location from which \u00a0  the user has connected to the client.\u00a0 It is intended to hold a \u00a0  network address What are the allowed formats for IPv4 and IPv6? Or is this just human readable? \u00a0  if the user is connected via a network, a caller ID \u00a0  is the user is connected via ISDN or a POTS, or any other remote \u00a0  location information that is available. 4) In 5.4: \u00a0  If the information being requested by the server form the client is \u00a0  sensitive, then the server should set the TAC_PLUS_REPLY_FLAG_NOECHO \u00a0  flag.\u00a0 When the client queries the user for the information, the \u00a0  response MUST NOT be echoed as it is entered. What does the last sentence mean? (When is it ever echoed?) Are you missing a forward reference or some explanation of echoing? 5) KRB5 and KRB4 need normative references. 6) Does this document need to obsolete  RFC 1492 ?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-17 12:10:33-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-05-16 10:26:50-07:00",
+        "text": "(I have incorporated DISCUSS portion of Alissa's DISCUSS, see DISCUSS points #7-#9) I appreciate that this is documenting an existing protocol and I am very glad that it is being documented. However there are several things which are still not documented well enough/not in enough details to implement. So I would like to discuss these issues before recommending approval of this document: 1) 4.6.\u00a0 Text Encoding \u00a0  All text fields in TACACS+ MUST be printable US-ASCII, excepting Please add a reference to  RFC 20  (for US-ASCII) here. Without out it \"printable\" has no meaning. \u00a0  special consideration given to user field and data fields used for \u00a0  passwords. \u00a0  To ensure interoperability of current deployments, the TACACS+ client \u00a0  and server MUST handle user fields and those data fields used for \u00a0  passwords as 8-bit octet strings.\u00a0 The deployment operator MUST \u00a0  ensure that consistent character encoding is applied from the end \u00a0  client to the server.\u00a0 The encoding SHOULD be UTF-8, and other Please add Normative  RFC 3629  reference here for UTF-8. \u00a0  encodings outside printable US-ASCII SHOULD be deprecated. I am not sure what this mean. You didn't define allowed encoding (really you mean charsets). 2) In 5.1: \u00a0  The printable US-ASCII name of the client port on which the \u00a0  authentication is taking place, This doesn't mean anything. Is there a registry? It doesn't look like you are using transport service name registry for this. Is it a fixed list? \u00a0  and its length in bytes.\u00a0 The value \u00a0  of this field is client specific.\u00a0 (For example, Cisco uses \"tty10\" \u00a0  to denote the tenth tty line and \"Async10\" to denote the tenth async \u00a0  interface).\u00a0 The port_len indicates the length of the port field, in \u00a0  bytes. 3) Later in 5.1: \u00a0  A printable US-ASCII string indicating the remote location from which \u00a0  the user has connected to the client.\u00a0 It is intended to hold a \u00a0  network address What are the allowed formats for IPv4 and IPv6? Or is this just human readable? \u00a0  if the user is connected via a network, a caller ID \u00a0  is the user is connected via ISDN or a POTS, or any other remote \u00a0  location information that is available. 4) In 5.4: \u00a0  If the information being requested by the server form the client is \u00a0  sensitive, then the server should set the TAC_PLUS_REPLY_FLAG_NOECHO \u00a0  flag.\u00a0 When the client queries the user for the information, the \u00a0  response MUST NOT be echoed as it is entered. What does the last sentence mean? (When is it ever echoed?) Are you missing a forward reference or some explanation of echoing? 5) KRB5 and KRB4 need normative references. 6) Does this document need to obsolete  RFC 1492 ? 7) The Gen-ART reviewer Stewart Bryant (SB) asked the following: \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_MAX := 0x0f \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_ROOT := 0x0f \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_USER := 0x01 \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_MIN := 0x00 SB> Where are these defined? Please define the semantics of these values. 8) Stewart also noted the following: \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_ASCII := 0x01 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_PAP := 0x02 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_CHAP := 0x03 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_ARAP := 0x04 (deprecated) \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_MSCHAP := 0x05 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_MSCHAPV2 := 0x06 SB> There are lots of lists similar to the above. SB> I have not checked them all, but a number of the types  SB> in this and subsequent parts of the design don't seem SB> to be defined or have a definitive reference The way I would say this is that the document seems to be written for people who have already deployed this protocol, and elides details that would make it comprehensible to a new implementor. But it also contemplates the prospect of new implementations. If new implementations are actually expected (which I was surprised about, but can believe), I agree with Stewart that each of the field values need a definition that explains its semantic. If new implementations are not expected, then the reference to new implementations should be removed. 9) How is \"secure deployment\" defined? Since this is used as a restriction in several places, I think it needs to be defined precisely.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-18 03:37:37-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-17 12:10:33-07:00",
+        "text": "(I have incorporated DISCUSS portion of Alissa's DISCUSS, see DISCUSS points #7-#9) I appreciate that this is documenting an existing protocol and I am very glad that it is being documented. However there are several things which are still not documented well enough/not in enough details to implement. So I would like to discuss these issues before recommending approval of this document: 1) Resolved 2) In 5.1: \u00a0  The printable US-ASCII name of the client port on which the \u00a0  authentication is taking place, This doesn't mean anything. Is there a registry? It doesn't look like you are using transport service name registry for this. Is it a fixed list? \u00a0  and its length in bytes.\u00a0 The value \u00a0  of this field is client specific.\u00a0 (For example, Cisco uses \"tty10\" \u00a0  to denote the tenth tty line and \"Async10\" to denote the tenth async \u00a0  interface).\u00a0 The port_len indicates the length of the port field, in \u00a0  bytes. 3) Later in 5.1: \u00a0  A printable US-ASCII string indicating the remote location from which \u00a0  the user has connected to the client.\u00a0 It is intended to hold a \u00a0  network address What are the allowed formats for IPv4 and IPv6? Or is this just human readable? \u00a0  if the user is connected via a network, a caller ID \u00a0  is the user is connected via ISDN or a POTS, or any other remote \u00a0  location information that is available. 4) In 5.4: \u00a0  If the information being requested by the server form the client is \u00a0  sensitive, then the server should set the TAC_PLUS_REPLY_FLAG_NOECHO \u00a0  flag.\u00a0 When the client queries the user for the information, the \u00a0  response MUST NOT be echoed as it is entered. What does the last sentence mean? (When is it ever echoed?) Are you missing a forward reference or some explanation of echoing? 5) KRB5 and KRB4 need normative references. 6) Does this document need to obsolete  RFC 1492 ? 7) The Gen-ART reviewer Stewart Bryant (SB) asked the following: \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_MAX := 0x0f \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_ROOT := 0x0f \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_USER := 0x01 \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_MIN := 0x00 SB> Where are these defined? Please define the semantics of these values. 8) Stewart also noted the following: \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_ASCII := 0x01 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_PAP := 0x02 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_CHAP := 0x03 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_ARAP := 0x04 (deprecated) \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_MSCHAP := 0x05 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_MSCHAPV2 := 0x06 SB> There are lots of lists similar to the above. SB> I have not checked them all, but a number of the types  SB> in this and subsequent parts of the design don't seem SB> to be defined or have a definitive reference The way I would say this is that the document seems to be written for people who have already deployed this protocol, and elides details that would make it comprehensible to a new implementor. But it also contemplates the prospect of new implementations. If new implementations are actually expected (which I was surprised about, but can believe), I agree with Stewart that each of the field values need a definition that explains its semantic. If new implementations are not expected, then the reference to new implementations should be removed. 9) How is \"secure deployment\" defined? Since this is used as a restriction in several places, I think it needs to be defined precisely.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-18 04:17:26-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-18 03:37:37-07:00",
+        "text": "(I have incorporated DISCUSS portion of Alissa's DISCUSS, see DISCUSS points #7-#9) I appreciate that this is documenting an existing protocol and I am very glad that it is being documented. However there are several things which are still not documented well enough/not in enough details to implement. So I would like to discuss these issues before recommending approval of this document: 1) Resolved 2) In 5.1: \u00a0  The printable US-ASCII name of the client port on which the \u00a0  authentication is taking place, This doesn't mean anything. Is there a registry? It doesn't look like you are using transport service name registry for this. Is it a fixed list? \u00a0  and its length in bytes.\u00a0 The value \u00a0  of this field is client specific.\u00a0 (For example, Cisco uses \"tty10\" \u00a0  to denote the tenth tty line and \"Async10\" to denote the tenth async \u00a0  interface).\u00a0 The port_len indicates the length of the port field, in \u00a0  bytes. 3) Addressed 4) In 5.4: \u00a0  If the information being requested by the server form the client is \u00a0  sensitive, then the server should set the TAC_PLUS_REPLY_FLAG_NOECHO \u00a0  flag.\u00a0 When the client queries the user for the information, the \u00a0  response MUST NOT be echoed as it is entered. What does the last sentence mean? (When is it ever echoed?) Are you missing a forward reference or some explanation of echoing? 5) KRB5 and KRB4 need normative references. 6) Does this document need to obsolete  RFC 1492 ? 7) The Gen-ART reviewer Stewart Bryant (SB) asked the following: \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_MAX := 0x0f \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_ROOT := 0x0f \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_USER := 0x01 \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_MIN := 0x00 SB> Where are these defined? Please define the semantics of these values. 8) Stewart also noted the following: \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_ASCII := 0x01 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_PAP := 0x02 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_CHAP := 0x03 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_ARAP := 0x04 (deprecated) \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_MSCHAP := 0x05 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_MSCHAPV2 := 0x06 SB> There are lots of lists similar to the above. SB> I have not checked them all, but a number of the types  SB> in this and subsequent parts of the design don't seem SB> to be defined or have a definitive reference The way I would say this is that the document seems to be written for people who have already deployed this protocol, and elides details that would make it comprehensible to a new implementor. But it also contemplates the prospect of new implementations. If new implementations are actually expected (which I was surprised about, but can believe), I agree with Stewart that each of the field values need a definition that explains its semantic. If new implementations are not expected, then the reference to new implementations should be removed. 9) How is \"secure deployment\" defined? Since this is used as a restriction in several places, I think it needs to be defined precisely.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-18 06:28:46-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-18 04:17:26-07:00",
+        "text": "(I have incorporated DISCUSS portion of Alissa's DISCUSS, see DISCUSS points #7-#9) I appreciate that this is documenting an existing protocol and I am very glad that it is being documented. However there are several things which are still not documented well enough/not in enough details to implement. So I would like to discuss these issues before recommending approval of this document: 1) Resolved 2) In 5.1: \u00a0  The printable US-ASCII name of the client port on which the \u00a0  authentication is taking place, This doesn't mean anything. Is there a registry? It doesn't look like you are using transport service name registry for this. Is it a fixed list? \u00a0  and its length in bytes.\u00a0 The value \u00a0  of this field is client specific.\u00a0 (For example, Cisco uses \"tty10\" \u00a0  to denote the tenth tty line and \"Async10\" to denote the tenth async \u00a0  interface).\u00a0 The port_len indicates the length of the port field, in \u00a0  bytes. 3) Addressed 4) Addressed 5) KRB5 and KRB4 need normative references. 6) Does this document need to obsolete  RFC 1492 ? 7) Addressed 8) Addressed 9) Addressed",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-19 08:24:34-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-18 06:28:46-07:00",
+        "text": "hank you for addressing most of my DISCUSS/comments. Only one little thing remains:KRB5 and KRB4 need normative references.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-19 08:24:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-15 11:55:36-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-16 10:29:18-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-15 11:55:36-07:00",
+        "text": "(1) The Gen-ART reviewer Stewart Bryant (SB) asked the following: \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_MAX := 0x0f \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_ROOT := 0x0f \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_USER := 0x01 \u00a0 \u00a0  TAC_PLUS_PRIV_LVL_MIN := 0x00 SB> Where are these defined? Please define the semantics of these values. (2) Stewart also noted the following: \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_ASCII := 0x01 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_PAP := 0x02 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_CHAP := 0x03 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_ARAP := 0x04 (deprecated) \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_MSCHAP := 0x05 \u00a0 \u00a0  TAC_PLUS_AUTHEN_TYPE_MSCHAPV2 := 0x06 SB> There are lots of lists similar to the above. SB> I have not checked them all, but a number of the types  SB> in this and subsequent parts of the design don't seem SB> to be defined or have a definitive reference The way I would say this is that the document seems to be written for people who have already deployed this protocol, and elides details that would make it comprehensible to a new implementor. But it also contemplates the prospect of new implementations. If new implementations are actually expected (which I was surprised about, but can believe), I agree with Stewart that each of the field values need a definition that explains its semantic. If new implementations are not expected, then the reference to new implementations should be removed. (3) How is \"secure deployment\" defined? Since this is used as a restriction in several places, I think it needs to be defined precisely.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-16 10:29:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-15 06:37:10-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 06:37:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-05-15 22:10:21-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-22 10:59:31-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-15 22:10:21-07:00",
+        "text": "I support the DISCUSS ballots by Alexey and Roman, as well as the comments by Deborah and Alissa that more text be in the introduction about the status and limitations here. I also need to add to Alexey\u2019s DISCUSS on 4.6, Text Encoding: \u00a0  To ensure interoperability of current deployments, the TACACS+ client \u00a0  and server MUST handle user fields and those data fields used for \u00a0  passwords as 8-bit octet strings.\u00a0 The deployment operator MUST \u00a0  ensure that consistent character encoding is applied from the end \u00a0 client to the server. This is a mine field.\u00a0 Treating passwords as raw octets without concern for encoding and normalization can cause authentication failures and can be used to attack systems where non-ASCII passwords are in use. Suppose I enter \u201ccr\u00e8me br\u00fbl\u00e9e\u201d as my password. How that\u2019s represented in UTF-8 depends upon my input device, as there are at least two valid representations of each accented vowel.\u00a0 Without normalization/canonicalization, passwords entered on different input devices might not match, blocking my access.\u00a0 And we haven\u2019t touched on bidirectional issues (mixing, say, Hebrew and English characters). The precis framework has detailed explanations of how to deal with usernames and passwords \u2014 see  RFC 8265  (and, for the overall precis framework,  RFC 8264 ). \u00a0  The encoding SHOULD be UTF-8, and other \u00a0  encodings outside printable US-ASCII SHOULD be deprecated.\u201d This doesn\u2019t make sense with respect to how we use \u201cdeprecated\u201d.\u00a0 You need to say \u201care deprecated\u201d, meaning that we recommend against using them.\u00a0 There\u2019s no  BCP 14  \u201cSHOULD\u201d involved here.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-22 10:59:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-05-14 09:31:17-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-14 09:31:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-05-15 13:35:05-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 13:35:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-04-30 06:01:34-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-30 06:01:34-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-05-16 05:16:09-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-16 05:16:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-15 11:02:55-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 11:02:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-05-15 12:10:45-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-05-15 12:12:12-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-05-15 12:10:45-07:00",
+        "text": "(1) I appreciate the deliberate and thoughtful attempt in this section to enumerate the possible risks/attacks and mitigations of the protocol as is.\u00a0 In addition to the top-level risks in Section 10.1, I can see the value of maintaining symmetry between Sections 5+10.2; 6+10.3 and 7+10.4.\u00a0 In the spirit of the middle ground this draft is trying to realize (document the as-is, but highlight the issues), I have the following feedback: (a) Section 10.1.\u00a0 I recommend replacing the first three paragraphs of Section 10.1 (\u201cTACACS+ protocol does not \u2026\u201d, \u201cWhile the protocol \u2026\u201d, and \u201cEven though \u2026\u201d) with the following text partially synthesized from Joe Salowey\u2019s review ( https://mailarchive.ietf.org/arch/msg/secdir/rsqrNbVEKph1RdWh836Ard73pHs ) with the current introduction: TACACS+ protocol does not include a security mechanism that would meet modern-day requirements.\u00a0 These security mechanisms would be best referred to as \u201cobfuscation\u201d and not \u201cencryption\u201d since they provide no meaningful integrity, privacy or replay protection.\u00a0 An attacker with access to the data stream should be assumed to be able to read and modify all TACACS+ packets. Without mitigation, a range of risks such as the following are possible: Accounting information may be modified by the man-in-the-middle attacker, making such logs unsuitable and untrustable for auditing purposes. Invalid or misleading values may be inserted by the man-in-the-middle attacker in various fields at known offsets to try and circumvent the authentication or authorization checks even inside the obfuscated body. (b) I recommend finding an alternative home and strengthening the text \u201cFor this reason, deployments SHOULD NOT use connections with TAC_PLUS_UNENCRYPTED_FLAG, as mentioned in the Best Practices section (Section 10.5)\u201d.\u00a0 It seemed odd to mix deployment guidance in a list of risks as currently written.\u00a0 I take Andrej Ota\u2019s point from  https://mailarchive.ietf.org/arch/msg/secdir/UgtsSfh1RaauNoMRi87FRqtI0YI  that there is no harm in requiring the obfuscation, such as it is.\u00a0 Furthermore, why couldn\u2019t this be MUST NOT use? (c) Section 10.5.3.\u00a0 I concur with the SECDIR recommendation and the follow-up discussion with Andrej Ota per  https://mailarchive.ietf.org/arch/msg/secdir/UgtsSfh1RaauNoMRi87FRqtI0YI  which would: s/stronger authentication/less weak/ (2) Section 10.2.\u00a0 I\u2019m confused by the deprecation of TAC_PLUS_AUTHEN_STATUS_FOLLOW but a seemingly weaker \u201cSHOULD NOT be used in modern deployments\u201d.\u00a0 I was expecting a MUST NOT. (3) Section 10.4.\u00a0 Why shouldn\u2019t accounting sessions also use secure transport per 10.5 (like 10.3 and 10.4) given the risks outlined in the text?\u00a0 I was expecting to see this section open with \u201cAccounting Session SHOULD be used via a secure transport (see Best Practices section (Section 10.5))\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-24 13:21:34-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-15 12:12:12-07:00",
+        "text": "(1) I appreciate the deliberate and thoughtful attempt in this section to enumerate the possible risks/attacks and mitigations of the protocol as is.\u00a0 In addition to the top-level risks in Section 10.1, I can see the value of maintaining symmetry between Sections 5+10.2; 6+10.3 and 7+10.4.\u00a0 In the spirit of the middle ground this draft is trying to realize (document the as-is, but highlight the issues), I have the following feedback: (a) Section 10.1.\u00a0 I recommend replacing the first three paragraphs of Section 10.1 (\u201cTACACS+ protocol does not \u2026\u201d, \u201cWhile the protocol \u2026\u201d, and \u201cEven though \u2026\u201d) with the following text synthesized from Joe Salowey\u2019s LC review ( https://mailarchive.ietf.org/arch/msg/secdir/rsqrNbVEKph1RdWh836Ard73pHs ) and the current introduction: TACACS+ protocol does not include a security mechanism that would meet modern-day requirements.\u00a0 These security mechanisms would be best referred to as \u201cobfuscation\u201d and not \u201cencryption\u201d since they provide no meaningful integrity, privacy or replay protection.\u00a0 An attacker with access to the data stream should be assumed to be able to read and modify all TACACS+ packets. Without mitigation, a range of risks such as the following are possible: Accounting information may be modified by the man-in-the-middle attacker, making such logs unsuitable and untrustable for auditing purposes. Invalid or misleading values may be inserted by the man-in-the-middle attacker in various fields at known offsets to try and circumvent the authentication or authorization checks even inside the obfuscated body. (b) I recommend finding an alternative home and strengthening the text \u201cFor this reason, deployments SHOULD NOT use connections with TAC_PLUS_UNENCRYPTED_FLAG, as mentioned in the Best Practices section (Section 10.5)\u201d.\u00a0 It seemed odd to mix deployment guidance in a list of risks as currently written.\u00a0 I take Andrej Ota\u2019s point from  https://mailarchive.ietf.org/arch/msg/secdir/UgtsSfh1RaauNoMRi87FRqtI0YI  that there is no harm in requiring the obfuscation, such as it is.\u00a0 Furthermore, why couldn\u2019t this be MUST NOT use? (c) Section 10.5.3.\u00a0 I concur with the SECDIR recommendation and the follow-up discussion with Andrej Ota per  https://mailarchive.ietf.org/arch/msg/secdir/UgtsSfh1RaauNoMRi87FRqtI0YI  which would: s/stronger authentication/less weak/ (2) Section 10.2.\u00a0 I\u2019m confused by the deprecation of TAC_PLUS_AUTHEN_STATUS_FOLLOW but a seemingly weaker \u201cSHOULD NOT be used in modern deployments\u201d.\u00a0 I was expecting a MUST NOT. (3) Section 10.4.\u00a0 Why shouldn\u2019t accounting sessions also use secure transport per 10.5 (like 10.3 and 10.4) given the risks outlined in the text?\u00a0 I was expecting to see this section open with \u201cAccounting Session SHOULD be used via a secure transport (see Best Practices section (Section 10.5))\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-24 13:21:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-05-15 16:11:47-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 16:11:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-05-15 18:44:34-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-30 06:01:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-19 12:20:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 18:44:34-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ]
+  },
+  "doc_name": "rfc8907",
+  "evaluation_end": "2020-03-19 12:20:22-07:00",
+  "evaluation_start": "2019-04-30 06:01:33-07:00"
+}

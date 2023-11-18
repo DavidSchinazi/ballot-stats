@@ -1,0 +1,251 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-05 08:18:21-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 08:18:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-05 08:30:41-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 08:30:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-05 19:36:07-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 19:36:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-09-22 09:01:20-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-09-30 05:27:11-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-11 00:52:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-09-30 05:27:11-07:00",
+        "text": "# GEN AD review of  draft-ietf-lsr-pce-discovery-security-support-11 CC @larseggert ## Discuss ### Section 4, paragraph 3 ``` \u00a0 \u00a0  Section 4 of [ RFC5088 ] states that no new sub-TLVs will be added to \u00a0 \u00a0  the PCED TLV, and no new PCE information will be carried in the \u00a0 \u00a0  Router Information LSA.\u00a0 This document updates [ RFC5088 ] by allowing \u00a0 \u00a0  the two sub-TLVs defined in this document to be carried in the PCED \u00a0 \u00a0  TLV advertised in the Router Information LSA. \u00a0 \u00a0  Section 4 of [ RFC5089 ] states that no new sub-TLVs will be added to \u00a0 \u00a0  the PCED TLV, and no new PCE information will be carried in the \u00a0 \u00a0  Router CAPABLITY TLV.\u00a0 This document updates [ RFC5089 ] by allowing \u00a0 \u00a0  the two sub-TLVs defined in this document to be carried in the PCED \u00a0 \u00a0  TLV advertised in the Router CAPABILITY TLV. \u00a0 \u00a0  This introduction of additional sub-TLVs should be viewed as an \u00a0 \u00a0  exception to the [ RFC5088 ][ RFC5089 ] policy, justified by the \u00a0 \u00a0  requirement to discover the PCEP security support prior to \u00a0 \u00a0  establishing a PCEP session.\u00a0 The restrictions defined in \u00a0 \u00a0  [ RFC5089 ][ RFC5089 ] should still be considered to be in place. ``` (This is mostly for discussion on the telechat, and I expect to clear during the call.) Why were 5088/89 so strict on not allowing new sub-TLVs? This seems quite unusual for IETF specs. I'm not arguing that this document can't update those earlier RFCs to allow these new sub-TLVs, but it seems odd to do so and in the same sentence say \"the restrictions should still be considered in place.\" ### Section 8.2, paragraph 1 ``` \u00a0 \u00a0  The PCED sub-TLVs were defined in [ RFC5088 ] and [ RFC5089 ], but they \u00a0 \u00a0  did not create a registry for it.\u00a0 This document requests IANA to \u00a0 \u00a0  create a new registry called \"PCED sub-TLV type indicators\" under the \u00a0 \u00a0  \"Interior Gateway Protocol (IGP) Parameters\" grouping.\u00a0 The \u00a0 \u00a0  registration policy for this registry is \"IETF Review\" [ RFC8126 ]. \u00a0 \u00a0  Values in this registry come from the range 0-65535. ``` Should the registration policy not be stricter (e.g., Standards Action?) given that 5088/89 didn't even allow any new values?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-11 00:52:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-10 09:26:00-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-10 12:19:03-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-10 09:26:00-07:00",
+        "text": "This should be simple to resolve, but it has to be clarified: The shepherd writeup says there were IPR claims made about the document.\u00a0 The question also asks for a summary of the resulting discussion, but the shepherd writeup doesn't provide one.\u00a0 Can we confirm that the discussion was had, or some other answer to the question can be provided?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-10 12:19:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-10 18:04:18-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-10 18:04:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-04 09:47:50-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-13 03:47:40-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-04 09:47:50-07:00",
+        "text": "Hi, Sorry for the discuss, but I find a couple of specification aspects of this draft to be unclear enough that I think that they probably warrant a discuss, hopefully easy to explain or resolve: In section 3.2, it wasn't clear to me exactly where I find what the Key-Id is.\u00a0 I suspect that this is probably referring to \"KeyId\" in  rfc5925 .\u00a0 If so, I think that would be emphasizing. In section 3.3, it wasn't clear to me what the Key chain name is, or what exactly it refers to.\u00a0 Is this referring to a local key-chain name installed in a YANG Keystore (given that there is a reference to  RFC8177 ) or something else.\u00a0 Either way, I think that expanding on the description here would probably be very beneficial.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-13 03:47:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-03 08:45:00-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-03 08:45:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-05 15:11:58-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 15:11:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-13 09:45:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-22 09:01:20-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9353",
+  "evaluation_end": "2022-10-13 09:45:09-07:00",
+  "evaluation_start": "2022-09-22 09:01:20-07:00"
+}

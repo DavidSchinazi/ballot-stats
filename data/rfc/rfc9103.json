@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-05-03 10:36:29-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-03 10:36:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-04 21:43:57-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-06-08 22:05:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-04 21:43:57-07:00",
+        "text": "My understanding is that this point is essentially overtaken by events, as a similar concern was raised already by Martin D, John, and Roman, and there is a commitment to update the text already made.\u00a0 I'm putting it in at the Discuss level to make sure that I follow-up on the revised text when it appears. But, for concreteness: the text in Sections 8.4, 10.4, and 11 treat cryptographic mTLS, TSIG, and SIG(0) authentication as providing an equivalent level of protection to the (non-cryptographic) IP ACL.\u00a0 My understanding is that IETF consensus is to prefer cryptographic mechanisms for authentication and authorization, when available. Relatedly, the text in Section 8.4 says that TSIG/SIG(0) are \"not sufficient to authenticate the client or server\", which is technically true, but also seems misleading.\u00a0 In XFR scenarios it's not clear that specific identification (authentication) of the counterparty is necessary for secure operation, if authorization to receive/send the zone can be established without specific identification.\u00a0 My undersatnding is that, when combined with a strict TLS profile for server authentication and appropriate trust policy on TLS clients, TSIG and SIG(0) both serve to provide proof of authorization for the exchange even though they only provide authentication in the form of group membership (the relevant key material is typically available to multiple machines).\u00a0 As such, don't they provide strong enough cryptographic protection (and end-to-end, no less!) to be a superior authorization mechanism than an IP ACL?\u00a0 (Any resulting text changes may bleed into Sections 11 and 12 in addition to 8.4, per my COMMENT.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-08 22:05:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-04-20 02:22:42-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-05-04 21:30:27-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-04 21:30:27-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-05-05 06:15:17-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-05 06:15:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-04 13:02:34-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-04 13:02:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-04-30 06:22:10-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-30 06:22:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-04-23 13:54:55-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-05-03 11:37:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-04-23 13:54:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-06-03 09:56:47-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-03 11:37:36-07:00",
+        "text": "In further discussions it became clear that the authors do not intend for XoT traffic to use an ALPN code at all. I'm afraid this may be a misunderstanding of previous guidance from TLS that XoT did not need its own ALPN code, but could simply use the DoT ALPN since the messages are distinguishable on the wire. To not use an ALPN at all violates best TLS practice. The reasoning given in Appendix A, that this creates difficulty for proxies, doesn't make sense to me. We can talk about it in the telechat.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-03 09:56:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-05-06 02:22:28-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-06 02:22:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-05 23:16:51-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-05 23:16:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-05-06 02:16:23-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-06 02:16:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-04 14:43:58-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-04 14:43:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-05-06 06:41:21-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-06 06:41:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-06-11 07:04:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-20 02:22:42-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9103",
+  "evaluation_end": "2021-06-11 07:04:04-07:00",
+  "evaluation_start": "2021-04-20 02:22:42-07:00"
+}

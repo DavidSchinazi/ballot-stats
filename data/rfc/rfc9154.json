@@ -1,0 +1,379 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-04-19 12:15:16-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-19 12:15:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-08 10:27:30-08:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 10:27:30-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-04-21 11:23:44-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-18 17:46:32-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-04-21 11:23:44-07:00",
+        "text": "(1)  RFC 4086  does not state that \"a high-security password must have at least 49 bits of randomness or entropy\" as is claimed in Section 4.1 of this document.\u00a0 It merely says that so much entropy is needed to have a one-in-a-billion chance of success for successfully guessing in the model laid out, and makes no statement about (absolute) \"high\" security. I don't think we need to spend as much time on what  RFC 4086  says as we currently do, and could probably get to the \"use at least 128 bits of entropy\" advice much sooner. (2) There's also some text in Section 5.3 that I'd like to discuss briefly: \u00a0  The registry MUST NOT return any indication of whether the \u00a0  authorization information is set or unset to the non-sponsoring \u00a0  registrar by not returning the authorization information element in \u00a0  the response.\u00a0 The registry MAY return an indication to the \u00a0  sponsoring registrar that the authorization information is set by \u00a0  using an empty authorization information value.\u00a0 The registry MAY \u00a0  return an indication to the sponsoring registrar that the \u00a0  authorization information is unset by not returning the authorization \u00a0  information element. This seems to be assigning semantics to both absent-authinfo and empty-authinfo in the\u00a0 response, but is giving *different* semantics to the response-to-sponsoring-registrar and response-to-non-sponsoring-registrar cases.\u00a0 Is there precedent for changing the semantics of the response based on the identity of the client like this (not just changing the content of the response)?\u00a0 Can we come up with a scheme that provides consistent semantics to all clients, perhaps based on\u00a0 vs empty\u00a0 for unset/set, leaving \"element is absent\" for the deliberately ambiguous case? (3) We may also need to discuss the efficacy of the transition plan, per my comments in Sections 6.1 and 6.3 -- my current understanding is that the proposed plan will break some existing workflows.\u00a0 I am not sure if that is intended, desirable, and/or tolerable, and welcome further insight.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-18 17:46:32-07:00",
+        "text": "Thank you for all the updates in response to my previous ballot position. In the interest of letting the document move forward, I am balloting Abstain because the document still contains behavior that, while fully specified, seems to require additional conditional behavior in client implementations that results in unnecessary fragility of implementation.\u00a0 The responsible AD and WG chairs should confirm that the WG does indeed have consensus to have made this decision, but I have no other grounds to block the document's publication once that consensus is confirmed. Copying the point from my previous discuss ballot in order to provide specifics on the behavior that prompts my Abstain position: (2) There's also some text in Section 5.3 that I'd like to discuss briefly: \u00a0  The registry MUST NOT return any indication of whether the \u00a0  authorization information is set or unset to the non-sponsoring \u00a0  registrar by not returning the authorization information element in \u00a0  the response.\u00a0 The registry MAY return an indication to the \u00a0  sponsoring registrar that the authorization information is set by \u00a0  using an empty authorization information value.\u00a0 The registry MAY \u00a0  return an indication to the sponsoring registrar that the \u00a0  authorization information is unset by not returning the authorization \u00a0  information element. This seems to be assigning semantics to both absent-authinfo and empty-authinfo in the\u00a0 response, but is giving *different* semantics to the response-to-sponsoring-registrar and response-to-non-sponsoring-registrar cases.\u00a0 Is there precedent for changing the semantics of the response based on the identity of the client like this (not just changing the content of the response)?\u00a0 Can we come up with a scheme that provides consistent semantics to all clients, perhaps based on\u00a0 vs empty\u00a0 for unset/set, leaving \"element is absent\" for the deliberately ambiguous case?",
+        "type": "Abstain"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-04-12 06:41:43-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-12 06:41:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-04-19 22:54:20-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-19 22:54:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-04-20 07:35:18-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-20 07:35:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-04-14 08:19:27-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-14 08:19:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-04-09 17:17:11-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-09 17:17:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-04-19 08:56:09-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-19 08:56:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-03-30 12:58:09-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-30 12:58:09-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-04-19 04:54:45-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-19 04:54:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-04-20 18:01:03-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-20 18:01:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": null,
+        "end_reason": null,
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-04-20 15:34:11-07:00",
+        "end_reason": "new_position",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-20 15:34:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-09-23 06:17:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-08 10:27:29-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9154",
+  "evaluation_end": "2021-09-23 06:17:26-07:00",
+  "evaluation_start": "2021-03-08 10:27:29-08:00"
+}

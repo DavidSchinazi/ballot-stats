@@ -1,0 +1,235 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-12-02 15:54:26-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-02 15:54:26-08:00",
+        "text": "Thanks for making the applicability statement more prominent in the -12. I think the document paints an exciting picture of a new mindset in which to frame discussion of network monitoring and management (even if it does stray too far into marketing language for my taste in places). It doesn't do quite as well at convincing me that an entirely new technology suite is merited (as opposed to just extending existing protocols to align with the new mindset), but I am willing to admit the possibility that the new technology suite is the right approach. That said, I have strong misgivings about the current state of the document, mostly relating to privacy considerations and the risk of pervasive monitoring, so I am balloting Abstain. While we do clearly say to not analyze individual users, we also have guidance (e.g., in \u00a72.1) that only says \"no user packet content should be collected\".\u00a0 However, packet contents are not the only things that can be a threat to user privacy, and we've seen numerous instances where just metadata about user flows are sufficient to make strong conclusions about user behavior that impact user privacy.\u00a0 But if we try to strengthen the requirement to be not collecting any data about user packets, the utility of the system decreases greatly, and I don't see a clear way to reconcile the impasse. (There are also a few lingering references to \"user flows\", \"user packets\", \"user traffic\", etc. in the main body text, especially in \u00a72.3.\u00a0 I'm not convinced that all of the instanaces of these phrases are compatible with the applicability statement.) Furthermore, the applicability statement seems to be a case of wishful thinking.\u00a0 I do not see any proposals for technical measures to enforce that data is not collected from networks where endpoints represent users, and I also don't see any mechansisms to disincentivize such use in favor of other, more privacy-friendly, alternatives.\u00a0 So even if we consider such usage of the network telemetry framework to be an abuse case rather than a use case, if we are going to honestly document the implications of the technology, I can't escape the conclusion that we need to consider these scenarios in our assessment of whether we are defining the right technology. Though I am balloting Abstain, I will also some specific comments on the document that might help improve it, even if I may not be completely happy with the resulting document (for the reasons described above). It's pretty surprising to see a document that mentions autonomic networking and aims to achieve self-managing networks make no reference at all to the IETF ANIMA WG or its outputs, a group that is specifically chartered to produce protocols and procedures for automated network management.\u00a0 In particular, it's my understanding that ANMIA has had very little traction with network Intent thus far, and this document references IRTF documents in many places (both for Intent and other things).\u00a0 Are we confident that these concepts are ready to move from the IRTF into the engineering world? Section 1 \u00a0  Network visibility is the ability of management tools to see the \u00a0  state and behavior of a network, which is essential for successful In the TLS WG we've sometimes seen participants use the term \"visibility\" to include the plaintext of encrypted data flows.\u00a0 While I have no reason to believe that that's a universally held understanding of the term, I mention it only to ask that clarification be provided if the intent of the term here is to include such decryption capabilities. If the intent is only to observe the normal visible wire image of the protocol, I don't see particular need for clarification. Section 2 \u00a0  forward.\u00a0 When a network's endpoints do not represent individual \u00a0  users (e.g. in industrial, datacenter, and infrastructure contexts), \u00a0  network operations can often benefit from large-scale data collection \u00a0  without breaching user privacy. In the vein of my toplevel remarks, I don't think that just \"a network's endpoints do not represent individual users\" is sufficient to ensure that large-scale data collection does not breach user privacy.\u00a0 It covers first-order effects, I think, but we've seen a lot of research indicating that second- and higher-order analyses can still extract information that reduces user privacy. Section 2.1 \u00a0  To preserve the privacy of end-users, no user packet content should \u00a0  be collected.\u00a0 Specifically, the data objects generated, exported, \u00a0  and collected by a network telemetry application should not include \u00a0  any packet payload from traffic associated with end-users systems. Also in the vein of my toplevel remarks, while \"do not include user traffic payload\" is a minimum requirement, and I'm happy to see it stated clearly, it in and of itself is not sufficient to fully protect end-user privacy. Section 2.2 \u00a0 \u00a0 \u00a0 visibility into networks.\u00a0 The ultimate goal is to achieve the \u00a0 \u00a0 \u00a0 security with no, or only minimal, human intervention. It's easy to achieve security without human intervention, if you're willing to accept a high false positive rate and denial of legitimate traffic.\u00a0 Should we say something about tempering the security goal with a need for not disrupting legitimate traffic flows? Section 2.3 \u00a0 \u00a0 \u00a0 Conventional OAM only covers a narrow range of data (e.g., SNMP \u00a0 \u00a0 \u00a0 only handles data from the Management Information Base (MIB)). This argument feels a bit weak given that anyone with an OID arc (that is, just about anyone) can add to the MIB. Section 2.4 \u00a0  Network telemetry has emerged as a mainstream technical term to refer It's a little surprising to see network telemetry called a \"mainstream\" term here, when up in \u00a71 we said that it lacks an unambiguous definition. \u00a0  *\u00a0 Model-based: The telemetry data is modeled in advance which allows \u00a0 \u00a0 \u00a0 applications to configure and consume data with ease. \u00a0  [...] \u00a0  *\u00a0 In-Network Customization: The data that is generated can be \u00a0 \u00a0 \u00a0 customized in network at run-time to cater to the specific need of \u00a0 \u00a0 \u00a0 applications.\u00a0 This needs the support of a programmable data plane \u00a0 \u00a0 \u00a0 which allows probes with custom functions to be deployed at \u00a0 \u00a0 \u00a0 flexible locations. I'm having a hard time seeing how data that's customized in-network at runtime would be compatible with being modeled in advance.\u00a0 Maybe the disclaimer about \"not expected to be held by every specific technique\" is intended to apply here, but it might be worth acknowledging the tradeoff. \u00a0  *\u00a0 In-band Data Collection: In addition to the passive and active \u00a0 \u00a0 \u00a0 data collection approaches, the new hybrid approach allows to \u00a0 \u00a0 \u00a0 directly collect data for any target flow on its entire forwarding \u00a0 \u00a0 \u00a0 path [ I-D.song-opsawg-ifit-framework ]. I'm pretty skeptical that the functionality that's claimed here (and in the referenced draft) can be achieved while complying with the existing requirements from current IETF RFCs.\u00a0 I recognize that this is under the \"an ideal [solution] may also have\" heading, but it still feels a little premature to include. Section 3.1 I'm having a really hard time seeing how figure 2 is internally consistent if it lists \"plain text\" as the only option for data encoding of data modelled using YANG (e.g., in the forwarding plane column). Section 3.1.1 \u00a0  network statistics and state data.\u00a0 The management plane includes \u00a0  many protocols, including some that are considered \"legacy\", such as \u00a0  SNMP and syslog.\u00a0 Regardless the protocol, management plane telemetry It's not clear that we gain any real value from labeling SNMP and syslog as \"legacy\".\u00a0 Perhaps we should just skip the examples and avoid debate on what is or isn't legacy (leaving each person to hold their own opinion on that question)? Section 3.1.2 \u00a0 \u00a0 \u00a0 Then in case of an unusually poor UE KPI or a service \u00a0 \u00a0 \u00a0 disconnection, it is non-trivial to delimit and pinpoint the issue \u00a0 \u00a0 \u00a0 in the responsible protocol layer (e.g., the Transport Layer or \u00a0 \u00a0 \u00a0 the Network Layer), the responsible protocol (e.g., ISIS or BGP at \u00a0 \u00a0 \u00a0 the Network Layer), and finally the responsible device(s) with I don't really follow the example of IS-IS or BGP \"at the Network Layer\" -- in what sense do we use \"network layer\" here? Section 3.3 I don't really understand the logic behind the direction of arrowheads in Figure 4.\u00a0 I'd be more inclined to just remove the figure than add more explanatory text, though, as the relationships don't seem terribly key to the core purpose of this document. Section 5 \u00a0  *\u00a0 Authentication and signing of telemetry data to make data more \u00a0 \u00a0 \u00a0 trustworthy. Signing is typically treated as a way to provide authentication; it might make more sense to discuss \"authentication and integrity protection\" in terms of the typical security properties we consider. NITS Section 1 \u00a0  operations.\u00a0 Based on the distinction of modules and function \u00a0  components, we can map the existing and emerging techniques and It would be \"distinction between\" or \"definition of\", I think. \u00a0  protocols into the framework.\u00a0 The framework can also simplify the \u00a0  designing, maintaining, and understanding a network telemetry system. The \"the\" leading into \"designing, maintaining, and understanding\" should be removed. \u00a0  The purpose of the framework and taxonomy is to set a common ground \u00a0  for the collection of related work and provide guidance for future \u00a0  technique and standard developments.\u00a0 To the best of our knowledge, s/technique/techniques/ Section 1.2 \u00a0  AI:\u00a0 Artificial Intelligence.\u00a0 In network domain, AI refers to the \u00a0 \u00a0 \u00a0 machine-learning based technologies for automated network \u00a0 \u00a0 \u00a0 operation and other tasks. \"the network domain\" \u00a0  SNMP:\u00a0 Simple Network Management Protocol.\u00a0 Version 1, 2, and 3 are \u00a0 \u00a0 \u00a0 specified in [ RFC1157 ], [ RFC3416 ], and [ RFC3414 ], respectively. RFC 3411  might be a better reference for SNMPv3, as it's the architecture doc (rather than the user-based security model doc). Section 2 \u00a0  It is conceivable that an autonomic network [ RFC7575 ] is the logical \u00a0  next step for network evolution following Software Defined Network I think \"Software Defined Networking\" would fit better in this situation. \u00a0  protocols are insufficient for these use cases.\u00a0 The discussion \u00a0  underlines the need of new methods, techniques, and protocols, as \u00a0  well as the extensions of existing ones, which we assign under the s/need of/need for/ Section 2.2 \u00a0 \u00a0 \u00a0 Given increasingly sophisticated attack vector coupled with \"vectors\" plural \u00a0 \u00a0 \u00a0 visibility into networks.\u00a0 The ultimate goal is to achieve the \u00a0 \u00a0 \u00a0 security with no, or only minimal, human intervention. s/the// \u00a0 \u00a0 \u00a0 visibility that is provided through network telemetry data.\u00a0 Any \u00a0 \u00a0 \u00a0 violation must be notified immediately, potentially resulting in \u00a0 \u00a0 \u00a0 updates to how the policy or intent is applied in the network to The subject of the verb \"notified\" is the target of the notification, not the thing that the notification is about.\u00a0 So \"reported\" might fit better here. \u00a0 \u00a0 \u00a0 operators need to evaluate how they can deliver the services that \u00a0 \u00a0 \u00a0 can meet the SLA based on realtime network telemetry data, \u00a0 \u00a0 \u00a0 including data from network measurements. s/deliver the services/deliver services/ Section 2.3 \u00a0  *\u00a0 Comprehensive data is needed from packet processing engines to \u00a0 \u00a0 \u00a0 traffic manager, from line cards to main control board, from user \u00a0 \u00a0 \u00a0 flows to control protocol packets, from device configurations to \u00a0 \u00a0 \u00a0 operations, and from physical layer to application layer. It's possible to read this as a set of \"from A to B\" relations where A is sending data to B\".\u00a0 I think that's not the intent, and this is just intending to show a broad spread of scenarios across many different axes; if that's the case, I'd suggest \"... needed, ranging from\" \u00a0  *\u00a0 The conventional passive measurement techniques can either consume \u00a0 \u00a0 \u00a0 excessive network resources and render excessive redundant data, Something seems awry around \"render excessive redundant data\", to the extent that I can't extrct meaning and propose an alternative. Section 2.4 \u00a0 \u00a0 \u00a0 overall network automation needs.\u00a0 Efforts are made to normalize \u00a0 \u00a0 \u00a0 the data representation and unify the protocols, so to simplify \u00a0 \u00a0 \u00a0 data analysis and provide integrated analysis across heterogeneous \"so as to\" Section 2.5 \u00a0 \u00a0 \u00a0 network with a low data sampling rate.\u00a0 Only when issues arise or \u00a0 \u00a0 \u00a0 critical trends emerge should telemetry data source be modified \u00a0 \u00a0 \u00a0 and telemetry data rates boosted as needed. I think we need \"\"the telemetry data source\". Section 3.1.2 \u00a0  *\u00a0 An example of the control plane telemetry is the BGP monitoring \u00a0 \u00a0 \u00a0 protocol (BMP), it is currently used for monitoring the BGP routes I'd end the sentence at this comma to avoid a comma splice. Section 3.2 \u00a0 \u00a0 \u00a0 responsible for configuring the desired data that might not be \u00a0 \u00a0 \u00a0 directly available form data sources.\u00a0 The subscription data can s/form/from/ Section 5 \u00a0  *\u00a0 Protocol transport used telemetry data and inherent security \u00a0 \u00a0 \u00a0 capabilities; There seems to be a word or two missing here, maybe \"used for\" and \"its inherent\". Section A.3.6 \u00a0  Various data planes raises unique OAM requirements.\u00a0 IETF has s/raises/raise/",
+        "type": "Abstain"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-11-26 05:20:09-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-26 05:20:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-12-01 14:08:05-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-01 14:08:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-11-29 07:09:28-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-29 07:09:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-11-18 21:17:05-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-18 21:17:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-10-29 05:48:11-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-11-30 18:09:14-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-11-30 18:33:15-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-11-30 18:09:14-08:00",
+        "text": "Thank you for being responsive to the SECDIR review threat to improve the security considerations text.\u00a0 Specifically,  https://mailarchive.ietf.org/arch/msg/secdir/GUvFWXP7n9IjXW8xlIdMS5ZE5u0/ . Even after these edits, there are a few straightforward ambiguities to clear up. (a) Section 2.\u00a0 \u201cWhen a network's endpoints do not represent individual users (e.g. in industrial, datacenter, and infrastructure contexts), network operations can often benefit from large-scale data collection without breaching user privacy.\u201d Is network telemetry architecture being restricted to such a limited applicability?\u00a0 To quote the original SECDIR thread, is this saying \u201cThe Network Telemetry Framework is not applicable to networks whose endpoints represent individual users, such as general-purpose access networks\u201d?\u00a0 If so, I\u2019d recommend being that explicit. (b) Section 2.1.\u00a0 \u201cTo preserve user privacy, the user packet content should not be collected.\u201d This is a great principle, but extremely nuanced and potentially complicated to implement.\u00a0 Is this saying (using the words of this framework), \u201cTo preserve the privacy of end-users, no user packet content should be collected.\u00a0 Specifically, the data objects generated, exported, and collected by the Network Telemetry Framework should not include any packet payload from traffic associated with end-users systems\u201d?  (c) Section 2.5.\u00a0 Please use stronger and consistent language. OLD Disclaimer: large-scale network data collection is a major threat to\t user privacy [ RFC7258 ].\u00a0 The network telemetry framework presented in\t this document should not be applied to collect and retain individual\t user data or any data that can identify end users without consent.\t Any data collection or retention using the framework must be tightly\t limited to protect user privacy. NEW Large-scale network data collection is a major threat to user privacy and may be indistinguishable from pervasive monitoring [ RFC7258 ].\u00a0 The network telemetry framework presented in this document must not be applied to generating, exporting, collecting, analyzing or retaining individual user data or any data that can identify end users or characterize their behavior without consent. The principles described in (a), (b) and (c) seems sufficiently important they shouldn\u2019t be scattered across the document.\u00a0 Please either make an applicability statement section early in the document or a dedicated privacy consideration section.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-12-02 06:45:16-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-11-30 18:33:15-08:00",
+        "text": "Thank you for being responsive to the SECDIR review thread to improve the security considerations text.\u00a0 Specifically,  https://mailarchive.ietf.org/arch/msg/secdir/GUvFWXP7n9IjXW8xlIdMS5ZE5u0/ . Even after these edits, there are a few straightforward ambiguities to clear up. (a) Section 2.\u00a0 \u201cWhen a network's endpoints do not represent individual users (e.g. in industrial, datacenter, and infrastructure contexts), network operations can often benefit from large-scale data collection without breaching user privacy.\u201d Is network telemetry architecture being restricted to such a limited applicability?\u00a0 To quote the original SECDIR thread, is this saying \u201cThe Network Telemetry Framework is not applicable to networks whose endpoints represent individual users, such as general-purpose access networks\u201d?\u00a0 If so, I\u2019d recommend being that explicit. (b) Section 2.1.\u00a0 \u201cTo preserve user privacy, the user packet content should not be collected.\u201d This is a great principle, but extremely nuanced and potentially complicated to implement.\u00a0 Is this saying (using the words of this framework), \u201cTo preserve the privacy of end-users, no user packet content should be collected.\u00a0 Specifically, the data objects generated, exported, and collected by the Network Telemetry Framework should not include any packet payload from traffic associated with end-users systems\u201d?  (c) Section 2.5.\u00a0 Please use stronger and consistent language. OLD Disclaimer: large-scale network data collection is a major threat to\t user privacy [ RFC7258 ].\u00a0 The network telemetry framework presented in\t this document should not be applied to collect and retain individual\t user data or any data that can identify end users without consent.\t Any data collection or retention using the framework must be tightly\t limited to protect user privacy. NEW Large-scale network data collection is a major threat to user privacy and may be indistinguishable from pervasive monitoring [ RFC7258 ].\u00a0 The network telemetry framework presented in this document must not be applied to generating, exporting, collecting, analyzing or retaining individual user data or any data that can identify end users or characterize their behavior without consent. The principles described in (a), (b) and (c) seems sufficiently important they shouldn\u2019t be scattered across the document.\u00a0 Please either make an applicability statement section early in the document or a dedicated privacy consideration section.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-02 06:45:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-12-01 08:47:38-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-01 08:47:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-12-02 05:10:58-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-29 05:48:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-02-22 07:44:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-02 05:10:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9232",
+  "evaluation_end": "2022-02-22 07:44:16-08:00",
+  "evaluation_start": "2021-10-29 05:48:11-07:00"
+}

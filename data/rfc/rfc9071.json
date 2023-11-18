@@ -1,0 +1,235 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-05-18 07:05:35-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-18 07:05:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-18 19:53:14-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-25 17:14:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-18 19:53:14-07:00",
+        "text": "I'm not sure I understand how the examples are consistent with the main specification, so let's please discuss it to either un-confuse me or fix the document. Section 3.9 seems to say that the oldest (source or redundant) text at the mixer takes priority when there is text from more than one source waiting to be sent, but the examples in Section 3.21 seem to show (e.g.) text received from A at time 20400 that is to be sent as redundancy, being sent after text from B received at time 20500 (sent as primary). Is the intent that if there is any primary text, the oldest primary text is sent first, and only if there is no outstanding primary text do we consider the redundant text? In a related vein, Section 3.10 says that a packet is sent when (among other things) \"330 ms has passed since already transmitted text was queued for transmission as redundant text\".\u00a0 But that doesn't say anything about the timer being reset by subsequent transmission or queuing of redundant text, so I'm not sure how in the Section 3.21 example, we say that transmitting B1 and B2 as redundancy was planned as 330 ms after packet 105 -- the original B2 was sent in packet 104, so shouldn't the 330ms start from packet 104's transmission?\u00a0 (The stated time for this seems to match 330ms after 104, so maybe the \"105\" is just a typo?) I also left a note in the comment that there's a remark about \"lower security level\" in Section 3.19 that's not really accurate; we should resolve that in some manner before the document proceeds.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-25 17:14:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-05-17 22:52:12-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-17 22:52:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-05-18 13:34:32-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-18 13:34:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-19 19:00:22-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-19 19:00:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-10 04:25:39-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-10 04:25:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-05-10 14:30:17-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-10 14:30:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-05 12:08:38-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-05-20 01:50:40-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-20 01:50:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-18 19:27:24-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-18 19:27:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-05-26 08:25:09-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-05 12:08:38-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9071",
+  "evaluation_end": "2021-05-26 08:25:09-07:00",
+  "evaluation_start": "2021-05-05 12:08:38-07:00"
+}

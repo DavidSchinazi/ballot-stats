@@ -1,0 +1,315 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-08-24 07:32:15-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-24 07:32:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-08-22 06:26:51-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-09-08 02:55:28-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-22 06:26:51-07:00",
+        "text": "# \u00c9ric Vyncke, INT AD, comments for  draft-ietf-ipsecme-iptfs-13 CC @evyncke Thank you for the work put into this document.  Please find below one blocking DISCUSS points, some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to Tero Kivinen for the shepherd's detailed write-up including the WG consensus, alas the justification of the intended status is missing :-( Please note that Tatuya Jinmei is the Internet directorate reviewer (at my request) and you may want to consider this int-dir review as well: https://datatracker.ietf.org/doc/review-ietf-ipsecme-iptfs-13-intdir-telechat-jinmei-2022-08-18/ I hope that this review helps to improve the document, Regards, -\u00e9ric ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Section 6.1 ``` \u00a0  An AGGFRAG payload is identified by the ESP Next Header value \u00a0  AGGFRAG_PAYLOAD which has the value 0x5.\u00a0 The value 5 was chosen to \u00a0  not conflict with other used values.\u00a0 The first octet of this payload \u00a0  indicates the format of the remaining payload data. ``` This is in direct conflict with  RFC 4303  (see below) IMHO as 5 is already allocated to ST ( RFC 1819 , which is still 'current' even if it was never used). But ESP  RFC 4303  section 2.6 says that this is an IP protocol number (and 5 is already allocated by the IANA): ``` \u00a0  The Next Header is a mandatory, 8-bit field that identifies the type \u00a0  of data contained in the Payload Data field, e.g., an IPv4 or IPv6 \u00a0  packet, or a next layer header and data.\u00a0 The value of this field is \u00a0  chosen from the set of IP Protocol Numbers defined on the web page of \u00a0  the IANA, e.g., a value of 4 indicates IPv4, a value of 41 indicates \u00a0  IPv6, and a value of 6 indicates TCP. ``` I.e., either this document needs to formally update  RFC 4303  by allowing any number or another IP protocol number must be requested to the IANA. ### Section 2.1, generic tunnel capability  ``` \u00a0  Other non-IP-TFS uses of this AGGFRAG mode have been suggested, such \u00a0  as increased performance through packet aggregation, as well as \u00a0  handling MTU issues using fragmentation.\u00a0 These uses are not defined \u00a0  here, but are also not restricted by this document. ``` Moreover, while IPSECme charter includes: ``` The demand for Traffic Flow Confidentiality has been increasing in the user community, but the current method defined in  RFC4303  (adding null padding to each ESP payload) is very inefficient in its use of network resources. The working group will develop an alternative TFC solution that uses network resources more efficiently. ``` it says nothing about a generic tunnelling protocol, which is usually INTAREA topic, and I cannot refrain from thinking that this tunnelling mechanism could be used on any connection-less transport, e.g., UDP or IP. Hence, this DISCUSS point is only to initiate a discussion with IPSECME chairs and AD; Christian Hopps has already given some explanations when I deferred this I-D. I understand that I am in the rough here (no reaction on int-area and int-dir review is positive). ### Section 2.2.6 Please also mention hop-limit and  RFC 8200 . ### Absence of ICMP considerations Should there be an equivalent of section 6 of  RFC 4301  about ICMP ? As several unprotected packets can be bundled together, some guidance to the implementers will be welcome.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-08 02:55:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-08-24 18:22:06-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-09-04 17:43:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-24 18:22:06-07:00",
+        "text": "## Discuss ### S6.1 * I think this document should get a separate protocol value from the IANA \u00a0 \"Protocol Numbers\" registry, since that's where 4303 S2.6 clearly says they \u00a0 values come from. \u00a0 The \"value of 41 indicates IPv6\" makes it pretty clear where this field \u00a0 gets its values from. \u00a0  https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-04 17:43:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-08-25 06:05:45-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-25 06:05:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-08-23 08:06:07-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-09-09 04:20:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-23 08:06:07-07:00",
+        "text": "# GEN AD review of  draft-ietf-ipsecme-iptfs-14 CC @larseggert Thanks to Peter E. Yee for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/VKlfYh3uoGomO4_Lv8e6kltl36g ). ## Discuss ### Section 2.4.1, paragraph 3 ``` \u00a0 \u00a0  For similar reasons as given in [ RFC7510 ] the non-congestion- \u00a0 \u00a0  controlled mode should only be used where the user has full \u00a0 \u00a0  administrative control over the path the tunnel will take.\u00a0 This is \u00a0 \u00a0  required so the user can guarantee the bandwidth and also be sure as \u00a0 \u00a0  to not be negatively affecting network congestion [ RFC2914 ].\u00a0 In this \u00a0 \u00a0  case, packet loss should be reported to the administrator (e.g., via \u00a0 \u00a0  syslog, YANG notification, SNMP traps, etc.) so that any failures due \u00a0 \u00a0  to a lack of bandwidth can be corrected. ``` There is a lot more nuance and there are a lot more restrictions in  RFC7510  that also apply here. If a non-congestion-controlled mode is desired, especially without even using  RFC8084  circuit breakers, similar mandatory text needs to be crafted for this mechanism. (I would also strongly suggest to require circuit breakers here.) ### Section 2.4.2, paragraph 0 ``` \u00a0 2.4.2.\u00a0 Congestion-Controlled Mode ``` This mode adds a LOT of complexity to this mechanism. Is this really needed? Could not  RFC8229  be used instead of defining an entirely separate congestion control scheme for (padded/fragmented) ESP? ### Section 2.4.2.1, paragraph 1 ``` \u00a0 \u00a0  In additional to congestion control, implementations MAY choose to \u00a0 \u00a0  define and implement circuit breakers [ RFC8084 ] as a recovery method \u00a0 \u00a0  of last resort.\u00a0 Enabling circuit breakers is also a reason a user \u00a0 \u00a0  may wish to enable congestion information reports even when using the \u00a0 \u00a0  non-congestion-controlled mode of operation. ``` This makes no sense. If implemented in addition to CC, circuit breakers will never fire, because a functioning congestion control algorithm will always maintain a send rate below the circuit breaker threshold. What would make sense is to use circuit breakers in the non-congestion-controlled case, to provide a safety mechanism in cases the network provisioning changes for an active tunnel. ### Section 3.1, paragraph 0 ``` \u00a0 3.1.\u00a0 ECN Support ``` There is a lot more nuance to this, as described in RC6040. This document needs to follow that existing standard rather than define another variant. ### Section 6.1.2, paragraph 9 ``` \u00a0 \u00a0  RTT: \u00a0 \u00a0 \u00a0 \u00a0 A 22-bit value specifying the sender's current round-trip time \u00a0 \u00a0 \u00a0 \u00a0 estimate in microseconds.\u00a0 The value MAY be zero prior to the \u00a0 \u00a0 \u00a0 \u00a0 sender having calculated a round-trip time estimate.\u00a0 The value \u00a0 \u00a0 \u00a0 \u00a0 SHOULD be set to zero on non-AGGFRAG_PAYLOAD-enabled SAs.\u00a0 If the \u00a0 \u00a0 \u00a0 \u00a0 RTT is equal to or larger than 0x3FFFFF the value MUST be set to \u00a0 \u00a0 \u00a0 \u00a0 0x3FFFFF. ``` This can only encode RTTs of up to around four seconds. That is too little for Internet usage. (Same concern about other 22-bit microsecond values below.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-09 04:20:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-08-09 20:01:05-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-08-18 09:48:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-09 20:01:05-07:00",
+        "text": "One point which I think will be simple to address: (6) As malformed packets are sometimes an attack vector, it would be good to specify behavior in response to pathological BlockOffsets, for instance: - What if two BlockOffset fields disagree? e.g., with 500 byte outer packets, what if the sequence of block offsets is {0, 750, 100}? Does the third packet have 250 or 100 bytes of the first data block? Drop the packet, kill the SA, ignore one and accept the other, or something else? - What if a pad block is in a packet with a BlockOffset greater than the packet length? Would the receiver skip over the specified bytes in the subsequent packet, even though padding is supposed to only be at the end of packets?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-18 09:48:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-08-25 00:36:36-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-08-25 08:19:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-25 00:36:36-07:00",
+        "text": "Section 7.1 creates an IANA registry with \"Expert Review\" rules.\u00a0 Of such a registry, Section 4.5 of  RFC 8126  says, among other things: \u00a0  The required documentation and review criteria, giving clear guidance \u00a0  to the designated expert, should be provided when defining the \u00a0  registry. This document doesn't do so.\u00a0 Is that guidance available somewhere else, or should some be added here?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-25 08:19:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-08-23 15:15:53-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-23 15:15:53-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-08-24 07:22:50-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-24 07:22:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-07-14 13:08:54-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-08-23 15:43:16-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-08-23 15:44:16-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-08-23 15:43:16-07:00",
+        "text": "I am strongly supporting Lars' DISCUSS points (actually, enough that I decided to ballot discuss too), especially that around Section 2.4.1, paragraph 3: \u00a0  The packet send \u00a0  rate is constant and is not automatically adjusted regardless of any \u00a0  network congestion (e.g., packet loss). \u00a0  For similar reasons as given in [ RFC7510 ] the non-congestion- \u00a0  controlled mode should only be used where the user has full \u00a0  administrative control over the path the tunnel will take.\u00a0 This is \u00a0  required so the user can guarantee the bandwidth and also be sure as \u00a0  to not be negatively affecting network congestion [ RFC2914 ].\u00a0 In this \u00a0  case, packet loss should be reported to the administrator (e.g., via \u00a0  syslog, YANG notification, SNMP traps, etc.) so that any failures due \u00a0  to a lack of bandwidth can be corrected. This is a largely unrealistic requirement -- unless you are specifically meaning \"a bump-in-the-wire deployment over a point to point link\" users fairly much never have control over the path that the tunnel will take. At some point the primary path **will** go down, and the tunnel will route over some backup path, most likely at 3AM on the Sunday that the CEO's daughter is getting married... It what you are describing really is \"only ever use this as a bump-in-the-wire over a PtP interface\" or \"make sure that the configured bandwidth is many many magnitudes smaller than the smallest link in the network, even when congested\", then please state that instead. As written, this text seems dangerous: you are basically handing an enterprise network admin a DoS cannon and washing your hands of the consequences.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-08-25 07:23:38-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-08-23 15:44:16-07:00",
+        "text": "I supporting Lars' DISCUSS points, especially that around Section 2.4.1, paragraph 3: \u00a0  The packet send \u00a0  rate is constant and is not automatically adjusted regardless of any \u00a0  network congestion (e.g., packet loss). \u00a0  For similar reasons as given in [ RFC7510 ] the non-congestion- \u00a0  controlled mode should only be used where the user has full \u00a0  administrative control over the path the tunnel will take.\u00a0 This is \u00a0  required so the user can guarantee the bandwidth and also be sure as \u00a0  to not be negatively affecting network congestion [ RFC2914 ].\u00a0 In this \u00a0  case, packet loss should be reported to the administrator (e.g., via \u00a0  syslog, YANG notification, SNMP traps, etc.) so that any failures due \u00a0  to a lack of bandwidth can be corrected. This is a largely unrealistic requirement -- unless you are specifically meaning \"a bump-in-the-wire deployment over a point to point link\" users fairly much never have control over the path that the tunnel will take. At some point the primary path **will** go down, and the tunnel will route over some backup path, most likely at 3AM on the Sunday that the CEO's daughter is getting married... It what you are describing really is \"only ever use this as a bump-in-the-wire over a PtP interface\" or \"make sure that the configured bandwidth is many many magnitudes smaller than the smallest link in the network, even when congested\", then please state that instead. As written, this text seems dangerous: you are basically handing an enterprise network admin a DoS cannon and washing your hands of the consequences.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-08-26 12:18:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-25 07:23:38-07:00",
+        "text": "[ Chat with Christian Hopps on the telechat -- I explained my concerns and Christian will add some text around how to deploy this safely / some background context. Even if you are the network admin and in complete control of the network, having some \"here are some things to keep in mind when deploying, like that that will ALWAYS use the configured bandwidth so make sure you will always have that free during failures and congestion and things like that...\" type warnings are helpful. ] Clearing my discuss.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-26 12:18:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-08-25 06:39:41-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-14 13:08:54-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-09-08 07:59:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-08-25 06:39:41-07:00",
+        "text": "Thanks for working on this specification. I found this spec to be a mix of transport and non-transport related topics and had to think a bit more due to lack of rational behind choices made. I would like to discuss - why there is no normative text (MUST/MUST NOT) for non-congestion controlled mode over operation in this specification that prohibits the use of non-congestion controlled mode out side of controlled environment?  I am also supporting Lars's discuss on 3.1 ECN support.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-09-22 17:55:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-08 07:59:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9347",
+  "evaluation_end": "2022-09-22 17:55:17-07:00",
+  "evaluation_start": "2022-07-14 13:08:54-07:00"
+}

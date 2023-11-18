@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-11-28 18:48:18-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-28 18:48:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-11-29 08:25:13-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-29 08:25:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-12-05 09:10:14-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 09:10:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-12-05 13:53:28-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-02 07:17:00-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-12-05 13:53:28-08:00",
+        "text": "This is a process DISCUSS. This document replaces  draft-randriamasy-alto-cost-calendar , but this information is not reflected in the datatracker.\u00a0 The individual draft has an IPR declaration attached to it [1], but the failure to link the two documents has resulted in the IPR indication not carrying over.\u00a0  The direct effect is that the IETF Last Call [2] explicitly says that \"No IPR declarations have been submitted directly on this I-D.\" The Shepherd writeup says that \"The entire author team has confirmed conformance with  BCP 78 /79 with the shephered.\" -- but that doesn't indicate whether IPR is present or not, just conformance.\u00a0 In looking through the mailing list archive, I couldn't find mention of the IPR at adoption [3] [4] or at WGLC [5]. The declaration was made early in the process [6], and there was no discussion in the WG about it.\u00a0 I can see how it would be easy to overlook. Nonetheless, it is necessary for the WG (and the IETF as a whole) to explicitly consider the declaration before proceeding with the publication of this document. [1]  https://datatracker.ietf.org/ipr/2392/ [2]  https://mailarchive.ietf.org/arch/msg/alto/LI01TfoTCnJRDImEUXA-9x8KsZ4 [3]  https://mailarchive.ietf.org/arch/msg/alto/xFErWArHhpF-0ZVR_1BAhgzRj3k [4]  https://mailarchive.ietf.org/arch/msg/alto/-D7cj6qoD-Q3ye3rpuj8li2xWms [5]  https://mailarchive.ietf.org/arch/msg/alto/67W_XuMfu7JMXQEEZFLkulw_xBI [6]  https://mailarchive.ietf.org/arch/msg/ipr-announce/lnZ65z15_Dn3bylJp7h9rGHxZFk",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-02 07:17:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-02-28 08:55:09-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-26 00:56:34-08:00",
+        "text": "Very easy-to-fix issue with date format specification: \u2014 Section 5 \u2014 \u00a0  Both extensions need to return calendar start time (calendar-start- \u00a0  time, a point in time), which MUST be specified using the HTTP header \u00a0  fields format specified in [ RFC7231 ] where, however, timestamps are \u00a0  still displayed with the acronym \"GMT\" rather than \"UTC\": \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Date: Tue, 15 Nov 2014 08:12:31 GMT The problem with this text is that 7231 specifies three formats and you don\u2019t make it clear which one you want, other than by example.\u00a0 The lack of a section reference doesn\u2019t help (7231 is not small), but that wouldn\u2019t be sufficient anyway.\u00a0 I suggest this: NEW Both extensions return calendar start time (calendar-start-time, a point in time), which MUST be specified as an HTTP \u201cDate\u201d header field using the IMF-fixdate format specified in Section 7.1.1.1 of [ RFC7231 ].\u00a0 Note that the IMF-fixdate format uses \u201cGMT\u201d, not \u201cUTC\u201d, to designate the time zone, as in this example: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Date: Tue, 15 Nov 2014 08:12:31 GMT END \u2014 Section 5.1.2 \u2014 \u00a0  For example: suppose the \"calendar-start-time\" member has value \"Mon, \u00a0  30 Jun 2014 at 00:00:00 GMT\", the \"time-interval-size\" member has That isn\u2019t a valid calendar-start-time value unless you remove \u201c at\u201d.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-28 08:55:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-12-04 20:35:56-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-12-04 20:35:56-08:00",
+        "text": "Thanks for the work on this document. I see value, but have a couple of points I think need to be resolved prior to publication: \u00a73.1, definition of \"time-interval-size\": What is the reasoning behind using a string to define the unit? That requires text parsing/comparison to determine the interval. I assume this is intended more for machine use than for human use. Did the working group consider making this a multiple of some primitive time interval? E.g. number of seconds, or perhaps number of minutes? it seems like that would be easier (and therefore less error prone) to interpret. If there is a reason to use a text field, is there an enumeration of legal unit values? Can I use \"12 parsecs\"? \u00a74.1.2, last paragraph: \"The ALTO Client thus may use the same calendar for the next 4 days starting at \"calendar-start-time\" and will only need to request a new one for Friday July 4th at 00:00:00 GMT.\" This implies that if an ALTO server delivers a calendar with a long duration, it cannot make changes to the metrics in that calendar, or if it does make them it cannot expect the client to learn about those changes. Is that the intent? If so, it seems to contradict language in the security considerations (\u00a76) that future events may change and that the client should ensure information updates. (The operational considerations [\u00a77] also say the client does not need to query again during the calendar duration.)",
+        "type": "Discuss"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-12-06 01:21:17-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-03 14:14:36-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-12-06 01:21:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-09 17:20:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-03 14:14:36-08:00",
+        "text": "hat's the justification for removing the 'constraints' field ofReqEndpointCostMap, compared to RFC 7285?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-09 17:20:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-12-05 08:31:38-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 08:31:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-27 01:54:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-12-06 04:48:23-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-06 04:48:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-05 06:46:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-12-06 00:46:38-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-06 00:46:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-11-28 00:43:32-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-02 15:16:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-12-04 10:47:22-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-12-04 10:47:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-12-03 23:08:56-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-03 23:08:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-19 06:41:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-28 00:43:32-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8896",
+  "evaluation_end": "2020-03-19 06:41:28-07:00",
+  "evaluation_start": "2018-11-28 00:43:32-08:00"
+}

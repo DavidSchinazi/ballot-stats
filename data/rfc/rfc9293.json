@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-09-23 06:34:52-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-23 06:34:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-09-22 20:33:55-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-09-22 20:33:55-07:00",
+        "text": "Many thanks for taking on the task of producing a roll-up update for the core TCP specification!\u00a0 I am sure it was a lot of work, but I am happy to see it done. That said, I do have a few points that I would like to have a bit more discussion on before the document is published; I'm happy to see that Warren already linked to https://www.ietf.org/blog/handling-iesg-ballot-positions/  on the topic of what a DISCUSS position can (and cannot) mean. (1) We incorporate some long-standing enhancements that improve the security and robustness of TCP (in particular, random ISN and protection against off-path in-window attacks come to mind), but only at SHOULD or MAY requirements level. For example, we currently say: \u00a0  A TCP implementation MUST use the above type of \"clock\" for clock- \u00a0  driven selection of initial sequence numbers (MUST-8), and SHOULD \u00a0  generate its Initial Sequence Numbers with the expression: \u00a0  ISN = M + F(localip, localport, remoteip, remoteport, secretkey) and: \u00a0 \u00a0 \u00a0 \u00a0  +\u00a0  RFC 5961  [37] section 5 describes a potential blind data \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 injection attack, and mitigation that implementations MAY \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 choose to include (MAY-12).\u00a0 TCP stacks that implement \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  RFC 5961  MUST add an input check that the ACK value is \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 [...] What prevents us from making a MUST-level requirement for randomized ISNs?\u00a0 Is it just the fact that it was only a SHOULD in  RFC 6528  and a perception that promoting to a MUST would be incompatible with retaining Internet Standard status? Likewise, what prevents using stronger normative language (e.g., MUST) for the  RFC 5961  protections? It seems to me that these mechanisms are of general applicability and provide significant value for use of TCP on the internet, even though they are not fully robust and do not use cryptographic mechanisms.\u00a0 If there are scenarios where their use is harmful or even just not applicable, that seems like an exceptional case that should get documented so as to strengthen the general recommendation for the non-exception cases. (2) I think this is just a process question to ensure that the IESG knows what we are approving at Internet Standard maturity, though it is certainly possible that I misunderstand the situation. In Section 3.7.3 we see the normative statement (SHLD-6) that \"when the when the effective MTU of an interface varies packet-to- packet, TCP implementations SHOULD use the smallest effective MTU of the interface to calculate the value to advertise in the MSS option\".\u00a0 This seems to originate in  RFC 6691  (being obsoleted by this document), but  RFC 6691 is only an Informational document and has not had an opportunity to \"accumulate experience at Proposed Standard before progressing\", to paraphrase  RFC 6410 . Similarly, Section 3.9.2 has (SHLD-23) \"Generally, an application SHOULD NOT change the DiffServ field value during the course of a connection (SHLD-23).\"\u00a0 This is a bit harder to track down, as the DiffServ field was not always known by that name.\u00a0 I actually failed to find a directly analogous previous statement of this guidance (presumably my error), and thus don't know if it had any experience at the PS level or not. RFC 6410  seems pretty clear that some revisions are okay in Internet Standards without such \"bake time\" at PS, but it does seem like something that should be done consciously rather than by accident. (3) This is also a process point for explicit consideration by the IESG. Appendix A.2 appears to discuss a few (rare) scenarios in which the technical mechanisms of this document fail catastrophically (e.g., getting stuck in a SYN|ACK loop and failing to complete the handshake). Does this meet the \"resolved known design choices\" and \"no known technical omission\" bar required by  RFC 2026  even for *proposed* standard? (Note that  RFC 2026  explicitly says that the IESG may waive this requirement, at least for PS.) (AFAICT one such scenario is reported at https://www.rfc-editor.org/errata_search.php?eid=3305  , which the change log for this document calls out as \"not applicable due to other changes\"; I am not sure which \"other changes\" are intended, for this case.) (4) Another point mostly just to get explicit IESG acknowledgment (elevating one of Lars' comments to DISCUSS level, essentially). As the changelog (and gen-art reviewer!) notes: \u00a0  Early in the process of updating  RFC 793 , Scott Brim mentioned that \u00a0  this should include a PERPASS/privacy review.\u00a0 This may be something \u00a0  for the chairs or AD to request during WGLC or IETF LC. I don't see any evidence to suggest that such a review actually occurred.\u00a0 Do we want to seek out such a targeted review before progressing?",
+        "type": "Discuss"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-09-22 13:16:29-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-22 13:16:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-09-19 18:07:51-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-19 18:07:51-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-09-22 14:19:09-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-22 14:19:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-09-22 19:00:07-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-22 19:00:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-09-20 07:18:33-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-10-11 02:46:18-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-20 07:18:33-07:00",
+        "text": "The IESG needs to approve the following DOWNREFs during the telechat: \u00a0 DOWNREF [10] from this Internet Standard to Proposed Standard  RFC6298 . \u00a0 DOWNREF [2] from this Internet Standard to Draft Standard  RFC1191 . \u00a0 DOWNREF [7] from this Internet Standard to Proposed Standard  RFC3168 . \u00a0 DOWNREF [11] from this Internet Standard to Proposed Standard  RFC6633 . \u00a0 DOWNREF [9] from this Internet Standard to Draft Standard  RFC5681 . \u00a0 DOWNREF [5] from this Internet Standard to Proposed Standard  RFC2675 . \u00a0 DOWNREF [4] from this Internet Standard to Proposed Standard  RFC2474 .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-11 02:46:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-09-08 11:45:04-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-04-04 14:07:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-09-23 05:26:35-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-23 05:26:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-09-22 20:59:39-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-22 20:59:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-09-22 15:51:13-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-09-22 15:52:37-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-09-22 15:51:13-07:00",
+        "text": "[ \"Then I said unto you, Dread not, neither be afraid of of this DISCUSS, for it be easy to address\" ] I'm raising one of Erik's comments to a DISCUSS: ---- [S3.9.2.1] * I feel like there should be some additional caveat about security \u00a0 implications of support for source routing.\u00a0  RFC 6274 , for example, says \u00a0 packets with LSRR (6274s3.13.2.3) and SSRR (6274s3.13.2.4) options should \u00a0 be dropped, citing various security concerns. \u00a0 I'm not sure there needs to be a lot of text; perhaps just an observation \u00a0 that some end systems may not support the source route semantics described \u00a0 here for security (or policy) reasons? ---- I realize that this document isn't intended to be a summary of all RFCs which mention anything related to TCP, but this particular point seems like it could do with an extra bit of reinforcement. As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-12-16 10:32:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-22 15:52:37-07:00",
+        "text": "[ \"Then I said unto you, Dread not, neither be afraid of of this DISCUSS, for it be easy to address\" ] I'm raising one of Erik's comments to a DISCUSS, because I think that it is important enough that it needs addressing: ---- [S3.9.2.1] * I feel like there should be some additional caveat about security \u00a0 implications of support for source routing.\u00a0  RFC 6274 , for example, says \u00a0 packets with LSRR (6274s3.13.2.3) and SSRR (6274s3.13.2.4) options should \u00a0 be dropped, citing various security concerns. \u00a0 I'm not sure there needs to be a lot of text; perhaps just an observation \u00a0 that some end systems may not support the source route semantics described \u00a0 here for security (or policy) reasons? ---- I realize that this document isn't intended to be a summary of all RFCs which mention anything related to TCP, but this particular point seems like it could do with an extra bit of reinforcement. As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-16 10:32:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-09-22 13:45:17-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-08 11:45:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-02-17 06:37:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-22 13:45:17-07:00",
+        "text": "* I found at least one reference that should be normative reference but they are not. Section 3.8.5 : describes -- \u00a0   \u00a0 \u00a0 TCP implementations MUST still include support for the urgent mechanism (MUST-30). Details can be found in  RFC 6093  [38] \u00a0  \u00a0 This to ne makes  RFC6093  a must to read and understand to deploy this specification. Hence it should in the normative references. * (This perhaps more process thing than technical), me and Benjamin Kaduk discussed another issue regarding urgent pointer. This specification specifies - \u00a0 \u00a0 \u00a0  Pointer indicates first non-urgent octet\u00a0 \u00a0 \u00a0  | MUST-62|  \u00a0  \u00a0  RFC1011  rectifies  RFC973  to - \u00a0 \u00a0 \u00a0 The urgent pointer points to the \u00a0 \u00a0 \u00a0 \u00a0  last octet of urgent data (not to the first octet of non-urgent \u00a0 \u00a0 \u00a0 \u00a0  data). \u00a0 So what does happen to  RFC1011  rectification then when 793bis is not bis anymore? Is this a known fact and there is conscious decision not to do anything about it? or was this a unknown fact and that part of  RFC1011  need to be obsoleted (how?)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-04-04 15:02:48-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-17 06:37:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9293",
+  "evaluation_end": "2022-04-04 15:02:48-07:00",
+  "evaluation_start": "2021-09-08 11:45:04-07:00"
+}

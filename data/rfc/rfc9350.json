@@ -1,0 +1,235 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-05 07:17:09-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-06 04:52:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-05 07:17:09-07:00",
+        "text": "I am balloting DISCUSS because I believe that operational and security considerations need to be addressed or at least mentioned. I believe these points should be easy to address with some additional text. (1) When is a router's participation in a particular Flex-Algorithm advertised? It seems to me that there might be a \"chicken-and-egg\" problem that should at least be mentioned in the Operational Considerations.\u00a0 Let me explain: \u00a711: \u00a0  When a router is configured to support a particular Flex-Algorithm, \u00a0  we say it is participating in that Flex-Algorithm. \u00a75: \u00a0  To guarantee loop-free forwarding for paths computed for a particular \u00a0  Flex-Algorithm, all routers that (a) are configured to participate in \u00a0  a particular Flex-Algorithm, and (b) are in the same Flex-Algorithm \u00a0  definition advertisement scope MUST agree on the definition of the \u00a0  Flex-Algorithm.\u00a0 The following procedures ensure this condition is \u00a0  fulfilled. These statements make it look like support for a particular Flex-Algorithm is advertised when the routing process is enabled -- because the router is \"configured to support/participate\".\u00a0 However, at this point, the router may not have received a FAD for the Flex-Algorithm it is advertising support for. Besides the number of the Flex-Algorithm, the participation advertisement implies support for a specific Metric-Type and Calc-Type.\u00a0 But, again, nodes may be advertising this support blindly if the FAD is not known yet. Presumably, the operator configures support for a specific Flex-Algorithm with a FAD in mind.\u00a0 IOW, there should be no surprises.\u00a0 However, I would like to see the relationship between the support/participation configuration and the FAD components explicitly called out. Note that this issue is related to the ability of an attacker to hijack a particular Flex-Algorithm, but oriented at the ability of the operator to cause harm to their network. (2) Related to the point above.  What should a node configured to advertise support for a specific Flex-Algorithm do if it receives a FAD that it cannot support?\u00a0 For example, if the calc-type is unknown or unsupported. [\u00a713 already addresses the case of an unsupported metric-type.] (3) The Security Considerations section says that the attacks listed can be addressed through authentication.\u00a0 However, it fails to consider what a rogue node (one that is authenticated and taken over by an attacker) can do.\u00a0  This type of attack is not preventable through authentication, and it is not different from advertising any other incorrect information through IS-IS/OSPF.\u00a0 It should be mentioned in the Security Considerations section. Also, the effect of a hijacked/modified FAD may result in traffic not being delivered at all -- for example, by using an unsupported Metric-Type or Calc-Type.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-06 04:52:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-06 06:45:02-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-06 06:45:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-05 17:32:03-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 17:32:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-09-26 06:14:05-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-26 06:14:05-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-09-30 05:05:06-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-30 05:05:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-05 17:45:34-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 17:45:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-05 09:11:45-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 09:11:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-03 13:08:58-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-03 13:08:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-05 14:50:03-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 14:50:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-05 04:47:10-07:00",
+        "end_reason": "new_position",
+        "start": "2022-09-26 06:14:04-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-07 11:53:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-05 04:47:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9350",
+  "evaluation_end": "2022-10-07 11:53:06-07:00",
+  "evaluation_start": "2022-09-26 06:14:04-07:00"
+}

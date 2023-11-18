@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-08-12 10:01:03-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-12 10:01:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-08-11 12:02:05-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-11 12:02:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-07-23 13:56:46-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-08-13 01:11:43-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-10 19:53:33-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-13 01:11:43-07:00",
+        "text": "I agree with Roman that the authorization model seems under-developed. While I recognize that there is need for flexibility across various deployments, I think that we should be providing a default model (and procedures for it) that will apply in many cases, and let deployments specify alternate models if needed.\u00a0 This stuff is hard enough to get right that we should have a secure option that people can use if they don't need to have customized details.\u00a0 (To be clear, I agree with the change of focus from -24 to -25 on the properties that a security policy needs to provide and/or consider, as that is fundamentally the important thing.\u00a0 I just want a fallback/default option that \"does something reasonable in most cases\" in addition. Doing that by reference to some other existing thing would be fine, if such a thing exists.) In particular, the current text seems to rely on the authorization model including: (1) the RD knowing how clients will be using it (and thus what properties the RD needs to enforce), which in the general case cannot be known (though for static networks it could be), yet I don't see any discussion that indicates this as a prerequisite; and (2) the client either knowing out-of-band that an entity is authorized to act as a RD or just blindly trusting any of the unauthenticated (*) advertisement mechanisms.\u00a0 (* Yes, there may be some protection in the network on subscribing to the relevant multicast address, DNS-SD, etc., but the client cannot a priori know that such protections are in place.) Relatedly, the naming model and naming authority should have some clearer discussion.\u00a0 We do mention in Section 7 the possibility for a weak naming model where the RD is responsible for enforcing uniqueness of names but otherwise link attributes are the primary authorization criteria (vs. a traditional scheme with a naming authority and naming hierarchy), but with naming as a fundamental prerequisite of any authentication/authorization scheme, I think clearer discussion of how a naming model is to be selected (and, perhaps more importantly, that it must be fixed as part of a given deployment) for a given network is needed. If I understand correctly, we have some codepoint squatting going on in the examples (e.g., for resource types). We should talk about the security properties of the various RD discovery mechanisms that are defined.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-10 19:53:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-08-12 11:35:00-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-12 11:35:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-08-05 00:31:27-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-01 03:13:11-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-05 00:31:27-07:00",
+        "text": "Thank you for the work put into this document. I am little puzzled by the document shepherd's write-up dated more than one year ago (the responsible AD has even changed and the change is not reflected in the write-up)... while well-written this write-up seems to indicate neither a large consensus nor a deep interest by the CORE WG community. But, I am trusting the past and current responsible ADs on this aspect. Did the authors check with 6MAN WG about the new RDAO option for IPv6 NDP ? I was unable to find any 6MAN email related to this new NDP option and, after checking with the 6MAN WG chairs, they also do not remember any discussion. BTW, I appreciated the use of ASCII art to represent an entity-relationship diagram ! Please find below a couple of non-blocking COMMENTs (and I would appreciate a reply to each of my COMMENTs) and 2 blocking DISCUSS points (but only trivial actions/fixes are required). I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == -- Section 4.1 -- It will be trivial to fix, in IPv6 address configuration (SLAAC vs. DHCP) is orthogonal to DHCP 'other-information'. E.g., even if address is configured via SLAAC, DHCPv6 other-information can be used to configure the Recursive DNS Server (or possibly the RD). -- Section 4.1.1 -- Another trivial DISCUSS to fix: in which message is this RDAO sent ? I guess unicast Router Advertisement but this MUST be specified.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-01 03:13:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-08-12 00:05:52-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-01-29 14:27:36-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-12 00:05:52-07:00",
+        "text": "[[ discuss ]] [ section 4.1.1 ] * Did this get presented to 6man at any point, either via mail to the list or \u00a0 chair or in a presentation slot at an IETF meeting or a 6man interim? \u00a0 I feel confident that there would be no objection to the option as described \u00a0 here, but the working group should have its chance to make an evaluation \u00a0 irrespective of my opinion. \u00a0 --- \u00a0 If this is to be used when link-local methods don't work, another option \u00a0 would have been to add an RD PVD API key and recommend including a PVD \u00a0 option. [ section 4.1.1 & 9.2 ] * Please clarify which ND messages can carry an RDAO.\u00a0 I suspect they should \u00a0 only appear in RAs, but it would be good to state the expectation explicitly. [ Appendix A. ] * Can you explain the ff35:30:2001:db8:1 construction?\u00a0  RFC 3306  section 4 \u00a0 defines some fine-grained structure, and I'm wondering how a group ID of 1 \u00a0 is selected/computed/well known.\u00a0 If there is already a COAP document \u00a0 describing this vis.  RFC 3307  section 4.*, perhaps it's worth dropping a \u00a0 reference in here.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-29 14:27:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-08-12 22:16:44-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-12 22:16:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-08-13 00:36:04-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-13 00:36:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-08-13 05:44:37-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-13 05:44:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-08-11 19:57:28-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-15 16:21:25-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-11 19:57:28-07:00",
+        "text": "There appear to be a few areas of straightforward, under-specified elements of the authorization model.\u00a0  -- How does the RD know that a node claiming to be a CT is in fact a CT and is permitted to register on behalf of end-points?\u00a0 It seems like there is a missing, simple statement to make that this is configured out of band with the RD?\u00a0 Or is that carrier somehow in a authentication credentials?\t -- Is there are reason why there is not normative guidance requiring the RD to check whether authentication clients are authorized to register particular resources?\u00a0 Section 7.1 covers the issue, but all of Section 7.* is explicitly noted as informative.\u00a0 Section 8.1. says \u201cEndpoint authentication needs to be checked independently of whether there are configured requirements on the credentials for a given endpoint name (Section 7.1) or whether arbitrary names are accepted (Section 7.1.1)\u201d but this text seems to frame it as authentication issue.\u00a0 Section 8.2 seems to stress only the distinction between the registration and lookup API. -- Section 8.1.\u00a0 Per \u201cIf the server does not check whether the identifier provided in the DTLS handshake matches the identifier used at the CoAP layer then it may be inclined to use the endpoint name for looking up what information to provision to the malicious device.\u201d, this is good advice.\u00a0 If DTLS PSK and RPK are used, what identifiers does the RD have to check to ensure the DTLS and CoAP layers match?\u00a0 Per 9.1.3.1. (for PSK) and 9.1.3.2.1 (for RPK) of  RFC7252  there is the notion of identifiers for DTLS but those don\u2019t manifest in CoAP?\u00a0 Additionally, when DTLS with a certificate is used, is it intended to compare the subjectAltName with the authority in the Registration Base URI (i.e., which exact certificate fields should it compare with the CoAP)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-15 16:21:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-08-11 12:27:00-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-23 13:56:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-03-07 12:17:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-11 12:27:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9176",
+  "evaluation_end": "2021-03-07 12:17:51-08:00",
+  "evaluation_start": "2020-07-23 13:56:46-07:00"
+}

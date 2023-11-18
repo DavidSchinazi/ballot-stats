@@ -1,0 +1,321 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-16 23:08:47-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-16 23:08:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-12-16 05:21:43-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-16 05:21:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-18 13:44:26-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 13:44:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-17 09:56:33-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-06-17 09:38:15-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-17 09:56:33-08:00",
+        "text": "I support Eric's DISCUSS point about the TTL, but I want to go a step further because this document contradicts  rfc5881 , which is clear about the TTL setting (from \u00a75): \u00a0  If BFD authentication is not in use on a session, all BFD Control \u00a0  packets for the session MUST be sent with a Time to Live (TTL) or Hop \u00a0  Limit value of 255.\u00a0 All received BFD Control packets that are \u00a0  demultiplexed to the session MUST be discarded if the received TTL or \u00a0  Hop Limit is not equal to 255.\u00a0 A discussion of this mechanism can be \u00a0  found in [GTSM]. \u00a0   \u00a0  If BFD authentication is in use on a session, all BFD Control packets \u00a0  MUST be sent with a TTL or Hop Limit value of 255.\u00a0 All received BFD \u00a0  Control packets that are demultiplexed to the session MAY be \u00a0  discarded if the received TTL or Hop Limit is not equal to 255.\u00a0 If \u00a0  the TTL/Hop Limit check is made, it MAY be done before any \u00a0  cryptographic authentication takes place if this will avoid \u00a0  unnecessary calculation that would be detrimental to the receiving \u00a0  system. OTOH, Section 4 of this document specifies:  \u00a0 \u00a0  TTL or Hop Limit: MUST be set to 1 to ensure that the BFD \u00a0 \u00a0  packet is not routed within the Layer 3 underlay network.\u00a0 This \u00a0 \u00a0  addresses the scenario when the inner IP destination address is \u00a0 \u00a0  of VXLAN gateway and there is a router in underlay which \u00a0 \u00a0  removes the VXLAN header, then it is possible to route the \u00a0 \u00a0  packet as VXLAN\u00a0 gateway address is routable address. Not wanting the packet to be routed in the underlay sounds like a reasonable justification -- but I couldn't find the specification in  rfc7348  about \"a router in underlay which removes the VXLAN header\".\u00a0 Maybe I missed it... Independent of VXLAN, the conflict with  rfc5881  remains -- given the text above, it seems to me that it would be ok if the TTL was set to 1 if authentication is is use, but this document doesn't talk about requiring authentication.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-17 09:38:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-16 21:39:45-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-16 21:39:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-16 15:43:02-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-29 13:31:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-16 15:43:02-08:00",
+        "text": "I have a few points that I think merit IESG discussion. (1) I see that several directorate reviewers expressed unease at the destination (IP and) MAC address assignment procedure for the inner VXLAN headers, and appreciate that there was extensive on-list discussion (more than I could follow).\u00a0 That said, I failed to find a clear statement of why the current text is believed to be safe, and in fact my reading of the current text is that the described procedure is *not* safe.\u00a0 Pointers to key parts of the WG discusison would be more than welcome! To take something of a high-level view of my concerns, if we think of the VXLAN as being a tunnel between VTEPs that carry encapsulated tenant traffic, then what we're trying to do is roughly like BFD between VTEPs, but we want to get fault-detection over as broad a coverage as we can (the \"outermost part of the tunnel\"), so we want to have the option of per-VNI BFD instead of just endpoint-to-endpoint (VTEP-to-VTEP). However, we end up having to do this by trying to insert a thin filter into the tenant's address space (i.e., the inner VXLAN header) and pick out the specific stream of BFD traffic that we're introducing.\u00a0 This is, in some sense, a namespace grab in what is conceptually the tenant's namespace, and we have to be careful that what we do is either guaranteed to not impact the tenant or well-documented and compartmentalized (akin to the \"well-known URIs\"). I've made comments at several places in the document that are more directly tied to specific pieces of text, but in general, if we assume that the tenant can add/remove new addresses at will within their VXLAN abstration, then any attempt to preconfigure by mutual agreement the BFD addresses to use at the VTEPs or to use the VTEP's normal (outer) address as the sentinel value seems subject to the tenant coming in and subsequently trying to use that address, leading to (some of) the tenant's traffic getting silently filtered and interpreted by the VTEP. If we were using domain names as identifiers, we could allocate something under .arpa or similar, but I think our options are more limited when numerical addresses are used. The option suggested by the rtg-dir reviewer of always using the management VNI does not suffer from this namespacing issue, though I recognize that it does reduce the scope over which fault-detection is available, for the cases when different VNIs' traffic are routed or handled differently. (2) Section 6 says: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  The selection \u00a0  of the VNI number of the Management VNI MUST be controlled through \u00a0  management plane.\u00a0 An implementation MAY use VNI number 1 as the \u00a0  default value for the Management VNI.\u00a0 All VXLAN packets received on \u00a0  the Management VNI MUST be processed locally and MUST NOT be \u00a0  forwarded to a tenant. It seems like the management VNI concept is something that would apply to the entire VXLAN deployment and not just to the BFD-using portions; is this already defined somewhere (in which case we should reference it), or is it new with this document?\u00a0 In the latter case wouldn't it be an update to the core VXLAN spec?\u00a0 (I note that there are some procedural hoops to jump through for an IETF-stream document to update an ISE-stream document...)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-29 13:31:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-12-12 07:24:14-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-12 07:24:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-12-17 00:51:29-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-07-14 00:22:10-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-12-17 00:51:29-08:00",
+        "text": "Thank you for the work put into this document. I fully second Adam's COMMENT that should be fixed before publication (IMHO this is a DISCUSS). Answers to my COMMENTs below will be welcome, even if those COMMENTs are not blocking. As usual, an answer to the DISCUSS is required to clear my DISCUSS though. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == May be I am not familiar enough with BFD, but,  RFC 5881  (the one defining BFD) specifies the use of TTL = Hop Limit = 255.. Why this document uses a value of 1 ? -- Section 3 -- IPv4-mapped IPv6 addresses are only to be used inside a host and should never be transmitted in real packets (including packets inside a tunnel) see section 4.2 of  RFC 4038  (even if informational). As other IESG reviewers, I wonder why ::1/128 is not used? -- Section 8 -- The document specifies no IANA actions while the shepherd write-up talks about a IANA action. -- Section 9 -- This section is only about IPv4 (TTL and  RFC 1812 ). Please address IPv6 as well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-07-22 05:28:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-07-14 00:22:10-07:00",
+        "text": "Thank you for the work put into this document and its update. I have cleared one of my DISCUSS point avout TTL = Hop Limit not being 255. All other DISCUSS points remain esp the use of IPv4-mapped IPv6 addresses rather than the IPv6 loopback ::1/128.  I hope that this helps to improve the document, Regards, -\u00e9ric -- Section 3 -- IPv4-mapped IPv6 addresses are only to be used inside a host and should never be transmitted in real packets (including packets inside a tunnel) see section 4.2 of  RFC 4038  (even if informational). As other IESG reviewers, I wonder why ::1/128 is not used? BTW, the right wording is \"IPv4-mapped IPv6 address\" and not \"IPv4-mapped IPv4 address\" as written twice in the document. -- Section 8 -- The document specifies no IANA actions while the shepherd write-up talks about a IANA action. ==> please update the shepherd's report accordingly.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-22 05:28:04-07:00",
+        "text": "Thank you for the work put into this document and its update. I have cleared one of my DISCUSS point about TTL = Hop Limit not being 255.  But, the authors and I are in an impasse about the use of IPv4-mapped IPv6 addresses but I do not want to block the document. I change my ballot to \"ABSTAIN\" in the sense of \"I oppose this document but understand that others differ and am not going to stand in the way of the others\". BTW, I understood that the use a prefix rather than /32 or /128 was to allow for entropy (to explore multiple ECMP/LAG paths).  BTW2, the right wording is \"IPv4-mapped IPv6 address\" and not \"IPv4-mapped IPv4 address\" as written twice in the document. Did you (or actually the authors) also investigate the use of the: - ::/0 : unspecified address - 100::/8 the discard prefix used for RTBH  RFC 6666 - or even requesting a block out of the 2001::/23 (reserved for IETF special use) Previous COMMENTs for archive as they were on revision -09 RFC 5881  (BFD) states that it applies to IPv4/IPv6 tunnels, may I infer that this document is only required to address the Ethernet encapsulation ? I.e. specifying the Ethernet MAC addresses? -- Section 3 -- At first sight, I was surprized by having a BFD session per VXLAN VNI as it will create some scalability issue, but, I assume that this is to detect misconfiguration as well. If so, perhaps worth mentionnig the reasoning behind? In \"the inner destination IP address SHOULD\" it is unclear whether it is in the all BFD packets, or only the request one or ... ?   -- Section 4 -- While probably defined in  RFC7348 , should \"FCS\" be renamed as \"Outer Ethernet FCS\" for consistency with the \"Outer Ethernet Header\" in figure 2 ? Why not using the Source MAC address as the Destination MAC address ? This would ensure that there is no conflict at the expense of \"forcing\" the transmission of the frame even if addressed to itself. Please consider rewriting the section about TTL/Hop Limit as it is not easy to parse/read. -- Section 9 -- This section is mainly about IPv4 ( RFC 1812 ). Please address IPv6 as well in the explanation of packet not being forwarding when addressed to 127/8",
+        "type": "Abstain"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-03 16:07:32-07:00",
+        "text": "doc{ draft-ietf-bfd-vxlan-15 } ballot{Abstain} [[ comments ]] I was tempted to ballot Discuss, but I'm not sure about re-opening old discussions into which I've no insight (it all happened before my tenure). [ sections 3,5 ] * I agree with Eric Vyncke's concerns about the use of ::ffff:127.0.0.0/104 \u00a0 space.\u00a0 This is not especially well-motivated, nor do I think the use of \u00a0 127.0.0.0/8 is particularly well-motivated. \u00a0 In IPv6, 2001::/23 is reserved for IETF protocol assignments and in my \u00a0 opinion this is an example of where that should be used. \u00a0 There is also still plenty of space to carve out from 192.0.0.0/24 for \u00a0 internal tunnel uses like this. \u00a0 Alternatively, a better approach might be for each VTEP to allocate their \u00a0 own IPv4 and/or IPv6 link-local addresses and uses these addresses for \u00a0 whatever traffic is to be sent within the data plane.\u00a0 If the VTEPs use \u00a0 inner Ethernet headers for this traffic, then this would seem to make \u00a0 more sense to me. [ section 9 ] * It's not clear that the security of a prohibition on routers is sufficiently \u00a0 motivating securit when the packet is logically \"switched\" because it's on \u00a0 the same (effectively) VLAN.\u00a0 The same router forwarding prohibition applies \u00a0 to link-local IP addresses and these could be used instead. * What prevents a machine like VM1-1 from crafting a packet with the magic \u00a0 destination MAC and src & dst IPs from the magic range?\u00a0 Should there be \u00a0 text about not forwarding any packets from VMs toward the magic dst MAC?",
+        "type": "Abstain"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-17 02:40:49-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-17 02:40:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-12-03 11:13:41-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 11:13:41-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-10 04:38:26-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-10 04:38:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-02 05:59:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-16 18:01:24-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-16 18:01:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-19 04:06:56-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-19 04:06:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-12-17 06:38:20-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-03 11:13:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-10-29 11:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-17 06:38:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8971",
+  "evaluation_end": "2020-10-29 11:28:41-07:00",
+  "evaluation_start": "2019-12-03 11:13:40-08:00"
+}

@@ -1,0 +1,253 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-04-06 08:08:33-07:00",
+        "end_reason": "new_position",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-04-06 08:08:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-04-05 23:29:57-07:00",
+        "end_reason": "new_position",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-06-25 00:25:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-04-05 23:29:57-07:00",
+        "text": "Thank you for the work put into this document. I found the use cases part of section 3.1 very interesting to read even if some of them seem very far fetched ;-) Please find below some blocking DISCUSS points (easy to address though), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to - Carlos Bernardos for the shepherd's write-up even if a justification for the informational status would have been welcome but the WG consensus description is appreciated.  - Pascal Thubert for his IETF last call INT directorate review at:  https://datatracker.ietf.org/doc/review-ietf-ipwave-vehicular-networking-20-intdir-lc-thubert-2021-06-18/  and for his IESG telechat INT directorate review  https://datatracker.ietf.org/doc/review-ietf-ipwave-vehicular-networking-27-intdir-telechat-thubert-2022-02-28/  Pascal's Last Call & telechat reviews were (at least partially) acted upon by Paul ;-) I hope that this helps to improve the document, Regards, -\u00e9ric # DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ## Abstract & Section 1 \"then enumerates requirements for the extensions of those IPv6 protocols\" does not match any IPWAVE WG work item, i.e., it is outside the scope of the charter of IPWAVE WG. As the document does not explicitly specify requirements, I strongly suggest to use the word \"gaps\" rather than \"requirements\" in the abstract and section 1. ## Section 4.1 Using an IPv6 address out of a ULA prefix still requires DAD. So the text below should be updated to be corrected: \u00a0 \"their own IPv6 Unique Local Addresses \u00a0  (ULAs) [ RFC4193 ] over the wireless network, which does not require \u00a0  the messaging (e.g., Duplicate Address Detection (DAD)) of IPv6 \u00a0  Stateless Address Autoconfiguration (SLAAC) [ RFC4862 ].\" ## Section 4.2 Very similar comment as above (i.e., DAD & MLD must be done for all IPv6 addresses of an interface and not only for the global one): \u00a0 \"... When global IPv6 \u00a0  addresses are used, wireless interface configuration and control \u00a0  overhead for DAD\" ## Section 5.2 \u00a0 \"... If DHCPv6 is used to assign \u00a0  a unique IPv6 address to each vehicle in this shared link, DAD is not \u00a0  required. \" This is incorrect and must be changed (see section 18.2.10.1. of  RFC 8415 )",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-25 00:25:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-02-06 22:32:31-08:00",
+        "end_reason": "new_position",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-04-06 16:44:40-07:00",
+        "end_reason": "new_position",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-04-06 16:44:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-04-05 06:52:58-07:00",
+        "end_reason": "new_position",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-04-05 06:52:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-04-06 23:37:40-07:00",
+        "end_reason": "new_position",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-04-06 23:37:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-04-06 19:11:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-04-07 04:10:02-07:00",
+        "end_reason": "new_position",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-04-07 04:10:02-07:00",
+        "text": "I'm not an expect on these areas of technology, but I find parts of this document to be quite uncompelling.\u00a0 However, it is an informational document, where considerable latitude is allowed. Although I'm happy for the authors to correct my misunderstandings below, if they wish, I'm doubtful that such a discussion will really be helpful, hence my abstain ballot. Some of my concerns when reviewing this document: (1) It feels like quite a lot of these problems are (or could be) solved today using the existing wireless networks and GPS already included in cars.\u00a0 E.g., presumably they are already making use of IP over 4G-LTE without needing these proposed protocol changes?\u00a0 I.e., how many of the problems described here can really be most efficiently solved by having a local dynamic network? (2) Having some sort of bitcoin/blockchain based micropayment scheme for sharing sensor data between vehicles feels highly implausible to me, given that the world hasn't seemed to manage a micropayment scheme for websites which seems like an easier problem to solve. (3) Would vehicles even be able to safely trust sensor data coming from other vehicles?\u00a0 E.g., hacked vehicles that randomly occasionally inject false sensor readings.\u00a0 Who would have legal liability if your vehicle takes some action based on unreliable 3rd party sensor data?\u00a0 I appreciate that it outside this type of technical document, but I think that it limits the likely hood of solving this in an ad hoc network. (4) I struggle to understand how the V2X use cases really work.\u00a0 In a street (at least in the UK) there would often be people in very close proximity to a vehicle (e.g., walking on the pavement [sidewalk] next to a vehicle, and presumably it is only people in front of the vehicle that are potential collision problems, and for these cases, are radar/lidar/cameras/sensors not a more robust choice (and are already deployed today, and seemingly improving every year).\u00a0 I would think that the only way that this could work with a smartphone is if it sharing very precise (0.1 m) location data all the time to everything around it, which would probably degrade the battery and would also seem to have some serious privacy considerations. (5) In Appendix D, I don't understand how the AERO/OMNI service solves the MTU problem.\u00a0 It seems to be just introducing another layer to solve exactly the problem that are already solved by existing transport layer protocols.\u00a0 If there is some data illustrating how TCP over OAL (with IP parcels) is more efficient that straight TCP over IP then that would be worth sharing. Regards, Rob",
+        "type": "Abstain"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-04-05 20:17:31-07:00",
+        "end_reason": "new_position",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-09-23 09:04:49-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-04-05 20:17:31-07:00",
+        "text": "I had difficulty in understanding the bounds for the scope of the use cases and proposed architecture.\u00a0 At times I had trouble understanding what was an example of related work, and what was narrative formally describing the gaps in IPv6 for vehicular networking.\u00a0 In that spirit: ** The Privacy Considerations are under-specified: -- Section 6.3 suggests the needs for logging, \u201cTo deal with this kind of security issue, for monitoring suspicious behaviors, vehicles' communication activities can be recorded in either a central way through a logging server (e.g., TCC) in the vehicular cloud or a distributed way (e.g., blockchain [Bitcoin]) along with other vehicles or infrastructure.\u00a0 To solve the issue ultimately, we need a solution where, without\u00a0 \u00a0 privacy breakage, \u2026\u201d.\u00a0 Some discussion on the \u201cprivacy breakage\u201d is needed.\u00a0 What exactly would be the trade offs between a centralized vs. distributed log?\u00a0 Who would get to see this information?\u00a0 What is sensitive about this information? -- Section 5.1.2 and 6.3 highlights the use of MAC address pseudonyms.\u00a0 This is helpful.\u00a0 More discussion is needed about the associate privacy threat being mitigated.\u00a0 Section 6.3 mentions an \u201cadversary from tracking a vehicle\u201d which I think means a passive observer of the path.\u00a0 However, there are other entities in which ecosystem \u2013 what is the privacy exposure to the TCC, V2I, etc?\u00a0 The opening in Section 6 notes that \u201cvehicles and infrastructure must be authenticated\u201d and those credentials (perhaps bound to even MAC pseudonyms) would also facilitate tracking even given MAC pseudonyms.\u00a0 Section 6.1 explicit comments on using VINs in certificates.\u00a0 Who are the assumed trusted actors? -- Section 3.3 notes a V2P use case where the pedestrian\u2019s smart-phone is sharing unspecified information.\u00a0 Does that include location information?\u00a0 Who gets it?\u00a0 What kind of identifiers are shared? ** Section 4.2 \u00a0  Note that it is dangerous if the \u00a0  internal network of a vehicle is controlled by a malicious party.\u00a0 To \u00a0  minimize this kind of risk, an reinforced identification and \u00a0  verification protocol shall be implemented.  -- What are these dangers? -- What is a \u2018reinforced identification\u2019? -- Who are the parties in this verification protocol?\u00a0 What security properties is this verification providing? ** Section 6. \u00a0  Vehicles and infrastructure must be authenticated in order to \u00a0  participate in vehicular networking.\u00a0  Authenticated with respect to whom? Vehicles to infrastructure and vice-versa?\u00a0 Or to someone else? ** Section 6 makes references to \u201csecure communication\u201d \u2013 what is the expected key management approach and is that in scope? ** The need for safety properties (very helpful) is asserted multiple times but not further discussed in the Security Considerations: -- Section 3:\u00a0  \u00a0 \u00a0 \u00a0  In addition, IPv6 \u00a0 \u00a0 \u00a0 security needs to be extended to support those V2V use cases in a \u00a0 \u00a0 \u00a0 safe, secure, privacy-preserving way. -- Section 3.1:  \u00a0 \u00a0 \u00a0 To support applications of these V2V use cases, the required \u00a0 \u00a0  functions of IPv6 include IPv6-based packet exchange and secure,\u00a0 \u00a0  \u00a0 \u00a0  safe communication between two vehicles.\u00a0  -- Section 3.3: \u00a0  To support applications of these V2X use cases, the required \u00a0  functions of IPv6 include IPv6-based packet exchange, transport-layer \u00a0  session continuity, and secure, safe communication between a vehicle \u00a0  and a pedestrian either directly or indirectly via an IP-RSU.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-11-02 15:42:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-09-23 09:04:49-07:00",
+        "text": "Thanks for all of the changes in -29 to address the DISCUSS points noted for -28.\u00a0 To help us talk these through the remaining issues, I have updated my ballot to remove issues that have already been resolved.\u00a0 I have also provided feedback on the new text in -29 intended to resolve the original DISCUSS points. (1) The Privacy Considerations are under-specified: (1.a) [per -28] Section 6.3 suggests the needs for logging, \u201cTo deal with this kind of security issue, for monitoring suspicious behaviors, vehicles' communication activities can be recorded in either a central way through a logging server (e.g., TCC) in the vehicular cloud or a distributed way (e.g., blockchain [Bitcoin]) along with other vehicles or infrastructure.\u00a0 To solve the issue ultimately, we need a solution where, without\u00a0 \u00a0 privacy breakage, \u2026\u201d.\u00a0 Some discussion on the \u201cprivacy breakage\u201d is needed.\u00a0 What exactly would be the trade offs between a centralized vs. distributed log?\u00a0 Who would get to see this information?\u00a0 What is sensitive about this information? From -29: \u00a0  Alternatively, for \u00a0  completely secure vehicular networks, we shall embrace the concept of \u00a0  \"zero-trust\" for vehicles in which no vehicle is trustable and \u00a0  verifying every message (such as IPv6 control messages including ND, \u00a0  DAD, NUD, and application layer messages) is necessary.\u00a0 In this way, \u00a0  a failure to prevent a cyberattack shall never happen on a vehicular \u00a0  network.\u00a0 Thus, we need to have an efficient zero-trust framework or \u00a0  mechanism for vehicular networks. I\u2019m speculating that the second from last sentence, \u201c[i]n this way, a failure to prevent a cyberattack shall never happen on a vehicular network\u201d was added to partially respond to the above feedback.\u00a0 Saying that an attack will \u201cnever\u201d success due to a zero-trust framework is not plausible.\u00a0 Could this please rephrased. (1.b) [per -28] Section 3.3 notes a V2P use case where the pedestrian\u2019s smart-phone is sharing unspecified information.\u00a0 Does that include location information?\u00a0 Who gets it?\u00a0 What kind of identifiers are shared? Thanks for adding the following text -29: \u00a0  The location information of a VRU from a smart device is multicasted \u00a0  only to the nearby vehicles.\u00a0 The true identifiers of a VRU's \u00a0  smartphone shall be protected, and only the type of the VRU, such as \u00a0  pedestrian, cyclist, and scooter, is disclosed to the nearby \u00a0  vehicles. To clarify, this \u201cmulticasted\u201d in the IPv6 sense?\u00a0 The VRU\u2019s smartphone is using some kind of \u201cfake identifier\u201d (source address?) to announce its presence so as not to reveal its \u201ctrue identifier\u201d?\u00a0 Is there a security consideration (attack) that these \u201cfake identifiers\u201d multicasting to nearby vehicles could convince that vehicle that they are surrounded by pedestrians (e.g., roughly  https://www.abc.net.au/news/2020-02-04/man-creates-fake-traffic-jam-on-google-maps-by-carting-99-phones/11929136)? \u00a0  Can we state the security properties or provide a reference to handle this issue.\u00a0 I see the following text later in the section: \u00a0  To support applications of these V2X use cases, the required \u00a0  functions of IPv6 include IPv6-based packet exchange, transport-layer \u00a0  session continuity, and secure, safe communication between a vehicle \u00a0  and a pedestrian either directly or indirectly via an IP-RSU. I don\u2019t recognize the desired properties of protecting identifiers as being congruent with the above text. (2) Section 4.2 \u00a0  Note that it is dangerous if the \u00a0  internal network of a vehicle is controlled by a malicious party.\u00a0 To \u00a0  minimize this kind of risk, an reinforced identification and \u00a0  verification protocol shall be implemented.  -- [per -28] Who are the parties in this verification protocol?\u00a0 What security properties is this verification providing? [new per -29] Thanks for adding this new text in -29 in response: \u00a0  To minimize this kind of risk, \u00a0  an augmented identification and verification protocol with extra \u00a0  means shall be implemented.\u00a0 These extra means can be certificate- \u00a0  based, biometric, credit-based, and one-time passcode (OTP) \u00a0  approaches in addition to a used approach [ RFC8002 ].\u00a0 The \u00a0  verification shall provide security properties such as \u00a0  confidentiality, integrity, authentication, authorization, and \u00a0  accounting [ RFC7427 ]. I\u2019m having trouble understanding this guidance.\u00a0 The architecture is suggesting \u201caugmented identification and verification with extra means.\u201d\u00a0 I don\u2019t follow what \u201caugmented means\u201d or \u201cextra\u201d -- augmented or extra from what baseline?\u00a0 The security properties this provides is \u201cconfidentiality, integrity, authentication, authorization and accounting\u201d don\u2019t seem to match authentication and identity topics.\u00a0  To the specific examples, how does \u201ccredit-based\u201d provide the stated security properties?\u00a0  I have the same question for the others.  ** [per -28 and same for -29] The need for safety properties (very helpful) is asserted multiple times but not further discussed in the Security Considerations: -- Section 3:\u00a0  \u00a0 \u00a0 \u00a0  In addition, IPv6 \u00a0 \u00a0 \u00a0 security needs to be extended to support those V2V use cases in a \u00a0 \u00a0 \u00a0 safe, secure, privacy-preserving way. -- Section 3.1:  \u00a0 \u00a0 \u00a0 To support applications of these V2V use cases, the required \u00a0 \u00a0  functions of IPv6 include IPv6-based packet exchange and secure,\u00a0 \u00a0  \u00a0 \u00a0  safe communication between two vehicles.\u00a0  -- Section 3.3: \u00a0  To support applications of these V2X use cases, the required \u00a0  functions of IPv6 include IPv6-based packet exchange, transport-layer \u00a0  session continuity, and secure, safe communication between a vehicle \u00a0  and a pedestrian either directly or indirectly via an IP-RSU. The explanation from the authors noted that the following text was added to Section 4.2 -29: \u201cA malicious party can be a group of hackers, a criminal group, and a competitor for industrial espionage or sabotage.\u201d \u201cThe verification shall provide security properties such as confidentiality, integrity, authentication, authorization, and accounting [ RFC7427 ].\u201d I\u2019m having trouble understanding how this text addresses the safety properties.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-02 15:42:38-07:00",
+        "text": "Thank you to Daniel Migault for the SECDIR review. Thank you for making edits in response to my DISCUSS positions.\u00a0 Despite these changes, it is my assessment that the security and privacy properties are not sufficiently described given the wide array of enabling technologies cited (e.g., credit-based authorization models, blockchain based authentication and logging, in vehicle credit card transactions).\u00a0 Furthermore, the document references architectural elements such as \u201clegal vehicles\u201d and \u201clegal \u2026 smartphones\u201d; and threats such as \u201cprivacy breakage\u201d without sufficient explanation. For the reasons above and a few noted by Rob Wilton in his ballot, I am abstaining on this document.\u00a0 The IESG DISCUSS criteria ( https://www.ietf.org/about/groups/iesg/statements/iesg-discuss-criteria/#stand-disc ) is not applicable to my above concerns since no protocol is being described and the guidance presented here is not intended to be implemented without significant further design and specification.",
+        "type": "Abstain"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-04-06 09:12:09-07:00",
+        "end_reason": "new_position",
+        "start": "2022-02-06 22:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-11-09 10:44:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-04-06 09:12:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9365",
+  "evaluation_end": "2022-11-09 10:44:50-08:00",
+  "evaluation_start": "2022-02-06 22:32:31-08:00"
+}

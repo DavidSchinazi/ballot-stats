@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-14 14:55:19-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-14 14:55:19-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-03 06:57:54-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-05 04:52:20-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-03 06:57:54-08:00",
+        "text": "This is a tiny point, but I think it needs fixing for clarity: 5.2.\u00a0 The AlertMsg-Error Header Field \u00a0 \u00a0 \u00a0 error-code\u00a0 \u00a0 \u00a0  = 1*3DIGIT The text below makes it clear that the error-code is 3 digits: \u00a0  The ErrorValue contains a 3-digit error code indicating what was \u00a0  wrong with the alert in the request. What you have above allows for 1, 2 or 3 digits. I think you meant: \u00a0 \u00a0 \u00a0 error-code\u00a0 \u00a0 \u00a0  = 3DIGIT",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-10 04:14:31-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-05 04:52:20-08:00",
+        "text": "(Updated, see the extra review comments) I have a few a tiny point, but I think they need fixing for clarity: 1)  5.2.\u00a0 The AlertMsg-Error Header Field \u00a0 \u00a0 \u00a0 error-code\u00a0 \u00a0 \u00a0  = 1*3DIGIT The text below makes it clear that the error-code is 3 digits: \u00a0  The ErrorValue contains a 3-digit error code indicating what was \u00a0  wrong with the alert in the request. What you have above allows for 1, 2 or 3 digits. I think you meant: \u00a0 \u00a0 \u00a0 error-code\u00a0 \u00a0 \u00a0  = 3DIGIT 2) As per Francesca's review: \"/=\" is illegal in ABNF, it should be \"=/\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-10 04:14:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-03 11:12:23-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 11:12:23-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-03 10:45:57-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 10:45:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-02-23 12:05:30-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-02-23 16:48:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-23 12:05:30-08:00",
+        "text": "Thanks for this document.\u00a0 I have a very small ABNF issue I'd like to discuss, and which should be very easy to sort out one way or another: \u2014 Section 5.2 \u2014 \u00a0 \u00a0 \u00a0 ErrorValue\u00a0 \u00a0 \u00a0  =\u00a0 error-code \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  *(SEMI error-params) \u2026 \u00a0  The ErrorValue contains a 3-digit error code indicating what was \u00a0  wrong with the alert in the request.\u00a0 This error code has a \u00a0  corresponding quoted error text string that is human readable.\u00a0 The \u00a0  text string is OPTIONAL, but RECOMMENDED for human readability, \u2026 \u00a0  Similar to how  RFC \u00a0  3261  specifies, there MUST NOT be more than one string per error \u00a0  code. Two things about this: 1. The ABNF makes the text string optional only by allowing zero or more of them (so zero is allowed). 2. The ABNF allows multiple text strings, but the text says that there MUST NOT be more than one. So, shouldn\u2019t the ABNF be this (and if not, why not)?: NEW \u00a0 \u00a0 \u00a0 ErrorValue\u00a0 \u00a0 \u00a0  =\u00a0 error-code [SEMI error-params] END (Also, and not part of the DISCUSS, \u201cSimilar to how  RFC 3261  specifies,\u201d is not good English; maybe, \u201cSimilar to the specification in  RFC 3261 ,\u201d or \u201cAs similarly specified in  RFC 3261 ,\u201d.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-23 16:48:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-02 17:16:30-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-10 10:52:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-02 17:16:30-08:00",
+        "text": "I support Roman's Discuss (and comment) and will expound on his first point some more. The use of URIs to refer to remote content, potentially hosted on a third party, has numerous security considerations, some better known than others.\u00a0 We need to reference the security considerations of  RFC 3986  to get some coverage of these, such as the \"reliability and consistency\" point. One of the more subtle security considerations of using a URI to a remote resource as part of a request in cases such as this, is that the binding between the identity of the entity referring to the remote URI and the identity of the site providing the corresponding resource (i.e., the authority compoent of the URI) is not always clear.\u00a0 Although  RFC 7852  requires TLS mutual authentication and HTTPS transport for information provided by reference, it makes no statement requiring the TLS server certificate to correspond to the SIP initiator, or any other indication of authorization that the indicated resource makes sense as part of the indicated request. I also have two other Discuss-level points: We discuss the use of timestamps in protocol elements for detecting replay; this requires that all participants have (secure and) accurate time.\u00a0 We need to document this dependency on accurate time, and optionally point out that common internet time protocols such as NTP are not particularly secure at present. I'm also not sure where there's existing treatment of using SIP MESSAGEs as a DoS attack vector; that seems particularly pronounced in the emergency-services case since emergency messages may receive preferential treatment from the network.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-10 10:52:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-04 12:38:00-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-04 12:38:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-04 09:45:59-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-04 09:45:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-04 05:49:10-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-04 05:49:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-05 03:49:20-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-05 03:49:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-28 10:23:26-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-28 10:23:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-02 13:35:36-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-10 11:02:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-02 13:35:36-08:00",
+        "text": "Section 9.\u00a0 Since CAPs can be included by reference (via URI) and the senders may be unknown to the ESRP/PSAP, please include language on the security considerations for untrusted URIs per Section 7 of  RFC3986 Section 9.\u00a0 Per \u201cTo provide protection of the entire SIP message exchange between neighboring SIP entities, the usage of TLS is REQUIRED.\u201d, can you please provide guidance on how to use TLS.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-10 11:02:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-03 22:09:01-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 22:09:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-03 09:25:44-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-14 14:55:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-10 12:49:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 09:25:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8876",
+  "evaluation_end": "2020-03-10 12:49:25-07:00",
+  "evaluation_start": "2020-02-14 14:55:17-08:00"
+}

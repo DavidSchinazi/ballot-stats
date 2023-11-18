@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-04 17:20:01-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 17:20:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-04 10:23:48-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 10:23:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-03 09:45:36-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 09:45:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-04 19:40:43-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 19:40:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-03 18:16:27-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-04 10:14:30-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-12-03 18:16:27-08:00",
+        "text": "[This is a preliminary Discuss placed before a full document review is complete, to give the authors additional time to consider and respond] The YANG doctor last call review of the -06 notes that these modules are in violation of the expectations of  RFC 8349  (at least w.r.t. defining a new identity for the control-plane protocol and probably also w.r.t. augmenting the \"control-plane-protocol\" under \"/routing\").\u00a0 This document should either be brought into compliance or explain why it diverges. The YANG doctor's comments about the default values for the \"local\" graceful-restart configuration causing the global configuration to never take effect also should be addressed. The YANG doctor also noted that the \"md5-key\" leaf does not specify its semantics, and is presumably sensitive (so that a crypto-type would be more appropriate).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-17 13:55:47-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-12-04 10:14:30-08:00",
+        "text": "The YANG doctor last call review of the -06 notes that these modules are in violation of the expectations of  RFC 8349  (at least w.r.t. defining a new identity for the control-plane protocol and possibly more).\u00a0 This document should either be brought into compliance or explain why it diverges. The YANG doctor's comments about default values for \"local\" configuration (e.g., graceful-restart configuration) causing the global configuration to never take effect should also be addressed. Please include some justification for why LDP IPv6 is considered an \"extended feature\" (which is particularly surprising given that Section 2 classifies \"IP\" to refer to both IPv4 and IPv6 together). We need to define the format/semantics of the md5-key string (e.g., is it hex? base64{url,}?) either directly or by reference (as the YANG doctor notes).\u00a0 Using a crypto-type would probably be appropriate, as would adding a note that tcp-md5 is obsoleted by TCP-AO. In the peer-af-policy-container grouping's label-policy/advertise/prefix-list, we need to say if the filter is for inclusion or exclusion of outgoing label advertisements. Similarly for the incoming label advertisements in the 'accept' container (and most of the -list-ref usages?). In the policy-container grouping's label-policy/assign/independent-mode/prefix-list, the description suggests that the contents will provide not just a list of prefixes that act as a filter, but also a map from prefix to label.\u00a0 This is a qualitatively different usage than the previous occurrences of prefix-list-ref, and it seems like a different type may be needed for it.\u00a0 Similarly for ordered-mode. (pro-forma) This document has 6 authors, and per  RFC 7322 , as this is more than five, we are supposed to consider whether that's appropriate. Seeing nothing in the shepherd writeup or similar, I mention it here.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-19 09:14:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-17 13:55:47-07:00",
+        "text": "[updating Discuss to reflect points addressed by the -08; COMMENT unchanged from -07] Please include some justification for why LDP IPv6 is considered an \"extended feature\" (which is particularly surprising given that Section 2 classifies \"IP\" to refer to both IPv4 and IPv6 together). We need to define the format/semantics of the md5-key string (e.g., is it hex? base64{url,}?) either directly or by reference (as the YANG doctor notes).\u00a0 Using a crypto-type in the base model as opposed to only as an extension would probably be appropriate, as would adding a note that tcp-md5 is obsoleted by TCP-AO.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-19 09:14:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-11-12 11:40:02-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-12 11:40:02-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-12-04 23:05:58-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-18 04:02:44-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-04 23:05:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-23 01:31:53-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-18 04:02:44-07:00",
+        "text": "Thank you for addressing my previous comments (especially around the IPv6 support). But, I am now balloting a DISCUSS because  I-D.ietf-rtgwg-policy-model \u00a0 MUST be a normative reference as it is referenced by the YANG modules of this document. I.e., this document cannot be published _BEFORE_  I-D.ietf-rtgwg-policy-model  ... Else, it will be useless. Regards -\u00e9ric",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-23 01:31:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-05 04:51:17-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-05 04:51:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-03 09:00:13-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 09:00:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-03 05:26:40-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-28 06:16:28-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-03 05:26:40-08:00",
+        "text": "Thank you for using the YANG Security Considerations template.\u00a0 Could you please provide more details on which nodes are sensitive to write and read issues; and the RPC operations of concern.\u00a0 For example, see  draft-ietf-isis-yang-isis-cfg  or draft-ietf-ospf-yang.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-28 06:16:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-04 08:13:20-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 08:13:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-23 10:18:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-12 11:40:01-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9070",
+  "evaluation_end": "2020-03-23 10:18:36-07:00",
+  "evaluation_start": "2019-11-12 11:40:01-08:00"
+}

@@ -1,0 +1,307 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-02-22 03:46:37-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-03-02 04:48:29-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-02 04:48:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-01 23:57:15-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-01 23:57:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-02-23 23:44:00-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-23 23:44:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-03-01 05:08:46-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-01 05:08:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-27 11:45:08-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-27 11:46:17-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2023-02-27 11:45:08-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-pim-null-register-packing-14 CC @jgscudder ## DISCUSS The document is quite terse. In some respects this is admirable and welcome (the low page count is nice). But it seems as though \u2014 even if it\u2019s \u201cobvious\u201d \u2014 it would be worth\u00a0 mentioning that the semantics of a packed message with N members are exactly the same as the semantics of the equivalent N non-packed messages. In particular, there seems to be quite a bit of machinery in  RFC 7761  that's driven by transmission or receipt of these messages; it would be desirable to have specific, unambiguous language in the spec that makes it crystal clear that the packed equivalents of the messages apply everywhere the non-packed ones do, and everything that applies to the non-packed versions applies equally to the packed versions. For example, a timer for a given (S,G) that would be reset by receipt of a Register-Stop MUST also be reset by that (S,G) occurring within a Packed Register-Stop (I guess this is true but maybe you should review 7761 to make sure this is true!) If you think this is already explicit, please help me see where. One fix could be to add something like this to Sections 3 and 4: ``` Sending or receiving a Packed\u00a0 message is the equivalent, for all purposes, of sending or receiving an individual\u00a0 message for each (S,G) represented in the packed message. ```",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-27 11:46:30-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2023-02-27 11:46:17-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-pim-null-register-packing-14 CC @jgscudder ## DISCUSS The document is quite terse. In some respects this is admirable and welcome (the low page count is nice). But it seems as though \u2014 even if it\u2019s \u201cobvious\u201d \u2014 it would be worth\u00a0 mentioning that the semantics of a packed message with N members are exactly the same as the semantics of the equivalent N non-packed messages. In particular, there seems to be quite a bit of machinery in  RFC 7761  that's driven by transmission or receipt of these messages; it would be desirable to have specific, unambiguous language in the spec that makes it crystal clear that the packed equivalents of the messages apply everywhere the non-packed ones do, and everything that applies to the non-packed versions applies equally to the packed versions. For example, a timer for a given (S,G) that would be reset by receipt of a Register-Stop MUST also be reset by that (S,G) occurring within a Packed Register-Stop. (I guess this is true but maybe you should review 7761 to make sure!) If you think this is already explicit, please help me see where. One fix could be to add something like this to Sections 3 and 4: ``` Sending or receiving a Packed\u00a0 message is the equivalent, for all purposes, of sending or receiving an individual\u00a0 message for each (S,G) represented in the packed message. ```",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-27 11:46:55-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2023-02-27 11:46:30-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-pim-null-register-packing-14 CC @jgscudder ## DISCUSS The document is quite terse. In some respects this is admirable and welcome (the low page count is nice). But it seems as though \u2014 even if it\u2019s \u201cobvious\u201d \u2014 it would be worth\u00a0 mentioning that the semantics of a packed message with N members are exactly the same as the semantics of the equivalent N non-packed messages. In particular, there seems to be quite a bit of machinery in  RFC 7761  that's driven by transmission or receipt of these messages; it would be desirable to have specific, unambiguous language in the spec that makes it crystal clear that the packed equivalents of the messages apply everywhere the non-packed ones do, and everything that applies to the non-packed versions applies equally to the packed versions. For example, a timer for a given (S,G) that would be reset by receipt of a Register-Stop MUST also be reset by that (S,G) occurring within a Packed Register-Stop. (I guess this is true but maybe you should review 7761 to make sure!) If you think this is already explicit, please help me see where. One fix could be to add something like this to Sections 3 and 4: ``` Sending or receiving a Packed\u00a0 message is the equivalent, for all purposes, of sending or receiving an individual\u00a0 message for each (S,G) represented in the packed message. ``` x",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-03-01 17:12:13-08:00",
+        "end_reason": "position_updated",
+        "start": "2023-02-27 11:46:55-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-pim-null-register-packing-14 CC @jgscudder ## DISCUSS The document is quite terse. In some respects this is admirable and welcome (the low page count is nice). But it seems as though \u2014 even if it\u2019s \u201cobvious\u201d \u2014 it would be worth\u00a0 mentioning that the semantics of a packed message with N members are exactly the same as the semantics of the equivalent N non-packed messages. In particular, there seems to be quite a bit of machinery in  RFC 7761  that's driven by transmission or receipt of these messages; it would be desirable to have specific, unambiguous language in the spec that makes it crystal clear that the packed equivalents of the messages apply everywhere the non-packed ones do, and everything that applies to the non-packed versions applies equally to the packed versions. For example, a timer for a given (S,G) that would be reset by receipt of a Register-Stop MUST also be reset by that (S,G) occurring within a Packed Register-Stop. (I guess this is true but maybe you should review 7761 to make sure!) If you think this is already explicit, please help me see where. One fix could be to add something like this to Sections 3 and 4: \u00a0  Sending or receiving a Packed\u00a0 message is the equivalent, for all purposes, of sending or receiving an individual\u00a0 message for each (S,G) represented in the packed message.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-01 17:12:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-02-28 02:24:56-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-03-02 02:28:39-08:00",
+        "end_reason": "position_updated",
+        "start": "2023-02-28 02:24:56-08:00",
+        "text": "# GEN AD review of  draft-ietf-pim-null-register-packing-14 CC @larseggert Thanks to Behcet Sarikaya for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/EyaOvVl155DHm7IhDZUBHOqRijY ). ## Discuss ### Section 7, paragraph 2 ``` \u00a0 \u00a0  For IPv6 PIM Packed Null-Register messages or PIM Packed Register- \u00a0 \u00a0  Stop messages, the DR MUST perform Path MTU Discovery.\u00a0 For IPv4, the \u00a0 \u00a0  DR SHOULD perform Path MTU Discovery.\u00a0 This allows the DR to fragment \u00a0 \u00a0  packets as needed.\u00a0 However, in order to avoid fragmentation \u00a0 \u00a0  altogether, a DR sending packed registers SHOULD limit the number of \u00a0 \u00a0  records such that the message can fit within the Path MTU.\u00a0 A record \u00a0 \u00a0  consists of a Group Address and Source Address pair. ``` *How* is the DR supposed to perform PMTUD? If this is defined in another PIM doc, please normatively reference that. Otherwise, specify here. Also, isn't the goal of PMTUD is to avoid fragments, not to allow \"the DR to fragment packets as needed\"?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-02 02:28:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-03-01 00:17:46-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-03-26 16:55:00-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-03-01 00:17:46-08:00",
+        "text": "Feel free to set me straight here if I'm wrong, but: Section 2 says: \"This section allocates a bit ...\" Doesn't this mean either (a) there should be a registry for these bits, and if there is, there should be one or more corresponding IANA actions; or (b) this document should update  RFC 7761  so that the allocation of a previously reserved bit is discoverable somehow?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-26 16:55:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-03-01 12:49:22-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-01 12:49:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-02-27 04:47:03-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-03-09 00:17:57-08:00",
+        "end_reason": "position_updated",
+        "start": "2023-02-27 04:47:03-08:00",
+        "text": "Hi, Thanks for this document.\u00a0 I've flagged this as discuss because I found part of the spec to by unclear: (1) p 3, sec 3.\u00a0 PIM Packed Null-Register message format \u00a0 \u00a0 \u00a0 0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  1\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  2\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  3 \u00a0 \u00a0 \u00a0  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 \u00a0 \u00a0 \u00a0 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0 \u00a0 \u00a0 |PIM Ver| Type\u00a0 |Subtype|\u00a0 FB\u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Checksum\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0 \u00a0 \u00a0 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0  Group Address[1]\u00a0  (Encoded-Group format)\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0  Source Address[1]\u00a0 (Encoded-Unicast format)\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 .\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  . \u00a0 \u00a0 \u00a0 .\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  . \u00a0 \u00a0 \u00a0 .\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  . \u00a0 \u00a0 \u00a0 .\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  . \u00a0 \u00a0 \u00a0 .\u00a0 \u00a0  Group Address[N]\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 . \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0  Source Address[N]\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Figure 2: PIM Packed Null-Register message format I'm not familiar with PIM, but it wasn't clear to me how the receiver infers how many addresses are in the message.\u00a0 E.g., I note that the Join/Prune Message Format contains a count \"Num Groups\", but conversely the \"Hello Message Format\" does not include a count of options.\u00a0 Hence, I presume that the N, the address count, is inferred by the packet length?\u00a0 If so, would that be worth stating here (and in section 4)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-09 00:17:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-02-28 15:08:59-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-28 15:08:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-02-28 11:54:06-08:00",
+        "end_reason": "new_position",
+        "start": "2023-02-22 03:46:37-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-03-02 04:04:20-08:00",
+        "end_reason": "position_updated",
+        "start": "2023-02-28 11:54:06-08:00",
+        "text": "Thanks for working on this document. I would like to discuss - what is the \"P\" bit in section 2 and what is \"FB\" in section 3? without proper description of those fields this specification will be confusing to be implemented. May be I have missed something in the referenced specifications, in that case I would prefer to have the references properly stated here. I also support Lars's and Rob's discuss.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-03-26 18:06:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-02 04:04:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9465",
+  "evaluation_end": "2023-03-26 18:06:47-07:00",
+  "evaluation_start": "2023-02-22 03:46:37-08:00"
+}

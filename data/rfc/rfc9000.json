@@ -1,0 +1,307 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-01-04 17:35:04-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-04 17:35:04-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-01-05 12:38:12-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-05 12:38:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-01-05 16:01:56-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-05 16:01:56-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-06 13:45:04-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-10 23:22:38-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-06 13:45:04-08:00",
+        "text": "This is very much a \"discuss discuss\", and I am not strongly convinced that there is a problem here, but if there is a problem it is a fairly big one. This document defers creation of a downgrade protection mechanism for version negotiation; after all, if there is only one version in existence, there is nothing to negotiate.\u00a0 However, an effective downgrade protection mechanism requires support from all potentially affected parties in order to be reliable, so some careful thought is in order.\u00a0 If we limit ourselves to a mindset where QUIC versions are infrequent undertakings brought about by standards action (i.e., we don't have to worry until a \"v2\" exists), then deferring seems to be okay (but part of the Discuss is to confirm that my reasoning is valid). The main goal of downgrade protection is to be able to distinguish a node that only supports v1 (or in general, any single version, or set of versions that only has one overlapping version with the peer) from one that supports a different shared version but was tricked by an attacker into using v1 when it otherwise would have used a different version. I'll call that different version v2 for clarity.\u00a0 However, if the peer only supports v1, there's nothing to distinguish and nothing to negotiate; it suffices to ensure that all nodes that are capable of v2 support the downgrade protection scheme.\u00a0 That is, an attacker can only change the negotiated protocol version (as opposed to just causing connection failure, which can be done in many other ways) if there is some shared version other than v1 that would have been negotiated in the absence of the attacker.\u00a0 So, if v2 is definitly going to be defined+implemented before other versions, and all nodes that support v2 support downgrade protection, we are guaranteed that in any case where two peers would negotiate v2 in the absence of an attack, both peers support the downgrade protection mechanism and thus that mechanism will be effective in the face of an attack.\u00a0 Peers that don't support the mechanism only do v1 and so there is no downgrade possible when they are participating in the connection.\u00a0 (We would, of course, still need to be confident that we could define such a downgrade protection scheme in a backwards-compatible manner, though this seems like a fairly low bar given the extensibility provided by transport parameters and frame types.) However, it's not clear to me that this assumption holds that v2 is going to be the next version and that every node that implements v1 and some other version will definitely implement v2.\u00a0 In particular, we currently have a very open registration policy for new versions, and there may be a desire to have some custom version of QUIC, perhaps that only has a small difference from v1, and furthermore a desire to use that custom version when available but be able to use v1 when not available.\u00a0 There might be multiple such new versions in development in parallel, with no clear \"first new version\" tasked with the responsibility to develop a downgrade protection mechanism for global use.\u00a0 The interaction between multiple competing downgrade-protection mechanisms seems likely to become quite messy quite quickly, so I am inclined to see \"make each non-standards-track version specify their own downgrade protection\" as a non-starter. I think that the lack of a secure downgrade protection mechanism is fundamentally incompatible with an open procedure for creating new versions while claiming that the protocol is a secure protocol.\u00a0 While it would not be a pleasant choice, I think we might be forced to require standards action for new QUIC versions until we have a single global downgrade protection mechanism defined.\u00a0 Or perhaps I misunderstand the ecosystem that we are trying to produce, or am making erroneous assumptions.\u00a0 I'd love to hear more about how the WG decided to proceed with the current formulation, especially with regard to what consideration was given to non-standards-track new versions. The above notwithstanding, I support this protocol and I expect to change my position to Yes once this point is resolved in some manner.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-10 23:22:38-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-01-04 11:07:42-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-04 11:07:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-01-05 03:12:08-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-05 03:12:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-01-04 22:17:14-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-04 22:17:14-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-12-14 02:40:36-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-01-07 07:06:19-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-12-14 02:40:36-08:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-01-14 01:06:10-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-07 07:06:19-08:00",
+        "text": "olding a discuss to verify the IANA question is standards action registries should mandate the experts review prior to the standards action.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-14 01:06:10-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-12-21 16:06:35-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-21 16:06:35-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-01-05 04:09:50-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-05 04:09:50-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-01-06 22:34:20-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-06 22:34:20-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-06 09:43:05-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-08 05:22:04-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-06 09:43:05-08:00",
+        "text": "With so many \"Yes\" votes from other ADs, I feel like I'm swimming against the flow by raising a discuss ... Firstly, I would like the thank the authors and WG on such a well written document.\u00a0 I am\u00a0 supportive of this protocol and hope that it will be good for the Internet. However, I do have some discuss questions relating to the Spin Bit and the ability to manage and monitor networks.\u00a0 I appreciate that there has already been a lot of (presumably heated) discussion on the spin bit, which I've not read or participated in, but I am concerned about the operational manageability aspect of QUIC. Firstly, I have two comments on clarifying the spin bit behaviour/specification: 1) It would be helpful to clarify what the expected behaviour is for an implementation that chooses not to support the spin-bit.\u00a0 Does it just leave the bit set as 0, or is it meant to follow the same behaviour as if spin-bit is supported but disabled? 2) This may not be discuss worthy, but some of the spin bit behaviour is inconsistently defined between the quic transport and quic manageability drafts.\u00a0 Specifically: \u00a0 - The transport draft states that at least 1 in 16 connections \"MUST\" disable spinning, whereas the manageability draft states this as \"recommended\". \u00a0 - In the case that the spin bit is disabled, the transport draft uses \"RECOMMENDED\" to use a random value for each packet, or chosen independently for each connection.\u00a0 Whereas the manageability draft uses \"can\" and lists the two options in the opposite order. \u00a0  \u00a0 For this review, since it is in IESG review, I've presumed that the transport draft has the definitive definitions and the manageability draft is lagging. But my two main discuss questions/comments relate to whether the spin-bit, as specified in quic transport, achieves its goal.\u00a0 I appreciate that there are individuals who don't think that it is required at all, conversely some network operators believe that they will lose vital information needed to help manage their networks, and presumably we are trying to find a pragmatic compromise between these two positions. 1) I find it hard to understand why a server is allowed to independently decide whether or not to support the spin bit on a connection?\u00a0 Shouldn't the client (or administrator of the client system) that opened the connection be able to choose whether they want the RTT to be monitorable via the spin bit?\u00a0 What is the reasoning for allowing the server (or server administrator) to be able to independently be able to decide what is best for the client? 2) In the case that the spin-bit is disabled, I don't understand the benefit of injecting a random spin bit value in each packet rather than always setting it to a per connection random value.\u00a0 It seems that whether or not the randomness is injected, it is expected to be feasible to extract the RTT for those connections that are genuinely spinning the bit (or otherwise the spin bit is entirely pointless), but it just seems to make it computationally harder to extract the signal from the noise.\u00a0 Perhaps the goal here is reduce the ability for pervasive monitoring to occur, but that feels a bit like security through obscurity. Some enlightenment for these questions would be appreciated. Regards, Rob",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-08 05:23:09-08:00",
+        "end_reason": "comment_updated",
+        "start": "2021-01-08 05:22:04-08:00",
+        "text": "As per my prior discuss comments on email, I'm generally supportive of this protocol and document, but don't support how it defines the spin-bit which is likely to negatively impact network operations and manageability.\u00a0 Hopefully, as the industry gains experience from its deployment, then future versions of this protocol will act to mitigate the manageability issues that are being raised by network operators.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-08 05:23:09-08:00",
+        "text": "As per my prior discuss comments on email, I'm generally supportive of this protocol and document, but don't support how it defines the spin-bit which is likely to negatively impact network operations and manageability.\u00a0 Hopefully, as the industry gains experience from its deployment, future versions of this protocol will act to mitigate the manageability issues (including measuring packet loss) that are being raised by network operators.",
+        "type": "Abstain"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-01-05 14:50:37-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-01-05 14:51:02-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-05 14:50:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-05 14:51:02-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-01-07 07:01:30-08:00",
+        "end_reason": "new_position",
+        "start": "2020-12-14 02:40:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-02-03 09:17:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-07 07:01:30-08:00",
+        "text": "Apologies for the late ballot; I was on vacation. Let me start off by saying that I'm very supportive of the document and protocol.  Unfortunately, I believe that the nature of the spin bit negatively impacts operational practices. I understand that I'm in the rough here, and also believe that the gains from the protocol outweigh this concers, and so I'm abstaining / holding my nose on this part.  This is intentionally non-blocking",
+        "type": "Abstain"
+      }
+    ]
+  },
+  "doc_name": "rfc9000",
+  "evaluation_end": "2021-02-03 09:17:12-08:00",
+  "evaluation_start": "2020-12-14 02:40:35-08:00"
+}

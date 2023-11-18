@@ -1,0 +1,267 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-23 19:28:13-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-23 19:28:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-10-05 13:13:16-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-05 13:13:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-18 21:38:06-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-23 14:00:03-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-18 21:38:06-07:00",
+        "text": "There are a number of things I\u2019d like to discuss, because I find them not understandable.\u00a0 Perhaps it\u2019s simply because I\u2019m not a codec expert, but, while I understand that this is written for readers who will actually be implementing he FFV1 codec, some of them will also not be \u201cexperts\u201d.\u00a0 That said, I\u2019m sure some of this is just a case of \u201cgive Barry some clue and it\u2019s fine.\u201d \u2014 Section 2.1 \u2014 You use the term \u201csymbol\u201d here and later, without defining it, and I don\u2019t know what it is.\u00a0 A byte?\u00a0 A character?\u00a0 A string of bits?\u00a0 What length? \u2014 Section 3.8.1.1 \u2014 I\u2019m not sure how to interpret the stuff in this section.\u00a0 First, I don\u2019t know why there are seven \u201cfigures\u201d, with no captions nor other explanation.\u00a0 Second, I\u2019m having trouble making sense out of things like this: \u00a0  S_(i + 1, C_(i)) =\u00a0 zero_state_(S_(i, C_(i)))\u00a0 AND \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 l_(i) =\u00a0 L_(i)\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 AND \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 t_(i) =\u00a0 R_(i) - r_(i)\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 <== \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 b_(i) =\u00a0 0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 <==> \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 L_(i) <\u00a0 R_(i) - r_(i) Can you explain how this is meant to be read?\u00a0 Maybe it\u2019s just me, and maybe after you explain it I\u2019ll whack myself on the head and say, \u201cDoh!\u201d Third, you say, \u201cS_(0, i) is the i-th initial state,\u201d but you haven\u2019t previously introduced the term \u201cstate\u201d, and I don\u2019t know what it means. \u2014 Section 3.8.1.2 \u2014 \u00a0  \"get_rac\" returns a boolean, computed from the bytestream as \u00a0  described in Section 3.8.1.1. I see nothing in Section 3.8.1.1 that describes get_rac. \u2014 Section 3.8.1.3 \u2014 \u00a0  At keyframes all Range coder state variables are set to their initial \u00a0  state. What does \u201cat keyframes\u201d mean? \u2014 Section 3.8.1.5 \u2014 This is just a list of numbers with no explanation.\u00a0 It needs text explaining what it means. \u2014 Section 3.8.2.2 \u2014 \u00a0  The level is identical to the predicted one. \u00a0  The run and the first different level are coded. What does \u201clevel\u201d mean?\u00a0 It\u2019s not defined anywhere. \u2014 Section 4.3.1 \u2014 \u00a0  \"reserved_for_future_use\" has semantics that are reserved for future \u00a0  use. Yes, that seems rather obvious, though it\u2019s oddly worded.\u00a0 But then you say what to do with \u201cthis value\u201d, and nowhere do you say what the value is.\u00a0 How does one know?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-23 14:00:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-07 16:45:49-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-07 16:45:49-07:00",
+        "text": "I support Roman's Discuss. I am balloting Abstain in that I am not confident that this document has received sufficient review, but have not identified specific flaws or areas of uncertainty that sould justify blocking publication, and accordingly do not wish to block its publication.\u00a0 In particular, I am not confident that I myself understand how all the pieces fit together -- even though some of my comments below might indicate internal inconsistencies or other issues that would justify a Discuss position, I am not fully confident in that, nor am I confident that I could judge that they have been adequately addressed by any proposed changes to the document's text.\u00a0 (This is in large part related to Barry's Discuss.) That said, my review comments on the document appear below. It might make sense to have a bit of discussion on what types of things would (or would not) change in a new micro version, vs new \"macro\" version, and what could be said to be \"invariants\" of the format overall. Should we give more treatment (or even an IANA registry) for how extensibility will be achieved for (e.g.) new \"coder_type\" and \"colorspace_type\" values? Section 2.2.9.4 \u00a0  \"get_bits( i )\" is the action to read the next \"i\" bits in the \u00a0  bitstream, from most significant bit to least significant bit, and to \u00a0  return the corresponding value.\u00a0 [...] [I guess this \"value\" is always in the form of an unsigned integer.] Section 3.3 \u00a0  It is expected (to be confirmed) to remove this exception for the \u00a0  median predictor in the next version of the FFV1 bitstream. When can/will the confirmation process happen?\u00a0 When version 4 is finalized? Section 3.6 The discussion seems to imply that the chroma planes are not used in FFV4 (and so the check for \"version <= 3\" in the logic here is just for future compatibility); is that correct? Section 3.7 \u00a0  color space.\u00a0 In YCbCr for each \"Plane\", each \"Line\" is coded from \u00a0  top to bottom and for each \"Line\", each \"Sample\" is coded from left \u00a0  to right.\u00a0 In JPEG2000-RCT for each \"Line\" from top to bottom, each Is there a reason that we use \"JPEG2000-RCT\" in the prose here, but \"RGB\" for the section 3.7.2 heading? Section 3.8.1.1 The defined terms do not cover all terms used (so I conclude that there are unnamed intermediate values) and the formulae themself do not do a great job of conveying where the overall inputs/outputs are, thus the flow of the encoding logic.\u00a0 Captions on the figures might help, which could include indications of which intermediate values from from formula to formula.\u00a0 It also seems like some of the intermediate values could be usefully named, e.g., R_(i) seems to serve the role of the remaining range at a given step. Section 3.8.1.2 Does \"non binary\" mean \"non-integer\", i.e., floating point? We don't seem to use the \"non binary\" term elsewhere in the document. I'm also not sure I'm reading the formula properly -- state is a uint8_t but the indexing into it seems to make more sense to me if treated as bit indexing, not byte indexing.\u00a0 (E.g., 'a' is only doubled when iterating through 22..31, indicating bitwise representation.) \u00a0 \u00a0 \u00a0  int e = 0; \u00a0 \u00a0 \u00a0  while (get_rac(c, state + 1 + min(e, 9)) { //1..10 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  e++; \u00a0 \u00a0 \u00a0  } It looks like this enters an infinite loop if get_rac(c, state + 10) returns true; is there something to enforce that this does not happen? \u00a0  \"get_rac\" returns a boolean, computed from the bytestream as \u00a0  described in Section 3.8.1.1. I suggest saying a little bit more about how this works, e.g., that the boolean is a single-bit integer value, and how this functional notation maps to the interfaces of the expressions in Section 3.8.1.1. Section 3.8.2.1 What is 'bits' (the argument to the last get_bits() call) in Figure 20? (Is it the same \"bits_per_raw_sample\" from \u00a73.8?\u00a0 If so, that description should be qualified to apply more broadly than just \"the equation below\".) Section 3.8.2.2.1 What are 'x' and 'w' (and how are they set)? What are the semantics of \"run_mode\" values 1 vs 2? Section 3.8.2.3 I guess it's implicit that \"output_number\" is of the appropriate (width) type for the desired output bit width. Section 3.8.2.4 I guess \"i += i\" vs \"i *= 2\" is just a matter of style. Where does the 'bits' input to sign_extend() come from? (Is it the same \"bits_per_raw_sample\" from \u00a73.8?\u00a0 If so, that description should be qualified to apply more broadly than just \"the equation below\".) Section 3.8.2.4.1 I suggest rewording or using a section reference for \"normal difference coding\" as the phrase \"difference coding\" does not suffice (via text search) to find the referenced procedure, since this is the only instance of the phrase in the document. Section 4.1 I'm not sure how to parse \"number of equal entries -1\".\u00a0 In combination with the example I can guess what is meant, but I still can't parse the text. The \"Table\" listed in the example does not seem to conform to \"second half [...] is identical to the first with flipped sign\". Also, the QuantizationTable() pseudocode suggests that the Table should have 256 entries, but this example only has 16.\u00a0 (That may be fine for example purposes, but the difference should be called out.) Section 4.2 C uses 0-indexed arrays, but the pseudocode seems to use 1-indexed arrays (e.g., state_transition_delta[]).\u00a0 Perhaps this is noteworthy. Section 4.5 If 'reserved' is only present when version <=1, it seems unlikely that a revision of this specification would assign semantics to it. Section 4.6.x nit: \"if not present\" could be taken to suggest that this field is optional at field-level granularity (vs. at header-/version-level granularity); \"if header not present\" might be slightly more clear. Section 6 If we are attempting to differentiate between \"format\" and \"codec\", are the uses of \"codec\" in this section all correct? It may (or may not) be worth calling out the importance of internal consistency within an implementation as to whether the Parameters() appear in the ConfigurationRecord() or in each Frame(). \u00a0  In all of the conditions above, the decoder and encoder was run \u00a0  inside the [VALGRIND] memory debugger as well as clangs address \u00a0  sanitizer [Address-Sanitizer], which track reads and writes to nit: \"clang's\" with apostrophe. Section 10 I don't see a particular reason that  RFC 6716  needs to be a normative reference. (I also agree with Roman that there doesn't seem to be need to reference both C90 and C18.) Appendix A, B It is surprising to see  BCP 14  keywords in these nominally informative sections.",
+        "type": "Abstain"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-10-02 11:42:28-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-02 11:42:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-10-05 00:27:04-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-05 00:27:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-21 22:32:21-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-21 22:32:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-10-02 15:21:47-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-02 15:21:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-09-12 10:05:12-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-12 10:05:12-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-10-05 07:54:09-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-05 07:54:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-10-07 08:27:09-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-10-07 08:51:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-10-07 08:27:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-12-01 13:59:51-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-10-07 08:51:26-07:00",
+        "text": "A simple clarification. Section 6. \u00a0  Implementations of the FFV1 codec need to take appropriate security \u00a0  considerations into account, as outlined in [ RFC4732 ] RFC4732  only covers DoS.\u00a0 A buffer overflow (as described in the subsequent text of this paragraph) in a codec implementation could have dramatically more significant consequences for the endpoint (or the services it provides) than a DoS.\u00a0 It could potentially lead to arbitrary remote code execution on the system (barring defensive mitigations provided by sandboxing in the app, OS execution protections; and/or end-point protection software) which pretty much enables an attacker to do anything of their choosing on the system.\u00a0 Please note that.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-01 13:59:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-10-07 17:17:18-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-12 10:05:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-03-03 06:27:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-07 17:17:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9043",
+  "evaluation_end": "2021-03-03 06:27:26-08:00",
+  "evaluation_start": "2020-09-12 10:05:11-07:00"
+}

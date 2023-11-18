@@ -1,0 +1,287 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-11 21:04:51-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-03-11 21:04:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-11 12:48:33-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-14 11:16:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-11 12:48:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-12 06:41:04-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-14 11:16:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-12 06:41:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-11 19:07:43-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-14 11:16:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-11 19:07:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-11 10:55:23-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-31 16:59:42-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-11 10:55:23-07:00",
+        "text": "I'm concerned that the scheduling function for autonomous cells can cause an infinite loop in the case of hash collision -- Section 3 specifies that AutoTxCell always takes precedence over AutoRxCell, but if those two cells collide, the corresponding cells on the peer in question will also collide.\u00a0 If both peers try to send at the same time and the hashes collide, they will both attempt to transmit indefinitely and never be received. There seems to be some \"passing the buck\" going on with respect to rate-limiting unauthenticated (join) traffic: draft-ietf-6tisch-minimal-security  (Section 6.1.1) says that the SF \"SHOULD NOT allocate additional cells as a result of traffic with code point AF43\"; this document is implementing a SF, and yet we try to avoid the issue, saying that \"[t]he at IPv6 layer SHOULD ensure that this join traffic is rate-limited before it is passed to 6top sublayer where MSF can observe it\".\u00a0 I think we need a clear and consistent story about where this rate-limiting is supposed to happen.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-04-02 20:37:56-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-31 16:59:42-07:00",
+        "text": "I'm concerned that the scheduling function for autonomous cells can cause an infinite loop in the case of hash collision -- Section 3 specifies that AutoTxCell always takes precedence over AutoRxCell, but if those two cells collide, the corresponding cells on the peer in question will also collide.\u00a0 If both peers try to send at the same time and the hashes collide, they will both attempt to transmit indefinitely and never be received. [I have been persuaded that the rate-limiting situation does not present an inconsistency between documents]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-14 11:16:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-04-02 20:37:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-11 13:07:20-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-14 11:16:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-11 13:07:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-17 07:20:21-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-14 11:16:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-17 07:20:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-14 11:16:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-11 22:45:10-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-14 11:16:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-12 04:22:52-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-09-14 11:16:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-12 04:22:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-11 06:18:39-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-03-11 06:18:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-09 17:25:16-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-05-08 10:18:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-09 17:25:16-07:00",
+        "text": "Section 3.\u00a0 Can the normative reference for the SAX algorithm be clarified.\u00a0 The text cites [SAX-DASFAA], but this is an informative reference (and an academic paper with no URL).\u00a0 Appendix B, appears to also describe an algorithm but the introduction describes the text as \u201can example implementation SAX hash function\u201d.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-14 11:16:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-08 10:18:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-03 09:52:55-08:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-11 12:40:11-07:00",
+        "end_reason": "new_position",
+        "start": "2020-03-03 09:52:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-14 11:16:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-11 12:40:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9033",
+  "evaluation_end": "2020-09-14 11:16:23-07:00",
+  "evaluation_start": "2020-03-03 09:52:55-08:00"
+}

@@ -1,0 +1,299 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-12-01 21:04:23-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-12-20 16:58:21-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-12-01 21:04:23-08:00",
+        "text": "These should all be trivial to resolve -- just some minor internal inconsistencies that need to be fixed before publication. The discussion of percentile statistical operator in \u00a72.2 is internally inconsistent -- if the percentile number must be an integer, then p99.9 is not valid. Also, the listing of \"cost-source\" values introduced by this document (in \u00a75.1) does not include \"nominal\", but we do also introduce \"nominal\". Similarly, in \u00a73.1.3 we refer to the \"-\" component of a cost metric string, that has been generalized to an arbitrary statistical operator.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-20 13:42:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-20 16:58:21-08:00",
+        "text": "Thank you for addressing my previous discuss points with the -21 (and my apologies for the spurious one!); I'm glad to see that they were indeed easy to address. However, I have looked over the changes from -20 to -21 and seem to have found a couple more issues that should be addressed: (1) I can't replicate the Content-Length values in the examples (I only looked at Examples 1 and 2).\u00a0 Can you please share the methodology used to generate the values?\u00a0 My testing involved copy/paste from the htmlized version of the draft to a file, manually editing that file to remove the leading three spaces that come from the formatting of the draft, and using Unix wc(1) on the resulting file.\u00a0 It looks like the numbers reported in the -21 are computed as the overall number of characters in the file *minus* the number of lines in the file, but I think it should be the number of characters *plus* the number of lines, to accommodate the HTTP CRLF line endings.\u00a0 (My local temporary files contain standard Unix LF (0x0a) line endings, verified by hexdump(1).) (2) We seem to be inconsistent about what the \"cur\" statistical operator for the \"bw-utilized\" metric indicates -- in \u00a74.4.3 it is \"the current instantaneous sample\", but in \u00a74.4.4 it is somehow repurposed as \"The current (\"cur\") utilized bandwidth of a path is the maximum of the available bandwidth of all links on the path.\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-20 13:42:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-11-22 03:32:02-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-04 02:56:46-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-11-22 03:32:02-08:00",
+        "text": "Thank you for the work put into this document. Please bear with my lack of knowledge about ALTO in general. Please find below one trivial blocking DISCUSS points (probably easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to Jan Seedorf for the shepherd's write-up about the WG consensus (even if not using the usual template). I have appreciated the \"operational considerations\" section as it addresses many questions that popped up during reading the document; notably, how can the ALTO server measure any metric between the ALTO client and a resource. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == -- Section 4.1.3 -- A very trivial DISCUSS to fix: this document relies on  RFC 8312  to specify how TCP throughput is estimated but  RFC 8312  does not appear in the normative reference list (this will probably generate a down ref though).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-04 02:56:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-12-01 16:17:11-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-01 16:17:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-12-01 13:57:01-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-12-01 14:37:30-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-12-01 13:57:01-08:00",
+        "text": "Thank you for the work on this document. Many thanks to Christian Ams\u00fcss for his review:  https://mailarchive.ietf.org/arch/msg/art/owYhcoFnl1vEipZ2D62cWiiE-LA/  , and thanks to the authors for addressing it. I am holding a DISCUSS to make sure the examples are fixed before publication. Additionally, I agree with Christian that the line \"Content-Length: TBA\" in all the examples is not really helpful to the reader, and I suggest to either remove it or replace TBA with the actual content length for each example. Francesca 1. ----- { \u00a0 \u00a0 \u00a0  \"meta\": { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"cost type\": { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"cost-mode\": \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"cost-metric\":\"hopcount\"} \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 \u00a0  }, \u00a0 \u00a0 \u00a0 \"endpoint-cost-map\": { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"ipv4:192.0.2.2\": { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"ipv4:192.0.2.89\"\u00a0  : 5, \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"ipv4:198.51.100.34\": 3 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 } FP: JSON doesn't validate. There is one \"}\" too many after \"hopcount\". 2. ----- \u00a0  { \u00a0 \u00a0  \"meta\": { \u00a0 \u00a0 \u00a0 \u00a0 \"cost type\": { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"cost-mode\": \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"cost-metric\":\"tput\" \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  } \u00a0 \u00a0  \"endpoint-cost-map\": { \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.2\": { \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.89\"\u00a0  : 256000, \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:198.51.100.34\": 128000 \u00a0 \u00a0  } \u00a0  } FP: JSON doesn't validate. I believe there is 2 errors: after the second \"}\" after \"tput\" there is a missing \",\" , and it is also missing a final \"}\" at the end. 3. ----- { \u00a0 \u00a0  \"meta\": { \u00a0 \u00a0 \u00a0  \"cost-type\" { \u00a0 \u00a0 \u00a0 \u00a0  \"cost-mode\": \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0  \"cost-metric\": \"bw-residual\" \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  }, \u00a0 \u00a0  \"endpoint-cost-map\" { \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.2\" { \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.89\" :\u00a0 \u00a0 0, \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:198.51.100.34\": 2000 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  } \u00a0  } FP: JSON doesn't validate - there is a bunch of missing \":\" all over. 4. ----- { \u00a0 \u00a0 \u00a0  \"cost-type\" { \"cost-mode\":\u00a0  \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"cost-metric\": \"bw-maxres\"}, \u00a0 \u00a0 \u00a0  \"endpoints\":\u00a0 { \u00a0 \u00a0 \u00a0 \u00a0  \"srcs\": [ \"ipv4 : 192.0.2.2\" ], \u00a0 \u00a0 \u00a0 \u00a0  \"dsts\": [ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.89\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:198.51.100.34\" \u00a0 \u00a0 \u00a0 \u00a0  ] \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  } FP: JSON doesn't validate: missing \":\" after \"cost-type\" 5. ----- { \u00a0 \u00a0  \"meta\": { \u00a0 \u00a0 \u00a0  \"cost-type\": { \u00a0 \u00a0 \u00a0 \u00a0  \"cost-mode\":\u00a0  \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0  \"cost-metric\": \"bw-maxres\" \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  }, \u00a0 \u00a0  \"endpoint-cost-map\": { \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.2\" { \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.89\" :\u00a0 \u00a0 0, \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:198.51.100.34\": 2000 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  } \u00a0  } FP: JSON doesn't validate: missing \":\" after \"ipv4:192.0.2.2\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-01-05 10:49:09-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-12-01 14:37:30-08:00",
+        "text": "Thank you for the work on this document. Many thanks to Christian Ams\u00fcss for his review:  https://mailarchive.ietf.org/arch/msg/art/owYhcoFnl1vEipZ2D62cWiiE-LA/  , and thanks to the authors for addressing it. I am holding a DISCUSS to make sure the examples are fixed before publication. Additionally, I agree with Christian that the line \"Content-Length: TBA\" in all the examples is not really helpful to the reader, and I suggest to either remove it or replace TBA with the actual content length for each example. As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise. Francesca 1. ----- { \u00a0 \u00a0 \u00a0  \"meta\": { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"cost type\": { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"cost-mode\": \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"cost-metric\":\"hopcount\"} \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 \u00a0  }, \u00a0 \u00a0 \u00a0 \"endpoint-cost-map\": { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"ipv4:192.0.2.2\": { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"ipv4:192.0.2.89\"\u00a0  : 5, \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"ipv4:198.51.100.34\": 3 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 } FP: JSON doesn't validate. There is one \"}\" too many after \"hopcount\". 2. ----- \u00a0  { \u00a0 \u00a0  \"meta\": { \u00a0 \u00a0 \u00a0 \u00a0 \"cost type\": { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"cost-mode\": \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"cost-metric\":\"tput\" \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  } \u00a0 \u00a0  \"endpoint-cost-map\": { \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.2\": { \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.89\"\u00a0  : 256000, \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:198.51.100.34\": 128000 \u00a0 \u00a0  } \u00a0  } FP: JSON doesn't validate. I believe there is 2 errors: after the second \"}\" after \"tput\" there is a missing \",\" , and it is also missing a final \"}\" at the end. 3. ----- { \u00a0 \u00a0  \"meta\": { \u00a0 \u00a0 \u00a0  \"cost-type\" { \u00a0 \u00a0 \u00a0 \u00a0  \"cost-mode\": \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0  \"cost-metric\": \"bw-residual\" \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  }, \u00a0 \u00a0  \"endpoint-cost-map\" { \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.2\" { \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.89\" :\u00a0 \u00a0 0, \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:198.51.100.34\": 2000 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  } \u00a0  } FP: JSON doesn't validate - there is a bunch of missing \":\" all over. 4. ----- { \u00a0 \u00a0 \u00a0  \"cost-type\" { \"cost-mode\":\u00a0  \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"cost-metric\": \"bw-maxres\"}, \u00a0 \u00a0 \u00a0  \"endpoints\":\u00a0 { \u00a0 \u00a0 \u00a0 \u00a0  \"srcs\": [ \"ipv4 : 192.0.2.2\" ], \u00a0 \u00a0 \u00a0 \u00a0  \"dsts\": [ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.89\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:198.51.100.34\" \u00a0 \u00a0 \u00a0 \u00a0  ] \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  } FP: JSON doesn't validate: missing \":\" after \"cost-type\" 5. ----- { \u00a0 \u00a0  \"meta\": { \u00a0 \u00a0 \u00a0  \"cost-type\": { \u00a0 \u00a0 \u00a0 \u00a0  \"cost-mode\":\u00a0  \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0  \"cost-metric\": \"bw-maxres\" \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  }, \u00a0 \u00a0  \"endpoint-cost-map\": { \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.2\" { \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.89\" :\u00a0 \u00a0 0, \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:198.51.100.34\": 2000 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  } \u00a0  } FP: JSON doesn't validate: missing \":\" after \"ipv4:192.0.2.2\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-03-04 00:59:05-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-01-05 10:49:09-08:00",
+        "text": "Thank you for the work on this document, and for addressing my previous DISCUSS points. I noticed two additional JSON issue, easy to fix, reported below. Many thanks to Christian Ams\u00fcss for his review:  https://mailarchive.ietf.org/arch/msg/art/owYhcoFnl1vEipZ2D62cWiiE-LA/  , and thanks to the authors for addressing it. As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion; I really think that the document would be improved with a change here, but can be convinced otherwise. Francesca 1. ----- Section 4.4.3 \u00a0  { \u00a0 \u00a0  \"cost-type\" { \"cost-mode\":\u00a0  \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"cost-metric\": \"bw-utilized\"}, \u00a0 \u00a0  \"endpoints\":\u00a0 { \u00a0 \u00a0 \u00a0 \u00a0 \"srcs\": [ \"ipv4 : 192.0.2.2\" ], \u00a0 \u00a0 \u00a0 \u00a0 \"dsts\": [ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.89\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:198.51.100.34\" \u00a0 \u00a0 \u00a0 \u00a0 ] \u00a0 \u00a0  } \u00a0  } FP: JSON doesn't validate: missing \":\" after \"cost-type\". 2. ----- Section 4.3.3. \u00a0  { \u00a0 \u00a0  \"cost-type\" { \"cost-mode\":\u00a0  \"numerical\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"cost-metric\": \"bw-available\"}, \u00a0 \u00a0  \"endpoints\":\u00a0 { \u00a0 \u00a0 \u00a0 \u00a0 \"srcs\": [ \"ipv4 : 192.0.2.2\" ], \u00a0 \u00a0 \u00a0 \u00a0 \"dsts\": [ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:192.0.2.89\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"ipv4:198.51.100.34\" \u00a0 \u00a0 \u00a0 \u00a0 ] \u00a0 \u00a0  } \u00a0  } FP: JSON doesn't validate: missing \":\" after \"cost-type\". (Minor note - is there a reason why the \"srcs\" address has whitespaces while other addresses don't? 3 occurrences in the text).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-03-04 01:00:03-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-03-04 00:59:05-08:00",
+        "text": "Thank you for the work on this document, and for addressing my previous DISCUSS points. Many thanks to Christian Ams\u00fcss for his review:  https://mailarchive.ietf.org/arch/msg/art/owYhcoFnl1vEipZ2D62cWiiE-LA/  , and thanks to the authors for addressing it. Francesca",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-04 01:00:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-11-29 05:09:48-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-03-01 08:06:31-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-11-29 05:09:48-08:00",
+        "text": "This document needs to become much more formal about how it defines the metrics it wishes to use with ALTO. This could either be done either by identifying and normatively referencing existing metrics the IETF has defined, or by defining them here. When normatively referencing existing IETF metrics, it would need to explain why their use with ALTO makes sense. At the moment, the document informatively points to a somewhat arbitrary collection of prior IETF metrics (most of which are from IPPM, residual bandwidth from IS-IS TE, but then reservable bandwidth from OSPF TE?). But it only refers to them as \"examples\", without actually defining how exactly they are to be used with ALTO, or - if not those - which actual metrics are supposed to be used. Defining a mechanism for exposing metric information to clients isn't really useful unless the content of that information is much more clearly specified. Section 4.1.3. , paragraph 2, discuss: >\u00a0 \u00a0 Intended Semantics: To give the throughput of a TCP congestion- >\u00a0 \u00a0 control conforming flow from the specified source to the specified >\u00a0 \u00a0 destination; see [ RFC3649 , Section 5.1 of  RFC8312 ] on how TCP >\u00a0 \u00a0 throughput is estimated.\u00a0 The spatial aggregation level is specified >\u00a0 \u00a0 in the query context (e.g., PID to PID, or endpoint to endpoint). A TCP bandwidth estimate can only be meaningfully be derived for bulk TCP transfers under a set of pretty strict and simplistic assumptions, making this metric a meaningless at best and misleading at worst, given that the source of this information doesn't know what workload, congestion controller and network conditions the user of this information will use or see. Also,  RFC3649  is an Experimental RFC (from 2003!) and  RFC8312  is an Informational RFC. Since this document normatively refers to them, it needs to cite them, and this will cause DOWNREFs for PS document. I would argue that at least  RFC3649  is certainly not an appropriate DOWNREF. Why define this metric at all? The material you point to is the usual model-based throughput calculation based on RTT and loss rates; a client that intended to predict TCP performance could simply query ALTO for this and perform their own computation, which will likely be more accurate, since the client will hopefully know which congestion controller they will use for the given workload, and what the characteristics of that workload are.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-01 08:06:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-10-26 15:03:07-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-26 15:03:07-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-12-14 05:11:13-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-14 05:11:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-12-05 22:43:23-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-05 22:43:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-11-30 19:39:31-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-30 19:39:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-12-02 03:34:42-08:00",
+        "end_reason": "new_position",
+        "start": "2021-10-26 15:03:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-03-17 01:14:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-02 03:34:42-08:00",
+        "text": "I perhaps understand the intention of extending the ALTO protocol so that the ALTO client and server have defined way of exchanging values for already defined metrics. However, I need to agree with my fellow AD colleagues that this document need to describe why those metrics are needed and describe the relationship with other RFCs those defines those metrics mostly for other contexts. To that end all the RFCs in the Table 1 in section 1 need to be normative references.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-03-21 01:26:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-17 01:14:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9439",
+  "evaluation_end": "2022-03-21 01:26:46-07:00",
+  "evaluation_start": "2021-10-26 15:03:06-07:00"
+}

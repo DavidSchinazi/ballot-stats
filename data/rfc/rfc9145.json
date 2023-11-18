@@ -1,0 +1,291 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-07-12 11:36:03-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-12 11:36:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-14 14:25:46-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-09-14 14:45:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-07-14 14:25:46-07:00",
+        "text": "(0) (I came to this realization rather late in my review process, so there may be places where the COMMENT and this discuss point are in disagreement; this DISCUS takes precedence.) I fear that the construction that separately distributes ENC_KEY and MAC_KEY in an attempt to achieve privilege separation is fatally flawed. In particular, the CBC encryption mode is a malleable encryption mode, in that flipping a bit of ciphertext will filp the corresponding bit of the next block of recovered plaintext (at the cost of completely garbling the recovered block containing the bit that was modified). Subsequent blocks are unaffected.\u00a0 Typically we combine CBC mode with a MAC such as HMAC in order to prevent such modifications from being exposed as attack vectors, and while we do use HMAC here for that purpose, we also introduce a separate class of actors that have access to the HMAC key but not the encryption key.\u00a0 Accordingly, those actors can produce a new, valid, integrity tag after making a modification to the ciphertext, allowing them to engage in attacks that make use of ciphertext malleability.\u00a0 Ciphertext malleability is particularly useful as an attack vector when the structure of the plaintext being encrypted is known, and there are portions of the plaintext that the application will either ignore if they are garbled or are expected to be near random in the normal case (and thus for which garbled output does not cause rejection by the application).\u00a0 In a SFC environment it seems highly likely that the structure of the plaintext will be known or guessable, and we don't have any real mechanisms to control what types of metadata go into encrypted context headers, so it seems that we must act as if we are exposed to this risk. While \u00a74.3 does have a note that use of GCM with HMAC is undesirable due to the additional authentication tag, it may be unavoidable in order to provide the properties that we need. (1) Section 5.1 describes the MAC as: \u00a0  Message Authentication Code:\u00a0  Covers the entire NSH data, excluding \u00a0 \u00a0 \u00a0 the Base header.\u00a0 The Additional Authenticated Data (defined in \u00a0 \u00a0 \u00a0 [ RFC7518 ]) MUST be the Service Path header, the unencrypted \u00a0 \u00a0 \u00a0 Context headers, and the inner packet on which the NSH is imposed. This description seems to exclude from the MAC most of the MAC context header itself (if we go by the corresponding figure), which is very bad for security.\u00a0 We definitely need to include under the MAC the MAC context header bits from metadata class through and including at least timestamp, and I think IV length as well.\u00a0 (The IV itself would be incorporated via the ciphertext, since the IV is an input to encryption, but since the IV length field indicates whether or not encryption was performed, we'd need to protect that information.) Similarly, Section 5.2 has the description: \u00a0  Message Authentication Code:\u00a0 Coves the entire NSH data.\u00a0 The \u00a0 \u00a0 \u00a0 Additional Authenticated Data (defined in [ RFC7518 ]) MUST be the \u00a0 \u00a0 \u00a0 entire NSH data (i.e., including the Base Header) excluding the \u00a0 \u00a0 \u00a0 Context Headers to be encrypted. which on the face of it includes the field that holds the MAC itself (and is not yet populated), i.e., is self-referential. I think we need to be much more precise about the construction of the AAD in both cases.\u00a0 It's possible that the HMAC construction for the no-encrypted-context-headers case can inherit a definition from the AAD description, but if not we'll need to have some more precision there as well. (2) In order for the MAC-only construction in \u00a77.2 to be compatible with the AEAD integrity tag construction, we would need to include the 64-bit AL after A.\u00a0 While HMAC is intrinsically immune to length-extension attacks, I think that having the explicit AL is useful to avoid any risk of malleability, since the same MAC_KEY is used for constructing both types of MACs. (3) Section 5.1 describes the Timestamp field as an \"unsigned 64-bit integer value\", which is inconsistent with the actual format given in Section 6. (4) Section 7.5 directs the verifier to check if \"the value of the newly generated digest is identical to the one enclosed in the NSH\".\u00a0 It is critical for the security of the system that this comparison be done in a constant-time manner that does not provide a side channel into whether the generated digest and the value in the NSH share a common substring. (5) Do the MAC context headers always have to be the last metadata entries in the packet (to simplify the cryptographic calculations)? Certainly the diagrams only show \"unencrypted context headers\" appearing prior to the MAC context header, so if we expect unencrypted context headers to appear after the MAC context header as well, we should be clear about that both in the figures and in the specification for how to prepare the AAD.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-14 14:45:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-07-13 05:17:34-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-09-13 06:54:22-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-07-13 05:17:34-07:00",
+        "text": "Thank you for the work put into this document. Special thanks to Greg Mirsky for his shepherding especially about his summary of the WG consensus. Please find below some blocking DISCUSS point (which should be easy to fix), some non-blocking COMMENT points (but replies would be appreciated), and one nit. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == I failed to spot the order of the operations for the integrity and confidentiality operations, e.g., I did not find on what the HMAC is computed: in the unencrypted or encrypted field ? -- Section 5.1 -- What is the unit of \"key length\", I assume a length expressed in octets but it is not specified. -- Section 7.2 -- What is the \"A\" used in the HMAC computation ? The formula specifies HMAC-SHA-256-128() but what if another HMAC is used ? Section 7.3 use MAC() which is more flexible. As the MAC field is included in the integrity protected header, please specify the value of this field when computing the HMAC (I assume 0 but let's be clear) -- Section 7.5 -- What is the expected behavior when a NSH does not contain a \"MAC and Encrypted Metadata\" Context Header ? \u00a71 hints to packet drop ? Should there be a local policy for this case ?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-13 06:54:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-07-12 22:39:45-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-12 22:39:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-07-14 05:19:42-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-14 05:19:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-07-14 16:14:37-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-14 16:14:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-07-12 07:46:19-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-12 07:46:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-07-12 14:19:50-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-12 14:19:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-07-07 13:37:02-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-07 13:37:02-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-07-14 23:13:29-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-07-26 10:25:44-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-07-14 23:13:29-07:00",
+        "text": "Enough other Area Directors have said, and I agree, that this should officially update  RFC 8300 , so I'd like to have the discussion.\u00a0 In particular, given that this was identified as a gap in  RFC 8300 , and since I don't see any explicit statement that this is meant to be an optional extension, shouldn't it be an update?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-26 10:25:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-07-15 02:00:40-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-15 02:00:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-07-13 12:02:24-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-09-18 14:14:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-07-13 12:02:24-07:00",
+        "text": "** Section 4.6.\u00a0 This section explains that an upper NSH can be encapsulated in a lower NSH, and that \u201cthe Upper-NSH information is carried along the lower-level chain without modification.\u201d\u00a0 I read this to mean that the upper and lower NSH can independently be protected with different keys.\u00a0 The text even helpfully points out that \u201cKeying material used at the upper-level domain SHOULD NOT be the same as the one used by a lower-level domain.\u201d\u00a0 Such a construct suggests that there are multiple MAC/Encrypted Metadata context headers, one for the upper and another for the lower.\u00a0 However, Section 7.1 later notes that \u201cOnly one instance of \"MAC and Encrypted Metadata\" Context Header (Section 5) is allowed.\u201d\u00a0 This seems like conflict.\u00a0 What am I missing? ** Section 7.2.\u00a0 On computing the HMAC in an integrity only situation: -- This section defines the MAC as \u201cT = HMAC-SHA-256-128(MAC_KEY, A)\u201d.\u00a0 Previously, A was defined as the Additional Authenticated Data (per Section 4.2).\u00a0 Since this isn\u2019t the AEAD use case, there is no A. It seems that this should be something closer to: \u201cT = HMAC-SHA-256-128(MAC_KEY, )\u201d. -- The text would benefit from a description on how to serialize the packet for hashing.\u00a0 For example, Figure 6 and 7 are helpful logical descriptions of the integrity scope.\u00a0 However, the MAC field itself is depicted as part of the what should get hashed.\u00a0 Should that field be zeroed out? Removed?  ** Section 9. \u00a0  The attacks discussed in [ I-D.nguyen-sfc-security-architecture ] are \u00a0  handled owing to the solution specified in this document, except for \u00a0  attacks dropping packets.\u00a0  The above reference highlights the following attackers \u2013 \u201cThere are many types of compromised switches attack: packet dropping, packet duplicating, packet manipulating, incorrect forwarding,\u00a0 eavesdropping, weight adjusting, man-in-the-middle, state-spoofing, control-channel hijacking, etc.\u201d\u00a0 Per the security services in this document, it doesn\u2019t seem like all are mitigated by this draft as described above: -- packet dropping = noted as not being handled -- packet manipulating, eavesdropping, weight adjusting, man-in the-middle, state-spoofing, and control-channel hijacking = appear to be handled if both security services are applied -- packet duplicating = this draft doesn\u2019t not provide a standardized approach for mitigating this issue -- incorrect forwarding = doesn\u2019t appear to be mitigated.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-18 14:14:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-07-14 10:55:29-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-14 10:55:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-07-13 03:36:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-07-07 13:37:01-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-09-20 13:29:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-13 03:36:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9145",
+  "evaluation_end": "2021-09-20 13:29:50-07:00",
+  "evaluation_start": "2021-07-07 13:37:01-07:00"
+}

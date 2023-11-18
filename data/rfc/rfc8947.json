@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-06-09 04:12:47-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-09 04:12:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-05-26 21:58:14-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-26 21:58:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-06-07 21:28:15-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-08-05 23:31:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-07 21:28:15-07:00",
+        "text": "I have a couple points that might require a bit of discussion, but I expect to be pretty easy to resolve: (1) Can we double-check this text in Section 10.1: \u00a0  The Identity Association for Link-Layer Addresses option (IA_LL \u00a0  option) is used to carry one or more IA_LL options, the parameters \u00a0  associated with the IA_LL, and the address blocks associated with the \u00a0  IA_LL. I am pretty sure that the \"is used to carry one or more IA_LL options\" should actually be talking about IA_LLADDR options.\u00a0 But if I'm wrong, and this is saying that IA_LL can carry IA_LL, we should have a lot more discussion about this recursive structure and how to interpret it. (2) I'd also like to have a bit of discussion about the \"direct client mode scenario\" (Section 4.2).\u00a0 The current text implies that a device might use DHCPv6 on a single interface to request addresses for each local interface and then use the returned allocation from the one interface as link-layer addresses on the other interfaces.\u00a0 While we do say that this \"typically means one address per device\", we still talk about the more general case, and I'm not sure I understand when it makes sense.\u00a0 Given that (as Section 11 notes), \"[l]ink-layer addresses are typically specific to a link\", and a multi-interface client may not a priori know that any given set of its interfaces are on the same link, it seems like this scenario is introducing risk that we use an allocated address outside of the scope of authority from which it was allocated, risking collision.\u00a0 (While the security considerations rightly note that coping with collision is something that nodes need to be prepared to do anyway, we don't need to be encouraging it.) Without some discussion of (e.g.) a link aggregation scenario where a client is bonding multiple physical interfaces into a higher-capacity logical interface, I don't think we should mention this multi-interface scenario at all.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-05 23:31:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-06-10 15:18:38-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-10 15:18:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-05-22 23:39:08-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-05-22 23:39:08-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-06-11 01:34:25-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-11 01:34:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-06-11 06:07:07-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-11 06:07:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-06-10 21:47:39-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-10 21:47:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-06-10 13:02:03-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-10 13:02:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-06-10 01:03:53-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-10 01:03:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-06-08 04:07:28-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-09-02 07:01:50-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-08 04:07:28-07:00",
+        "text": "Hi, Thank you for this document.\u00a0 Mostly I found this document to be straight forward to read, but there are a few areas that were unclear to me, that could probably help being clarified. Hopefully none of these are too difficult to address, or they may turn out not to be issues at all ... Client SHOULD, server MUST ignore.\u00a0 In a couple of places in the document (sections 6, 10.1, 10.2), it states that the client SHOULD set 0.\u00a0 To allow the protocol to evolve in future, I believe that it would be better if the SHOULD is changed to a MUST. There doesn't appear to be any specification of how an OPTION_IA_LL should be handled if there are no IA_LL-options, or it contains an IA_LL-option that is not understood by the server.\u00a0 The text does also not specify if IA_LL-options can contain multiple options, and if so how those are encoded (presumably as an array/list of option values), perhaps this is already covered by the DHCPv6 spec?\u00a0 Similar comments also apply to the LLaddr-options field.  9. Releasing Addresses Once a block of addresses have been released, can they immediately be allocated to a different client?\u00a0 Or should they avoid being reused straight away if possible?\u00a0 Perhaps this consideration is already covered by DHCPv6, but it probably makes sense to say something about this, either in section 9, and/or maybe in the security considerations.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-02 07:01:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-06-10 17:23:28-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-10 17:23:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-05-27 13:26:01-07:00",
+        "end_reason": "new_position",
+        "start": "2020-05-22 23:39:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-06-02 13:43:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-05-27 13:26:01-07:00",
+        "text": "Be ye not afraid -- these should be easy to address. I have some concerns about this document -- much of my unease isn't specifically about the document itself, but rather the impact that deploying this on a wide scale may create. Much of my concerns can probably be addressed by sprinkling on some weasel-words / \"you could shoot yourself in the foot if not careful\" language.  Unless I've horribly misunderstood, in the direct client mode, a device comes up, connects to a switch and then changes its MAC address to the DHCP assigned one. This may interact poorly with: a: switches with small CAM tables (sometimes deployed in DCs) b: devices with configured maximum MACs per port, common in enterprises (e.g:  https://www.cisco.com/c/m/en_us/techdoc/dc/reference/cli/nxos/commands/l2/switchport-port-security-maximum.html  ) c: 802.1X (which is often configured to only allow a single MAC per interface / VLAN) d: switches which do things like DHCP snooping. Again, I do realize that most of these issues are not directly the result of this technique, but implementing / deploying this makes it more likely that devices will come up with a temp address and then pivot to an assigned one, and I'd like to see some operational warnings...",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-04 06:30:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-02 13:43:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8947",
+  "evaluation_end": "2020-09-04 06:30:46-07:00",
+  "evaluation_start": "2020-05-22 23:39:07-07:00"
+}

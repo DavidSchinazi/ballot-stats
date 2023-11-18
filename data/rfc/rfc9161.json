@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-01-20 18:09:02-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-01-20 18:09:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-01-18 13:35:22-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-10-07 09:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-18 13:35:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-01-19 07:20:00-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-01-19 07:20:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-19 22:51:15-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-07 09:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-19 22:51:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-01-20 09:57:06-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-01-20 09:57:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-01-21 06:13:27-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-10-06 22:52:31-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-21 06:13:27-08:00",
+        "text": "Thank you for the work put into this document. This system could indeed be very useful but I am afraid that this is a very complex system especially for IPv6 NDP.  Minor regret in the shepherd write-up as the WG summary did not include any comment on the WG consensus. Thanks to Jean-Michel Combes for its Internet directorate review at:  https://datatracker.ietf.org/doc/review-ietf-bess-evpn-proxy-arp-nd-11-intdir-telechat-combes-2021-01-20/ as Jean-Michel added some important comments, please review them as well as I support them especially those around DAD that should be a blocking DISCUSS point. I also second Erik Kline's DISCUSS points. Question to the authors and BESS WG chairs: was this document submitted to a 6MAN/V6OPS WGs review ? This is where all IPv6 experts live :-) Please find below some blocking DISCUSS points, some non-blocking COMMENT points (but replies would be appreciated), and some nits. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == Would  RFC 8929  be enough to solve the problem ? -- Section 3 -- \"A Proxy-ARP/ND implementation MAY support all those sub-functions or only a subset of them.\", I am afraid that it is mandatory that the reply and duplicate-ip must be coupled: either both of them are active or none of them are active else the system allows for duplicate IP addresses. -- Section 3.1 -- \"A Proxy-ARP/ND implementation SHOULD support static, dynamic and EVPN-learned entries.\" why not a MUST ? Or at least for dynamic & EVPN-learned ? or at least one ? \"Upon receiving traffic from the CE... the PE will activate the IP->MAC and advertise it in EVPN\" it is unspecified how many bindings can be advertised in the case of multiple static MAC for one IP... only one or all ? -- Section 3.2 -- Why not flooding to all other PEs the ARP/NS with unknown options ? It would be safer. -- Section 3.6 -- This function MUST be a mandatory part of the list of functions of section 3. -- Section 5.2 -- An easy to fix: \"Any unknown source MAC->IP entries\" isn't it IP->MAC as in the rest of the document including the terminology section ? -- Section 5.4 -- \"traffic to unknown entries is discarded\" which traffic (section 5.5 is much better to this point suggest to copy the text)? The NDP/ARP or normal data plane traffic ? Where is this behavior specified in the 6 sub-functions of section 3 ?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-10-07 09:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-06 22:52:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-01-20 23:20:47-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-07-18 20:17:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-20 23:20:47-08:00",
+        "text": "[ meta ] * I appreciate the attempt to explicitly discuss handling NS/NA messages with \u00a0 not-previously-seen options.\u00a0 Thank you for that. \u00a0 It seems to me, however, that the proposed approach to proceed with \u00a0 setting the current capabilities in concrete but point to things like \u00a0 \"unicast-forward\" as a relief valve, even though 3.2-f seems to say the \u00a0 multicast packets (i.e. on cache miss) should be discarded (implying the \u00a0 unicast mapping might never be learned in the first place?). [ general ] * When a PE reboots, should it do MLD (e.g. 2710, 3810, ...) of some kind to \u00a0 gather critical state so that it doesn't have to wait for CEs to have \u00a0 problems? [ section 3.1 ] * To my knowledge there is no concept in IPv6 of a link where anycast/O=0 \u00a0 NAs only propagate partway through a broadcast domain.\u00a0 In practice, if I \u00a0 understand the architecture correctly, O=0 NAs will propagate to all CEs \u00a0 \"behind\" a given PE but, if anycast=false, no further. \u00a0 This could lead to a difficult to debug scenario (though I admit this is \u00a0 probably quite rare). \u00a0 Note that 4861-7.2.4 implies that most nodes sending NAs for their own \u00a0 addresses will adhere to \"the Override flag SHOULD be set to one\".\u00a0 This \u00a0 is not a MUST, though.\u00a0 Dropping all O=0 NAs might affect some \u00a0 implementations that don't comply with this SHOULD.\u00a0 I have no idea how \u00a0 many implementations this might affect (in practice, I suspect none?), but... \u00a0 I think it might need to be considered. [ section 3.1.1/3.2 ] * I was not able to understand what the typical disposition of the O bit \u00a0 is supposed to be in these proxied NAs.\u00a0 Is the intent to default to O=0 so \u00a0 that local O=1 can be preferred (vis. 4861-7.2.4 and 4389)?\u00a0 Or will it \u00a0 more typically be set to O=1 (as if just replaying the NA that was learned \u00a0 by another PE)? [ section 3.2 ] * Item (f) as currently written would break Enhanced DAD ( RFC 7527 ), \u00a0 would it not? [ section 3.6 ] * \"Duplicate IP Detection for IPv6 SHOULD be disabled when IPv6 \u00a0  'anycast' is activated in a given EVI.\" \u00a0 This doesn't seem like the right response to me.\u00a0 It should be okay to keep \u00a0 doing DAD for O=1 addresses regardless of the setting of this 'anycast' \u00a0 option, I would have thought. [ section 5.5 ] * I think that recommending Reply Sub-Functions discard NS packets of \u00a0 unexpected for means, in practice, no new NS option or flag can ever really \u00a0 be made to work.\u00a0 The PE(s) serving the CE(s) that make \"new NS\" \u00a0 solicitations will all need to be upgraded, and it's not immediately clear \u00a0 to me that remote PEs wouldn't also need to be upgraded (to support a \u00a0 possible \"new NA\"in response). \u00a0 If this is in fact likely to be the operational reality then I think this \u00a0 limitation probably needs to be noted explicitly.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-10-07 09:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-18 20:17:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-01-21 06:39:55-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-01-21 06:39:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-01-15 11:05:25-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-10-07 09:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-15 11:05:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-01-06 06:17:12-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-10-07 09:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-06 06:17:12-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-01-20 20:22:40-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-10-07 09:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-20 20:22:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-20 12:05:36-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-10-07 09:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-20 12:05:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-01-20 18:06:25-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-10-07 09:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-20 18:06:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-01-20 11:18:44-08:00",
+        "end_reason": "new_position",
+        "start": "2021-01-06 06:17:11-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-10-07 09:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-20 11:18:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9161",
+  "evaluation_end": "2021-10-07 09:34:17-07:00",
+  "evaluation_start": "2021-01-06 06:17:11-08:00"
+}

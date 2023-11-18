@@ -1,0 +1,321 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-22 11:35:26-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-22 11:35:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-19 06:28:12-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-24 23:17:14-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-01-04 08:21:49-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-02-24 23:17:14-08:00",
+        "text": "I support \u00c9ric's and Erik's and Roman's Discusses. We've had similar issues with embedding client IP addresses in security tokens all over the place, e.g., in Kerberos tickets, where it provided negligible security benefit and frequently caused (hard to diagnose!) breakage. I further note based on some of the responses so far that (as I understand it) the issues of multiple client IPs is quite realistic just for making requests to the CSP vs the uCDN, and no amount of time-locality can save us. I expect that the IESG will have some in-person discussion of this topic and what we are willing to put in an IETF-stream RFC.\u00a0 (My own personal opinion is that we have a fair amount of leeway to document \"some people are doing this thing\" accompanied by explanations of the flaws in that practice, but that we have very limited scope to recommend bad practices.) I think we should also discuss the proposed technique of redistributing shared secrets used to generate MACs for signed JWTs.\u00a0 I see a minimal acknowledgment that there is potential cause concern in the penultimate paragraph of the security considerations that \"it is important to know the implications of a compromised shared key\", but in my mind the text there does not really call out the severity of those implications.\u00a0 I would have expected something like \"redistributing the shared key in this manner allows the dCDNs to impersonate the CSP to the uCDN and produce arbitrary signed URLs that are accepted by the uCDN as authentic\".\u00a0 Well, what I *actually* would have expected was to just not define this mechanism at all, as it is too risky to use a group-shared symmetric key in a group where participants are at different trust levels.\u00a0 But perhaps the WG can produce some explanation of why this is acceptable... I also have concerns about our guidance to leave the JWT \"jti\" unchanged when re-signing with different contents, e.g., changing Issuer and/or Audience, etc..\u00a0 We don't seem to mention one way or another whether \"jti\" needs to be preserved while performing Signed Token Renewal, but changing the \"exp\" while preserving \"jti\" seems like it would be problematic as well.\u00a0 The guidance in  RFC 7519  is somewhat vague (basically, that it needs to change if it identifies a \"different data object\"), so we may want to consult the broader OAuth WG (not necessarily just the IANA DE) for further interpretation.\u00a0 I can also add based on the responses so far that the \"jti\" is not solely to be used to prevent replay, and so I am skeptical of reasoning based on such an argument. The combined defaults for the CDNI Metadata Interface for URI Signing seem to be an unsafe combination.\u00a0 Specifically, the default behavior for the \"issuers\" property is to allow any Issuer, and the default for the \"jwt-header\" property is to take the header from the JWT in band. As far as I can tell, this means that the dCDN will just blindly accept anything that is formatted as a JWT and signed by any key nown to the dCDN.\u00a0 The authentication and authorization properties of such behavior are so poor so as to effectively be useless, absent some level of care surrounding key management to isolate keys to given URIs.\u00a0 In fact, the lack of substantive discussion of key management and requirements thereof seems Discuss-worthy in its own right.\u00a0 We need to say something about obtaining a key along with a trust path to what it's authorized to be used for, even if the specific protocol mechanism for doing so is left out of scope.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-20 13:28:53-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-01-04 08:21:49-08:00",
+        "text": "Thanks for the updates in the -22 through -24.\u00a0 I think a couple of my discuss points remain at the discuss level, which I'll expound on a bit more below. I am happy to see the pervasive disclaimers that use of a symmetric shared key is supported but NOT RECOMMENDED, and the note that redistribution of the symmetric shared key to dCDNs (including cascaded CDNs) is included for legacy feature parity and highly discouraged in new implementations. However, I think this does not fully address my original discuss point.\u00a0 As I said then, [[I see a minimal acknowledgment that there is potential cause concern in the penultimate paragraph of the security considerations that \"it is important to know the implications of a compromised shared key\", but in my mind the text there does not really call out the severity of those implications.\u00a0 I would have expected something like \"redistributing the shared key in this manner allows the dCDNs to impersonate the CSP to the uCDN and produce arbitrary signed URLs that are accepted by the uCDN as authentic\".]]\u00a0 In particular, I think it is important to emphasize in some manner that the cryptographc properties of the symmetric shared key are fully symmetric across all participants, even though the administrative and organizational structure here is hierarchical with explicitly more- and less-trusted entities, making the symmetric cryptographic mechanism a mismatch for the desired trust boundaries and inviting abuse.\u00a0 Only contractual controls prevent misuse in this scenario, whereas we have well-understood technologies that allow technical measures to prevent misuse that are preferred. It's also still unclear to me that there's sufficient need to document the symmetric key *redistribution* case in this document at all, if the only use case is for \"legacy feature parity\".\u00a0 Given that it's a fairly simple idea, what is to stop us from leaving it undocumented in this Proposed Standard and letting any implementors that need it do so on their own, or with a separate Informational document mentioning its existence?\u00a0 I am not aware of any preexisting IETF work that we need to retain compatibility with, and the data presented so far does not make a compelling (to me) case that we must include this functionality in order for the IETF offering to be competitive. (To be clear, I do not object to describing the use of symmetric keys for a single-hop scenario, as the risks there are much smaller.) I'd also like to have some additional discussion on this point from my previous Discuss position, reproduced with typo fixed: === The combined defaults for the CDNI Metadata Interface for URI Signing seem to be an unsafe combination.\u00a0 Specifically, the default behavior for the \"issuers\" property is to allow any Issuer, and the default for the \"jwt-header\" property is to take the header from the JWT in band.\u00a0 As far as I can tell, this means that the dCDN will just blindly accept anything that is formatted as a JWT and signed by any key known to the dCDN.\u00a0 The authentication and authorization properties of such behavior are so poor so as to effectively be useless, absent some level of care surrounding key management to isolate keys to given URIs.\u00a0 In fact, the lack of substantive discussion of key management and requirements thereof seems Discuss-worthy in its own right.\u00a0 We need to say something about obtaining a key along with a trust path to what it's authorized to be used for, even if the specific protocol mechanism for doing so is left out of scope. === I do see that \u00a71.3 gained a mention of \"obtain the key in a manner that allows trust to be placed in the assertions made using that key\", apparently per my suggestion in my original COMMENT section.\u00a0 However, I don't think this is sufficient.\u00a0 I strongly encourage a dedicated section on the requirements for key management and how updates (both additions and removals) of the list of trusted Issuer/key pairs are managed.\u00a0 Failing that, at a minimum the default for the \"issuers\" property in the CDNI Metadata Interface needs to be changed to say that an empty list means that any Issuer in the dCDN's trusted key store of issuers is acceptable for signing JWTs for URI signing.\u00a0 This is to be contrasted with \"any Issuer at all\", which does not impose an obligation on the dCDN to maintain a list of Issuer/key pairs trusted for signing JWTs used in signed URIs.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-22 12:59:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-03-20 13:28:53-07:00",
+        "text": "I see that the -25 has demoted discussion of symmetric key redistribution from (paraphrasing) \"a normal thing mentioned in passing\" to a SHOULD NOT action.\u00a0 This is a step in the right direction, but I am not sure that it's far enough.\u00a0 Is there some additional background on why this functionality (of key redistribution from uCDN to dCDN in particular, or group sharing of a single symmetric key from CSP to both uCDN and dCDN) is required to retain that I am failing to find?\u00a0 The latest discussion I see in the WG email archives is https://mailarchive.ietf.org/arch/msg/cdni/iFP6w3z22yQ1s0IJisrsIJN1ikU/ which seemed to suggest that the mechanism would be removed entirely. The security properties of this group key sharing are sufficiently poor that (if we do need to keep it) I think there would need to be explicit discussion in the document about what the use case is and why that use case allows for the weakening of security properties.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-22 12:59:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-24 12:35:02-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-02-24 12:35:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-23 05:50:03-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-11-15 04:56:10-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-02-23 05:50:03-08:00",
+        "text": "Thank you for the work put into this document. Special thanks for the doc shepherd write-up , which was really useful about the WG history. Please find below one blocking DISCUSS points (which should be solved easily), one non-blocking COMMENT point (but replies would be appreciated), and some nits. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == -- Section 2.1.10 -- About \"Client IP (cdniip) claim\", I really wonder whether this could be used in real life as some IPv4 Carrier-Grade NAT (CGN) have a large pool of \"public\" IPv4 addresses that could select different public IPv4 addresses if badly designed. How will it work with dual-stack UAs where some connections could be over IPv4 and some over IPv6 ? Now to mention a dual-home (Wi-Fi & mobile data) UA ? Or what if the dCDN is between the UA and the CGN (assuming that the uCDN or CSP are upstream of the CGN) ? Also, \"If the received signed JWT contains a Client IP claim\" uses singular rather than \"one or several\"  I also noted that Section 7 (security considerations) puts some restrictions on the usefulness of cdniip. I would welcome some applicability statements on the use of cdniip.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-01-03 04:50:17-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-11-15 04:56:10-08:00",
+        "text": "Thank you for the work put into this document. Thank you for fixing all my previous COMMENTs in the -22 revision. I am afraid that I need to keep my DISCUSS about the cdniip even with the addition of a paragraph at the end of section 2.1.10... This paragraph ressembles to an application statement but it it really light. Why did the authors select not to use  RFC 8174  normative language \u201cNOT RECOMMENDED\u201d ? The section 7 (security considerations) is still very light on the IP address sharing. -\u00e9ric == DISCUSS == -- Section 2.1.10 -- About \"Client IP (cdniip) claim\", I really wonder whether this could be used in real life as some IPv4 Carrier-Grade NAT (CGN) have a large pool of \"public\" IPv4 addresses that could select different public IPv4 addresses if badly designed. How will it work with dual-stack UAs where some connections could be over IPv4 and some over IPv6 ? Now to mention a dual-home (Wi-Fi & mobile data) UA ? Or what if the dCDN is between the UA and the CGN (assuming that the uCDN or CSP are upstream of the CGN) ? Also, \"If the received signed JWT contains a Client IP claim\" uses singular rather than \"one or several\"  I also noted that Section 7 (security considerations) puts some restrictions on the usefulness of cdniip. I would welcome some applicability statements on the use of cdniip.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-03 04:50:17-08:00",
+        "text": "Thank you for fixing all my previous COMMENTs in the -22 revision and addressing parts of my previous DISCUSS by using \u201cNOT RECOMMENDED\u201d in section 2.1.10 in the -24 revision. I am afraid that I still do not see the value of having cdniip in this document, but, as I do not want to block this document, I am balloting ABSTAIN. The section 7 (security considerations) is still very light on the IP address sharing. I would welcome some applicability statements on the use of cdniip. -\u00e9ric == DISCUSS (kept for archive) == -- Section 2.1.10 -- About \"Client IP (cdniip) claim\", I really wonder whether this could be used in real life as some IPv4 Carrier-Grade NAT (CGN) have a large pool of \"public\" IPv4 addresses that could select different public IPv4 addresses if badly designed. How will it work with dual-stack UAs where some connections could be over IPv4 and some over IPv6 ? Now to mention a dual-home (Wi-Fi & mobile data) UA ? Or what if the dCDN is between the UA and the CGN (assuming that the uCDN or CSP are upstream of the CGN) ? Also, \"If the received signed JWT contains a Client IP claim\" uses singular rather than \"one or several\"  I also noted that Section 7 (security considerations) puts some restrictions on the usefulness of cdniip. I would welcome some applicability statements on the use of cdniip.",
+        "type": "Abstain"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-24 17:46:53-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-12-29 21:34:23-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-02-24 17:46:53-08:00",
+        "text": "Apologies for piling on, but I want to second Eric Vyncke's Discuss.\u00a0 The use of Client IP addresses is more problematic than one might suspect from a reading of this document. RFC 8305  Happy Eyeballs means for a dualstack client and a dualstack CSP or CDN there are no guarantees that the address family will be the same. Furthermore, a client using  RFC 8981  (4941bis) IPv6 temporary addresses might change source address (even with every request) so an exact match would not be recommended. To make matters even more complicated, a mobile client might make the CSP request on Wi-Fi, walk out of range, and complete a subsequent CDN request via its mobile provider network (or vice versa).\u00a0 So, even using a fairly short CIDR length for truncation may not work since the origin network can be completely different between requests. The latter behaviour can also be trigger by connection migration transports, like MPTCP and (soon) QUIC. I think one solution might include relaxing all the MUSTs in section 2.1.10. Instead, perhaps some text that clarifies the presence of reliability issues with Client IPs and recommends that CDNs be develop a more sophisticated policy (or avoid using this altogether and prefer to use other claims). Including the Client IP for logging purposes might be helpful, but being too strict about verifying it can lead to client-visible failures. Alternatively, UAs need to be augmented to know that when a cdniip is part of the claim that it must try to keep the source IP address the same for subsequent requests, recognizing, as section 7 does, that NAT can make this impossible.\u00a0 I'm not sure this is a workable option, though.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-29 21:34:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-03-31 08:09:18-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-05 18:26:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-03 01:21:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-22 17:33:25-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-22 17:33:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-24 07:37:36-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-24 07:37:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-02-24 23:56:15-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-24 23:56:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-25 05:26:51-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-25 05:26:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-23 18:01:03-08:00",
+        "end_reason": "new_position",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-01-04 08:05:44-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-02-23 18:01:03-08:00",
+        "text": "** Section 1.3.\u00a0 Per \u201cNote that the signed Redirection URI MUST maintain the same (or higher) level of security as the original Signed URI.\u201d: -- How is this equivalence assessed? -- Can one create an architecture to that cascades a mix of uCDNs whose path will mix both asymmetric and symmetric keys?\u00a0 Assuming that\u2019s possible what\u2019s \u201csame or higher\u201d here? ** Section 2.1.7.\u00a0 The specified use of the jti claim in the URI signing workflow appears to conflict with the underlying definition of this claim in  RFC7519 . (a) Section 1.3. says \u201c\u2026 the CSP needs to allow the uCDN to redistribute shared keys to a subset of their dCDNs.\u201d (b) Section 2.1.7 says \u201cIf the received signed JWT contains a Nonce claim, then any JWT subsequently generated for CDNI redirection MUST also contain a Nonce claim, and the Nonce value MUST be the same as in the received signed JWT.\u201d (c.1) Section 4.1.7 of  RFC7519  says \u201cThe identifier value MUST be assigned in a manner that ensures that there is a negligible probability that the same value will be accidentally assigned to a different data object \u2026 (c.2) Section 4.1.7 of  RFC7519  also says \u201c\u2026 if the application uses multiple issuers, collisions MUST be prevented among values produced by different issuers as well.\u201d The constraints in (b) suggests that the Nonce claim value needs to be the same across every logical hop in the cascading CDN path.\u00a0 My understanding of the architecture is that some of the claims in the JWTs such as the cdniuc or cdnistd claims might changes when there are cascading CDNs.\u00a0 If they change, this seems like that would constitute a different \u201cdata object\u201d who have the same unique (jti claim) identifier which would violate (c.1).\u00a0 One could argue that perhaps the CDNs are at arm-length so they aren\u2019t really an \u201capplication us[ing] multiple issuers\u201d, however, the architectural construct of shared keys suggested by (a) seems to imply otherwise which would suggest that this violated (c.2).\u00a0 If I\u2019ve misunderstood the architecture let me know. The notion of keeping the nonce the same seems like the right design, its just the reuse of this particular claim seems mismatched.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-04 08:05:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-03-23 03:01:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-19 06:28:12-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9246",
+  "evaluation_end": "2022-03-23 03:01:51-07:00",
+  "evaluation_start": "2021-02-19 06:28:12-08:00"
+}

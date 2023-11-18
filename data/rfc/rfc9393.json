@@ -1,0 +1,243 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-02-17 04:20:23-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-17 04:20:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-02-14 23:54:22-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-19 17:54:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-14 23:54:22-08:00",
+        "text": "The volume of my comments notwithstanding, this document was actually quite nice to read.\u00a0 I think that these discuss points, at least, should be fairly straightforward to resolve. (1) In a number of places we have text roughly of the form: \u00a0 \u00a0 String values based on a\u00a0 from   MUST NOT be used, as these values are less concise than \u00a0 \u00a0 their index value equivalent. This seems like it could have some nasty interactions with updates to the IANA registry in question, especially if consumers attempt to enforce the MUST NOT.\u00a0 Consider a version scheme \"foo\", used by an implementation M to emit CoSWID tags.\u00a0 Implementation M is old and predates \"foo\"'s registration, so it uses the text form.\u00a0 Implementation N postdates \"foo\"'s registration and knows to use the integer form for encoding it.\u00a0 But if N insists on the integer form for decoding, it will reject M's tags, and needlessly so.\u00a0 So I think we need a warning that the \"MUST NOT\" is only for encoding, and that decoders MUST accept both forms (at least for names not listed in this document). (2) Section 4.1 contains SHOULD-level guidance to use the \"semver\" version scheme when the value matches the semantic versioning syntax.\u00a0 That seems like it would be highly problematic if the version number only happens to match the syntax by accident and does not actually match the semantic versioning semantics.\u00a0 Shouldn't we be giving recommendations based on the underlying (intended) semantics rather than just the syntax? (A similar concern might apply to the recommendation to use any scheme other than \"alphanumeric\", but there are not really well-known semantics for the \"alphanumeric\" syntax such that expectations of semantics would fail to be met if the wrong version scheme was assigned.) (3) The integer values assigned to link ownership values disagree between Table 5 and the CDDL.\u00a0 (The IANA registry guidance matches Table 5.) I did not attempt to obtain a copy of ISO/IEC 19770-2:2015 to confirm whether it uses integer identifiers that we want to maintain compatibility with -- the prose in \u00a74.3 is a little unclear as to whether such compatibility is relevant since it only talks about \"values\" that are to match. (4) It's quite possible that I'm just confused about one or both of the statements in question, but it seems like there may be some inconsistency between \u00a72.7's \"This specification does not define how to resolve an XPath query in the context of CBOR\" and \u00a75.2's \"This XPath is evaluated over SWID or CoSWID tags found on a system\" (with, IIRC, a couple other relevant mentions elsewhere).\u00a0 My understanding is that a CoSWID tag is intrinsically represented in a CBOR form, so I'm not sure how one could cause an XPath evaluation to match without having defined semantics for evaluating that query in a CBOR context. (5) There are a couple of references to first-come, first-served allocations for SWID index value registrations (e.g., \u00a72's \"new constructs are assigned a unique index value on a first-come, first- served basis\", \u00a76.2.1's \"New index values will be provided on a First Come First Served as defined by [ BCP26 ]\", but I do not see any direction to IANA to create a registry using such an allocation policy for any range of the registry in question.\u00a0 It seems like this indicates some internal inconsistency to be resolved, but I'm not entirely sure what the proper resolution is. (6) Section 6.2.2 attempts to provide a namespaced scheme for distributed allocation of unique (collision-free) names for private-use index values, but I do not think it admits a unique partition into \"domain.prefix\" and \"name\" by treating U+002D HYPHEN-MINUS as a separator, since that character is valid in both LDH hostnames and in NMTOKEN names.\u00a0 This makes it impossible to guarantee uniqueness, since we could have different partitionings of the same consolidated name into the underlying components. (7) We seem to have conflicting statements in \u00a77 about how a signed CoSWID tag is represented.\u00a0 First we say that \"[a] CoSWID tag MUST be wrapped in a COSE Single Signer Data Object (COSE_Sign1) that contains a single signature and MUST be signed by the tag creator\", but just a few paragraphs later we say that \"[t]he COSE_Sign structure that allows for more than one signature to be applied to a CoSWID tag MAY be used\", but following the MAY would violate the MUST.\u00a0 Furthermore(!), the last paragraph of the section says only that \"[a] CoSWID SHOULD be signed, using the above mechanism\", which again is in conflict with the MUST.\u00a0 (Section 8 goes on to admit the possibility of unsigned tags as well as both forms of signed tag, and Section 9 includes \"a signature provided by the supplier if present in the CoSWID tag\".) (8) Table 1 seems to be missing an entry for $$resource-collection-extension, defined in \u00a72.9.2 and appearing in multiple other locations.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-03-19 17:54:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-02-08 05:33:43-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-08 05:33:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-02-16 16:39:42-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-16 16:39:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-02-15 14:01:49-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-15 14:01:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-02-17 01:58:47-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-02-17 01:58:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-02-15 02:28:41-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-03-21 05:55:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-15 02:28:41-08:00",
+        "text": "Hi, Sorry, but I have a couple of issues that it would be helpful to discuss ... 1.\u00a0 While an attempt to align \u00a0  SWID and CoSWID tags has been made here, future revisions of ISO/IEC \u00a0  19770-2:2015 or this specification might cause this implicit \u00a0  information model to diverge, since these specifications are \u00a0  maintained by different standards groups. This text concerns me, in that it seems that the IETF is expecting or allowing the SWID and CoSWID specification to diverge. Would it be possible to have stronger text here? E.g., to indicate:  - the intent is to keep the two spec's consistent.  - nothing should be added to CoSWID without working with ISO/IEC to update CoSWID  - if SWID evolves then CoSWID should be similarly updated. Or, otherwise, are ISO/IEC okay with the IETF effectively forking their specification in future? 2. \u00a0  [SEMVER]\u00a0  Preston-Werner, T., \"Semantic Versioning 2.0.0\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 . I want to check whether this URL is stable enough for a normative reference.\u00a0 During the YANG Semver work we discovered, that despite the Semver specification stating that is follows the Semver rules, in fact it doesn't! Specifically, the specification has been updated without changing the version number.\u00a0 The proposed solution for the YANG semver draft was to reference a specific data and revision of the \"YANG Semver 2.0.0\" specification in github.  the YANG Semver 2.0.0 specification on a given data. \u00a0  [semver]\u00a0  \"Semantic Versioning 2.0.0 (text from June 19, 2020)\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 . Would doing something similar be wise here? Thanks, Rob",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-21 05:55:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-01-26 12:08:03-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-26 12:08:03-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-02-08 14:45:01-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-08 14:45:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-02-16 06:38:50-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-26 12:08:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-07-20 09:25:15-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-16 06:38:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9393",
+  "evaluation_end": "2022-07-20 09:25:15-07:00",
+  "evaluation_start": "2022-01-26 12:08:02-08:00"
+}

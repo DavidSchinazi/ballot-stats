@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-10-16 13:40:52-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-10-23 07:44:06-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-23 07:44:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-10-24 02:26:45-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 02:26:45-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-10-24 22:30:12-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 22:30:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-10-23 20:11:18-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-10-24 11:51:28-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-10-23 20:11:18-07:00",
+        "text": "Thanks for the work on this document. I have one item that I want to make sure is discussed prior to publication, thus the DISCUSS position: This document lists all the SDP attributes as having an a Mux Category of \"TBD\".  draft-ietf-mmusic-sdp-mux-attributes  did indeed assign a category of \"TBD\" to all the attributes, save for bfcpver, which didn't exist at the time. But the point of \"TBD\" was to say that  draft-ietf-mmusic-sdp-mux-attributes  did not actually analyze the attributes to determine a \"real\" mux category. It's not intended as free pass to let other attribute definitions skip that analysis.\u00a0  Ideally, I think that this draft should assign a \"real\" mux category for each attribute in it. Failing that, it at least needs to do so for \"bfcpver\". I'm guessing that should be \"caution\" or \"special\". (Perhaps unfortunately,  draft-ietf-mmusic-sdp-mux-attributes  did not define a category of \"nope\" :-) )",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-11-27 14:46:25-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-10-24 11:51:28-07:00",
+        "text": "Update: After a bit of discussion and a re-read of  draft-ietf-mmusic-sdp-mux-attributes , I see that, while the use of \"TBD\" does not seem consistent with the definition of TBD, it does seem consistent with the practice in mux-attributes of assigning a category of TBD to attributes associated with non-muxable protocols. I've sent an email to the MMUSIC WG for guidance on the intended use. In the process, I noticed that the category assignments in this draft do not match the existing assignments in mux-attributes, which marks \"floorctrl\" as \"TBD\", and the others as \"NORMAL\". This draft marks all attributes as \"TBD\". I am going to hold the DISCUSS position for now, until discussion of the use of TBD resolves a bit further, and until the assignment mismatch is corrected. Original DISCUSS text: Thanks for the work on this document. I have one item that I want to make sure is discussed prior to publication, thus the DISCUSS position: This document lists all the SDP attributes as having an a Mux Category of \"TBD\".  draft-ietf-mmusic-sdp-mux-attributes  did indeed assign a category of \"TBD\" to all the attributes, save for bfcpver, which didn't exist at the time. But the point of \"TBD\" was to say that  draft-ietf-mmusic-sdp-mux-attributes  did not actually analyze the attributes to determine a \"real\" mux category. It's not intended as free pass to let other attribute definitions skip that analysis.\u00a0  Ideally, I think that this draft should assign a \"real\" mux category for each attribute in it. Failing that, it at least needs to do so for \"bfcpver\". I'm guessing that should be \"caution\" or \"special\". (Perhaps unfortunately,  draft-ietf-mmusic-sdp-mux-attributes  did not define a category of \"nope\" :-) )",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-12-21 12:53:47-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-11-27 14:46:25-08:00",
+        "text": "The category assignments in this draft do not match the existing assignments in mux-attributes, which marks \"floorctrl\" as \"TBD\", and the others as \"NORMAL\". This draft marks all attributes as \"TBD\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-21 12:53:47-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-10-24 17:18:36-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-10-25 04:44:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-10-24 17:18:36-07:00",
+        "text": "I will go ahead and say that we should discuss the \"UDP/TLS/BFCP\" naming. In particular, while I see the previous discussion that there may be existing deployments out there, why can we not give it the same treatment as \"mstrm\", and make the official name \"UDP/DTLS/BFCP\" while documenting that you should accept the old name? We also had a very long discussion about the usage of the term \"initial  offer\" in the context of  draft-ietf-mmusic-sdp-bundle-negotiation ; I do not propose to rehash that discussion, but want to ask whether we should stick to the established precedent with regard to the use of the term (which, IIUC, would involve a change to this document).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-25 04:44:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-10-24 08:44:22-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 08:44:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-10-24 12:23:33-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-11-21 14:33:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-10-24 12:23:33-07:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D4457 DETAIL S 9. >\u00a0 \u00a0 \u00a0 transport is used for the default candidate, then the 'm' line proto >\u00a0 \u00a0 \u00a0 value MUST be 'UDP/TLS/BFCP'.\u00a0 If TCP transport is used for the >\u00a0 \u00a0 \u00a0 default candidate, the 'm' line proto value MUST be 'TCP/DTLS/BFCP'. >\u00a0   >\u00a0 \u00a0 \u00a0 \u00a0  Note: Usage of ICE with protocols other than UDP/TLS/BFCP and >\u00a0 \u00a0 \u00a0 \u00a0  TCP/DTLS/BFCP is outside of scope for this specification. this is very different from any other use of ICE, and I'm not sure it's interoperable, unless you require that only TCP or only UDP candidates be offered (which you do not seem to). The reason is that with ICE you can flip between different candidates as part of the negotiation. So what happens if I initially get a UDP candidate and then via aggressive nomination settle on TCP (or vice versa). DTLS and TLS aren't really interoperable in that way. It would be far better to do what WebRTC does and when you do ICE, always do DTLS even if it's over TCP.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-21 14:33:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-10-25 05:44:21-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-25 05:44:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-10-25 01:36:15-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-25 01:36:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-10-24 07:50:52-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 07:50:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-10-24 19:04:32-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 19:04:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-10-24 13:23:48-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 13:23:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-12-21 13:12:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-16 13:40:52-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8856",
+  "evaluation_end": "2018-12-21 13:12:32-08:00",
+  "evaluation_start": "2018-10-16 13:40:52-07:00"
+}

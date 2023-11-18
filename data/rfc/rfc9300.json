@@ -1,0 +1,501 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-02-04 21:39:56-08:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-04 21:39:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-09-27 05:22:51-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-27 05:22:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-09-27 06:13:53-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-27 06:13:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-09-10 14:22:08-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-10 14:22:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 20:01:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-09-27 06:56:05-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-27 06:56:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-09-26 20:44:08-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-02-07 06:35:02-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-09-26 20:44:08-07:00",
+        "text": "I have grave concerns about the suitability of LISP as a whole, in its present form, for advancement to the Standards-Track.\u00a0 While some of my concerns are not specific to this document, as the core protocol (data-plane) spec, it seems an appropriate place to attach them to. I am told, out of band, that the intended deployment model is no longer to cover the entire Internet (c.f. the MISSREF-state draft-ietf-lisp-introduction 's \"with LISP, the dge of the Internet and the core can be logically separated and interconnected by LISP-capable routers\", etc.), and that full Internet-scale operation is no longer a goal.\u00a0 However, since that does not seem to be reflected in the current batch of documents up for IESG review, I am forced to ballot on them \"as-is\", namely as targetting global Internet deployment.\u00a0 The requirements placed on the mapping system are so stringent so as to be arguably unachievable at Internet-scale, though that arguably has more of an interaction with the control-plane than the data-plane.\u00a0 It's still in scope here, though, as part of the overall description of the protocol flow. There are an almost innumerable number of downgrade attacks possible, and the control-plane and data-plane security mechanisms are not normative dependencies of the current corpus of documents, and as such are not up for consideration as mitigating the security concerns with the core documents. Section 3 defines the EID-to-RLOC Datbaase: \u00a0  EID-to-RLOC Database:\u00a0  The EID-to-RLOC Database is a global \u00a0 \u00a0 \u00a0 distributed database that contains all known EID-Prefix-to-RLOC \u00a0 \u00a0 \u00a0 mappings.\u00a0 Each potential ETR typically contains a small piece of \u00a0 \u00a0 \u00a0 the database: the EID-to-RLOC mappings for the EID-Prefixes \u00a0 \u00a0 \u00a0 \"behind\" the router.\u00a0 These map to one of the router's own \u00a0 \u00a0 \u00a0 globally visible IP addresses.\u00a0 Note that there MAY be transient \u00a0 \u00a0 \u00a0 conditions when the EID-Prefix for the site and Locator-Set for \u00a0 \u00a0 \u00a0 each EID-Prefix may not be the same on all ETRs.\u00a0 This has no \u00a0 \u00a0 \u00a0 negative implications, since a partial set of Locators can be \u00a0 \u00a0 \u00a0 used. No compelling architecture for a trustworthy global distributed database has been presented that I've seen so far, and LISP relies heavily on the mapping system's database for its functionality.\u00a0 I am concerned that so many requirements are placed on the mapping system so as to be in effect unimplementable, in which case it would seem that the architecture as a whole (that is, for a global Internet-scale system) is not fit for purpose. Section 4.1's Step (6) only mentions parsing \"to check for format validity\".\u00a0 I think it is appropriate to mention (and refer to) source authentication checks as well, since bad Map-Reply data can allow all sorts of attacks to occur. There are some fairly subtle ordering requirements between the order of entries in Map-Reply messages and the Locator-Status-Bits in data-plane traffic (so that the semantic meaning of the status bits are meaningful), which is only given a minimal treatment in the control-plane document.\u00a0 The need for synchronization in interpreting these bits should be mentioned more prominently in the data-plane document as well. The usage of the Instance ID does not seem to be adequately covered; from what I've been able to pick up so far it seems that both source and destination participants must agree on the meaning of an Instance ID, and the source and destination EIDs must be in the same Instance.\u00a0 This does not seem like it is compatible with Internet scale, especially if there are only 24 usable bits of Instance ID. There seems to be a lot of intra-site synchronization requirements, notably with respect to Map-Version consistency, the contents and ordering of locator sets for EIDs in the site, etc.; the actual hard requirements for synchronization within a site should be clearly called out, ideally in a single location. The security considerations attempt to defer substantially to the threat-analysis in  RFC 7835 , which does not really seem like a complete threat analysis and does not provide analysis as to what requirements are placed on the boundaries between the different components of LISP (data plane, control plane, mapping system, various extensions, etc.).\u00a0 The secdir reviewer had some good thoughts in this space. The security considerations throughout the LISP documents place a heavy focus on the risk of over-claiming for routing EID-prefixes.\u00a0 This is a real concern, to be clear, but it should not overshadow the risk of an attacker who is able to move traffic around at will, strip security protections, cause denial of service, alter data-plane payloads, etc. Similarly, this document's security considerations call out denial of service as a risk from Map-Cache insertion/spoofing, but the risks from an attacker being able to read and modify the traffic, perhaps even without detection, seems a much greater threat to me. I am not convinced that this protocol meets the current IETF requirements for the security properties of Standards-Track Protocols without at least LISP-SEC as a mandatory-to-implement component, and possibly additional or stronger requirements.\u00a0 (I did not do a full analysis of the system in the presence of those security mechanisms, since that is not what is being presented for review.) Having an EID that is associated to user-correlatable devices has severe privacy considerations, but I could not find this mentioned anywhere in all of the LISP documents I've read so far.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-02 14:39:29-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-02-07 06:35:02-08:00",
+        "text": "Section 3 still contains text: \u00a0  EID-to-RLOC Database:\u00a0  The EID-to-RLOC Database is a global \u00a0 \u00a0 \u00a0 distributed database that contains all known EID-Prefix-to-RLOC that indicates that the mapping database is a single, global, distributed database; we had previously agreed that the target scope was much more narrow.\u00a0 I could perhaps charitably assume that this instance was missed as an editing error because the phrase \"global distributed database\" spans a line break, but given that this specific instance was called out in my previous discuss position, it is fairly hard to do so. Also in Section 3: \u00a0  Endpoint ID (EID):\u00a0  An EID is a 32-bit (for IPv4) or 128-bit (for \u00a0 \u00a0 \u00a0 IPv6) value used in the source and destination address fields of \u00a0 \u00a0 \u00a0 the first (most inner) LISP header of a packet.\u00a0 [...] 6833bis says (section 5.8) that the inner header can use either RLOC or EID addresses in the header address fields, which contradicts this statement. The various places where we mention \"gleaming\" or similar unauthenticated (un-path-verified?) schemes for learning mapping information should all mention at their description that they are susceptible to spoofing and link to the security considerations. I'm still concerned about the synchronization requirements between map-version changes and LSB usage; with the currently described technology it seems almost inevitable for race conditions around RLOC changes to cause ITRs to make incorrect routing decisions due to misinterpreted status bits. It's unclear whether it's even worth trying to tackle this problem before the map-versioning document is more advanced along in the process, though. (Several comments throughout are relevant, especially those on Section 13.1.) I agree with Warren that clarity on whether traffic is buffered or dropped during the lookup process is needed (e.g., in Section 6). Also in the vein of Warren's comments, in Section 7.1 I was expecting (from our previous discussions) that some text would be added about the determination of L being something that is \"performed once by the administrator of the LISP deployment and treated as a constant across the deployment\". The discussion of Instance IDs remains incomplete, with no discussion of within what scope their values must be unique (as truncated to 24 bits). Similarly (also Section 8), \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Multiple \u00a0  Data-Planes can use the same 32-bit space as long as the low-order 24 \u00a0  bits don't overlap among xTRs. That's a pretty lousy property to have in a PS specification. Section 13 \u00a0  When a Locator record is removed from a Locator-Set, ITRs that have \u00a0  the mapping cached will not use the removed Locator because the xTRs \u00a0  will set the Locator-Status-Bit to 0.\u00a0 So, even if the Locator is in \u00a0  the list, it will not be used.\u00a0 For new mapping requests, the xTRs \u00a0  can set the Locator AFI to 0 (indicating an unspecified address), as \u00a0  well as setting the corresponding Locator-Status-Bit to 0.\u00a0 This I do not remember there being an ordering (or even consistency) requirement on the ITR-RLOC entries in the Map-Request, so it's unclear that just replacing one entry with an AFI-0 entry would convey this information.\u00a0 I suppose that using only a single ITR-RLOC entry, with AFI 0, would provide a usable signal to the ETR, but that does not seem to be what is being described here.\u00a0 (Also, on a rhetorical point, please clarify that the \"as well as\" is for setting the LSB to 0 in data packets; Map-Requests do not include any LSBs.) \u00a0  If many changes occur to a mapping over a long period of time, one \u00a0  will find empty record slots in the middle of the Locator-Set and new \u00a0  records appended to the Locator-Set. At some point, it would be \u00a0  useful to compact the Locator-Set so the Locator-Status-Bit settings \u00a0  can be efficiently packed. This text, implying that compactification must wait for some unspecified later event, seems to be assuming some requirement to preserve order of Locator-Set entries that I cannot find a description of in either 6830bis or 6833bis. Do RFCs 6831 and 8378 need to be normative references for how to do multicast as an optional protocol feature (recalling that https://www.ietf.org/blog/iesg-statement-normative-and-informative-references/ clarifies that references that are relevant only for optional features are still classified as normative)? In Section 16: \u00a0  A complete LISP threat analysis can be found in [ RFC7835 ].\u00a0 In what RFC 7835  remains an incomplete analysis; please stop referring to it as such. \u00a0  of time.\u00a0 The goal is to convince the ITR that the ETR's RLOC is \u00a0  reachable even when it may not be reachable.\u00a0 If the attack is I think Warren is correct that there is also an attack that lies in convincing an ITR that an ETR is not reachable even when it is reachable. The following items were present in my original DISCUSS position and still have not been resolved.\u00a0 Note that I copy below the previous ballot text even for some issues that are described above already in different words. Section 4.1's Step (6) only mentions parsing \"to check for format validity\".\u00a0 I think it is appropriate to mention (and refer to) source authentication checks as well, since bad Map-Reply data can allow all sorts of attacks to occur. There are some fairly subtle ordering requirements between the order of entries in Map-Reply messages and the Locator-Status-Bits in data-plane traffic (so that the semantic meaning of the status bits are meaningful), which is only given a minimal treatment in the control-plane document.\u00a0 The need for synchronization in interpreting these bits should be mentioned more prominently in the data-plane document as well. The usage of the Instance ID does not seem to be adequately covered; from what I've been able to pick up so far it seems that both source and destination participants must agree on the meaning of an Instance ID, and the source and destination EIDs must be in the same Instance.\u00a0 This does not seem like it is compatible with Internet scale, especially if there are only 24 usable bits of Instance ID. There seems to be a lot of intra-site synchronization requirements, notably with respect to Map-Version consistency, the contents and ordering of locator sets for EIDs in the site, etc.; the actual hard requirements for synchronization within a site should be clearly called out, ideally in a single location. The security considerations attempt to defer substantially to the threat-analysis in  RFC 7835 , which does not really seem like a complete threat analysis and does not provide analysis as to what requirements are placed on the boundaries between the different components of LISP (data plane, control plane, mapping system, various extensions, etc.).\u00a0 The secdir reviewer had some good thoughts in this space. I am not convinced that this protocol meets the current IETF requirements for the security properties of Standards-Track Protocols without at least LISP-SEC as a mandatory-to-implement component, and possibly additional or stronger requirements.\u00a0 (I did not do a full analysis of the system in the presence of those security mechanisms, since that is not what is being presented for review.) [ed. even though LISP-SEC has been promoted to MTI, it remains difficult to be confident in the results of a full system analysis due to the number of other outstanding issues with the core documents.\u00a0 Consider the risk Ekr noted yesterday in email about tampering with the Map-Request causing apparently-valid repsonses that convey incorrect results with respect to the original query.]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-30 14:21:42-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-08-02 14:39:29-07:00",
+        "text": "Updating for the -27 by removing points that are fully addressed but leaving points that I still want to have further discussion on.\u00a0 It may be most expedient to continue discussion on my -26 ballot thread. Please also note that the COMMENT section was entirely refreshed for the -26 and had a few additions as I read the -27. The various places where we mention \"gleaming\" or similar unauthenticated (un-path-verified?) schemes for learning mapping information should all mention at their description that they are susceptible to spoofing and link to the security considerations. [ed. I have noted offlist to the authors some specific locations] Section 13 \u00a0  When a Locator record is removed from a Locator-Set, ITRs that have \u00a0  the mapping cached will not use the removed Locator because the xTRs \u00a0  will set the Locator-Status-Bit to 0.\u00a0 So, even if the Locator is in \u00a0  the list, it will not be used.\u00a0 For new mapping requests, the xTRs \u00a0  can set the Locator AFI to 0 (indicating an unspecified address), as \u00a0  well as setting the corresponding Locator-Status-Bit to 0.\u00a0 This I do not remember there being an ordering (or even consistency) requirement on the ITR-RLOC entries in the Map-Request, so it's unclear that just replacing one entry with an AFI-0 entry would convey this information.\u00a0 I suppose that using only a single ITR-RLOC entry, with AFI 0, would provide a usable signal to the ETR, but that does not seem to be what is being described here.\u00a0 (Also, on a rhetorical point, please clarify that the \"as well as\" is for setting the LSB to 0 in data packets; Map-Requests do not include any LSBs.) \u00a0  If many changes occur to a mapping over a long period of time, one \u00a0  will find empty record slots in the middle of the Locator-Set and new \u00a0  records appended to the Locator-Set. At some point, it would be \u00a0  useful to compact the Locator-Set so the Locator-Status-Bit settings \u00a0  can be efficiently packed. This text, implying that compactification must wait for some unspecified later event, seems to be assuming some requirement to preserve order of Locator-Set entries that I cannot find a description of in either 6830bis or 6833bis. [ed. these previous two items are rather poorly described; another thread is ongoing to try to clarify both my concerns and how they might be addressed] I think Warren is correct that there is also an attack that lies in convincing an ITR that an ETR is not reachable even when it is reachable. The following items were present in my original DISCUSS position and still have not been resolved.\u00a0 Note that I copy below the previous ballot text even for some issues that are described above already in different words. There are some fairly subtle ordering requirements between the order of entries in Map-Reply messages and the Locator-Status-Bits in data-plane traffic (so that the semantic meaning of the status bits are meaningful), which is only given a minimal treatment in the control-plane document.\u00a0 The need for synchronization in interpreting these bits should be mentioned more prominently in the data-plane document as well. The usage of the Instance ID does not seem to be adequately covered; from what I've been able to pick up so far it seems that both source and destination participants must agree on the meaning of an Instance ID, and the source and destination EIDs must be in the same Instance.\u00a0 This does not seem like it is compatible with Internet scale, especially if there are only 24 usable bits of Instance ID. There seems to be a lot of intra-site synchronization requirements, notably with respect to Map-Version consistency, the contents and ordering of locator sets for EIDs in the site, etc.; the actual hard requirements for synchronization within a site should be clearly called out, ideally in a single location. The security considerations attempt to defer substantially to the threat-analysis in  RFC 7835 , which does not really seem like a complete threat analysis and does not provide analysis as to what requirements are placed on the boundaries between the different components of LISP (data plane, control plane, mapping system, various extensions, etc.).\u00a0 The secdir reviewer had some good thoughts in this space. [We're getting closer to something that's possible to properly analyze, but I haven't done that analysis yet]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-12 21:12:13-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-12-30 14:21:42-08:00",
+        "text": "Thank you for all the updates in the -28; we're making great progress! My ballot on the -26 included: % The usage of the Instance ID does not seem to be adequately covered; from % what I've been able to pick up so far it seems that both source and % destination participants must agree on the meaning of an Instance ID, and % the source and destination EIDs must be in the same Instance.\u00a0 This does % not seem like it is compatible with Internet scale, especially if there are % only 24 usable bits of Instance ID. The -28 now says that the whole LISP deployment has to agree on the meaning of Instance ID values (thank you!), but I'm still not entirely sure if the source and destination EIDs need to belong to the same Instance. If they do need to be in the same Instance, I think we should note that (but if not, then the current text should be fine as-is). My apologies if this was already covered and I just forgot. [Someone (me?) still owe some analysis on the security considerations at the boundaries of the various components in the ecosystem.\u00a0 Deborah putting this back on an IESG telechat as a returning item might be the most expedient way to get this to happen, sadly.]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-07-08 21:19:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-12 21:12:13-08:00",
+        "text": "[Someone (me?) still owe some analysis on the security considerations at the boundaries of the various components in the ecosystem.\u00a0 Deborah putting this back on an IESG telechat as a returning item might be the most expedient way to get this to happen, sadly.]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 21:19:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-08-28 10:08:01-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-28 10:08:01-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-09-27 05:17:56-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-27 05:17:56-07:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D3126 See my DISCUSS on 6833bis for overall issues. This is just detailed issues on 6830bis as I went through it. DETAIL S 4.1. >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 RLOC (outer-header source IP address) in a received LISP packet. >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Such a cache entry is termed a \"glean mapping\" and only contains >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 a single RLOC for the EID in question.\u00a0 More complete information >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 about additional RLOCs SHOULD be verified by sending a LISP Map- >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Request for that EID.\u00a0 Both the ITR and the ETR MAY also >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 influence the decision the other makes in selecting an RLOC. This seems like it introduces an immediate overclaiming problem. S 10. >\u00a0 \u00a0 \u00a0 When an ETR decapsulates a packet, it will check for any change in >\u00a0 \u00a0 \u00a0 the 'Locator-Status-Bits' field.\u00a0 When a bit goes from 1 to 0, the >\u00a0 \u00a0 \u00a0 ETR, if acting also as an ITR, will refrain from encapsulating >\u00a0 \u00a0 \u00a0 packets to an RLOC that is indicated as down.\u00a0 It will only resume >\u00a0 \u00a0 \u00a0 using that RLOC if the corresponding Locator-Status-Bit returns to a >\u00a0 \u00a0 \u00a0 value of 1.\u00a0 Locator-Status-Bits are associated with a Locator-Set This seems to enable a pretty obvious denial of service attack in which you send\u00a0 a message with all LSBs set to 0. S 10. >\u00a0 \u00a0 \u00a0 list returned by the last Map-Reply will be set to zero for that >\u00a0 \u00a0 \u00a0 particular EID-Prefix.\u00a0 Refer to Section 16 for security related >\u00a0 \u00a0 \u00a0 issues regarding Locator-Status-Bits. >\u00a0   >\u00a0 \u00a0 \u00a0 When an ETR decapsulates a packet, it knows that it is reachable from >\u00a0 \u00a0 \u00a0 the encapsulating ITR because that is how the packet arrived.\u00a0 In It doesn't even know this. It just knows that that's been claimed by someone who can generate traffic to it. S 10.1. >\u00a0 \u00a0 \u00a0 NOT use the lack of return traffic as an indication that the ETR is >\u00a0 \u00a0 \u00a0 unreachable.\u00a0 Instead, it MUST use an alternate mechanism to >\u00a0 \u00a0 \u00a0 determine reachability. >\u00a0   >\u00a0  10.1.\u00a0 Echo Nonce Algorithm >\u00a0   This mechanism seems sufficient to verify unreachability but is not a secure test of reachability because the nonce is way too short. S 16. >\u00a0 \u00a0 \u00a0 Map-Versioning is a Data-Plane mechanism used to signal a peering xTR >\u00a0 \u00a0 \u00a0 that a local EID-to-RLOC mapping has been updated, so that the >\u00a0 \u00a0 \u00a0 peering xTR uses LISP Control-Plane signaling message to retrieve a >\u00a0 \u00a0 \u00a0 fresh mapping.\u00a0 This can be used by an attacker to forge the map- >\u00a0 \u00a0 \u00a0 versioning field of a LISP encapsulated header and force an excessive >\u00a0 \u00a0 \u00a0 amount of signaling between xTRs that may overload them. Can't I also set a super-high version number, thus gagging updates?",
+        "type": "Discuss"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 13:36:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-29 16:30:44-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-07-08 22:28:46-07:00",
+        "text": "[ section 8 ] * I think the currently architecture of IPv6 is such that at a minimum this \u00a0 doc should say that instances SHOULD NOT be used when the inner traffic is \u00a0 IPv6 as overlapping IPv6 prefixes are best and fairly easily avoided and \u00a0 folks should be encouraged to avoid recreating some of the limitations that \u00a0 were unavoidable in IPv4. [ section 12 ] * When the outer header is IPv6, the flow label may also be set a la  RFC 6438 . * When the inner header is IPv6, the flow label may also be a factor in the \u00a0 hashing (6348, if the flow label is non-zero a la 6437). [ section 16 ] * Is it worth adding an extra warning about gleaning mappings for EIDs that \u00a0 the ETR would otherwise have routed internally via the IGP? * In addition to basic uRPF, can an ETR do LISP-specific uRPF, i.e. look up \u00a0 the source EID in the mapping system and check that the source RLOC is within \u00a0 the set returned?\u00a0 If so, the document might mention it.\u00a0 If not, it might \u00a0 be good state explicitly that LISP does not afford this kind of uRPF check.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-29 16:30:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-02-07 06:18:27-08:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-07 06:18:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-09 07:03:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-07-03 12:03:35-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-03 12:02:50-07:00",
+        "text": "Having read this document front to back for the first time, I found it quite hard to figure out what can actually safely done over the public internet, and what can be only be done in trusted environments. I realize that this is probably because the no-internet provisions entered late in the game. If it were my document, I might reorganize it to make the distinction more clear (i.e. present the internet-safe dataplane spec and then have additional sections about insecure add-ons). That said, at this stage in the game I'd be happy to have a new section that clarified what is what. For example (assuming I'm reading it correctly, which is my point) NEW: \" Section 4 and a half. Deployment on the Public Internet Many of the mechanisms in this document are intended for deployment in controlled, trusted environments, and are insecure for use over the public internet. In particular, on the public internet xTRs: * SHOULD set the N, L, E, and V bits in the LISP header (sec 5.3) to zero; * SHOULD NOT use gleaning as a method for Route Locator Selection (Sec 9); * SHOULD NOT use any data plane methods described in Section 10 for Routing Locator Reachability, instead relying solely on control plane methods; * SHOULD NOT use any data plane methods described in Section 13 to update the EID-to-RLOC mapping, instead relying solely on control plane methods. \" END Perhaps my text is inaccurate, but something to that effect would be very helpful. Sec 5.3 What is in the Nonce/Map-Version field if both the N and V bits are zero? Sec 7.2 The stateful MTU design does not incorporate any security measures against ICMP spoofing. At the very least, the ITR needs to make sure that some fields in the outer IP and UDP headers are hard to guess, and that this information is stored to verify that the ICMP message came from on-path. If this is not possible, the design is not safe to use over IPv4.\u00a0 If hard-to-guess information is not available to be stored deeper in the packet, then it is not safe over IPv6 either. While I fully support xTRs sending and processing ICMP packets, they don't always work in the public internet due to ICMP black holes and the like.  https://datatracker.ietf.org/doc/draft-ietf-tsvwg-datagram-plpmtud/ , which is the RFC Editor queue, would be a more reliable way to determine the Path MTU. Regrettably, the LISP data plane doesn't have a method to pad or otherwise modify the size of its packets besides IP fragmentation, nor to acknowledge those packets beyond the insecure Nonce. It would be best if the ITRs and ETRs had some sort of reliable way to send and acknowledge packets to each other of variable size. Sec 7.2 There is a fourth situation which can arise. If the ETR receives an ICMP packet from an EID in its network. I have a couple of questions about what should happen in this case: - How is this communicated to the sender of the flow that triggered the message? Is there an \"outer\" ICMP to the ITR, and \"inner\" ICMP to the source EID, both, or neither. - Is the ETR responsible for enforcing the MTU to that EID for subsequent flows? Sec 9. I don't understand what this sentence means: \"The client-side ITR controls how traffic is returned and can alternate using an outer-header source RLOC, which then can be added to the list the server-side ETR uses to return traffic.\" This would appear to be the inverse of the \"Routing Locator Hashing\" discussion in Section 12, which provides a technique for switching destination RLOC. Is this \"alternation\" of source RLOC mean to be done on hashed 5-tuple basis (i.e. each flow uses only one source RLOC)? If not, would this involve potentially sending packets for one flow on different interfaces with different path characteristics, causing packet reordering. Or perhaps you mean each packet is sent from the same interface with a spoofed source RLOC, which creates interesting issues for ICMP returns and the like.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-07-03 12:04:31-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-03 12:03:35-07:00",
+        "text": "Having read this document front to back for the first time, I found it quite hard to figure out what can actually safely done over the public internet, and what can be only be done in trusted environments. I realize that this is probably because the no-internet provisions entered late in the game. If it were my document, I might reorganize it to make the distinction more clear (i.e. present the internet-safe dataplane spec and then have additional sections about insecure add-ons). That said, at this stage in the game I'd be happy to have a new section that clarified what is what. For example (assuming I'm reading it correctly, which is my point) NEW: \" Section 4 and a half. Deployment on the Public Internet Many of the mechanisms in this document are intended for deployment in controlled, trusted environments, and are insecure for use over the public internet. In particular, on the public internet xTRs: * SHOULD set the N, L, E, and V bits in the LISP header (sec 5.3) to zero; * SHOULD NOT use gleaning as a method for Route Locator Selection (Sec 9); * SHOULD NOT use any data plane methods described in Section 10 for Routing Locator Reachability, instead relying solely on control plane methods; * SHOULD NOT use any data plane methods described in Section 13 to update the EID-to-RLOC mapping, instead relying solely on control plane methods. \" END Perhaps my text is inaccurate, but something to that effect would be very helpful. Sec 5.3 What is in the Nonce/Map-Version field if both the N and V bits are zero? Sec 7.2 The stateful MTU design does not incorporate any security measures against ICMP spoofing. At the very least, the ITR needs to make sure that some fields in the outer IP and UDP headers are hard to guess, and that this information is stored to verify that the ICMP message came from on-path. If this is not possible, the design is not safe to use over IPv4.\u00a0 If hard-to-guess information is not available to be stored deeper in the packet, then it is not safe over IPv6 either. While I fully support xTRs sending and processing ICMP packets, they don't always work in the public internet due to ICMP black holes and the like.  https://datatracker.ietf.org/doc/draft-ietf-tsvwg-datagram-plpmtud/ , which is the RFC Editor queue, would be a more reliable way to determine the Path MTU. Regrettably, the LISP data plane doesn't have a method to pad or otherwise modify the size of its packets besides IP fragmentation, nor to acknowledge those packets beyond the insecure Nonce. It would be best if the ITRs and ETRs had some sort of reliable way to send and acknowledge packets to each other of variable size. Sec 7.2 There is a fourth situation which can arise. If the ETR receives an ICMP packet from an EID in its network. I have a couple of questions about what should happen in this case: - How is this communicated to the sender of the flow that triggered the message? Is there an \"outer\" ICMP to the ITR, and \"inner\" ICMP to the source EID, both, or neither. - Is the ETR responsible for enforcing the MTU to that EID for subsequent flows? Sec 9. I don't understand what this sentence means: \"The client-side ITR controls how traffic is returned and can alternate using an outer-header source RLOC, which then can be added to the list the server-side ETR uses to return traffic.\" This would appear to be the inverse of the \"Routing Locator Hashing\" discussion in Section 12, which provides a technique for switching destination RLOC. Is this \"alternation\" of source RLOC mean to be done on hashed 5-tuple basis (i.e. each flow uses only one source RLOC)? If not, would this involve potentially sending packets for one flow on different interfaces with different path characteristics, causing packet reordering. Or perhaps you mean each packet is sent from the same interface with a spoofed source RLOC, which creates interesting issues for ICMP returns and the like.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-07-03 12:05:02-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-03 12:04:31-07:00",
+        "text": "Having read this document front to back for the first time, I found it quite hard to figure out what can actually safely done over the public internet, and what can be only be done in trusted environments. I realize that this is probably because the no-internet provisions entered late in the game. If it were my document, I might reorganize it to make the distinction more clear (i.e. present the internet-safe dataplane spec and then have additional sections about insecure add-ons). That said, at this stage in the game I'd be happy to have a new section that clarified what is what. For example (assuming I'm reading it correctly, which is my point) NEW: \" Section 4 and a half. Deployment on the Public Internet Many of the mechanisms in this document are intended for deployment in controlled, trusted environments, and are insecure for use over the public internet. In particular, on the public internet xTRs: * SHOULD set the N, L, E, and V bits in the LISP header (sec 5.3) to zero; * SHOULD NOT use gleaning as a method for Route Locator Selection (Sec 9); * SHOULD NOT use any data plane methods described in Section 10 for Routing Locator Reachability, instead relying solely on control plane methods; * SHOULD NOT use any data plane methods described in Section 13 to update the EID-to-RLOC mapping, instead relying solely on control plane methods. \" END Perhaps my text is inaccurate, but something to that effect would be very helpful. Sec 5.3 What is in the Nonce/Map-Version field if both the N and V bits are zero? Sec 7.2 The stateful MTU design does not incorporate any security measures against ICMP spoofing. At the very least, the ITR needs to make sure that some fields in the outer IP and UDP headers are hard to guess, and that this information is stored to verify that the ICMP message came from on-path. If this is not possible, the design is not safe to use over IPv4.\u00a0 If hard-to-guess information is not available to be stored deeper in the packet, then it is not safe over IPv6 either. Sec 7.2 There is a fourth situation which can arise. If the ETR receives an ICMP packet from an EID in its network. I have a couple of questions about what should happen in this case: - How is this communicated to the sender of the flow that triggered the message? Is there an \"outer\" ICMP to the ITR, and \"inner\" ICMP to the source EID, both, or neither. - Is the ETR responsible for enforcing the MTU to that EID for subsequent flows? Sec 9. I don't understand what this sentence means: \"The client-side ITR controls how traffic is returned and can alternate using an outer-header source RLOC, which then can be added to the list the server-side ETR uses to return traffic.\" This would appear to be the inverse of the \"Routing Locator Hashing\" discussion in Section 12, which provides a technique for switching destination RLOC. Is this \"alternation\" of source RLOC mean to be done on hashed 5-tuple basis (i.e. each flow uses only one source RLOC)? If not, would this involve potentially sending packets for one flow on different interfaces with different path characteristics, causing packet reordering. Or perhaps you mean each packet is sent from the same interface with a spoofed source RLOC, which creates interesting issues for ICMP returns and the like.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-07-03 12:05:38-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-03 12:05:02-07:00",
+        "text": "Having read this document front to back for the first time, I found it quite hard to figure out what can actually safely done over the public internet, and what can be only be done in trusted environments. I realize that this is probably because the no-internet provisions entered late in the game. If it were my document, I might reorganize it to make the distinction more clear (i.e. present the internet-safe dataplane spec and then have additional sections about insecure add-ons). That said, at this stage in the game I'd be happy to have a new section that clarified what is what. For example (assuming I'm reading it correctly, which is my point) NEW: \" Section 4 and a half. Deployment on the Public Internet Many of the mechanisms in this document are intended for deployment in controlled, trusted environments, and are insecure for use over the public internet. In particular, on the public internet xTRs: * SHOULD set the N, L, E, and V bits in the LISP header (sec 5.3) to zero; * SHOULD NOT use gleaning as a method for Route Locator Selection (Sec 9); * SHOULD NOT use any data plane methods described in Section 10 for Routing Locator Reachability, instead relying solely on control plane methods; * SHOULD NOT use any data plane methods described in Section 13 to update the EID-to-RLOC mapping, instead relying solely on control plane methods. \" END Perhaps my text is inaccurate, but something to that effect would be very helpful. Sec 5.3 What is in the Nonce/Map-Version field if both the N and V bits are zero? Sec 7.2 The stateful MTU design does not incorporate any security measures against ICMP spoofing. At the very least, the ITR needs to make sure that some fields in the outer IP and UDP headers are hard to guess, and that this information is stored to verify that the ICMP message came from on-path. If this is not possible, the design is not safe to use over IPv4.\u00a0 If hard-to-guess information is not available to be stored deeper in the packet, then it is not safe over IPv6 either. Sec 7.2 There is a fourth situation which can arise. If the ETR receives an ICMP packet from an EID in its network. I have a couple of questions about what should happen in this case: - How is this communicated to the sender of the flow that triggered the message? Is there an \"outer\" ICMP to the ITR, and \"inner\" ICMP to the source EID, both, or neither? - Is the ETR responsible for enforcing the MTU to that EID for subsequent flows? Sec 9. I don't understand what this sentence means: \"The client-side ITR controls how traffic is returned and can alternate using an outer-header source RLOC, which then can be added to the list the server-side ETR uses to return traffic.\" This would appear to be the inverse of the \"Routing Locator Hashing\" discussion in Section 12, which provides a technique for switching destination RLOC. Is this \"alternation\" of source RLOC mean to be done on hashed 5-tuple basis (i.e. each flow uses only one source RLOC)? If not, would this involve potentially sending packets for one flow on different interfaces with different path characteristics, causing packet reordering. Or perhaps you mean each packet is sent from the same interface with a spoofed source RLOC, which creates interesting issues for ICMP returns and the like.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-08-12 09:55:24-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-03 12:05:38-07:00",
+        "text": "Having read this document front to back for the first time, I found it quite hard to figure out what can actually safely done over the public internet, and what can be only be done in trusted environments. I realize that this is probably because the no-internet provisions entered late in the game. If it were my document, I might reorganize it to make the distinction more clear (i.e. present the internet-safe dataplane spec and then have additional sections about insecure add-ons). That said, at this stage in the game I'd be happy to have a new section that clarified what is what. For example (assuming I'm reading it correctly, which is my point) NEW: \" Section 4 and a half. Deployment on the Public Internet Many of the mechanisms in this document are intended for deployment in controlled, trusted environments, and are insecure for use over the public internet. In particular, on the public internet xTRs: * SHOULD set the N, L, E, and V bits in the LISP header (sec 5.3) to zero; * SHOULD NOT use gleaning as a method for Route Locator Selection (Sec 9); * SHOULD NOT use any data plane methods described in Section 10 for Routing Locator Reachability, instead relying solely on control plane methods; * SHOULD NOT use any data plane methods described in Section 13 to update the EID-to-RLOC mapping, instead relying solely on control plane methods. \" END Perhaps my text is inaccurate, but something to that effect would be very helpful. Sec 5.3 What is in the Nonce/Map-Version field if both the N and V bits are zero? Sec 7.2 The stateful MTU design does not incorporate any security measures against ICMP spoofing. At the very least, the ITR needs to make sure that some fields in the outer IP and UDP headers are hard to guess, and that this information is stored to verify that the ICMP message came from on-path. If this is not possible, the design is not safe to use over IPv4.\u00a0 If hard-to-guess information is not available to be stored deeper in the packet, then it is not safe over IPv6 either. Sec 7.2 There is a fourth situation which can arise. If the ETR receives an ICMP packet from an EID in its network. I have a couple of questions about what should happen in this case: - How is this communicated to the sender of the flow that triggered the message? Is there an \"outer\" ICMP to the ITR, and \"inner\" ICMP to the source EID, both, or neither? - Is the ETR responsible for enforcing the MTU to that EID for subsequent flows? Sec 9. I don't understand what this sentence means: \"The client-side ITR controls how traffic is returned and can alternate using an outer-header source RLOC, which then can be added to the list the server-side ETR uses to return traffic.\" This would appear to be the inverse of the \"Routing Locator Hashing\" discussion in Section 12, which provides a technique for switching destination RLOC. Is this \"alternation\" of source RLOC mean to be done on hashed 5-tuple basis (i.e. each flow uses only one source RLOC)? If not, would this involve potentially sending packets for one flow on different interfaces with different path characteristics, causing packet reordering. Or perhaps you mean each packet is sent from the same interface with a spoofed source RLOC, which creates interesting issues for ICMP returns and the like.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-09-09 15:02:44-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-12 09:55:24-07:00",
+        "text": "Thanks for the adding the \u201cpublic internet\u201d explanation and clarifying how multipath routing works. Remaking Discuss issues:  Sec 5.3 What is in the Nonce/Map-Version field if both the N and V bits are zero? Sec 7.2 The stateful MTU design does not incorporate any security measures against ICMP spoofing. At the very least, the ITR needs to make sure that some fields in the outer IP and UDP headers are hard to guess, and that this information is stored to verify that the ICMP message came from on-path. If this is not possible, the design is not safe to use over IPv4.\u00a0 If hard-to-guess information is not available to be stored deeper in the packet, then it is not safe over IPv6 either. Sec 7.2 There is a fourth situation which can arise. If the ETR receives an ICMP packet from an EID in its network. I have a couple of questions about what should happen in this case: - How is this communicated to the sender of the flow that triggered the message? Is there an \"outer\" ICMP to the ITR, and \"inner\" ICMP to the source EID, both, or neither? - Is the ETR responsible for enforcing the MTU to that EID for subsequent flows?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 15:02:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-09-27 06:35:54-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-27 06:35:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-09-10 09:01:45-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-09-11 03:29:03-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-09-10 09:01:45-07:00",
+        "text": "Unfortunately ECN decapsulation is slightly more complicated than described in section 5.3. Please check section 3.2 in  rfc6040  and revise accordingly (maybe also provide a pointer to  rfc6040  instead or in addition to  rfc3168 )! (Also it seems like the text on ECN is simply just twice in sec 5.3; not sure that is helpful). Further, also in sec 5.3: \"The inner-header 'Differentiated Services Code Point' (DSCP) field \u00a0 \u00a0 \u00a0 (or the 'Traffic Class' field, in the case of IPv6) SHOULD be \u00a0 \u00a0 \u00a0 copied from the outer-header DSCP field ('Traffic Class' field, in \u00a0 \u00a0 \u00a0 the case of IPv6) considering the exception listed below.\" However, I didn't find any exception listed. However seeting the DSCP field might also be matter of local policy. E.g. if DSCP is not used for a different purposed in the receiver side lisp network, it could make sense to restore/keep the orginial value in the inner header. Sec 7.1. only takes about ICMPv6 \"Packet Too Big\" packets while \"IPv4-encapsulated packet with the DF bit set to 1\" should be addressed as well. I would like to see another need in section 12 explicitly stating that the source port SHOULD be the same for all packet belong to the same flow.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-09-11 08:17:28-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-09-11 03:29:03-07:00",
+        "text": "Unfortunately ECN decapsulation is slightly more complicated than described in section 5.3. Please check section 3.2 in  rfc6040  and revise accordingly (maybe also provide a pointer to  rfc6040  instead or in addition to  rfc3168 )! (Also it seems like the text on ECN is simply just twice in sec 5.3; not sure that is helpful). Further, also in sec 5.3: \"The inner-header 'Differentiated Services Code Point' (DSCP) field \u00a0 \u00a0 \u00a0 (or the 'Traffic Class' field, in the case of IPv6) SHOULD be \u00a0 \u00a0 \u00a0 copied from the outer-header DSCP field ('Traffic Class' field, in \u00a0 \u00a0 \u00a0 the case of IPv6) considering the exception listed below.\" However, I didn't find any exception listed. However seeting the DSCP field might also be matter of local policy. E.g. if DSCP is not used for a different purposed in the receiver side lisp network, it could make sense to restore/keep the orginial value in the inner header. Sec 7.1. only takes about ICMPv6 \"Packet Too Big\" packets while \"IPv4-encapsulated packet with the DF bit set to 1\" should be addressed as well. I would like to see another need in section 12 explicitly stating that the source port SHOULD be the same for all packet belong to the same flow. Sec 5.3 says \"Both N- and V-bits MUST NOT be set in the same packet.\" What happens if both bits are set? The 'Nonce/Map-Version' is just ignored, or maybe the packet should be dropped or something? Please clarify in the doc!",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-11 08:17:28-07:00",
+        "text": "I have a couple of smaller discuss points with should be straight-forward to address and one more high-level discussion point that might not have a solution (depending on the deployment status of LISP I guess) but I would like to at least have a discussion. I start with the straight-forward onces: 1) Unfortunately ECN decapsulation is slightly more complicated than described in section 5.3. Please check section 3.2 in  rfc6040  and revise accordingly (maybe also provide a pointer to  rfc6040  instead or in addition to  rfc3168 )! (Also it seems like the text on ECN is simply just twice in sec 5.3; not sure that is helpful). 2) Further, also in sec 5.3: \"The inner-header 'Differentiated Services Code Point' (DSCP) field \u00a0 \u00a0 \u00a0 (or the 'Traffic Class' field, in the case of IPv6) SHOULD be \u00a0 \u00a0 \u00a0 copied from the outer-header DSCP field ('Traffic Class' field, in \u00a0 \u00a0 \u00a0 the case of IPv6) considering the exception listed below.\" However, I didn't find any exceptions listed later in the doc. However, setting the DSCP field might also be matter of local policy. E.g. if DSCP is not used for a different purpose in the receiver side LISP network, it could make sense to restore/keep the original value in the inner header. 3) Sec 7.1. only takes about ICMPv6 \"Packet Too Big\" packets while \"IPv4-encapsulated packet with the DF bit set to 1\" should be addressed as well. 4) I would like to see another sentence in section 12 explicitly stating that the source port SHOULD be the same for all packet belong to the same flow. 5) Sec 5.3 says \"Both N- and V-bits MUST NOT be set in the same packet.\" What happens if both bits are set? The 'Nonce/Map-Version' is just ignored, or maybe the packet should be dropped or something? Please clarify in the doc! 6) And now the more-discussion-needed point: So my underlying concern is the same as brought up by the TSV-ART review that lisp information are not end-to-end integrity protected or authenticated. However, while briefly thinking about how this could be eventually realized, I noticed that there is actually no mechanism to extend the LISP header in any way. There is no version, no option and the LISP header seems to have a fixed, implicitly specified length without an explicit length field. This seems too late to add any kind of extensibility mechanism at this stage of the protocols lifetime, however, I would still like to discuss if there was any discussion about extensibility, what was the reason to chose this approach, and potential if some background about the choice should be given in the doc.",
+        "type": "Discuss"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 23:50:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-03 09:26:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-18 06:30:52-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-07 15:03:28-07:00",
+        "text": "** Section 1.1. The applicability statement of \u201clarge set of cooperating entities seeking to communicate over the public Internet or other large underlay IP infrastructures\u201d seems inconsistent with many of the protocol mechanics described.\u00a0 Specifically, most of the capabilities in the LISP header (Locator-Status-Bits, Echo-nonce mechanism, Map-Versioning, Instance ID) and the \u201cGleaning mechanism\u201d are explicitly noted as not being suitable for Internet use.\u00a0 This section needs to be explicit that only a subset of the protocol is suitable for the Internet.\u00a0 Likewise, it should be clearer about what is assumed elements of the closed network are trusted for what particular behaviors. ** Section 16. Per \u201cLocator-Status-Bits, echo-nonce and map-versioning SHOULD NOT be used over the public Internet and SHOULD only be used in trusted and closed deployments\u201d -- not disagreement.\u00a0 However, under what circumstances would they be used on the internet to warrant a SHOULD NOT instead of a stronger MUST NOT? ** Section 8.\u00a0 Per \u201cParticipants within a LISP deployment must agree on the meaning of Instance ID values.\u00a0 The source and destination EIDs MUST belong to the same Instance ID.\u201d\u00a0 Could parties agree that the Instance ID is 802.1Q tags and send those across the internet?\u00a0 Recommend stronger cautionary language on using Instance ID.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-18 13:24:23-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-18 06:30:52-07:00",
+        "text": "** Section 8.\u00a0 Per \u201cParticipants within a LISP deployment must agree on the meaning of Instance ID values.\u00a0 The source and destination EIDs MUST belong to the same Instance ID.\u201d\u00a0 Could parties agree that the Instance ID is 802.1Q tags and send those across the internet?\u00a0 Recommend stronger cautionary language on using Instance ID.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-18 13:24:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-02-05 07:45:53-08:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-05 07:45:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-09-26 22:28:02-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-10-01 19:44:22-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-09-26 22:28:02-07:00",
+        "text": "* Section 7.1.  This should be an easy fix but I would like to see it fixed before publication. When talking about IPv6 packets being larger than L, the correct behavior should be to send an ICMPv6 message with Type 2 (Packet Too Big) instead of the Destination Unreachable (Type 1) message as specified in the text. The text *is correct* for IPv4 messages with the DF bit set where the Destination Unreachable (Type 3) is the right kind of message to send.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-10-01 19:44:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-09-26 19:47:55-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-26 19:47:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-02-05 18:21:49-08:00",
+        "end_reason": "new_position",
+        "start": "2018-08-28 10:08:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-06-17 16:56:32-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-05 18:21:49-08:00",
+        "text": "I read much of this on a plane while overtired, so it is entirely possible / probable that I've completely misunderstood something(s) obvious. Many of the below are probably simple to address, and either I simply need to be educated, or just there needs to be a bit more text / detail provided.  1: \"3.\u00a0 The ITR sends a LISP Map-Request as specified in [ I-D.ietf-lisp-rfc6833bis ].\u00a0 Map-Requests SHOULD be rate-limited.\" What does the ITR do with the packet while waiting for the Map-Request to complete? Must it buffer the packets or can it discard them? If the former, for how long must it buffer? When you say \"SHOULD be rate-limited\", can you provide guidance on rates? 1 request per second? 1 million per second? Is this rate-limit per destination or per device?  Apologies if this is clearly stated in  RFC6833 (bis) - I only skimmed it, and didn't see an answer there.  2: \"6. ... Note that the Map-Cache is an on-demand cache. An ITR will manage its Map-Cache in such a way that optimizes for its resource constraints.\" Presumably I could cause this cache to thrash / overflow by looking at the RLOC database, and choosing EIDs to send traffic to which all require different cache entries, causing the cache to overflow (or, at least, causing maximum cache pressure). This seems like an ideal DoS vector. It seems that there should be more guidance provided on how to size the Map-Cache / the expected order of the cache size, even if it is ultimately an implementation issue (e.g: is a Map-Cache of 100 entries OK for an ITR? or should it be O(1000)? Or roughly size(database)/2? Having multiple devices with small caches, and a bot which does the above seems like a global risk). I'm quite confused by much of the MTU / Fragmentation stuff -- I did read the documents on a plane after not getting much sleep, and so it is entirely possible / probable that I'm just being stupid, but there are bits which don't seem to make sense to me. 3: \"2.\u00a0 Define L to be the size, in octets, of the maximum-sized packet an ITR can send to an ETR without the need for the ITR or any intermediate routers to fragment the packet.\" How do I know what L is? The document \"RECOMMENDS that L be defined as 1500\" -- but 1500 isn't universally true (if it were, we would never have to do Path MTU). What happens when the *actual* MTU on the path is e.g 1476 because there is a tunnel on the path?  The text also mentions \"which is less than the ITR\u2019s estimate of the path MTU between the ITR and its correspondent ETR\" - this implies that the ITR is tracking / estimating the MTU, which a: doesn't align with the rest of the text, or b: sounds like the stateful solution below. I have reread this multiple times, but it still feels like it is avoiding the issue by defining it to not exist. 4: \"Note that reassembly can happen at the ETR if the encapsulated packet was fragmented at or after the ITR.\" - I think that there needs to be more text / description about resource constraints on routers performing reassembly of fragments - in most cases a router doesn't have to / isn't expected to have to reassemble transit packets from arbitrary sources on the Internet (things where routers may reassemble are aimed at the control plane which can be rate-limited, or are from expected source addresses). It seems that spoofing lots of initial fragments without the final one will be a tax on the router.  5: \"Instead of using the Map-Cache or mapping system, RLOC information MAY be gleaned from received tunneled packets or Map-Request messages. A \"gleaned\" Map-Cache entry, one learned from the source RLOC of a received encapsulated packet, is only stored and used for a few seconds, pending verification.\" - it seems that this is ripe for abuse (or I'm missing in the cache expiration). I want to hijack traffic from Site X to well known Service Y, so I look up Service Y and save the TTL from the Map-Reply. I then start spoof packets listing myself as the ETR - eventually Site X will glean from my spoofed packets, and start sending traffic to me - yes, this will only work for a few seconds -- but as soon as I stop getting packets from site X, I know site X has verified the entry and discovered it is wrong... and that the TTL is now being deprecated. I start a timer, and second or two less than the TTL later I start spoofing packets again, knowing that site X will soon expire the cache entry and will once again be willing to accept mine again. A: I get some Site X to Site Y traffic for a few seconds every TTL seconds, and B: the loss of this traffic is a signal that TTL seconds again it will need to be refreshed.   6: \"10.1.\u00a0 Echo Nonce Algorithm\" -- If I spoof lots of packets with the N- and E-bits set, the receiving ETR will need to keep false state, and presumably I can overfill a cache. This will cause the ETR to not be able to include the received nonce on legitimate traffic, and so the ITR on the far side will think this ETR is down. This seems like a fairly easy DoS. I'm guessing that this can be worked around by not setting the E bit in the RLOC-probe Map-Reply message, but this feels like a dangerous foot gun, and should at least be noted. Note that this is different to the \"Note the attacker must guess a valid nonce the ITR is requesting to be echoed within a small window of time.\u00a0 The goal is to convince the ITR that the ETR\u2019s RLOC is\u00a0 reachable even when it may not be reachable.\"\u00a0 attack listed in the document in that a: it doesn't require any guessing, and b: makes an ETR appear down, not up.  The document does mention \"... attack can be mitigated by preventing RLOC spoofing in the network by deploying uRPF  BCP 38  [ RFC2827 ].\" - while that may be true for many of the above,  BCP38  is far from being universally deployed, and this feels similar to solving world hunger by saying everyone must have enough food. :-) Again, apologies if I've completely misunderstood something, clue-bat gladly accepted...",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-02-11 12:26:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-17 16:56:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9300",
+  "evaluation_end": "2021-02-11 12:26:00-08:00",
+  "evaluation_start": "2018-08-28 10:08:00-07:00"
+}

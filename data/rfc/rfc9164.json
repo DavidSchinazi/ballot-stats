@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-10-06 07:56:51-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-06 07:56:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-04 11:38:13-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-04 11:38:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-10-05 06:33:59-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-10-06 22:57:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-10-05 06:33:59-07:00",
+        "text": "Thank you for the work put into this document.  Please find below two blocking DISCUSS points (probably easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to Barry Leiba for his concise shepherd's write-up but very clear about the WG consensus. Thank you also to Donald Eastlake for this INT directorate review that I am vastly supporting: https://mailarchive.ietf.org/arch/msg/int-dir/6Ox8iEBMqXkUoC2aUEF3wi4-c5g/ I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == Generic comment how are link-local address (LLA) with scope encoded ? I would expect CBOR to work also on LLA only networks... At the bare minimum, please state that link-local addresses cannot be encoded with their scope, hence, they cannot represent an interface. -- Section 3.1.3 -- How can 2 valid link-local addresses (fe80::1%eth0, fe80::1%eth1) can be represented in order to identity two interfaces ?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-06 22:57:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-09-22 15:34:48-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-22 15:34:48-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-09-22 07:15:36-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-22 07:15:36-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-10-06 18:47:42-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-10-06 18:49:01-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-10-06 18:47:42-07:00",
+        "text": "Thanks for this document. In general I found it easy to read, blessedly concise, and useful. I do have one concern with how you treat the covert channel concern you raise, which I'm making a DISCUSS (which I think will be easily cleared). Section 4 says: \u00a0  even though variations like: \u00a0  54([44, h'20010db81233']) \u00a0  54([45, h'20010db8123f']) \u00a0  would be parsed in the exact same way; they MUST be considered \u00a0  invalid. You choose to use a  RFC 2119  keyword here, and this is in the encoder section, so presumably you are insisting that the encoder MUST... what? You already said, in an earlier paragraph, that the encoder MUST set the trailing bits to zero, so I can't figure out what the quoted text is telling me to do. (Presumably any compliant encoder won't produce the depicted values, and an encoder that's noncompliant for the purpose of deliberately exfiltrating data using this covert channel won't be put off by this MUST.) Then in Section 5 we have: \u00a0  A particularly paranoid decoder could examine the lower non-relevant \u00a0  bits to determine if they are non-zero, and reject the prefix.\u00a0 This \u00a0  would detect non-compliant encoders, or a possible covert channel. The fairly dismissive tone (\"paranoid decoder could\"), not to mention the preceding pseudocode, suggests that you have no real expectation the decoder will do anything to \"consider invalid\" values with nonzero low bits. So probably the MUST from Section 4 isn't meant to apply to the decoder. In short I don't understand what that clause in Section 4 is telling me to do. One fix would simply to weaken the text, as in \u00a0  would be parsed in the exact same way, they should not be  \u00a0  considered legitimate encodings. \u00a0   P.S.: The semicolon in the quoted text is also either wrong, or I'm even more confused about what's being specified than I thought I was.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-10-09 07:47:40-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-10-06 18:49:01-07:00",
+        "text": "Thanks for this document. In general I found it easy to read, blessedly concise, and useful. I do have one concern with how you treat the covert channel concern you raise, which I'm making a DISCUSS (which I think will be easily cleared). Section 4 says: \u00a0  even though variations like: \u00a0  54([44, h'20010db81233']) \u00a0  54([45, h'20010db8123f']) \u00a0  would be parsed in the exact same way; they MUST be considered \u00a0  invalid. You choose to use a  RFC 2119  keyword here, and this is in the encoder section, so presumably you are insisting that the encoder MUST... what? You already said, in an earlier paragraph, that the encoder MUST set the trailing bits to zero, so I can't figure out what the quoted text is telling me to do. (Presumably any compliant encoder won't produce the depicted values, and an encoder that's noncompliant for the purpose of deliberately exfiltrating data using this covert channel won't be put off by this MUST.) Then in Section 5 we have: \u00a0  A particularly paranoid decoder could examine the lower non-relevant \u00a0  bits to determine if they are non-zero, and reject the prefix.\u00a0 This \u00a0  would detect non-compliant encoders, or a possible covert channel. The fairly dismissive tone (\"paranoid decoder could\"), not to mention the preceding pseudocode, suggests that you have no real expectation the decoder will do anything to \"consider invalid\" values with nonzero low bits. So probably the MUST from Section 4 isn't meant to apply to the decoder. In short I don't understand what that clause in Section 4 is telling me to do. One fix would simply be to weaken the text, as in \u00a0  would be parsed in the exact same way, they should not be  \u00a0  considered legitimate encodings. \u00a0   P.S.: The semicolon in the quoted text is also either wrong, or I'm even more confused about what's being specified than I thought I was.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-09 07:47:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-09-30 06:41:28-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-30 06:41:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-09-28 12:21:15-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-28 12:21:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-10-07 05:21:42-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-07 05:21:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-10-04 10:52:04-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-04 10:52:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-10-01 03:31:08-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-01 03:31:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-10-04 12:12:46-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-04 12:12:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-10-05 18:52:25-07:00",
+        "end_reason": "new_position",
+        "start": "2021-09-22 07:15:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-10-22 14:06:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-05 18:52:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9164",
+  "evaluation_end": "2021-10-22 14:06:22-07:00",
+  "evaluation_start": "2021-09-22 07:15:35-07:00"
+}

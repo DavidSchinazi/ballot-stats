@@ -1,0 +1,291 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-05-03 10:47:17-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-03 10:47:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-05 18:58:22-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-21 11:16:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-05 18:58:22-07:00",
+        "text": "I have a concern about the MAX_PAYLOADS congestion-control parameter. In Section 7.2 it is stated that both endpoints only SHOULD have the same value.\u00a0 I don't see how this can be anything less than MUST, given that we attribute semantics to whether NUM modulo MAX_PAYLOADS is zero or non-zero in the processing of the Q-Block2 option.\u00a0 If the endpoints disagree on the value of MAX_PAYLOADS they will disagree on the semantics of Q-Block2 -- how can that be interoperable? (Being able to negotiate the value does not seem inherently problematic, but since it is relevant for protocol semantics it seems like the value must be identical on both endpoints.) This seems especially important to have clarity on given that the current specification allows for MAX_PAYLOADS to be decreased at runtime in response to congestion feedback over a 24-hour period, with no synchronization between peers provided (\"Note that the CoAP peer will not know about the MAX_PAYLOADS change until it is reconfigured\".)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-21 11:16:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-05-03 05:16:40-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-03 05:16:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-05-04 18:24:29-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-04 18:24:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-04-28 03:13:39-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-05 17:39:33-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-19 14:41:55-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-05-05 17:39:33-07:00",
+        "text": "For the most part I found this document relatively easy to follow, considering my complete lack of background in CoAP. However, despite a concerted effort I have not been able to nail down with confidence what the intended semantics of several of your timeouts are, notably NON_RECEIVE_TIMEOUT. Some of the text (for example, \u00a74.4) implies that the timeout is an upper bound on how long an implementation should wait before declaring a block to have been lost (\u201cThe client SHOULD wait for up to NON_RECEIVE_TIMEOUT\u201d). At the very least, this is imprecise because the timeout increases exponentially with repeated timeouts \u2014 but this is a relatively minor matter, discussed further in my comments. Later, in \u00a77.2, you say that expiry of the timeout is not the only trigger for a 4.08 response: \u00a0  It is likely that the client will start transmitting the next set of \u00a0  MAX_PAYLOADS payloads before the server times out on waiting for the \u00a0  last of the previous MAX_PAYLOADS payloads.\u00a0 On receipt of the first \u00a0  payload from the new set of MAX_PAYLOADS payloads, the server SHOULD \u00a0  send a 4.08 (Request Entity Incomplete) Response Code indicating any \u00a0  missing payloads from any previous MAX_PAYLOADS payloads.  It makes sense to me that you use this additional trigger. At this point in my reading of the spec, my understanding of the retransmission algorithm was that a 4.08 should be sent when either a payload is received from a new set of MAX_PAYLOADS, or NON_RECEIVE_TIMEOUT expires. But then I got to the example in 10.2.3, which shows the client waiting for the expiration of NON_RECEIVE_TIMEOUT even though it has received the first of a new set of MAX_PAYLOADS, and I concluded that either I\u2019ve missed something basic, or the document is internally inconsistent. As an aside, I\u2019m also unclear as to why the only trigger you specify for sending a 4.08 is the arrival of the first of a new MAX_PAYLOADS flight. Other possible triggers I noticed include a gap in the sequence, and reception of a payload with More=0. Some of these issues are repeated in my comments, below \u2014 I\u2019ve noted those in the comment. Possibly in addressing this DISCUSS we\u2019ll clear up some of those comments too.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-21 09:16:30-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-19 14:41:55-07:00",
+        "text": "I am raising my comment #11 to a DISCUSS. I notice that  RFC 7252  jitters its timers, for example: \u00a0 counter.\u00a0 For a new Confirmable message, the initial timeout is set \u00a0 to a random duration (often not an integral number of seconds) \u00a0 between ACK_TIMEOUT and (ACK_TIMEOUT * ACK_RANDOM_FACTOR) (see \u00a0 Section 4.8) \u2026 \u00a0 ACK_RANDOM_FACTOR MUST NOT be decreased below 1.0, and it SHOULD have \u00a0 a value that is sufficiently different from 1.0 to provide some \u00a0 protection from synchronization effects. MAX_TRANSMIT_SPAN and MAX_TRANSMIT_WAIT are similarly jittered. A number of your introduced parameters  \u00a0 This document introduces new parameters MAX_PAYLOADS, NON_TIMEOUT, \u00a0 NON_RECEIVE_TIMEOUT, NON_MAX_RETRANSMIT, NON_PROBING_WAIT, and \u00a0 NON_PARTIAL_TIMEOUT primarily for use with NON (Table 3). appear at least superficially similar to the timers the authors of  RFC 7252  deemed important to jitter to prevent synchronization effects. Did you specifically consider jittering them, and decide that jitter was unnecessary? If so, can you explain what is different about your specification, compared to the base spec, that eliminates the concern? -- Version 12 resolves the concerns in the DISCUSS point below; I am retaining it for posterity only: For the most part I found this document relatively easy to follow, considering my complete lack of background in CoAP. However, despite a concerted effort I have not been able to nail down with confidence what the intended semantics of several of your timeouts are, notably NON_RECEIVE_TIMEOUT. Some of the text (for example, \u00a74.4) implies that the timeout is an upper bound on how long an implementation should wait before declaring a block to have been lost (\u201cThe client SHOULD wait for up to NON_RECEIVE_TIMEOUT\u201d). At the very least, this is imprecise because the timeout increases exponentially with repeated timeouts \u2014 but this is a relatively minor matter, discussed further in my comments. Later, in \u00a77.2, you say that expiry of the timeout is not the only trigger for a 4.08 response: \u00a0  It is likely that the client will start transmitting the next set of \u00a0  MAX_PAYLOADS payloads before the server times out on waiting for the \u00a0  last of the previous MAX_PAYLOADS payloads.\u00a0 On receipt of the first \u00a0  payload from the new set of MAX_PAYLOADS payloads, the server SHOULD \u00a0  send a 4.08 (Request Entity Incomplete) Response Code indicating any \u00a0  missing payloads from any previous MAX_PAYLOADS payloads.  It makes sense to me that you use this additional trigger. At this point in my reading of the spec, my understanding of the retransmission algorithm was that a 4.08 should be sent when either a payload is received from a new set of MAX_PAYLOADS, or NON_RECEIVE_TIMEOUT expires. But then I got to the example in 10.2.3, which shows the client waiting for the expiration of NON_RECEIVE_TIMEOUT even though it has received the first of a new set of MAX_PAYLOADS, and I concluded that either I\u2019ve missed something basic, or the document is internally inconsistent. As an aside, I\u2019m also unclear as to why the only trigger you specify for sending a 4.08 is the arrival of the first of a new MAX_PAYLOADS flight. Other possible triggers I noticed include a gap in the sequence, and reception of a payload with More=0. Some of these issues are repeated in my comments, below \u2014 I\u2019ve noted those in the comment. Possibly in addressing this DISCUSS we\u2019ll clear up some of those comments too.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-21 09:16:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-05 00:59:46-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-07 05:50:25-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-05-05 00:59:46-07:00",
+        "text": "The current CORE charter does not seem to cover the topic of this document. I also see no related milestone. Section 1, paragraph 4, discuss: >\u00a0 \u00a0 There is a requirement for these blocks of data to be transmitted at >\u00a0 \u00a0 higher rates under network conditions where there may be asymmetrical >\u00a0 \u00a0 transient packet loss (i.e., responses may get dropped).\u00a0 An example >\u00a0 \u00a0 is when a network is subject to a Distributed Denial of Service >\u00a0 \u00a0 (DDoS) attack and there is a need for DDoS mitigation agents relying >\u00a0 \u00a0 upon CoAP to communicate with each other (e.g., >\u00a0 \u00a0 [ RFC8782 ][ I-D.ietf-dots-telemetry ]).\u00a0 As a reminder, [ RFC7959 ] I understand that COAP was initially chosen to transport DOTS signaling messages due to their small size, support for structured messages and request/response semantics, as well as the ability to function over lossy paths such as found in IoT deployment, which COAP is architected for. DOTS now seems to desire to transport larger messages, and this document extends CORE to enable this functionality. However, this CORE extension seems to solely focus on Internet deployment scenarios, essentially attempting to re-architect COAP into a general Internet transport protocol for transmission over paths with high loss rates. I do not believe that the CORE WG is chartered to do this.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-18 00:49:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-07 05:50:25-07:00",
+        "text": "[Updating this DISCUSS based on the discussion during the May 6 telechat.] Section 1, paragraph 4, discuss: >\u00a0 \u00a0 There is a requirement for these blocks of data to be transmitted at >\u00a0 \u00a0 higher rates under network conditions where there may be asymmetrical >\u00a0 \u00a0 transient packet loss (i.e., responses may get dropped).\u00a0 An example >\u00a0 \u00a0 is when a network is subject to a Distributed Denial of Service >\u00a0 \u00a0 (DDoS) attack and there is a need for DDoS mitigation agents relying >\u00a0 \u00a0 upon CoAP to communicate with each other (e.g., >\u00a0 \u00a0 [ RFC8782 ][ I-D.ietf-dots-telemetry ]).\u00a0 As a reminder, [ RFC7959 ] I understand that COAP was initially chosen to transport DOTS signaling messages due to their small size, support for structured messages and request/response semantics, as well as the ability to function over lossy paths such as found in IoT deployment, which COAP is architected for. DOTS now seems to desire to transport larger messages, and this document extends CORE to enable this functionality. However, this CORE extension seems to solely focus on Internet deployment scenarios, essentially attempting to re-architect COAP into a general Internet transport protocol for transmission over paths with high loss rates. It's questionable whether \"maintenance of  RFC7959 \" part of the current CORE charter covers this document. The motivation for this new extension is apparently that  RFC7959  doesn't result in sufficient performance for the DOTS use case, i.e., timely delivery of larger amounts of data during periods of high random loss (i.e., under DDoS). This is a fundamentally hard problem, because in order to deliver data in a timely manner in such scenarios, the sender needs to be very aggressive, to send enough packets into the network so that enough arrive at the receiver to make steady progress; and at the same time the feedback channel is also severely degraded due to loss. The IETF TSV area currently has hence no known good solution for such use cases. This specification possibly describes such a solution, but I was not able to find any evaluation results that would show that this proposed mechanism actually delivers the desired performance improvements over  RFC7959  in the scenarios of interest. I was also not able to find any evaluation results of whether the proposed mechanism is safe to use in situations that might be easily confused with DDoS, such as high-load scenarios that are not of malicious origin, or if it even is safe when executing over normal Internet paths. If such evaluation results exists, would you mind pointing me at them? Without evaluation results that demonstrate that the proposed mechanism is effective and safe, I do not believe it should be published on the Standards Track. It could go forward as an Experimental RFC, supporting an experiment to perform such an evaluation.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-18 00:49:26-07:00",
+        "text": null,
+        "type": "Abstain"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-04-29 16:23:32-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-05-05 09:00:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-04-29 16:23:32-07:00",
+        "text": "I am concerned about the convergence of three different provisions in this spec: - In (4.1), it says \"To reliably get a rejection message, it is therefore \u00a0  REQUIRED that clients use a Confirmable message for determining \u00a0  support for Q-Block1 and Q-Block2 Options.\" IIUC this mandates that at least one request will use CON. - (7.1): all the blocks of a single body over an \u00a0  unreliable transport MUST either all be Confirmable or all be Non- \u00a0  confirmable. - (7.2) However, the other CON congestion \u00a0  control parameters will need to be tuned to cover this change.\u00a0 This \u00a0  tuning is out of scope of this document as it is expected that all \u00a0  requests and responses using Q-Block1 and Q-Block2 will be Non- \u00a0  confirmable (Section 3.2). I can't reconcile (4.1) with the last sentence in (7.2). Moreover, if my reading of (4.1) is correct, it's not sufficient to declare congestion control guidance out of scope when it's a mandated part of the protocol.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-05 09:00:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-05-06 02:23:16-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-06 02:23:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-06 00:45:20-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-06 00:45:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-05-06 02:12:15-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-06 02:12:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-05 12:17:45-07:00",
+        "end_reason": "new_position",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-05 12:17:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-05-27 06:59:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-28 03:13:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9177",
+  "evaluation_end": "2021-05-27 06:59:41-07:00",
+  "evaluation_start": "2021-04-28 03:13:39-07:00"
+}

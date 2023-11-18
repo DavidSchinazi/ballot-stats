@@ -1,0 +1,259 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-17 11:40:10-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 11:40:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-10-20 06:05:02-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-20 06:05:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-18 23:22:59-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-18 23:22:59-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-10 23:26:57-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-10 23:26:57-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-17 11:14:55-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 11:14:55-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-20 05:02:51-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-25 01:13:34-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-20 05:02:51-07:00",
+        "text": "# GEN AD review of  draft-ietf-dnsop-dnssec-bcp-05 CC @larseggert Thanks to Linda Dunbar for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/TNMpPSf36E8i5Nt96FoRSlbjPFA ). ## Discuss ### \"Abstract\", paragraph 1 ``` \u00a0 \u00a0  This document describes the DNS security extensions (commonly called \u00a0 \u00a0  \"DNSSEC\") that are specified RFCs 4033, 4034, 4035, and a handful of \u00a0 \u00a0  others.\u00a0 One purpose is to introduce all of the RFCs in one place so \u00a0 \u00a0  that the reader can understand the many aspects of DNSSEC.\u00a0 This \u00a0 \u00a0  document does not update any of those RFCs.\u00a0 Another purpose is to \u00a0 \u00a0  move DNSSEC to Best Current Practice status. ``` I don't understand what \"move DNSSEC to Best Current Practice status\" means in terms of the standards track. I'm all for advancing the RFC set that makes up DNSSEC along the standards track, but BCP it not part of that track. Publishing a BCP that normatively references some DNSSEC RFCs isn't doing anything in terms of moving them forward. ### Section 1.1, paragraph 2 ``` \u00a0 \u00a0  The DNSSEC set of protocols is the best current practice for adding \u00a0 \u00a0  origin authentication of data in the DNS.\u00a0 To date, no standards- \u00a0 \u00a0  track RFCs offer any other method for such origin authentication of \u00a0 \u00a0  data in the DNS. ``` Just because no other standards track RFCs compete with DNSSEC does not mean it is a BCP. A BCP is something else, i.e. \"The BCP subseries of the RFC series is designed to be a way to standardize practices and the results of community deliberations.\" [ RFC2026 ] ### Section 1.1, paragraph 1 ``` \u00a0 \u00a0  However, this low level of implementation does not affect whether \u00a0 \u00a0  DNSSEC is a best current practice; it just indicates that the value \u00a0 \u00a0  of deploying DNSSEC is often considered lower than the cost. ``` Protocols aren't BCPs. HTTP isn't the \"best current practice\" for transporting HTML either.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-25 01:13:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-19 23:01:31-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 23:01:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-17 18:07:41-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-19 23:01:47-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-17 18:07:41-07:00",
+        "text": "Since  draft-ietf-dnsop-rfc5933-bis  is in IETF Last Call now, I think it is worth waiting on and updating this text: \u00a0  The GOST signing algorithm [ RFC5933 ] was also adopted, but \u00a0  has seen very limited use, likely because it is a national algorithm \u00a0  specific to a very small number of countries. To add a reference that RFCXXX updates the GOST algorithms for DNSSEC (but that it is uncertain at this point whether it will be widely adopted) I could be convinced for this document to not wait, but then I do think this paragraph should state that it is NOT RECOMMENDED to implement  RFC5933  since the underlying GOST algorithms have been deprecated by its issuer.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 23:01:47-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-17 02:27:48-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 02:27:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-17 17:14:22-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 17:14:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-10 09:21:55-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-19 06:38:24-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-10 09:21:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-26 13:43:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 06:38:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9364",
+  "evaluation_end": "2022-10-26 13:43:21-07:00",
+  "evaluation_start": "2022-10-10 09:21:55-07:00"
+}

@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-06-08 11:11:41-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-06-30 00:41:25-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-30 00:41:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-06-15 10:12:52-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-15 10:12:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-06-15 14:11:08-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-15 14:11:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-06-15 14:59:28-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-15 14:59:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-14 19:08:25-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-14 19:16:28-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-06-14 19:08:25-07:00",
+        "text": "I generally found this a well-written and pleasant to read document. I do have some additional comments on it and tomorrow I'll update the comments section of my ballot to reflect them, but wanted to post the DISCUSS portion tonight. I would like to understand the motivation behind what seems to me to be a curious inconsistency. I was surprised, when I reached \u00a76.9, to find out that an ITR MUST discard a Map-Reply whose HMAC ID or KDF ID don't match what the ITR sent. As I understand it, this is used as a form of algorithm negotiation. That much I get (although it's surprising there's no text telling the ITR to remember the negotiated algorithm for future reference). What I don't get, is why \u00a76.7 and \u00a76.7.1 tell the Map-Server to go to the trouble of creating a full, properly-formed Map-Reply (quite possibly involving the ETR too in the process) in the case where it doesn't support the HMAC or KDF recommended by the ITR. In such a case the Map-Server *knows* the ITR will discard the Map-Reply. So why waste cycles and bandwidth sending anything other than a bare-bones, \"I don't support your algorithm, here's the one I like\" message?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-15 10:08:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-14 19:16:28-07:00",
+        "text": "I generally found this a well-written and pleasant to read document. I do have some additional comments on it and tomorrow I'll update the comments section of my ballot to reflect them, but wanted to post the DISCUSS portion tonight. I would like to understand the motivation behind what seems to me to be a curious inconsistency.  On the one hand, \u00a76.7 and \u00a76.7.1 mention that  \u00a0  While processing the Map-Request, the Map-Server can overwrite the \u00a0  KDF ID field if it does not support the KDF ID recommended by the \u00a0  ITR. and similar for the HMAC ID. They then go on to detail all the other work the Map-Server does to create a well-formed Map-Reply (if replying directly) or Map-Request (if sending the message to an ETR to take action). This seemed fine, until I got to \u00a76.9, which told me that after the Map-Server (and often, ETR) went to all that work to create those messages... \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 If the KDF ID in the Map-Reply does not match the \u00a0  KDF ID requested in the Map-Request, the ITR MUST discard the Map- \u00a0  Reply and similar for the HMAC ID.  Why did you tell the Map-Server to spend cycles and bandwidth doing the work to produce a fully-formed Map-Reply in this case where you know the ITR is just going to discard the result? Why doesn't the Map-Server simply send a bare-bones \"I don't support your algorithm, here's the one I do like\" message?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-15 10:08:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-06-30 00:29:41-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-07-01 10:35:19-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-30 00:29:41-07:00",
+        "text": "Sections 8.1 through 8.5 all create registries with \"Specification Required\" rules.\u00a0  RFC 8126  says this about \"Specification Required\": \u00a0  As with Expert Review (Section 4.5), clear guidance to the designated \u00a0  expert should be provided when defining the registry, and thorough \u00a0  understanding of Section 5 is important. Only Section 8.5 includes any such guidance.\u00a0 Is none needed for the other four?\u00a0 Also, I'm having trouble understanding the advice that Section 8.5 does give.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-01 10:35:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-06-30 06:25:12-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-07-08 05:51:47-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-30 06:25:12-07:00",
+        "text": "Note I support the DISCUSSes and COMMENTS of Roman and Murray, and John's comments, and I won't repeat those issues in this review. #1 The document keeps talking about generating OTK's which are One Time Key's, and then \"securely transports\" these. If we have such a secure transport, why can't this same mechanism be used by the Map-Server for the Map-Request and Map-Reply message security instead of OTKs? Possibly I am not understanding the full architecture? An ascii art diagram would be useful at the beginning of the document. This all kind of tastes like Kerberos/GSSAPI. Couldn't that be used instead? Why not just use mTLS between all parties and get rid of all the custom crypto with OTK's ? #2 \u00a0  LISP-SEC deployments SHOULD use AUTH-HMAC-SHA- \u00a0  256-128 HMAC function, unless older implementations using AUTH-HMAC- \u00a0  SHA-1-96 are present in the same deployment It makes be sad that 1 older device downgrades the usable algorithm for all nodes. Would it be possible to change the protocol slightly so those with sha2 support could use this and only the sha1-only node uses the old algorithm? #3 \u00a0  or by enabling DTLS [ RFC9147 ] between the ITR and the Map-Resolver. Should this clarify that the DTLS connection should be mutually authenticated? eg both peers must identify themselves to the other, unlike the more common (D)TLS connections where only the client authenticates the server. This applies to multiple locations where it says DTLS can be used. #4 The Registry \"LISP-SEC Authentication Data HMAC ID\" seems to really be conveying a _preference_. Should this be reflected in the name of the registry? Additionally, can we leave value 0 as Reserved, and make NOPREF the value 1, etc. The \"Key Wrap Functions\" registry specifies 0 as Reserved, but then associated a KEY WRAP and KDF with this value. That is, it combines a \"Reserved\" with a \"NULL wrap\" entry. These two should be clearly split - eg reserve 0\u00a0 with Key wrap and KDf set to \"N/A\", and if needed create a \"null-wrap-null if an entry is needed with key wrap and kdf set to \"none\". The \"Key Derivation Functions\" also mixes up NOPREF and Reserved.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-08 05:51:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-06-30 05:03:26-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-30 05:03:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-06-28 18:47:40-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-07-13 13:58:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-28 18:47:40-07:00",
+        "text": "** Since originally scheduled for the telechat in version -26, thank you for adding the following text about preferring HMAC-SHA256 for new deployments in -27: \u00a0  The HMAC \u00a0  function AUTH-HMAC-SHA-256-128 [ RFC6234 ] MUST be supported in LISP- \u00a0  SEC implementations.\u00a0 LISP-SEC deployments SHOULD use AUTH-HMAC-SHA- \u00a0  256-128 HMAC function, unless older implementations using AUTH-HMAC- \u00a0  SHA-1-96 are present in the same deployment [ RFC2104 ]. Could this same approach be applied for the algorithms set by KDF ID.\u00a0 Specifically: -- Section 6.9 says: \u00a0  The key derivation function \u00a0  HKDF-SHA1-128 [ RFC5869 ] MUST be supported. ... \u00a0 However, since HKDF-SHA1-128 is mandatory to implement, the process \u00a0  will eventually converge. Could it say something to the effect of: The key derivation function HKDF-SHA256 MUST be supported in LISP-SEC implementations.\u00a0 LISP-SEC deployments SHOULD use the HKDF-SHA256 HKDF function, unless older implementations using HKDF-SHA1-128 are present in the same deployment. However, since HKDF-SHA1-128 and HKDF-SHA256 are supported, the process will eventually converge. -- Section 8.5.\u00a0 Add HKDF-SHA256 to the \"LISP-SEC Authentication Data Key \u00a0  Derivation Function ID\" registry",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-13 13:58:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-06-30 06:20:10-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-08 11:11:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-07-14 14:11:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-30 06:20:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9303",
+  "evaluation_end": "2022-07-14 14:11:12-07:00",
+  "evaluation_start": "2022-06-08 11:11:41-07:00"
+}

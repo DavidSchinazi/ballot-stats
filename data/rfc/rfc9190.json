@@ -1,0 +1,305 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-01-06 10:15:54-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-01-06 10:15:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-12-16 12:16:57-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-16 12:16:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-12-16 14:30:49-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-12-16 14:30:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-16 14:36:01-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-06 19:33:35-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-12-16 14:36:01-08:00",
+        "text": "I'm going to defer this document's evaluation because I think there are several interrelated subtle issues that merit closer consideration than has been given so far.\u00a0 I will also invite the TLS WG to provide input on these issues, since they relate to rather fundamental issues of the operation of the TLS sub-protocols. Most of them concern the Commitment Message, in terms of what goals it aims to achieve, how it is specified, and what mechanism is used to effectuate it. To start with the easy one: currently the way in which the structure of the Commitment Message is described makes reference to many fields of TLS Record Layer structures in order to specify what is fundamentally a message on the TLS Application Data stream.\u00a0 This is a layering violation; I don't see any reason to say more than what was suggested in https://mailarchive.ietf.org/arch/msg/emu/ECgvnq-C_VVXT5bpvOowte8LBjw/  : \"the commit[ment] message is a single byte of [value] 0 in the application data stream\".\u00a0 All the bits about cryptographic protection and expansion of the plaintext in prepararation for record protection are just adding noise, and the interface between the TLS stack and the application is supposed to be a data-stream abstraction, not a record abstraction. Next, the whole reason for the existence of a Commitment Message seems under-justified -- the only mention I could find in the document is that it serves \"to decrease the uncertainty for the EAP-TLS peer\".\u00a0 What harm would be caused by a lack of certainty in this area?\u00a0 Why does waiting for an EAP-Success or EAP-Failure not provide a similar level of certainty? The document also suggests in several places that the Commitment Message can or should be sent at 0.5-RTT data in the same flight as the server Finished.\u00a0 The intent, as determined from the mailing list archive, seems to be to save a round-trip compared to a typical full message flow where the server does not send application data until after the client's Finished (and any application data alongside it) is received.\u00a0 In particular, this came out during discussion of how a TLS \"close_notify\" alert would be unsuitable for the role of the Commitment Message, since sending the \"close_notify\" in 0.5-RTT would prevent sending an alert if the client authentication failed, and the diagnostic value of such alerts is significant.\u00a0 This is where the issues start to become interrelated -- the Commitment Message as a new application-data construct is for the objective of reducing the number of round trips. However, TLS session resumption is also designed to reduce the number of round-trips (including by no longer needing to send potentially large TLS Certificate messages that get fragmented at the EAP layer, with the cost of a round trip per fragment), and there is a nasty interaction between the two mechanisms.\u00a0 Specifically, TLS 1.3 session resumption requires the use of a NewSessionTicket message, which is associated with a resumption secret; the resumption secret, in turn, is not available in the key schedule until the client Finished (and client authentication messages, if any) is available.\u00a0 While it is possible in many Web scenarios for NewSessionTicket to be issued in the 0.5-RTT flight, this is because the server can precompute what the valid client Finished would be and use that in the key schedule to precompute the resumption secret.\u00a0 If the client is to be authenticated, as is the case for the vast majority of EAP exchanges, then such precomputation is impossible, and the session ticket cannot be issued until the extra round trip is completed.\u00a0 The document contains no discussion of the inherent tradeoff between sending the commitment message in 0.5-RTT and using resumption, and this tradeoff seems to call into question the merits of choosing this mechanism to implement the commitment message, since... The commitment message as specified seems to itself be a layering violation.\u00a0 The TLS protocol itself consists of a few sub-protocols, e.g., the handshake protocol, record protocol, and alert protocol.\u00a0 The operation of the handshake protocol is supposed to be completely independent of the application-data record protocol (except to the extent that the handshake protocol supplies the keys used for cryptographic protection of application data records).\u00a0 In particular, there should not be any interaction between the handshake state machine and the application data.\u00a0 If there is to be a commitment made about the operation of the TLS handshake protocol, that more properly belongs in the handshake layer itself, or perhaps the alert layer if it relates to the overall operation of the TLS connection.\u00a0 It seems inappropriate and unsustainable to expect that an application-data message would affect the operation of the handshake layer. The use of application data for the commitment message also may have unfortunate interactions with other TLS-using EAP methods, which is very briefly mentioned as a possibility but not explored at all: \u00a0  While EAP-TLS does not protect any application data except for the \u00a0  Commitment Message, the negotiated cipher suites and algorithms MAY \u00a0  be used to secure data as done in other TLS-based EAP methods. If we are to expect this construction of commitment message to become the de facto standard for using TLS 1.3 with EAP, I think we need to consider whether other EAP methods that do need to actually protect application data with the TLS connection will be affected by this proposal to insert the EAP commitment message into the application data stream.\u00a0 This is worth particular consideration given that we require that \"EAP-TLS peer implementations MUST accept any application data as a Commitment Message from the EAP-TLS server to not send any more handshake messages\" -- these seem like new semantics that might be quite unexpected if applied to other EAP methods. There's also a few internal inconsistencies that raise to a discuss-level and will need to be resolved before publication: The body text around Figure 3 indicates that mutual authentication should be depicted, but the figure shows only normal server-only authentication. The example in Figure 8 needs a TLS CertificateRequest in there in order for the rest of the flow to make sense. Section 2.1.4 says that \"TLS warning alerts generally mean that the connection can continue normally and does not change the message flow.\" but this is no longer true with TLS 1.3 -- the only alerts sent at warning level are \"close_notify\" and \"user_cancelled\", both of which indicate that the connection is not going to continue normally. Section 2.1.9 claims that the largest size of a TLS record is 16387 octets, but by my count a TLSCiphertext can get up to 16643, since the length field \"MUST NOT exceed 2^14 + 256 bytes\" (and there's the other 3 bytes of header). Please also check the statements made about  RFC 8446  that I note in my comments on Section 5.1.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-07 16:17:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-10-06 19:33:35-07:00",
+        "text": "Many thanks for the updates since the -13, the last version I reviewed. I'm happy to report that the structural issues I noted in that version have been addressed, and my new Discuss point is a fairly mundane one. In several sections, we say that the text \"updates Section X of [ RFC5216 ] by amending it with the following text\", but I'm quite unclear on exactly what that is intended to mean.\u00a0 Are we adding to the end, prepending to the beginning, replacing wholesale, replacing in part, or doing something else to the indicated text of  RFC 5216 ?\u00a0 I expect that just tweaking a few words can resolve the ambiguity, but am not sure which ones yet. It is also interesting to contrast the \"amending\" language with what we say in Sections 2.1.4 and 2.3 about \"replacing\" text from  RFC 5216  and the various places where we report a \"new section when compared to [ RFC5216 ]\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-07 16:17:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-12-15 12:27:26-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-12-15 12:27:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-12-10 06:13:42-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-10 06:13:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-12-30 22:11:36-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-30 22:11:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-05 14:10:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-09-30 05:22:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-12-21 09:04:30-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-12-21 09:04:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-12-07 18:17:33-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-07 18:17:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-10-07 05:22:03-07:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-07 05:22:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-01-05 23:16:28-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-05 23:16:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-05 04:27:21-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-01-11 07:16:09-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-01-05 04:27:21-08:00",
+        "text": "Thank you for updating EAP to support TLS 1.3. This document is outside my area of expertise, and others will be able to give a better technical review. However, I do think that it would be useful to have a brief discussion with the authors/ADs about the structure of the document.\u00a0 I.e., this document leaves  RFC 5216  as an active updated RFC, although that RFC depends on TLS version 1.2 ( RFC 5246 ) that is obsoleted by TLS 1.3. I also note that this document contains 30 pages of updates to an RFC that is only 32 pages long. Taking both of these into consideration, I think that it would be better (and longer term probably an easier reference) if this document could stand on its own, by obsoleting  RFC 5216  and including any text from  RFC 5216  that is still relevant when using EAP with TLS 1.3. I appreciate that this would be a significant change and hence would welcome input from the authors and other ADs as to whether this change would be worth the effort. Regards, Rob",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-11 07:16:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-15 11:37:51-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-15 11:37:51-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-10-26 10:23:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-07 05:08:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9190",
+  "evaluation_end": "2021-10-26 10:23:13-07:00",
+  "evaluation_start": "2020-11-15 11:37:51-08:00"
+}

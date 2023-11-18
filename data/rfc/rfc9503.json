@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-07-06 08:56:05-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-07-06 08:56:05-07:00",
+        "text": null,
+        "type": "Abstain"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-06-19 09:31:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-06-19 00:17:54-07:00",
+        "text": "# \u00c9ric Vyncke, INT AD, comments for  draft-ietf-ippm-stamp-srpm-12 Thank you for the work put into this document.  Please find below two blocking DISCUSS points (easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and one nit. Special thanks to Tommy Pauly for the shepherd's detailed write-up including the WG consensus and the justification of the intended status.  I hope that this review helps to improve the document, Regards, -\u00e9ric # DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ## Section 3 Probably easy to fix :-) `The Session-Reflector SHOULD use the received Destination Node Address as the Source Address in the IP header of the reply test packet`. I am sure that the authors do not want to do spoofing, i.e., add some text about \"only if the Destination Node Address is one of the node addresses\" or similar. ## Section 4.1.1 Please add text similar to \"All other bits are reserved and must be transmitted as 0 and ignored by the receiver\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-19 09:31:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-06-19 16:40:14-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-19 16:40:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-06-19 07:06:23-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-19 07:06:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-06-20 18:29:25-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-06-29 13:32:08-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2023-06-20 18:29:25-07:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-ippm-stamp-srpm-13 CC @jgscudder Thanks for this document. Despite the lengthiness of my ballot and DISCUSS section, I think this document is in reasonably good shape and will be ready to go after one more good editing pass. Thanks for your work on it, and thanks in advance for helping me work through my DISCUSS points. ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Section 3, not an address of the Session-Reflector, really? The description \"transmit test packets to the Session-Reflector with a different destination address that is not matching an address of the Session-Reflector\" appears to be inaccurate, at least for the use case you've presented: loopback is by definition an address of the Session-Reflector, and indeed of every IP-enabled node, is it not? So it's not right to say that the DA is \"not matching an address of the Session-Reflector\". As far as I can tell by skimming the STAMP base spec, STAMP is basically a host function. Presumably any packet whose DA was not an address of the Session-Reflector wouldn't be delivered to the host stack, and consequently wouldn't be processed. So it seems that perhaps this functionality is only for use when the DA is set to loopback. Is that correct? Is the entire effect of the Destination Node Address TLV to tell the target what SA to use in its reply, and for session identification (although the latter appears to be an inessential use since SSID would do the same job)? Once I have more confidence I understand what's really going on here, I may have some further suggestions for how to edit for clarity. According to my current understanding, it seems to me as though something along the lines of \"The Session-Sender may need to transmit test packets to an address of the Session-Reflector which is not suitable for use as the Source Address of the reply test packet. This TLV allows the Session-Sender to request the Session-Reflector to use a different Source Address in its reply test packet\" might work. ### Section 6, \"limited domain\" I'm concerned with the reliance on \"limited domain\" without doing the work to define what's meant. \u00a0  The usage of STAMP protocol is intended for deployment in limited \u00a0  domains [ RFC8799 ]. \u00a0   RFC 8762  doesn't indicate this, or at least, it has no mention of such in its Security Considerations section nor occurrence of the string \"limited\" anywhere in the RFC. Further,  RFC 8799  isn't a good reference. It's not an IETF document and doesn't itself claim to define what a limited domain is. From the  RFC 8799  abstract: \"Finally, it shows the need for a precise definition of \"limited domain membership\"\". That is, it identifies the need for a definition but doesn't claim to supply one.  RFC 8799  does provide, in Section 6, some guidance that might be helpful in defining what is meant by a \"limited domain\" in a specific context -- but it is up to the document defining that context, to define what it means by \"limited domain\". Some of the underlying STAMP documents do provide context about their assumptions of the deployment environment which might broadly speaking fit the \"limited domain\" rubric -- but they do so in specific terms. It's regrettable that the IETF has no document that defines \"limited domain\", but the fact remains that we don't. This deficiency might not be problematic except that you lean on it quite heavily in the last paragraph of the section: \u00a0  The STAMP extensions defined in this document may be used for \u00a0  potential \"proxying\" attacks.\u00a0 For example, a Session-Sender may \u00a0  specify a return path that has a destination different from that of \u00a0  the Session-Sender.\u00a0 But normally, such attacks will not happen in an \u00a0  SR domain where the Session-Senders and Session-Reflectors belong to \u00a0  the same domain. \u00a0   The \"but normally\" sentence really cries out for some more precise definition of what you think the security context is. Maybe there is a reference within the STAMP or SR document set that you can reference to provide this context, but  RFC 8799  is not sufficient.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-08-15 11:06:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-06-29 13:32:08-07:00",
+        "text": "Thanks for your work to address my previous DISCUSS and COMMENTs. Although you've worked to remove the reliance of \"Limited Domain\" (thank you), regrettably the new text introduces a new, and I think also problematic, reliance on the SR Domain concept. To quote from my earlier email, On Jun 22, 2023, at 1:09 PM, John Scudder\u00a0 wrote: In looking over the new version, it occurred to me that although the document is called \u201c... for Segment Routing Networks\u201d and although that was the use case that motivated it, the only elements whose applicability actually is limited to SR are the Return Path SR-MPLS Segment-List Sub-TLV and the Return Path SRv6 Segment-List Sub-TLV. All the rest are generically applicable. This is basically a good thing IMO \u2014 one likes to see specs whose applicability is greater than just the use case that led to their development \u2014 but it does mean that \"The usage of STAMP protocol is intended for deployment in SR domains [ RFC8402 ]\u201d isn't sufficient, I\u2019m afraid \u2014 whether the use case that led to the development was restricted to SR or not, one can easily see how (for example) a Return Address Sub-TLV could be used outside of an SR deployment. That use might be by design, or it might be by an attacker. To repeat the concern in different words: You\u2019ve rewritten the first paragraph of the Security Considerations as \u00a0 The usage of STAMP extensions defined in this document is intended \u00a0 for deployment in SR domains [ RFC8402 ].\u00a0 It is assumed that a node \u00a0 involved in STAMP protocol operation has previously verified the \u00a0 integrity of the path and the identity of the far-end Session- \u00a0 Reflector. This eliminates the reliance on the Limited Domains RFC (good) but you\u2019re improperly (I think) assuming that you can rely on the SR domain definition instead. This is still true even though you changed \u201cSTAMP protocol\u201d (the version I commented on in the quote above) to \u201cSTAMP extensions\u201d. Again, to repeat: I don\u2019t think it\u2019s either reasonable or desirable to restrict the extensions you\u2019ve defined to be only for use in an SR domain, and therefore, I think the SecCons can\u2019t rest on the foundation of the SR document set. If you did want to rest on that foundation, I think you would have to be much more prescriptive about saying the extensions MUST NOT be processed other than in an SR context (that\u2019s probably not the right wording) \u2014 but I think that would be undesirable, and I think if you did want to make that change, it would be a pretty fundamental change requiring a new WGLC.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-15 11:06:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-08-04 03:27:43-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-08-04 06:55:34-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-08-04 03:27:43-07:00",
+        "text": "# GEN AD review of  draft-ietf-ippm-stamp-srpm-17 CC @larseggert Thanks to Joel Halpern for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/crZp5rrOYaDNMcoM95b5pFQBReo ). ## Discuss Two issues that I think will be quick to fix: ### Section 4, paragraph 12 ``` \u00a0 \u00a0  other Return Path TLVs if present.\u00a0 A Session-Reflector that supports \u00a0 \u00a0  this TLV MUST reply using the Return Path received in the Session- \u00a0 \u00a0  Sender test packet, if possible. ``` \"MUST ... if possible\" is an odd construction. Please rephrase and  clarify the requirements level. ### Section 4.1.3, paragraph 16 ``` \u00a0 \u00a0  The SRv6 Segment List contains a list of 128-bit IPv6 addresses \u00a0 \u00a0  representing the SRv6 SIDs.\u00a0 Length of the Sub-TLV modulo MUST be 0. ``` Modulo *what*?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-04 06:55:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-06-14 13:51:02-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-06-18 18:30:09-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-18 18:30:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-06-19 03:00:10-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-19 03:00:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-06-21 06:31:27-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-21 06:31:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-06-21 13:39:30-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-06-22 07:27:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-06-21 13:39:30-07:00",
+        "text": "I am balloting Abstain on this document because I do not believe the the document fully specifies the processing and behavior. It is sufficiently unclear in many places that I believe that it is not fully implementable by people not involved in its creation.  There are many examples of this, especially around the source and destination address text. For example: \"The Session-Sender may need to transmit test packets to the Session-Reflector with a different destination address that is not matching an address of the Session-Reflector e.g. when the STAMP test packet is encapsulated by a tunneling protocol e.g., encapsulated with an SR-MPLS Segment List and IPv4 header containing destination IPv4 address from 127/8 range or encapsulated with outer IPv6 header and Segment Routing Header (SRH) with inner IPv6 header containing IPv6 destination IPv6 address ::1/128.\" - I'm unable to parse this / how this is expected to work. If the sender sends packets to the reflector through a tunnel, isn't the packet decapsulated when it leaves the tunnel / link, and then the address should be that of the SR? Or are you saying that this is a function of the decapsulation, and whatever process does that should simply trust and process any STAMP packets, regardless of it if owns the address? It is also very unclear what exactly the behavior is intended to be for nodes when using \"different values of IPv4 destination address from 127/8 range may be used in the IPv4 header to measure different ECMP paths.\" - is the assumption that the Session-Reflector is listening on / will process any decapsulated packet destined to any address in 127/8? If so, that is really not clear. This text is also unclear: \"For security reasons (e.g., to avoid node discovery), the Session-Reflector SHOULD use the received Destination Node Address as the Source Address in the IP header of the reply test packet only if the Destination Node Address is one of the addresses on the node, instead of using its Node Address.\" - this sounds like a node should extract the packet, and use the received Destination Node Address as the Source Address if this address exists on the node. If this correct? If so, this is overriding the standard source address selection logic on the device, and can be used to cause packets to be emitted which bypass firewall filters (e.g: My management network is numbered out of 10/8, and I have firewall filters which only allow access to 10/8 from bastion stations. By using the described solution, I can send a STAMP packet to the node and set the Destination Node Address as 10.0.0.5 (an address on the device). This specifies that the Source Address of the return packet should be 10.0.0.5, regardless of if the packet is received on or processed by that interface. This allows filters which match on source address to be bypassed.) It is also unclear what you mean by \"e.g., to avoid node discovery\".  There is much in this document which is underspecified or hand-wavey, and, as such, I do not think that I can ballot No Objection in good faith.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-07-10 08:24:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-06-22 07:27:26-07:00",
+        "text": "I am balloting DISCUSS on this document because I do not believe the the document fully specifies the processing and behavior. It is sufficiently unclear in many places that I believe that it is not fully implementable by people not involved in its creation. Note that this was originally an Abstain, but on further consideration I feel it requires a DISCUSS. There are many examples of this, especially around the source and destination address text. For example: \"The Session-Sender may need to transmit test packets to the Session-Reflector with a different destination address that is not matching an address of the Session-Reflector e.g. when the STAMP test packet is encapsulated by a tunneling protocol e.g., encapsulated with an SR-MPLS Segment List and IPv4 header containing destination IPv4 address from 127/8 range or encapsulated with outer IPv6 header and Segment Routing Header (SRH) with inner IPv6 header containing IPv6 destination IPv6 address ::1/128.\" - I'm unable to parse this / how this is expected to work. If the sender sends packets to the reflector through a tunnel, isn't the packet decapsulated when it leaves the tunnel / link, and then the address should be that of the SR? Or are you saying that this is a function of the decapsulation, and whatever process does that should simply trust and process any STAMP packets, regardless of it if owns the address? It is also very unclear what exactly the behavior is intended to be for nodes when using \"different values of IPv4 destination address from 127/8 range may be used in the IPv4 header to measure different ECMP paths.\" - is the assumption that the Session-Reflector is listening on / will process any decapsulated packet destined to any address in 127/8? If so, that is really not clear. This text is also unclear: \"For security reasons (e.g., to avoid node discovery), the Session-Reflector SHOULD use the received Destination Node Address as the Source Address in the IP header of the reply test packet only if the Destination Node Address is one of the addresses on the node, instead of using its Node Address.\" - this sounds like a node should extract the packet, and use the received Destination Node Address as the Source Address if this address exists on the node. If this correct? If so, this is overriding the standard source address selection logic on the device, and can be used to cause packets to be emitted which bypass firewall filters (e.g: My management network is numbered out of 10/8, and I have firewall filters which only allow access to 10/8 from bastion stations. By using the described solution, I can send a STAMP packet to the node and set the Destination Node Address as 10.0.0.5 (an address on the device). This specifies that the Source Address of the return packet should be 10.0.0.5, regardless of if the packet is received on or processed by that interface. This allows filters which match on source address to be bypassed.) It is also unclear what you mean by \"e.g., to avoid node discovery\".  There is much in this document which is underspecified or hand-wavey, and, as such, I do not think that I can ballot No Objection in good faith.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-07-10 08:24:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "\u00c9ric Vyncke": [
+      {
+        "ad": "\u00c9ric Vyncke",
+        "end": "2023-08-15 13:59:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-14 13:51:02-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9503",
+  "evaluation_end": "2023-08-15 13:59:54-07:00",
+  "evaluation_start": "2023-06-14 13:51:02-07:00"
+}

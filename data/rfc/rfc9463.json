@@ -1,0 +1,479 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-07-11 14:51:25-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-07-11 14:51:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-04-27 02:42:07-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-27 02:42:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-07-01 07:01:31-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-07-12 20:24:58-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-08-01 07:21:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-07-12 20:24:58-07:00",
+        "text": "# Internet AD comments for { draft-ietf-add-dnr-11 } CC @ekline ## Discuss This seem like exceptionally minor points, but are hopefully easily dispatched. ### S4.1, S5.1, S6.1 * The example ADN encoding in S4.1 shows that the trailing null byte is \u00a0 included in the encoding (the label length of the DNS root). \u00a0 This raises the question: why do any of these options need an explicit \u00a0 ADN length?\u00a0 Given: the ADN is a mandatory message element, must be the \u00a0 first element in the message, and there can be no more than one such \u00a0 element, it seems that parsing bounded by the overall option length \u00a0 and validating the \"RFC1035-ness\" :-) of the span preceding the null byte \u00a0 might save a byte or two? \u00a0 (For comparison: the  RFC 8801  PVD ID FQDN did not require a length hint.) ### S4.1, 6.1 * If an ADN length is to be retained in these messages, why is the ADN length \u00a0 2 bytes in the IPv6 variants whereas in the DHCPv4 option a 1 byte length \u00a0 suffices?\u00a0 I know it seems silly to DISCUSS a 1 byte difference, but I \u00a0 figured it would be easy to either explain or fix. * Similarly, why is the Addr Length 2 bytes? \u00a0 My reckoning of a 1-byte addr length would be the ability to list up to \u00a0 15 IPv6 addresses for a single ADN.\u00a0 With 2 bytes a network can advertise \u00a0 ... over 4000 of them (for a single ADN)? My suspicion is that the variable length nature of the ADN component means these options are easily pushed out of 2/4/8 byte alignment, and there may not be much benefit to attempting to adhere to something that only appears like it might align well. (Being parsimonious with bytes may be more of a concern for RAs than DHCP.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-01 07:21:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-04-26 13:32:24-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-26 13:32:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-07-14 03:55:43-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-14 03:55:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-04-24 07:04:05-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-24 07:04:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-07-12 12:31:54-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-12 12:31:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-04-26 13:36:30-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-26 13:36:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-07-12 13:48:19-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-12 13:48:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-04-24 07:34:48-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-24 07:34:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-07-13 12:00:30-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-08-03 10:44:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-07-13 12:00:30-07:00",
+        "text": "After reading this document, I am unclear if it is permitted to omit IP addresses from the Encrypted DNS Option. It doesn't help that there are few normative keywords below: (3.1.6) \"In contexts where putting additional complexity on requesting hosts is acceptable, returning an ADN only can be considered.\" (3.1.8) \"the client makes the following validation checks:... the option includes at least one valid IP address and the \"alpn\" service parameter.\" (3.1.9) \"It is RECOMMENDED that at least the following DNR information... A list of IP addresses to locate the encrypted DNS resolver.\" The option formats seem to allow the possibility of having zero addresses. (\"0\" is a multiple of 4 and 16). I *think* you are saying it is possible to include an ADN, IP address(es), or both, but not neither, with \"both\" being RECOMMENDED. But that isn't really compatible with the client rejecting those as invalid in (3.1.8). If that is accurate, I would recommend: - deleting \"at least one valid IP address and\" from (3.1.8) - Updating (3.1.9) to say that while both are RECOMMENDED, at least one of ADN and IP Address(es) MUST be included.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-03 10:44:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-08-09 23:04:37-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-09 23:04:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-07-13 12:46:33-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-07-15 15:00:09-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-07-13 12:46:33-07:00",
+        "text": "# Internet AD comments for { draft-ietf-add-dnr-11 } CC @paulwouters ## Discuss The overarching issue of the ADD WG in general is the concern that using the local network's DNS server (encrypted or not) is a privacy concern. With HTTP dying and HTTPS sealing the last plain-text with Encrypted Client Hello (ECH), DNS is the last resort of getting to know the enduser's intent of where they are trying to connect to. There are many parties interested in seeing the DNS query content, but the enduser is rarely able to determine whether the local network used can be trusted. This is true for coffee shops, hotels, malls but also their home ISP. The only clear case of trust is the enterprise user, who is provisioned (forced) via their enterprise management to use specific DNS resolvers. There are a number of well-known public DNS services such as Google DNS (8.8.8.8), Quad9 (9.9.9.9) and Cloudflare (1.1.1.1). Arguably, these servers have a better reputation of protecting the enduser's privacy than most local networks, as endusers cannot trust most local networks they use. The question all of this raises is, whether the user isn't better of just never trusting or using the local network's DNS server, whether encrypted or not. In that case, all of these ADD documents have little value. For example, we see this already with Firefox and its TRR program https://wiki.mozilla.org/Trusted_Recursive_Resolver  and to some extend with the Android phone \"private DNS\" feature https://www.howtogeek.com/795644/how-to-enable-secure-private-dns-on-android/ On the other hand, we have the argument of, if the enduser is using the local unencrypted DNS, it might as well use the local encrypted DNS. While this is true if this decision is hidden from the enduser, if the enduser believes they are using \"encrypted DNS\", they might not be aware that this encrypted connection still reveals all privacy sensitive data to the local network entity (or its trusted third party). An aware enduser might also make different choices when they think their DNS is \"safely encrypted\", such as visiting the website of an abortion provider. That is, the ADD specifications might lure the enduser in a false sense of security. To me this is one of the biggest issues while reviewing the ADD drafts. Are these drafts potentially harmful to the enduser, or does it only offer improvements to the status quo of the current common (non-encrypted) DNS topologies? While the latter could be true, I do believe based on the development seen at Google/Android and Mozilla/Firefox, I think we are already far into the phase where the enduser only decides _which_ remote trustworthy encrypted DNS service they are going to use and as such only use the local network DNS to kickstart their internet connection (captive portal, paywall) after which they switch to remote encrypted DNS service. And that of course, raises an issue with DNS security providers, who wish to monitor and firewall all their DNS clients' DNS requests to improve enduser security. This includes government mandates to ISPs to filter certain DNS requests for local legal reasons. Which again raises the issues of where such filtering power can be abused by authoritative regimes, restrictive cults (eg scientology netnanny). To summarize, I am really on the fence with respect to all the ADD drafts. While \"encrypted DNS\" is always better than \"unencrypted DNS\", the overarching issue of \"never use or trust the local DNS resolvers\" trumps the DNR /DDR protocols. For those who can dictate how their users MUST use DNS (eg Enterprise usage, parental control, opt-in security software), device provisioning/configuration options are available that require no ADD protocols with the exception of draft-ietf-add-svcb-dns. ### Encrypted DNS servers need a public FQDN because otherwise you cannot get a certificate for all connecting clients that are not provisioned with a private/enterprise CA. How do home users run their own without having a public domain? And how do I authenticate the encrypted DNS on 10.1.1.1 that has no FQDN? (and really, has no verifiable identity at all) ### \u00a0 \u00a0  The DNS client verifies the connection based on PKIX validation No CRLs, OneCRL updates, no OCSP, no Certificate Transparency is available without functional DNS. So full PKIX validation as specified here is not available. ### \u00a0 \u00a0  The DNS client uses Web PKI trust anchors by default unless \u00a0 \u00a0  configured otherwise. CAB/Forum is currently, as far as I know, not taking encrypted DNS into account for their BR's. Also, every OS and even some applications use their own \"webpki\" root store that differs from each other. This can lead to interoperability issues. ### Spoofing attacks are mentioned in the document. Obtain _any_ certificate from Let's Encrypt via ACME, eg using \" something.example.com \", then spoof authentication-domain-name on the wifi. While this attack might be blocked by the AP not allowing wifi clients to send packets to each other, this is not true for all networks, and especially not for home networks where the goal is for local clients to be able to connect to each other. Is there a better way to lock the authentication-domain-name? One possible method might be to bind it to the ESSID. eg if the ESSID is  wifi.nohats.ca . one could only allow authentication-domain-name to be a name within  nohats.ca . Some method of reducing the scope of this attack is needed I believe. ### \u00a0  authentication-domain-name (variable length):\u00a0 A fully qualified \u00a0 \u00a0 \u00a0 domain name of the encrypted DNS resolver.\u00a0 This field is \u00a0 \u00a0 \u00a0 formatted as specified in Section 10 of [ RFC8415 ]. \u00a0 \u00a0 \u00a0 An example of the authentication-domain-name encoding is shown in \u00a0 \u00a0 \u00a0 Figure 2.\u00a0 This example conveys the FQDN \" doh1.example.com .\", and \u00a0 \u00a0 \u00a0 the resulting Option-length field is 18. \u00a0 \u00a0 \u00a0  +------+------+------+------+------+------+------+------+------+ \u00a0 \u00a0 \u00a0  | 0x04 |\u00a0  d\u00a0 |\u00a0  o\u00a0 |\u00a0  h\u00a0 |\u00a0 1\u00a0  | 0x07 |\u00a0  e\u00a0 |\u00a0  x\u00a0 |\u00a0  a\u00a0 | \u00a0 \u00a0 \u00a0  +------+------+------+------+------+------+------+------+------+ \u00a0 \u00a0 \u00a0  |\u00a0  m\u00a0 |\u00a0  p\u00a0 |\u00a0  l\u00a0 |\u00a0  e\u00a0 | 0x03 |\u00a0  c\u00a0 |\u00a0  o\u00a0 |\u00a0  m\u00a0 | 0x00 | \u00a0 \u00a0 \u00a0  +------+------+------+------+------+------+------+------+------+ The draft says \"as specified in Section 10 of [ RFC8415 ]\" but that is just a redirect to Section 3.1 of [ RFC1035 ] which doesn't tell me how to encode the NAME. For example, I do not understand why one \".\" is encoded as 0x07 and another \".\" is 0x03 ? ### \u00a0 \u00a0 \u00a0 Addr Length:\u00a0 Length of enclosed IPv6 addresses in octets.\u00a0 When \u00a0 \u00a0 \u00a0 present, it MUST be a multiple of 16. Why not just a one octet counter then? The number of IPv6 addresses that follow. Then the length of the Addr field becomes counter times 16 octets. That seems more constrained than \"multiple of 16\" ### \u00a0 \u00a0 \u00a0 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ipv6-address\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ...\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0 \u00a0 \u00a0 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ The diagrams lack reference octets. What is the width ? or 4 rows ? or ? I assume this is supposed to be 4 octets wide and 16 octets total? eg I would write: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  1\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  2\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  3 \u00a0 \u00a0 \u00a0  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 \u00a0 \u00a0 \u00a0 +---------------------------------------------------------------+ \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ipv6-address\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 +---------------------------------------------------------------+ \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ...\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0 \u00a0 \u00a0 +---------------------------------------------------------------+ (also my pet peeve is people using +-+-+-+ instead of -----) ### \u00a0 \u00a0 \u00a0  A value of zero means that this Authentication Domain Name MUST no \u00a0 \u00a0 \u00a0  longer be used. Why not just omit the entry ? Are clients supposed to keep old entries for their entire lifetime even if when asking a new list, those entries no longer appear? That is not clear from this document. Either that should be made explicit, or the values of 0 should not be allowed. ### \u00a0  By default, Encrypted DNS connections received from outside the local \u00a0  network MUST be discarded by the encrypted DNS forwarder in a CPE. What is an \"encrypted DNS forwarder in a CPE\"? This is not defined in the document and I am confused. I assume the CPE announces some encrypted DNS server as either itself or to some external IP at the ISP network? If itself, how can it get a real FQDN the client can verify with PKIX using CAB/Forum ? If to an external IP, isn't it just acting as a NAT/router forwarding packets and then what does it mean to be an \"encrypted DNS forwarder\" ? ### \u00a0  This recommendation is meant to isolate local network \u00a0  DNS resolver services from the public Internet and prevent external \u00a0  attacks against the local Encrypted DNS resolver. \u00a0  If the DHCP responses or RAs are dropped by the attacker, the client \u00a0  can fallback to use a preconfigured encrypted DNS resolver. This raises the big question of why you think that strategy is a \"fallback strategy\" and not the default behaviour of the client. Wouldn't it be more secure if there is no DHCP/RA drop attacks possible? See my introduction text. ### Multihoming is declared out of scope, but realistically most devices we are talking about here are phones, and those are all multihomed. So I feel pretty strongly that it should not be left out of scope.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-08-08 15:18:53-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-07-15 15:00:09-07:00",
+        "text": "# Internet AD comments for { draft-ietf-add-dnr-11 } CC @paulwouters ## Discuss ### How and where a user decides to send their DNS queries impacts their privacy. But the document lists no Privacy Considerations section as per  RFC 6973 ### Encrypted DNS servers need a public FQDN because otherwise you cannot get a certificate for all connecting clients that are not provisioned with a private/enterprise CA. How do home users run their own without having a public domain? And how do I authenticate the encrypted DNS on 10.1.1.1 that has no FQDN? (and really, has no verifiable identity at all) ### \u00a0 \u00a0  The DNS client verifies the connection based on PKIX validation No CRLs, OneCRL updates, no OCSP, no Certificate Transparency is available without functional DNS. So full PKIX validation as specified here is not available. ### \u00a0 \u00a0  The DNS client uses Web PKI trust anchors by default unless \u00a0 \u00a0  configured otherwise. CAB/Forum is currently, as far as I know, not taking encrypted DNS into account for their BR's. Also, every OS and even some applications use their own \"webpki\" root store that differs from each other. This can lead to interoperability issues. ### Spoofing attacks are mentioned in the document. Obtain _any_ certificate from Let's Encrypt via ACME, eg using \" something.example.com \", then spoof authentication-domain-name on the wifi. While this attack might be blocked by the AP not allowing wifi clients to send packets to each other, this is not true for all networks, and especially not for home networks where the goal is for local clients to be able to connect to each other. Is there a better way to lock the authentication-domain-name? One possible method might be to bind it to the ESSID. eg if the ESSID is  wifi.nohats.ca . one could only allow authentication-domain-name to be a name within  nohats.ca . Some method of reducing the scope of this attack is needed I believe. ### \u00a0 \u00a0 \u00a0 Addr Length:\u00a0 Length of enclosed IPv6 addresses in octets.\u00a0 When \u00a0 \u00a0 \u00a0 present, it MUST be a multiple of 16. Why not just a one octet counter then? The number of IPv6 addresses that follow. Then the length of the Addr field becomes counter times 16 octets. That seems more constrained than \"multiple of 16\" ### \u00a0 \u00a0 \u00a0 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ipv6-address\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ...\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0 \u00a0 \u00a0 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ The diagrams lack reference octets. What is the width ? or 4 rows ? or ? I assume this is supposed to be 4 octets wide and 16 octets total? eg I would write: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  1\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  2\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  3 \u00a0 \u00a0 \u00a0  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 \u00a0 \u00a0 \u00a0 +---------------------------------------------------------------+ \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ipv6-address\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0 +---------------------------------------------------------------+ \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ...\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0 \u00a0 \u00a0 +---------------------------------------------------------------+ (also my pet peeve is people using +-+-+-+ instead of -----) ### \u00a0 \u00a0 \u00a0  A value of zero means that this Authentication Domain Name MUST no \u00a0 \u00a0 \u00a0  longer be used. Why not just omit the entry ? Are clients supposed to keep old entries for their entire lifetime even if when asking a new list, those entries no longer appear? That is not clear from this document. Either that should be made explicit, or the values of 0 should not be allowed. ### \u00a0  By default, Encrypted DNS connections received from outside the local \u00a0  network MUST be discarded by the encrypted DNS forwarder in a CPE. What is an \"encrypted DNS forwarder in a CPE\"? This is not defined in the document and I am confused. I assume the CPE announces some encrypted DNS server as either itself or to some external IP at the ISP network? If itself, how can it get a real FQDN the client can verify with PKIX using CAB/Forum ? If to an external IP, isn't it just acting as a NAT/router forwarding packets and then what does it mean to be an \"encrypted DNS forwarder\" ? ### \u00a0  This recommendation is meant to isolate local network \u00a0  DNS resolver services from the public Internet and prevent external \u00a0  attacks against the local Encrypted DNS resolver. \u00a0  If the DHCP responses or RAs are dropped by the attacker, the client \u00a0  can fallback to use a preconfigured encrypted DNS resolver. This raises the big question of why you think that strategy is a \"fallback strategy\" and not the default behaviour of the client. Wouldn't it be more secure if there is no DHCP/RA drop attacks possible? ### Multihoming is declared out of scope, but realistically most devices we are talking about here are phones, and those are all multihomed. So I feel pretty strongly that it should not be left out of scope.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-08 15:18:53-07:00",
+        "text": "# SEC AD comments for { draft-ietf-add-dnr-12 } CC @paulwouters ## Abstain I find the set of documents in the ADD WG incomplete from a security point of view. This is due to client policy being purposefully left out of the WG charter, which is unfixable at this point in the process. I will therefore abstain so that these documents can be published. Hopefully, a BoF/WG in the future will attempt to address this security problem. ## unresolved DISCUSS items ### How and where a user decides to send their DNS queries impacts their privacy. But the document lists no Privacy Considerations section as per  RFC 6973 Note: The draft was updated and added one, but not one that helps the enduser in any way. ### Encrypted DNS servers need a public FQDN because otherwise you cannot get a certificate for all connecting clients that are not provisioned with a private/enterprise CA. How do home users run their own without having a public domain? And how do I authenticate the encrypted DNS on 10.1.1.1 that has no FQDN? (and really, has no verifiable identity at all) Note: There are ways to generate and transport certificates from public reachable nodes to the Encrypted DNS servers, but this is still a complicated method, which home routers are unlikely to be able to safely do. ### \u00a0 \u00a0  The DNS client verifies the connection based on PKIX validation No CRLs, OneCRL updates, no OCSP, no Certificate Transparency is available without functional DNS. So full PKIX validation as specified here is not available. Note: The text was updated and mentions OCSP, but it is not clear that a hard fail should happen based on missing OCSP stapling or missing CT information. ### \u00a0  If the DHCP responses or RAs are dropped by the attacker, the client \u00a0  can fallback to use a preconfigured encrypted DNS resolver. This raises the big question of why you think that strategy is a \"fallback strategy\" and not the default behaviour of the client. Wouldn't it be more secure if there is no DHCP/RA drop attacks possible? Note: this is an item where even though client policy is out of scope of the charter, the document defines a tiny bit (and not enough) client policy. ## Comments ### The overarching issue of the ADD WG in general is the concern that using the local network's DNS server (encrypted or not) is a privacy concern. With HTTP dying and HTTPS sealing the last plain-text with Encrypted Client Hello (ECH), DNS is the last resort of getting to know the enduser's intent of where they are trying to connect to. There are many parties interested in seeing the DNS query content, but the enduser is rarely able to determine whether the local network used can be trusted. This is true for coffee shops, hotels, malls but also their home ISP. The only clear case of trust is the enterprise user, who is provisioned (forced) via their enterprise management to use specific DNS resolvers. There are a number of well-known public DNS services such as Google DNS (8.8.8.8), Quad9 (9.9.9.9) and Cloudflare (1.1.1.1). Arguably, these servers have a better reputation of protecting the enduser's privacy than most local networks, as endusers cannot trust most local networks they use as they are not even aware of who owns various wifi networks they use. The question all of this raises is, whether the user isn't better of just never trusting or using the local network's DNS server, whether encrypted or not. In that case, all of these ADD documents have little value. For example, we see this already with Firefox and its TRR program https://wiki.mozilla.org/Trusted_Recursive_Resolver  and to some extend with the Android phone \"private DNS\" feature https://www.howtogeek.com/795644/how-to-enable-secure-private-dns-on-android/ On the other hand, we have the argument of, if the enduser is using the local unencrypted DNS, it might as well use the local encrypted DNS. While this is true if this decision is hidden from the enduser, if the enduser believes they are using \"encrypted DNS\", they might not be aware that this encrypted connection still reveals all privacy sensitive data to the local network entity (or its trusted third party). An aware enduser might also make different choices when they think their DNS is \"safely encrypted\", such as visiting the website of an abortion provider. That is, the ADD specifications might lure the enduser in a false sense of security. To me this is one of the biggest issues while reviewing the ADD drafts. Are these drafts potentially harmful to the enduser, or does it only offer improvements to the status quo of the current common (non-encrypted) DNS topologies? While the latter could be true, I do believe based on the development seen at Google/Android and Mozilla/Firefox, that we are already far into the phase where the enduser only decides _which_ remote trustworthy encrypted DNS service they are going to use and as such only use the local network DNS to kickstart their internet connection (captive portal, paywall) after which they switch to remote encrypted DNS service. And that of course, raises an issue with DNS security providers, who wish to monitor and firewall all their DNS clients' DNS requests to improve enduser security. This includes government mandates to ISPs to filter certain DNS requests for local legal reasons. Which again raises the issues of where such filtering power can be abused by authoritative regimes, restrictive cults (eg scientology netnanny) or other malicious entities. To summarize, I am really on the fence with respect to all the ADD drafts. While \"encrypted DNS\" is always better than \"unencrypted DNS\", the overarching issue of \"never use or trust the local DNS resolvers\" trumps the DNR /DDR protocols. For those who can dictate how their users MUST use DNS (eg Enterprise usage, parental control, opt-in security software), device provisioning/configuration options are available that require no ADD protocols with the exception of draft-ietf-add-svcb-dns.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-04-25 09:52:56-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-25 09:52:56-07:00",
+        "text": "My ballot position has not changed since the last version as this update only removes the ECH references. I find the set of documents in the ADD WG incomplete from a security point of view. This is due to client policy being purposefully left out of the WG charter, which is unfixable at this point in the process. I will therefore abstain so that these documents can be published. Hopefully, a BoF/WG in the future will attempt to address this security problem. (see history tab on my previous ballot for further details)",
+        "type": "Abstain"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-07-14 03:59:50-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-07-18 03:55:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-07-14 03:59:50-07:00",
+        "text": "Hi, Thanks for this document.\u00a0 I think that what is being proposed here is useful. I have one minor discuss comment, where I am really just asking for a bit more clarity over which fields are optional in the protocol extensions: \u00a0  ipv6-address(es) (variable length):\u00a0 Indicates one or more IPv6 \u00a0 \u00a0 \u00a0 addresses to reach the encrypted DNS resolver.\u00a0 An address can be \u00a0 \u00a0 \u00a0 link-local, ULA, or GUA.\u00a0 The format of this field is shown in \u00a0 \u00a0 \u00a0 Figure 3. Should this be 0 or more IPv6 addresses if this field is optional (as per the description in option length)?\u00a0  In general, I found it slightly unclear as to which fields are optional to include and which are always present.\u00a0 Possibly, explicitly indicating which fields are optional would add clarity.\u00a0 A similar comment applies to the DHCPv4 packet format, and IPv6 RAs.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-18 03:55:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-04-23 23:28:52-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-23 23:28:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-07-12 14:46:26-07:00",
+        "end_reason": "new_position",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-12 14:46:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-04-24 13:53:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-24 13:53:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-04-26 11:50:49-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-26 11:50:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-08-22 11:41:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-01 07:01:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-04-26 17:44:11-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-26 17:44:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "\u00c9ric Vyncke": [
+      {
+        "ad": "\u00c9ric Vyncke",
+        "end": "2023-04-28 09:54:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-11 00:24:59-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9463",
+  "evaluation_end": "2023-04-28 09:54:29-07:00",
+  "evaluation_start": "2023-04-11 00:24:59-07:00"
+}

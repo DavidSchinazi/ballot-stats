@@ -1,0 +1,299 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-03 07:11:27-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-04-22 14:27:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-03 07:11:27-08:00",
+        "text": "I am balloting DISCUSS because I believe that the document is missing important considerations/details related to the operation of Babel in a network.\u00a0 I hope these points should be easy to address. This draft describes destination-first forwarding.\u00a0 If I understand correctly, for the table in \u00a74: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  destination\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 source\u00a0 \u00a0  next-hop \u00a0 \u00a0 \u00a0  2001:DB8:0:1::/64\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ::/0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 A \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ::/0\u00a0 \u00a0  2001:DB8:0:2::/64\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 B ...and the example presented of a \"source 2001:DB8:0:2::42 and destination 2001:DB8:0:1::57\", the result is that the packet is forwarded to A.\u00a0 Is this the correct interpretation?\u00a0 If so, then I believe there are important assumptions made that are not mentioned.\u00a0  In line with this document being \"applicable to small networks\" (\u00a71),  BCP 84 /\u00a74.3 recommends the following:  \u00a0  For smaller edge networks that use provider-based addressing and \u00a0  whose ISPs implement ingress filters (which they should do), the \u00a0  third option is to route traffic being sourced from a given \u00a0  provider's address space to that provider. Given that the draft provides no details, I assume that being \"compatible with [ BCP84 ]\" (\u00a71) means at least that Babel nodes aim to \"route traffic being sourced from a given provider's address space to that provider\". (a) While I understand the table above is just an example, it can be interpreted as indicating that B is the provider that assigned the 2001:DB8:0:2::/64 prefix.\u00a0 If traffic sourced from that prefix is sent to A, then there's a good chance that the packet will be dropped (in line with  BCP 84 ,  BCP 38 , etc.). Maybe the table is not intended to illustrate the routing table at a multihomed edge router. Still, it shows how easy it is to define a policy that may not result in the expected behavior because of the destination-first operation.\u00a0 Please add some guidance on the advertisements and how they may interact in the routing table.\u00a0  Note that what I'm asking for may just be a good example of what to do/not to do.\u00a0  rfc8678 /\u00a75 presents an example of how the forwarding table is constructed based on a set of routes -- something like that would be great! (b) How is the source address selected by the host?\u00a0  rfc8678  uses guidance from  rfc8028  and other RFCs as part of a set of \"Mechanisms for Hosts To Choose Good Default Source Addresses in a Multihomed Site\".\u00a0  rfc8678  significantly differs from this document in that it assumes source-first forwarding when discussing the selection of the source address.\u00a0 Are any of the recommendations in  rfc8678  applicable here? I may be missing something, but it seems to me that the current standards-based recommendations/mechanisms don't easily apply to this specification.\u00a0 I don't think there's anything wrong with doing things a different way -- but I expect those differences to be explicitly explained. SS-ROUTING suggests a trial-and-error mechanism: for \"destination addresses...the sending host tries them all...similarly, all possible source addresses are tried in turn.\"\u00a0 Is that the expectation here? Even though this document is about Babel and not the host, I would like to see a (short) discussion about how the host is expected to behave (or what it needs to consider) in light of the destination-first operation.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-04-23 07:00:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-22 14:27:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-10-29 20:33:38-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-10-29 20:33:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-30 18:36:03-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-04-23 07:00:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-30 18:36:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-11-04 14:32:14-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-11-04 14:32:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-04 23:48:21-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-05 01:32:40-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-04 23:48:21-08:00",
+        "text": "Thank you for the work put into this document. The document is easy to read albeit not always clear and specific (see later). The topic of source address dependent routing is really critical for IPv6 deployment, so, I really appreciate your work on the topic Please find below one blocking DISCUSS point (trivial to fix), some non-blocking COMMENT points, and some nits. I also second Warren's DISCUSS on the lack of clarity in the section 4 example I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == Please update IPv6 reference from  RFC 2460  to  RFC 8200 : I told you that this was an easy to fix DISCUSS point",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-04-23 07:00:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-05 01:32:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-04 17:05:04-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-04-23 07:00:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 17:05:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-11-03 07:15:57-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-11-03 07:15:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-04 17:06:43-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-04 17:24:14-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-04 17:06:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-04-21 08:18:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-04 17:24:14-08:00",
+        "text": "I am concerned about the congestion implications of this architecture. If there are P prefixes in the network, the number of TLVs exchanged potentially goes from P to P^2. Perhaps this is an unrealistic use case. But are there any safeguards in the protocol against this happening (e.g. limitations on size/freq of updates?) Or ought there to be some operational guidance to be somewhat selective about source prefixes?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-04-23 07:00:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-21 08:18:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-10-28 05:10:42-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-04-23 07:00:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-11-04 21:06:21-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-04-23 07:00:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 21:06:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-05 05:08:14-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-04-21 10:15:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-05 05:08:14-08:00",
+        "text": "Please see the comment below for further description. My specific discuss issue relates to clarifying the indexes of the 'source' and 'route' tables to indicate whether they are replacing the 'prefix-len' elements of the existing 3 tuple indexes, or adding additional elements to the existing index, effectively making them 5 tuple indexes.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-04-23 07:00:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-21 10:15:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-02 10:32:46-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-04-23 07:00:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-02 10:32:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-11-03 15:24:31-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-04-21 07:46:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-03 15:24:31-08:00",
+        "text": "I apologize for being rushed, and not balloting earlier, but I feel like I must have missed something fundamental here. The example in Section 4 (Data Forwarding) illustrates an issue, but doesn't actually *state* which (A or B) next hop will be used.  The text then says that: \"A Babel implementation MUST choose routing table entries by using the so-called destination-first ordering,\". I interpret this to mean that the packet \"with source 2001:DB8:0:2::42 and destination 2001:DB8:0:1::57\" should use next-hop A. This means that you will be sending the packet to the destination with no regard for if the provider connected to next-hop A carries/announces 2001:DB8:0:2::/64. If if it doesn't, this will look like a spoofing attack, and the ISP will (rightly) drop it.  The only way that I can see this working is if: 1: destination routes never point \"outside\" the network (and so will never hit inbound  BCP38  filters) or 2: destination routes always \"match\" - if you install x:y:z::/q pointing at next-hop A, you also install the same router pointing at next-hop B (this is pointless). Please help me understand what I'm missing here -- routing on destination to an ISP (which is what I'm assuming based on the \"small networks\" statement) seems like it will route packets with ISP B sources addresses to ISP A, running into  BCP38 /anti-spoofing filters.  BCP84  also covers a number of scenarios - it sounds like you are referring to Section 4.3.\u00a0 Send Traffic Using a Provider Prefix Only to That Provider, but that is exactly what is not happening above. Again, I'm assuming that I'm just missing something blindingly obvious here, but it would be good to figure out what, so the document can be clarified and others don't fall into the same trap...",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-04-23 07:00:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-21 07:46:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9079",
+  "evaluation_end": "2021-04-23 07:00:07-07:00",
+  "evaluation_start": "2020-10-28 05:10:42-07:00"
+}

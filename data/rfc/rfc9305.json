@@ -1,0 +1,373 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-09-25 09:49:59-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-25 09:49:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-09-27 06:27:50-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-24 10:36:20-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-09-27 06:27:50-07:00",
+        "text": "In the thread with the Gen-ART reviewer, the rationale that was given for advancing this document now even though rfc6834bis is nascent was: \"We do not expect big changes in any bis document, since they are just the PS version of deployed technology.\" This seems somewhat less likely given the feedback received on the LISP documents on the telechat this week, so I'd like to discuss whether it really makes sense to advance this one now given its normative dependencies on 6834bis and 6830bis.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-24 10:36:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-09-25 11:14:06-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-25 11:14:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 16:53:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-09-27 04:38:45-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-24 17:45:20-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-09-27 04:38:45-07:00",
+        "text": "[Unlike for the 683xbis documents, this is a more mundane Discuss, with one process issue and one issue of clarity with respect to randomness requirements, that should be fairly easy to resolve.] I think that 8060 needs to be a normative reference; it seems to be needed to implement the Multiple Data-Planes LCAF type.\u00a0 Arguably 6040 also should be, though that seems less clear-cut to me. (8060 would be a new normative downref and require another IETF LC, IIUC.) Section 3 notes: \u00a0 \u00a0 \u00a0 The encoding of the Nonce field in LISP-GPE, compared with the one \u00a0 \u00a0 \u00a0 used in [ I-D.ietf-lisp-rfc6830bis ] for the LISP data plane \u00a0 \u00a0 \u00a0 encapsulation, reduces the length of the nonce from 24 to 16 bits. \u00a0 \u00a0 \u00a0 As per [ I-D.ietf-lisp-rfc6830bis ], Ingress Tunnel Routers (ITRs) \u00a0 \u00a0 \u00a0 are required to generate different nonces when sending to \u00a0 \u00a0 \u00a0 different Routing Locators (RLOCs), but the same nonce can be used \u00a0 \u00a0 \u00a0 for a period of time when encapsulating to the same Egress Tunnel \u00a0 \u00a0 \u00a0 Router (ETR).\u00a0 The use of 16 bits nonces still allows an ITR to \u00a0 \u00a0 \u00a0 determine to and from reachability for up to 64k RLOCs at the same \u00a0 \u00a0 \u00a0 time. That seems to be missing the point of the nonce -- it's not just for unique  identification but also to prevent off-path attackers from guessing a valid value and spoofing a bogus map-reply!\u00a0 Using the entire 64k of nonce space means that such a spoofing attack can succeed pretty reliably (e.g., by over-claiming so that the response EID-prefix contains whatever the request was for).\u00a0 I think it's important to accurately describe what properties are required of indivdiual nonces and the combined set of active nonces, which this text seems to mischaracterize.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-25 17:19:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-24 17:45:20-07:00",
+        "text": "Thank you for the updates in the -08! Can you please say \"partially mitigates\" instead of \"mitigates\" in \"However, the use of common anti-spoofing mechanisms such as uRPF mitigates this form of attack.\"? Now that  RFC 8060  is a normative reference, it's a downref that I believe will need to be IETF LC'd again.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-30 11:48:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-25 17:19:48-07:00",
+        "text": "Thank you for addressing my Discuss-level points (I can accept that for the -09 that  RFC 8060  need not be a normative reference).\u00a0 I am balloting Abstain because I am uncomfortable with only 16 bits of nonce, but I recognize that there is a need for this sort of encapsulation and it must fit within the constraints of the core protocol. Though, given Alissa's Discuss, it is technically still possible for the core protocol to grow a larger nonce that would alleviate my concerns.\u00a0 But, since the issue stems from a different document (and because I did not raise the issue earlier), it is not appropriate for me to ballot Discuss on this document for that point. [original COMMENT section unchanged; contents presumably stale] Section 1 \u00a0  LISP-GPE MAY also be used to extend the LISP Data-Plane header, that \u00a0  has allocated all by defining a Next Protocol \"shim\" header that nit: allocated all of what? Section 3 This is not exactly the responsibility of LISP-GPE merely because it allocates the last bit in this bitmap, but it seems like it would be quite useful to have a table of which combinations of values are valid vs. nonsensical, given the somewhat complicated interaction between some of these flag bits. \u00a0 \u00a0 \u00a0 Similarly, the encoding of the Source and Dest Map-Version fields, \u00a0 \u00a0 \u00a0 compared with [ I-D.ietf-lisp-rfc6830bis ], is reduced from 12 to 8 \u00a0 \u00a0 \u00a0 bits.\u00a0 This still allows to associate 256 different versions to \u00a0 \u00a0 \u00a0 each Endpoint Identifier to Routing Locator (EID-to-RLOC) mapping \u00a0 \u00a0 \u00a0 to inform commmunicating ITRs and ETRs about modifications of the \u00a0 \u00a0 \u00a0 mapping. Are we limited to 256 versions total, or is there some sort of larger version space that we truncate to send (a la a wraparound process)? I understand that map-versioning is primarily in a separate document but it seems important for this document to describe to what extent it is limiting functionality. Section 3.1 \u00a0  To ensure that protocols that are encapsulated in LISP-GPE will work \u00a0  well from a transport interaction perspective, the specification of a \u00a0  new encapsulated payload MUST contain an analysis of how LISP-GPE \u00a0  SHOULD deal with outer UDP Checksum, DSCP mapping, and Explicit \u00a0  Congestion Notification (ECN) bits whenever they apply to the new \u00a0  encapsulated payload. This MUST is duplicated in the next three paragraphs; I would suggest leaving this introduction as non-normative, with something like \"needs to contain an analysis of how LISP-GPE will deal with [...]\" Also, nit: \"the outer UDP Checksum\" Section 4 \u00a0  When encapsulating IP packets to a non LISP-GPE capable router the \u00a0  P-bit MUST be set to 0.\u00a0 [...] \u00a0  A LISP-GPE router MUST NOT encapsulate non-IP packets (that have the \u00a0  P-bit set to 1) to a non-LISP-GPE capable router. I'm failing to see how these two sentences are not redundant. Section 5.1 Just to be clear, the intent is that if there is some non-IETF protocol that we want to encapsulate, we write a two-page Standards-Track RFC that says \"this GPE codepoint means to do what this non-IETF document says\"? Section 6 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  However, the use of common anti-spoofing \u00a0  mechanisms such as uRPF prevents this form of attack. I think \"mitigates\" is probably better than \"prevents\" in this case. \u00a0  LISP-GPE, as many encapsulations that use optional extensions, is \u00a0  subject to on-path adversaries that by manipulating the g-Bit and the \u00a0  packet itself can remove part of the payload.\u00a0 Typical integrity \u00a0  protection mechanisms (such as IPsec) SHOULD be used in combination \u00a0  with LISP-GPE by those protocol extensions that want to protect from \u00a0  on-path attackers. The g-Bit is present in the Map-Reply message, which can in the general case be sent via triangle-routing, in which case the establishment and selection of IPsec security associations is somewhat nontrivial and probably does not quality as \"typical\", based on my limited experience. I think a more general scheme for providing integrity protection for mapping messages is needed as a mandatory mechanism, but that's a topic for the control-plane document so I will not belabor it here.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-30 11:48:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-09-10 11:19:06-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-10 11:19:06-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-07 01:01:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-09 01:52:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-09-27 04:32:05-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-27 04:32:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-07-09 05:43:27-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-07-09 02:14:55-07:00",
+        "text": "Section 4.2: To me it looks like this is normative reference to the : Such new encapsulated payloads, when registered with LISP- \u00a0  GPE, MUST be accompanied by a set of guidelines derived from \u00a0  [ I-D.ietf-tsvwg-ecn-encap-guidelines ] and [ RFC6040 ].",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-09 05:43:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-06 21:18:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-09-27 03:23:40-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-27 03:23:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-09-19 09:38:02-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-09-19 10:38:37-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-09-19 09:38:02-07:00",
+        "text": "Sorry not an expert on 802.1Q, however, I think section 4.2 would need to say more about HOW the PCP should be mapped to DSCPs.  RFC8325  has shown that there is usually no straight forward approach and therefore more guidance might be needed. Further, I would guess one would also need to define a more concrete mapping for section 4.3 but here I'm really not an expert at all.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-19 10:38:37-07:00",
+        "text": "Thanks for addressing the TSV-ART review (and Magnus for doing the review)! I assume that the proposed text will be incorporated in the next version. (Would have been even better if those (larger) changes would have been added before the doc was put on the telechat; please update as soon as possible so other AD can review that text as well).  However, I think the text still needs to say more about HOW the PCP should be mapped to DSCPs.  RFC8325  doesn't provide guidelines but a mapping for 802.11. Is the same mapping applicable here? Also, I'm not an expert for that part, but I guess there also is further guidance needed on HOW to map the VID...?",
+        "type": "Discuss"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-05 22:34:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-07 03:41:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 15:07:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-09-27 06:51:54-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-27 06:51:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-09-26 19:47:25-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-09-26 19:47:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-09-23 16:56:09-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-10 11:19:05-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-08-11 14:39:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-23 16:56:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9305",
+  "evaluation_end": "2020-08-11 14:39:21-07:00",
+  "evaluation_start": "2018-09-10 11:19:05-07:00"
+}

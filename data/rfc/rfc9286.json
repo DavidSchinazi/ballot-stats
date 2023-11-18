@@ -1,0 +1,251 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-02-02 07:17:46-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-02 07:17:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-01-31 14:22:06-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-23 09:35:22-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-01-31 14:22:06-08:00",
+        "text": "It looks like we may have a setup where a compliant RP and compliant CA/repository fail to interoperate.\u00a0 This is sufficiently surprising that I want to confirm that it's the intended behavior.\u00a0 In particular, both manifests and CRLs have thisUpdate and nextUpdate fields, and since issuing an update to one requires issuing an update to the other (though the CRL is always actually generated first), it is only natural for us to give guidance that the times in question should match between manifest and corresponding CRL.\u00a0 However, we do this only as RECOMMENDED/SHOULD-level guidance, and accompany it by guidance to RPs that they SHOULD NOT reject a manifest of the fields do not match the CRL.\u00a0 Accordingly, when a CA violates the first SHOULD and issues manifeset+CRL with mismatched thisUpdate/nextUpdate, and an RP violates the second SHOULD (NOT) and rejects such a setup, the RP will be unable to get any RPKI data for that CA.\u00a0 (As a tangent, we also have one place where we give related guidance that the validity period of the single-use EE cert that signs the manifest match the thisUpdate/nextUpdate period, which we might want to keep in mind if we make any changes in this space.) It looks like  RFC 6486  had a conditional MUST-level requirement that *if* a manifest encompasses a CRL, then the \"nextUpdate\" fields MUST match (no guidance on thisUpdate), which we change to a statement of fact that each  manifest does encompass a CRL and guidance that the \"nextUpdate\"s SHOULD match. Additionally,  RFC 6486  had a MUST-level requirement for the validity period of the EE cert to exactly match the thisUpdate/nextUpdate time interval of the manifest, which we currently are relaxing to a SHOULD. Often in this scenario we would strengthen one of the SHOULDs to be a MUST so that interoperability is guaranteed, but I'm not sure that I see a clear argument for which requirement is better to make the MUST.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-03-23 09:35:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-01-31 02:59:22-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-31 02:59:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-02-01 19:10:00-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-01 19:10:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-02-02 05:06:48-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-02 05:06:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-02-03 02:43:03-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-03 02:43:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-02-03 01:19:22-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-02-03 01:19:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-02-01 22:42:29-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-01 22:42:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-02-03 04:02:40-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-03 04:02:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-02-02 17:44:30-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-02 17:44:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-01-27 15:03:10-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-27 15:03:10-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-02-02 02:04:14-08:00",
+        "end_reason": "new_position",
+        "start": "2022-01-27 15:03:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-04-07 14:45:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-02 02:04:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9286",
+  "evaluation_end": "2022-04-07 14:45:41-07:00",
+  "evaluation_start": "2022-01-27 15:03:09-08:00"
+}

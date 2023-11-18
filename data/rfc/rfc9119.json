@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-08 17:24:10-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-01-08 17:24:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-01-08 10:54:32-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-01-08 10:54:32-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-06 11:55:15-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-11-25 11:07:14-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-06 11:55:15-08:00",
+        "text": "Section 8: Are there plans for the IETF community to develop the guidelines mentioned? I'm wary of publishing an RFC that says the IETF should do something if there are in fact no plans for the IETF to do the thing. RFCs are not necessarily good motivators. Overall this is an interesting document, but it seems to be written in an overly casual way and assumes readers have a lot of context that is not included in the document itself. The Gen-ART review pointed out a number of bits of text that left this impression. It was posted in October and never responded to. I've picked out some bits of the review and added a few more of my own -- collectively addressing these would get the document into publishable shape for a wider audience I think.  General:\u00a0 (1) On first use, please add citations for all the protocols mentioned in the document, as well as a few words to describe what each protocol does. For IETF readers, this will help them understand the implications of various 802 specifications without having to go look them up right away. (2) The IETF meeting network may be interesting as an example to contemplate, but to make this document broadly valuable it would be better to generalize the problem descriptions than to focus on the IETF meeting network. Section 3.1.4 seems a little thin to this non-expert. It is certainly true that \"every station has to be configured to wake up to receive the multicast\", but it seems like only a poorly designed protocol would create the situation where \"the received packet may ultimately be discarded\" on any kind of regular basis. If there are a class of packets that the receiver will ultimately discard, that sounds like they should be on a separate multicast address, or the sender should be determining if the packet will be discarded before sending it. Perhaps what this section is driving at is that multicast protocols are often designed without taking power-saving considerations into account, but then *that's* what this section should probably talk about. As it is, it sounds like the old joke about saying to the doctor, \"My arm hurts when I do this\" and the doctor replying, \"The stop doing that\". In section 3.2.1, the last paragraph is missing a bunch of information: \"It's often the first service that operators drop\": What is \"it\"? \"Multicast snooping\" is not defined. In what scenario are devices \"registering\"? Section 5.1: \"...and sometimes the daemons just seem to stop, requiring a restart of the daemon and causing disruption.\" What a strange thing to say. Does this simply mean \"and the current implementations are buggy\"? Also section 5.1: \"The distribution of users on wireless networks / subnets changes from one IETF meeting to the next\". This document doesn't seem to be about the IETF meeting network. This sentence seems inappropriately specific. The \"NAT\" and \"Stateful firewalls\" sections are also overly specific to the IETF meeting network. Generalizing would help. Section 8: The first paragraph has too little useful comment. There is no reference for 802.1ak, the reference to 802.1Q is inline instead of in the references section, and the content of neither of these standards is explained in this document. The paragraph doesn't really lay out what the topic of discussion is, at least for someone like myself who is not versed in the topic.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-11-25 11:07:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-01-08 09:20:30-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-07-29 11:09:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-08 09:20:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-01-07 22:11:13-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-01-07 22:11:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-08 14:19:36-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-18 18:45:30-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-01-08 14:19:36-08:00",
+        "text": "Section 9 says that \"[ RFC4601 ], for instance, mandates the use of IPsec to ensure authentication of the link-local messages in the Protocol Independent Multicast - Sparse Mode (PIM-SM) routing protocol\" but I could not find where such use of IPsec was mandated.\u00a0 (I do recognize that a similar statement appears almost verbatim in  RFC 5796 , but  RFC 5796  seems focused on extending PIM-SM to support ESP in additon to the AH usage that was the main focus of the  RFC 4601  descriptions, and does not help clarify the  RFC 4601  requirements for me.)\u00a0 The closest I found was in Section 6.3.1 of  RFC 4601 : \"The network administrator defines an SA and SPI that are to be used to authenticate all link-local PIM protocol messages (Hello, Join/Prune, and Assert) on each link in a PIM domain\" but I do not think that applies to all usage of PIM-SM.\u00a0 Am I missing something obvious?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-28 18:50:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-07-18 18:45:30-07:00",
+        "text": "Many thanks for all the updates from -11 to -14; the preponderance are good and improve the document. I especially appreciate the change in section 9 to claim only that the use of IPsec is specified, rather than mandated, by the referenced document.\u00a0 Unfortunately, the reference document was changed as well, from  RFC 4601  to  RFC 7761 , but  RFC 7761  calls out as one of the changes from  RFC 4601  that \"authentication using IPsec\" was removed.\u00a0 So the current claim in the -14, that \"[ RFC7761 ] [...] specifies the use of IPsec to ensure authentication of the link-local messages in [PIM-SM]\" is not correct, though for a different reason than what I noted in my ballot position on the -11.\u00a0 It may be most expedient to just restore the reference to the obsolete document, though of course there are other possibilities.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-29 11:09:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-28 18:50:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-01-07 13:48:03-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-01-07 13:48:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-12-18 00:28:33-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-07-29 11:09:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 00:28:33-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-01-07 05:28:18-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-07-29 11:09:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-07 05:28:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-01-07 07:45:55-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-01-07 07:45:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-01-07 09:54:57-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-05 11:50:50-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-07 09:54:57-08:00",
+        "text": "** Section 9.\u00a0 Section 7 appears to recommend using an ARP sponge per Section 5.1.\u00a0 Please provide some general caution about ARP poisoning/false advertising that could undermine (DoS) this approach (that is being deployed to save battery power).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-07-29 11:09:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-05 11:50:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-01-08 19:38:01-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-01-08 19:38:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-12-23 08:21:17-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-18 00:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-07-29 11:09:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-23 08:21:17-08:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ]
+  },
+  "doc_name": "rfc9119",
+  "evaluation_end": "2021-07-29 11:09:53-07:00",
+  "evaluation_start": "2019-12-18 00:28:32-08:00"
+}

@@ -1,0 +1,227 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-25 11:23:11-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-25 11:23:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-26 01:47:45-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-12-01 10:55:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-26 01:47:45-07:00",
+        "text": "# \u00c9ric Vyncke, INT AD, comments for  draft-ietf-v6ops-ipv6-deployment-08 CC @evyncke Thank you for the work put into this document even if I had hoped for a cleaner document. I also regret that security is not mentioned as an incentive to deploy IPv6 security policies as most end-points have IPv6 enabled by default. I am also concerned that this document did not get enough reviews (thanks Robert for your  https://mailarchive.ietf.org/arch/msg/v6ops/Trz62uglkVKOuXY3gXV_lNpyBEc/  and 3 reviews -- if not mistaken -- during V6OPS WGLC). Please find below several blocking DISCUSS points (should the document be sent back to the V6OPS WG ?) and some non-blocking COMMENT points. Special thanks to Fred Baker for the shepherd's detailed write-up including the WG consensus and the justification of the intended status.  I hope that this review helps to improve the document because it is important Regards, -\u00e9ric ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Section 1.1 ``` \u00a0 \u00a0 \u00a0 IPv4 as a Service (IPv4aaS): It means that IPv4 service support is \u00a0 \u00a0 \u00a0 provided by means of transition mechanism, therefore there is a \u00a0 \u00a0 \u00a0 combination of encapsulation/translation + IPv6-only overlay + \u00a0 \u00a0 \u00a0 decapsulation/translation.\u00a0 For an IPv6-only network, connectivity \u00a0 \u00a0 \u00a0 to legacy IPv4 is either non-existent or provided by IPv4aaS \u00a0 \u00a0 \u00a0 mechanisms. ``` It must be \"IPv6-only underlay\", see other use of \"underlay/overlay\" in other IETF published RFC: 7364, 7365, 9272, ... ### Section 4.2 overlay Again the title and the introduction are incorrect. It should be \"IPv4 as a Service and IPv6-only ***Underlay***\". ``` \u00a0  Both are IPv4aaS solutions by leveraging IPv6-only overlay.\u00a0 IPv4aaS \u00a0  offers Dual-Stack service to users and allows an ISP to run IPv6-only \u00a0  in the network (typically, the access network). ``` The above text repeats the same mistake. ### Section 4.2 464XLT and MAP-T While I really like 464XLT, it should not appear in a section with \"underlay\" as it is *not* an encapsulation mechanism. The same reasoning applies for MAP-T. The section should be about IPv4aaS then 464XLAT and MAP-T could be included. ### Section 5.2 ``` \u00a0  IPv6 addresses can be assigned to an interface \u00a0  through different means, such as Stateless Auto-Configuration (SLAAC) \u00a0  [ RFC4862 ], stateful and stateless Dynamic Host Control Protocol \u00a0  (DHCP) [ RFC8415 ].\u00a0  ``` Stateless DHCPv6 *does not* assign IPv6 addresses/prefixes. ### Section 5.4.2 As it is linked to security, I am raising this to a DISCUSS level. Fragmentation can be used to bypass all layer-4 filters not only in NDP as mentioned in the draft, but in any protocol. Please add text about  RFC 8200  section 5: ``` \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Extension headers, if any, and the Upper-Layer header.\u00a0 These \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  headers must be in the first fragment. ```",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-01 10:55:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-27 01:21:53-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-27 01:21:53-07:00",
+        "text": "# Internet AD comments for  draft-ietf-v6ops-ipv6-deployment-08 CC @ekline * There are many phrasing and wording choices that could use some help from \u00a0 an editorial pass.\u00a0 I'm hoping the RFC Editor can work with the authors to \u00a0 improve them. * I support Eric's discuss. ## Comments ### S1.1 * Is \"CGN\" really the write term to reference in a discussion of IPv6-only \u00a0 terms?\u00a0 In theory, an IPv6-only overlay can ride on top of an IPv6-only \u00a0 underlay. \u00a0 Maybe just a full stop after \"(BNG)\". \u00a0 In general I'm not sure I fully agree that the terms and their assigned \u00a0 definitions.\u00a0 They still leave many questions. ### S4.2 * \"For applications with a large number of users\" \u00a0 I think \"applications\" here risk confusion with other uses of the word \u00a0 elsewhere.\u00a0 The meaning here seems to be more like \"deployments\"? ### S5.2 * I think it would be good to note in this SLAAC vs DHCPv6 sentence that \u00a0 only one of them is mandatory for hosts to implement. ### S5.4.1 * It might be noted also that isolating a host to a LAN segment (i.e. one \u00a0 where only the node and infrastructure routers are present) via \u00a0 sub-IP-layer mechanisms may address many of these concerns. \u00a0 I tried to look at the Security Considerations section of  RFC 8273  but \u00a0 unfortunately it does not delve into this topic.",
+        "type": "Abstain"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-26 03:49:20-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-26 03:49:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-24 19:58:14-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-24 19:58:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-24 04:05:51-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-24 04:05:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-24 17:55:17-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-24 17:55:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-19 12:15:11-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-27 03:30:42-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 12:15:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-12-02 15:52:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-27 03:30:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9386",
+  "evaluation_end": "2022-12-02 15:52:58-08:00",
+  "evaluation_start": "2022-10-19 12:15:11-07:00"
+}

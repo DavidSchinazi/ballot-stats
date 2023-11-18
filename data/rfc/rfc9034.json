@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-14 16:57:05-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-14 16:57:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-15 05:59:44-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-16 05:09:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-15 05:59:44-07:00",
+        "text": "I have a few small points (one is confusing enough to warrant a quick discussion), but they affect clarity of the specification: In Section 5: \u00a0  o\u00a0 OTL (3 bits) : Length of OTD field as an unsigned 3-bit integer, \u00a0 \u00a0 \u00a0 encoding the length of the field in hex digits.\u00a0 If OTL == 0, the \u00a0 \u00a0 \u00a0 OTD field is not present.\u00a0 The value of OTL MUST NOT exceed the \u00a0 \u00a0 \u00a0 value of DTL plus one. \u00a0 \u00a0 \u00a0 *\u00a0 For example, DTL = 0b0000 means the deadline time in the 6LoRHE \u00a0 \u00a0 \u00a0 \u00a0  is 1 hex digit (4 bits) long.  Ok, so 0b0000 ==> (0 + 1) * 4, means 4 bits. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 OTL = 0b111 means the \u00a0 \u00a0 \u00a0 \u00a0  origination time is 7 hex digits (28 bits) long. Is my math wrong or is your example wrong? 0b111 == 7. So (7 + 1) * 4 would be 32 bits.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-16 05:09:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-15 12:59:16-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-01 10:52:15-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-15 12:59:16-07:00",
+        "text": "The Gen-ART reviewer made the following observation, which I'd like to discuss: There is a serious problem with the last 5 paragraphs of section 8, \"Synchronization Aspects\":\u00a0 they seem to assume that the time representation for the Deadline Time and Origination Time values will wrap around, that is, that the representation is the absolute value modulo the size of the field.\u00a0 In addition, there is a lack of clarity how the new epoch point will be chosen after the value wraps around. This seems to contradict the earlier sections of the document which speak of the values as if they are always to be considered as absolute values on a time scale selected by the TU field, viz., either the NTP time scale (in seconds) or the network's ASN numbering. It's possible that four of these paragraphs are intended to only apply to the use of TU = 00, the NTP time scale, and perhaps that usage of the header is understood not to be completely specified yet. However, the final paragraph discusses TU = 10 (the ASN time scale), and claims that wrapping of the DT value is intended.\u00a0 This is relevant to current implementations. Some sort of resolution of this is needed; as the document stands it is self-inconsistent.\u00a0 One possible resolution would be to omit these paragraphs.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-01 10:52:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-15 06:21:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 06:21:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-05-12 06:53:07-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-05-12 06:54:16-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-05-12 06:53:07-07:00",
+        "text": "This should be easy to explain and clear up, bit I have to ask, as I don\u2019t see anything about it in the document: what deters entities from using this with a short deadline time in order to get expedited delivery, when they don\u2019t need it?\u00a0 How does this help a network if, ultimately, every transmission specifies a very short delivery time?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-07-08 19:03:58-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-12 06:54:16-07:00",
+        "text": "This should be easy to explain and clear up, but I have to ask, as I don\u2019t see anything about it in the document: what deters entities from using this with a short deadline time in order to get expedited delivery, when they don\u2019t need it?\u00a0 How does this help a network if, ultimately, every transmission specifies a very short deadline time?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-08 19:03:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-05-13 14:09:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-13 14:09:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-05-15 12:08:14-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 12:08:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-05-13 06:41:03-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-09-03 01:11:13-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-13 06:41:03-07:00",
+        "text": "The security consideration section have significant short comings as this mechanism enables multiple ways to attack both the packet and the system to my understanding. I would appreaciate your clarifications on these matters.  First of all by changing the dead-line so that it gets dropped because it is already late, alternatively move the deadline time out further in time (later), so that the forwarders may deliver it so late that the receiver considers it to late.  Secondly, there is the question if extensive use of this header will cause overload or affect the scheduling of packet transmission affect other traffic negatively. There appear to exist potential for new ways of bad interflow interactions here.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-03 01:11:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-13 08:05:47-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-13 08:05:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-05-16 06:22:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-29 07:00:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-16 06:22:32-07:00",
+        "text": "I support Magnus\u2019s DISCUSS #1 (and perhaps we are noting the same thing) The current Security Considerations text needs explicit discussion of the impact of the deadline being manipulated.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-29 07:00:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-04-24 21:20:35-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-05-15 18:26:10-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-24 21:20:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-10 08:48:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 18:26:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9034",
+  "evaluation_end": "2019-10-10 08:48:56-07:00",
+  "evaluation_start": "2019-04-24 21:20:35-07:00"
+}

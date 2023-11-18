@@ -1,0 +1,379 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-04 22:10:20-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-04 22:10:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-02-06 04:10:44-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-02-07 06:08:06-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-02-06 04:10:44-08:00",
+        "text": "Preliminary DISCUSS, I am likely to Defer the document, as I have more detailed comments. Routing decisions, discovery of endpoints to contact for forwarding and retry strategies are listed as out-of-scope for this document. This is not sufficient for writing an interoperable implementation, unless there is a separate document that provides such details.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-02-10 03:57:49-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-02-07 06:08:06-08:00",
+        "text": "I am looking forward for this document to be finished and approved as an RFC. Before I can recommend this, I have several DISCUSS points and comments that I would like to address: 1) Routing decisions, discovery of endpoints to contact for forwarding and retry strategies are listed as out-of-scope for this document. This is not sufficient for writing an interoperable implementation, unless there is a separate document that provides such details. Below I describe 3 relevant places in the text and suggest some possible ways of addressing my DISCUSS: 5.4. Bundle Forwarding \u00a0  Step 2: The bundle protocol agent MUST determine whether or not \u00a0  forwarding is contraindicated (that is, rendered inadvisable) for \u00a0  any of the reasons listed in Figure 4. In particular: \u00a0 \u00a0  . The bundle protocol agent MAY choose either to forward the \u00a0 \u00a0 \u00a0 \u00a0 bundle directly to its destination node(s) (if possible) or to \u00a0 \u00a0 \u00a0 \u00a0 forward the bundle to some other node(s) for further \u00a0 \u00a0 \u00a0 \u00a0 forwarding. The manner in which this decision is made may \u00a0 \u00a0 \u00a0 \u00a0 depend on the scheme name in the destination endpoint ID and/or Lack of this information (how node to forward to are discovered) would prevent interoperability. (By comparison, SMTP specification which has somewhat similar design contains information about how next nodes to forward to are selected.) I think you need to create a new section in this document specifying requirements on URI scheme documents and include this as a MUST level requirement there. (If you already have a document that does this, you can just normatively point to it.) \u00a0 \u00a0 \u00a0 \u00a0 on other state but in any case is beyond the scope of this \u00a0 \u00a0 \u00a0 \u00a0 document. If the BPA elects to forward the bundle to some other \u00a0 \u00a0 \u00a0 \u00a0 node(s) for further forwarding but finds it impossible to \u00a0 \u00a0 \u00a0 \u00a0 select any node(s) to forward the bundle to, then forwarding is \u00a0 \u00a0 \u00a0 \u00a0 contraindicated. \u00a0 \u00a0  . Provided the bundle protocol agent succeeded in selecting the \u00a0 \u00a0 \u00a0 \u00a0 node(s) to forward the bundle to, the bundle protocol agent \u00a0 \u00a0 \u00a0 \u00a0 MUST subsequently select the convergence layer adapter(s) whose \u00a0 \u00a0 \u00a0 \u00a0 services will enable the node to send the bundle to those \u00a0 \u00a0 \u00a0 \u00a0 nodes.\u00a0 The manner in which specific appropriate convergence \u00a0 \u00a0 \u00a0 \u00a0 layer adapters are selected is beyond the scope of this \u00a0 \u00a0 \u00a0 \u00a0 document. Similar to the above: lack of description of how convergence layers are discovered (for example this might include discovery using DNS or something else) or, alternatively, a mandatory to implement convergence layer would affect interoperability. I think you need to add this as a requirement to section 7 (\"Services Required of the Convergence Layer\"). Also having some (even non normative) information about which convergence layer to select if multiple are available would be useful. \u00a0 \u00a0 \u00a0 \u00a0 If the agent finds it impossible to select any \u00a0 \u00a0 \u00a0 \u00a0 appropriate convergence layer adapter(s) to use in forwarding \u00a0 \u00a0 \u00a0 \u00a0 this bundle, then forwarding is contraindicated. \u00a0  Step 5: When all selected convergence layer adapters have informed \u00a0  the bundle protocol agent that they have concluded their data \u00a0  sending procedures with regard to this bundle, processing may depend \u00a0  on the results of those procedures.\u00a0 If completion of the data \u00a0  sending procedures by all selected convergence layer adapters has \u00a0  not resulted in successful forwarding of the bundle (an \u00a0  implementation-specific determination that is beyond the scope of \u00a0  this specification), then the bundle protocol agent MAY choose (in \u00a0  an implementation-specific manner, again beyond the scope of this \u00a0  specification) to initiate another attempt to forward the bundle. Similar to the above: retries affect interoperability and should be documented as description of a convergence layer document. I think you need to add this as a requirement to section 7 (\"Services Required of the Convergence Layer\"). \u00a0  In that event, processing proceeds from Step 4 of Section 5.4. 2) As pointed out by Benjamin Schwartz: In Section 5.4.2 Consistency: This section relies on the presence of a Previous Node block, but nothing in the forwarding procedure instructs any agent to add a Previous Node block. Correctness: If two nodes both opt to return failed bundles, how are they to avoid a ping-pong loop? 3) As pointed out by Benjamin Schwartz: In Section 5.6 Error handling: What about CBOR parsing failures?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-02-20 03:29:34-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-10 03:57:49-08:00",
+        "text": "I am looking forward for this document to be finished and approved as an RFC. Before I can recommend this, I have several DISCUSS points and comments that I would like to address: 1) Retry strategies are listed as out-of-scope for this document. This is not sufficient for writing an interoperable implementation, unless there is a separate document that provides such details. Below I describe 1 remaining relevant place in the text and suggest some possible ways of addressing my DISCUSS: \u00a0  Step 5: When all selected convergence layer adapters have informed \u00a0  the bundle protocol agent that they have concluded their data \u00a0  sending procedures with regard to this bundle, processing may depend \u00a0  on the results of those procedures.\u00a0 If completion of the data \u00a0  sending procedures by all selected convergence layer adapters has \u00a0  not resulted in successful forwarding of the bundle (an \u00a0  implementation-specific determination that is beyond the scope of \u00a0  this specification), then the bundle protocol agent MAY choose (in \u00a0  an implementation-specific manner, again beyond the scope of this \u00a0  specification) to initiate another attempt to forward the bundle. Similar to the above: retries affect interoperability and should be documented as description of a convergence layer document. I think you need to add this as a requirement to section 7 (\"Services Required of the Convergence Layer\"). \u00a0  In that event, processing proceeds from Step 4 of Section 5.4. [Two other cases were addressed in -23] 2) [Addressed in -23] 3) [Addressed in -23]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-20 03:29:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-02-06 05:30:07-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-06 05:30:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-02-06 03:04:13-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-30 10:38:23-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-06 03:04:13-08:00",
+        "text": "\u00a710.3/\u00a710.4: \u00a0  The registration policy for this namespace is changed to \"Standards \u00a0  Action\". Given the limited number of bits available, the allocation \u00a0  should only be granted for a standards-track RFC approved by the \u00a0  IESG. The original BP work ( rfc5050 ) is a product of the IRTF.\u00a0 The new registration policy blocks the ability for anyone outside the IETF to register new values.\u00a0 I understand the need to conserve resources, and the intent to Obsolete  rfc5050  in a separate document, which should mean that future work on the BP is done in the IETF.\u00a0 That process hasn't been done yet. I am balloting DISCUSS on this point of the process so that the needed steps can catch up and the group of documents can progress together. [Note that changing the registration policy to allow work from outside the IETF to use the registries would also lead me to clear this DISCUSS.\u00a0 However, I don't think that is necessary.]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-30 10:38:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-02-05 21:15:11-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-05 21:15:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-05 19:17:07-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-23 18:23:33-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-02-05 19:17:07-08:00",
+        "text": "I support Roman's Discuss. (1) It's not clear to me that we should be defining new (near-)application-layer protocols on the standards track without mandatory security mechanisms.\u00a0 Even  draft-ietf-dtn-bpsec  defines a \"BPSec threat model\" that is largly the same as the  RFC 3552  threat model, in which the network is completely untrusted and to provide end-to-end communications we must supply additional security mechanisms, yet BPSec is not required to implement or use.\u00a0 I could perhaps see room for allowing waypoint nodes that do not act as endpoints to remain security-unaware, but the justification for security-unaware endpoints seems quite lacking. (2) The state machine for transitions between singleton EID and non-singleton EID seems highly unclear to be usable in a globally synchronized manner (I refer specifically to the text in Section 4.1.5.2: \"A node's membership in a given singleton endpoint MUST be sustained at least until the nominal operation of the Bundle Protocol no longer depends on the identification of that node using that endpoint's ID\").\u00a0 Distinction between singleton-EID and non-singleton EID may need to be made an explicit protocol element. (3) The forwarding procedure in Section 5.4 refers to a \"data label extension block (to be defined in a future document)\" with no reference; it doesn't really seem like this sort of speculative forward-looking statement is appropriate in a Proposed Standard. (4) We discuss using a Previous Node block to \"return a bundle to sender\" when forwarding failed, but do not discuss whether Previous Node should be added (or updated or removed) on transmission, receipt, or both. (5) The extensibility story seems incompletely described: what should an implementation do upon receiving a bundle with an unrecognized control flag bit set, or a block with an unrecognized control flag set? (6) The use of absolute times for creation timestamps suggests a strong dependence on accurate time (for nodes that do not acknowledge their lack of an accurate clock); the consequences of the failure of accurate time should be discussed in the security considerations section. (7) Section 4.1.6 should make a statement regarding whether leap seconds are included or excluded from the count of seconds since the DTN epoch. (8) The definition of Fragment offset needs to specify whether the lowest allowed byte index is zero or 1 (I believe zero, from other discussion). (9) Bundle status reports are only defined to include the creation timestamp of the bundle whose status is being reported on, but not the sequence number thereof.\u00a0 Since we allow nodes without accurate clocks to use a creation timestamp of zero and rely solely on the sequence number to identify bundles, it seems that the status reports for such bundles are effectively useless without the sequence number information. (10) Please resolve the internal inconsistency in Section 10.6 that simultaneously claims that potential bundle protocol URI scheme types are integers of undefined length and only have 255 available codepoints (i.e., definite length).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-30 14:08:31-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-10-23 18:23:33-07:00",
+        "text": "[Retaining (1) as placeholder for ongoing discussions; (11) is new] (1) It's not clear to me that we should be defining new (near-)application-layer protocols on the standards track without mandatory security mechanisms.\u00a0 Even  draft-ietf-dtn-bpsec  defines a \"BPSec threat model\" that is largly the same as the  RFC 3552  threat model, in which the network is completely untrusted and to provide end-to-end communications we must supply additional security mechanisms, yet BPSec is not required to implement or use.\u00a0 I could perhaps see room for allowing waypoint nodes that do not act as endpoints to remain security-unaware, but the justification for security-unaware endpoints seems quite lacking. (11) The ABNF for the \"dtn\" URI scheme does not seem to allow for a URI of \"dtn:none\".\u00a0 We may need to consult the ART ADs to determine how problematic this is, as this is a bit outside my area of expertise.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-30 14:08:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-02-05 12:59:24-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-05 12:59:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-02-03 10:39:29-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-03 10:39:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 17:35:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-01-17 05:32:05-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-02-06 07:20:16-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-04 06:49:15-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-02-06 07:20:16-08:00",
+        "text": "olding discuss to ensure IANA is satisfied.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-06-29 05:34:43-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-03-04 06:49:15-08:00",
+        "text": "Holding discuss to ensure IANA is satisfied. Taking over Mirja's discuss. There need to be a requirement on all convergence layers to provide congestion control or some other type of rate control.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-10-30 10:13:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-29 05:34:43-07:00",
+        "text": "olding discuss to ensure IANA is satisfied, which they are pending 2 minor editorial fixes.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-30 10:13:07-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-24 15:10:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-03 03:08:33-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-03 03:08:33-08:00",
+        "text": "I looked up  RFC 4838  and there is a section on congestion control, however it only says: \"Congestion control is an ongoing research topic.\" Unfortunately this document also doesn't give any further advise about congestion control but as a PS it really should. I understand that the bundle protocol is basically an application layer protocol on top of a transport that should care about congestion control, however, the document doesn't talk much about anything related to that underlying protocol. It would be important to specify requirements for the underlying transport protocol, indicating that is must be congestion controlled or rate limited (see  RFC8085  as a reference for rate limiting of (uni-direction) UDP-based protocols). Further this sentence in Sec 5.1 needs more clarification: \u201cFor this reason, the generation of status reports MUST be \u00a0  disabled by default and enabled only when the risk of excessive \u00a0  network traffic is deemed acceptable.\u201d It is not clear when it makes sense to enable and if enables one should probably also implement some filtering and rate limiting.",
+        "type": "Discuss"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-01 08:43:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-05 17:00:40-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-24 11:17:50-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-05 17:00:40-08:00",
+        "text": "** Section 4.1.5.1. Can the permissible schemes for the Endpoint ID URL be clarified. Initially the text says: The scheme identified by the < scheme name > in an endpoint ID is a \u00a0  set of syntactic and semantic rules that fully explain how to parse \u00a0  and interpret the SSP. The set of allowable schemes is effectively \u00a0  unlimited. Any scheme conforming to [URIREG] may be used in a bundle \u00a0  protocol endpoint ID. [URIREG] would suggest that any schema in IANA \"Uniform Resource Identifier (URI) Schemes\" Registry\u2019 is valid.\u00a0 However, later, the text says: The first item of the array SHALL be the code number identifying the \u00a0  endpoint's URI scheme [URI], as defined in the registry of URI \u00a0  scheme code numbers for Bundle Protocol maintained by IANA as \u00a0  described in Section 10. [URIREG]. This text suggests that the new Bundle Protocol URI Scheme Type registry should govern the EID schemes.\u00a0 However, then the text again cites URIREG.\u00a0 Perhaps the intent is that URI's valid per [URIREG] would be registered in the new bundle protocol registry and values in this new registry would be used.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-24 11:17:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-02-05 16:53:49-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-05 16:53:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-12-02 13:58:00-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 05:32:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-02-17 05:59:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-02 13:58:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9171",
+  "evaluation_end": "2021-02-17 05:59:25-08:00",
+  "evaluation_start": "2020-01-17 05:32:05-08:00"
+}

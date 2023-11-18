@@ -1,0 +1,355 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-08 04:29:27-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-08-08 04:29:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-08 06:05:54-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-24 19:46:43-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-08 06:05:54-07:00",
+        "text": "I support Roman's DISCUSS. I'm also unclear on the over-arching recommendation this document is making for securely deploying this protocol. Given that the protocol itself is insecure, I would have expected some normative requirement for correcting that (e.g., Minimally, Babel deployments MUST be secured using a lower-layer security mechanism, Babel over DTLS, or HMAC-based authentication.) This still would not bring it into line with  BCP 61  Section 7, but perhaps there is some argument for making an exception for this protocol.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-24 19:46:43-07:00",
+        "text": "Part of the response to my DISCUSS argued that making this specification comply with  BCP 61  would harm the reputation of the IETF. I'd rather continue to support  BCP 61  than have this protocol standardized in the IETF, if that is what the choice is. If the WG consensus is that deploying this protocol with no MTI security protections is appropriate despite the mountain of evidence that exists showing that deployments of insecure protocols on private networks or in limited domains still often get compromised, I don't see a need to discuss this further.",
+        "type": "Abstain"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-07 06:27:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-07 06:28:50-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-08-07 06:27:33-07:00",
+        "text": "I really enjoyed reading this document!\u00a0 Thank you for the work and time that has gone into it. However, I don't think that this specification is ready to be published as a Proposed Standard.\u00a0 In general, I don't think that the document is clear or specific enough to be considered in the Standards Track -- that is the main reason for this DISCUSS. (A) Clear Defaults and Operational Guidance While I appreciate Babel's flexibility in terms of the ability to use different strategies, I believe that both defaults and clear guidance should be provided.\u00a0 Given that \"not all...strategies will give good results\" and that in most cases these are listed as possible choices, I don't think that this document \"has resolved known design choices\" [ BCP9 /rfc7127].\u00a0 The cost/metric computation and route selection specially concern me because I believe that a robust/clear specification is at the heart of any routing protocol. In general what I am looking for to resolve this part of the DISCUSS are two items: (1) Clear defaults.\u00a0 For example, Appendix B talks about constants/default values.\u00a0 I would assume that, given the existing experience, that the values there are probably sensible defaults.\u00a0 Is that not the case?\u00a0  (2) Operational Considerations.\u00a0 Given that Babel can be (and is) used in different environments, I would like to see guidance to operators as they deploy the protocol in their networks.\u00a0 An example of the type of discussion I would like to see expanded is: \"a mobile node that is low on battery may choose to use larger time constants (hello and update intervals, etc.) than a node that has access to wall power\" (\u00a71.1).\u00a0 Consider \u00a72 in  rfc5706  (Operational Considerations - How Will the New Protocol Fit into the Current Environment?). I believe that both items are important, specially in a protocol as flexible as Babel.\u00a0 Some of this guidance could have been included in  draft-ietf-babel-applicability  -- but this information is not there either. (B) Error Handling Many sections of the document describe functionality, or even Normatively mandate it, but there is no discussion about Error Handling. (1) Router-Id Setting \u00a74.5: \u00a0  o\u00a0 the current router-id; this is undefined at the start of the \u00a0 \u00a0 \u00a0 packet, and is updated by each Router-ID TLV (Section 4.6.7) and \u00a0 \u00a0 \u00a0 by each Update TLV with Router-Id flag set. It took me some time to figure out the reason for being able to carry the router-id in two different places inside the same packet, which is my interpretation of the \"and\" above.\u00a0 Let me see if I understood:\u00a0 a packet can carry multiple updates...updates contain routes that were either originated by the local node, OR, learned from other routers...the router-id matches the originator...\u00a0 So...if a packet carries multiple updates, some locally originated and some learned, then it is possible for the packet to first include (for example) a Router-ID TLV (indicating router-id_A), followed by some Update TLVs (without the R-bit set), than then some other Update TLVs (with the R-bit set)...\u00a0  Did I understand correctly?\u00a0 If so, I think there are significant pieces of this operation that are not clearly specified in the document.\u00a0 There is mention of the effect of the Router-ID TLV (or the Update TLV w/R=1) on subsequent Update TLVs...there is an very subtle hint (for my taste) in \u00a74.5 (Parser state) about the state learned for each packet from those TLVs...but there is no explicit text that talks about the need for strict ordering when sending and later when processing...it is all simply implied. What should happen if no Router-Id has been defined?\u00a0 For example, an Update (R = 0) is received but no Router-ID TLV is present...\u00a0 What if the Router-ID TLV is present, but *after* the Update?\u00a0 There are many possible combinations... (2) Default Prefix Similar comments as above...\u00a0 \"P (Prefix) flag...establishes a new default prefix for subsequent Update TLVs with a matching address encoding within the same packet\" (\u00a74.6.9).\u00a0  What if an update with an AE that allows compression is received *before* the one that sets the new default prefix? (3) Next Hop \u00a74.6.9: \u00a0  The next-hop address for this update is taken from the last preceding \u00a0  Next Hop TLV with a matching address family (IPv4 or IPv6) in the \u00a0  same packet even if it was otherwise ignored due to an unknown \u00a0  mandatory sub-TLV; if no such TLV exists, it is taken from the \u00a0  network-layer source address of this packet. What if the Next Hop TLV doesn't exist and the network-layer doesn't correspond to the address family in the Update?\u00a0 For example, let's say IPv6 is used as the network-layer protocol and the Update contains IPv4 prefixes... (4) For the Normative behavior listed here (I may have missed other instances), I have basically the same question: what should a receiver do if it is not the case? - \u00a73.8.1.2: \"A node MUST NOT increase its sequence number by more than 1 in response to a seqno request.\" - \u00a74: \"A Babel packet MUST be sent as the body of a UDP datagram, with network-layer hop count set to 1...\"\u00a0  - \u00a74.6.9: \"If the metric is finite, AE MUST NOT be 0.\u00a0 If the metric is infinite and AE is 0, Plen and Omitted MUST both be 0.\"\u00a0  - \u00a74.6.10: \"...if AE is 0 (in which case Plen MUST be 0 and Prefix is of length 0).\" - \u00a74.6.10/\u00a74.6.11: Is AE 3 a valid value in a request?\u00a0 I assume it isn't.\u00a0 What should a receiver do if AE = 3. (C) Mandatory Bit \u00a74.4: \"The most-significant bit of the sub-TLV, called the mandatory bit...\"\u00a0 The most significant bit of which part of the sub-TLV?\u00a0 As written, that bit would be the first one in the Type, which corresponds to the text in the IANA section.\u00a0 Please be specific. In the IANA considerations section, please include the whole registry in the table to avoid confusion. Note that because of the mandatory bit, the 128-239 range should be Reserved...but it is currently marked as Unassigned.\u00a0 Even worse, value 128 is assigned already [ draft-ietf-babel-source-specific ].\u00a0 The impact may not be too bad because I doubt that Pad1 would need to be mandatory, but it at least causes confusion and inconsistency, and (as currently specified) there would be no way to differentiate between Pad1 and the Source Prefix sub-TLV.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-08-03 07:12:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-07 06:28:50-07:00",
+        "text": "I really enjoyed reading this document!\u00a0 Thank you for the work and time that has gone into it. However, I don't think that this specification is ready to be published as a Proposed Standard.\u00a0 In general, I don't think that the document is clear or specific enough to be considered in the Standards Track -- that is the main reason for this DISCUSS. (A) Clear Defaults and Operational Guidance While I appreciate Babel's flexibility in terms of the ability to use different strategies, I believe that both defaults and clear guidance should be provided.\u00a0 Given that \"not all...strategies will give good results\" and that in most cases these are listed as possible choices, I don't think that this document \"has resolved known design choices\" [ BCP9 /rfc7127].\u00a0 The cost/metric computation and route selection specially concern me because I believe that a robust/clear specification is at the heart of any routing protocol. In general what I am looking for to resolve this part of the DISCUSS are two items: (A1) Clear defaults.\u00a0 For example, Appendix B talks about constants/default values.\u00a0 I would assume that, given the existing experience, that the values there are probably sensible defaults.\u00a0 Is that not the case?\u00a0  (A2) Operational Considerations.\u00a0 Given that Babel can be (and is) used in different environments, I would like to see guidance to operators as they deploy the protocol in their networks.\u00a0 An example of the type of discussion I would like to see expanded is: \"a mobile node that is low on battery may choose to use larger time constants (hello and update intervals, etc.) than a node that has access to wall power\" (\u00a71.1).\u00a0 Consider \u00a72 in  rfc5706  (Operational Considerations - How Will the New Protocol Fit into the Current Environment?). I believe that both items are important, specially in a protocol as flexible as Babel.\u00a0 Some of this guidance could have been included in  draft-ietf-babel-applicability  -- but this information is not there either. (B) Error Handling Many sections of the document describe functionality, or even Normatively mandate it, but there is no discussion about Error Handling. (B1) Router-Id Setting \u00a74.5: \u00a0  o\u00a0 the current router-id; this is undefined at the start of the \u00a0 \u00a0 \u00a0 packet, and is updated by each Router-ID TLV (Section 4.6.7) and \u00a0 \u00a0 \u00a0 by each Update TLV with Router-Id flag set. It took me some time to figure out the reason for being able to carry the router-id in two different places inside the same packet, which is my interpretation of the \"and\" above.\u00a0 Let me see if I understood:\u00a0 a packet can carry multiple updates...updates contain routes that were either originated by the local node, OR, learned from other routers...the router-id matches the originator...\u00a0 So...if a packet carries multiple updates, some locally originated and some learned, then it is possible for the packet to first include (for example) a Router-ID TLV (indicating router-id_A), followed by some Update TLVs (without the R-bit set), than then some other Update TLVs (with the R-bit set)...\u00a0  Did I understand correctly?\u00a0 If so, I think there are significant pieces of this operation that are not clearly specified in the document.\u00a0 There is mention of the effect of the Router-ID TLV (or the Update TLV w/R=1) on subsequent Update TLVs...there is an very subtle hint (for my taste) in \u00a74.5 (Parser state) about the state learned for each packet from those TLVs...but there is no explicit text that talks about the need for strict ordering when sending and later when processing...it is all simply implied. What should happen if no Router-Id has been defined?\u00a0 For example, an Update (R = 0) is received but no Router-ID TLV is present...\u00a0 What if the Router-ID TLV is present, but *after* the Update?\u00a0 There are many possible combinations... (B2) Default Prefix Similar comments as above...\u00a0 \"P (Prefix) flag...establishes a new default prefix for subsequent Update TLVs with a matching address encoding within the same packet\" (\u00a74.6.9).\u00a0  What if an update with an AE that allows compression is received *before* the one that sets the new default prefix? (B3) Next Hop \u00a74.6.9: \u00a0  The next-hop address for this update is taken from the last preceding \u00a0  Next Hop TLV with a matching address family (IPv4 or IPv6) in the \u00a0  same packet even if it was otherwise ignored due to an unknown \u00a0  mandatory sub-TLV; if no such TLV exists, it is taken from the \u00a0  network-layer source address of this packet. What if the Next Hop TLV doesn't exist and the network-layer doesn't correspond to the address family in the Update?\u00a0 For example, let's say IPv6 is used as the network-layer protocol and the Update contains IPv4 prefixes... (B4) For the Normative behavior listed here (I may have missed other instances), I have basically the same question: what should a receiver do if it is not the case? - \u00a73.8.1.2: \"A node MUST NOT increase its sequence number by more than 1 in response to a seqno request.\" - \u00a74: \"A Babel packet MUST be sent as the body of a UDP datagram, with network-layer hop count set to 1...\"\u00a0  - \u00a74.6.9: \"If the metric is finite, AE MUST NOT be 0.\u00a0 If the metric is infinite and AE is 0, Plen and Omitted MUST both be 0.\"\u00a0  - \u00a74.6.10: \"...if AE is 0 (in which case Plen MUST be 0 and Prefix is of length 0).\" - \u00a74.6.10/\u00a74.6.11: Is AE 3 a valid value in a request?\u00a0 I assume it isn't.\u00a0 What should a receiver do if AE = 3. (C) Mandatory Bit \u00a74.4: \"The most-significant bit of the sub-TLV, called the mandatory bit...\"\u00a0 The most significant bit of which part of the sub-TLV?\u00a0 As written, that bit would be the first one in the Type, which corresponds to the text in the IANA section.\u00a0 Please be specific. In the IANA considerations section, please include the whole registry in the table to avoid confusion. Note that because of the mandatory bit, the 128-239 range should be Reserved...but it is currently marked as Unassigned.\u00a0 Even worse, value 128 is assigned already [ draft-ietf-babel-source-specific ].\u00a0 The impact may not be too bad because I doubt that Pad1 would need to be mandatory, but it at least causes confusion and inconsistency, and (as currently specified) there would be no way to differentiate between Pad1 and the Source Prefix sub-TLV.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-03 07:12:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-07 20:33:04-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-07 20:33:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-07 15:13:10-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-22 13:14:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-07 15:13:10-07:00",
+        "text": "I don't think that all of the arithmetic specified in Section 3.2.1 is well defined.\u00a0 Specifcally, the formulations involving bitwise AND assume that the input to the bitwise AND is nonnegative, which does not seem to be implied by the other stated constraints.\u00a0 (For example, an \"integer n\" may well be negative.)\u00a0 Some discussion of the representation of negative integers would then be needed, and then whether the mathematical operation is performed in an abstract infinite-precision machine or in a realizable approximation, etc..\u00a0 It might be simpler to just use the modular arithmetic flavor and avoid any of the issues that can arise when providing two alternative definitions that are intended to be equivalent (since there is always a risk of edge cases). Section 3.5.2 needs to explicitly say that the c and m arguments to M() are the local link cost and the advertised metric, e.g., \"the function M(c, m) used for computing a metric from a locally computed link cost c and the metric m advertised by a neighbor\". Section 3.8.2.1 notes that \"[d]ue to duplicate suppression, only a small number of such requests will actually reach the source.\" (for seqno requests intending to avoid starvation).\u00a0 But Section 3.8.1.2 only has a SHOULD-level requirement to suppress duplicate seqno requests, so I think there is an internal inconsistency. I think we may need to have a discussion about the feasibility of multicast acknowledgment requests with only a 16-bit nonce.\u00a0 With random assignment of nonces the risk of birthday collisions becomes uncomfortably large, and non-random assignments are likely to have worse pathologies.\u00a0 (A pointer to a previous discussion of this topic would, of course, short-circuit a lot of it if not all of it.)\u00a0 Are we willing to make hard assumptions about the maximum size of a multicast domain and the risk of collision we are willing to accept? The discussion in Section 4.6.9 of computing the prefix from an Update message (and parser state) seems a little underspecified when the prefix length is not a multiple of 8 bits.\u00a0 (Additionally, \"Plen\" is not described as measuring bits, explicitly, for any of the PDU descriptions that I remember.)\u00a0 Specifically, the \"Prefix\" description does not mention that any trailing bits must be set to zero, but the subsequent discussion about the prefix is \"computed as follows\" refers to assembling the prefix as a collection of octets, including trailing zero octets, implying that the computed prefix is the full length of the address type. I appreciate that we have some discussion in Section 4.5 about the need for a stateful parser for the babel packet body; this seems like one of the riskiest areas of the protocol from the implementation perspective. However, I think it would be even more helpful to explicitly call out what pieces of state are needed, what protocol elements affect the state, and what ordering requirements (or non-requirements) there are for the interactions between the different protocol elements that affect parser state.\u00a0 Can we have a discussion about whether it's appropriate to add some text along these lines?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-22 13:14:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-05 06:06:59-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-05 06:06:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-05 00:01:38-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-05 00:01:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-19 00:35:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-21 13:09:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-07-12 14:37:35-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 14:37:35-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-07 04:28:53-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-07 04:29:27-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-08-07 04:28:53-07:00",
+        "text": "I have a couple of points that needs addressing before this document can move forward. Most of them should the straight forward to address. My main point is about network load. Thanks for discussing network load and correctly adding some warnings at the right places, however, for a PS track document I would like to see more than this. Usually it's good provide default values were suitable (as this often is what people will then pick if there is no good reason to diverge) and more important I really like to see min/max values. Note that  RFC8085  recommend a minimal interval of 3 seconds which probably is also a good hard boundary here.  More concretely I think there are these cases that need more guidance: - Section 3.7.2. (Triggered Updates) advises to send a message multiple times for redundancy in case of loss. 5 and 2 are mentioned as example values. Please provide a normative default value and a normative maximum value here. Moreover the spec should also require to pace out these messages and avoid \"tail loss\" by overloading the local queue.\u00a0 (See also section 3.8.2.1) -Section\u00a0 3.8.1.1.\u00a0 (Route Requests) says: \"Full route dumps MAY be rate-limited, especially \u00a0  if they are sent over multicast.\" I think this should at least be a SHOULD. Please also provide further guidance about to appropriately rate limit and think about other cases where a recommend to implement rate-limiting could make sense. - In section 4.1.1 the update interval needs a lower limit (e.g. 3 seconds) and a recommend default value would be could as well (Note that there are other part in section 3 where the update value is discussed as well). - Section 3.8.2.4. mentions network load when requests are sent to all neighbours after reboot. Please provide more guidance about how to pace out these requests. - Section 3.8.1.2.\u00a0 (Seqno Requests) discusses hop count values but could maybe also give more concrete guidance. I would assume that the hop count value of the current active route is usually know. Maybe that knowledge could be used to pick an appropriate value? Two other smaller discuss points/questions/comments: 1) Sec 4.6.8. (Next Hop): If I interpret this correctly, address compression is allowed for the next hop field and therefore this TLV would actually not be self-terminating. What do I miss? 2) This document needs to specify a registration policy also for each of\u00a0 the already existing registries given this document obsoletes  RFC7557 .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-07 05:14:32-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-08-07 04:29:27-07:00",
+        "text": "I have a couple of points that needs addressing before this document can move forward. Most of them should the straight forward to address. My main point is about network load. Thanks for discussing network load and correctly adding some warnings at the right places, however, for a PS track document I would like to see more than this. Usually it's good provide default values were suitable (as this often is what people will then pick if there is no good reason to diverge) and more important I really like to see min/max values. Note that  RFC8085  recommend a minimal interval of 3 seconds which probably is also a good hard boundary here.  More concretely I think there are these cases that need more guidance: - Section 3.7.2. (Triggered Updates) advises to send a message multiple times for redundancy in case of loss. 5 and 2 are mentioned as example values. Please provide a normative default value and a normative maximum value here. Moreover the spec should also require to pace out these messages and avoid \"tail loss\" by overloading the local queue.\u00a0 (See also section 3.8.2.1) - Section\u00a0 3.8.1.1.\u00a0 (Route Requests) says: \"Full route dumps MAY be rate-limited, especially \u00a0  if they are sent over multicast.\" I think this should at least be a SHOULD. Please also provide further guidance about to appropriately rate limit and think about other cases where a recommend to implement rate-limiting could make sense. - In section 4.1.1 the update interval needs a lower limit (e.g. 3 seconds) and a recommend default value would be could as well (Note that there are other part in section 3 where the update value is discussed as well). - Section 3.8.2.4. mentions network load when requests are sent to all neighbours after reboot. Please provide more guidance about how to pace out these requests. - Section 3.8.1.2.\u00a0 (Seqno Requests) discusses hop count values but could maybe also give more concrete guidance. I would assume that the hop count value of the current active route is usually know. Maybe that knowledge could be used to pick an appropriate value? Two other smaller discuss points/questions/comments: 1) Sec 4.6.8. (Next Hop): If I interpret this correctly, address compression is allowed for the next hop field and therefore this TLV would actually not be self-terminating. What do I miss? 2) This document needs to specify a registration policy also for each of\u00a0 the already existing registries given this document obsoletes  RFC7557 .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-07 02:03:50-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-07 05:14:32-07:00",
+        "text": "(Sorry I forgot two points about the appendix; see one in the discuss section and one in the comment section) I have a couple of points that needs addressing before this document can move forward. Most of them should the straight forward to address. My main point is about network load. Thanks for discussing network load and correctly adding some warnings at the right places, however, for a PS track document I would like to see more than this. Usually it's good provide default values were suitable (as this often is what people will then pick if there is no good reason to diverge) and more important I really like to see min/max values. Note that  RFC8085  recommend a minimal interval of 3 seconds which probably is also a good hard boundary here.  More concretely I think there are these cases that need more guidance: - Section 3.7.2. (Triggered Updates) advises to send a message multiple times for redundancy in case of loss. 5 and 2 are mentioned as example values. Please provide a normative default value and a normative maximum value here. Moreover the spec should also require to pace out these messages and avoid \"tail loss\" by overloading the local queue.\u00a0 (See also section 3.8.2.1) - Section\u00a0 3.8.1.1.\u00a0 (Route Requests) says: \"Full route dumps MAY be rate-limited, especially \u00a0  if they are sent over multicast.\" I think this should at least be a SHOULD. Please also provide further guidance about to appropriately rate limit and think about other cases where a recommend to implement rate-limiting could make sense. - In section 4.1.1 the update interval needs a lower limit (e.g. 3 seconds) and a recommend default value would be could as well (Note that there are other part in section 3 where the update value is discussed as well). - Section 3.8.2.4. mentions network load when requests are sent to all neighbours after reboot. Please provide more guidance about how to pace out these requests. - Section 3.8.1.2.\u00a0 (Seqno Requests) discusses hop count values but could maybe also give more concrete guidance. I would assume that the hop count value of the current active route is usually know. Maybe that knowledge could be used to pick an appropriate value? Three other smaller discuss points/questions/comments: 1) Sec 4.6.8. (Next Hop): If I interpret this correctly, address compression is allowed for the next hop field and therefore this TLV would actually not be self-terminating. What do I miss? 2) This document needs to specify a registration policy also for each of\u00a0 the already existing registries given this document obsoletes  RFC7557 . 3) Appendix D (Stub Implementations) contain normative language and therefore should probably be moved into the body of the draft.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-07 02:03:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-02 09:49:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-07 12:19:44-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-11-11 12:45:40-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-07 12:19:44-07:00",
+        "text": "Security Considerations.\u00a0 While the high level statement of Babel being \u201can insecure protocol\u201d is accurate and clear, precisely enumerating the threats is needed to motivate the selection of the appropriate mitigations.\u00a0  (1) Per \u201cAny attacker can misdirect data traffic by advertising routes with a low metric or a high seqno.\u201d: -- Can the \"any\" of the attacker be scoped any more? -- Explain why this is possible \u2013 because Babel peers are not authenticated and Babel messages aren\u2019t integrity/replay protected -- Discuss the impact of this misdirection: denial of service (dropping the traffic and against a given target), eavesdropping, or allowing for the possibility of traffic modification (depending on upper level security mechanisms) \u2013  RFC4593  covers a number of them -- Note that because Babel messages aren\u2019t encrypted any on-path attacker can gather the routing topology (2) The rest of this paragraph describes the security properties conveyed by link-layer security, IPSec, BABEL-HMAC and BABEL-TLS.\u00a0 They all make sense.\u00a0 Please be explicit that IPSec or BABEL-TLS address all of the above described attacks.\u00a0 BABEL-HMAC addresses only somet. (3) Per \u201cHMAC is simpler and does not depend on DTLS, and therefore its use is RECOMMENDED whenever both mechanisms are applicable\u201d, can you explain this recommendation and the circumstances where \u201cboth mechanisms are applicable\u201d.\u00a0 If one wants to ensure confidentiality, it can\u2019t be realized with HMAC \u2013 they aren\u2019t equal. (4) Per \u201cThe privacy issues that this causes can be mitigated somewhat by using randomly chosen router-ids and randomly chosen IP addresses, and changing them periodically, who\u2019s IP address should be randomly chosen the Babel node or the mobile device? In other sections: (5) Appendix C: Per the last paragraph, \u201cThe packet trailer is intended to carry cryptographic signatures \u2026\u201d, to what security mechanism is that referring?\u00a0 Where is that defined? (6) Appendix D: Is the stub implementation guidance normative?\u00a0 If so, will it satisfy all of the  RFC2119  language in this document? (7) Appendix E.\u00a0 Please explicitly state that the sample implementation is non-normative.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-11 12:45:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-08 05:45:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-08 05:48:03-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-08-08 05:45:32-07:00",
+        "text": "Thanks for your work on this well written document. Most of the issues I found have been covered in the ballot positions of my esteemed colleagues. I did have one major concern that I would like to see addressed though. This is in regard to backward compatibility with  RFC6126  implementations. Due to the addition of the mandatory bit and the processing associated with it, I would think that the new implementations will not be able to properly interoperate with the existing  RFC6126  implementations. Is my understanding correct? If so, I would like to see some text explaining what is the expected behavior when deploying into legacy environments.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-20 13:57:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-08 05:48:03-07:00",
+        "text": "Thanks for your work on this well written document. Most of the issues I found have been covered in the ballot positions of my esteemed colleagues. I did have one major concern that I would like to see addressed though. This is in regard to backward compatibility with  RFC6126  implementations. Due to the addition of the mandatory bit and the processing associated with it, I would think that the new implementations will not be able to properly interoperate with the existing  RFC6126  implementations. Is my understanding correct? If so, I would like to see some text explaining what is the expected behavior when deploying into legacy environments. If not, I would greatly appreciate an explanation and I will clear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-08-20 13:57:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-03 07:44:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 14:37:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8966",
+  "evaluation_end": "2020-09-03 07:44:35-07:00",
+  "evaluation_start": "2019-07-12 14:37:33-07:00"
+}

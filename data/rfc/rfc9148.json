@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-17 18:28:24-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-06 12:32:30-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-17 18:28:24-08:00",
+        "text": "Thanks for the work that the authors and working group put into this document. I have one DISCUSS-level comment that should be very easy to resolve, and a small number of editorial nits. --------------------------------------------------------------------------- \u00a79: Since this specification is adding new endpoints under /.well-known/est, it needs to update the \"Well-Known URIs\" registry so that the entry for \"est\" indicates this document (in addition to  RFC 7030 ).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-06 12:32:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-12-18 05:26:59-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-01-06 09:20:49-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-18 05:26:59-08:00",
+        "text": "Thank you for this well written document. I have a couple of small DISCUSS points and a few minor comments/questions that I would like to discuss. DISCUSS: 5.4.\u00a0 Message Bindings \u00a0  o\u00a0 The CoAP Options used are Uri-Host, Uri-Path, Uri-Port, Content- \u00a0 \u00a0 \u00a0 Format, Block1, Block2, and Accept.\u00a0 These CoAP Options are used \u00a0 \u00a0 \u00a0 to communicate the HTTP fields specified in the EST REST messages. \u00a0 \u00a0 \u00a0 The Uri-host and Uri-Port Options can be omitted from the COAP \u00a0 \u00a0 \u00a0 message sent on the wire. The statement above \u00a0 \u00a0 \u00a0 When omitted, they are logically \u00a0 \u00a0 \u00a0 assumed to be the transport protocol destination address and port \u00a0 \u00a0 \u00a0 respectively.\u00a0 Explicit Uri-Host and Uri-Port Options are \u00a0 \u00a0 \u00a0 typically used when an endpoint hosts multiple virtual servers and \u00a0 \u00a0 \u00a0 uses the Options to route the requests accordingly. and the last quoted statement: How can the sender know whether or not it is Ok to omit Uri-Host/Uri-Port? 7.\u00a0 Parameters \u00a0  It is recommended, based on experiments, \u00a0  to follow the default CoAP configuration parameters ([ RFC7252 ]). \u00a0  However, depending on the implementation scenario, retransmissions \u00a0  and timeouts can also occur on other networking layers, governed by \u00a0  other configuration parameters.\u00a0 When a change in a server parameter \u00a0  has taken place, the parameter values in the communicating endpoints \u00a0  MUST be adjusted as necessary. The last sentence: use of MUST with passive voice is really unhelpful here. Adjusted by whom? How can this MUST be satisfied?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-06 09:20:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-17 11:35:10-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-17 11:35:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-18 19:53:29-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 19:53:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-16 18:58:36-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-16 18:58:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-05 18:55:49-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-12-12 07:25:00-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-12 07:25:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-19 04:53:33-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-29 05:51:26-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-19 04:53:33-08:00",
+        "text": "Section 5.6: The EST-coaps client MUST support \u00a0  Block1 only if it sends EST-coaps requests with an IP packet size \u00a0  that exceeds the Path MTU. I think the requirement for when Block1 is required to be supported in the above sentence is unclear. Is the intention to say: An EST-coaps MUST support block1 to be capable to send requests that would otherwise result in the reliance on IP level fragmentation?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-29 05:51:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-12-18 12:47:09-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 12:47:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-10 09:58:38-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-10 09:58:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-16 14:02:01-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-16 14:02:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-17 19:29:52-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-17 19:29:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-12-17 07:16:39-08:00",
+        "end_reason": "new_position",
+        "start": "2019-12-05 18:55:49-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-01-16 06:54:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-17 07:16:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9148",
+  "evaluation_end": "2020-01-16 06:54:34-08:00",
+  "evaluation_start": "2019-12-05 18:55:49-08:00"
+}

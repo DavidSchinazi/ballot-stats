@@ -1,0 +1,525 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-04-08 13:38:06-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-04-08 13:38:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-04-03 03:12:44-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-04-10 09:33:14-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-17 09:12:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 09:33:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-23 07:26:49-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-23 07:26:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-17 09:12:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-24 05:33:06-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-24 05:33:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-04-07 20:24:49-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-04-08 19:01:09-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-04-07 20:24:49-07:00",
+        "text": "\u2014 Section 3.1 \u2014 I don\u2019t understand \u201cthe client\u2019s priority decision\u201d: what decision is that?\u00a0 And what\u2019s the point of giving the server a list of algorithms here, given that they all have to be ones that are supported by the server?\u00a0 Won\u2019t the server always have to use the first one in the list?\u00a0 If not, please add some text explaining what the server does. \u2014 Section 3.2 \u2014 \u00a0  If the preview is not available, the server MUST return NIL as the \u00a0  PREVIEW response.\u00a0 A NIL response indicates to the client that \u00a0  preview information MAY become available in a future PREVIEW FETCH \u00a0  request.\u00a0 Note that this is semantically different than returning a \u00a0  zero-length string, which indicates an empty preview. I think the MUST here is hard to follow, because the text doesn\u2019t make a clear enough distinction between \u201cpreview is not available\u201d and \u201can empty preview\u201d.\u00a0 Can you expand the text a bit to explain the distinction more clearly, as this is a protocol requirement?\u00a0 Also, as I noted in response to Meral\u2019s Gen-ART review it would be good to be clear how encrypted messages should be handled in this regard. \u2014 Section 4.1 \u2014 \u00a0  The preview text MUST be treated as text/plain MIME data by the \u00a0  client. I think this requires a normative reference to  RFC 2046 . \u2014 Section 5.1 \u2014 The way you have LAZY working isn\u2019t really consistent with the IMAP protocol model.\u00a0 In that model, the client would not have to ask for the preview twice, one with LAZY and one without.\u00a0 Instead, with LAZY, the server would return FETCH PREVIEW responses when it could \u2014 perhaps some in the first set of FETCH responses, and some, where the PREVIEW part was missing before, in unsolicited FETCH responses when the preview became available.\u00a0 That way, the server has the responsibility of setting off a separate task to generate the previews, and to send them to the client when it has them (at which point it either saves the for future FETCHes or doesn\u2019t). As it\u2019s written here, the client has to open a separate IMAP session with the server and ask a second time for the previews it\u2019s missing \u2014 a separate session to avoid blocking other action on the main session.\u00a0 And if the server has spun off a task to preemptively generate them because the client asked once (a good practice, given the description here) it has to retain them for some indefinite period waiting for the client to ask again. Why was this not done with the first mechanism? \u2014 Section 7 \u2014 As was mentioned in Ben\u2019s review, either the ABNF for \u201ccapability\u201d is in error (it should not include \u201cpreview-mod-ext\u201d) or the description needs to be significantly beefed up.\u00a0 I\u2019m guessing that the intent is that PREVIEW= capabilities include both algorithms and modifiers, that PREVIEW=FUZZY is required, that the presence of any preview algorithm implies PREVIEW=LAZY such that the latter not only need not be specified, but is not permitted to be.\u00a0 So we might have \u201cPREVIEW=FUZZY PREVIEW=FURRY PREVIEW=SLEEPY\u201d, which would mean we support the algorithms FUZZY and FURRY, and the modifiers LAZY and SLEEPY.\u00a0 Is that correct? That seems somewhat obtuse to me, overloading the PREVIEW= capability and inviting confusion. \u2014 Section 8 \u2014 It seems like a bad idea to have to keep the IMAP Capabilities registry in sync with the two new registries: as it stands, when you add a new algorithm you have to add it to the Preview Algorithms registry, and also add a corresponding entry in the Capabilities registry... and similarly for a modifier, if I have that right above. Why not follow the model of AUTH= and RIGHTS=, and just reserve the PREVIEW= capability in the registry, allowing it to apply to entries from the two new registries?\u00a0 That avoids inconsistencies in registrations if we later add algorithms or modifiers.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-17 09:12:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-08 19:01:09-07:00",
+        "text": "\u2014 Section 3.1 \u2014 I don\u2019t understand \u201cthe client\u2019s priority decision\u201d: what decision is that?\u00a0 And what\u2019s the point of giving the server a list of algorithms here, given that they all have to be ones that are supported by the server?\u00a0 Won\u2019t the server always have to use the first one in the list?\u00a0 If not, please add some text explaining what the server does. \u2014 Section 3.2 \u2014 \u00a0  If the preview is not available, the server MUST return NIL as the \u00a0  PREVIEW response.\u00a0 A NIL response indicates to the client that \u00a0  preview information MAY become available in a future PREVIEW FETCH \u00a0  request.\u00a0 Note that this is semantically different than returning a \u00a0  zero-length string, which indicates an empty preview. I think the MUST here is hard to follow, because the text doesn\u2019t make a clear enough distinction between \u201cpreview is not available\u201d and \u201can empty preview\u201d.\u00a0 Can you expand the text a bit to explain the distinction more clearly, as this is a protocol requirement?\u00a0 Also, as I noted in response to Meral\u2019s Gen-ART review it would be good to be clear how encrypted messages should be handled in this regard. \u2014 Section 4.1 \u2014 \u00a0  The preview text MUST be treated as text/plain MIME data by the \u00a0  client. I think this requires a normative reference to  RFC 2046 . \u2014 Section 7 \u2014 As was mentioned in Ben\u2019s review, either the ABNF for \u201ccapability\u201d is in error (it should not include \u201cpreview-mod-ext\u201d) or the description needs to be significantly beefed up.\u00a0 I\u2019m guessing that the intent is that PREVIEW= capabilities include both algorithms and modifiers, that PREVIEW=FUZZY is required, that the presence of any preview algorithm implies PREVIEW=LAZY such that the latter not only need not be specified, but is not permitted to be.\u00a0 So we might have \u201cPREVIEW=FUZZY PREVIEW=FURRY PREVIEW=SLEEPY\u201d, which would mean we support the algorithms FUZZY and FURRY, and the modifiers LAZY and SLEEPY.\u00a0 Is that correct? That seems somewhat obtuse to me, overloading the PREVIEW= capability and inviting confusion. \u2014 Section 8 \u2014 It seems like a bad idea to have to keep the IMAP Capabilities registry in sync with the two new registries: as it stands, when you add a new algorithm you have to add it to the Preview Algorithms registry, and also add a corresponding entry in the Capabilities registry... and similarly for a modifier, if I have that right above. Why not follow the model of AUTH= and RIGHTS=, and just reserve the PREVIEW= capability in the registry, allowing it to apply to entries from the two new registries?\u00a0 That avoids inconsistencies in registrations if we later add algorithms or modifiers.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-17 09:14:18-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-17 09:14:18-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-04-05 14:05:07-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-04-10 06:34:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-05 14:05:07-07:00",
+        "text": "I wavered a lot about whether this was DISCUSS-worthy, but it seems like we should at least talk about how big a risk for future confusion there is: I'm a little confused by the ABNF for 'capability' in Section 7 -- it seems to allow for (e.g.) PREVIEW=LAZYV2, but the introduction and Section 3.1 talk only about *algorithms* in PREVIEW capability responses (and not modifiers).\u00a0 Is the intent to have capability tags for (non-mandatory) priority modifiers?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-17 09:12:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 06:34:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-22 13:01:38-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 13:01:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-04-09 14:14:22-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-17 09:12:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-09 14:14:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-22 12:51:33-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 12:51:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-04-04 05:59:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-17 09:12:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-04 05:59:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-21 07:29:45-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-21 07:29:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-19 17:52:55-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-19 17:52:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-04-09 10:03:04-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-04-09 10:03:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-04-09 01:52:14-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-17 09:12:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-09 01:52:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-22 08:01:40-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 08:01:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-09-22 11:57:54-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 11:57:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-04-10 05:51:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-09-17 09:12:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 05:51:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-09-24 02:02:25-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-24 02:02:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-04-03 05:02:01-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-04-03 05:02:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-09-21 23:43:03-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-21 23:43:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-09-23 02:25:24-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-10-05 01:54:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-23 02:25:24-07:00",
+        "text": "Hi, Thanks for this document.\u00a0 I found it easy to read and understand, but have one potential issue that probably warrants a bit of discussion.\u00a0 I don't have any great knowledge of IMAP, so this may already be handled elsewhere, but I had a concern about returning zero-length strings under error conditions. \u00a0  It is possible that the server has determined that no meaningful \u00a0  preview text can be generated for a particular message, and that \u00a0  decision won't change later.\u00a0 Examples of this involve encrypted \u00a0  messages, content types the server does not support previews of, and \u00a0  other situations where the server is not able to extract information \u00a0  for a preview.\u00a0 In such cases, the server MUST return a zero-length \u00a0  string.\u00a0 Clients SHOULD NOT send another FETCH for a preview for such \u00a0  messages.\u00a0 (As discussed previously, preview data is not immutable so \u00a0  there is chance that at some point in the future the server would be \u00a0  able to generate meaningful text.\u00a0 However, this scenario is expected \u00a0  to be rare so a client should not continually send out requests to \u00a0  try to capture this infrequent occurrence.) \u00a0  \u00a0  ... A server MUST NOT return NIL \u00a0  to a FETCH PREVIEW request made without the LAZY modifier. When the LAZY modifier is not being used, then what would be returned if the server was transiently unable to return the preview for any reason?\u00a0 Does it still have to return a zero-length string in this error case?\u00a0 Is there some way that the server can indicate that it cannot satisfy the request now but without indicating that no preview is available?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-05 01:54:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-04-03 13:22:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-04-30 09:34:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-03 13:22:32-07:00",
+        "text": "(1) Retention practices of cached previews Section 1 says \u201cUsing server generated previews allows global generation once per message, and then cached indefinitely\u201d.\u00a0 Why cache indefinitely, especially if the source messages has been expunged?\u00a0 For privacy reasons, couldn\u2019t this caching be consistent with the retention of the email. In Section 9, Security Considerations, there needs to be discussion of this retention too.\u00a0 Perhaps text like:  \u201cImplementations that pre-generate and store previews MUST ensure that the stored preview is also deleted when the corresponding mail message is expunged.\u201d (2) Protection of previews at rest In Section 9, Security Considerations, there needs to be discussion about the potential sensitivity of these previews and the need to protect them.\u00a0 Perhaps text like: \u201cJust as the messages they summarize, previews may contain sensitive information.\u00a0 When stored, these previews MUST be protected with equivalent authorization and confidentiality controls as the source message.\u201d",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-17 09:12:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-30 09:34:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-22 13:30:00-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-22 13:30:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-04-10 14:31:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-04-10 14:31:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-17 09:12:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-03 03:12:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-23 06:13:23-07:00",
+        "end_reason": "new_position",
+        "start": "2020-09-17 09:12:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-11-18 00:04:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-23 06:13:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8970",
+  "evaluation_end": "2020-11-18 00:04:01-08:00",
+  "evaluation_start": "2020-09-17 09:12:23-07:00"
+}

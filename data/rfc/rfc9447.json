@@ -1,0 +1,259 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-11-27 14:40:39-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-11-27 14:40:39-08:00",
+        "text": "(1) Let's talk briefly about how JWT issuers are identified.\u00a0 Section 4 has some text: \u00a0  For this ACME Authority Token usage of JWT, the payload of the JWT \u00a0  OPTIONALLY contain an \"iss\" indicating the Token Authority that \u00a0  generated the token, if the \"x5u\" element in the header does not \u00a0  already convey that information; typically, this will be the same \u00a0  location that appeared in the \"token-authority\" field of the ACME \u00a0  challenge.\u00a0 [...] While \"iss\" is the default way to identify a JWT issuer, the JWT BCP ( RFC 8725 ,  BCP 225 ) does not make a strong recommendation that it is the preferred way to do so, with the implication that other ways to identify the issuer are reasonable.\u00a0 However, the text here only mentions the \"x5u\" element as an alternative to \"iss\" for identifying the issuer, which does not seem to be a comprehensive depiction of the JWT ecosystem.\u00a0 Issuers could be identified by other X.509 related protected headers such as \"x5c\", or in some situations just by the key used for signing (when that key is accompanied by other configured metadata), among other things.\u00a0 So, I don't understand why we call out \"x5u\" specifically here and apparently don't allow other ways of identifying the issuer. (2) We seem to describe the contents of the \"atc\" JWT claim as an array in \u00a74, but the examples show its payload as a JSON map.\u00a0 Which is correct? (3) I'd also like to have a (hopefully brief) discussion about the properties that we do and do not provide as relates to binding an authority token to an ACME client. In particular, in the REST API to the Token Authority, we have the client provide the fingerprint of its ACME key/identity, but the Token Authority does not do any validation on that value and is expected to just include it directly in the issued token.\u00a0 This means that some other entity X who is not the legitimate client but knows their key (fingerprint), and is also authorized to use a given identifier by the Token Authority, could cause a token to be issued that references the legitimate client's key.\u00a0 (Note that X could learn the fingerprint of the client by, e.g., being a semi-trusted CDN in front of the ACME server as considered by  RFC 8555 \u00a710.1.)\u00a0 That token would then only be useful by the legitimate client, and so there would need to be some other vulnerability that lets X trick the client into using that token, but it still seems that we have broken the chain of custody that would let us claim that the authority token was generated \"based on a request from the client\" (\u00a73.3).\u00a0 In particular, it seems that (with these preconditions) we might have a scenario where a client gets issued a certificate for numbers that it is not actually authorized for! This weakness does not immediately lead to an obvious vulnerability, as it requires two additional factors to be exploited -- the attacker must themselves be authorized at the Token Authority, and there needs to be some as-yet-unknown mechanism for the attacker to cause the client to use this new/different token -- but I think we at a minimum need to document the properties that we don't provide. We could choose to make the mechanism more complicated and close off this loophole by requiring proof of possession in the request to the token authority.\u00a0 The obvious way to do this robustly would require another round trip, though, to let the token authority provide a nonce that the proof of possession is provided over.\u00a0 Sometimes we can use a TLS Exporter value to save on that round-trip, but I haven't thought through very carefully what that would look like here.\u00a0 The request to the token authority would probably need to convey the entire public key, not just the fingerprint, so that the signature could be verified. There's another risk relating to thumbprints that is probably worth documenting -- we in effect are hardcoding a dependence on SHA256 for the fingerprints.\u00a0 (I'm happy to see that the wire-format of the thumbprint does identify the hash function used, so a transition mechansims should be pretty straightforward.)\u00a0 In light of the  BCP 201 guidance for building in algorithm agility, I think we should say that we are hardcoding SHA256 and SHA256 is believed to still be quite strong (the SHA-3 contest helped solidify that position), but if a second preimage attack for SHA256 is found, an issued authority token could be used with a different ACME account key.\u00a0 We can also go on to say that in that event, implementations can migrate to using a different hash function for the fingerprints due to the in-band hash function identification in the fingerprint field.\u00a0 Such a transition would require a new RFC to actually specify the details of the new behavior, but would not be very invasive to implementations. (4) We mention almost in passing that the tkauth-01 challenge type has a new \"token-authority\" field that designates a location where a token can be acquired.\u00a0 I think we need to have some more explicit discussion of the semantics of this field and how it's populated, especially in light of how this document implies that typical usage will include \"token-authority\" but the companion document implies that \"token-authority\" will not be in common usage.\u00a0 We definitely need some discussion of the security considerations of having party X tell the client to go authenticate to party Y and do some thing; this type of flow is very prone to enabling phishing attacks where the client gives party Y credentials that party Y is not supposed to have.\u00a0 In many cases it ends up being a de facto requirement that the client is configured with a specific list of allowed values for \"party Y\" and must reject anything not known to be trusted.\u00a0 (So, in this case, that would have the client reject any token authority URLs that are not in this preconfigured allow-list.)",
+        "type": "Discuss"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-11-26 09:09:42-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-26 09:09:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-11-26 14:08:24-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-26 14:08:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-11-30 03:22:05-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-30 03:22:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-12-01 15:13:07-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-01 15:13:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-11-29 03:31:51-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-29 03:31:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-11-19 14:08:25-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-19 14:08:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-12-01 05:51:54-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-12-01 05:51:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-12-01 21:18:43-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-07-13 12:09:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-12-01 21:18:43-08:00",
+        "text": "The examples in Section 4 make use of a function called \"base64url\" which is defined in  RFC 4648 .\u00a0 Do we not need a normative reference to that document? There was some chatter from the ARTART reviewer (review still pending) that suggested some confusion around validating the examples, and this was part of it.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-13 12:09:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-11-29 03:32:11-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-29 03:32:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-11-16 12:54:09-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-11-30 10:06:27-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-11-30 10:06:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-12-02 01:37:36-08:00",
+        "end_reason": "new_position",
+        "start": "2021-11-16 12:54:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-02-16 06:17:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-12-02 01:37:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9447",
+  "evaluation_end": "2023-02-16 06:17:27-08:00",
+  "evaluation_start": "2021-11-16 12:54:09-08:00"
+}

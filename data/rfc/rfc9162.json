@@ -1,0 +1,319 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-12 23:36:16-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-19 14:47:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-12 23:36:16-07:00",
+        "text": "Thanks to everyone who worked on updating this protocol to reflect experience gathered from the initial CT protocol. I have one blocking comment, and a small number of editorial suggestions. --------------------------------------------------------------------------- \u00a75: >\u00a0 Clients are configured with a base URL for a log and construct URLs >\u00a0 for requests by appending suffixes to this base URL.\u00a0 This structure >\u00a0 places some degree of restriction on how log operators can deploy >\u00a0 these services, as noted in [ RFC7320 ].\u00a0 However, operational >\u00a0 experience with version 1 of this protocol has not indicated that >\u00a0 these restrictions are a problem in practice. The synthesis of URLs by a protocol in this fashion is prohibited by  BCP 190 : \u00a0  Scheme definitions define the presence, format, and semantics of a \u00a0  path component in URIs; all other specifications MUST NOT constrain, \u00a0  or define the structure or the semantics for any path component. Unless the intention of this document is to update  BCP 190  to change this normative requirement, we can't publish it in its current form. Note that doing so would require a change of venue, as updates to  BCP 190  would not be covered by the current TRANS charter. Please see  BCP 190  section 3 for alternate approaches. All three approaches could be made to work for CT, and I would be happy to explain how to do so if clarification is desired.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-08-19 14:47:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-03-14 06:09:00-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-14 06:09:00-07:00",
+        "text": "I think this is an important document and I am looking forward to seeing it as a Proposed Standard in the future. However, it has a good number of editorial issues that make the document hard to read and implement. 5.\u00a0 Log Client Messages \u00a0  type:\u00a0 A URN reference identifying the problem.\u00a0 To facilitate \u00a0 \u00a0 \u00a0 automated response to errors, this document defines a set of \u00a0 \u00a0 \u00a0 standard tokens for use in the \"type\" field, within the URN \u00a0 \u00a0 \u00a0 namespace of: \"urn:ietf:params:trans:error:\". I think you need to register this in  Also, can you clarify whether error need an IANA registry?",
+        "type": "Discuss"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-13 09:34:18-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-09-27 10:44:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-13 09:34:18-07:00",
+        "text": "Glad to see this revision of the protocol. My comments and questions should be easy to address. = Section 10.2, 10.4, 10.5 = A Specification Required registry policy implies expert review. So a registry policy of \"Specification Required and Expert Review\" is duplicative; it should just say \"Specification Required.\" I know this seems trivial but there has been so much confusion about this through the years that it is important to be precise. = Section 10.3 = This section needs to state what the registry policy is for the code points not already registered (presumably Expert Review given 10.3.1, but it needs to be explicit). = Section 10.6.1 = Using the term \"Parameters Required\" as a capitalized term is confusing. FCFS registries by definition can require additional information to be provided in order to get something registered. For avoidance of confusion I think the assignment policy should be listed as First Come First Served and the requirement that parameters be included in the application can use a normative MUST in the last paragraph if there is concern that the parameters won't be supplied. However, I also wonder what will be done with the parameters that are supplied. Is IANA expected to just maintain them privately, or to publish them? What is expected to appear in the 'Log' column in the registry?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-09-27 10:44:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-13 20:02:51-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-07-30 12:44:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-13 20:02:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-14 07:09:22-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-06-30 19:02:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-14 07:09:22-07:00",
+        "text": "First off, thanks for this well-written document!\u00a0 I intend to ballot Yes, but there are a few issues that need to be resolved first. Sections 4.11 and 4.12 have arrays of NodeHash to carry consistency and inclusion proofs, respectively, with minimum array size of 1.\u00a0 However, Sections 2.1.4.1 and 2.1.3.1 (respectively) seem to admit the possibility of zero-length proofs in degenerate cases, which the aforementioned protocol description language forbids the conveyance of. (Section 5.3 explicitly requires the use of an empty consistency proof.) Do those minimum array sizes need to be (implicit) zero? (If they do not, it seems that a minimum size of 32 would have the same effect as that of one, since a NodeHash has minimum size 32.) I support Alexey's Discuss regarding the registration of a \"urn:ietf:params:trans:error\" URN namespace. In Section 6: \u00a0  o\u00a0 An Online Certificate Status Protocol (OCSP) [ RFC6960 ] response \u00a0 \u00a0 \u00a0 extension (see Section 7.1.1), where the OCSP response is provided \u00a0 \u00a0 \u00a0 in the \"CertificateStatus\" message, provided that the TLS client \u00a0 \u00a0 \u00a0 included the \"status_request\" extension in the (extended) \u00a0 \u00a0 \u00a0 \"ClientHello\" (Section 8 of [ RFC6066 ]).\u00a0 [...] This is not quite a TLS 1.3-compliant formulation -- TLS 1.3 does not use the \"CertificateStatus message\", but rather uses the encoding of that structure in a status_request extension in the CertificateEntry. I also think we need greater clarity on the (non-)usage of CT for TLS client certificates; see COMMENT I also support Alissa's Discuss.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-06-30 22:18:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-06-30 19:02:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-30 12:44:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-30 22:18:11-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-12 16:39:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-12 16:39:13-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-07-30 12:44:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-20 16:12:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-07-30 12:44:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-30 11:36:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-07-30 12:44:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-03-14 06:49:58-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-25 02:03:16-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-14 06:49:58-07:00",
+        "text": "There was a presentation at maprg IETF 103 about the question if CT helps attackers to find new domains. I think this risk should at least be mentioned in the security considerations section.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-02-25 02:03:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-13 10:53:49-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-04-05 22:56:23-07:00",
+        "text": "reserving Alexey's DISCUSS position...",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-14 21:55:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-13 10:53:49-07:00",
+        "text": "Thanks for addressing Alexey's DISCUSS position.\u00a0 In -36, a few important IANA-related issues remain, all easy fixes: * Section 10.4 has some messed up markdown around its Specification Required guidance. * Section 10.7 needs to name the sub-registry it's creating.\u00a0 (If it's the title of the section, that should be made clear; the prose doesn't say.) * It should be clear that all of these are sub-registries of \"Transport Layer Security (TLS) Extensions\".\u00a0 Either say that in each section (i.e., refer to the XYZ sub-registry of the \"Transport Layer Security (TLS) Extensions\" registry), or say in Section 10 that everything below is a sub-registry of that one.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-07-30 12:44:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-14 21:55:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-07-30 12:44:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-24 09:50:08-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-07-30 12:44:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-12 16:39:12-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-07-30 12:44:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-01 06:12:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9162",
+  "evaluation_end": "2021-07-30 12:44:45-07:00",
+  "evaluation_start": "2019-03-12 16:39:12-07:00"
+}

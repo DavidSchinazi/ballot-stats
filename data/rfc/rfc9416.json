@@ -1,0 +1,243 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-01-18 08:18:05-08:00",
+        "end_reason": "new_position",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-01-27 08:53:23-08:00",
+        "end_reason": "position_updated",
+        "start": "2023-01-18 08:18:05-08:00",
+        "text": "I am balloting DISCUSS because I believe that the expected actions resulting from this document are not specific enough: (1) \u00a77 reads: \u00a0  This document formally updates [ RFC3552 ] such that a vulnerability  \u00a0  assessment of transient numeric identifiers is performed when writing  \u00a0  the \"Security Considerations\" section of future RFCs. Is the assessment a requirement or a recommendation (when defining transient numeric identifiers)?\u00a0  The Abstract says that \"this document updates  RFC 3552 , requiring future RFCs to contain a vulnerability assessment of their transient numeric identifiers.\"\u00a0 The update itself doesn't result in a requirement. Please be explicit (SHOULD/MUST ?) in \u00a77. (2) The requirements of the assessment itself (\u00a75) can also be more explicit: [Line numbers from idnits.] 289\t5.\u00a0 Vulnerability Assessment Requirements for Transient Numeric 290\t\u00a0 \u00a0 Identifiers 292\t\u00a0  Protocol specifications that employ transient numeric identifiers 293\t\u00a0  SHOULD: (2a) The points to be covered in the assessment are only recommended and not required.\u00a0 When is it ok to not include any, or all, of the points mentioned?\u00a0 Why is this not a requirement?\u00a0 Are some parts optional? 295\t\u00a0  1.\u00a0 Clearly specify the interoperability requirements for the 296\t\u00a0 \u00a0 \u00a0  aforementioned transient numeric identifiers (e.g., required 297\t\u00a0 \u00a0 \u00a0  properties such as uniqueness, along with the failure severity if 298\t\u00a0 \u00a0 \u00a0  such properties are not met). (2b) \"Clearly specify the interoperability requirements...\"\u00a0 Clarity can be subjective.\u00a0 s/.../Specify the interoperability requirements... 300\t\u00a0  2.\u00a0 Provide a vulnerability assessment of the aforementioned 301\t\u00a0 \u00a0 \u00a0  identifiers. 303\t\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Note: Section 8 and Section 9 of 304\t\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 [ I-D.irtf-pearg-numeric-ids-generation ] provide a general 305\t\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 vulnerability assessment of transient numeric identifiers, 306\t\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 along with a vulnerability assessment of common algorithms for 307\t\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 generating transient numeric identifiers. (2c) Going back to (1), is this the only part that is intended to be performed as a result of the update to  rfc3552 ? (2d) What should be included in the vulnerability assessment?\u00a0 Given that this bullet talks about identifiers, are the considerations from \u00a78/I-D.irtf-pearg-numeric-ids-generation (correlation, leakage, fingerprinting, etc.) expected to be included? (2e) The reference to \u00a79 seems not to be needed at this point, or are you also expecting an assessment of the algorithm? 309\t\u00a0  3.\u00a0 Recommend an algorithm for generating the aforementioned 310\t\u00a0 \u00a0 \u00a0  transient numeric identifiers that mitigates the vulnerabilities 311\t\u00a0 \u00a0 \u00a0  identified in the previous step, such as those discussed in 312\t\u00a0 \u00a0 \u00a0  [ I-D.irtf-pearg-numeric-ids-generation ]. (2f) Is the expectation that this recommendation will result in a normative requirement, recommendation, or just an option? 314\t\u00a0  Note: 315\t\u00a0 \u00a0 \u00a0 As discussed in Section 1, use of cryptographic techniques for 316\t\u00a0 \u00a0 \u00a0 confidentiality and authentication might not eliminate all the 317\t\u00a0 \u00a0 \u00a0 issues associated with predictable transient numeric identifiers. 318\t\u00a0 \u00a0 \u00a0 Therefore, the advice from this section SHOULD still be applied 319\t\u00a0 \u00a0 \u00a0 for cases where cryptographic techniques are employed for 320\t\u00a0 \u00a0 \u00a0 confidentiality or authentication of the associated 321\t\u00a0 \u00a0 \u00a0 transientnumeric identifiers. (2g) \"SHOULD still be applied\" Given that \u00a71 doesn't exclude protocols using cryptographic techniques for confidentiality and authentication from the considerations in this document, the \"SHOULD\" above reinforces that and indicates a fact, vs a normative recommendation.\u00a0  s/SHOULD/should [nit] s/transientnumeric/transient numeric",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-27 08:53:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-01-19 01:29:20-08:00",
+        "end_reason": "new_position",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-19 01:29:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-01-14 18:38:57-08:00",
+        "end_reason": "new_position",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-14 18:38:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-01-19 06:30:59-08:00",
+        "end_reason": "new_position",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-19 06:30:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-01-16 05:06:25-08:00",
+        "end_reason": "new_position",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-01-30 00:48:09-08:00",
+        "end_reason": "position_updated",
+        "start": "2023-01-16 05:06:25-08:00",
+        "text": "# GEN AD review of  draft-gont-numeric-ids-sec-considerations-10 CC @larseggert Thanks to Gyan S. Mishra for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/sQeXJs6ZU4ga80XkFYFCGKo_u0w ). ## Discuss ### Paragraph 0 ``` \u00a0 Network Working Group\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 F. Gont \u00a0 Internet-Draft\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 SI6 Networks \u00a0 Updates: 3552 (if approved)\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 I. Arce ``` RFC3552  is a BCP on the IAB stream that was approved by the IESG. Can it be updated by a document on the IETF stream without the update also being explicitly approved by the IAB? ### \"Abstract\", paragraph 1 ``` \u00a0 \u00a0  Poor selection of transient numerical identifiers in protocols such \u00a0 \u00a0  as the TCP/IP suite has historically led to a number of attacks on \u00a0 \u00a0  implementations, ranging from Denial of Service (DoS) to data \u00a0 \u00a0  injection and information leakage that can be exploited by pervasive \u00a0 \u00a0  monitoring.\u00a0 To prevent such flaws in future protocols and \u00a0 \u00a0  implementations, this document updates  RFC 3552 , requiring future \u00a0 \u00a0  RFCs to contain a vulnerability assessment of their transient numeric \u00a0 \u00a0  identifiers. ``` Does this document intend to make requirements for all numeric identifiers used by a protocol, or only those that are observable in plaintext? All motivational text is AFAICT based on flaws that arose because such identifiers were transmitted in plaintext, so does the document intend to limit its guidance to those (and not to other identifiers that are for example always transmitted in encrypted form)? If the document does intend to give guidance on identifiers that are transmitted in encrypted form, it would be good to give some examples why that is necessary. In any event, please be more precise about the applicability of the guidance given here.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-30 00:48:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-01-19 09:22:33-08:00",
+        "end_reason": "new_position",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-19 09:22:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-01-11 11:31:49-08:00",
+        "end_reason": "new_position",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-11 11:31:49-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-01-13 05:08:24-08:00",
+        "end_reason": "new_position",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-13 05:08:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-01-19 06:12:34-08:00",
+        "end_reason": "new_position",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-19 06:12:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-01-18 13:23:30-08:00",
+        "end_reason": "new_position",
+        "start": "2023-01-11 11:31:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-02-03 11:43:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-18 13:23:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9416",
+  "evaluation_end": "2023-02-03 11:43:36-08:00",
+  "evaluation_start": "2023-01-11 11:31:48-08:00"
+}

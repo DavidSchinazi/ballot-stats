@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-17 12:07:47-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 12:07:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-10-20 06:09:11-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-20 06:09:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-16 23:32:47-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-17 11:22:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-16 23:32:47-07:00",
+        "text": "# \u00c9ric Vyncke, INT AD, comments for  draft-ietf-ipsecme-mib-iptfs-06 CC @evyncke Thank you for the work put into this document (even if I am balloting a DISCUSS); Please find below one blocking DISCUSS points (easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education). Special thanks to Tero Kivinen for the shepherd's detailed write-up including the WG consensus *but* it lacks the justification of the intended status.  I hope that this review helps to improve the document, Regards, -\u00e9ric ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Inconsistent intended status & use of experimental code point This document is standard track, but the OID used in section 4.1 is 'experimental' and in section 4.2 `experimental 500` per  https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml . Please request IANA to assign an OID from the 1.3.6.1.2.1 tree.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 11:22:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-09 16:15:34-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-09 16:15:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-17 13:13:56-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 13:13:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-20 02:42:46-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-20 08:25:13-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-20 02:42:46-07:00",
+        "text": "# GEN AD review of draft-ietf-ipsecme-mib-iptfs- CC @larseggert Thanks to Joel Halpern for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/5gau5fsdf6JutMgWnPRn9R_HVto ). ## Discuss ### Section 4.2, paragraph 28 ``` \u00a0 \u00a0 \u00a0 \u00a0  l2FixedRate OBJECT-TYPE \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  SYNTAX\u00a0 \u00a0 \u00a0 CounterBasedGauge64 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  MAX-ACCESS\u00a0 read-only \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  STATUS\u00a0 \u00a0 \u00a0 current \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"TFS bit rate may be specified as a layer 2 wire rate.\u00a0 On \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  transmission, target bandwidth/bit rate in bps for iptfs \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  tunnel.\u00a0 This rate is the nominal timing for the fixed \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  size packet. If congestion control is enabled the rate \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  may be adjusted down (or up if unset).\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ::= { iptfsConfigTableEntry 5 } \u00a0 \u00a0 \u00a0 \u00a0  l3FixedRate OBJECT-TYPE \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  SYNTAX\u00a0 \u00a0 \u00a0 CounterBasedGauge64 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  MAX-ACCESS\u00a0 read-only \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  STATUS\u00a0 \u00a0 \u00a0 current \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"TFS bit rate may be specified as a layer 3 packet rate. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  On Transmission, target bandwidth/bit rate in bps for \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  iptfs tunnel.\u00a0 This rate is the nominal timing for the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  fixed size packet. If congestion control is enabled the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  rate may be adjusted down (or up if unset).\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ::= { iptfsConfigTableEntry 6 } ``` I'm not sure what the intended meaning of the two \"or up if unset\" statements is. Even when congestion control is disabled (=unset), the given fixed rates will not be exceeded?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-20 08:25:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-19 09:48:43-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 09:48:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-20 00:12:10-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-20 00:12:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-17 17:11:53-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 17:11:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-17 03:01:50-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 03:01:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-04 07:42:23-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-04 07:42:23-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-17 19:06:37-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-17 19:06:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-19 06:06:21-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-04 07:42:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-20 08:47:35-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-19 06:06:21-07:00",
+        "text": "Thanks for working on this specification. I am balloting a Discuss, so that we pick the correct default value of congestionControl object. - Section 4.2 says \u00a0 \u00a0 congestionControl OBJECT-TYPE \u00a0 \u00a0 \u00a0 \u00a0 SYNTAX\u00a0 \u00a0 \u00a0 TruthValue \u00a0 \u00a0 \u00a0 \u00a0 MAX-ACCESS\u00a0 read-only \u00a0 \u00a0 \u00a0 \u00a0 STATUS\u00a0 \u00a0 \u00a0 current \u00a0 \u00a0 \u00a0 \u00a0 DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"When set to true, the default, this enables the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 congestion control on-the-wire exchange of data that is \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 required by congestion control algorithms as defined by \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  RFC 5348 .\u00a0 When set to false, IP-TFS sends fixed-sized \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 packets over an IP-TFS tunnel at a constant rate.\" \u00a0 \u00a0 \u00a0 \u00a0 DEFVAL { false } \u00a0 \u00a0 \u00a0 \u00a0 ::= { iptfsConfigTableEntry 2 } \u00a0   \u00a0  While the description says the default value should be true, the DEFVAL mentions \"false\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-21 10:04:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-20 08:47:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9349",
+  "evaluation_end": "2022-10-21 10:04:53-07:00",
+  "evaluation_start": "2022-10-04 07:42:22-07:00"
+}

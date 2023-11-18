@@ -1,0 +1,291 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-07-08 07:43:51-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 07:43:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-07-07 13:40:12-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-07 13:40:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-07-08 18:37:34-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 18:37:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-07-07 23:56:41-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-08 14:55:42-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-07 23:56:41-07:00",
+        "text": "I support Roman's Discuss points. Sorry to provide so many new substantive points here -- I was only able to follow the email discussions in the WG (and not completely, even) but not to actually read the document earlier.\u00a0 It hopefully goes without saying, but the goal is to make sure we get it right, since it's going to be an important pillar for the future of things; I'm happy to see that this is advancing. (1) I don't think that the claim in Section 4.2 that \"[b]oth RPC and TLS have peer and user authentication\" is correct, at least given my understanding of those terms.\u00a0 Using this document's definition of RPC \"peer authentication\" as analogous to TLS server authentication, the functionality that TLS calls \"mutual authentication\" is more analogous to RPC client authentication, though it is sometimes repurposed for use for user authentication, with concommittant bad user experience.\u00a0 This analogy does not seem critical to the mechanisms of this document, so I believe we should remove or modify it. (2) The mention of using RPCSEC_GSS with GSS channel bindings to TLS is quite underspecified.\u00a0 Unfortunately, this is largely the fault of other specifications, but we have to deal with the fallout.\u00a0 On first glance (but subject to further clarification/change), it seems like we should: - Say what channel binding type (from the registry that  RFC 5929  registered \u00a0 stuff in) is to be used -- just citing 5929 doesn't help, since it \u00a0 mentions three different ones (none of which are really right for TLS 1.3, \u00a0 see below) - provide a mechanism for the peers to determine whether GSS channel binding \u00a0 to TLS is to be used.\u00a0 (As discussed in \u00a0  draft-ietf-kitten-channel-bound-flag , the current state of things GSS is \u00a0 that if one party supplies channel bindings but the other doesn't, the \u00a0 security context negotiation fails, which is usually not the best for \u00a0 usability.)\u00a0 Since this is a greenfield GSS-API application, the simplest \u00a0 thing by far is to just say \"always provide the channel bindings when \u00a0 using RPCSEC_GSS over TLS\".\u00a0 It's even the more secure option, too :) - give more detail about what value to provide as the 'chan_binding' input \u00a0 to the GSS security context negotiation.\u00a0 We currently reference  RFC 5929 , \u00a0 that defines three different channel-binding values, but none of them are \u00a0 really usable for TLS 1.3 (as discussed in \u00a0  draft-ietf-kitten-tls-channel-bindings-for-tls13 ).\u00a0 Most likely this will \u00a0 mean using the tls-exporter value from that document. (3) Please check this reference in Section 5.1.1: \u00a0  Reverse-direction operation occurs only on connected transports such \u00a0  as TCP (see Section 2 of [ RFC8166 ]).\u00a0 [...] It seems likely that  RFC 8167  was intended... (4) I don't think it's particularly safe to suggest that non-protected RPCs should be exchanged on the same 5-tuple that just terminated a DTLS association, since neither DTLS nor UDP provide in-order delivery, so there is ambiguity as to whether a datagram should be interpreted as DTLS protected or not.\u00a0 This is particularly problematic in the face of the three different DTLS record headers (DTLSPlaintext, DTLSCiphertext(full), and DTLSCiphertext(minimal)) with something like 10 or 11 different possible values for the first byte that might be in flight, with limited \"magic number\" verification fields available.\u00a0 I think I need some input from the TSV ADs about what the options are, though -- while a cooling-off period might be fine if an ephemeral port is in use, it seems problematic for cases where fixed port numbers are used for both source and destination. (5) Section 5.2.1 requires that: \u00a0  *\u00a0 Implementations SHOULD indicate their trusted Certification \u00a0 \u00a0 \u00a0 Authorities (CAs). Indicate to whom? (6) The usage of  RFC 6125  procedures in Section 5.2.1 seems counter to its intent.\u00a0 Specifically, we seem to be saying \"the peer gave me a cert, let me look through it to see if it has something I like\", but  RFC 6125 's intended procedure is \"I know a list of names that I expect to see at least one of in the cert; these rules tell me whether the cert is valid for any such name\". It's not entirely clear that it's appropriate for this document to specify how the client has to order its list of names by type (per Section 6.1 of RFC 6125 's \"The client constructs a list of acceptable reference identifiers\"), which the bit about \"The following precedence applies\" seems to be doing.\u00a0 To the extent that we give a recommendation to use DNS-ID instead of CN-ID, and ipAddress SAN instead of CN-ID, that's already covered by  RFC 6125 ; it would be okay for us to say \"use DNS-ID or iPAddress SAN\", though.\u00a0 (Roman's comment about \"why not a normative MUST\" for putting IP addresses in the iPAddress SAN is related, and if we don't have a compelling reason to allow the flexibility, we should limit to the specific DNS-ID/iPAddress options without allowing CN-ID.) (6.1) Note additionally that if wildcard certificates are to be used,  RFC 6125  requires the application protocol specification to give details on how they are to be used. (6.2)  RFC 6125 's procedures are (facially, at least) only valid for TLS server authentication.\u00a0 We also want to authenticate TLS clients, so we should say whether we expect the same procedures to be used, or what procedures should be used (even just as how it differs from the  RFC 6125 ones).\u00a0 Of particular note is that, since the server is not initiating the network connection, it is unlikely to have a preconceived notion of what client identity to expect, and is likely limited to attempting to extract something from the certificate.\u00a0 In this scenario a precedence list (as I complained about being inconsistent with  RFC 6125  above) would be appropriate. (7) Section 5.2.1 uses the phrase \"renegotiate the TLS session\". Renegotiation is not defined or allowed for TLS 1.3; generally one would need to either remember the presented certificate and re-run the validation process on it or shutdown the TLS connection and make a new one, though in theory one could try to define a mechanism using post-handshake authentication.\u00a0 (I don't recommend the latter, though; it's not widely implemented/used.) (8) Can we clarify the status of DNSSEC (or DANE) requirements?\u00a0 Section 1 assumes that support for DNSSEC is already available in an RPC implementation, but Section 7.1.1 says that \"Clients [sic] implementors can choose from\" a list of things including DANE TLSA records.\u00a0 Why would we require DNSSEC support but not using the records if they're present? (9) I agree with Roman('s comment) that Sections 5.2.2 and 5.2.4 should give a minimum amount of information to be exposed to the administrator for implementing the trust mode.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-02 17:30:15-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-10-08 14:55:42-07:00",
+        "text": "Thank you for the updates in the -09; they address all my previous Discuss points (from the -08).\u00a0 Unfortunately, there is one more issue that was introduced in the update and will need to be resolved: While I appreciate the efforts to find appropriate external specifications to reference, I do not believe that an id-kp-rpcTLSServer certificate is a Resource Certificate per  RFC 6487  -- that specification deals with the RPKI (Resource PKI) used to authenticate IP address assignment, but the RPKI is an entirely separate PKI than the Internet PKI (\"PKIX\").\u00a0 I think we should drop that sentence entirely.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-02 17:30:15-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-07-08 10:18:33-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 10:18:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-07-03 02:50:09-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-03 02:50:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-06-29 21:31:35-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-29 21:31:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-06-22 01:00:35-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-06-25 13:55:18-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-10-20 07:04:31-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-25 13:55:18-07:00",
+        "text": "This presumably a trivial fix but I think it's important enough to be a DISCUSS: I think the document needs some discussion of the security properties of TLS1.3 early data over TCP, if only to refer to Section 8 of  RFC 8446  (replay) and mention that it is not forward-secure, unlike the rest of the payload.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-20 07:04:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-07-06 09:38:02-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-06 09:38:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-07-05 23:10:48-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-05 23:10:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-07-06 10:08:50-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-06 10:08:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-07-06 20:24:10-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-18 06:00:15-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-07-06 20:24:10-07:00",
+        "text": "** Despite Section 5.0 stating that only TLS v1.3+ can be used, there are two references to TLS v1.2 mechanisms: -- Section 5.0. Per \u201cImplementations MUST support certificate-based mutual authentication.\u00a0 Support for TLS-PSK mutual authentication [ RFC4279 ] is OPTIONAL\u201d.\u00a0 Shouldn\u2019t Section 2.2.2 or 4.2.11 of  RFC8446  be used instead?  -- Section 5.2.4.\u00a0 The token binding mechanism suggested here,  RFC8471 , only applies to TLS v1.2.\u00a0 The expired  draft-ietf-tokbind-tls13  provides the TLS v1.3 mechanism. ** Section 7.4.\u00a0 Per \u201cWhen using AUTH_NULL or AUTH_SYS, both peers are required to have DNS TLSA records and certificate material \u2026\u201d, what is \u201ccertificate materials\u201d?\u00a0 Can this guidance please be clarified (and perhaps related to the options specified in Section 5.2).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-18 06:00:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-07-08 14:52:35-07:00",
+        "end_reason": "new_position",
+        "start": "2020-06-22 01:00:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-11-03 09:16:00-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-08 14:52:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9289",
+  "evaluation_end": "2020-11-03 09:16:00-08:00",
+  "evaluation_start": "2020-06-22 01:00:35-07:00"
+}

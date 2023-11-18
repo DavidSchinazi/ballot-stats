@@ -1,0 +1,267 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-08-10 06:29:33-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-08-10 06:29:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-08-11 10:13:21-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-22 10:23:28-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-08-11 10:13:21-07:00",
+        "text": "Further details in the COMMENT, but can we briefly discuss the apparent requirement for the PANID/NID to have a couple bits set to zero (the ones that would be U/L and Individual/Group in the resulting IID)?\u00a0 It seems like (but is not entirely clear to me) this is a new requirement on the layer-2 behavior that is being imposed by the IPv6 adaptation layer, and in particular that this is setting up a scenario where certain existing layer-2 deployments would be unable to utilize the IPv6 adaptation layer, which would be a very surprising behavior for an IETF Proposed Standard.\u00a0 What alternatives were explored and rejected before settling on this approach that introduces new limitations on the underlying PLC deployments? I mention in a few places in the COMMENT scenarios where we pull in part of the functionality from  RFC 6282  and  RFC 4944 , e.g., the IP header compression scheme and the fragmentation format.\u00a0 It seems to me that the intent is that our payload always use the  RFC 4944  \"dispatch\" scheme and that we only use a subset of (and only sometimes?) the particular functionality that  RFC 4944 /6282 can dispatch to.\u00a0 But the current text doesn't mention the dispatch behavior at all, so it's hard for me to be certain that my understanding is correct.\u00a0 It seems that some more explicit treatment in the document of how what we are specifying interacts with/uses the  RFC 4944  dispatch layer would be important in order for someone to be able to implement from this document. I support Roman and \u00c9ric's Discusses.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-03-22 10:23:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-08-09 22:44:25-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-01-10 23:04:07-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-08-09 22:44:25-07:00",
+        "text": "Thank you for the work put into this document. Special thanks to Carles Gomez for his shepherd's write-up, which contains a good summary of the WG consensus *BUT* it does not mention that the IEEE normative references are not free. Strange that Carles' email address,  carlesgo@entel.upc.edu , is not in the datatracker status page. Please find below some blocking DISCUSS points (probably easy to address), some non-blocking COMMENT points (but replies would be appreciated), and some nits. Please also address Dave Thaler's INT-DIR review at: https://datatracker.ietf.org/doc/review-ietf-6lo-plc-06-intdir-telechat-thaler-2021-08-06/  (some of my DISCUSS points are coming from Dave's review) I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == Is there any reason why the IETF Last Call  https://mailarchive.ietf.org/arch/msg/6lo/f59y8rMg-p_aCKYSSEtBzoJK4qQ/  did not mention that the two IEEE normative references were behind a paywall ? It prevented some more detailed reviews and is an important fact. How can a PLC node distinguish between an IPv6 PDU and a non-IPv6 PDU ? I.e., is there the equivalent of a EtherType in a layer-2 PLC PDU ? Then, this should be mentioned in this document else some text explaining why it is not required would be welcome. Especially when the normative IEEE references are not freely available. -- Section 4.1 -- I am repeating here Dave Thaler's point 1) as it is completely unclear to me how the shared secret/version number are shared and provisioned, this could prevent interoperation hence my DISCUSS. While I appreciate that the nodes are constrained, some warnings about having a *single global IPv6 address* should be written or if the spec supports more than one global IPv6 address per node, then the current text must be changed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-10 23:04:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-07-21 17:50:14-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-08-06 01:07:34-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-08-06 01:07:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-08-09 14:43:20-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-08-09 14:43:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-08-12 00:04:50-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-08-12 00:04:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-06 02:49:43-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-06 02:49:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-08-09 15:21:14-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-02-07 14:19:05-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-08-09 15:21:14-07:00",
+        "text": "** Section 8. A few additional threats should be mentioned.\u00a0 Note that a robust treatment is not needed here (and likely not possible due to the generality of this document).\u00a0 However, they should be acknowledged. -- This section mentions both availability (DoS) and confidentiality (eavesdropping) concerns.\u00a0 Thank you. Wouldn\u2019t there also be the possibility of significant integrity risks given that possible actuators or sensors being controlled?\u00a0  Note if the referenced link layer security mechanisms would be useful. -- Figures 5 \u2013 7 seems to present architectures which connects operational technology to the Internet via the PANC.\u00a0 However, this section doesn\u2019t acknowledgement of that risk outright or by citation. ** Section 8.\u00a0 Per \u201cThus link layer security mechanisms are designed in the PLC technologies mentioned in this document\u201d, which specific mechanisms were being cited is not clear.\u00a0 Is their use required or are they use case dependent?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-03-22 05:59:15-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-02-07 14:19:05-08:00",
+        "text": "[updated for -09] ** Section 8. A few additional threats should be mentioned.\u00a0 Note that a robust treatment is not needed here (and likely not possible due to the generality of this document).\u00a0 However, they should be acknowledged. -- This section mentions both availability (DoS) and confidentiality (eavesdropping) concerns.\u00a0 Thank you. Wouldn\u2019t there also be the possibility of significant integrity risks given that possible actuators or sensors being controlled?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-22 05:59:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-08-10 12:34:09-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-08-10 12:34:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-06 03:38:00-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-21 17:50:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-06 15:51:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-06 03:38:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9354",
+  "evaluation_end": "2022-10-06 15:51:07-07:00",
+  "evaluation_start": "2021-07-21 17:50:14-07:00"
+}

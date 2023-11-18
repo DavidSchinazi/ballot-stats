@@ -1,0 +1,307 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-11-04 17:47:51-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 17:47:51-08:00",
+        "text": "I support Benjamin's DISCUSS. The privacy properties of the mechanism specified in this document do not comport with the recommendations in  RFC 8165  or  RFC 6973 . The document makes no normative recommendations to minimize the identifiability or linkability of the information in the context header. It specifies no normative transport or object encryption, which  RFC 8300  conditionally requires (as does  RFC 8371  for similar identifiers). (Furthermore, although this documents says the context header should only be used within an administrative domain,  RFC 8300  allows for NSH to be used across administrative boundaries if I understand correctly.) The document does not suggest best practices for minimizing the persistence or uniqueness of the identifiers conveyed when circumstances allow it. As Ben noted, many functions performed by SFs don't need to be aware of actual subscriber identifiers that have some other purpose in the network (IP address, mobile network identifiers, etc.).  For other protocols that convey unique subscriber identifiers, even protocols that are not end-to-end like DHCP, the IETF has specified detailed guidance to minimize the privacy impact of exposing these identifiers. See, e.g.,  RFC 7844  and  RFC 8064 /7721. That level of analysis and guidance is what I would expect for this specification. I suspect that is an unpopular view, though, so I'm abstaining.",
+        "type": "Abstain"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-03 12:42:06-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-03 12:42:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-10-29 21:32:03-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-29 21:32:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-30 18:55:29-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-03 20:35:55-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-10-30 18:55:29-07:00",
+        "text": "This is an \"early warning\" discuss ballot, entered before I have done a full review of the document. As such, it is possible that the stated concern may in fact be a non-issue after closer examination, but the potential import of the concern seems to make it worth starting the discussion sooner rather than later. This document defines (among other things) a mechanism for carrying subscriber information in an NSH.\u00a0  RFC 8300  (NSH) notes both that: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Metadata privacy and \u00a0  security considerations are a matter for the documents that define \u00a0  metadata format. and that: \u00a0 \u00a0 \u00a0 One useful element of providing privacy protection for sensitive \u00a0 \u00a0 \u00a0 metadata is described under the \"SFC Encapsulation\" area of the \u00a0 \u00a0 \u00a0 Security Considerations of [ RFC7665 ].\u00a0 Operators can and should \u00a0 \u00a0 \u00a0 use indirect identification for metadata deemed to be sensitive \u00a0 \u00a0 \u00a0 (such as personally identifying information), significantly \u00a0 \u00a0 \u00a0 mitigating the risk of a privacy violation.\u00a0 In particular, \u00a0 \u00a0 \u00a0 subscriber-identifying information should be handled carefully, \u00a0 \u00a0 \u00a0 and, in general, SHOULD be obfuscated. On the other hand, this document in its security considerations claims that: \u00a0  Data plane SFC-related security considerations, including privacy, \u00a0  are discussed in [ RFC7665 ] and [ RFC8300 ]. and does not seem to incorporate any discussion of the privacy and security considerations of the subscriber information metadata carried by the new format it conveys.\u00a0 Yes, it does note that all nodes with access to the information are part of the same trusted domain, but I do not think that is sufficient, especially given that personally identifiable information is often subject to strict compliance regimes. In short, 8300 and this document are referring to each other for privacy considerations, and the actual privacy considerations do not seem to be documented in either place. Additionally, I did not see any indication of how the subscriber-identifying information ought to be obfuscated (or an explanation of why it is okay to violate the SHOULD from 8300).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-03 20:36:05-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-11-03 20:35:55-08:00",
+        "text": "Retaining my original Discuss position (without the \"early warning\" note), as it is the one that was supported by Martin D and Alvaro: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% This document defines (among other things) a mechanism for carrying subscriber information in an NSH.\u00a0  RFC 8300  (NSH) notes both that: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Metadata privacy and \u00a0  security considerations are a matter for the documents that define \u00a0  metadata format. and that: \u00a0 \u00a0 \u00a0 One useful element of providing privacy protection for sensitive \u00a0 \u00a0 \u00a0 metadata is described under the \"SFC Encapsulation\" area of the \u00a0 \u00a0 \u00a0 Security Considerations of [ RFC7665 ].\u00a0 Operators can and should \u00a0 \u00a0 \u00a0 use indirect identification for metadata deemed to be sensitive \u00a0 \u00a0 \u00a0 (such as personally identifying information), significantly \u00a0 \u00a0 \u00a0 mitigating the risk of a privacy violation.\u00a0 In particular, \u00a0 \u00a0 \u00a0 subscriber-identifying information should be handled carefully, \u00a0 \u00a0 \u00a0 and, in general, SHOULD be obfuscated. On the other hand, this document in its security considerations claims that: \u00a0  Data plane SFC-related security considerations, including privacy, \u00a0  are discussed in [ RFC7665 ] and [ RFC8300 ]. and does not seem to incorporate any discussion of the privacy and security considerations of the subscriber information metadata carried by the new format it conveys.\u00a0 Yes, it does note that all nodes with access to the information are part of the same trusted domain, but I do not think that is sufficient, especially given that personally identifiable information is often subject to strict compliance regimes. In short, 8300 and this document are referring to each other for privacy considerations, and the actual privacy considerations do not seem to be documented in either place. Additionally, I did not see any indication of how the subscriber-identifying information ought to be obfuscated (or an explanation of why it is okay to violate the SHOULD from 8300). %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% To record some additional synthesis of the above (original) remark with my more thorough reading of the document: we are defining containers specifically to contain subscriber and performance policy identifiers/information.\u00a0 While the specific contents are out of scope for this document, we still are obligated to describe the general classes of issues that can arise due to conveying those types of information within a SFC domain.\u00a0 We should also give guidance on how to populate the contents of these context headers in a secure and privacy-supporting manner, including the use of indirect identification and obfuscation/encryption. Futhermore (and this part is not a discuss point but may lead to me switching my position to Abstain once the discusses are resolved), I have some misgivings about including subscriber identification information at all, and would prefer if it could instead be translated into the relevant policy information element(s) needed by the SFP in question before being applied to the NSH.\u00a0 For example, rather than saying \"this packet is from user X\" we could say \"this packet is part of quota bucket ABC (with bucket size Z) for time period Y\" to enforce per-user quota.\u00a0 While in this case the identifier would still ultimately lead back to an individual, the identifier would be rotated periodically, and it is possible to achieve some level of de-linkability as records age out (depending on how the \"ABC\" is generated, of course). I do recognize that even for non-quota use cases where a user is part of multiple distinct policy groups, the combination of those groups might still identify only a small anonymity set, but the overall privacy properties of such a design seem superior than consistent use of a persistent identifier or identifiers, in aggregate. I have an additional Discuss point after doing a more thorough review of the document -- I think there's a (minor) internal inconsistency within Section 3: \u00a0  Intermediary NSH-aware nodes have to preserve Subscriber Identifier \u00a0  Context Headers (i.e., the information can be passed to next hop NSH- \u00a0  aware nodes), but local policy may require an intermediary NSH-aware \u00a0  node to strip a Subscriber Identifier Context Header after processing \u00a0  it. since it seems to say that NSH-aware intermediary nodes both \"have to preserve\" and \"may strip\" a Service Identifier Context Header. Similar language is used to describe the Performance Policy Identifier Context Header, in Section 4, which would presumably receive a similar modification to the Subscriber Identifier case.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-10 06:41:49-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-03 20:36:05-08:00",
+        "text": "Retaining my original Discuss position (without the \"early warning\" note), as it is the one that was supported by Martin D and Alvaro: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% This document defines (among other things) a mechanism for carrying subscriber information in an NSH.\u00a0  RFC 8300  (NSH) notes both that: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Metadata privacy and \u00a0  security considerations are a matter for the documents that define \u00a0  metadata format. and that: \u00a0 \u00a0 \u00a0 One useful element of providing privacy protection for sensitive \u00a0 \u00a0 \u00a0 metadata is described under the \"SFC Encapsulation\" area of the \u00a0 \u00a0 \u00a0 Security Considerations of [ RFC7665 ].\u00a0 Operators can and should \u00a0 \u00a0 \u00a0 use indirect identification for metadata deemed to be sensitive \u00a0 \u00a0 \u00a0 (such as personally identifying information), significantly \u00a0 \u00a0 \u00a0 mitigating the risk of a privacy violation.\u00a0 In particular, \u00a0 \u00a0 \u00a0 subscriber-identifying information should be handled carefully, \u00a0 \u00a0 \u00a0 and, in general, SHOULD be obfuscated. On the other hand, this document in its security considerations claims that: \u00a0  Data plane SFC-related security considerations, including privacy, \u00a0  are discussed in [ RFC7665 ] and [ RFC8300 ]. and does not seem to incorporate any discussion of the privacy and security considerations of the subscriber information metadata carried by the new format it conveys.\u00a0 Yes, it does note that all nodes with access to the information are part of the same trusted domain, but I do not think that is sufficient, especially given that personally identifiable information is often subject to strict compliance regimes. In short, 8300 and this document are referring to each other for privacy considerations, and the actual privacy considerations do not seem to be documented in either place. Additionally, I did not see any indication of how the subscriber-identifying information ought to be obfuscated (or an explanation of why it is okay to violate the SHOULD from 8300). %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% To record some additional synthesis of the above (original) remark with my more thorough reading of the document: we are defining containers specifically to contain subscriber and performance policy identifiers/information.\u00a0 While the specific contents are out of scope for this document, we still are obligated to describe the general classes of issues that can arise due to conveying those types of information within a SFC domain.\u00a0 We should also give guidance on how to populate the contents of these context headers in a secure and privacy-supporting manner, including the use of indirect identification and obfuscation/encryption. Futhermore (and this part is not a discuss point but may lead to me switching my position to Abstain once the discusses are resolved), I have some misgivings about including subscriber identification information at all, and would prefer if it could instead be translated into the relevant policy information element(s) needed by the SFP in question before being applied to the NSH.\u00a0 For example, rather than saying \"this packet is from user X\" we could say \"this packet is part of quota bucket ABC (with bucket size Z) for time period Y\" to enforce per-user quota.\u00a0 While in this case the identifier would still ultimately lead back to an individual, the identifier would be rotated periodically, and it is possible to achieve some level of de-linkability as records age out (depending on how the \"ABC\" is generated, of course). I do recognize that even for non-quota use cases where a user is part of multiple distinct policy groups, the combination of those groups might still identify only a small anonymity set, but the overall privacy properties of such a design seem superior than consistent use of a persistent identifier or identifiers, in aggregate. I have an additional Discuss point after doing a more thorough review of the document -- I think there's a (minor) internal inconsistency within Section 3: \u00a0  Intermediary NSH-aware nodes have to preserve Subscriber Identifier \u00a0  Context Headers (i.e., the information can be passed to next hop NSH- \u00a0  aware nodes), but local policy may require an intermediary NSH-aware \u00a0  node to strip a Subscriber Identifier Context Header after processing \u00a0  it. since it seems to say that NSH-aware intermediary nodes both \"have to preserve\" and \"may strip\" a Service Identifier Context Header. Similar language is used to describe the Performance Policy Identifier Context Header, in Section 4, which would presumably receive a similar modification to the Subscriber Identifier case.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-10 06:41:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-11-04 15:36:08-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 15:36:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-03 23:06:42-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-03 23:06:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-10-30 23:18:32-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-30 23:18:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-11-04 07:45:02-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-11-15 22:28:18-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-04 07:45:02-08:00",
+        "text": "This looks like a significant problem. If I have missed anything in any reference this might be very simple to resolve. However, based on this document and looking at  RFC 8300  I think this document is lacking in discussion of the packet size impact of using both dynamic size headers, as well as there are no limits to how many are added. Thus, there are significant risk for this header to increase the packet size so much that it doesn't fit the underlying layer. And as Section 5 in  RFC8300  identifies there are no general solution provided in NSH. Thus, I really think this issues needs some discussion. Even if the actual result of this is a requirement on the control plane, the issue exists in the data plane and thus warrants discussion in this document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-15 22:28:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-02 11:00:36-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-02 11:00:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-10-28 05:10:09-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-28 05:10:09-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-11-04 20:55:31-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 20:55:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-04 04:23:20-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-04 04:23:38-08:00",
+        "end_reason": "new_position",
+        "start": "2020-11-04 04:23:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 04:23:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-04 07:28:32-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-05 05:54:40-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-04 07:28:32-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-12-10 13:18:59-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-05 05:54:40-08:00",
+        "text": "There is no framework or guidance to reason about or mitigate the security and privacy risks of embedding sensitive, user identifying information into the network.\u00a0 The document does fairly note that the other SFC headers also don\u2019t have protection mechanisms either, but they do not enable use identification or tracking. During response to IESG ballots prior to mine, two related points were made: ** Using  draft-ietf-sfc-nsh-integrity-00  to mitigate risks \u2013 this might help, but the maturity of this document would suggest that additional discussion is required before it could be evaluated as a solution. ** surveillance as a use case (lawful intercept as an SFC [2]) \u2013 reinforces why a privacy framework is needed ( RFC6973  and 8165 are helpful references here) [1]  https://mailarchive.ietf.org/arch/msg/sfc/24Q52inJTpacY1HOlCHU8VTUkIw/ [2]  https://mailarchive.ietf.org/arch/msg/sfc/Knc9goUyEjiMLWHmf0K-NbHTpC8/",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-12-10 13:18:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-12-17 06:03:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-28 05:10:08-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8979",
+  "evaluation_end": "2020-12-17 06:03:26-08:00",
+  "evaluation_start": "2020-10-28 05:10:08-07:00"
+}

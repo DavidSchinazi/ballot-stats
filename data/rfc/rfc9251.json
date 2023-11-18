@@ -1,0 +1,299 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-10-27 10:23:16-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-03-11 07:38:26-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-10-27 10:23:16-07:00",
+        "text": "First of all, I am surprised that a document related to IGMP/MLD was not sent to the pim WG for review.\u00a0 I can't find any mention of this draft in the pim WG's archive. \u00a711 says this: \u00a0  This document does not provide any detail about IGMPv1 processing. \u00a0  Multicast working group are in process of deprecating uses of IGMPv1. \u00a0  Implementations MUST only use IGMPv2 and above for IPv4 and MLDv1 and \u00a0  above for IPv6.\u00a0 IGMP V1 routes MUST be considered as invalid and the \u00a0  PE MUST apply the \"treat-as-withdraw\" procedure as per [ RFC7606 ]. \u00a0  Initial version of document did mention use of IGMPv1 and flag had \u00a0  provision to support IGMPv1.\u00a0 There may be an implementation which is \u00a0  deployed as initial version of document, to interop flag has not been \u00a0  changed. Note that the \"Multicast working group\" mentioned above is in fact the pim WG.\u00a0 There's no current WG to deprecate IGMPv1, but  draft-ietf-pim-3376bis  was recently adopted with the intent to progress IGMPv3 to Internet Standard.\u00a0 This text is from  draft-ietf-pim-3376bis  (it is the same text as in  rfc3376 ): \u00a0  IGMPv3 is backward compatible with previous versions of the IGMP \u00a0  protocol.\u00a0 In order to remain backward compatible with older IGMP \u00a0  systems, IGMPv3 multicast routers MUST also implement versions 1 and \u00a0  2 of the protocol (see section Section 7). (Section 7/draft-ietf-pim-3376bis talks about interoperability with older versions.) All this is to say that requiring that IGMPv1 not be used contradicts the IGMPv3 specification, which requires the support.\u00a0 The interoperation between the different versions is already considered in  rfc3376 , so the extra complexity added to this document (tracking the versions in the BGP updates) is not needed from the router side. I am balloting DISCUSS because this document is not in line with other consensus documents (specifically the IGMP specification).\u00a0 To clear, I will want the document reviewed by the pim WG.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-11 07:38:26-08:00",
+        "text": "I am changing my ballot to ABSTAIN because I still believe that requiring that IGMPv1 not be used contradicts the IGMPv3 specification, which requires support.\u00a0 I will then not stand in the way of publication. ===== This is the original DISCUSS text: \u00a711 says this: \u00a0  This document does not provide any detail about IGMPv1 processing. \u00a0  Multicast working group are in process of deprecating uses of IGMPv1. \u00a0  Implementations MUST only use IGMPv2 and above for IPv4 and MLDv1 and \u00a0  above for IPv6.\u00a0 IGMP V1 routes MUST be considered as invalid and the \u00a0  PE MUST apply the \"treat-as-withdraw\" procedure as per [ RFC7606 ]. \u00a0  Initial version of document did mention use of IGMPv1 and flag had \u00a0  provision to support IGMPv1.\u00a0 There may be an implementation which is \u00a0  deployed as initial version of document, to interop flag has not been \u00a0  changed. Note that the \"Multicast working group\" mentioned above is in fact the pim WG.\u00a0 There's no current WG to deprecate IGMPv1, but  draft-ietf-pim-3376bis  was recently adopted with the intent to progress IGMPv3 to Internet Standard.\u00a0 This text is from  draft-ietf-pim-3376bis  (it is the same text as in  rfc3376 ): \u00a0  IGMPv3 is backward compatible with previous versions of the IGMP \u00a0  protocol.\u00a0 In order to remain backward compatible with older IGMP \u00a0  systems, IGMPv3 multicast routers MUST also implement versions 1 and \u00a0  2 of the protocol (see section Section 7). (Section 7/draft-ietf-pim-3376bis talks about interoperability with older versions.) All this is to say that requiring that IGMPv1 not be used contradicts the IGMPv3 specification, which requires the support.\u00a0 The interoperation between the different versions is already considered in  rfc3376 , so the extra complexity added to this document (tracking the versions in the BGP updates) is not needed from the router side. I am balloting DISCUSS because this document is not in line with other consensus documents (specifically the IGMP specification).",
+        "type": "Abstain"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-20 17:48:32-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-02-24 18:55:44-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-10-20 17:48:32-07:00",
+        "text": "(1) Apparently each PE is supposed to store version flags for each other PE in the EVI (I guess on a per-route basis?), but this is mentioned just once, in passing, in step 2 of the Leave Group procedures in \u00a74.1.2. Similarly, \u00a76.1 defines, somewhat in passing, some \"local IGMP Membership Request (x,G) state\" that must be maintained in some cases. Let's discuss whether it's appropriate/useful to have a general introductory section that covers what new state PEs are expected to retain as part of supporting IGMP/MLD proxying.\u00a0 Maybe the answer is \"no\", but I would like to have the conversation. (2) I am not sure if the body text is consistent with what is being allocated from IANA.\u00a0 \u00a78 describes PEs that are not using ingress replication as being identifiable as \"\"\"any PE that has advertised an Inclusive Multicast Tag route for the BD without the \"IGMP Proxy Support\" flag\"\"\", but the IANA considerations allocate flags for both IGMP Proxy Support and MLD Proxy Support.\u00a0 Is a PE that advertises MLD Proxy Support but not IGMP Proxy Support to be treated as not using ingress replication, as the literal interpretation of this text would require?\u00a0 Similarly, \u00a79.2.1 and \u00a79.3.1 include restrictions on indication of support for \"IGMP Proxy\" with no mention of \"MLD Proxy\". I do see that there is a generic disclaimer at the end of Section 3 but the way it is written does not actually seem to cover this usage.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-02-24 18:55:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-10-20 01:28:09-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-04 03:58:21-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-10-20 01:28:09-07:00",
+        "text": "Thank you for the work put into this document. I have to state that I am neither a EVPN expert not a multicast one. Please find below some blocking DISCUSS points (probably easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to St\u00e9phane Litkowski for his shepherd's write-up about the WG consensus. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == The text covers in details how to map MLD/IGMP into BGP routes but does not say a word on how to recreate the MLD/IGMP packets. Should there be any such specification ? Are all multicast group address treated as the same ? I would have appreciated some text about link-local multicast as well as global multicast groups addresses. -- Abstract -- While this point is pretty light for a blocking DISCUSS, let's fix it: - the abstract should also mention MLD and not only IGMP - what are 'the above services' ? -- Section 1 -- In the same vein, is it about IGMP only ? Or does it include MLD as well ? It is really unclear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-04 07:30:25-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-03-04 03:58:21-08:00",
+        "text": "As Martin Vigoureux's term is near its end, I took the liberty to re-evaluate the ballot status of this document and clearing parts of my original block DISCUSS points and many of my original non-blocking COMMENT points. See below this line for updated version ---------------------------------------------- Thank you for the work put into this document. I have to state that I am neither a EVPN expert not a multicast one. Please find below some blocking DISCUSS points (probably easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to St\u00e9phane Litkowski for his shepherd's write-up about the WG consensus. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == The text covers in details how to map MLD/IGMP into BGP routes but does not say a word on how to recreate the MLD/IGMP packets. Should there be any such specification (e.g., in section 4.1) ? -- Section 1 -- In the same vein, is it about IGMP only ? Or does it include MLD as well ? It is really unclear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-07 23:32:53-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-03-04 07:30:25-08:00",
+        "text": "As Martin Vigoureux's term is near its end, I took the liberty to re-evaluate the ballot status of this document and clearing parts of my original block DISCUSS points and many of my original non-blocking COMMENT points. See below this line for updated version ---------------------------------------------- Thank you for the work put into this document. I have to state that I am neither a EVPN expert not a multicast one. Please find below some blocking DISCUSS points (probably easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to St\u00e9phane Litkowski for his shepherd's write-up about the WG consensus. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == -- Section 1 -- In the same vein, is it about IGMP only ? Or does it include MLD as well ? It is really unclear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-07 23:32:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-10-27 18:17:45-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-27 18:17:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-10-28 07:12:14-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-28 07:12:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-10-18 04:40:10-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-18 04:40:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-10-11 16:15:02-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-11 16:15:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-10-07 04:44:52-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-07 04:44:52-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-10-21 07:22:59-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-10-27 23:33:52-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-10-21 07:22:59-07:00",
+        "text": "The IANA Considerations section needs some work: (0) I suggest making each of the actions you want to take (there are four) into their own subsections of this section. (1) \"EVPN Extended Community sub-types registry\" should be \"EVPN Extended Community Sub-Types sub-registry of the BGP Extended Communities registry\", which makes it easier to find. (2) \"Multicast Flags Extended Community\" appears to be a new registry you're creating in the final action here.\u00a0  BCP 26 , for a First Come First Served registry, advises that a change controller column be included.\u00a0 Are you intentionally omitting this here?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-03-22 05:12:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-10-27 23:33:52-07:00",
+        "text": "There's an IPR disclosure on this document.\u00a0 In the shepherd writeup, where a summary of the discussion of it is requested, it simply says \"There are 3 IPRs disclosed\".\u00a0 I'd like to hear that summary, or at least confirm the discussion was had and there were no concerns as a result. The IANA Considerations section needs some work: (0) I suggest making each of the actions you want to take (there are four) into their own subsections of this section. (1) \"EVPN Extended Community sub-types registry\" should be \"EVPN Extended Community Sub-Types sub-registry of the BGP Extended Communities registry\", which makes it easier to find. (2) \"Multicast Flags Extended Community\" appears to be a new registry you're creating in the final action here.\u00a0  BCP 26 , for a First Come First Served registry, advises that a change controller column be included.\u00a0 Are you intentionally omitting this here?\u00a0 Or if this is referring to an existing registry, I wasn't able to find it.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-03-22 05:12:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-10-28 07:15:58-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-28 07:15:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-10-19 13:05:12-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-19 13:05:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-10-28 04:29:06-07:00",
+        "end_reason": "new_position",
+        "start": "2021-10-07 04:44:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-03-23 02:56:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-28 04:29:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9251",
+  "evaluation_end": "2022-03-23 02:56:23-07:00",
+  "evaluation_start": "2021-10-07 04:44:51-07:00"
+}

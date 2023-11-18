@@ -1,0 +1,267 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-05-17 14:47:54-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-17 14:47:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-05-19 16:33:46-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-10-28 15:50:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-19 16:33:46-07:00",
+        "text": "I think we lack sufficient precision (forgive the pun) in how we talk about \"accuracy\" and \"precision\".\u00a0 Are the leafs that claim to specify \"accuracy\" specifying a precision?\u00a0 If so, the precision of a specific measurement, the precision of the measurements that led to the creation of the coordinate frame, or something else?\u00a0 Are they doing so in relative terms (e.g., percentage) or absolute terms (e.g., degrees and meters)?\u00a0 (There are \"units\" directives only for \"height-accuracy\" and not the others.)\u00a0 How can we we say that we'll have 16 fraction-digits of precision for lat/long when the maximum accuracy we can say that a geodetic-system has only gives us 6 fraction-digits for coord-accuracy? When we say that the \"precision of this measurement is indicated by the reference-frame\" is that the same thing as the relevant \"-accuracy\" nodes, or something else?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-28 15:50:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-05-18 02:20:18-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-18 02:20:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-05-14 22:48:05-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-14 22:48:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-05-19 05:13:23-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-06-17 15:09:31-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-19 05:13:23-07:00",
+        "text": "Thank you for the work on this document, and thank you to the shepherd for a very well-written shepherd write up. I have a couple of DISCUSS points related to the IANA section, and some non blocking question. Francesca 1. ----- \u00a0  The allocation policy for this registry is First Come, First Served, \u00a0  [ RFC8126 ] as the intent is simply to avoid duplicate values. FP:  RFC 8126  specifies: \u00a0  When creating a new registry with First Come First Served as the \u00a0  registration policy, in addition to the contact person field or \u00a0  reference, the registry should contain a field for change controller. \u00a0  Having a change controller for each entry for these types of \u00a0  registrations makes authorization of future modifications more clear. \u00a0  See Section 2.3. The current registry dos not contain contact person, nor reference, nor change controller fields. 2. ----- \u00a0  It should be noted that [ RFC5870 ] also creates a registry for \u00a0  Geodetic Systems (it calls CRS); however, this registry has a very \u00a0  strict modification policy.\u00a0 The authors of [ RFC5870 ] have the stated \u00a0  goal of making CRS registration hard to avoid proliferation of CRS \u00a0  values.\u00a0 As our module defines alternate systems and has a broader \u00a0  (beyond Earth) scope, the registry defined below is meant to be more \u00a0  easily modified. FP: Thanks for bringing this up - I want to confirm that we need this registry, and that we are not creating a way to bypass the CRS registration policies by providing a different registry with a more lenient policy.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-17 15:09:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-05-18 08:28:09-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-18 08:28:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-05-17 02:32:38-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-06-22 04:02:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-17 02:32:38-07:00",
+        "text": "Section 8, paragraph 2, discuss: >\u00a0 \u00a0 [EGM08]\u00a0 \u00a0 Pavlis, N.K., Holmes, S.A., Kenyon, S.C., and J.K. Factor, >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"An Earth Gravitational Model to Degree 2160: EGM08.\", >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Presented at the 2008 General Assembly of the European >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Geosciences Union, Vienna, Arpil13-18, 2008, 2008, >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 egm08_wgs84.html>. > >\u00a0 \u00a0 [EGM96]\u00a0 \u00a0 Lemoine, F.G., Kenyon, S.C., Factor, J.K., Trimmer, R.G., >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Pavlis, N.K., Chinn, D.S., Cox, C.M., Klosko, S.M., >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Luthcke, S.B., Torrence, M.H., Wang, Y.M., Williamson, >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  R.G., Pavlis, E.C., Rapp, R.H., and T.R. Olson, \"The >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Development of the Joint NASA GSFC and the National >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Imagery and Mapping Agency (NIMA) Geopotential Model >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  EGM96.\", Technical Report NASA/TP-1998-206861, NASA, >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Greenbelt., 1998, >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  . I question whether these two can be normatively referenced without an explicit DOWNREF check. First, the URLs of both are broken. Second, the cached versions on  archive.org  seem to be web pages that link to a lot of other material, with no indication that anything on these pages is standards material. Are better references available here?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-22 04:02:09-07:00",
+        "text": "I disagree with the approach taken to deal with unstable URLs used in -08 for various normative references (e.g., [EGM08] , [EGM96]), which was to remove the URLs and leave future implementers hoping they can track down the correct spec manually. --- Section 2.3, paragraph 2, comment: >\u00a0 \u00a0 3-dimensional vector value.\u00a0 The components of the vector are >\u00a0 \u00a0 \"v-north\", \"v-east\" and \"v-up\" which are all given in fractional In the formulas in the text rendering of the document, these components are called \"v_{north}\", etc. It would be good to use a single variant in both the text and any formulas. This document uses  RFC2119  keywords, but does not contain the recommended RFC8174  boilerplate. (It contains some text with a similar beginning.) ------------------------------------------------------------------------------- All comments below are about very minor potential issues that you may choose to address in some way - or ignore - as you see fit. Some were flagged by automated tools (via  https://github.com/larseggert/ietf-reviewtool ), so there will likely be some false positives. There is no need to let me know what you did with these suggestions. Section 1, paragraph 2, nit: -\u00a0 \u00a0 might be the location of data center, a rack in an internet exchange -\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^ +\u00a0 \u00a0 might be the location of data center, a rack in an Internet exchange +\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^ Section 2.5, paragraph 1, nit: > development of this module, the question of whether it would support data su >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^^^^^^^^^^^^^^^^^^^^^^^ Wordiness: Consider shortening this phrase. Section 3, paragraph 17, nit: >\u00a0 describes this motion at the the time given by the timestamp. For a >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^^^^^^^ Maybe you need to remove one determiner so that only \"the\" or \"the\" is left. Section 4, paragraph 4, nit: > lts For test \"A.1.2.1\" the YANG geo location object either includes a CRS (\"r >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^^^^^^^^^^^^ This word is normally spelled as one. Section 5.1.4, paragraph 4, nit: > value, the YANG grouping supports the ignore case but not the relative case. >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^^^^^^^^^^ After 'the', do not use a verb. Make sure that the spelling of 'ignore' is correct. If 'ignore' is the first word in a compound adjective, use a hyphen between the two words. Note: This error message can occur if you use a verb as a noun, and the word is not a noun in standard English. Section 7, paragraph 6, nit: > e than standard configuration. Some of the readable data nodes in this YANG m >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^^^^^^^^^^ If the text is a generality, 'of the' is not necessary. \"Appendix A.\", paragraph 3, nit: > ure 2: Example YANG module using geo location. Below is the YANG tree for the >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^^^^^^^^^^^ This word is normally spelled as one. \"Appendix A.\", paragraph 7, nit: >\u00a0 Figure 3: Example XML data of geo location use. Appendix B. Acknowledgments >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^^^^^^^^^^^ This word is normally spelled as one. These URLs in the document did not return content:  *  http://earth-info.nga.mil/GandG/wgs84/gravitymod/egm2008/egm08_wgs84.html  *  http://earth-info.nga.mil/GandG/publications/tr8350.2/wgs84fin.pdf  *  https://www.rfc-editor.org/info/rfcXXXX These URLs in the document can probably be converted to HTTPS:  *  http://www.iau.org  *  http://docs.opengeospatial.org/is/12-007r2/12-007r2.html  *  http://portal.opengeospatial.org/files/?artifact_id=27810",
+        "type": "Abstain"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-05-18 11:39:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-18 11:39:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-05-20 00:47:30-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-20 00:47:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-05-13 07:15:47-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-05-18 15:09:26-07:00",
+        "end_reason": "new_position",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-07-15 08:35:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-05-18 15:09:26-07:00",
+        "text": "** Section 3.\u00a0 leaf astronomical-body.\u00a0 The content of this field appears to be \"An astronomical body as named by the International Astronomical Union (IAU) or according to the alternate\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 system if specified.\"\u00a0 What\u2019s the normative reference to the IAU\u2019s list of astronomical bodies.\u00a0 Listed here is \u201c https://www.iau.org \u201d which is an unstable reference to a website with changing content.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-15 08:35:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-11-04 08:56:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-05-13 07:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9179",
+  "evaluation_end": "2021-11-04 08:56:52-07:00",
+  "evaluation_start": "2021-05-13 07:15:47-07:00"
+}

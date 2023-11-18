@@ -1,0 +1,251 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-09 17:47:46-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 17:47:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-08-28 11:36:48-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-28 11:36:48-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-07 15:06:50-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-27 22:27:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-07 15:06:50-07:00",
+        "text": "Thanks for this document; it's generally well-written and the changes since 7049 are helpful.\u00a0 I do have a few points that may need discussion before publication, though. Let's discuss whether the framing of tag number 35 for \"regular expressions that are roughly in [PCRE] form or a version of the JavaScript regular expression syntax\" meets the interoperability expectations for Internet Standard status (bearing in mind that we are defining a data format and not a protocol).\u00a0 I note that it is okay to leave the codepoint allocated with the current meaning and the previous document as its reference, but decline to discuss it in the document going for STD (we are in the process of doing that with COSE countersignatures at the moment). The example in Section 5 of \"the item is a map that has byte strings for keys and contains at least one pair whose key is 0xab01\" seems to be in violation of the definition of a valid map, since applications are not allowed to rely on invalid behavior.\u00a0 (That is, the implied \"more than one pair whose key is 0xab01\" would be invalid.) I think that the new deterministic encoding rules for sorting map keys should be clear about whether \"no content\" sorts before or after \"content present\" -- that is, how 0x10 and 0x1020 are ordered when the 0x10 byte is identical and we have to compare\u00a0 with 0x20. The discussion in Appendix C suggests that C (programming language) implementations all use two's-complement representation of signed integers; this requirement is present in POSIX but not C itself (I verified this for C99 and C11). Additionally, the encode_sint() function (also Appendix C) relies on C implementation-defined behavior while right-shifting a signed integer. The C decode_half() function in Appendix D assumes that 'int' is wider than 16 bits (since assigning a value to an int16_t variable when the value is not representable in int16_t incurs implementation-defined behavior).\u00a0 Given that this spec is specifically targetting constrained devices, it's not clear that such an assumption is justified.\u00a0 (It also right shifts a signed integer, incurring the same implementation-defined behavior mentioned above.\u00a0 (The bitwise AND against 0x8000 is also problematic for an int16_t.))",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-27 22:27:05-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-09 06:03:11-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 06:03:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-09 07:32:57-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 07:32:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-08 16:57:56-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-08 16:57:56-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-10 05:26:35-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-10 05:26:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-09-09 10:52:34-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 10:52:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-09-10 09:11:44-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-10 09:11:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-09-09 04:55:25-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 04:55:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-08 14:55:19-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-08 14:55:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-09 14:11:59-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-28 11:36:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-30 10:05:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 14:11:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8949",
+  "evaluation_end": "2020-09-30 10:05:29-07:00",
+  "evaluation_start": "2020-08-28 11:36:47-07:00"
+}

@@ -1,0 +1,347 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-08-10 09:11:31-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-08-10 09:11:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-08-11 15:08:20-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-08-11 15:08:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-08-11 06:29:05-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-08-12 07:02:20-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-08-11 06:29:05-07:00",
+        "text": "Thank you for the work put into this document. Special thanks to Ole Tr\u00f8an for his shepherd's write-up, which contains a good summary of the WG consensus and the SW (?) implementation status. Thanks as well to Bob Halley for his INT directorate review. Please find below some blocking DISCUSS points, some non-blocking COMMENT points (but replies would be appreciated). I also agree with DISCUSS points by other ADs: - Lars's one about the size and usefulness of FlowMonID (see my very similar point) - Roman's one about the inconsistencies about limited domain (from my point of view, this should not be limited to a single domain) All in all, I strongly suggest to change the intended status of this document to 'experimental' as this document builds on experimental RFCs. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == This discussion already happened in the 6MAN WG but I still have to be convinced that hop-by-hop is a good idea at all. The fate of packets with HbH is unknown at best and, IMHO, this is a wrong use of HbH because the forwarding/processing of packets is NOT influenced at all by the AltMark option. What is required is a simple 'marking/coloring', which could be at any place in a packet (including destination option). The only benefit of HbH is its location just after the IPv6 header. After all, existing devices can measure and generate IPFIX records in hardware/fastpath by inspecting at the bare minimum the 5-tuple and many devices can also parse extension headers in the fast path (of course not processing HbH in this case). I.e., finding the marking in the Dest Option is probably much easier and doable in current hardware rather than using HbH as HbH forces a software processing. -- Section 2 -- \u00a0 \"In the end, [ I-D.fioccola-v6ops-ipv6-alt-mark ] demonstrated that a \u00a0  new Hop-by-Hop or a new Destination Option was the best approach.\" The above draft has not been published and is even expired for 2 years now... so please remove the 'demonstrated' as there is no proof at all ;-) -- Section 4 -- Please remove \"the destination node removes it\" as there is no reason to remove it. Extension headers are usually not presented / used by upper layers anyway.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-10-07 02:25:24-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-08-12 07:02:20-07:00",
+        "text": "Thank you for the work put into this document. As Brian Carpenter kindly reminded me that an Area Director may not put back a previous argument when the WG consensus was to ignore it, I am updating this ballot by moving the generic DISCUSS as a COMMENT. The other two DISCUSS points remains blocking ones but Giuseppe have already addressed them over email, I am clearing the DISCUSS position as soon as the revised I-D is posted. Special thanks to Ole Tr\u00f8an for his shepherd's write-up, which contains a good summary of the WG consensus and the SW (?) implementation status. Thanks as well to Bob Halley for his INT directorate review. Please find below some blocking DISCUSS points, some non-blocking COMMENT points (but replies would be appreciated). I also agree with DISCUSS points by other ADs: - Lars's one about the size and usefulness of FlowMonID (see my very similar point) - Roman's one about the inconsistencies about limited domain (from my point of view, this should not be limited to a single domain) All in all, I strongly suggest to change the intended status of this document to 'experimental' as this document builds on experimental RFCs. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == -- Section 2 -- \u00a0 \"In the end, [ I-D.fioccola-v6ops-ipv6-alt-mark ] demonstrated that a \u00a0  new Hop-by-Hop or a new Destination Option was the best approach.\" The above draft has not been published and is even expired for 2 years now... so please remove the 'demonstrated' as there is no proof at all ;-) -- Section 4 -- Please remove \"the destination node removes it\" as there is no reason to remove it. Extension headers are usually not presented / used by upper layers anyway.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-07 02:25:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-07-22 17:03:20-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-22 17:03:20-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-07-13 08:39:48-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-13 08:39:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-25 11:15:47-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-25 11:16:11-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-06-25 11:15:47-07:00",
+        "text": "There are a few points I'd like to DISCUSS before moving this forward. The first should be easy to address: 1. The number of authors (6) exceeds the maximum recommended by the RFC Editor (5), see  RFC 7322  \u00a74.1.1. Has this exception already been cleared with the AD? I see no mention of it in the shepherd writeup. (Speaking of the shepherd writeup, and this is a comment for the shepherd and not the authors and is only an aside, not something that needs to be addressed in the DISCUSS, the writeup answer to question 1 is incomplete. ) The second is substantive rather than administrative, and may require more discussion: 2. From what I understand of the rules about IPv6 extension header insertion (viz, only end nodes can do it), plus the assumptions stated in \u00a72.1.1 about the extent of the \"controlled domain\", it would seem a natural consequence\u00a0 that ipv6-alt-mark is only applicable to networks where user traffic enters and exits a tunnel at the perimeter of the \"controlled domain\". I don't see this stated plainly anywhere in the document. If I'm correct this seems like an important characteristic to spell out. If I'm incorrect, I'd appreciate a discussion of where I went wrong. I touch on various aspects of this overall point in some of my comments as well. Finally, although I haven't placed any of the further comments in the DISCUSS section, I noted that some of them are fairly fundamental so I would appreciate a thorough reply to the comments as well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-06-25 11:16:41-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-06-25 11:16:11-07:00",
+        "text": "There are a few points I'd like to DISCUSS before moving this forward. The first should be easy to address: 1. The number of authors (6) exceeds the maximum recommended by the RFC Editor (5), see  RFC 7322  \u00a74.1.1. Has this exception already been cleared with the AD? I see no mention of it in the shepherd writeup. (Speaking of the shepherd writeup, and this is a comment for the shepherd and not the authors and is only an aside, not something that needs to be addressed in the DISCUSS, the writeup answer to question 1 is incomplete.) The second is substantive rather than administrative, and may require more discussion: 2. From what I understand of the rules about IPv6 extension header insertion (viz, only end nodes can do it), plus the assumptions stated in \u00a72.1.1 about the extent of the \"controlled domain\", it would seem a natural consequence\u00a0 that ipv6-alt-mark is only applicable to networks where user traffic enters and exits a tunnel at the perimeter of the \"controlled domain\". I don't see this stated plainly anywhere in the document. If I'm correct this seems like an important characteristic to spell out. If I'm incorrect, I'd appreciate a discussion of where I went wrong. I touch on various aspects of this overall point in some of my comments as well. Finally, although I haven't placed any of the further comments in the DISCUSS section, I noted that some of them are fairly fundamental so I would appreciate a thorough reply to the comments as well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-07-12 13:39:30-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-25 11:16:41-07:00",
+        "text": "There are a few points I'd like to DISCUSS before moving this forward. The first should be easy to address: 1. The number of authors (6) exceeds the maximum recommended by the RFC Editor (5), see  RFC 7322  \u00a74.1.1. Has this exception already been cleared with the AD? I see no mention of it in the shepherd writeup. (Speaking of the shepherd writeup, and this is a comment for the shepherd and not the authors and is only an aside, not something that needs to be addressed in the DISCUSS, the writeup answer to question 1 is incomplete.) The second is substantive rather than administrative, and may require more discussion: 2. From what I understand of the rules about IPv6 extension header insertion (viz, only end nodes can do it), plus the assumptions stated in \u00a72.1.1 about the extent of the \"controlled domain\", it would seem a natural consequence\u00a0 that ipv6-alt-mark is only applicable to networks where user traffic enters and exits a tunnel at the perimeter of the \"controlled domain\". I don't see this stated plainly anywhere in the document. If I'm correct this seems like an important characteristic to spell out. If I'm incorrect, I'd appreciate a discussion of where I went wrong. I touch on various aspects of this overall point in some of my comments as well. Finally, although I haven't placed any of the further comments in the DISCUSS section, I note that some of them are fairly fundamental so I would appreciate a thorough reply to the comments as well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-12 13:39:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-08-06 02:36:00-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-10-26 07:05:24-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-08-06 02:36:00-07:00",
+        "text": "Section 2.1. , paragraph 4, discuss: >\u00a0 \u00a0 Therefore, the IPv6 application of the Alternate Marking Method MUST >\u00a0 \u00a0 NOT be deployed outside a controlled domain. That's not what Section 6 says, which allows use outside a controlled domain (across the Internet) if protection is applied? Section 2.1. , paragraph 4, discuss: >\u00a0 \u00a0 Some scenarios may imply that the Alternate Marking Method is applied >\u00a0 \u00a0 outside a controlled domain, either intentionally or unintentionally, >\u00a0 \u00a0 but in these cases, IPsec authentication and encryption MUST be used. How can one require use of IPsec for an unintentional use outside of a controlled domain? If the header leaks by accident, surely it's unreasonable to expect that IPsec had been set up to catch any and all such possible leakage? Also (as a comment), if IPsec is required by this document, it needs to be normatively cited. Section 5.3.1. , paragraph 2, discuss: >\u00a0 \u00a0 It is important to note that if the 20 bit FlowMonID is set >\u00a0 \u00a0 independently and pseudo randomly there is a chance of collision. >\u00a0 \u00a0 Indeed, by using the well-known birthday problem in probability >\u00a0 \u00a0 theory, if the 20 bit FlowMonID is set independently and pseudo >\u00a0 \u00a0 randomly without any additional input entropy, there is a 50% chance >\u00a0 \u00a0 of collision for 1206 flows.\u00a0 So, for more entropy, FlowMonID can >\u00a0 \u00a0 either be combined with other identifying flow information in a >\u00a0 \u00a0 packet (e.g. it is possible to consider the hashed 3-tuple Flow >\u00a0 \u00a0 Label, Source and Destination addresses) or the FlowMonID size could >\u00a0 \u00a0 be increased. It seems odd to define a dedicated FlowMonID, but make it so short that it is basically not usable in many realistic scenarios. If other parts of the packet headers need to be inspected to disambiguate FlowMonID collisions, this (1) should at least be more carefully specified in this document (since every node will need to do it in the same way) but (2) probably argues for a much longer FlowMonID - why not make it 64 bits or longer? The IANA review of this document seems to not have concluded yet; I am holding a DISCUSS for IANA until it has.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-10-26 07:05:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-08-09 17:11:16-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-08-10 17:01:25-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-08-09 17:11:16-07:00",
+        "text": "I have some concerns about this approach, plus some points of confusion that hopefully will clear up quickly. I support Lars's first two DISCUSS points. (1) I am unclear about the relationship between limited domains and the prohibition against modifying either option before the destination. Is the intent that (a) this is only used for traffic that begins and ends in the domain; (b) user traffic is encapsulated with an outer IPv6 header that is removed prior to domain exit; or (c) the \"destination\" actually means the egress point from the domain? (2) Relatedly, if the source nodes are\u00a0 user-generated packets, how is this in practice a limited domain? Source nodes have enormous power to degrade the measurement by sending packets that fill the entire FlowMon space with only 1M packets, which not only consumes router resources but also pollutes every single measurement in the domain.   (3) The draft informatively references the (Experimental) RFCs 8321 and 8889 and covers some of the same ground, but as a Proposed Standard. Is part of the purpose here to update these RFCs? For other measurement techniques, we've had a generic measurement draft in IPPM and encapsulations in the appropriate protocol-specific groups like 6man. Why was that approach not taken here? Will future encapsulations of alternate marking refer to this one normatively on how to conduct the measurement? (4) Are there any restrictions on FlowMon IDs? Need these be pseudorandom, or can they encode information in the clear? (5) I don't understand the basic motivation for using HBH options if these can result in the packet being diverted to the slow path on intermediate nodes. This seems like a major drawback for a delay measurement! (6) Sec 5.1: When using timer-based batches, I gather you use times well in excess of potential reordering. If using a counter-based method, how does the measurement account for potential reordering? There could easily be a very large instantaneous burst followed by a path change that lowered the latency.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-03-31 08:45:23-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-08-10 17:01:25-07:00",
+        "text": "I have some concerns about this approach, plus some points of confusion that hopefully will clear up quickly. I support Lars's first two DISCUSS points. (edited) (1) The precise use case is unclear to me. An end-user (not in the controlled domain)\u00a0 generates an IPv6 packet, and I gather some sort of middlebox then inserts the header if it meets some criteria (perhaps that the destination IP is also within the domain). If this is correct, I would like to check with the experts if a non-endpoint inserting a header is compliant with  RFC8200 . Also, this should be written down somewhere. If not correct, I have many more questions. (2) The draft informatively references the (Experimental) RFCs 8321 and 8889 and covers some of the same ground, but as a Proposed Standard. Is part of the purpose here to update or obsolete these RFCs?  (3) Are there any restrictions on FlowMon IDs? Need these be pseudorandom, or can they encode information in the clear? (4) Sec 5.1: When using timer-based batches, I gather you use times well in excess of potential reordering. If using a counter-based method, how does the measurement account for potential reordering? There could easily be a very large instantaneous burst followed by a path change that lowered the latency.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-04-28 09:09:22-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-03-31 08:45:23-07:00",
+        "text": "Thanks for addressing most of my DISCUSS points. I would like an unambiguous statement in Section 3.1 that the FlowMonID MUST appear to be random. There is still language that suggests it might not be: (e.g., \"The disambiguation issue is more visible when the FlowMonID is pseudorandomly generated...\". If it is anything less than a MUST, there needs to be additional Security Considerations to reflect the impact of not doing so.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-04-28 09:09:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-08-12 06:59:32-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2021-08-12 06:59:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-08-11 23:17:36-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-08-12 07:28:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-08-11 23:17:36-07:00",
+        "text": "A procedural question about the IPR disclosures, which I expect we can clear up during the telechat in a few hours: Though there have been two IPR disclosures on this document, the shepherd writeup conspicuously claims there has been no discussion about either.\u00a0 For at least one of them the licensing terms indicate a fee may apply.\u00a0 As this is seeking Proposed Standard status, I'd like to inquire about this.\u00a0 In particular, Section 4 of  BCP 79  says: \u00a0 \u00a0 \u00a0 A working group may take into \u00a0 \u00a0 \u00a0 consideration the results of this procedure in evaluating the \u00a0 \u00a0 \u00a0 technology, and the IESG may defer approval when a delay may \u00a0 \u00a0 \u00a0 facilitate obtaining such assurances. I note the \"may\", but still it feels like an important step was missed here.\u00a0 So: Was there an implicit conclusion that the IPR claims don't hinder the technology?\u00a0 Or did nobody check it out?\u00a0 Or did the WG decide consciously not to worry about it?\u00a0 Or is it actually fine to just ignore them?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-08-12 07:28:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-09-12 03:42:40-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-09-12 03:42:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-08-09 13:48:45-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-01-10 13:03:25-08:00",
+        "end_reason": "position_updated",
+        "start": "2021-08-09 13:48:45-07:00",
+        "text": "Please provide consistent guidance on where this methodology can be used.\u00a0 Consider: (a) Section 2.1. \u201cTherefore, the IPv6 application of the Alternate Marking Method MUST NOT be deployed outside a controlled domain.\u201d (b) Section 2.1.\u00a0 \u201cSome scenarios may imply that the Alternate Marking Method is applied outside a controlled domain, either intentionally or unintentionally, but in these cases, IPsec authentication and encryption MUST be used.\u201d (c) Section 6. \u201cThis document aims to apply a method to perform measurements that does not directly affect Internet security nor applications that run on the Internet.\u201d (d) Section 6. \u201cAs stated above, the precondition for the application of the Alternate Marking is that it MUST be applied in specific controlled domains, thus confining the potential attack vectors within the network domain.\u00a0  (e) Section 6. \u201cIn this case, the user, aware of the kind of risks, may still want to use Alternate Marking for telemetry and test purposes but the inter-domain links need to be secured (e.g., by IPsec) in order to avoid external threats.\u00a0 For these specific scenarios the application of the Alternate Marking Method outside a controlled domain is possible but IPsec through AH\u00a0 \u00a0 (Authentication Header) or ESP (Encapsulating Security Payload) MUST be used.\u201d (a) and (d) seem to very clear that this approach MUST only be used in a controlled domain.\u00a0 However (b) and (d) seem to suggest that this prohibition is at best a \u201cSHOULD\u201d.\u00a0 If (b) and (d) are true, than (c) not affecting applications on the internet might not be true. ** Section 6.\u00a0 Thanks for mentioning \u201cAt the management plane, attacks can be set up by misconfiguring or by maliciously configuring AltMark Option.\u201d\u00a0 Please be clearer on what these attacks could look like.\u00a0 Would these include: -- using the FlowMonId as a tracking identifier? -- (Likely possible at both the data and management plane would be a) covert channel between the sender and an on-path observer?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-01-10 13:03:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-08-11 14:21:36-07:00",
+        "end_reason": "new_position",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-05-17 16:01:28-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-08-11 14:21:36-07:00",
+        "text": "I must be missing something fairly fundamental here. \"As stated above, the precondition for the application of the \u00a0  Alternate Marking is that it MUST be applied in specific controlled \u00a0  domains, thus confining the potential attack vectors within the \u00a0  network domain.\u00a0 [ RFC8799 ] analyzes and discusses the trend towards \u00a0  network behaviors that can be applied only within a limited domain. \u00a0  This is due to the specific set of requirements especially related to \u00a0  security, network management, policies and options supported which \u00a0  may vary between such limited domains.\u00a0 A limited administrative \u00a0  domain provides the network administrator with the means to select, \u00a0  monitor and control the access to the network, making it a trusted \u00a0  domain.\u00a0 In this regard it is expected to enforce policies at the \u00a0  domain boundaries to filter both external packets with AltMark Option \u00a0  entering the domain and internal packets with AltMark Option leaving \u00a0  the domain.\u00a0 Therefore the trusted domain is unlikely subject to \u00a0  hijacking of packets since packets with AltMark Option are processed \u00a0  and used only within the controlled domain.\" The above says that this must only be done in a limited/controlled domain, and that operators are: \"expected to enforce policies at the domain boundaries to filter both external packets with AltMark Option entering the domain and internal packets with AltMark Option leaving the domain.\". The \"only do this in in limited domain\" seems to simply punt on the security concerns / considerations. What is an operator supposed to do if their device doesn't understand this option? Are you really suggesting that everyone needs to do though and update edge firewall filters everywhere to block this? What happens when a filter is unintentionally missed? Or when the device cannot filter N headers deep?  [edit firewall family inet6 filter altmark term demo] wkumari@rtr2.pa o# set from extension-header ? Possible completions: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Range of values \u00a0 [\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Open a set of values \u00a0 ah\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Authentication header \u00a0 any\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Any extension header \u00a0 dstopts\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Destination options \u00a0 esp\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Encapsulating security payload \u00a0 fragment\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Fragment \u00a0 hop-by-hop\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Hop by hop options \u00a0 mobility\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Mobility \u00a0 routing\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Routing Yes, many networks use automation to apply filters, but it is still unreasonable to force operators to have to keep updating and deploying new filters when new protocols are created.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-05-17 16:01:28-07:00",
+        "text": "I'm changing my DISCUSS to an Abstain (a non-blocking position); the most recent version does address some of my concerns, but not all. I'm clearing my DISCUSS because I don't seem to have been able to adequately describe my concerns and it feels obstructionist to continue to hold it. I'd also like to apologize to the WG, authors, and Giuseppe in particular; Giuseppe has been sending me mail and (politely) chasing me to respond and let him know if his changes have addressed my concerns, and I've been sufficiently frustrated by my inability to express my concerns concisely that I've been ignoring it and not responding to him. Apologies again.",
+        "type": "Abstain"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-09-27 09:04:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-22 17:03:19-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9343",
+  "evaluation_end": "2022-09-27 09:04:14-07:00",
+  "evaluation_start": "2021-07-22 17:03:19-07:00"
+}

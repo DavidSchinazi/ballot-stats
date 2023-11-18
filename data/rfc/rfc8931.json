@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-19 13:46:27-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-19 13:46:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-02-18 04:23:48-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-18 04:23:48-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-02-19 12:39:46-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-19 12:39:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-02-19 18:14:16-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-19 18:14:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-02-18 12:20:21-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-18 12:20:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-18 14:19:46-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-17 20:53:45-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-18 14:19:46-08:00",
+        "text": "In Section 2.3 we refer to the datagram_tag plus layer-2 sender address as being \"a globally unique identifier for the datagram\", but I think this can only hold within some time-bounded window (e.g., the lifetime of the packet), since the tag space is finite and reuse somewhat inevitable.\u00a0 [The simplest way to resolve this is probably to just remove the definition from this document and refer to draft-ietf-6lo-minimal-fragment  for definitions.] I think we should be more clear about whether a \"FULL bitmap\" always has 32 bits set to one, or if \"merely\" having as many bits as the sender sent fragments set to one also counts as \"FULL\".\u00a0 The current text seems to invite different interpretations by implementations.\u00a0 (If FULL does mean all 32 bits, then the semantics of the other case seem unclear to me.) What's the transition/backwards-compatibility story?\u00a0 That is, how does a sender know that all nodes on the path support the RFRAG dispatch types, and what happens if they are sent anyway and get to a node that doesn't implement them? I have grave misgivings about allowing a packet (as identified by sender and tag) to be refragmented by the sender so that a single fragment sequence number is used for fragments of different lengths.\u00a0 We do not seem to provide a mechanism to distinguish which variant of that fragment is being ack'd, which could lead to disagreement between sender and receiver as to whether a full packet is reconstructed. Brainstorming, it might be possible to allow such refragmenting at the sender by using a Fragment_Size of zero to indicate \"this fragment is superseded\" and allocating new sequence number for all its components. (I didn't attempt to do an exhaustive check on whether that proposal is flawed and Fragment_Size of zero already has some existing semantics that would be in conflict.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-17 20:53:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-02-19 07:19:14-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-19 07:19:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-02-19 05:06:48-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-19 05:06:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-02-18 07:20:21-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-18 07:20:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-02-19 15:44:26-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-19 15:44:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-19 05:55:15-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-22 11:09:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-19 05:55:15-08:00",
+        "text": "Thanks for this well written document, however, I have a couple points below that need further clarification, all mostly related to congestion control. From an editorial point of view most of this is discussed either in the intro text of section 6, then some part in 7.1, and some in the appendix C. I would really recommend you to instead have a separate section that much clearer states what should be done by default (probably no dynamically window but a small fixed window with maybe size of 1) and what could be don as further optimisation, and also to discuss the parameter/variables there before the algorithms are discussed. And a bit of a provoking question: wouldn't it be easier to just use a reliable transport protocol on top? If this mechanism is intended to be used over a short path with a few hops only (in a local network), I think this should be stated more clearly at the beginning of the document.  In the appendix you state this: \" In addition, deploying such a mechanism requires \u00a0  that the end-to-end transport is aware of the delivery properties of \u00a0  the underlying LLN,...\" But I'm not sure what you mean...? Can you further explain? 1) Sec 6: \"Upon exhaustion of the retries the \u00a0  sender may either abort the transmission of the datagram or retry the \u00a0  datagram from the first fragment with an 'X' flag set in order to \u00a0  reestablish a path and discover which fragments were received over \u00a0  the old path in the acknowledgment bitmap. \" I'm not sure about this \"or\". Why should the first fragment be more successful than any other which requests an ACK? Also if you really want to keep this condition, you need to specify it better. How often do you retry? I guess you need to set the PTO again...? Further the RTO should also implement an exponential back-off. 2) sec 6.3: \"Upon an acknowledgment with a NULL bitmap, the sender endpoint \u00a0  MUST abort the transmission of the fragmented datagram with one \u00a0  exception: In the particular case of the first fragment, it MAY \u00a0  decide to retry via an alternate next hop instead.\" What's mean with \"In the particular case of the first fragment\"? And does this mean it should retry only with the first fragment or the whole transmission. However, if this signal is from the receiving endpoint why should that endpoint change it mind only if a different path is used? If the assumption is that this NULL bitmap is sent by an intermediate node? However, then it would make sense to\u00a0 rather signal this information explicitly (e.g. using a flag). 3) Sec 7.1 (and to some extend sec 6) \"\u00a0  OptWindowSize:\u00a0 The OptWindowSize is the value for the Window_Size \u00a0 \u00a0 \u00a0 that the sender should use to start with.\u00a0 It is greater than or \u00a0 \u00a0 \u00a0 equal to MinWindowSize.\u00a0 It is less than or equal to \u00a0 \u00a0 \u00a0 MaxWindowSize.\u00a0 The Window_Size should be maintained below the \u00a0 \u00a0 \u00a0 number of hops in the path of the fragment to avoid stacking \u00a0 \u00a0 \u00a0 fragments at the bottleneck on the path.\u00a0 If an inter-frame gap is \u00a0 \u00a0 \u00a0 used to avoid interference between fragments then the Window_Size \u00a0 \u00a0 \u00a0 should be at most on the order of the estimation of the trip time \u00a0 \u00a0 \u00a0 divided by the inter-frame gap.\" This needs normative language and more explanation. I recommend to even say that if no congestion control (as discussed in the appendix) is applied, the Window MUST be set to 1. Further, the assumption that the window can or should be set to (at maximum) the number of hop does seem correctly to me. No matter how many hops there are packets are only queued at the bottleneck (the link where the current rate is smaller than the sending rate) and it depends on the sending rate of the bottleneck link how many packets need to be queued. This is completely independent of the number of hops. Further, even if that would be true, as long as this document does not discuss also away to estimate or know the number of hops, this advise would unfortunately be useless... Further I don't think pointing to  rfc6298  for RTT calculation is sufficient (as done in the appendix).  rfc6298  assume frequent ACKs and a reasonably large window, which is both not the case here. All in all, any window adjustments itself are not described at all. What should be done when a congestion marking is received? How does the window need to be adjusted based on an RTO? When should the window be increased again? And how much? 4) Sec 7.1.: Inline with the TSV-ART review (Thanks Collin!), the parameters need more guidance. Especially for he number of retries it should be possible to recommend a default value (e.g. 3) and it would be good to also give an upper limits (MUST NOT be larger than X). Similar for the window size: there should be also at least a default value (see comment above). And further the RTO needs further explanation about how to find a reasonable value. If the RTO is configured (and not estimated dynamically) e.g. it could be set to 3x the maximum expected RTT in the respective network. And it would be even better to provide a minimum default (initial) value. Not that TCP is also designed to work on a large variety of timescales and a minimum initial value of 1s is seen as safe for all Internet scenarios. It's really important to also provide some recommendations like this here. 5) Sec 7.2: \"The management system should monitor the number of retries and of ECN \u00a0  settings that can be observed from the perspective of both the sender \u00a0  and the receiver, and may tune the optimum size of Fragment_Size and \u00a0  of Window_Size, OptFragmentSize, and OptWindowSize, respectively, at \u00a0  the sender.\" This does not see seem correct, as OptFragmentSize and OptWindowSize are the initial values which are configured and therefore should not be changed dynamically. Only Fragment_Size and Window_Size are changes. Further the network should also normatively state somewhere that Fragment_Size and Window_Size MUST not grow above the configured max value. That seems obvious but it's better to be explicit and use normative language respectively. 6) Further sec 7.2 says: \"The inter-frame gap is another tool that can be \u00a0  used to increase the spacing between fragments of the same datagram \u00a0  and reduce the ratio of time when a particular intermediate node \u00a0  holds a fragment of that datagram.\" However, inter-frame gap is a configuration parameter and this is the first time that adapting it dynamically is mentioned here. If you want to adapt it dynamically you need to add more information.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-22 11:09:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-18 05:06:31-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-18 05:06:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-02-12 06:51:18-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-12 06:51:18-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-02-19 13:48:58-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-12 06:51:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-06 12:22:47-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-19 13:48:58-08:00",
+        "text": "[ Be ye not afraid - this should be easy to address.]  \"datagram_size: The size of the datagram in its Compressed Form before it is fragmented. The datagram_size is expressed in a unit that depends on the MAC layer technology, by default a byte.\" and: \"Fragment_Size:\u00a0 10-bit unsigned integer; the size of this fragment in a unit that depends on the MAC layer technology.\u00a0 Unless overridden by a more specific specification, that unit is the octet, which allows fragments up to 1024 bytes.\" I spent quite a while going though the document, looking at the 13 places where you use 'byte' and 3 where you use 'octet', trying to figure out if there is a reason that different terms are used. Normally I'd just say \"meh, these are synonyms\" and ignore it, but in this particular specification (because of the \"by default\" / \"Unless overridden\") I think it is actually important.... Can you standardize on one of the other, or provide more explanatory text if there is a reason?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-24 06:54:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-06 12:22:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8931",
+  "evaluation_end": "2020-03-24 06:54:41-07:00",
+  "evaluation_start": "2020-02-12 06:51:17-08:00"
+}

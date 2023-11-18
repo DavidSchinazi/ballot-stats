@@ -1,0 +1,227 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-11-30 21:44:18-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-30 21:44:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-12-01 02:24:14-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-12-01 02:24:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-11-28 18:24:10-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-28 18:24:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-23 12:03:07-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-11-30 10:18:20-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-30 10:18:20-08:00",
+        "text": "I see no flaws in this Informational document that rise to the level of a DISCUSS, but its current form I don't think it is a particularly useful contribution to the RFC series. It would need a major revision to reach that level, in my opinion. Broadly speaking, the document describes a number of wireless use cases, but doesn't create a unified framework of requirements associated with them, certainly doesn't make the case that a detnet-style solution is appropriate. Here is a non-exhaustive list of examples: (2.3) \"It is necessary to keep latency, time and data overhead of new aeronautical datalinks at a minimum.\" 'At a minimum' is not a real requirement: these things are always traded off against other design considerations. A completely integrated, bespoke protocol stack with custom hardware all along the path is always the way to get \"minimum\" latency, but this is impossible in practice. Instead, there should be a number attached to the metric, or at least \"similar latency to interactive voice\", or whatever. (3.4) \"The network infrastructure must support heterogeneous traffic, with very different critical requirements. Thus, flow isolation must be provided.\" Individual identification of flows doesn't follow at all. The whole concept of Diffserv is to provide differentiated services without identifying individual flows. (6.4.1) \"But note that in most of these scenarios, part of the communication path is not wireless and DetNet mechanisms cannot be applied easily (e.g., when the public Internet is involved), and therefore in these cases, reliability is the critical requirement.\" If I read this correctly, it's saying \"low latency would be nice but we can't actually guarantee it\". Reliability without hard latency bounds already has a solution: TCP. (8.4) \"When a given service is decomposed into functions -- hosted at different robots -- chained, each link connecting two given functions would have a well-defined set of requirements (latency, bandwidth and jitter) that must be met.\" For this use case, you throw up your hands and say \"requirements depend on the application,\" which is the most banal statement possible. This is indicative of the problem that this use case document is identifying market segments rather than technical requirements that will drive the work. As it stands, this use case provides zero motivation for RAW rather than existing protocol solutions. (9.4) \"The inter-network needs to operate in damaged state (e.g. during an earthquake aftermath, heavy weather, wildfire, etc.). In addition to continuity of operations, rapid restore is a needed characteristic.\" Robustness to infrastructure damage is one of the original design requirements of the Internet, and does not motivate new work. ... and so on. A much better approach to this document would articulate specific requirements levied on the network that are not well served by existing standards, and then tie those shortfalls into specific use cases.",
+        "type": "Abstain"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-12-01 00:19:38-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-01 00:19:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-11-29 16:45:48-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-29 16:45:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-11-28 09:23:23-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-28 09:23:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-11-17 09:22:44-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-03-15 16:30:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-11-17 09:22:44-08:00",
+        "text": "Section 12 states the situation accurately \u2013 \u201cEach of the potential RAW use-cases will have security considerations from both the use-specific perspective.\u201d\u00a0 Where are these security and privacy considerations for these uses cases discussed?\u00a0 Are these in scope to solve for RAW?\u00a0 A select list to review would be: ** Section 3.*. Per the amusement park use case, what are the physical location tracking and surveillance considerations? ** Section 7.*.\u00a0 Per the vehicle platooning use case, what are the physical location tracking privacy considerations? ** Section 8.*. Per the edge robotics use case, what are the privacy considerations of the video surveillance? ** Section 9.*.\u00a0 Per the ambulance use case, what are the security considerations around exchanging health care information over a wireless WAN? A clearer distinction of what is to be addressed at the protocol level, and what seems like an application consideration is needed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-15 16:30:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-04-19 12:44:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-23 12:03:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9450",
+  "evaluation_end": "2023-04-19 12:44:49-07:00",
+  "evaluation_start": "2022-10-23 12:03:07-07:00"
+}

@@ -1,0 +1,423 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-13 17:04:23-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-23 15:21:39-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-13 17:04:23-07:00",
+        "text": "Thanks to everyone who has worked on this document. I generally agree with Benjamin's discuss points, and in particular agree with his comment that it's kind of hard to figure out how all these pieces work together. I have an additional issue that is somewhat related to some of the points he raised, but which is (I think) not completely covered. I'm really confused about what the purported privacy properties of this protocol are. In section 4.3 (which I *think* talks about globally-routable IP addresses, although this is a bit unclear), the document says: \u00a0  such an IID SHOULD guarantee a stable IPv6 address \u00a0  because each data link connection is uniquely identified by the pair \u00a0  of DSAP and SSAP included in the header of each LLC PDU in NFC (Aside: this \"should\" is a simple statement of fact, not a described behavior of the protocol, and so the use of RFC-2119-style all-caps is not appropriate.) The presence of \"a stable IPv6 address\" inherently implies the ability to track devices. Then, in section 7, I find the following text: \u00a0  ...the short address of \u00a0  NFC link layer (LLC) is not generated as a physically permanent value \u00a0  but logically generated for each connection.\u00a0 Thus, every single \u00a0  touch connection can use a different short address of NFC link with \u00a0  an extremely short-lived link. This text seems to imply that addressing information is, in general, not stable, which appears to flatly contradict the text in section 4.3. Please clarify, in section 4.3, what the duration of stability of these identifiers is.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-01-23 15:21:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-03-13 13:22:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-13 13:22:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-13 07:49:22-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-11-25 11:41:27-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-13 07:49:22-07:00",
+        "text": "I support Benjamin's DISCUSS point about large antennas.  RFC 2119  specifies the keywords \"RECOMMENDED\" and \"NOT RECOMMENDED.\" This document uses these in verb form (\"RECOMMEND\" and \"NOT RECOMMEND\"). Please change these instances so that the actual 2119 keywords are used. = Section 4.8 = I think the Gen-ART reviewer's question about fragmentation is unresolved. How is interoperability achieved if some nodes implement MIUX and not FAR, and some nodes implement FAR and not MIUX? It seems as though IPv6-over-NFC needs to be restricted to nodes that support one or the other (presumably MIUX). = Section 5.1 and 7 = Per the Gen-ART review, one of these sections needs to say something about how connecting to the Internet potentially changes the threat model for devices that were perhaps not originally envisioned to connect to the Internet.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-11-25 11:41:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-13 19:49:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-09 10:08:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-13 19:49:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-11 18:24:12-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-22 12:07:46-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-03-11 18:24:12-07:00",
+        "text": "In general, I'm worried that this document is so unreadable that I can't give it a proper review.\u00a0 I just don't have a clear picture of how all the pieces fit together, and which pieces are new as opposed to reused from other specifications.\u00a0 That said, here are my notes as they stand at present. If I understand correctly, the statements about \"distance of 10 cm or less\" and \"safe\" or \"secure communications\" apply only for usage compliant with the relevant legal regulations.\u00a0 We cannot expect attackers to abide by such regulations, and large (directional) antennas and/or high-power transmitters should be presumed to expand that distance by some factor, in adversarial environments. Section 4.3 should probably provide some guidance on choosing the PRF F().\u00a0 We are implicitly relying on  RFC 7217  for a lot of things, some of which 7127 doesn't even cover, and the suggested construction in  RFC 7127  may not still be best practice. I don't understand why MIUX is not mandatory (and thus we could get rid of all the \"FAR is NOT RECOMMENDED\" stuff).\u00a0 Is there known demand for IPv6 over NFC on devices that cannot do MIUX? Some section-by-section points as well: Section 3.1 \u00a0  peer mode is used for ipv6-over-nfc.\u00a0 In addition, NFC-enabled \u00a0  devices can securely send IPv6 packets to any corresponding node on \u00a0  the Internet when an NFC-enabled gateway is linked to the Internet. I don't see anything in the document that justifies the usage of \"securely\". Section 3.4 \u00a0  When the MIUX parameter is encoded as a TLV option, the TLV Type \u00a0  field MUST be 0x02 and the TLV Length field MUST be 0x02.\u00a0 The MIUX \u00a0  parameter MUST be encoded into the least significant 11 bits of the \u00a0  TLV Value field.\u00a0 The unused bits in the TLV Value field MUST be set \u00a0  to zero by the sender and ignored by the receiver.\u00a0 A maximum value Either the MIUX occupies 11 bits and there are five unused bits to be set to zero, or the four bits marked in the figure are 1011 and there is only one unused bit (singular) to be marked as zero.\u00a0 This needs to be more clear, as right now I can't tell what's intended. Section 4.4 How does a device know that the link-local address is a public address? Section 4.5 \u00a0  o\u00a0 When an NFC-enabled device (6LN) is directly connected to a 6LBR, \u00a0 \u00a0 \u00a0 an NFC 6LN MUST register its address with the 6LBR by sending a How does the device know that it's talking NFC to a 6LBR as opposed to some non-border-router peer?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2022-03-22 12:07:46-07:00",
+        "text": "I attempted to review the changes from -13 to -17, as well as look at the -17 in isolation, though I do not really have enough time available to do a proper review before my term as AD expires. I'm still worried that in general this document doesn't give a clear picture of how all the pieces fit together, and which pieces are new as opposed to reused from other specifications. I do appreciate many of the updates made to streamline the introductory text and keep it focused on what is relevant for this document. I am also happy to see that use of MIUX has been made mandatory so that the L2CAP FAR is not needed.\u00a0 However, I do not see much justification for the MUST-level requirement that the MIUX value be exactly 0x480. Is there some reason to forbid the negotiation of larger link MTU, if both parties are capable?\u00a0 I would have expected only a requirement that the MIUX value be at least 0x480. Section 4.3 should probably provide some guidance on choosing the PRF F().\u00a0 We are implicitly relying on  RFC 7217  for a lot of things, some of which 7127 doesn't even cover, and the suggested construction in  RFC 7127  may not still be best practice. I think the figure in Section 3.4 that lays out the encoding of the MIUX TLV is incomplete or inaccurate -- e.g., the third field shows only four bits but the labels indicate it should occupy six bits, and the range of values for the fourth field indicates it should occupy eleven bits but the column labels give it only ten. A section-by-section point as well: Section 4.5 \u00a0  o\u00a0 When an NFC-enabled 6LN is directly connected to a an NFC-enabled \u00a0 \u00a0 \u00a0 6LBR, the NFC 6LN MUST register its address with the 6LBR by How does the device know that it's talking NFC to a 6LBR as opposed to some non-border-router peer?",
+        "type": "Discuss"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-03-11 14:09:24-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-11 14:09:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-13 21:19:42-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-13 21:20:18-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-03-13 21:19:42-07:00",
+        "text": "I am unable to adequately review this document because the first normative reference and hence this DISCUSS is incomplete. \u00a0  [LLCP-1.3] \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"NFC Logical Link Control Protocol version 1.3\", NFC Forum \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Technical Specification , March 2016. Does not appear to be publicly available (the web site contains a single-page PDF which reads in part \"To view the complete specification, go to  http://nfc-forum.org/our-  work/specifications-and-application-documents/specifications/nfc-forum- technical-specifications/. Complete the license agreement, and then download the specification.\"). Please supply an unencumbered specification and then I can rereview. I have read S 3.4 repeatedly, but am unable to work out the mapping of an IPv6 datagram to LLCP. Please provide a diagram that shows how this works and then perhaps I can assist you with the text.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-13 21:20:18-07:00",
+        "text": "I am unable to adequately review this document because the first normative reference and hence this DISCUSS is incomplete (ordinarily this would conflict with the DISCUSS guidelines, but I believe it is necessary in this case). \u00a0  [LLCP-1.3] \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"NFC Logical Link Control Protocol version 1.3\", NFC Forum \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Technical Specification , March 2016. Does not appear to be publicly available (the web site contains a single-page PDF which reads in part \"To view the complete specification, go to  http://nfc-forum.org/our-  work/specifications-and-application-documents/specifications/nfc-forum- technical-specifications/. Complete the license agreement, and then download the specification.\"). Please supply an unencumbered specification and then I can rereview. I have read S 3.4 repeatedly, but am unable to work out the mapping of an IPv6 datagram to LLCP. Please provide a diagram that shows how this works and then perhaps I can assist you with the text.",
+        "type": "Discuss"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-01-12 10:23:01-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-12 02:15:28-08:00",
+        "text": "# \u00c9ric Vyncke, INT AD, comments for  draft-ietf-6lo-nfc-19 CC @evyncke Thank you for the work put into this document. It could indeed be useful and it would deserve a high quality specification. Please find below one blocking DISCUSS points (easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to Carles Gomez for the shepherd's detailed write-up including the WG consensus *and* the justification of the intended status. But, the write-up is incorrect about the downward reference as  https://datatracker.ietf.org/doc/draft-ietf-6lo-nfc/references/  indicates  RFC 3756  is a downref... Please note that Pascal Thubert is the Internet directorate reviewer (at my request) and you may want to consider this int-dir reviews as well when Pascal will complete the review (no need to wait for it though): https://datatracker.ietf.org/doc/draft-ietf-6lo-nfc/reviewrequest/16761/ I hope that this review helps to improve the document, Regards, -\u00e9ric ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### Tagging of references I have not checked all references, but at least  RFC 3633  should not be normative but only informative. Moreover,  RFC3633  is obsoleted by  RFC 8415  for 4 years. ### Section 3.4 As far as I understand the document and its relationship with NFC standards, then it is not up to the IETF to use normative language around MIUX (specified by NFC), so, the \"MUST\" below should rather be \"is\". ``` \u00a0  When the MIUX parameter is used, the TLV Type field MUST be 0x02 and \u00a0  the TLV Length field MUST be 0x02.\u00a0 The MIUX parameter MUST be \u00a0  encoded into the least significant 11 bits of the TLV Value field. \u00a0  The unused bits in the TLV Value field MUST be set to zero by the \u00a0  sender and ignored by the receiver. ``` The \"MUST\" in `The MIUX value MUST be 0x480 to support the IPv6 MTU requirement (of 1280 bytes).` is of course fine. Finally, please add a normative reference to  RFC 8200 . ### Section 4.2 Is this section normative ? There is no  BCP14  words in it. If normative, then how is Network_ID derived from any NFC parameter? ### Section 4.3 While not really a DISCUSS point, what is the link between DHCP-PD and a LLA ? Remove the part about getting a prefix. What is a `secured and stable IID` ? Do the authors mean a 'random and stable IID'? ### Section 4.4 and 5 In section 4.4: `NFC supports mesh topologies but ...` In section 5: `An NFC link does not support a star topology or mesh network topology` So, is mesh supported or not ? ### Section 4.5 Is this section normative ? There is no  BCP14  terms. Is there a IANA registry for \"Dispatch\" values ? If so, then please add a reference. It *seems* that the length is 1 octet, please specify the length of the value. ### Section 4.6 Possibly due to my ignorance of  RFC 6282 , but this document refers to TCP (section 4.1) while  RFC 6282  only compresses UDP ?  Is `6-bit NFC link-layer` the same as the `6-bit SSAP` discussed before ? I guess so but I should not guess but be sure. ### Section 4.8 Is this section normative about multicast replication ? ### Section 5.1 ``` \u00a0  Two or more 6LNs may be connected with a 6LBR, but each connection \u00a0  uses a different subnet. ``` Unsure whether 'subnet' means 'IPv6 prefix' or 'link' ? `the 6LBR MUST ensure address collisions do not occur` how can this goal be achieved.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-09 10:08:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-12 10:23:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-03-09 10:08:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-04 06:48:27-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-01-18 02:39:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-13 13:07:33-08:00",
+        "text": "I share other ADs' concern about availability of the NFC spec, however it is my understanding that Erik has had access to it, and I trust he was able to do a full review of the draft. Given that, I would ballot No Objection. However I have identified what I think is a simple typo, but important enough to warrant a blocking comment. Section 4.8: > Length: > > This is the length of this option (including the type and length fields) in units of 8 octets. The value of this field is 1 for 6-bit NFC node addresses. I believe you meant \"in octets\" or \"in units of 8 bits\", right?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-03-09 10:08:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-18 02:39:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-12-14 13:41:54-08:00",
+        "end_reason": "comment_updated",
+        "start": "2022-12-13 07:23:08-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-6lo-nfc-19 CC @jgscudder This document seems promising and needed, but as noted below, I think it still needs work before it should advance. I support Lars's DISCUSS -- as noted below, lack of the foundational Normative reference prevented me from being able to complete a meaningful review of this document. I notice this point was raised in a DISCUSS by Eric Rescorla in 2019, I'm surprised it hasn't been addressed. I do see in the shepherd write-up that \"Access to the NFC spec has been available for those that have needed it\" but regrettably, it's not clear how this is accomplished.  ## COMMENTS ### General I agree with Warren's observation that \"it doesn't seem like [the document] contains enough information to allow a full implementation\". Addressing the specific comments below would be helpful, but not sufficient to address that concern, but lacking the [LLCP-1.4] spec it's difficult to be more specific. Because I feel unable to properly evaluate the document's fitness, I'm balloting ABSTAIN. The shepherd write-up tells us that \"An implementation of 6lo-NFC exists and they participated on a 6lo plugtests\". I can only guess that the implementors benefit from being experts who know what to read between the lines, whereas reviewers such as myself can read only what's written in the document.  ### Section 3.2, remove \"such as\" \"The LLC contains three components, such as Link Management, Connection-oriented Transmission, and Connectionless Transmission.\" The \"such as\" seems wrong here. I guess you mean \"namely\", or you could just remove \"such as\" and not replace it with anything. ### Section 3.4, \"transported to an I PDU\" \"As mentioned in Section 3.2, when an IPv6 packet is transmitted, the packet MUST be passed down to LLCP of NFC and transported to an I PDU of LLCP of the NFC-enabled peer device.\" Do you mean \"... and transported in an I PDU of LLCP *to* the NFC-enabled peer device\"? ### Section 3.4, mystery bits 1011 Figure 2 shows a field, labeled \"1011\", occupying bits 16 through 21. It's not clear what this means. It's not discussed in the text. One might imagine it's just a field value mandated by [LLCP-1.4], but in that case one would imagine it would depict a 6-bit string, since the field it's occupying is six bits. What is going on there? I would refer to [LLCP-1.4] to try to find out, but as mentioned, it isn't available for review. What's more, the labeling appears to conflict with the text that says \"the unused bits in the TLV Value field MUST be set to zero\". ### Section 3.4, how to fit eleven bits into a ten bit field Still in Figure 2, we see the rightmost field labeled 0x0~0x7FF, and the paragraph following agrees that the field \"MUST be encoded into the least significant 11 bits\". But the ruler at the top shows the field extending from bit 22 to bit 31, a field of only 10 bits. My guess is you drew the ruler wrong, and it was supposed to start at bit 21? But that would still leave the previous \"1011\" question open. ### Section 3.4, MUST be 0x480 \"The MIUX value MUST be 0x480 to support the IPv6 MTU requirement (of 1280 bytes)\" unambiguously mandates that MIUX must be exactly 0x480, no more and no less. I understand the \"no less\" part, as noted in the quote this is needed to support a 1280 byte MTU. However, IPv6 doesn't forbid offering a larger value than 1280.  I'm guessing you left out an \"at least\", as in \"MUST be at least 0x480\". If you really intend to mandate that packets shall be no larger than 1280, please say why? ### Section 4.3 et seq, 6LBR, 6LR, 6LM Please expand 6LBR, 6LR, 6LM on first use. ### Section 4.4, bullet 2 is hard to understand I gave up trying to understand what this bullet means, I'm afraid I can't even hazard a guess at a rewrite. :-( ## NITS ### Section 7 \"(i.e., ad-hoc mode and authenticated mode\"  \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^ does the missing closing parenthesis go here?  ## Notes This review is in the [\"IETF Comments\" Markdown format][ICMF], You can use the [`ietf-comments` tool][ICT] to automatically convert this review into individual GitHub issues.  [ICMF]:  https://github.com/mnot/ietf-comments/blob/main/format.md [ICT]:  https://github.com/mnot/ietf-comments",
+        "type": "Abstain"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-03-09 10:08:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 13:41:54-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-6lo-nfc-19 CC @jgscudder (Updated December 14 -- thanks to the authors for sharing the base spec. I'll re-do my review using it, but need more time, so I am hitting DEFER.) This document seems promising and needed, but as noted below, I think it still needs work before it should advance. I support Lars's DISCUSS -- as noted below, lack of the foundational Normative reference prevented me from being able to complete a meaningful review of this document. I notice this point was raised in a DISCUSS by Eric Rescorla in 2019, I'm surprised it hasn't been addressed. I do see in the shepherd write-up that \"Access to the NFC spec has been available for those that have needed it\" but regrettably, it's not clear how this is accomplished.  ## COMMENTS ### General I agree with Warren's observation that \"it doesn't seem like [the document] contains enough information to allow a full implementation\". Addressing the specific comments below would be helpful, but not sufficient to address that concern, but lacking the [LLCP-1.4] spec it's difficult to be more specific. Because I feel unable to properly evaluate the document's fitness, I'm balloting ABSTAIN. The shepherd write-up tells us that \"An implementation of 6lo-NFC exists and they participated on a 6lo plugtests\". I can only guess that the implementors benefit from being experts who know what to read between the lines, whereas reviewers such as myself can read only what's written in the document.  ### Section 3.2, remove \"such as\" \"The LLC contains three components, such as Link Management, Connection-oriented Transmission, and Connectionless Transmission.\" The \"such as\" seems wrong here. I guess you mean \"namely\", or you could just remove \"such as\" and not replace it with anything. ### Section 3.4, \"transported to an I PDU\" \"As mentioned in Section 3.2, when an IPv6 packet is transmitted, the packet MUST be passed down to LLCP of NFC and transported to an I PDU of LLCP of the NFC-enabled peer device.\" Do you mean \"... and transported in an I PDU of LLCP *to* the NFC-enabled peer device\"? ### Section 3.4, mystery bits 1011 Figure 2 shows a field, labeled \"1011\", occupying bits 16 through 21. It's not clear what this means. It's not discussed in the text. One might imagine it's just a field value mandated by [LLCP-1.4], but in that case one would imagine it would depict a 6-bit string, since the field it's occupying is six bits. What is going on there? I would refer to [LLCP-1.4] to try to find out, but as mentioned, it isn't available for review. What's more, the labeling appears to conflict with the text that says \"the unused bits in the TLV Value field MUST be set to zero\". ### Section 3.4, how to fit eleven bits into a ten bit field Still in Figure 2, we see the rightmost field labeled 0x0~0x7FF, and the paragraph following agrees that the field \"MUST be encoded into the least significant 11 bits\". But the ruler at the top shows the field extending from bit 22 to bit 31, a field of only 10 bits. My guess is you drew the ruler wrong, and it was supposed to start at bit 21? But that would still leave the previous \"1011\" question open. ### Section 3.4, MUST be 0x480 \"The MIUX value MUST be 0x480 to support the IPv6 MTU requirement (of 1280 bytes)\" unambiguously mandates that MIUX must be exactly 0x480, no more and no less. I understand the \"no less\" part, as noted in the quote this is needed to support a 1280 byte MTU. However, IPv6 doesn't forbid offering a larger value than 1280.  I'm guessing you left out an \"at least\", as in \"MUST be at least 0x480\". If you really intend to mandate that packets shall be no larger than 1280, please say why? ### Section 4.3 et seq, 6LBR, 6LR, 6LM Please expand 6LBR, 6LR, 6LM on first use. ### Section 4.4, bullet 2 is hard to understand I gave up trying to understand what this bullet means, I'm afraid I can't even hazard a guess at a rewrite. :-( ## NITS ### Section 7 \"(i.e., ad-hoc mode and authenticated mode\"  \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^ does the missing closing parenthesis go here?  ## Notes This review is in the [\"IETF Comments\" Markdown format][ICMF], You can use the [`ietf-comments` tool][ICT] to automatically convert this review into individual GitHub issues.  [ICMF]:  https://github.com/mnot/ietf-comments/blob/main/format.md [ICT]:  https://github.com/mnot/ietf-comments",
+        "type": "Abstain"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-12-13 23:22:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-12 04:27:50-08:00",
+        "text": "# GEN AD review of  draft-ietf-6lo-nfc-19 CC @larseggert ## Discuss ### Section 9, paragraph 2 ``` \u00a0 \u00a0  [LLCP-1.4] \"NFC Logical Link Control Protocol, Version 1.4\", NFC \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Forum Technical Specification , January 2021. ``` Eric raised this for -13 in 2019 already: this specification does not seem to be publicly available? Did the NFC forum share a copy with the IETF WG that you could forward to the IESG for our review?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-03-09 10:08:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-13 23:22:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2022-03-25 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-03-13 06:47:54-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-13 06:47:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-03-09 10:08:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-28 12:33:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-03-09 10:08:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-04 18:58:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-12-30 14:37:17-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-12-28 06:59:32-08:00",
+        "text": "(Preliminary ballot from an incomplete review of the document, but shared here for early awareness) Multiple prior DISCUSes were filed on the basis of concerns that the base normative references were not available.\u00a0 In response, the \"NFC LLC v1.4\" specification was shared. However, it appears additional normative references are needed to evaluate the security claims of the protocol (NFC LLC v1.4). Section 7 of this I-D says: \u00a0  Ad-hoc secure data transfer can be established between two \u00a0  communication parties without any prior knowledge of the \u00a0  communication partner.\u00a0 Ad-hoc secure data transfer can be vulnerable \u00a0  to Man-In-The-Middle (MITM) attacks.\u00a0 Authenticated secure data \u00a0  transfer provides protection against Man-In-The-Middle (MITM) \u00a0  attacks.\u00a0 In the initial bonding step, the two communicating parties \u00a0  store a shared secret along with a Bonding Identifier.\u00a0 For all \u00a0  subsequent interactions, the communicating parties re-use the shared \u00a0  secret and compute only the unique encryption key for that session. \u00a0  Secure data transfer is based on the cryptographic algorithms defined \u00a0  in the NFC Authentication Protocol (NAP). This text is a cut-and-paste verbatim from Section 3.2.5 of NFC Forum LLC specification previously shared as part of the last telechat.\u00a0 However the NAP is defined in yet another NFC Forum document.\u00a0 How does one access that?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-02-02 13:01:22-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-30 14:37:17-08:00",
+        "text": "(revised) Multiple DISCUSes were filed during the March 2019 telechat on the basis of concerns that the underlying normative references were not available.\u00a0 In response, the \"NFC LLC v1.4\" specification was shared in advance of the December 2022 telechat. However, it appears additional normative references are needed to evaluate the security claims of the protocol (NFC LLC v1.4). Section 7.1 of NFC LLC v1.4 says: Secure data transfer uses the NFC Authentication Protocol [NAP]. This subsection defines three processes: Security Setup, Bonding Process and Authentication Process. All three processes are mappings of the corresponding processes with the same names defined in [NAP]. Section 7 of this I-D says: \u00a0  Ad-hoc secure data transfer can be established between two \u00a0  communication parties without any prior knowledge of the \u00a0  communication partner.\u00a0 Ad-hoc secure data transfer can be vulnerable \u00a0  to Man-In-The-Middle (MITM) attacks.\u00a0 Authenticated secure data \u00a0  transfer provides protection against Man-In-The-Middle (MITM) \u00a0  attacks.\u00a0 In the initial bonding step, the two communicating parties \u00a0  store a shared secret along with a Bonding Identifier.\u00a0 For all \u00a0  subsequent interactions, the communicating parties re-use the shared \u00a0  secret and compute only the unique encryption key for that session. \u00a0  Secure data transfer is based on the cryptographic algorithms defined \u00a0  in the NFC Authentication Protocol (NAP). The described security properties appear to depend on the \u201cNFC Authentication Protocol\u201d (NAP) which is neither formally referenced with a normative reference (like the NFC LLC v1.4 specification) and does not appear to be available.\u00a0 It is challenging to evaluate the security claims without it. Thank you to the document authors for responding to a preliminary version of this DISCUSS position which said that it is not possible to share the NAP specification. See  https://mailarchive.ietf.org/arch/msg/6lo/ii9ANOvsJKr08kr7oOCWQ635GtI/ .\u00a0 If the specification is not available, it isn\u2019t clear how the IETF consensus review process is possible.\u00a0 The shepherd write-up says \u201cAccess to the NFC spec has been available for those that have needed it.\u201d",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-03-09 10:08:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-02 13:01:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-13 12:29:45-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-13 12:29:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-03-05 16:11:24-08:00",
+        "end_reason": "new_position",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-03-14 01:23:20-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-05 16:11:24-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-03-09 10:08:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-14 01:23:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-02-28 04:23:07-08:00",
+        "end_reason": "position_updated",
+        "start": "2023-01-04 18:19:22-08:00",
+        "text": "Thanks for working on this specification. Thanks to Wesley Eddy for his excellent TSVART review.  As I agree with the points brought up by the TAVART reviewer, I would like to discuss why the points made by the reviewer should not be considered for this specification.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-03-09 10:08:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-28 04:23:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9428",
+  "evaluation_end": "2023-03-09 10:08:46-08:00",
+  "evaluation_start": "2019-03-05 16:11:24-08:00"
+}

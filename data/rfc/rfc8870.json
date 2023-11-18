@@ -1,0 +1,407 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-02-19 21:56:38-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-19 21:56:38-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-02-20 05:25:30-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-07-15 03:36:37-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-20 05:25:30-08:00",
+        "text": "The document is generally quite readable, which is great. But I have a few small issues I would like to get clarification on before recommending approval of this document: In 4.1: \u00a0  Message Type: The last byte is used to indicate the type of the \u00a0  EKTField.\u00a0 This MUST be 2 for the FullEKTField format and 0 in \u00a0  ShortEKTField format.\u00a0 Values less than 64 are mandatory to \u00a0  understand while other values are optional to understand. I thought I knew what this meant when I read it, and then I saw this: \u00a0  A receiver \u00a0  SHOULD discard the whole EKTField if it contains any message type \u00a0  value that is less than 64 and that is not understood. \"SHOULD discard ... EKTField\" makes this field NOT mandatory. (If you said \"SHOULD discard the whole packet\", that would have been different.) Also, how \"discard\" different from the following sentence suggesting \"ignore\"? I think you have some inconsistencies/terminology problem here! \u00a0  Message type \u00a0  values that are 64 or greater but not implemented or understood can \u00a0  simply be ignored.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-07-15 03:44:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-15 03:36:37-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-01-16 02:20:38-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-15 03:44:36-07:00",
+        "text": "ecent ABNF changes (from \"*\" to \"\\*\") made the ABNF invalid.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-01-16 02:20:38-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-02-20 14:39:26-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-06-23 13:50:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 14:39:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-02-20 09:53:37-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-06-23 13:50:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 09:53:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-06-23 13:50:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-04 22:17:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-02-07 09:08:44-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-02-21 09:17:21-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-07 09:08:44-08:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-21 09:17:21-08:00",
+        "text": "I'm adding a process discuss to hold things until we get clarity around the IANA expert reviews.  I know Benjamin mentioned this in his DISCUSS; I am duplicating it here in case we clear up the rest of Benjamin's discuss points prior to the IANA questions.",
+        "type": "Discuss"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-02-19 09:39:57-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-02-20 08:33:44-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-02-19 09:39:57-08:00",
+        "text": "[this is a placeholder Discuss\u00a0 to indicate a couple of broad issues early; a full review and ballot position is forthcoming] I think\u00a0 we need to discuss whether the mechanism described in Section 4.1 contains an EKT-specific extension mechanism or is in fact a more general mechanism for including extensions in SRTP packets outside the SRTP cryptographic protection. (If so, we would probably need to Update 3711 to indicate as much, and perhaps allow for multiple extension types to be present adjacently.)\u00a0 In particular, how would this EKT extension interact with any other future mechanism that needs to add data to SRTP\u00a0 packets outside the SRTP cryptographic wrapper? I also think we need to discuss whether it is appropriate to set a precedent that any standards-track protocol can get a dedicated TLS HandshakeType (noting that this is a potentially scarce one-octet field.\u00a0 Would it be more appropriate to define a generic \"key transport\" container that can be generally applicable to many protocols, and have an internal extension point that allows for an SRTP+EKT-specific usage within the TLS HandshakeType?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-17 13:12:07-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-02-20 08:33:44-08:00",
+        "text": "I think we need to discuss whether the mechanism described in Section 4.1 contains an EKT-specific extension mechanism or is in fact a more general mechanism for including extensions in SRTP packets outside the SRTP cryptographic protection.\u00a0 (If so, we would probably need to Update 3711 to indicate as much, and perhaps allow for multiple extension types to be present adjacently.)\u00a0 In particular, how would this EKT extension interact with any other future mechanism that needs to add data to SRTP\u00a0 packets outside the SRTP cryptographic wrapper? I also think we need to discuss whether it is appropriate to set a precedent that any standards-track protocol can get a dedicated TLS HandshakeType (noting that this is a potentially scarce one-octet field. Would it be more appropriate to define a generic \"key transport\" container that can be generally applicable to many protocols, and have an internal extension point that allows for an SRTP+EKT-specific usage within the TLS HandshakeType? I'll also hold a discuss for the IANA NOT OK (I noticed the need for more columns for TLS extension type, at least, and there seems to be more in their review). Please state clearly what the scope of an SPI value (and its binding to EKTKey and\u00a0 other parameters) is; e.g., that it is only defined within a given communications session. Section 4.2.1 \u00a0  Outbound packets SHOULD continue to use the old SRTP Master Key for \u00a0  250 ms after sending any new key.\u00a0 This gives all the receivers in \u00a0  the system time to get the new key before they start receiving media \u00a0  encrypted with the new key. What channel is the \"sending any new key\" to occur on?\u00a0 The most straightforward reading would be in the FullEKTField, but that does not seem to make much sense.\u00a0 (Also, is the \"any new key\" an SRTP master key or an EKTKey?) Section 5's one-paragraph intro doesn't really paint a clear picture for me of why/which DTLS connections are \"secure\" in a way that the central media distribution is not.\u00a0 From reading the whole doc, my perception is that basically this scheme is useful in cases when you have a central hub for DTLS negotiation that's trusted to have access to media plaintext, plus a mesh of SRTP streams (whether centrally mediated or directly connected), and that it's not appropriate when the\u00a0 central hub is not trusted with media access or when there is not a single DTLS party that can distribute the EKT to all (other) participants).\u00a0 Could we get some clear explanation of where this technique is and is not expected to be utilized? Section 5.5.2 has: \u00a0  Note: To be clear, EKT can be used with versions of DTLS prior to \u00a0  1.3.\u00a0 The only difference is that in a pre-1.3 TLS stacks will not \u00a0  have built-in support for generating and processing Ack messages. You need to be more clear about the Ack being needed even when pre-1.3 is in use (which would seem to make DLTS 1.3 a normative reference). (See also the COMMENT about citing both DTLS 1.2 and 1.3.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-09-05 16:57:26-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-07-17 13:12:07-07:00",
+        "text": "Thanks for the updates in the -10; we're\u00a0 making progress.\u00a0 I think there are still some issues left to resolve, though. My previous position had: \"\"\"I think we need to discuss whether the mechanism described in Section 4.1 contains an EKT-specific extension mechanism or is in fact a more general mechanism for including extensions in SRTP packets outside the SRTP cryptographic protection.\u00a0 (If so, we would probably need to Update 3711 to indicate as much, and perhaps allow for multiple extension types to be present adjacently.)\u00a0 In particular, how would this EKT extension interact with any other future mechanism that needs to add data to SRTP\u00a0 packets outside the SRTP cryptographic wrapper?\"\"\" I think I remember having such a discussion, but cannot find any record of it.\u00a0 Does anyone have a pointer handy (or a corrective to my memory)? Similarly, I don't remember any discussion on: \"\"\"I also think we need to discuss whether it is appropriate to set a precedent that any standards-track protocol can get a dedicated TLS HandshakeType (noting that this is a potentially scarce one-octet field. Would it be more appropriate to define a generic \"key transport\" container that can be generally applicable to many protocols, and have an internal extension point that allows for an SRTP+EKT-specific usage within the TLS HandshakeType?\"\"\" We are also still waiting on IANA, if I understand correctly.\u00a0 I do not see  any indication that the needed expert review for TLS ExtensionType allocation has been requested (the authors should initiate this, per  RFC 8447 ), and there may have been other matters that needed clarification.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-11-19 17:25:22-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-09-05 16:57:26-07:00",
+        "text": "Thanks for the updates in the -10; we're\u00a0 making progress.\u00a0 I think there are still some issues left to resolve, though. My previous position had: \"\"\"I think we need to discuss whether the mechanism described in Section 4.1 contains an EKT-specific extension mechanism or is in fact a more general mechanism for including extensions in SRTP packets outside the SRTP cryptographic protection.\u00a0 (If so, we would probably need to Update 3711 to indicate as much, and perhaps allow for multiple extension types to be present adjacently.)\u00a0 In particular, how would this EKT extension interact with any other future mechanism that needs to add data to SRTP\u00a0 packets outside the SRTP cryptographic wrapper?\"\"\" I think I remember having such a discussion, but cannot find any record of it.\u00a0 Does anyone have a pointer handy (or a corrective to my memory)? Similarly, I don't remember any discussion on: \"\"\"I also think we need to discuss whether it is appropriate to set a precedent that any standards-track protocol can get a dedicated TLS HandshakeType (noting that this is a potentially scarce one-octet field. Would it be more appropriate to define a generic \"key transport\" container that can be generally applicable to many protocols, and have an internal extension point that allows for an SRTP+EKT-specific usage within the TLS HandshakeType?\"\"\" [IANA says they're okay now]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-15 11:32:27-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-11-19 17:25:22-08:00",
+        "text": "The -10 introduced text implying that the DTLS 1.3 retransmission rules are normative, that is in conflict with the existing text indicating that DTLS 1.2 retransmission rules are normative (see COMMENT). The DTLS 1.3 Ack message is a dedicated content-type, not a handshake-type. I support Alexey's Discuss about the ABNF breakage. Note that there is a similar issue in the names of the TLS extensions in the IANA considerations -- the names now include \"\\_\" instead of just \"_\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-06-23 13:50:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-15 11:32:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-02-20 11:18:44-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-06-23 13:50:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 11:18:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-02-16 16:41:20-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-16 16:41:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-06-23 13:50:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-06 04:54:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-06-22 01:42:20-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-02-05 07:18:15-08:00",
+        "text": "I think there are an important discrpency between the figure and the ABNF for the full EKT message in section 4.1: Figure 1:  \u00a0 \u00a0 \u00a0 0\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  1\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  2\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  3 \u00a0 \u00a0 \u00a0 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 \u00a0 \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0 \u00a0  :\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  : \u00a0 \u00a0  :\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 EKT Ciphertext\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  : \u00a0 \u00a0  :\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  : \u00a0 \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0 \u00a0  |\u00a0  Security Parameter Index\u00a0 \u00a0 | Length\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | \u00a0 \u00a0  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ \u00a0 \u00a0  |0 0 0 0 0 0 1 0| \u00a0 \u00a0  +-+-+-+-+-+-+-+-+ The ABNF parts that appears relevant:  \u00a0 \u00a0 EKTCiphertext = 1*256BYTE ; EKTEncrypt(EKTKey, EKTPlaintext) \u00a0 \u00a0 Epoch = 2BYTE \u00a0 \u00a0 SPI = 2BYTE \u00a0 \u00a0 FullEKTField = EKTCiphertext SPI Epoch EKTMsgLength EKTMsgTypeFull Note that the above ABNF states that the SPI is followed by a 16-bit Epoch field prior to the length field.  Can you please ensure that this discrepancy is clarified.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-06-23 13:50:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-22 01:42:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-02-20 09:50:16-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-06-23 13:50:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 09:50:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-02-19 06:08:22-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-19 06:08:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-06-22 11:46:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-22 11:46:10-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-06-23 12:13:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-06-22 11:46:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-06-23 13:50:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-06-23 12:13:41-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-06-23 13:50:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-04 14:39:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-02-18 20:35:25-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-18 20:35:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-02-20 11:13:20-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-20 11:13:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-02-05 09:46:55-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-07 09:08:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-06-23 13:50:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-05 09:46:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8870",
+  "evaluation_end": "2020-06-23 13:50:01-07:00",
+  "evaluation_start": "2019-02-07 09:08:43-08:00"
+}

@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-06-28 15:10:48-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-28 15:10:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-06-29 19:48:04-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-16 10:45:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-06-29 19:48:04-07:00",
+        "text": "Thank you for writing this document; I'm really glad that it will be available to illuminate the particulars of BPsec usage and provide a default option when running BPsec in relatively bland environments. However, I think there are a few gaps between the current specification and a strong/reliable default security option. (D1) the construction for the HMAC input plaintext and GCM AAD seems to be \"malleable\" at the security context layer.\u00a0 That is, in order for the cryptographic integrity protection mechanism to provide strong guarantees for the application protocol's semantics, the mapping from protocol parameters (e.g., \"security target contents\", \"primary block\") to the actual byte string used as the IPPT/AAD inputs to HMAC/GMAC needs to be an injective mapping (in the mathematical sense).\u00a0 If injectivity does not hold, then there is more than one possible application semantics that could be perceived as valid upon successful validation of the authentication tag at the recipient; this \"malleability\" across different interpretations of the bytes covered by a given integrity tag gives an opening by which an attacker can target the application semantics. The current construction seems \"malleable\" because the scope flags are not protected in any way and could be modified by an attacker, and the scope flags affect which application protocol fields (and thus, semantics) are used to construct the IPPT/AAD.\u00a0 If the attacker modifies the messages to move those encoded bytes from one location to another, the modified message could still pass cryptographic verification but be interpreted with different semantics than intended.\u00a0 We do correctly note that the security context identifier and the security context parameters of the security block are not included in the input data, but the conclusion that \"successful verification implies that these parameters were unchanged from what the security source has specified\" does not seem entirely warranted without further analysis that relies on the internal structure of the different potential parts of the IPPT/AAD. [side note: the IETF security community tends towards \"always include as much information in the MAC as you can without breaking operations\", which would naively be everything included with scope flags 0x7.\u00a0 Always including everything removes the malleability, since there are no gaps to move around.\u00a0 But I think I can come up with scenarios where this flexibility would indeed be needed in BP operations, so my tentative conclusion is that the simple \"always MAC everything\" approach will not work here.] Specifically, to the extent that we may have injectivity, we seem to be relying on the specific encoding details of the different types of information that could be used in constructing the IPPT and AAD.\u00a0 Since the IPPT/AAD is currently just the concatenation (in a particular order) of any/all of a few pieces of data, we can only get injectivity if each of those pieces of data is self-framing and *self-identifying* by its encoded form.\u00a0 (If we, for example, prefixed each self-framing part with a type identifier for what followed, that would make the overall encoding self-identifying for what is contained therein.)\u00a0 E.g., the primary block is going to be a CBOR array with (at least?) 8 elements, starting with 0x0808, and is self-framing by virtue of being a CBOR object.\u00a0 But the \"security target other fields\" are not so clearly self framing, as it's more of a CBOR sequence with type code, block number, and control flags as three unsigned integers; we have to know a priori to read three CBOR unsigned integers and treat that as a single object. Furthermore, the \"BIB other fields\" (or \"BCB other fields\") are also three CBOR unsigned integers, and since it's possible for (e.g.) a BIB to be the security target of a BIB, the block type code cannot distinguish between a security target and the BIB information.\u00a0 Only the block number could, but IIRC the block number itself is malleable to an on-path attacker.\u00a0 And this analysis only covers the currently specified scope flags; any future additions might add new ways for injectivity to fail.\u00a0 It's much better to have a strong injective construction at the higher layer and not rely on the internal encoding details of the component pieces. So, I think we need to include at least the scope flags as part of the IPPT/AAD in order to provide injectivity.\u00a0 It might be worth considering adding additional framing and typing to make clear boundaries between the different parts of the IPPT/AAD, but my current understanding is that it would not be strictly necessary to do so. (D2) There seems to be some risk associated with the current HMAC construction, since the HMAC with a given key over a given plaintext will be the same each time it is calculated.\u00a0 In other protocol contexts, this has led to practical attacks and HMAC forgery, by using a side-channel to gain insight into the verifier's behavior and guessing the correct HMAC tag for a given (attacker-selected) plaintext a byte at a time.\u00a0 With only a modest number of trials (4k on average for HMAC-SHA-256, assuming a fully reliable side channel) this would let the attacker extract the valid HMAC tag that the verifier produced for comparison against the attacker's guess at the HMAC tag.\u00a0 Since this is the HMAC tag over the attacker's chosen plaintext, this lets the attacker obtain a valid HMAC tag without knowing the HMAC key. Now, it seems clear that in the preponderance of BP deployments there will not be an effective side channel available!\u00a0 But IMO this still reflects a fundamental cryptographic weakness in the protocol and we should make some effort to address it.\u00a0 There are a couple potential mitigation approaches off the top of my head, which can be combined if desired: include a nonce as part of the HMAC input (and encourage rejection of reused nonces), and require constant-time comparison of the supplied and expected authentication tag (to prevent using a side channel from reading it off byte by byte).\u00a0 I suspect that there may be some operational issues with the \"unique nonce per HMAC\" approach that would make it not terribly reliable in practice, but \"use a constant-time comparison\" should be fairly straightforward. (D3) While we do provide the standard guidance against using any given key with more than one algorithm (e.g., with HMAC-SHA-256 and AES256-GCM), there seem to be additional considerations relevant to this protocol that merit further discussion in the security considerations. Specifically, we make provision for an AES-KW wrapped key to be included along with the security payload and mandate that if present, such a key be used.\u00a0 Given that the parameter holding the wrapped key does not seem to be bound to a given message, it seems fairly straightforward for an in-network attacker to \"slice and dice\" the ciphertext and wrapped key away from each other, and cause any wrapped key it has seen to be attempted to be used with a given algorithm+ciphertext.\u00a0 This, in turn, would provide attacker-induced key reuse across algorithms, which is something that we want to avoid.\u00a0 While providing full protection against key reuse with different algorithms would prove fairly challenging and probably require significant state on the verifier/security destination, we should at least have some discussion of the situation, and could provide some modest mitigation techniques such as using distinct KEKs for receiving wrapped keys that have different intended usage.\u00a0 That is, one KEK for receiving AES keys, another for HMAC keys, etc..\u00a0 Attaching context (intended algorithm, etc.) to the KEK allows such context to be indirectly attached to the received wrapped keys, which otherwise would come without much context for intended usage.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-16 10:45:25-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-06-28 07:14:28-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-28 07:14:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2021-06-28 22:28:21-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-28 22:28:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-06-29 07:39:45-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-07-13 04:35:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-06-29 07:39:45-07:00",
+        "text": "Thank you for the work on this document. I'd like to discuss the following point. I also have some non blocking comments, which I hope will help improve the document. Francesca 1. ----- FP: I agree with my colleagues that extensibility should be considered for algorithms. This document defines BIB-HMAC-SHA2 and BCB-AES-GCM, with the algorithms these security contexts provide. Adding support for one algorithm would need to define a new security context. Wouldn't it make sense to, instead, provide a way to add algorithms to the existing algorithms? For example, defining an IANA registry for each security context with the IDs of algorithms supported (taken from COSE). 2. ----- \u00a0 \u00a0 \u00a0 - Bit 2 (0x0003): Security Header Flag. FP: This should be (0x0004) and not (0x0003) (and same in a later section). Also, this is not wrong, but the bitmaps (here and everywhere else) could also be represented as 0b0100 in CBOR diagnostic notation, which to me is clearer. 3. ----- \u00a0 \u00a0 \u00a0 - Bits 8-15 are unassigned. FP: I am wondering why the limit on Bit 15, marked as unassigned: I think it would make sense to say Bits 8 and higher are unassigned. (This change would need to be reflected in the IANA sections) 4. ----- FP: this might be me missing some fundamental reading from bpsec, but I see that the blocks are defined as CBOR sequences. However, that is only mentioned in the appendix (meant to be informative): \u00a0  represented using CBOR structures.\u00a0 In cases where BP blocks (to \u00a0  include BPSec security blocks) are comprised of a sequence of CBOR \u00a0  objects, these objects are represented as a CBOR sequence as defined \u00a0  in [ RFC8742 ]. Is this defined somewhere else? If yes, could you add a pointer to the doc where it is defined? If not, this should be clarified, and specified earlier in the text, say in sections 3 and 4. 5. ----- \u00a0 \u00a0  [1, b'Twelve121212'] / Initialization Vector /, FP: I think the IV value is wrong here and should be h'5477656c7665313231323132'.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-13 04:35:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-06-30 18:50:28-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-30 18:50:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-06-25 13:20:36-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-07-09 13:25:47-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-06-25 13:20:36-07:00",
+        "text": "There are several references to the possibility that the AES-GCM API doesn't allow for separation of the tag from the cipher text. I have not heard of products with this API but will accept that they exist. But I'm confused as to the handling of this case: (4.4.1) says the tag MUST be CBOR encoded and (4.8.1) says the tag MUST be reported in the security result; but how is this possible if the tag is not extractable from the ciphertext? Moreover, shouldn't there be a parameter or a scope flag somewhere that tells the receiver if the tag is in the cipher text? It would be hard to discern the sender's API a priori!",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-09 13:25:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-06-29 07:24:37-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-29 07:24:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-07-01 00:53:13-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-07-15 07:40:35-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-07-01 00:53:13-07:00",
+        "text": "Sections 5.2 and 5.3 declare new IANA registries with Specification Required policies.\u00a0  BCP 26  ( RFC 8126 ) says of such registries that \"clear guidance to the designated expert should be provided when defining the registry\", but none is provided here.\u00a0 While that's obviously not a MUST, I would like to have a short discussion about why no such guidance is appropriate (or get some crafted and added).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-15 07:40:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-06-30 08:42:08-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-30 08:42:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-06-30 13:12:21-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-30 13:12:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-06-11 00:15:49-07:00",
+        "end_reason": "new_position",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-08-02 06:31:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-11 00:15:49-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc9173",
+  "evaluation_end": "2021-08-02 06:31:29-07:00",
+  "evaluation_start": "2021-06-11 00:15:49-07:00"
+}

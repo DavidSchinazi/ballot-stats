@@ -1,0 +1,283 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-06-15 06:45:37-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-15 06:45:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-06-16 02:17:27-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-16 02:17:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-06-12 16:30:26-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-12 16:30:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-06-14 15:19:44-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-14 15:19:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-06-15 09:53:46-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-06-15 12:17:25-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-06-15 09:53:46-07:00",
+        "text": "# ART AD Review of  draft-ietf-avtcore-rtp-vvc-16 cc @fpalombini Thank you for the work on this document. I have two DISCUSS points - hopefully easy to resolve - and a few non blocking comments, but answers will be appreciated. Francesca ## Discuss ### DONL and NALU size in figures 5 and 6 Section 4.3.2: ``` \u00a0  The first aggregation unit in an AP consists of a conditional 16-bit \u00a0  DONL field (in network byte order) followed by a 16-bit unsigned size \u00a0  information (in network byte order) that indicates the size of the ``` Which indicates DONL to be a 16-bit field, but in the figure 5 DONL appears to be 24 bits. ``` \u00a0  An aggregation unit that is not the first aggregation unit in an AP \u00a0  will be followed immediately by a 16-bit unsigned size information \u00a0  (in network byte order) that indicates the size of the NAL unit in ``` Same for the NALU size: 16 bits in the paragraph above, but 24 bits in figure 6. ### IANA Media type review request missing As specified by  RFC6838 , it is strongly encouraged to post the media type registration to the media-types mailing list for review (see  https://mailarchive.ietf.org/arch/msg/media-types/3_DukpPWrpkTXO-zynjJlShtC1w/  for an example of a\u00a0 registration review). Is there any reason this was not done here? If not, please post to the media-types mailing list, and I will remove the discuss with no objections raised in a week or so.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-06-20 03:01:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-15 12:17:25-07:00",
+        "text": "# ART AD Review of  draft-ietf-avtcore-rtp-vvc-16 cc @fpalombini Thank you for the work on this document. I have two (EDIT: one) DISCUSS points - hopefully easy to resolve - and a few non blocking comments, but answers will be appreciated. Francesca ## Discuss ### IANA Media type review request missing As specified by  RFC6838 , it is strongly encouraged to post the media type registration to the media-types mailing list for review (see  https://mailarchive.ietf.org/arch/msg/media-types/3_DukpPWrpkTXO-zynjJlShtC1w/  for an example of a\u00a0 registration review). Is there any reason this was not done here? If not, please post to the media-types mailing list, and I will remove the discuss with no objections raised in a week or so.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-20 03:01:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-06-01 15:01:17-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-06-15 06:47:28-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-06-15 06:47:59-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-06-15 06:47:28-07:00",
+        "text": "lease be aware that this document is far outside my area of expertise, and my comments might make no sense. Please do not be nervous to tell me I am wrong - likely I am.... #1 \u00a0  [VVC] is particularly vulnerable to such \u00a0  attacks, as it is extremely simple to generate datagrams containing \u00a0  NAL units that affect the decoding process of many future NAL units. \u00a0  Therefore, the usage of data origin authentication and data integrity \u00a0  protection of at least the RTP packet is RECOMMENDED, for example, \u00a0  with SRTP [ RFC3711 ]. Is something is \"particularly vulnerable\", why is its security counter measures only RECOMMENDED instead of REQUIRED ? Is there a real world use case where this vulnerable protocol should continue despite the threat without these counter measures? #2 Media-Aware Network Element (MANE) are briefly mentioned in the Security Considerations, but it is unclear to me how a user can optiin or opt-out of using these or how it could even evaluate a MANE for trustworthiness. Does a user even know if there is a MANE ? And especially combining the two issues, if a MANE can rewrite the SEI, would it not mean that it could attack a user with malicious data that appear trusted? #3 In the IANA Considerations, it points to another section. It is customary to just make this section stand on its own with clear and explicit instructions for IANA so they do not need to read or understand large parts of the document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-06-15 06:48:29-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-06-15 06:47:59-07:00",
+        "text": "Please be aware that this document is far outside my area of expertise, and my comments might make no sense. Please do not be nervous to tell me I am wrong - likely I am.... #1 \u00a0  [VVC] is particularly vulnerable to such \u00a0  attacks, as it is extremely simple to generate datagrams containing \u00a0  NAL units that affect the decoding process of many future NAL units. \u00a0  Therefore, the usage of data origin authentication and data integrity \u00a0  protection of at least the RTP packet is RECOMMENDED, for example, \u00a0  with SRTP [ RFC3711 ]. Is something is \"particularly vulnerable\", why is its security counter measures only RECOMMENDED instead of REQUIRED ? Is there a real world use case where this vulnerable protocol should continue despite the threat without these counter measures? #2 Media-Aware Network Element (MANE) are briefly mentioned in the Security Considerations, but it is unclear to me how a user can optiin or opt-out of using these or how it could even evaluate a MANE for trustworthiness. Does a user even know if there is a MANE ? And especially combining the two issues, if a MANE can rewrite the SEI, would it not mean that it could attack a user with malicious data that appear trusted? #3 In the IANA Considerations, it points to another section. It is customary to just make this section stand on its own with clear and explicit instructions for IANA so they do not need to read or understand large parts of the document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-06-15 06:51:55-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-06-15 06:48:29-07:00",
+        "text": "Please be aware that this document is far outside my area of expertise, and my comments might make no sense. Please do not be nervous to tell me I am wrong - likely I am.... #1 \u00a0  [VVC] is particularly vulnerable to such \u00a0  attacks, as it is extremely simple to generate datagrams containing \u00a0  NAL units that affect the decoding process of many future NAL units. \u00a0  Therefore, the usage of data origin authentication and data integrity \u00a0  protection of at least the RTP packet is RECOMMENDED, for example, \u00a0  with SRTP [ RFC3711 ]. If something is \"particularly vulnerable\", why is its security counter measures only RECOMMENDED instead of REQUIRED ? Is there a real world use case where this vulnerable protocol should continue despite the threat without these counter measures? #2 Media-Aware Network Element (MANE) are briefly mentioned in the Security Considerations, but it is unclear to me how a user can optiin or opt-out of using these or how it could even evaluate a MANE for trustworthiness. Does a user even know if there is a MANE ? And especially combining the two issues, if a MANE can rewrite the SEI, would it not mean that it could attack a user with malicious data that appear trusted? #3 In the IANA Considerations, it points to another section. It is customary to just make this section stand on its own with clear and explicit instructions for IANA so they do not need to read or understand large parts of the document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-07-08 06:54:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-15 06:51:55-07:00",
+        "text": "Please be aware that this document is far outside my area of expertise, and my comments might make no sense. Please do not be nervous to tell me I am wrong - likely I am.... #1 \u00a0  [VVC] is particularly vulnerable to such \u00a0  attacks, as it is extremely simple to generate datagrams containing \u00a0  NAL units that affect the decoding process of many future NAL units. \u00a0  Therefore, the usage of data origin authentication and data integrity \u00a0  protection of at least the RTP packet is RECOMMENDED, for example, \u00a0  with SRTP [ RFC3711 ]. If something is \"particularly vulnerable\", why is its security counter measures only RECOMMENDED instead of REQUIRED ? Is there a real world use case where this vulnerable protocol should continue despite the threat without these counter measures? #2 Media-Aware Network Element (MANE) are briefly mentioned in the Security Considerations, but it is unclear to me how a user can opt-in or opt-out of using these or how it could even evaluate a MANE for trustworthiness. Does a user even know if there is a MANE ? And especially combining the two issues, if a MANE can rewrite the SEI, would it not mean that it could attack a user with malicious data that appear trusted? #3 In the IANA Considerations, it points to another section. It is customary to just make this section stand on its own with clear and explicit instructions for IANA so they do not need to read or understand large parts of the document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-07-08 06:54:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-06-13 02:27:41-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-13 02:27:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-06-14 08:44:53-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-14 08:44:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-06-16 05:59:37-07:00",
+        "end_reason": "new_position",
+        "start": "2022-06-01 15:01:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-08-18 01:43:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-06-16 05:59:37-07:00",
+        "text": "I would like discuss if this specification should be making stronger statement to enforce the reinterpretation the SDP Offer/Answer model for parameters sprop-max-don-diff and sprop-depack-buf-bytes. In section 7.3.2.3, it says sprop-max-don-diff and sprop-depack-buf-bytes parameter should be interpreted differently than usual interpretation of the parameters according to  RFC 3264 . This is a significant change and kind of easy to miss. This section does not use any normative text to enforce the change either.\u00a0  I am also supporting Francesca's discuss.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-09-28 06:07:28-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-08-18 01:43:12-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc9328",
+  "evaluation_end": "2022-09-28 06:07:28-07:00",
+  "evaluation_start": "2022-06-01 15:01:17-07:00"
+}

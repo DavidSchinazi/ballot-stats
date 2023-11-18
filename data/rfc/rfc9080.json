@@ -1,0 +1,403 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-05-08 20:47:23-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-08 20:47:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-05-10 04:03:11-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-10 04:03:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-05-09 18:09:43-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-09 18:09:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-05-09 09:27:16-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-05-10 06:28:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-05-09 09:27:16-07:00",
+        "text": "I would like to DISCUSS about the Intended Status of this document -- with the Chairs and AD. I have to confess that I haven't been following the homenet WG as closely as I probably should have.\u00a0 Hopefully that means that the topic below has been discussed and documented already, making this DISCUSS easy to resolve. Back in 2015, the then-Chairs and the AD posted a note titled \"Routing Design Team outcome and next steps\"[1]; in it, they declared \"rough consensus that Babel[*] shall be the \u201cmandatory to implement\u201d routing protocol for Homenet routers, albeit only on an Experimental basis at this time...we solicit Experimental Internet Drafts to document Homenet-specific profiles of any applicable routing solution and to report results of any relevant experimentation and implementation.\u00a0 We expect that this decision will be revisited in a future Standards Track document based on specifications and running code available at that time.\" My interpretation of the above text is that Babel is MTI, but that the work (documents) will be Experimental...and that this decision could change in the future (most likely towards confirming and moving to the Standards Track).\u00a0 This document was originally adopted as Experimental.\u00a0 I didn't find an explicit discussion on the list about changing that original overall direction, nor another declaration by the Chairs/AD.\u00a0 I did find find a thread in which one of the Chairs (Barbara) asked about the status for this document (and this document only)[2]; the initial question was framed around the references being Standards Track documents (HNCP and rfc6126bis) -- just one answer came back (from the author of this document)... I'm treating this point as a DISCUSS because I think that the WG consensus may have not been determined to change the original declaration from the Chairs/AD (from 2015).\u00a0 In my interpretation of that original declaration, moving Babel to the Standards Track means a recognition that it will be *the* protocol going forward (which changes that initial \"only on an Experimental basis at this time\" phrase), is something that should be discussed explicitly, and not just in light of this one document.\u00a0 That is the part that I haven't seen. I note that in the conclusion of the thread about the status of this document [3] Barbara does include reasoning that may result in changing the original declaration (as does the Shepherd writeup), for example: \"there exist multiple, interoperable implementations\" and \"no drafts proposing other homenet routing protocol profiles have been submitted\"...but those points don't seem to have been considered/discussed by the WG (they were not in the original message and I didn't find another thread -- I also looked at the minutes of the last couple of IETF meetings). To be clear, I have no objection with Babel being used in homenet applications, or with it being the Standard protocol.\u00a0 My point here is that it is not clear to me that the WG explicitly reached consensus to change the declaration from the Chairs/AD.\u00a0 I will be happy to clear this DISCUSS when the Chairs/AD point me to the discussion that I missed, or simply tell me that the declaration from 2015 is no longer valid and that the WG knows, or that they believe that the thread discussing this document is enough to call consensus...or something to that effect. [1]  https://mailarchive.ietf.org/arch/msg/homenet/kiI7pIYfpgT2Qrfx1VBAwng7_QY [2]  https://mailarchive.ietf.org/arch/msg/homenet/5L5WYN14gDCamP7qlknJmWkeU5M [3]  https://mailarchive.ietf.org/arch/msg/homenet/35EU8oBr8hunvvSRYUStypZIPVU",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-10 06:28:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-05-09 18:44:50-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-09 18:44:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-05-08 07:00:01-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-08 07:00:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-05-09 12:31:40-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-09 12:31:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-05-10 06:48:50-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-10 06:48:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-05-07 11:20:58-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-07 11:20:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-05-04 06:22:31-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-04 06:22:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-05-09 16:53:29-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-09 16:53:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-05-10 07:01:29-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-10 07:01:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-03-21 04:25:53-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": null,
+        "end_reason": null,
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-05-06 15:36:46-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-21 04:25:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-09-10 11:08:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-06 15:36:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9080",
+  "evaluation_end": "2018-09-10 11:08:26-07:00",
+  "evaluation_start": "2018-03-21 04:25:53-07:00"
+}

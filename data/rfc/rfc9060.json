@@ -1,0 +1,297 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-09-10 06:32:50-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-09-10 06:32:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-04-19 12:21:13-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-19 12:21:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-09-03 20:06:22-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-09-03 20:06:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-09-03 08:11:23-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-04-01 18:06:58-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-09-03 08:11:23-07:00",
+        "text": "Despite the length of the list of numbered points, this document is actually in pretty good shape -- most of them just relate to clarifying/correcting how this document interacts with other documents rather than issues with the way this mechanism works. (1) Section 4 calmly asserts that \"[i]n the STIR ecosystem, CA certificates may be used to sign PASSporTs\", but I could not find this documented in RFCs 8224, 8225, or 8226.\u00a0 If it is already documented somewhere, please provide a reference; if it is a new property of the architecture being asserted by this specification, we should be more clear about it, as well as how it is not entirely consistent with cryptographic best practice (see COMMENT). (It is perhaps unfortunate that  RFC 8225  did not talk about (extended) key usage values suitable for signing PASSporTs, though it is probably not appropriate to start doing so in this document.) (2) We are introducing new entities that act as X.509 CAs with this mechanism.\u00a0 Do we need to mandate that they provide CRLs/OCSP/etc. for making revocation information available?\u00a0 (\"This is already covered by RFC XXXX\" is a fine answer, though it is probably worth a reminder in the text.) (3) I think we are missing some exposition about how an SPC TNAuthList value is treated as \"encompassing\" specific telephone numbers/ranges controlled by the provider to which that SPC is assigned (more than just a mention in passing that the CA has to have access to the industry database), such that the CA cert might have the SPC form of TNAuthList but the child certificate a different form.\u00a0 I was also looking for some discussion of the related risk of skew if the database changes, but perhaps  https://tools.ietf.org/html/rfc8226#section-10  is enough to cover that.\u00a0 (It would be nice to have some data on the relative lifetime of database mappings and certificate lifetimes, though.) (4) We seem to have an internal inconsistency about whether alternative certification paths are allowed -- Section 6 implies that it is a very rigid procedure (and Section 7 requires AuthorityKeyIdentifier/SubjectKeyIdentifier matching), but Section 8.2 suggests the use of cross-signing and AIA for an alternate chain construction. (5) Section 9 contains a false statement that TLS subcerts has ways for the issuer of a (TLS) delegated credential to revoke that credential. https://tools.ietf.org/html/draft-ietf-tls-subcerts-09#section-7.3  is quite clear that expiration is the only mechanism to invalidate the delegated credential, with the risk of stolen/leaked delegated credentials limited by their short-lived nature. (6) Section 4.1 seems to waver on where the \"encompassing\" check is performed, leaving open the possibility that it is not performed at all. I think we need to be very explicit about what is required, not just what might be done or what is desirable.\u00a0 This might end up needing to be passing the buck (\"the authority for the deployment in question will specify which entity performs this validation\"), but at present it seems like there's a gap that needs to be filled in some manner. (7) Section 8.1 has what I think is a stale statement about ACME, relating to suitability of the certificate URL for use as \"x5u\" --  RFC 8555  only requres POST-AS-GET access, not the GET access that we imply. (See COMMENT for additional related points.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-01 18:06:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-09-09 06:00:33-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-09-09 06:00:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-09-04 08:39:01-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-04 08:39:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-09-08 23:01:40-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-08 23:01:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-13 06:00:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-14 08:55:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-09-10 01:58:34-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-09-10 01:58:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-08-31 15:54:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-31 15:54:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-04-19 08:56:45-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-19 08:56:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-08-26 17:59:35-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-09-09 09:14:31-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 09:14:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-09-09 07:10:06-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 07:10:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-09-09 12:59:21-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-26 17:59:35-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-09-09 12:59:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-04-26 10:34:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-04-22 05:01:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9060",
+  "evaluation_end": "2021-04-26 10:34:27-07:00",
+  "evaluation_start": "2020-08-26 17:59:35-07:00"
+}

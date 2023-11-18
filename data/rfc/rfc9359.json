@@ -1,0 +1,291 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-10-25 14:03:59-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-25 14:03:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-10-24 05:59:49-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-24 05:59:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-10-27 01:00:05-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-27 01:00:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-26 13:23:11-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-26 13:23:56-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-10-26 13:23:11-07:00",
+        "text": "### Clarity about scope of the document As I understand it, this document isn't intended to be an implementable protocol specification on its own; rather, \"specification details for these different echo request/reply protocols are outside the scope of this document\". I'm not crazy about this approach, but if it's to be followed there are some changes needed. Below I provide some suggested text -- please know that I'm just supplying this as a straw man to illustrate my thinking; while you're welcome to use the text I've provided, I don't necessarily expect that. The Abstract says that \"This document describes an extension to the echo request/reply mechanisms\". It does not. Here's an example of how it might be changed to be clearer. OLD: \u00a0  This document describes an extension to the echo request/reply \u00a0  mechanisms used in IPv6 (including Segment Routing with IPv6 data \u00a0  plane (SRv6)), MPLS (including Segment Routing with MPLS data plane \u00a0  (SR-MPLS)), Service Function Chain (SFC) and Bit Index Explicit \u00a0  Replication (BIER) environments, which can be used within the In situ \u00a0  Operations, Administration, and Maintenance (IOAM) domain, allowing \u00a0  the IOAM encapsulating node to discover the enabled IOAM capabilities \u00a0  of each IOAM transit and IOAM decapsulating node. NEW: \u00a0  There is a need to extend echo request/reply mechanisms used in IPv6 \u00a0  (including Segment Routing with IPv6 data plane (SRv6)), MPLS \u00a0  (including Segment Routing with MPLS data plane (SR-MPLS)), Service \u00a0  Function Chain (SFC) and Bit Index Explicit Replication (BIER) \u00a0  environments, for use within the In situ Operations, Administration, \u00a0  and Maintenance (IOAM) domain, allowing the IOAM encapsulating node \u00a0  to discover the enabled IOAM capabilities of each IOAM transit and \u00a0  IOAM decapsulating node. \u00a0  Although this document does not itself specify the necessary \u00a0  extensions, it specifies formats and objects that can be used in such \u00a0  specifications, and provides guidelines and requirements for their \u00a0  development. I think the Introduction also needs to be cleaned up. Saying that \"specification details... are outside the scope\" undersells the scope of what's needed. For example, maybe these changes would work in the Introduction: OLD: \u00a0  This document describes an extension to the echo request/reply \u00a0  mechanisms used in IPv6 (including SRv6), MPLS (including SR-MPLS), \u00a0  SFC and BIER environments, which can be used within the IOAM domain, \u00a0  allowing the IOAM encapsulating node to discover the enabled IOAM \u00a0  capabilities of each IOAM transit and IOAM decapsulating node. NEW: \u00a0  This document specifies formats and objects that can be used in the \u00a0  extension of echo request/reply mechanisms used in IPv6 (including \u00a0  SRv6), MPLS (including SR-MPLS), SFC and BIER environments, which can \u00a0  be used within the IOAM domain, allowing the IOAM encapsulating node \u00a0  to discover the enabled IOAM capabilities of each IOAM transit and \u00a0  IOAM decapsulating node. OLD: \u00a0  Note that specification details for these different echo request/ \u00a0  reply protocols are outside the scope of this document.\u00a0 It is \u00a0  expected that each such protocol extension would be specified by an \u00a0  RFC and jointly designed by the working group that develops or \u00a0  maintains the echo request/reply protocol and the IETF IP Performance \u00a0  Measurement (IPPM) Working Group. NEW: \u00a0  It is expected that the specification of the instantiation of each of \u00a0  these extensions will be done in the form of an RFC jointly designed \u00a0  by the working group that develops or maintains the echo \u00a0  request/reply protocol and the IETF IP Performance Measurement (IPPM) \u00a0  Working Group. \u00a0   ### Clarity of formats Because this document is specifying things (or trying to) in absence of any concrete instantiation, it's very difficult for me to evaluate if the formats as specified are complete and unambiguous. For now I've left my detailed discussion of this in my COMMENT section, and am optimistic that we can sort it out. However, I'm putting a placeholder here in case that problem turns out to be thornier than hoped.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-10-26 13:25:26-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2022-10-26 13:23:56-07:00",
+        "text": "### Clarity about scope of the document As I understand it, this document isn't intended to be an implementable protocol specification on its own; rather, \"specification details for these different echo request/reply protocols are outside the scope of this document\". If this approach is to be followed there are some changes needed. Below I provide some suggested text -- please know that I'm just supplying this as a straw man to illustrate my thinking; while you're welcome to use the text I've provided, I don't necessarily expect that. The Abstract says that \"This document describes an extension to the echo request/reply mechanisms\". It does not. Here's an example of how it might be changed to be clearer. OLD: \u00a0  This document describes an extension to the echo request/reply \u00a0  mechanisms used in IPv6 (including Segment Routing with IPv6 data \u00a0  plane (SRv6)), MPLS (including Segment Routing with MPLS data plane \u00a0  (SR-MPLS)), Service Function Chain (SFC) and Bit Index Explicit \u00a0  Replication (BIER) environments, which can be used within the In situ \u00a0  Operations, Administration, and Maintenance (IOAM) domain, allowing \u00a0  the IOAM encapsulating node to discover the enabled IOAM capabilities \u00a0  of each IOAM transit and IOAM decapsulating node. NEW: \u00a0  There is a need to extend echo request/reply mechanisms used in IPv6 \u00a0  (including Segment Routing with IPv6 data plane (SRv6)), MPLS \u00a0  (including Segment Routing with MPLS data plane (SR-MPLS)), Service \u00a0  Function Chain (SFC) and Bit Index Explicit Replication (BIER) \u00a0  environments, for use within the In situ Operations, Administration, \u00a0  and Maintenance (IOAM) domain, allowing the IOAM encapsulating node \u00a0  to discover the enabled IOAM capabilities of each IOAM transit and \u00a0  IOAM decapsulating node. \u00a0  Although this document does not itself specify the necessary \u00a0  extensions, it specifies formats and objects that can be used in such \u00a0  specifications, and provides guidelines and requirements for their \u00a0  development. I think the Introduction also needs to be cleaned up. Saying that \"specification details... are outside the scope\" undersells the scope of what's needed. For example, maybe these changes would work in the Introduction: OLD: \u00a0  This document describes an extension to the echo request/reply \u00a0  mechanisms used in IPv6 (including SRv6), MPLS (including SR-MPLS), \u00a0  SFC and BIER environments, which can be used within the IOAM domain, \u00a0  allowing the IOAM encapsulating node to discover the enabled IOAM \u00a0  capabilities of each IOAM transit and IOAM decapsulating node. NEW: \u00a0  This document specifies formats and objects that can be used in the \u00a0  extension of echo request/reply mechanisms used in IPv6 (including \u00a0  SRv6), MPLS (including SR-MPLS), SFC and BIER environments, which can \u00a0  be used within the IOAM domain, allowing the IOAM encapsulating node \u00a0  to discover the enabled IOAM capabilities of each IOAM transit and \u00a0  IOAM decapsulating node. OLD: \u00a0  Note that specification details for these different echo request/ \u00a0  reply protocols are outside the scope of this document.\u00a0 It is \u00a0  expected that each such protocol extension would be specified by an \u00a0  RFC and jointly designed by the working group that develops or \u00a0  maintains the echo request/reply protocol and the IETF IP Performance \u00a0  Measurement (IPPM) Working Group. NEW: \u00a0  It is expected that the specification of the instantiation of each of \u00a0  these extensions will be done in the form of an RFC jointly designed \u00a0  by the working group that develops or maintains the echo \u00a0  request/reply protocol and the IETF IP Performance Measurement (IPPM) \u00a0  Working Group. \u00a0   ### Clarity of formats Because this document is specifying things (or trying to) in absence of any concrete instantiation, it's very difficult for me to evaluate if the formats as specified are complete and unambiguous. For now I've left my detailed discussion of this in my COMMENT section, and am optimistic that we can sort it out. However, I'm putting a placeholder here in case that problem turns out to be thornier than hoped.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-11-21 13:44:06-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-26 13:25:26-07:00",
+        "text": "### Clarity about scope of the document As I understand it, this document isn't intended to be an implementable protocol specification on its own; rather, \"specification details for these different echo request/reply protocols are outside the scope of this document\". If this approach is to be followed there are some changes needed. Below I provide some suggested text -- please know that I'm just supplying this as a straw man to illustrate my thinking; while you're welcome to use the text I've provided, I don't necessarily expect that. The Abstract says that \"This document describes an extension to the echo request/reply mechanisms\". It does not. Here's an example of how it might be changed to be clearer. OLD: \u00a0  This document describes an extension to the echo request/reply \u00a0  mechanisms used in IPv6 (including Segment Routing with IPv6 data \u00a0  plane (SRv6)), MPLS (including Segment Routing with MPLS data plane \u00a0  (SR-MPLS)), Service Function Chain (SFC) and Bit Index Explicit \u00a0  Replication (BIER) environments, which can be used within the In situ \u00a0  Operations, Administration, and Maintenance (IOAM) domain, allowing \u00a0  the IOAM encapsulating node to discover the enabled IOAM capabilities \u00a0  of each IOAM transit and IOAM decapsulating node. NEW: \u00a0  There is a need to extend echo request/reply mechanisms used in IPv6 \u00a0  (including Segment Routing with IPv6 data plane (SRv6)), MPLS \u00a0  (including Segment Routing with MPLS data plane (SR-MPLS)), Service \u00a0  Function Chain (SFC) and Bit Index Explicit Replication (BIER) \u00a0  environments, for use within the In situ Operations, Administration, \u00a0  and Maintenance (IOAM) domain, allowing the IOAM encapsulating node \u00a0  to discover the enabled IOAM capabilities of each IOAM transit and \u00a0  IOAM decapsulating node. \u00a0  Although this document does not itself specify the necessary \u00a0  extensions, it specifies formats and objects that can be used in such \u00a0  specifications, and provides guidelines and requirements for their \u00a0  development. I think the Introduction also needs to be cleaned up. Saying that \"specification details... are outside the scope\" undersells the scope of what's needed. For example, maybe these changes would work in the Introduction: OLD: \u00a0  This document describes an extension to the echo request/reply \u00a0  mechanisms used in IPv6 (including SRv6), MPLS (including SR-MPLS), \u00a0  SFC and BIER environments, which can be used within the IOAM domain, \u00a0  allowing the IOAM encapsulating node to discover the enabled IOAM \u00a0  capabilities of each IOAM transit and IOAM decapsulating node. NEW: \u00a0  This document specifies formats and objects that can be used in the \u00a0  extension of echo request/reply mechanisms used in IPv6 (including \u00a0  SRv6), MPLS (including SR-MPLS), SFC and BIER environments, which can \u00a0  be used within the IOAM domain, allowing the IOAM encapsulating node \u00a0  to discover the enabled IOAM capabilities of each IOAM transit and \u00a0  IOAM decapsulating node. OLD: \u00a0  Note that specification details for these different echo request/ \u00a0  reply protocols are outside the scope of this document.\u00a0 It is \u00a0  expected that each such protocol extension would be specified by an \u00a0  RFC and jointly designed by the working group that develops or \u00a0  maintains the echo request/reply protocol and the IETF IP Performance \u00a0  Measurement (IPPM) Working Group. NEW: \u00a0  It is expected that the specification of the instantiation of each of \u00a0  these extensions will be done in the form of an RFC jointly designed \u00a0  by the working group that develops or maintains the echo \u00a0  request/reply protocol and the IETF IP Performance Measurement (IPPM) \u00a0  Working Group. \u00a0   ### Clarity of formats Because this document is specifying things (or trying to) in absence of any concrete instantiation, it's difficult for me to evaluate if the formats as specified are complete and unambiguous. For now I've left my detailed discussion of this in my COMMENT section, and am optimistic that we can sort it out. However, I'm putting a placeholder here in case that problem turns out to be thornier than hoped.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-21 13:44:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-10-26 01:53:09-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-26 01:53:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2022-10-19 11:13:58-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-11-07 00:43:43-08:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-07 00:43:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-10-25 16:53:27-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-25 16:53:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-10-27 00:22:33-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-11-06 23:21:56-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-27 00:22:33-07:00",
+        "text": "Hi, I support Roman and Warren's discuss, and again, I have a similar, but slightly separate concern: (1) p 14, sec 6.\u00a0 Security Considerations \u00a0  To protect against unauthorized sources using echo request messages \u00a0  to obtain IOAM Capabilities information, it is RECOMMENDED that \u00a0  implementations provide a means of checking the source addresses of \u00a0  echo request messages against an access list before accepting the \u00a0  message. I'm concerned that performing a source address filtering isn't necessarily that secure, compared with use NETCONF or RESTCONF that can provide AAA access controls.\u00a0 Hence, I think that the security considerations should REQUIRE that IOAM daemons do not respond to these capability requests unless explicitly configured to do so, specifically to avoid implementations potentially leaking information if they are not aware of this functionality (e.g., if it was enabled by default).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-06 23:21:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-10-25 19:20:58-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-11-07 01:52:59-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-25 19:20:58-07:00",
+        "text": "Section 6. \u00a0  A deployment can increase security by using border filtering of \u00a0  incoming and outgoing echo requests/replies. Thanks for calling out the security impact of echo request/replies.\u00a0 Since the cited  RFC9197  reminds the reader that a \u201cnetwork operator is expected to enforce policies that prevent IOAM traffic from leaking outside of the IOAM-Domain\u201d, why is this guidance not mandatory? Would the following text be more appropriate? NEW A deployment MUST ensure that border filtering drops inbound echo requests with a IOAM Capabilities Container Header from outside of the domain, and drops outbound echo request/replies with IOAM Capabilities Headers leaving the domain.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-07 01:52:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-26 13:14:55-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-10-27 06:46:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2022-10-26 13:14:55-07:00",
+        "text": "Thank you very much for writing this document. Please see:  https://www.ietf.org/about/groups/iesg/statements/handling-ballot-positions/ My concerns are closely related to Roman's DISCUSS point: The document says: \"A deployment can increase security by using border filtering of incoming and outgoing echo requests/replies.\" I'm unclear why this is just a \"can increase security\", and not something much much stronger -- but, also, I'm unclear how exactly an operator would be expected to filter these. The Abstract says: \"This document describes an extension to the echo request/reply mechanisms used in [...]\", but from what I can tell, it is more \"here are some containers that you could use in some other protocols\". It seems like, instead of only relying on the network for filtering (which doesn't yet seem to be implemented), the: \"To protect against unauthorized sources using echo request messages to obtain IOAM Capabilities information, it is RECOMMENDED that implementations provide a means of checking the source addresses of echo request messages against an access list before accepting the message.\" should be made stronger. Implementations need to be created to understand IOAM, and so requiring that they have the capability to only accept configured source addresses seems simple.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-27 06:46:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-10-27 03:27:56-07:00",
+        "end_reason": "new_position",
+        "start": "2022-10-19 11:13:58-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-11-22 10:33:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-10-27 03:27:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9359",
+  "evaluation_end": "2022-11-22 10:33:29-08:00",
+  "evaluation_start": "2022-10-19 11:13:58-07:00"
+}

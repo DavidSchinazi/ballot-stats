@@ -1,0 +1,251 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-08-25 09:45:22-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-25 09:45:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-08-26 13:11:18-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-10-07 14:32:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-26 13:11:18-07:00",
+        "text": "\u00a78.7: \"it is possible that Flow Specifications will be distributed by BGP as well as by PCEP as described in this document...implementations MAY provide a configuration control to allow one protocol to take precedence over the other as this may be particularly useful if the Flow Specification make identical matches on traffic but have different actions.\" I understand the need to allow one protocol to take precedence over the other. The concern I have is that in BGP's distribution model FlowSpecs are forwarded to other BGP speakers...which may not also be PCCs.\u00a0 If PCEP takes precedence, and the actions are different, then there might be nodes that take the BGP-defined action when not intended to...potentially resulting in unexpected forwarding or rate-limiting of the traffic. Clearly, this issue is related to the different distribution models for the information.\u00a0 If the operator took care of using BGP to distribute FlowSpecs to only the PCCs, then this issue wouldn't exist.\u00a0 I would like to see some text that provides guidance when using both distribution mechanisms.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-07 14:32:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-08-26 20:02:46-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-26 20:02:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-08-25 13:31:02-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-29 17:57:50-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-08-25 13:31:02-07:00",
+        "text": "As with the others, I also found this document to be quite easy to read and well-structured; thank you!\u00a0 I just have a couple points I'd like to discuss, but I am not pressing for a specific resolution and expect to change to No Objection once the discussion has occurred (whatever the conclusion is). This is a Discuss because I want to have a discussion, not because I'm confident in the correctness of my position.\u00a0 But it seems like the ambiguity about when multiple flow specifications in single FLOWSPEC object are treated as logical AND to narrow a single flow specification versus treated as separate flow specifications per Section 8.4 could lead to confusion, and it would be simpler and have less risk to stick to the \"one flow specification per FLOWSPEC object\" model as discussed in the rest of the document.\u00a0 If the ability to define multiple flows within a single FLOWSPEC object is retained, I think we need more specific procedures for identifying when that is the case, quite possibly with a specific enumeration of cases. I also mention in the per-section comments several places where (IIUC) there seems to be a need to match the Speaker Entity Identifier TLV as well as the FS-ID value.\u00a0 It might even be an exhaustive list, but please do a pass to check.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-29 17:57:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-08-14 14:38:57-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-08-18 03:13:50-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-18 03:13:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-08-22 18:27:25-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-22 18:27:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-08-24 21:33:33-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-24 21:33:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-08-26 23:22:53-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-26 23:22:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-08-26 12:57:49-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-26 12:57:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-08-26 15:46:23-07:00",
+        "end_reason": "new_position",
+        "start": "2020-08-14 14:38:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-11-02 10:24:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-08-26 15:46:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9168",
+  "evaluation_end": "2020-11-02 10:24:18-08:00",
+  "evaluation_start": "2020-08-14 14:38:57-07:00"
+}

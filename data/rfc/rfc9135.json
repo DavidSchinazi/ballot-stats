@@ -1,0 +1,339 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-07-14 10:50:59-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-09 12:33:47-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-07-14 10:50:59-07:00",
+        "text": "I'm balloting DISCUSS because the specification in \u00a79.1.1 is not clear, and it is not in sync with draft-ietf-idr-tunnel-encaps.\u00a0 [Some of the points below are not DISCUSS-worthy, but I'm including them here because they are related to the larger point.] \u00a79.1.1 talks about using the Encapsulation Extended Community *and* the Router's MAC Extended Community.\u00a0 However, the requirement for these communities to appear together is not explicit anywhere.\u00a0 What are the implications for only one of them being present? The Router's MAC Extended Community \"is only required when Ethernet NVO tunnel type is used\".\u00a0 It seems to me that normatively requiring the extended community is important in this case. What exactly is the \"Ethernet NVO tunnel type\"?\u00a0 \u00a71 (Terminology) says that \"Examples of this type of tunnels are VXLAN or GENEVE.\"\u00a0 A standards track document should be specific about when something is required.\u00a0 For example, I assume that it would also be required when using NVGRE.\u00a0 The tunnel types are a finite number, so please be specific. Where is the GENEVE tunnel type (to be used in the Encapsulation Extended Community) defined?\u00a0 BTW, the [GENEVE] reference is also missing. \u00a74 has this text: \"the tunnel connecting these IP-VRFs can be either IP-only tunnel (in case of MPLS or GENEVE encapsulation) or Ethernet NVO tunnel (in case of VxLAN encapsulation).\"\u00a0 It confuses me because of the apparent contradiction between GENEVE being an example of an Ethernet NVO tunnel type, but also (?) an IP-only tunnel in this case. \u00a74.2/draft-ietf-idr-tunnel-encaps mentions possible conflicts created by the Router's MAC Extended Community and how it may be ignored, but this document doesn't mention using the Encapsulation Sub-TLVs (also from  draft-ietf-idr-tunnel-encaps ) for the same function.\u00a0 Can the same function be achieved with the Encapsulation Sub-TLVs? \"section 4.5 of [TUNNEL-ENCAP]\" is mentioned a couple of times, but there is no \u00a74.5 in  draft-ietf-idr-tunnel-encaps , and there's no reference either.\u00a0 Please remove the specific section number (to avoid becoming out of sync), and instead mention the Encapsulation Extended Community by name.\u00a0 Add a Normative reference to draft-ietf-idr-tunnel-encaps.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-09 12:33:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-07-15 20:38:09-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-07-15 20:38:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-07-13 22:20:07-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-07-14 14:00:01-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-13 22:20:07-07:00",
+        "text": "ection 7 appears to reference (in a normative fashion) an[IRB-EXT-MOBILITY] document but there is no such reference listed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-10-29 17:28:45-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-07-14 14:00:01-07:00",
+        "text": "(1) Possibly a \"discuss discuss\", but ... if I'm understanding correctly, the symmetric IRB case over an Ethernet NVO tunnel (not MPLS or IP NVO) described in this document is introducing a new scenario where traffic using router (PE) MAC addresses as source and destination is comingled on the same tunnel with traffic using tenant system MAC addresses as source and destination.\u00a0 This places an obligation on the tunnel endpoints to properly isolate and process such \"internal\" tunnel traffic without hampering the ability of tenans systems to communicate.\u00a0 In a world where tenant systems can appear at any time, using previously unknown MAC addresses, this represents a rather challenging problem: how will the PEs be able to pick (and avertise) MAC addresses that they know will not conflict with any present or future customer systems?\u00a0 (A similar dilemma led to quite a delay in the processing of  draft-ietf-bfd-vxlan , which in that case was resolved by limiting the BFD operation to just the \"management VNI\" which is not subject to MAC address conflict with customer systems.)\u00a0 In this docuement's case, we seem to be using a \"well-known\"/reserved MAC address range from  RFC 5798 ; in principle, this should be enough to avoid conflicts, if customer systems are known to not squat on this reserved range.\u00a0 However, this document has some text in Section 4.1 that indicates that there must be external knowledge that auto-derived MAC addresses in the  RFC 5798  ranges \"[do] not collide with any customer MAC address\".\u00a0 So I'm left uncertain whether or not this potential problem is addressed or not.\u00a0 (Also, I don't know if the limit on 255 distinct such MAC addresses presents a scaling issue.) Also, is there any risk that the EVPN IRB setup might also want to use VRRPv3, and thus collide on the MAC addresses in a different manner? (1.1) I'm less sure whether there's a similar collision risk for IP addresses -- we assign IP addresses to NVEs (e.g., for use as BGP Next Hop addresses) and these are used as VTEP addresses when encapsulating packets that are going inter-subnet.\u00a0 I think that at this point in the packet processing we may already know that we're in the the \"IRB tunnel\" scope and that may be enough to de-conflict any potential IP address collision between NVE and customer addresses. (2) Section 7 appears to reference (in a normative fashion) [IRB-EXT-MOBILITY] but there is no such reference. Similarly (as Murray notes), there are a couple apparent references to [TUNNEL-ENCAP] that are also arguably normative, but the target of the reference is not forthcoming (and the IANA registry does not show a \"BGP Encapsulation Extended Community\" that is supposedly defined by [TUNNEL-ENCAP]). There is also not a listed reference for [EVPN-PREFIX], though one could perhaps surmise that it is intended to be [ I-D.ietf-bess-evpn-prefix-advertisement ] (given that the latter does allocate EVPN route type 5 for carrying IP Prefix routes, etx.). However, given that this document has text like \"MUST advertise local subnet routes as RT-5\", this needs to be a normative (not informative) reference.\u00a0 (We may also want to explicitly reference [EVPN-PREFIX] where those normative requirements are made.) (3) I'm not sure whether we are modifying the error-handling semantics for RT-2 from what is specified in  RFC 7432  (and, furthermore, whether the changes are backwards-compatible).\u00a0 If so, it seems like we may need an Updates: relationship.\u00a0 The text in question is in Section 9.1.1 (which itself seems problematic, since this section is advertised as an (example) operational model/scenario): \u00a0  If the receiving NVE receives a RT-2 with only Label-1 and only a \u00a0  single Route Target corresponding to IP-VRF, or if it receives a RT-2 \u00a0  with only a single Route Target corresponding to MAC-VRF but with \u00a0  both Label-1 and Label-2, or if it receives a RT-2 with MAC Address \u00a0  Length of zero, then it MUST treat the route as withdraw [ RFC7606 ] \u00a0  and log an error message. Are all of these treat-as-withdraw behaviors specified in  RFC 7432 ? (4) Let's discuss whether we need more generally a \"backwards compatibility\" section (I mention a couple other places where this might come into play, in the COMMENT).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-27 16:07:30-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-10-29 17:28:45-07:00",
+        "text": "I think draft-ietf-bess-evpn-irb-extended mobility needs to be a normative reference, since \"the procedures in [it] must be exercised\" incorporates its procedures by reference.\u00a0 Similarly, draft-ietf-idr-tunnel-encaps  seems like a normative reference since we require the RT-2 route used by this document to be advertised along with the EC that indicates the tunnel type. I still think we need to discuss whether this document Updates: 7432. RFC 7432  specifies the layout and interpretation of the RT-2 (MAC-IP Advertisement Route) EVPN NRLI, but we extend it in several ways (e.g., the Label1 and Label2 (which we spell \"Label-1\" and \"Label-2\", unfortunately) are only MPLS labels in 7432, but we expand that to also allow VNI values in those fields; likewise, 7432 gives no semantics at  all for Label2, but we define some).\u00a0 I understand that 7432 only covers the L2 case but this document adds mixed L2/L3 (IRB), and furthermore  that the IRB case can be inferred based on the contets of the fields in the advertisement, *if you know how to look for them*.\u00a0 But I still can't shake the feeling that this document should either be added as an additional reference for EVPN Route Type 2, or listed as Updating 7432, in order to indicate that we provide more details for the interpretation and contents of the RT-2 NLRI.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-06-10 11:24:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-02-27 16:07:30-08:00",
+        "text": "This document provides semantics for the EVPN RT-2 \"MPLS Label2\" field allocated in but undocumented by  RFC 7432 .\u00a0 I believe that we need to provide some \"trail of breadcrumbs\" from the IANA registry to this document so that the semantics of the protocol field are discoverable.\u00a0 This could take the form of a direct reference from the IANA registry to this document, or by marking this document as Updating  RFC 7432 , or some other mechanism that provides the needed discoverability.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-10 11:24:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-07-15 11:32:41-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-07-15 11:32:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-07-14 05:32:24-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-14 05:32:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-07-14 23:21:41-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-23 23:11:52-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-07-14 23:21:41-07:00",
+        "text": "[ general ] * Can you give an example of what happens to non-IPv4/IPv6 Ethernet packets \u00a0 received at the NVE/PE?\u00a0 Do they get bridged, and if so how far?\u00a0 What \u00a0 happens if a host in BT1 ARPs for IPv4 address associated with a TS in \u00a0 a different BT? * Where there are multiple prefixes in an IP-VRF, is there a constraint that \u00a0 any other IP-VRF that contains one of the prefixes must contain all of them? \u00a0 Perhaps that's in 7432...? [ sections 4, 5.4, 5.4, 6.3, 6.4, 9.1.2, 9.2.2 ] * Please document what happens to IPv4 TTL/IPv6 Hop Limit values as they \u00a0 cross various NVEs/PEs. [ section 7 ] * Is there a reference for IRB-EXT-MOBILITY? * The two statements: \u00a0 (1) \"Although the language used in this section is for IPv4 ARP, \u00a0 \u00a0 \u00a0 it equally applies to IPv6 ND.\" \u00a0 (2) \"If there is [a] many-to-one relationship such that there are many host \u00a0 \u00a0 \u00a0 IP addresses correspond[ing] to a single host MAC address ..., then to \u00a0 \u00a0 \u00a0 detect host mobility, the procedures in [IRB-EXT-MOBILITY] must be \u00a0 \u00a0 \u00a0 exercised...\" \u00a0 are in direct conflict.\u00a0 All IPv6 hosts having at least one non-link-local \u00a0 unicast address will have more than one IP address per MAC and this section, \u00a0 or even this document, would not apply?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-02-23 23:11:52-08:00",
+        "text": "I think there might still be complications for TSes with multiple IPv6 GUAs (which can be very normal is in line with  BCP 204 ), but I guess time will tell and other docs / future work will have a chance to resolve any issues encountered.",
+        "type": "Abstain"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-30 17:07:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2021-07-08 12:34:51-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2021-07-08 12:34:13-07:00",
+        "text": "I found this document difficult to review. Some of this might be due to the fact that I'm not an expert on EVPN, but I think some of the reason is that the document could be structured better and expressed more clearly. The only reason I'm not opposing the progression of the document on the grounds that it's too unclear to implement is that I've been told, and accept on faith, that implementations *have* been successfully written starting from the spec, which implies it's implementable -- I guess by people who are expert in EVPN already, it wouldn't be implementable by me. In any case, I do have some points I would like to discuss, that are more actionable. 1. I agree with Robert Wilton's comment on -09: ``` One question I have is whether it is possible to have a deployment where some devices support synchronous mode and others support asynchronous mode.\u00a0 Am I right in presuming that this is not supported and if so is this capability signaled in any way? Or is the expectation that this would be controlled via deployment choice of network device, or though configuration management? ``` This issue still exists in -14. I think it should be addressed in the document. Similarly, I agree with Warren Kumari's comment, also on -09: ``` I would strongly recommend that the authors read the OpsDir review at:  https://datatracker.ietf.org/doc/review-ietf-bess-evpn-inter-subnet-forwarding-09-opsdir-lc-jaeggli-2020-07-06/  , especially the: \"it would be helpful if section 4 would be more explicit for non-implementors on when symetric or asymetric modules would be chosen, as it stands the variation basically reads like the enumeration of the features of various implementations.\" comment (which I fully agree with). ``` It seems both of these comments could -- and should! -- be addressed by adding a few paragraphs talking about these topics. This could be done either in \u00a74, as Warren suggests, or in some other section (e.g. you could add an \"operational considerations\" section). 2. Section 7.1 I\u2019m guessing this question isn\u2019t unique to this document, but since this is where I encountered it, I\u2019ll ask: it seems as though the described mobility procedures are vulnerable to a condition where a particular (IP, MAC) appears at two different NVEs at the same time. If this condition exists (either innocently, or maliciously) what prevents the source and target NVEs from continually attempting to claim the (IP, MAC) from one another, flooding the network with updates all the while? (This applies to 7.2 as well.) Since this seems like a potential security issue, I'm including it in my DISCUSS.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-07-14 16:21:31-07:00",
+        "end_reason": "position_updated",
+        "start": "2021-07-08 12:34:51-07:00",
+        "text": "I found this document difficult to review. Some of this might be due to the fact that I'm not an expert on EVPN, but I think some of the reason is that the document could be structured better and expressed more clearly. The only reason I'm not opposing progression of the document on the grounds that it's too unclear to implement is that I've been told, and accept on faith, that implementations *have* been successfully written starting from the spec, which implies it's implementable -- I guess by people who are expert in EVPN already, it wouldn't be implementable by me. In any case, I do have some points I would like to discuss, that are more actionable. 1. I agree with Robert Wilton's comment on -09: ``` One question I have is whether it is possible to have a deployment where some devices support synchronous mode and others support asynchronous mode.\u00a0 Am I right in presuming that this is not supported and if so is this capability signaled in any way? Or is the expectation that this would be controlled via deployment choice of network device, or though configuration management? ``` This issue still exists in -14. I think it should be addressed in the document. Similarly, I agree with Warren Kumari's comment, also on -09: ``` I would strongly recommend that the authors read the OpsDir review at:  https://datatracker.ietf.org/doc/review-ietf-bess-evpn-inter-subnet-forwarding-09-opsdir-lc-jaeggli-2020-07-06/  , especially the: \"it would be helpful if section 4 would be more explicit for non-implementors on when symetric or asymetric modules would be chosen, as it stands the variation basically reads like the enumeration of the features of various implementations.\" comment (which I fully agree with). ``` It seems both of these comments could -- and should! -- be addressed by adding a few paragraphs talking about these topics. This could be done either in \u00a74, as Warren suggests, or in some other section (e.g. you could add an \"operational considerations\" section). 2. Section 7.1 I\u2019m guessing this question isn\u2019t unique to this document, but since this is where I encountered it, I\u2019ll ask: it seems as though the described mobility procedures are vulnerable to a condition where a particular (IP, MAC) appears at two different NVEs at the same time. If this condition exists (either innocently, or maliciously) what prevents the source and target NVEs from continually attempting to claim the (IP, MAC) from one another, flooding the network with updates all the while? (This applies to 7.2 as well.) Since this seems like a potential security issue, I'm including it in my DISCUSS.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-14 16:21:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-07-13 01:50:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-03-12 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-07-07 03:44:57-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-07-13 22:49:34-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-13 22:49:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-07-16 06:37:38-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-16 06:37:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-07-15 18:44:39-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-15 18:44:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-07-14 16:35:13-07:00",
+        "end_reason": "new_position",
+        "start": "2020-07-07 03:44:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-07-14 16:35:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2021-07-29 06:18:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-06-30 09:13:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9135",
+  "evaluation_end": "2021-07-29 06:18:53-07:00",
+  "evaluation_start": "2020-07-07 03:44:57-07:00"
+}
