@@ -4,8 +4,8 @@ import requests
 from bs4 import BeautifulSoup
 
 from .files import Files
-from .json_handler import load_ad_term_ends, load_iesgs, save_json
-from .types import Ballot
+from .json_handler import load_ad_term_ends, load_iesgs, save_doc_ballots
+from .types import Ballot, DocBallot
 
 
 def parse_ballot(doc_name):
@@ -124,10 +124,11 @@ def parse_ballot(doc_name):
 
     # print('ballot_start_time={}'.format(ballot_start_time))
 
-    res = {}
-    res["doc_name"] = doc_name
-    res["evaluation_start"] = ballot_start_time
-    res["evaluation_end"] = ballot_end_time
+    res = DocBallot(
+        doc_name=doc_name,
+        start_time=ballot_start_time,
+        end_time=ballot_end_time,
+    )
 
     res_ballots = {}
 
@@ -141,21 +142,13 @@ def parse_ballot(doc_name):
                 ):
                     b.end_time = ad_end
                     b.end_reason = "ad_term_ended"
-            res_ballots_for_ad.append(
-                {
-                    "type": b.ballot_type,
-                    "start": b.start_time,
-                    "end": b.end_time,
-                    "end_reason": b.end_reason,
-                    "text": b.text,
-                }
-            )
+            res_ballots_for_ad.append(b)
             # print('  {}'.format(b))
         res_ballots[a] = res_ballots_for_ad
 
-    res["all_ballots"] = res_ballots
+    res.all_ballots = res_ballots
 
-    save_json(res, Files.rfc_dir("{d}.json".format(d=doc_name)))
+    save_doc_ballots(res, Files.rfc_dir("{d}.json".format(d=doc_name)))
 
     print("{d} analyzed succesfully".format(d=doc_name))
     return True
