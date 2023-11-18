@@ -56,11 +56,11 @@ for row in reversed(rows):
     if action == 'Created "Approve" ballot':
         ballot_start_time = timestamp
         for iesg in iesgs:
-            if iesg["date_start"] > timestamp:
+            if iesg.date_start > timestamp:
                 continue
-            if iesg["date_end"] is not None and iesg["date_end"] < timestamp:
+            if iesg.date_end is not None and iesg.date_end < timestamp:
                 continue
-            for ad in iesg["members"]:
+            for ad in iesg.members:
                 ballots_for_ad = ballots.get(ad, [])
                 ballots_for_ad.append(Ballot(ad, "No Record", timestamp))
                 ballots[ad] = ballots_for_ad

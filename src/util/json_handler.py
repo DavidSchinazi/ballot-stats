@@ -2,6 +2,7 @@ import json
 from datetime import datetime, timezone
 
 from .files import Files
+from .types import Iesg
 
 
 def save_json(obj, file_path):
@@ -25,11 +26,11 @@ def load_iesgs():
     iesgs = []
     for iesg in iesgs_from_json:
         iesgs.append(
-            {
-                "date_start": date_from_json(iesg["date_start"]),
-                "date_end": date_from_json(iesg["date_end"]),
-                "members": iesg["members"],
-            }
+            Iesg(
+                date_start=date_from_json(iesg["date_start"]),
+                date_end=date_from_json(iesg["date_end"]),
+                members=iesg["members"],
+            )
         )
     return iesgs
 

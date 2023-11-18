@@ -18,3 +18,14 @@ class Ballot:
             e=self.end_time,
             txt=self.text if False else "",
         )
+
+
+class Iesg:
+    date_start = None
+    date_end = None
+    members = None
+
+    def __init__(self, date_start, date_end, members):
+        self.date_start = date_start
+        self.date_end = date_end
+        self.members = members
