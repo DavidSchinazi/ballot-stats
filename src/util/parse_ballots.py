@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from unidecode import unidecode
 
 from .files import Files
+from .iesg import normalize_ad_name
 from .json_handler import load_ad_term_ends, load_iesgs, save_doc_ballots
 from .types import Ballot, DocBallot
 
@@ -41,8 +42,7 @@ def parse_ballot(doc_name):
         cells = row.findAll("td")
         timestamp = datetime.strptime(cells[0].div["title"], "%Y-%m-%d %H:%M:%S %z")
         revision = cells[1].text
-        author = cells[2].text
-        author = unidecode(author)
+        author = normalize_ad_name(cells[2].text)
         full_action_divs = cells[3].find_all(attrs={"class": "full"})
         if len(full_action_divs) > 0:
             action = " ".join(full_action_divs[0].strings)
@@ -79,9 +79,11 @@ def parse_ballot(doc_name):
                         # Handle cases where ballot was entered by secretariat on behalf of the AD.
                         ballot_meta_start = "has been recorded for "
                         assert ballot_meta.startswith(ballot_meta_start)
-                        author = ballot_meta[
-                            len(ballot_meta_start) : -(1 + len(ballot_meta_by))
-                        ]
+                        author = normalize_ad_name(
+                            ballot_meta[
+                                len(ballot_meta_start) : -(1 + len(ballot_meta_by))
+                            ]
+                        )
                     ballots_for_author = ballots.get(author, [])
                     if len(ballots_for_author) > 0:
                         ballots_for_author[-1].end_time = timestamp

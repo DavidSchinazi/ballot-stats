@@ -9,6 +9,22 @@ from .json_handler import save_ad_term_ends, save_iesgs
 from .types import Iesg
 
 
+def normalize_ad_name(name):
+    # Ideally we'd want to use proper Unicode, but infortunately the
+    # datatracker is inconsistent about doing that so we normalize.
+    name = name.replace("\u00A0", "")
+    name = unidecode(name)
+    if '"' in name:
+        # Remove nickname.
+        print(name)
+        name_split = name.split('"')
+        print(name_split)
+        if len(name_split) == 3:
+            name = name_split[0][:-1] + name_split[2]
+        print(name)
+    return name
+
+
 def regenerate_iesg_metadata():
     # Using offline download pulled from this link:
     # https://www.ietf.org/how/meetings/past/
@@ -138,9 +154,7 @@ def regenerate_iesg_metadata():
         for member_item in members_block.find_all("li"):
             member_details = member_item.text.split(", ")
             assert len(member_details) == 2
-            name = member_details[0]
-            name = name.replace("\u00A0", "")
-            name = unidecode(name)
+            name = normalize_ad_name(member_details[0])
             names.append(name)
             ad_set = ad_ietfs.get(name, set())
             ad_set |= ietfs
