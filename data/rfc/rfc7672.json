@@ -1,0 +1,253 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-05-27 20:29:06-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 20:29:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-05-24 13:41:14-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-05-26 05:34:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-05-24 13:41:14-07:00",
+        "text": "Nothing fundamental here; I just have three things I'd like to sort out before balloting \"yes\" on this, and they should all be easy to resolve: 1. References and terminology: You use  RFC 1034  to define \"RR\", and  RFC 5598  to define \"MSA\", \"MTA\", and \"MUA\".\u00a0 And these are definitions that must be understood in order to properly understand this document.\u00a0 I think that makes those normative references, not informative ones, and they should be changed. \u00a0(5598 is already in the downref registry, so,there's no problem with the downref here.) 2. Section 2.2.1 says this: \u00a0 \u00a0That said, the protocol in this memo is \u00a0 \u00a0an \"opportunistic security\" protocol, meaning that it strives to \u00a0 \u00a0communicate with each peer as securely as possible, while maintaining \u00a0 \u00a0broad interoperability.\u00a0 Therefore, the SMTP client MAY proceed to \u00a0 \u00a0use DANE TLS (as described in Section 2.2.2 below) even with MX hosts \u00a0 \u00a0obtained via an \"insecure\" MX RRSet.\u00a0 For example, when a hosting \u00a0 \u00a0provider has a signed DNS zone and publishes TLSA records for its \u00a0 \u00a0SMTP servers, hosted domains that are not signed may still benefit \u00a0 \u00a0from the provider's TLSA records. That makes sense.\u00a0 Why doesn't the same thing apply for insecure TLSA records?\u00a0 Section 2.2 says that when TLSA records are insecure, you don't use them, and SHOULD use pre-DANE security.\u00a0 Please explain why they shouldn't use insecure TLSA records for opportunistic encryption. 3. In Section 2.2.1: \u00a0 \u00a0When DANE TLS is mandatory (Section 6) for \u00a0 \u00a0a given destination, delivery MUST be delayed when the MX RRSet is \u00a0 \u00a0not \"secure\". This contradicts the \"delivery MAY proceed\" in the previous paragraph (and it also doesn't really fit into the paragraph about logging anyway).\u00a0 If you want to restrict things, I think you should put the most restrictive condition first, so move this sentence to the top of the previous paragraph this way: OLD \u00a0  If the MX RRSet (or any CNAME leading to it) is \"insecure\" (see \u00a0  Section 2.1.1), DANE TLS need not apply, and delivery MAY proceed via \u00a0  pre-DANE opportunistic TLS. NEW \u00a0  If the MX RRSet (or any CNAME leading to it) is \"insecure\" (see \u00a0  Section 2.1.1), then if DANE TLS is mandatory (Section 6) for \u00a0  the given destination, delivery MUST be delayed.\u00a0 If DANE TLS \u00a0  is not mandatory, then it need not apply, and delivery MAY proceed \u00a0  via pre-DANE opportunistic TLS. END",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-26 05:34:11-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-05-27 11:14:14-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 11:14:14-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-05-28 07:00:38-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-28 07:00:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-05-26 06:20:46-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-26 06:20:46-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-05-27 09:22:10-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 09:22:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-05-27 05:27:53-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 05:27:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-05-27 11:52:12-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 11:52:12-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-05-27 03:27:19-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 03:27:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-05-28 07:04:51-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-28 07:04:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-05-16 11:48:56-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-16 11:48:56-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-06-01 11:32:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-16 11:48:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc7672",
+  "evaluation_end": "2015-06-01 11:32:19-07:00",
+  "evaluation_start": "2015-05-16 11:48:55-07:00"
+}

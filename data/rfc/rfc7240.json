@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-10-21 14:44:18-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-21 14:44:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-10-12 10:41:20-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2012-10-24 20:21:46-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-24 20:21:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-10-22 08:45:04-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-22 08:45:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2012-10-25 03:52:25-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-25 03:52:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-10-24 06:45:46-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-24 06:45:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-10-21 17:54:39-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-10-25 08:49:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-10-21 17:54:39-07:00",
+        "text": "2 \u00a0  Implementations MUST support multiple instances of the Prefer header \u00a0  field in a single message, as well as multiple preference tokens \u00a0  separated by commas in a single Prefer header field.\u00a0 The following \u00a0  examples are equivalent: I think this is worded a bit oddly. The requirement is that the multiple instances be treated as identical to a single instance with multiple comma-separated token/value pairs. That's defining the semantics, not a particular behavior requiring a MUST. Now, maybe the intention was to say that receiving implementations MUST *honor* multiple instances of the Prefer header field, but that's incompatible with the earlier comment that a server is allowed to ignore any preference it feels like. So my recommendation is simply to rewrite this as: \u00a0  A client MAY use multiple instances of the Prefer header field in a \u00a0  single message, or it MAY use a single Prefer header field with \u00a0  multiple comma-separated preference tokens. If multiple Prefer header \u00a0  fields are used, it is equivalent to a single Prefer header filed \u00a0  with the comma-separated concatentation of all of the tokens. For \u00a0  example, the following are equivalent: \u00a0   4 \u00a0  Registered preference names MUST conform to the token rule, and MUST \u00a0  be compared character-by-character in a case-insensitive fashion. This is not a restriction for *registered* preference names; this is a restriction for *any* preference name. I think this belongs in section 2 (and probably would be fine without the MUSTs). If you are putting it here to give guidelines to the Expert Reviewer, put a back pointer to section 2 by saying, \"The Expert Reviewer shall ensure that the registered preference name conforms to the token rule in section 2 and that it is not identical to any other registered preference name (as compared in a case-insensitive fashion). \u00a0  They SHOULD be appropriate to the specificity of the preference; \u00a0  i.e., if the semantics are highly specific to a particular \u00a0  application, the name should reflect that, so that more general names \u00a0  remain available for less specific use. That SHOULD is a noop, unless as above this is simply instructions for the Expert Reviewer, in which case the SHOULD is unnecessary. \u00a0  Registered preferences MUST NOT constrain servers, clients or any \u00a0  intermediaries involved in the exchange and processing of a request \u00a0  to any behavior required for successful processing.\u00a0 The use and \u00a0  application of a preference within a given request MUST be optional \u00a0  on the part of all participants. I don't really understand what the first sentence means, certainly not in the context of the MUST NOT. Is this simply saying, \"Choose a name such that generic names are reserved for generic operations\"? The second sentence belongs in section 2. 4.2 \u00a0  The \"return-minimal\" and \"return-representation\" preferences are \u00a0  mutually exclusive directives.\u00a0 A request that contains both \u00a0  preferences can be treated as though neither were specified. \u00a0   This worries me a bit. There are clear instructions for what a server is supposed to do if it sees duplicate preferences: Choose the first one. But here, both occurring means to honor neither of them. I don't get that. If you have mutually exclusive preferences, it seems to me they should simply be values of a single preference. In this case, why not have the preference be: \u00a0  Prefer: return-amount=representation \u00a0  Prefer: return-amount=minimal Then you don't get into questions of anybody having to figure out what are mutually exclusive semantics. \u00a0   4.4 \u00a0  The \"strict\" and \"lenient\" preferences are mutually-exclusive \u00a0  directives Same as above. How about: \u00a0  Prefer: handling=strict \u00a0  Prefer: handling=lenient",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-25 08:49:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2012-10-23 08:34:12-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-23 08:34:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2012-10-23 09:14:02-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-23 09:14:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-10-22 13:20:58-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-22 13:20:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2012-10-19 14:36:35-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-19 14:36:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2012-10-24 10:29:49-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-24 10:29:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-10-23 06:50:59-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-23 06:50:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-10-22 15:08:58-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-22 15:08:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-10-24 13:24:03-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-12 10:41:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-01-08 07:02:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-24 13:24:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7240",
+  "evaluation_end": "2013-01-08 07:02:03-08:00",
+  "evaluation_start": "2012-10-12 10:41:20-07:00"
+}

@@ -1,0 +1,317 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-01-19 12:28:33-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-01-29 08:24:45-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-19 12:28:33-08:00",
+        "text": "There are three parts to my Discuss. --- Section 2.1.1 reads strangely. Your use of \"appears\" twice in the first paragraph is uncomfortable. It is not advisable to state your understanding of how the use of ICMP was adopted in the working group, and it is irrelevant. That use of ICMP has IETF consensus and is in no way hidden in the document. It is fine to say that RPL should not be a model for future uses of ICMP and so similar message types should not be defined in future. Your observations about reliability and security guarantees in routing protocol transport requirements miss the mark by a long way (or is BGP the only routing protocol?). The two IGPs in common use these days are designed to run over IP or native Ethernet and must make their own provisions for reliability, while security is built in to the protocols as much as acquired from IPsec. The main things that ICMP gives RPL are a checksum, a protocol ID, and no requirement to be encapsulated in UDP (I make no comment about which of those is good). Can I suggest: OLD \u00a0  RPL, the IPv6 Routing protocol for low-power and lossy networks (see \u00a0  [ RFC6550 ]) appears to be something of an outlier among the existing \u00a0  ICMP message types, as the expansion of its acronym appears to be an \u00a0  actual routing protocol using ICMP for transport. \u00a0  This should be considered anomalous and is not a model for future \u00a0  ICMP message types.\u00a0 Our understanding is that the working group \u00a0  initially defined a discovery protocol extending existing ICMPv6 \u00a0  Neighbor Discovery messages before moving to its own native ICMP \u00a0  type. \u00a0  It is typically the case that routing protocols have transport \u00a0  requirements that are not met by ICMP.\u00a0 For example, there will be \u00a0  reliability guarantees and security guarantees that are not provided \u00a0  by ICMP, forcing protocol developers to design their own mechanisms. \u00a0  Given the availability of other IETF standard transports for routing, \u00a0  this reinvention should be avoided. NEW \u00a0  RPL, the IPv6 Routing protocol for low-power and lossy networks (see \u00a0  [ RFC6550 ]) uses ICMP as a transport. \u00a0  This should be considered anomalous and is not a model for future \u00a0  ICMP message types. That is, ICMP is not intended as a transport for \u00a0  other protocols and should not be used in that way in future \u00a0  specifications. END --- I really take issue with quite a bit of the content of section 4. As the authors observe... \u00a0  this may serve to \u00a0  muddle the differences even further.\u00a0 Ultimately the difference may \u00a0  not matter that much ...perhaps it would be wiser to leave out what is a disctraction fom the main AUP. But, in case the authors prefer to try to address my gripes... 1. There is a difference between a plane and a protocol that this text \u00a0  does not show. Indeed it seems to use the word \"plane\" to mean \u00a0  \"protocol\". 2. The term \"layering\" in telecommunications networks is not usually \u00a0  used to refer to this separation of function, but to either protocol \u00a0  layering (a la OSI model) or technology layering (that leads to \u00a0  network layering). The control plane and management plane are not \u00a0  layers but may utlise network partitions (sometime in band and \u00a0  sometimes physical). 3. The references to [ I-D.ietf-opsawg-oam-overview ] and [ RFC6192 ] are \u00a0  somewhat arbitrary. It is true that the referenced documents provide \u00a0  descriptions, but are they normative? 4. It will be a surprise to people running routing protocols to find \u00a0  that they do notform part of the control plane. 5. I think if you were to observe (as you sort of do) that control plane \u00a0  interactions are between nodes for the purpose of operating the \u00a0  network, while management plane interactions are between nodes and \u00a0  external boxes for the same purpose, you would get closer to the \u00a0  truth. 6. Since you reference [ I-D.ietf-opsawg-oam-overview ] you might usefully \u00a0  spend time describing OAM protocols and their purposes. You could \u00a0  note that OAM protocols typically run in the data plane yet serve the \u00a0  purpose of control and management plane protocols. Then you could \u00a0  observe that ICMP is an OAM protocol, and move on. 7. Your final sentence reads... \u00a0 \u00a0  ICMP should not be used as a \u00a0 \u00a0  routing or network management protocol. \u00a0  ...which may be true, but I think you mean \u00a0 \u00a0  ICMP should not be used as a \u00a0 \u00a0  transport for any other protocol. That last sentence notwithstanding (and it is already present in other parts of the document) I strongly recommend to delete Section 4. --- Section 5 \u00a0  From a security perspective, ICMP plays a part in the Photuris \u00a0  protocol. Reference please.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-29 08:24:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-01-21 00:27:08-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-21 00:27:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-01-13 08:26:36-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-13 08:26:36-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-01-21 07:13:43-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-03 09:28:38-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-21 07:13:43-08:00",
+        "text": "I am going to start this as a DISCUSSion and we will see where it goes from there... First of all, I agree with a large majority of Adrian's DISCUSS points. I am having a really hard time seeing what this document will accomplish.\u00a0 If it had been written 20 years ago, I think it would have had a significant impact on the development of many protocols and probably would have improved some of them.\u00a0 That being said, I don't see the benefit now. In ICMPv4, not counting the two Types defined for Experimentation, the last Type was registered 8.5 years ago.\u00a0 Are we expecting a rash of ICMPv4 messages to be defined in the near future? One could argue that ICMPv6 is a different story.\u00a0 However, the base spec for ICMPv6 ( RFC 4443 ) clearly states that ICMPv6 is going to be used as an integral part of the IPv6 protocol suite.\u00a0 It supports link-local functions like neighbor discovery and multicast group management.\u00a0 It also supports Internet-wide functions like Path MTU Discovery and mobility management in addition to the general purpose error/informational messaging.\u00a0 In other words, the core IPv6 architecture assumes ICMPv6 will be an integral part of the protocol suite.\u00a0 That also means that the statement in section 2.3 about why firewalls and routers have more control over ICMPv6 messages is rather incomplete. Given the above, is the intent of this AUP to preclude the extension of ICMPv6?\u00a0 Will an update to an existing (e.g., mobility) protocol that currently use ICMPv6 be required to migrate to a different approach?\u00a0 I am not sure that the two broad categories in section 2 are clear enough with respect to how the IPv6 architecture envisions the use of ICMPv6.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-03 09:28:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-01-23 03:50:42-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-01-23 03:50:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-01-21 14:12:35-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-21 14:12:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-01-21 20:38:16-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-21 20:38:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-01-21 02:02:31-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-21 02:02:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-01-23 09:11:22-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-02-09 19:50:20-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-01-23 09:11:22-08:00",
+        "text": "I still haven't heard a response to my question, so I'm going to make this a DISCUSS. The shepherd writeup says, \"This document is not the product of any WG. It is AD sponsored. However, it has been reviewed by the OPSAREA and INTAREA WGs\" I went looking through the archives (Googling) and found this message (and its thread): http://www.ietf.org/mail-archive/web/ipv6/current/msg19850.html That had two reviews, one of which said, \"I don't understand the motivation of the document\" and the other of which said, \"I'm not an expert on this stuff, but here are some comments.\" I couldn't find any other significant reviews, and importantly I couldn't find any messages that indicated this was important work that needed to be published as a BCP. Can someone give me some pointers to where this was actually discussed, and some indication that there is some consensus in the community that the AUP documented here is a good and necessary thing? It's fine if it's only a few experts (of which I am not one) think it's important to say this stuff and everyone else just shrugs and says, \"Whatever\". But I'd like to see some indication of that. I hope I'm just a bad googler, but I'm not clear there is consensus for this.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-04-03 08:47:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-09 19:50:20-08:00",
+        "text": "I DISCUSSed this with Benoit and he has asked me to continue to hold this DISCUSS until he has a chance to talk with the authors and shepherd to determine if this document has sufficient consensus to go forward. I await his reply. The shepherd writeup says, \"This document is not the product of any WG. It is AD sponsored. However, it has been reviewed by the OPSAREA and INTAREA WGs\" I went looking through the archives (Googling) and found this message (and its thread): http://www.ietf.org/mail-archive/web/ipv6/current/msg19850.html That had two reviews, one of which said, \"I don't understand the motivation of the document\" and the other of which said, \"I'm not an expert on this stuff, but here are some comments.\" I couldn't find any other significant reviews, and importantly I couldn't find any messages that indicated this was important work that needed to be published as a BCP. Can someone give me some pointers to where this was actually discussed, and some indication that there is some consensus in the community that the AUP documented here is a good and necessary thing? It's fine if it's only a few experts (of which I am not one) think it's important to say this stuff and everyone else just shrugs and says, \"Whatever\". But I'd like to see some indication of that. I hope I'm just a bad googler, but I'm not clear there is consensus for this.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-03 08:47:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-01-23 02:48:33-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-23 02:48:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2014-01-22 09:51:29-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-01-22 09:51:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-01-22 22:57:25-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-22 22:57:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-22 06:33:50-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-22 06:33:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-01-23 04:19:24-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-05 10:57:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-23 04:19:24-08:00",
+        "text": "I support the Discusses of Adrian and Brian, and would particularly like to discuss the following with the authors. \u00a0  \"It is typically the case that routing protocols have transport \u00a0  requirements that are not met by ICMP.\u00a0 For example, there will be \u00a0  reliability guarantees and security guarantees that are not provided \u00a0  by ICMP, forcing protocol developers to design their own mechanisms. \u00a0  Given the availability of other IETF standard transports for routing, \u00a0  this reinvention should be avoided.\" This is somewhat belittling of the routing protocol designers, who have existence proof that they understand the finer points of their art. It should be removed. \"3.\u00a0 ICMP's role in the internet\" Surely ICMP is first and foremost the IP layer OAM? Similarly Section 4 is seeming confused because it does not consider ICMP as an OAM protocol. Section 3 and 4 could and should be simplified by focusing on the  role of ICMP rather than its name which pre-dates the IETF's more developed understanding of OAM protocols.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-02-05 10:57:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-01-22 18:06:10-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-13 08:26:35-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-04-03 09:12:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-22 18:06:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7279",
+  "evaluation_end": "2014-04-03 09:12:38-07:00",
+  "evaluation_start": "2014-01-13 08:26:35-08:00"
+}

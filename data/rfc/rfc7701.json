@@ -1,0 +1,357 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-09-04 05:16:29-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-11-19 04:17:38-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-09-04 05:16:29-07:00",
+        "text": "Thanks, this is a well-written and easy-to-read document. Just a couple  (well, three) of small issues that I would like to Discuss. --- Surpised that there are no requirements on authetication or control of admission to chat rooms. Was this topic discussed by the WG and left out on purpose (in which case we should add a note to that effect), was it forgotten (in which case we should address it), or is it not relevant for this type of chat (in which case you just need to explain it to me)? I would assume that the INVITE can be policed in some way. The best I  could find was in Section 5.2 \u00a0  Participants usually join the chat room by sending an INVITE request \u00a0  to the chat room URI.\u00a0 As long as the chat room policy allows, the \u00a0  INVITE request is accepted by the focus and the user is brought into \u00a0  the actual chat room. Indeed, there are several mentions of things being allowed according to chat-room policy, but no wider discussion of the full set of policy attributes, or how chat room policy is set. --- Section 6.1 \u00a0  On sending a regular message the sender MUST populate the To header \u00a0  of the Message/CPIM wrapper with the URI of the chat room.\u00a0 The \u00a0  sender SHOULD populate the From header of the Message/CPIM wrapper \u00a0  with a proper identifier by which the user is recognized in the chat \u00a0  room. I'm uncomfortable with the \"SHOULD\" here. It implies that you can think of a good reason why the sender MAY use some other (improper) identifier or no identifier at all. Can you either give an example (perhaps: \"The sender MAY set an arbitrary and meaningless value in order to hide its identitiy\"), or tighten the SHOULD to a MUST. --- Section 6.1 \u00a0  An MSRP \u00a0  switch that uses this fast forwarding procedure MUST temporarily \u00a0  store the Message-Id of the MSRP message to correlate the different \u00a0  chunks, as well as it MUST temporarily store the list of recipients \u00a0  to which the initial chunks were delivered. The motivaiton is clear. I think you could add that the storage can be released when the last chunk is seen. But what happens when the last chunk is not seen (or delayed)? How temporary is the storage, and how is it released? Or do we assume that because MSRP uses TCP (or similar) that loss will always be accompanied by connection failure and so that is the only trigger needed to abandon temporary storage?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-19 04:17:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-09-04 10:08:35-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-04 10:08:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2012-09-13 03:47:50-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-13 03:47:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-09-04 09:53:42-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-04 09:53:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2012-09-13 07:41:08-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-13 07:41:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-09-10 11:28:51-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-09-10 11:29:25-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-09-10 11:28:51-07:00",
+        "text": "I have no general concerns with this draft, but one discuss issue: Section 6.4.\u00a0 Congestion Avoidance  I am not sure that you are really discussing congestion in the sense of network path congestion (including end hosts), but this is more about overload handling at MSRP nodes IMHO. It is a different level where the congestion can occur, i.e., in the MSRP application. A cause for\u00a0 congestion at this level can be a congested network path. The reasons are that there are number of cases why message(s) to a certain MSRP receiver/agent cannot be delivered, e.g., : - TCP cannot deliver in-time, as the network path or the receiving system are congested - the particular interface is down - the IP address used for the TCP connection is just gone - the DNS resolution for the FQDN in the SIP URI just takes too long - (as you noted) the sender is sending with a rate that cannot be received by a receiver - the at other end is overwhelmed with the processing of the messages How should an MSRP node react to them, e.g., how to deal with nodes that are constantly overloaded by receiving messages? Did you actually check back with the SIP overload control work? This said, a section about overload handling is good to have.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-12-10 06:48:58-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-09-10 11:29:25-07:00",
+        "text": "I have no general concerns with this draft, but one discuss issue: Section 6.4.\u00a0 Congestion Avoidance  I am not sure that you are really discussing congestion in the sense of network path congestion (including end hosts), but this is more about overload handling at MSRP nodes IMHO. It is a different level where the congestion can occur, i.e., in the MSRP application. A cause for\u00a0 congestion at this level can be a congested network path. The reasons are that there are number of cases why message(s) to a certain MSRP receiver/agent cannot be delivered, e.g., : - TCP cannot deliver in-time, as the network path or the receiving system are congested - the particular interface is down - the IP address used for the TCP connection is just gone - the DNS resolution for the FQDN in the SIP URI just takes too long - (as you noted) the sender is sending with a rate that cannot be received by a receiver - the at other end is overwhelmed with the processing of the messages How should an MSRP node react to them, e.g., how to deal with nodes that are constantly overloaded by receiving messages? Did you actually check back with the SIP overload control work? This said, a section about overload handling is good to have.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-01-17 07:21:01-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-12-10 06:48:58-08:00",
+        "text": "Updated based on -17: 1)  This question isn't answered to some extend: How should an MSRP node react to them, e.g., how to deal with nodes that are constantly overloaded by receiving messages? The current text assumes that this is an temporary issue, but what it is not temporarily? E.g., the particular interface is down? A link to any other place in the document describing the desired behavior would suffice . 2) Picking up this point below (also related to Wes' comments) \" In order to\u00a0 inform the user of the congestion, the MSRP switch can send a regular MSRP message indicating the user that some messages are discarded due to network congestion.\" In what direction do you send this message? Back to the originator of the message or down the congested path? Please clarify this in the text. Further: How can a piece of software learn from the chat messages (e.g., an error code or similar) that congestion is occurring?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-17 07:21:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-09-11 21:53:14-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-11 21:53:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2012-09-11 06:10:36-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-11 06:10:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2012-08-27 14:35:46-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-09-10 12:20:34-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-10 12:20:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2012-09-11 14:47:22-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-11 14:47:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2012-09-12 12:44:45-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2012-11-19 07:23:01-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-09-12 12:44:45-07:00",
+        "text": "1) REQ-4 and S8: I'm confused by the following in s8:  For example, a participant would like to learn if the  MSRP switch supports private messaging, otherwise, the participant  may send what he believes is a private instant message addressed to a  participant, but since the MSRP switch does not support the functions  specified in this memo, the message gets eventually distributed to  all the participants of the chat room. Aren't servers required to support private messages?\u00a0 I get that clients might not support 'em, but based on REQ-4 don't servers have to support 'em?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-19 07:23:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-09-10 10:01:16-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-09-11 06:41:55-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-09-10 10:01:16-07:00",
+        "text": "These should all be very easy discuss points to resolve. 1. 5.2, what is an \"anonymous URI\"? What kind of anonymity is being provided here? I think you need at least a reference or else to get rid of the paragraph or else provide more text that says how it might work so that a client could implement it with a reasonable expectation that a server will be ok with it. 2. p13, SHOULD start the distribution process as soon as the first chunk is received is a potential DoS vector. How is that mitigated? I think adding a sentence or reference to the security considerations would be enough here, e.g. saying that servers SHOULD implement some sanity checking in such cases. MSRP's security considerations say it can't be used as a DoS amplifier, but I guess this can based on the above.\u00a0 (This is similar to, but not the same as, Adrian's last discuss point.) 3. Where are the security considerations about unsafe content? E.g. HTML scripts that are phishing attempts. Again, I think a reference to some other document or small bit of text is needed. 4. Can a valid conference participant send a message with a From: field containing the identifier (e.g. AOR) of another  valid conference participant and have that work? I don't think this is just down to \"policy,\" but presumably just  MUST NOT work, right?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-09-11 07:23:36-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-09-11 06:41:55-07:00",
+        "text": "These should all be very easy discuss points to resolve. 1. 5.2, what is an \"anonymous URI\"? What kind of anonymity is being provided here? I think you need at least a reference or else to get rid of the paragraph or else provide more text that says how it might work so that a client could implement it with a reasonable expectation that a server will be ok with it. 2. p13, SHOULD start the distribution process as soon as the first chunk is received is a potential DoS vector. How is that mitigated? I think adding a sentence or reference to the security considerations would be enough here, e.g. saying that servers SHOULD implement some sanity checking in such cases. MSRP's security considerations say it can't be used as a DoS amplifier, but I guess this can based on the above.\u00a0 (This is similar to, but not the same as, Adrian's last discuss point.) 3. Where are the security considerations about unsafe content? E.g. HTML scripts that are phishing attempts. Again, I think a reference to some other document or small bit of text is needed. 4. Cleared. This AD is sometimes dim:-)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-11-18 10:00:25-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-09-11 07:23:36-07:00",
+        "text": "These should all be very easy discuss points to resolve. 1. 5.2, what is an \"anonymous URI\"? What kind of anonymity is being provided here? I think you need at least a reference or else to get rid of the paragraph or else provide more text that says how it might work so that a client could implement it with a reasonable expectation that a server will be ok with it. 2. p13, SHOULD start the distribution process as soon as the first chunk is received is a potential DoS vector. How is that mitigated? I think adding a sentence or reference to the security considerations would be enough here, e.g. saying that servers SHOULD implement some sanity checking in such cases. MSRP's security considerations say it can't be used as a DoS amplifier, but I guess this can based on the above.\u00a0 (This is similar to, but not the same as, Adrian's last discuss point.) 3. Where are the security considerations about unsafe content? E.g. HTML scripts that are phishing attempts. Again, I think a reference to some other document or small bit of text is needed. 4. Cleared. This AD is sometimes dim:-) 5. (Promoted from a comment at the request of an author, so it gets tracked.)  Everyone sends an 'accept-types' attribute, right?\u00a0 Is it clear what happens if an IM containing a CPIM containing a payload with a MIME type that's not supported everywhere is sent to all?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-01-13 08:57:12-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-11-18 10:00:25-08:00",
+        "text": "-17 resolves my discusses except for #2 1. cleared 2. p13, SHOULD start the distribution process as soon as the first chunk is received is a potential DoS vector. How is that mitigated? I think adding a sentence or reference to the security considerations would be enough here, e.g. saying that servers SHOULD implement some sanity checking in such cases. MSRP's security considerations say it can't be used as a DoS amplifier, but I guess this can based on the above.\u00a0 (This is similar to, but not the same as, Adrian's last discuss point.) In -17 I do see the pointer from p15 (was p13) to the  security considerations, but I don't see a warning about  DoS in section 11, here's a suggestion: \"A chat room is by its nature a potential Denial-of-Service (DoS) accellerator as it takes a message from one entity and sends that to many. Implementers of both UAs and switches need to carefully consider the set of anti-DoS measures that are appropriate for this application and switch  implementations in particular ought to include appropriate anti-DoS features. The details of what is appropriate will vary over time and will also depend on the specific needs of the implementation and so cannot be specified here.\" 3. cleared 4. Cleared. This AD is sometimes dim:-) 5. cleared",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-13 08:57:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-09-11 05:46:58-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-11 05:46:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-09-12 13:25:19-07:00",
+        "end_reason": "new_position",
+        "start": "2012-08-27 14:35:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-09-13 08:41:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-09-12 13:25:19-07:00",
+        "text": "Section 1 says: \u00a0  Similar conferences supporting chat rooms are already available \u00a0  today.\u00a0 For example, Internet Relay Chat (IRC) [ RFC2810 ], Extensible \u00a0  Messaging and Presence Protocol (XMPP): Core [ RFC6120 ] based chat \u00a0  rooms, and many other proprietary systems provide chat room \u00a0  functionality.\u00a0 Specifying equivalent functionality for MSRP-based \u00a0  systems provides competitive features and enables interworking \u00a0  between the systems. I do not think this document enables interworking; at least I don't think there's sufficient information here to justify that claim.\u00a0 Further, I don't think the motivation given here suffices to do yet-another-messaging-protocol, simply because N others already exist.\u00a0 Particularly, with regards to existing IETF Standards Track protocols, I think there needs to be better motivation for adding yet another. It might help me clear if there was some description of how this is being used in practice or whether people really are doing interworking.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-01-24 14:16:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-13 08:41:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7701",
+  "evaluation_end": "2013-01-24 14:16:15-08:00",
+  "evaluation_start": "2012-08-27 14:35:46-07:00"
+}

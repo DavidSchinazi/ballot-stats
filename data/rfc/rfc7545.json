@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-08-20 12:40:27-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-20 12:40:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-08-20 14:26:10-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-20 14:26:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-08-20 09:52:31-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-09-24 16:02:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-20 09:52:31-07:00",
+        "text": "I'm glad this work is being done in the IETF, thanks for all your effort. A couple of my points below have overlaps with some of Stephen's points. = Shepherd write-up =  \"Yes, there were 2 IPR disclosures filed that reference this document. They were discussed in the WG, and nobody came forward to say that they'd like to change anything in the document because of the disclosures.\" But there are 3 IPR disclosures in the tracker, not 2. Were all three discussed in the WG? = Section 4.1 = \"A Database MAY change its URI, but before it changes its URI, it MUST \u00a0  indicate so by including the URI of one or more alternate databases \u00a0  using DbUpdateSpec (Section 5.7) in its responses to devices.\" The behavior here seems ambiguous. Does the database need to send responses containing the updated URI to all devices it has ever communicated with, or all registered devices, before it can actually change the URI? Does the database even maintain such lists? If not, how many such responses does it need to send out before changing its URI, or how long does it need to wait? Just saying that sending the new URI needs to happen \"before\" the URI changes does not seem specific enough for devices to know whether the URI has changed, or for databases to know when they can disable an old URI or stop sending the DbUpdateSpec indication. = Section 4.5 = These two sentences seem to contradict each other: \"The device identifier, capabilities, and characteristics \u00a0  communicated in the AVAIL_SPECTRUM_REQ message MUST be those of the \u00a0  Slave Device, but the location MUST be that of the Master Device.\" \"When the request is made by the \u00a0 \u00a0 \u00a0 Master Device on behalf of a Slave Device, the location is that of \u00a0 \u00a0 \u00a0 the Slave Device and it is OPTIONAL (see also \u00a0 \u00a0 \u00a0 masterDeviceLocation).\" Perhaps this can be solved by making the reference to \"the location\" in the first sentence more specific -- the masterDeviceLocation -- but I'm not really sure from reading the text. Then later in the section, I started getting even more confused by this: \"When the request is made by the \u00a0 \u00a0 \u00a0 Master Device on behalf of a Slave Device, the location is that of \u00a0 \u00a0 \u00a0 the Slave Device and it is OPTIONAL (see also \u00a0 \u00a0 \u00a0 masterDeviceLocation). \u00a0 \u00a0 \u00a0 ... masterDeviceLocation:\u00a0 When the request is made by the Master Device \u00a0 \u00a0 \u00a0 on behalf of a Slave Device, the Master Device MAY provide its own \u00a0 \u00a0 \u00a0 GeoLocation (Section 5.1).\" Does this mean it's acceptable for a Master device acting on behalf of a Slave device to send neither the Slave device location (in the location parameter) nor the Master device location (in the masterDeviceLocation parameter)? I believe that the current text allows this. If so, why is location required in the registration step (and in batch available spectrum requests) but not in the available spectrum step? Seems like it should be the other way around -- that a device could register without specifying its location, but not request available spectrum without it.  If the above interpretation was not intended, something needs to be fixed in one part or the other of the above text to indicate that either the Master device location or the Slave device location (or both) must be present in the request. The same issue arises in Section 4.5.5. = Section 5.1 = I'd like to discuss why the single point location format needs to be supported here. Is it really the case that a portion of whitespace spectrum will ever be available only at a single point, as opposed to a region? If not, it seems like sending a point (and, moreover, allowing region to be unsupported but not point) divulges more precise information about the requesting device than is ever actually necessary to fulfill the goals of this protocol. Do regulators require a single point? Why? = Section 5.2 = I'd like to discuss why the device serial number needs to be included in the device descriptor, rather than some (perhaps persistent) randomly generated device identifier that is used only in the context of this protocol (which would better protect the privacy of the user of the device, since the whitespaces database administrator wouldn't be able to correlate the device's spectrum requests with other activities linked to the serial number). It's not really clear why serial number is collected since both this document and  RFC 6953  note the protocol does not defend against abuse or mis-use of spectrum. I'm asking the above two questions in light of requirement P.7 from  RFC 6953 , \"The PAWS protocol SHOULD support privacy-sensitive handling of device-provided data where such protection is feasible, allowed, and desired.\" A separate interesting question that does not seem to be addressed anywhere in the draft is whether a device can be fingerprinted by the database operator by virtue of the collection of elements it sends (rulesetIds, manufacturer, model, antenna characteristics, device capabilities, etc.) even if it doesn't send a serial number or device owner information that uniquely identify it. That seems worth discussion in Section 10.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-24 16:02:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-08-14 08:31:31-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-14 08:31:31-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-08-21 05:32:23-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-21 05:32:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-08-21 07:16:27-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-21 07:16:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-08-18 17:40:36-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-18 17:40:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-08-20 13:31:23-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-08-26 13:58:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-20 13:31:23-07:00",
+        "text": "Thanks for doing this work, the draft looks good and my discuss should be easy enough to address as I am just looking for some clarifying information that may be helpful if I didn't miss the answer somewhere else. Can clients query any database entries or is the interface restricted to the list of supported interactions?\u00a0  I assume the answer is that it is limited to the set of database interactions defined, but could not find any statement saying that in this draft or the prior requirements in  RFC6953 . Authentication is only a MAY in the Security Considerations Section, which raises another possible concern for me.\u00a0   Since clients can get back pretty much all of the defined datatypes (DeviceDescriptor is one example) and authentication is not required, there should be a discussion on the risks of revealing this information for both the privacy reasons Stephen and Alissa outlined as well as possible security concerns.\u00a0 I think this should be on a field basis in terms of sensitive elements where relevant.  I could see how you might want/need the types of information gathered within an administrative domain or accessed by a restricted set of users, but revealing data like what is contained in deviceDescriptor (includes model) as well as sensitive fields in other classes (AntennaCharacteristics) seems like a risk as it could be used in targeted attacks if there are known vulnerabilities to those devices.\u00a0 The attacks could target specific regions at specific times to effect events or to be used as part of some larger attack (could include physical).\u00a0 This may sound crazy, but layered attacks are very real.\u00a0  Is there anything that prevents a client from fingerprinting? Perhaps recommendations at the field level would help implementors understand these risks (privacy & security) and then they may be more motivated to enable authenticated and encrypted access.\u00a0 This wouldn't be necessary for all fields, just the ones that could be used in attacks or reveal privacy related information.\u00a0 Implementers may take the optional field use more seriously or create options in application interfaces so that users are then aware of the risks with these fields and make different choices.\u00a0 Ideally, there would be a limited set of data returned based on role information so that devices or other clients only get what they need as opposed to what is available.\u00a0 I didn't see any mention of restrictions on who could access what (role based access), is that possible?\u00a0 I'm not sure if the primary & secondary users allow for this? Thanks in advance.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-26 13:58:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-08-15 06:02:50-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-15 06:02:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-08-14 08:26:37-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-08-20 13:00:08-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-20 13:00:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-08-18 19:17:56-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-18 19:17:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-08-19 18:42:36-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-08-29 07:40:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-19 18:42:36-07:00",
+        "text": "Hi, I've a few things to discuss, but I think only the first is possibly tricky... (1) 4.4.1 - why are location and deviceOwner required? The FCC may require those but why does the protocol? I don't see that those are needed for interop. Isn't that latter the right criterion for inclusion as a required field? I could see a reason for the location-from-which-I-want-to-use-WS but that's not what is described I think. The discuss here is both relating to the privacy issues with requiring exposure of identifying information but also relating to the criteria used to determine required vs. optional and how those map to interop vs. to current known sets of regulatory rules.\u00a0 (Same for 5.2 serialNumber, though there a dynamic/random choice may be needed instead.) (2) 4.4.1 - is the location here the location of the device or the location from which spectrum is to be used? I think you need to disambiguate those. I continue to think there should be a way to ask for spectrum in London, tomorrow; even whilst still in Dublin, today. 4.5.1 seems to imply this may be allowed sometimes, but I'm not clear if that works - how would the \"tomorrow\" value be sent? (3) Section 7: I think it'd be a good idea to either reference the UTA TLS BCP for ciphersuites etc or else (if you'd rather not have a dependency to another WG's I-D, which I'd understand) to specify some here. The MTIs from 5246 are looking pretty jaded right now. You may also want to mandate use of OCSP or even stapling - there are a few more TLS things you can do that help interop and to speed things up. I'm not trying to insist you do/document all of those things, but would like to chat about it for a bit. (4) Section 7: You are assuming some kind of PKI is used to authenticate DBs. Now that might work with the current Web PKI, except that then any public Web PKI CA can fake any DB but are regulator's ok with that? Secondly, TLS requires that the DB nominate the acceptable CAs for client auth, so there's a bit of specification missing here which is maybe that a DB's description needs to include information about its acceptable trust anchors. I don't think you necessarily need to fix all of that in this document, but what is the plan here? (And maybe some of it ought be fixed here, not sure.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-29 07:40:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-08-21 06:30:08-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-14 08:26:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-09-06 08:11:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-21 06:30:08-07:00",
+        "text": "This is a cool document\u2014I'm glad the IETF is working on this.\u00a0  Please don't take the following comments as anything other than an attempt to address what I think are some relatively minor issues with the document, hopefully easily addressed. 4.1 says \"Some regulatory domains may have specific rules regarding how long the spectrum data remains valid in these cases.\"\u00a0  It might be worth adding that in such cases the initialization procedure is required.\u00a0  This is addressed to some extent in section 4.3, but I'm not sure it's completely addressed.\u00a0  The potential problem I see is that a device might be used in a regulatory regime where this is required, but might have pre-configured values for some other regulatory regime.\u00a0  If these values are not valid in the regime that applies for its current location, it might have a too-long refresh interval configured, fail to detect that this is the case, and as a result accidentally break the law.\u00a0  Can a scenario like this occur in practice? Section 5.2 says that the manufacturer ID and model ID are optional, but may be required by some rulesets.\u00a0  Section 4.3.1 does not say what error is returned when a deviceDesc that does not contain one or both of these parameters is sent to the server, but the matching ruleset requires either parameter.\u00a0  I suspect the answer is straightforward, but I think it needs to be stated explicitly in 4.3.1.\u00a0  E.g., if the optional but required parameters are accepted in the initialization but rejected in the registration, it would be good to say so explicitly. In 4.4.2, I think that if none of the rulesets are accepted, the intent is that the database should return a REGISTRATION_RESP with the error element, and will not return a rulesetInfos list.\u00a0  However, the specification does not make an exception for this case when it says \"A RulesetInfo list MUST be included\" and\u00a0 \"The list MUST contain at least one entry\".\u00a0  I can't think of another valid interpretation, but you've stated a MUST, so you need to say that it doesn't apply in the case of the error. In 4.5: \u00a0 \u00a0 \u00a0  If some \u00a0 \u00a0 \u00a0  locations within a batch request are outside the regulatory \u00a0 \u00a0 \u00a0  domain supported by the Database, the Database MAY return an OK \u00a0 \u00a0 \u00a0  response with available spectrum for only the valid locations; \u00a0 \u00a0 \u00a0  otherwise, if all locations within a batch request are outside \u00a0 \u00a0 \u00a0  the regulatory domain, the Database MUST respond with an \u00a0 \u00a0 \u00a0  OUTSIDE_COVERAGE error. What should the database do if it doesn't follow the MAY?\u00a0  Should it return an OUTSIDE_COVERAGE error?\u00a0  It seems to me that this MAY is going to require some unclear heuristics on the side of the master device.\u00a0  Why isn't this a MUST?\u00a0  I think if this were a MUST, it would be clear how implementations should behave; by making it a MAY, there's a big gap that I think will lead to interoperability problems as different implementors make different choices about how to treat this situation.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-11-10 18:49:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-06 08:11:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7545",
+  "evaluation_end": "2014-11-10 18:49:12-08:00",
+  "evaluation_start": "2014-08-14 08:26:37-07:00"
+}

@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-01-18 09:46:21-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-02-05 08:28:34-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-02-12 06:15:24-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-02-05 08:28:34-08:00",
+        "text": "I hope these are quick to resolve. In Sec. 6.1.1, it says: \"1. If \"Dual-stack capability\" TLV is present and remote preference \u00a0 \u00a0 \u00a0 \u00a0 does not match with the local preference (or does not get \u00a0 \u00a0 \u00a0 \u00a0 recognized), then the LSR MUST discard the hello message and \u00a0 \u00a0 \u00a0 \u00a0 log an error. \u00a0 \u00a0 \u00a0 \u00a0 If LDP session was already in place, then LSR MUST send a fatal \u00a0 \u00a0 \u00a0 \u00a0 Notification message with status code [Transport Connection \u00a0 \u00a0 \u00a0 \u00a0 mismatch, IANA allocation TBD] and reset the session. \" I am concerned about the operational impact of this.\u00a0 Is there really a reason to drop traffic due to a mismatch?\u00a0 Wouldn't it be better to leave an existing LDP session up until a peer explicitly needs to bring it down?\u00a0  In Sec 7, it says \"The procedures defined in section 6.1 SHOULD result in setting up \u00a0  the LDP session in preferred AFI only after the loss of an existing \u00a0  LDP session (because of link failure, node failure, reboot etc.).\" which seems to be in direct conflict with the actual behavior specified that can cause an existing LDP session to be torn down. In Sec 6.1.1: In (3), it says \" However, if IPv6 hellos are also received at any time from \u00a0 that neighbor, then the neighbor is deemed as a non- \u00a0 compliant Dual-stack LSR (similar to that of 3c below), \u00a0 resulting in any established LDPoIPv4 session being reset \u00a0 and a fatal Notification message being sent (with status \u00a0 code of 'Dual-Stack Non-Compliance', IANA allocation TBD).\" Can you clarify what \"at any time\" means?\u00a0 Is this since the interface came up?\u00a0 I really feel that this needs better description.\u00a0 As it is, this could be since the router booted - and if a neighboring router was IPv4 only and was then upgraded/replaced to become IPv6 only - one would never have an LDP connection.\u00a0 That's not acceptable.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-12 06:15:24-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-02-04 13:49:21-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 13:49:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-26 06:22:07-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-26 06:22:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-02-03 09:30:19-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-03 09:30:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-02-02 10:13:20-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-02 10:13:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-02-05 07:06:40-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-05 07:06:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-02-02 05:50:49-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-02 05:50:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-02-04 08:13:43-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 08:13:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-02-05 04:06:17-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-05 04:06:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-02-04 22:25:59-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 22:25:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-02-04 16:51:35-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 16:51:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-02-02 08:30:52-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-02 08:30:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-02-05 06:50:41-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-05 06:50:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-02-03 04:53:14-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-18 09:46:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-03-04 06:02:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-03 04:53:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7552",
+  "evaluation_end": "2015-03-04 06:02:28-08:00",
+  "evaluation_start": "2015-01-18 09:46:21-08:00"
+}

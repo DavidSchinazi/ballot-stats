@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-06-11 06:33:50-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-11 06:33:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-06-09 13:00:27-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-09 13:00:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-06-08 08:43:31-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-08 08:43:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-06-06 16:14:05-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-06-08 03:52:27-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-06-06 16:14:05-07:00",
+        "text": "The IANA Considerations section says there are no IANA actions here.\u00a0 Is that really so?\u00a0 Don't you need to change the reference for the natMIB (123) from  RFC4008  to this document?\u00a0 Otherwise, what was the point of replicating the entire MIB and changing the status field of each item to \"deprecated\"?\u00a0 It's clear that 4008 is no longer the current reference for natMIB. I would actually suggest that you also change the description field for natMIB from \"NAT-MIB\" to \"[deprecated]\" or \"NAT-MIB [deprecated]\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-08 03:52:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-06-09 18:41:57-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-09 18:41:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-06-08 06:40:51-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-06-08 08:08:30-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-06-08 06:40:51-07:00",
+        "text": "This ballot is based on version 1 (I understand that v2 is on its way, waiting for the secretariat to post) - Before deprecating the following textual conventions, have you checked that they are not used in any MIB modules?  NatProtocolType ::= TEXTUAL-CONVENTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 STATUS\u00a0 \u00a0 \u00a0  deprecated \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"A list of protocols that support the network \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  address translation.\u00a0 Inclusion of the values is \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  not intended to imply that those protocols \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  need to be supported.\u00a0 Any change in this \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  TEXTUAL-CONVENTION should also be reflected in \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  the definition of NatProtocolMap, which is a \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  BITS representation of this.\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 SYNTAX\u00a0  INTEGER { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 none (1),\u00a0 -- not specified \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 other (2), -- none of the following \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 icmp (3), \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 udp (4), \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 tcp (5) \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0  NatProtocolMap ::= TEXTUAL-CONVENTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 STATUS\u00a0 \u00a0 \u00a0  deprecated \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"A bitmap of protocol identifiers that support \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  the network address translation.\u00a0 Any change \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  in this TEXTUAL-CONVENTION should also be \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  reflected in the definition of NatProtocolType.\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 SYNTAX\u00a0  BITS { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  other (0), \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  icmp (1), \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  udp (2), \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  tcp (3) \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0  NatAddrMapId ::= TEXTUAL-CONVENTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DISPLAY-HINT \"d\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 STATUS deprecated \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"A unique id that is assigned to each address map \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  by a NAT enabled device.\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 SYNTAX\u00a0  Unsigned32 (1..4294967295) \u00a0  NatBindIdOrZero ::= TEXTUAL-CONVENTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DISPLAY-HINT \"d\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 STATUS deprecated \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"A unique id that is assigned to each bind by \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  a NAT enabled device.\u00a0 The bind id will be zero \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  in the case of a Symmetric NAT.\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 SYNTAX\u00a0  Unsigned32 (0..4294967295) \u00a0  NatBindId ::= TEXTUAL-CONVENTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DISPLAY-HINT \"d\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 STATUS deprecated \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"A unique id that is assigned to each bind by \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  a NAT enabled device.\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 SYNTAX\u00a0  Unsigned32 (1..4294967295) \u00a0  NatSessionId ::= TEXTUAL-CONVENTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DISPLAY-HINT \"d\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 STATUS deprecated \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"A unique id that is assigned to each session by \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  a NAT enabled device.\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 SYNTAX\u00a0  Unsigned32 (1..4294967295) \u00a0  NatBindMode ::= TEXTUAL-CONVENTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 STATUS deprecated \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"An indication of whether the bind is \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  an address bind or an address port bind.\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 SYNTAX\u00a0  INTEGER { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 addressBind (1), \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 addressPortBind (2) \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0  NatAssociationType ::= TEXTUAL-CONVENTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 STATUS deprecated \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"An indication of whether the association is \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  static or dynamic.\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 SYNTAX\u00a0  INTEGER { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 static (1), \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 dynamic (2) \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0  NatTranslationEntity ::= TEXTUAL-CONVENTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 STATUS\u00a0 \u00a0 \u00a0  deprecated \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"An indication of a) the direction of a session for \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  which an address map entry, address bind or port \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  bind is applicable, and b) the entity (source or \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  destination) within the session that is subject to \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  translation.\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 SYNTAX\u00a0  BITS { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  inboundSrcEndPoint (0), \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  outboundDstEndPoint(1), \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  inboundDstEndPoint (2), \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  outboundSrcEndPoint(3) \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  } This is currently in discussion with the MIB doctors (draft authors are copied) At the very minimum, a note in an \"operations considerations\" section, explaining the implications of removing TCs, is required - This point above is in line with Jouni's feedback. * There is also no text about operational and management implications \u00a0 related to deprecation process of the old MIB and migrating to the \u00a0 new (to be approved) NAT-MIB-v2). - Let me check something. As noted by Jouni\u00a0 in his OPS-DIR review, \u00a0 \u00a0 The smilint reports the following warnings: \u00a0 \u00a0 * mibs/NAT-MIB:15: [5] {import-unused} warning: identifier `DisplayString' imported from module `SNMPv2-TC' is never used \u00a0 \u00a0 * mibs/NAT-MIB:27: [5] {import-unused} warning: identifier `InterfaceIndex' imported from module `IF-MIB' is never used \u00a0 \u00a0 * mibs/NAT-MIB:33: [5] {import-unused} warning: identifier `InetAddressPrefixLength' imported from module `INET-ADDRESS-MIB' is never used \u00a0 \u00a0 * mibs/NAT-MIB:36: [5] {import-unused} warning: identifier `VPNIdOrZero' imported from module `VPN-TC-STD-MIB' is never used  My first reaction: it's normal because some objects are now deprecated (so not used any longer). After some analysis ... When comparing the imports lines from  RFC4008  and the ones from this draft, those 4 lines magically appeared in this draft. Why? This asks the question: have you actually started your work from the MIB module extracted from  RFC4008 ? I started to file a DISCUSS on that very point. However, I was so bothered by this difference that I actually compared the MIB modules extracted from this draft and from  RFC4008 . I see two occurences of this change: InetAddress (SIZE (4|16) versus InetAddress Why? Also, I wanted to check this condition in  RFC4181 : \u00a0  - On the other hand, the module name MUST NOT be changed (except to \u00a0 \u00a0  correct typographical errors), existing definitions (even obsolete \u00a0 \u00a0  ones) MUST NOT be removed from the MIB module, and descriptors and \u00a0 \u00a0  OBJECT IDENTIFIER values associated with existing definitions MUST \u00a0 \u00a0  NOT be changed or re-assigned. A word expressing that all  RFC 4008  MIB objects are included in this version, but with only the STATUS changed to deprecated would be helpful.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-06-12 07:22:58-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-06-08 08:08:30-07:00",
+        "text": "This ballot is based on version 1 (I understand that v2 is on its way, waiting for the secretariat to post) - Jouni's feedback. * There is also no text about operational and management implications \u00a0 related to deprecation process of the old MIB and migrating to the \u00a0 new (to be approved) NAT-MIB-v2). See the discussion captured on the MIB-doctors list.  - Let me check something. As noted by Jouni\u00a0 in his OPS-DIR review, \u00a0 \u00a0 The smilint reports the following warnings: \u00a0 \u00a0 * mibs/NAT-MIB:15: [5] {import-unused} warning: identifier `DisplayString' imported from module `SNMPv2-TC' is never used \u00a0 \u00a0 * mibs/NAT-MIB:27: [5] {import-unused} warning: identifier `InterfaceIndex' imported from module `IF-MIB' is never used \u00a0 \u00a0 * mibs/NAT-MIB:33: [5] {import-unused} warning: identifier `InetAddressPrefixLength' imported from module `INET-ADDRESS-MIB' is never used \u00a0 \u00a0 * mibs/NAT-MIB:36: [5] {import-unused} warning: identifier `VPNIdOrZero' imported from module `VPN-TC-STD-MIB' is never used  My first reaction: it's normal because some objects are now deprecated (so not used any longer). After some analysis ... When comparing the imports lines from  RFC4008  and the ones from this draft, those 4 lines magically appeared in this draft. Why? This asks the question: have you actually started your work from the MIB module extracted from  RFC4008 ? I started to file a DISCUSS on that very point. However, I was so bothered by this difference that I actually compared the MIB modules extracted from this draft and from  RFC4008 . I see two occurences of this change: InetAddress (SIZE (4|16) versus InetAddress Why? Also, I wanted to check this condition in  RFC4181 : \u00a0  - On the other hand, the module name MUST NOT be changed (except to \u00a0 \u00a0  correct typographical errors), existing definitions (even obsolete \u00a0 \u00a0  ones) MUST NOT be removed from the MIB module, and descriptors and \u00a0 \u00a0  OBJECT IDENTIFIER values associated with existing definitions MUST \u00a0 \u00a0  NOT be changed or re-assigned. A word expressing that all  RFC 4008  MIB objects are included in this version, but with only the STATUS changed to deprecated would be helpful.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-06-24 01:53:45-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-06-12 07:22:58-07:00",
+        "text": "Updated based on version 2. - Jouni's feedback. * There is also no text about operational and management implications \u00a0 related to deprecation process of the old MIB and migrating to the \u00a0 new (to be approved) NAT-MIB-v2). Inserting a few lines that there are not implementations (as mentioned by Dave H.) would be sufficient. Dave's messages copied here for your convenience: The NAT-MIB was designed largely to be a NAT configuration MIB, back when it was hoped the security features of snmpv3 would make configuration using snmp more tenable. In reality, the complexity of snmpv3 security, and the continuation of snmp being listed as a top-ten vulnerability, discouraged people from moving to it quickly, and the other difficulties of snmp led to Netconf being started, and SNMP being identified a reasonable choice for monitoring, but not configuration. So the nat-mib was overtaken by events related to IETF management protocols. RFC4008  was treated as an individual submission after the NAT WG closed, and it was reviewed by the MIDCOM WG. The IESG questioned whether NAT-MIB should be an IETF standard, because the official IETF stance at the time of IESG review\u00a0 was \"NATs are bad; use IPv6\". See comments for  RFC4008 .  So  RFC4008  never had strong support from the IETF community. Other technologies for working with NATs, such as STUN and TURN and ICE, were already gaining traction by the time the nat-mib was approved. I think Jon Peterson was one of the transport ADs at the time, and working for a service provider that used NATs.  I recall him saying when the mib module was approved that he was glad the MIB work was finally completed so the community could focus on USEFUL approaches to nats and stop dealing with the NAT-MIB module. So the NAT-MIB was overtaken by NAT-related events even before its approval. NATs have had so many varieties, the behave WG was created to try to get all the various NAT approaches to work together better. The configuration approach of the nat-mib only addressed a subset of available NATs. So the nat-mib never got much implementation support, and the behave WG checked and found few implementations.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-24 01:53:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-06-10 07:29:50-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 07:29:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-06-10 11:24:32-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 11:24:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-06-11 03:31:32-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-11 03:31:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-06-09 00:05:32-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-09 00:05:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-06-09 18:46:39-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-09 18:46:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-06-10 14:09:21-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 14:09:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-05-24 21:31:26-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-06-10 22:59:33-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 21:31:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-06-24 09:46:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 22:59:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7658",
+  "evaluation_end": "2015-06-24 09:46:00-07:00",
+  "evaluation_start": "2015-05-24 21:31:26-07:00"
+}

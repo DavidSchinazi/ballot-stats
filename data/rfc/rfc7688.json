@@ -1,0 +1,261 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-08-05 07:46:30-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-08-27 11:58:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-08-05 07:46:30-07:00",
+        "text": "I'd like to see clearer descriptions on particularly the error-handling around multiple TLVs and sub-TLVs.  I see a few points of ambiguity - as described below.\u00a0 I think these should be straightforward to clarify but interoperability could be affected if this isn't done.\u00a0  Thanks! In Sec 2, it says \"Only one Optical Node Property TLV shall be advertised in each LSA.\" What is the error-handling if multiple of this TLV are seen? Is that a SHALL or a \"at most one... MUST be advertised\"?\u00a0 I'd expect normative language. In Sec 2, it says \"\u00a0  Among the sub-TLVs defined above, the Resource Block Pool State sub- \u00a0  TLV and Resource Block Shared Access Wavelength Availability are \u00a0  dynamic in nature while the rest are static. As such, they can be \u00a0  separated out from the rest and be advertised with multiple TE LSAs \u00a0  per OSPF router, as described in [ RFC3630 ] and [ RFC5250 ].\" So - one can advertise multiple TE LSAs - each with at most one\u00a0 Optical Node Property TLV  and at most one of these sub-TLVs?\u00a0 If the same sub-TLV appears in different TE LSAs, how are they merged or is a particular one preferred and the rest ignored?\u00a0 I see the text in the previous paragraph of \"If more than one copy of a sub-TLV is received, \u00a0  only the first one of the same type is processed and the rest are \u00a0  ignored upon receipt.\" but what does the \"first one\" mean?\u00a0 Is that decided based on a particular identifier? In Sec 3.1, \"The format of the SCSI MUST be as depicted in the following figure:\" implies that both the Available Label Sub-TLV and the Shared Backup Label Sub-TLV must be included and in the specified order.\u00a0  Please clarify (and use separate diagrams) details about how many times each sub-TLV can appear, if ordering matters, and how to handle conflicts or duplicates. End of Sec 4: \"In case where the new sub-TLVs or their attendant encodings are \u00a0  malformed, the proper action would be to log the problem and ignore...\"\u00a0 First, please be explicit in what behavior MUST be done.\u00a0 Is this just for malformed sub-TLVs?\u00a0 Is it safe to assume that sub-TLVs further on in the TLV (or following TLVs) can be properly parsed?\u00a0 Second, please add in some words about the expected load of logs.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-27 11:58:05-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-08-02 16:22:49-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-02 16:22:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-07-29 03:19:35-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-29 03:19:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-08-03 15:43:16-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-03 15:43:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-08-04 08:29:51-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-04 08:29:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-07-25 03:25:45-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-25 03:25:45-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-08-06 02:20:17-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-06 02:20:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-08-05 22:25:51-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-05 22:25:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-08-03 09:37:03-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-03 09:37:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-07-31 14:10:07-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-31 14:10:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-08-05 04:48:45-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-05 04:48:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-08-05 17:48:56-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-25 03:25:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-09-14 13:40:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-05 17:48:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7688",
+  "evaluation_end": "2015-09-14 13:40:03-07:00",
+  "evaluation_start": "2015-07-25 03:25:44-07:00"
+}

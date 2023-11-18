@@ -1,0 +1,317 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-01-02 09:07:29-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-02 09:07:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-01-08 07:09:02-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-08 07:09:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-01-07 14:20:23-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 14:20:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-05 09:48:40-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-05 17:36:57-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-01-05 09:48:40-08:00",
+        "text": "Point 1: I find the document to be really unclear about who does what with which and to whom and....\u00a0 I gather that what happens is that the challenge is sent as part of the www-authenticate header, and that the client sends a HOBA-RES back to the server in an authorization header.\u00a0 I don't see the point of the HOBA-TBS at all: it looks like it's that the \"sig\" in the HOBA-RES is a signed version of the HOBA-TBS, but I don't see anything that says that clearly. This document would benefit from some section somewhere giving a set of clear, numbered steps, saying who sends, who receives, and who does what with what input at each step.\u00a0 I don't find Section 5 to be doing that at all.\u00a0 \"the client authenticates by signing a blob of information as described in the previous sections,\" still leaves me wondering what blob was signed, and sent how. And yes, I see that \"blob\" is used elsewhere, but it's not a technical term. Some other, easier-to-deal-with things for discussion, some of which might just involve small clarifications (or an explanation to me that results in my slapping my own forehead): -- Section 2 -- In the ABNF for HOBA-TBS, is something supposed to be between the elements?\u00a0 If not, how do I know when the base64 value for nonce ends and the length value for alg begins? -- Section 6.3 -- \u00a0  The server SHOULD also revoke or delete any cookies associated with \u00a0  the session. Why is that not MUST?\u00a0 How good is a \"logout\" if stolen cookies from that session can still be reused? -- Section 6.4 -- Protocol: does asking for and getting a new challenge affect the session state?\u00a0 The document should be clear about what happens, rather than just saying that the client can ask for a new challenge.\u00a0 Is it like a logout and re-login?\u00a0 Or what? -- Section 8.2 -- I don't think you need to say \"a la LinkedIn,\" and I think it's a bad idea to have us link a company's name to a password compromise forever in an RFC.\u00a0 Especially when it's not necessary.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-05 19:38:31-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-01-05 17:36:57-08:00",
+        "text": "Two small points to discuss: -- Section 6.3 -- \u00a0  The server SHOULD also revoke or delete any cookies associated with \u00a0  the session. Why is that not MUST?\u00a0 If the SHOULD is just to accommodate some implementations, is that really how we want to specify the protocol? -- Section 8.2 -- I don't think you need to say \"a la LinkedIn,\" and I think it's a bad idea to have us link a company's name to a password compromise forever in an RFC.\u00a0 Especially when it's not necessary.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-08 09:15:35-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-01-05 19:38:31-08:00",
+        "text": "One small point left: -- Section 8.2 -- I don't think you need to say \"a la LinkedIn,\" and I think it's a bad idea to have us link a company's name to a password compromise forever in an RFC.\u00a0 Especially when it's not necessary.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-08 09:15:35-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-01-06 13:11:20-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-06 13:11:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-07 06:29:26-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 06:29:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-01-07 23:09:39-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 23:09:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-12-30 17:22:09-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-30 17:22:09-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-01-07 05:54:39-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 05:54:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-01-07 12:48:25-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 12:48:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-07 16:19:37-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-08 02:31:19-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-01-07 16:19:37-08:00",
+        "text": "(1) It does not seem to me that the mechanism defined in this document actually conforms to the framework for HTTP authentication.\u00a0 The general framework defined in  RFC 7235  is all scoped to a resource -- you can implement authorization for a specific resource, without impacting anything else on the server.\u00a0 HOBA, by contrast, requires the authenticating resource to be also be correlated to several resource under .well-known, meaning that it will not be usable in a large number of deployment circumstances.\u00a0 Was this issue discussed in the WG, and was there input from the broader HTTP community?\u00a0  (2) What is your justification for using a SHA-1 based signature in a new protocol, when it is being actively deprecated elsewhere, in particular the web PKI? (3) \"RSA modulus lengths of at least 2048 bits SHOULD be used.\" -> MUST (4) Given that the size of the header seems to be a concern (since you're not passing the key in the header), why are there no ECC signing algorithms defined?\u00a0 It seems like if you used any of the normal curves, you could comfortably pass the key along with the authentication value. (5) For that matter, why bother defining a new algorithm registry at all, when JWA provides a perfectly nice one that only costs you 4 characters.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-08 07:41:28-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-01-08 02:31:19-08:00",
+        "text": "(1) It does not seem to me that the mechanism defined in this document actually conforms to the framework for HTTP authentication.\u00a0 The general framework defined in  RFC 7235  is all scoped to a resource -- you can implement authorization for a specific resource, without impacting anything else on the server.\u00a0 HOBA, by contrast, requires the authenticating resource to be also be correlated to several resource under .well-known, meaning that it will not be usable in a large number of deployment circumstances.\u00a0 Was this issue discussed in the WG, and was there input from the broader HTTP community?\u00a0  (2) What is your justification for using a SHA-1 based signature in a new protocol, when it is being actively deprecated elsewhere, in particular the web PKI? (3) \"RSA modulus lengths of at least 2048 bits SHOULD be used.\" -> MUST",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-08 07:51:17-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-01-08 07:41:28-08:00",
+        "text": "(1) It does not seem to me that the mechanism defined in this document actually conforms to the framework for HTTP authentication.\u00a0 The general framework defined in  RFC 7235  is all scoped to a resource -- you can implement authorization for a specific resource, without impacting anything else on the server.\u00a0 HOBA, by contrast, requires the authenticating resource to be also be correlated to several resource under .well-known, meaning that it will not be usable in a large number of deployment circumstances.\u00a0 Was this issue discussed in the WG, and was there input from the broader HTTP community?\u00a0  (2) Cleared (SHA-1 only allowed if the platform doesn't do SHA-256) (3) Cleared (bounds on <2048-bit keys)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-08 07:51:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-01-02 21:35:49-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-02 21:35:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-12-31 07:32:09-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-31 07:32:09-08:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-01-08 08:39:14-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-30 17:22:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-01-12 17:12:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-08 08:39:14-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7486",
+  "evaluation_end": "2015-01-12 17:12:40-08:00",
+  "evaluation_start": "2014-12-30 17:22:08-08:00"
+}

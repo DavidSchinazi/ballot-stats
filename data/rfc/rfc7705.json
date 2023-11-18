@@ -1,0 +1,365 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-02-19 06:25:35-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-02-19 06:25:35-08:00",
+        "text": "I cannot support the publication of this document in its current form. My issues could possibly be resolved, but I do not think that minor edits would be enough, and I suspect that after the work to produce  the document and considering WG and IETF consensus, there will be  enthusiasm to start again. resolving my concerns would, I think, require the document to return to the working group. Since I do not feel strongly enough that this document MUST NOT be published in this form, I will not use my Discuss to insist on  changes. The notes below are provided to help you understand my reasoning and, if you are minded to agree with me, to help you think about how to  update the document. (Some of the nits come from a \"training review\" done by Alvaro.) The documentseems to address four topics: - Requirements for and circumstances of AS migration - Behavior needed from a BGP system when migrating AS numbers - Mechanisms that a BGP implementation can use to provide the \u00a0 behavior - Description of the mechanisms and configuration options contained in \u00a0 specific implementations As Alvaro wrote: > o The Introduction is very tentative about the purpose: it wants to > document de facto standards for future implementations and so > that new features (BGPSec) take them into consideration..but it is > not expecting all implementation to follow exactly (at least not the > existing ones).\u00a0 My question is: should this be Informational instead > of Standard? I would say that the first two bullets are classic descriptive  requirements text. They are good to publish as Informational. The third bullet is somewhat suspect. Maybe it is an advisory appendix, but the list of ways to provide the function is unbounded and there is no requirement for interoperability. I am not sure that publshing this information is a great benefit. Maybe it is not harmful although it  might tend to reduce innovation and give vendors and operators expectations about mechanisms that should be used within implementations. I find the final bullet very suspect. It goes beyond an implementation report and enters into the world of sales. While the document makes no explicit analysis of the pros and cons of the different implementations, described, there is a lot between the lines. Furthermore, by not documenting the mechanisms in other implementations, the document gives the false impression that the three implementations described are the benchmark for AS migration. It might be possible to move this material  to an appendix or a separate implementation document, but as the authors note, much or all of the information can be found on the websites of the companies concerned, and I think that is where it should stay. [Please note that twice, while typing this, I wrote \"AD migration\". That may be a better solution to all of our problems!] Here are the minor comments and nits... o \"ISPs bill customers based on the 95th percentile of the greater \u00a0 of the traffic sent or received, over the course of a 1-month \u00a0 period, on the customer's access circuit.\"\u00a0  \u00a0  \u00a0 This information is not needed and may change at any time after the \u00a0 publication of this document. You have made the point about \u00a0 utilization: you can drop this text. o The use case figres, Fig 1 and 2, show customers C and D. When \u00a0 explaining the features, CE-A and CE-B are used instead.\u00a0  \u00a0  \u00a0 It would make it easier to follow if the same names were used. o Potential loops!\u00a0 Using \"local-as no-prepend replace-as\" results in  \u00a0 eliminating an ASN from the AS_PATH (in the example, the Old_ADN \u00a0 64510 is eliminated). If other routers in ISP B have not been migrated \u00a0 yet (very real possibility) then they may accept Updates that already \u00a0 went through their ASN (64510) resulting in potential loops. \u00a0  \u00a0 To be fair, the text suggests that ISP B has been migrated to the \u00a0 New_ASN before applying the \"local-as no-prepend replace-as\" config, \u00a0 but I think that it would be important to describe the potential  \u00a0 risk of using this feature - either as an Operational Consideration \u00a0 or in the Security section. o The text uses \"MY ASN\" to indicate the ASN number in the BGP \u00a0 Open Message.\u00a0 However, (1) there is no reference to  rfc4271  so that \u00a0 the reader understand what they're talking about, and (2) the field in \u00a0 the Open message is called \"My Autonomous System\" (not MY ASN). \u00a0 This shows up in 3.3 and 4.2. o Also in 3.3 (and 4.2), the Error Message \"BAD PEER AS\" is mentioned.. \u00a0 Again, no reference and wrong name.\u00a0 The name used in  rfc4271  is  \"Bad Peer AS\".\u00a0  o Other  rfc4271  related nits..\u00a0 The draft talks about \"updates\", but the \u00a0 official name is \"UPDATE\".\u00a0 Yes, maybe OCD, but I think it is  \u00a0 important to be clear about what is being specified.\u00a0  \u00a0  \u00a0 In some cases the use is mixed: \"..it MUST process the update as \u00a0 normal, but it MUST append the configured ASN in the AS_PATH attribute \u00a0 before advertising the UPDATE\". o In 3.3 (last paragraph) the authors talk about the CLI implementation. \u00a0  While the exact command syntax is an implementation detail beyond the \u00a0  scope of this document, the following consideration may be helpful \u00a0  for implementers \u00a0 Suggest to stay out of this completely. It is nested \"may\" and that  \u00a0 really calls its value into question. o Because the external features (Section 3) assumes that the AS being \u00a0 migrated is already using the New_ASN before using local-as, I would \u00a0 like to see the internal features (Section 4) be discussed first in  \u00a0 the text to keep a logical flow. o 4.1: s/typically to PE devices/typically connected to PE devices",
+        "type": "Abstain"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-02-16 14:20:09-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-02-18 12:36:46-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-18 12:36:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-09-09 06:31:35-07:00",
+        "end_reason": "new_position",
+        "start": "2015-03-22 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-09 06:31:35-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-02-18 16:27:30-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-18 16:27:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-09-16 10:56:59-07:00",
+        "end_reason": "new_position",
+        "start": "2015-03-22 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-09-16 20:55:44-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-09-16 10:56:59-07:00",
+        "text": "Hopefully this is easy to resolve: I am confused at the purpose of this draft. The introduction says \"This draft discusses some existing commonly-used BGP mechanisms\" and \"The deployment of these mechanisms do not need to interwork with one another to accomplish the desired results\" These words suggest an informational RFC, or maybe a BCP. On the other hand, the draft is labeled as standards track, and updates 4271 (I assume due to Brian's previous comments). Sections 3.3 and 4.2 make heavy use of 2119 keywords in a way that sounds like it is defining a standard (although I question whether these keywords in general impact interoperability per se.) So, I think there is a misalignment. If the intent is indeed to define a standard, then I suggest the abstract and first paragraph of introduction be rewritten to align with that. If not, then it shouldn't be standards track nor update 4271.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-16 20:55:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-02-18 04:41:38-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-18 04:41:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-02-17 13:08:04-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-17 13:08:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-09-16 17:52:00-07:00",
+        "end_reason": "new_position",
+        "start": "2015-03-22 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-16 17:52:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-02-19 03:39:40-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-19 03:39:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-02-19 06:51:25-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-19 06:51:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-02-17 17:36:52-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-17 17:36:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-02-16 14:49:39-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-16 14:49:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-02-18 20:36:31-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-02-19 09:07:42-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-02-18 20:36:31-08:00",
+        "text": "A procedural DISCUSS, which I expect will be cleared on the call, whatever the outcome: RFC 2026  says this in section 5 regarding what a BCP is for: \u00a0  Historically Internet standards have generally been concerned with \u00a0  the technical specifications for hardware and software required for \u00a0  computer communication across interconnected networks.\u00a0 However, \u00a0  since the Internet itself is composed of networks operated by a great \u00a0  variety of organizations, with diverse goals and rules, good user \u00a0  service requires that the operators and administrators of the \u00a0  Internet follow some common guidelines for policies and operations. \u00a0  While these guidelines are generally different in scope and style \u00a0  from protocol standards, their establishment needs a similar process \u00a0  for consensus building. That sounds like exactly what this document is doing. Sounds like it should be a BCP. Is there a reason it shouldn't be?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-02-19 09:07:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-02-18 19:50:24-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-02-18 19:50:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-02-16 16:15:35-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-16 16:15:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-02-18 17:36:50-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-18 17:36:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-02-19 05:54:31-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-16 14:20:09-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-02-19 05:54:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-09-16 20:15:02-07:00",
+        "end_reason": "new_position",
+        "start": "2015-03-22 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-10-05 16:05:45-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-16 20:15:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7705",
+  "evaluation_end": "2015-10-05 16:05:45-07:00",
+  "evaluation_start": "2015-02-16 14:20:09-08:00"
+}

@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-08-06 07:52:48-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-08-14 04:36:59-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-06 07:52:48-07:00",
+        "text": "After following the long email thread and discussing this with the document editor, I come to the following proposed changes.\u00a0 The net effect is to note that with \"Expert Review\" the concept of \"Early Allocation\" is not needed because the Designated Experts are empowered to grant assignments when they think appropriate. What *is* useful, however, is to give those experts some guidance about what is and is not appropriate. That leads me to the following... Abstract OLD \u00a0  This document recommends some editorial changes to the IANA IS-IS TLV \u00a0  Codepoints registry to more accurately document the state of the \u00a0  protocol.\u00a0 It also defines early allocation procedures for codepoints \u00a0  managed by the registry. NEW \u00a0  This document recommends some editorial changes to the IANA IS-IS TLV \u00a0  Codepoints registry to more accurately document the state of the \u00a0  protocol.\u00a0 It also sets out new guidelines for Designated Experts to \u00a0  apply when reviewing allocations from the registry. END Section 1 OLD \u00a0  The IS-IS TLV Codepoints registry was created by [ RFC3563 ] and \u00a0  extended by [ RFC6233 ].\u00a0 As IS-IS related RFCs are published the \u00a0  codepoints required for the protocol extensions are added to the IANA \u00a0  managed registry. NEW \u00a0  The IS-IS TLV Codepoints registry was created by [ RFC3563 ] and \u00a0  extended by [ RFC6233 ].\u00a0 The assignment policy for the registry is \u00a0  \"Expert Review\" as defined in [ RFC5226 ].\u00a0 As IS-IS related documents \u00a0  are developed, the codepoints required for the protocol extensions \u00a0  are reviewed by the Designated Experts and added to the IANA managed \u00a0  registry.\u00a0 As these documents are published as RFCs, the registries \u00a0  are updated to reference the relevant RFC. END Section 1 OLD \u00a0  There is a need to support early allocation of codepoints defined in \u00a0  drafts which seem likely to eventually gain WG approval.\u00a0 The \u00a0  procedure for obtaining early allocation of codepoints is described. NEW \u00a0  In some cases there is a need to allocate codepoints defined in \u00a0  Internet-Drafts which seem likely to eventually gain WG approval \u00a0  without waiting for those drafts to be published as RFCs.\u00a0 This can \u00a0  be achieved using Expert Review, and this document sets out guidance \u00a0  for the Designated Experts to apply when reviewing allocations from \u00a0  the registry. END Section 4 OLD 4.\u00a0 Early Allocation of Codepoints \u00a0  When new drafts are introduced requiring new codepoints, it is \u00a0  advantageous to have the ability to do early allocation of \u00a0  codepoints.\u00a0 The reasons this is advantageous and the process to do \u00a0  so is described in [ RFC7120 ].\u00a0 However, [ RFC7120 ] procedures do not \u00a0  apply to registries such as the IS-IS TLV Codepoints Registry which \u00a0  utilize \"Expert Review\" allocation policy.\u00a0 In such cases what is \u00a0  required is that a request be made to the designated experts.\u00a0 The \u00a0  following procedures are defined.\u00a0 Note these procedures apply \u00a0  specifically to the IS-IS TLV Codepoints registry.\u00a0 This document is \u00a0  not defining a general early allocation process for other Expert \u00a0  Review registries. \u00a0  1.\u00a0 In order to qualify for early allocation a draft MUST be accepted \u00a0 \u00a0 \u00a0  as a WG document \u00a0  2.\u00a0 The author(s) of the draft MAY request early allocation of \u00a0 \u00a0 \u00a0  codepoints to the chair(s) of the WG in which the document is \u00a0 \u00a0 \u00a0  submitted \u00a0  3.\u00a0 The WG chair(s) gauge whether there is consensus within the WG \u00a0 \u00a0 \u00a0  that early allocation is appropriate for the given document and \u00a0 \u00a0 \u00a0  that the conditions for early allocation specified in [ RFC7120 ] \u00a0 \u00a0 \u00a0  Section 2 are satisfied.\u00a0 If so the request is forwarded to the \u00a0 \u00a0 \u00a0  Area Director(s). \u00a0  4.\u00a0 If the Area Director(s) approve, the request is forwarded to the \u00a0 \u00a0 \u00a0  Designated Experts for their approval. \u00a0  5.\u00a0 Once the Designated Experts have granted approval IANA will \u00a0 \u00a0 \u00a0  update the registry marking the allocated codepoints as \u00a0 \u00a0 \u00a0  \"Temporary\" following the procedures specified in [ RFC7120 ] \u00a0 \u00a0 \u00a0  Section 3.1 NEW 4.\u00a0 Guidance for Designated Experts \u00a0  When new drafts are introduced requiring new codepoints, it is \u00a0  advantageous to be able to allocate codepoints without waiting for \u00a0  them to progress to RFC.\u00a0 The reasons this is advantageous is \u00a0  described in [ RFC7120 ].\u00a0 However, [ RFC7120 ] procedures for early \u00a0  allocation do not apply to registries such as the IS-IS TLV \u00a0  Codepoints Registry which utilize \"Expert Review\" allocation policy. \u00a0  In such cases what is required is that a request be made to the \u00a0  Designated Experts who may approve the assignments according to the \u00a0  guidance that has been established for the registry concerned. \u00a0  The following guidance applies specifically to the IS-IS TLV \u00a0  Codepoints registry. \u00a0  1.\u00a0 Application for a codepoint allocation may be made to the \u00a0 \u00a0 \u00a0  Designated Experts at any time. \u00a0  2.\u00a0 The Designated Experts should only consider requests that \u00a0 \u00a0 \u00a0  arise from Internet-Drafts that have already been accepted as \u00a0 \u00a0 \u00a0  Working Group documents or that are planned for progression as \u00a0 \u00a0 \u00a0  AD Sponsored documents in the absence of a suitably chartered \u00a0 \u00a0 \u00a0  Working Group. \u00a0  3.\u00a0 In the case of Working Group documents, the Designated Experts \u00a0 \u00a0 \u00a0  should check with the Working Group chairs that there is \u00a0 \u00a0 \u00a0  consensus within the Working Group to make the allocation at this \u00a0 \u00a0 \u00a0  time.\u00a0 In the case of AD Sponsored documents, the Designated \u00a0 \u00a0 \u00a0  Experts should check with the AD for approval to make the \u00a0 \u00a0 \u00a0  allocation at this time. \u00a0  4.\u00a0 The Designated Experts should then review the assignment requests \u00a0 \u00a0 \u00a0  on their technical merit.\u00a0 The Designated Experts should not seek \u00a0 \u00a0 \u00a0  to overrule IETF consensus, but may raise issues for further \u00a0 \u00a0 \u00a0  consideration before the assignments are made. \u00a0  5.\u00a0 Once the Designated Experts have granted approval IANA will \u00a0 \u00a0 \u00a0  update the registry marking the allocated codepoints with a \u00a0 \u00a0 \u00a0  reference to the associated document as normal. END",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-14 04:36:59-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-07-25 06:16:09-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-08-04 15:03:14-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-04 15:03:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-08-06 10:45:41-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 10:45:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-08-05 06:34:09-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-05 06:34:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-08-06 18:23:12-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 18:23:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-08-07 07:38:15-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-07 07:38:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-08-04 14:25:59-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-04 14:25:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-08-05 05:03:15-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-05 05:03:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-08-06 13:47:01-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 13:47:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-08-06 13:12:08-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 13:12:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-08-06 13:09:05-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 13:09:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-08-06 09:13:55-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 09:13:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-08-07 07:17:18-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-25 06:16:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-08-14 08:56:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-07 07:17:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7370",
+  "evaluation_end": "2014-08-14 08:56:06-07:00",
+  "evaluation_start": "2014-07-25 06:16:09-07:00"
+}

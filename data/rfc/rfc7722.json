@@ -1,0 +1,245 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-05-27 13:16:18-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 13:16:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-05-17 05:06:55-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-05-26 10:27:28-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-26 10:27:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-05-27 14:29:28-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 14:29:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-05-28 06:26:19-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-10-07 00:42:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-05-28 06:26:19-07:00",
+        "text": "The multiple points, brought up by Sue part of her OPS-DIR review, deserve a DISCUSS. Let's engage in the discussion. Status of the draft: Not ready (publication wise), Almost ready (technical basis) Overall comment: First of all, as a long-term supporter of the OLSR work I am very happy to see this experimental draft that seeks to provide clear proof points of the MT-OLSR-v2 work.\u00a0 I believe the MT-OLSR-v2 can provide substantial benefit in the industry.\u00a0  My comments should be taken as a way to help the experiment provide real data points to IETF and to the industry on the successful.\u00a0 Real data will help the long term debate over the ADOV-v2 and OLSR-v2 work.\u00a0 Almost 10 years ago Don Fedyk show me some very limited theoretical analysis on where early version of these protocol fit within 802.11s work.\u00a0 Experimental work is critical to expansion of this work as new 802.11 and new mobile radios continue to make MANET\u2019s work relevant for future networks.   Summary of Comments: My comments have 6 major issues, and a set of editorial changes.\u00a0 Five of my major points have to do with adding more details to the draft to judge the experiment valuable.\u00a0 One way to resolve these comments is to create document providing details on the test that will be run.\u00a0 A second way to resolve these comments on experiment is to provide additional high-level guidance in this document.   The 6th major technical point is that you have not done the IANA Section to match previous RFCs (7181, 7188).\u00a0 I believe Barry Lieba and IANA have already noted this issue as well.\u00a0  The format of the IANA section should be changed to include all the IANA registration issues.   I have other editorial comments but since I have indicated a substantial section re-write due to major comments, I will be glad to review the document for final editorial comments in a second pass.\u00a0    Technical summary: Basically \u2013 it is a good extension of existing work.\u00a0 It is useful for Wireless and MANET for mobile. The authors did a good job of focusing on just the revisions.\u00a0 However, I am recommending more detail on the experiments will help the protocol and help to create knobs for configuration and management of the protocol.   Here are the main points of the review:   Status: Almost ready, but has 5 major points that will help define the experiment as a success. 1 Major point about the IANA Section.   Major 1 issues are the exact definition of the tests that make it a successful experiment.\u00a0  (p. 7, section 4, section 5, parameters This draft needs to have the clarity of setting expectations for if the experiments succeeds.\u00a0 The recommended tests in major concern 1-4 could be created in a separate draft.\u00a0  If so, this draft should reference that draft.   A few things that should be in the tests are:   1)\u00a0 \u00a0 \u00a0 Topologies that prove the OLSR-v2 and MT-OLSR \u201cdoesn\u2019t break\u201d either protocol.\u00a0 As previous tests of link-state protocols have shown, it is the topologies and the changes between the topologies that cause failures.\u00a0 Changes to topologies include migrating between topologies due to link failures or link flapping.\u00a0 In the OLSR-v2 and MT-OLSR world this is extremely important as mobile nodes may have radios or Wifi that fades in and out.    2)\u00a0 \u00a0 \u00a0 Scaling tests \u2013 what happens if the arrays round out of space?\u00a0 Does the route calculation for each metric type cause problems? Are there efficiencies that some implementations use to improve scaling?   3)\u00a0 \u00a0 \u00a0 Interoperability tests with the previous versions OSLR-v2 (can you crash an older OLSR-V2 version)?\u00a0 These tests should be not just two boxes but topologies of nodes connected by Wifi (802.11n, 802.11ac, 802.11k (if ready)) and other mobile radios (software defined radios, military, and others).   4)\u00a0 \u00a0 \u00a0 Failure tests/Error conditions (section 5) \u2013 E.g. what happens parameter arrays have repetitions in the IFACE_METRIC_TYPES. What happens if the ordering of the LINK_METRIC_TYPE.metric type does not include the ROUTER_METRIC_TYPE First?   Other tests should be described.\u00a0 All these tests should have topologies, parameters, and results.\u00a0 OSLR-2 tests should pick up the theory from the benchmarking WG for testing OSPF and ISIS depends on the types of topologies that are given.\u00a0 For other authors, I would give more precise details.\u00a0 However, due to the expertise of the two authors \u2013 I gave just this high level guidance.\u00a0 I will be glad to work through scenarios with the authors.   Major 2: Should the be a negotiation of resources sizing or just an overload bit flag when it fails?   We know that overload bits have problems.\u00a0 So, does this experiment try to fix this in the MT-OLSR2?\u00a0 If not, as it goes to from scalar to arrays \u2013 how will peers know when it fails in one MT-Topology versus another?\u00a0 Is this experiment restricted to fate-sharing among the MT-OLSR-v2 topologies due to resources on a single?\u00a0 Should the negotiation of the types in the Hello have a resource constraint in the MPR-WILLING TLV?\u00a0 This negotiation for MT-OLSRv2 is different than the simple upgrade from OLSR to OLSRv2.\u00a0 It is important to know how the overload works in MT-OLSR-v2 only, and combined MT-OLSRv2 and OLSR-v2.\u00a0 This overload should be tested in a variety of topologies with parameters, topologies, and routing flow carefully detailed. Again, see the benchmarking drafts on OSPF and ISIS.   Again, what I pose is questions that I feel the authors should consider in an experiment for this type of work.\u00a0 These expert authors have the capability to place additional high-level in this document (or more detail in a different document).\u00a0 Again, I will gladly provide the authors with feedback and review   Major 3:\u00a0 It is not clear that the experiment is consider whether the MPR calculation per TE-metric will consume significant resources. A good benchmarking (see Major 1) would be useful.\u00a0 The theoretical assurance that:   \u201cEach router may make its own decision as to whether or not to use a link metric, or link metrics, for flooding MPR calculation, and if so which and how. This decision MUST be made in a manner that ensures that flooded messages will reach the same symmetric 2-hop neighbors as would be the case for a router not supporting MT-OLSRv2 (section 10, paragraph)   Is not really strongly there. If this is experimental, it is important to test this point in the benchmarking.\u00a0 I do not really see it in the experiment.\u00a0 This applies to the 1-hop neighbors (both those not considered (symmetric links)) and those considered in the 2-hop consideration.   The experiment should again set benchmarks for success on the MPR calculation for MT-OLSR-v2, and combined MT-OLSR-v2 and OLSR-v2 which contain several topologies, careful parameter setting, and methods to record convergence time.    Major comment 4:\u00a0 The link between NHDP and this standard\u2019s experiment with MPR is not clear.   I expected some comment on how NHDP interacts with the MPR Tests above.\u00a0 This may simply be a revision of the text for the use case for MPR calculation.\u00a0 I expected some comment because\u00a0  RFC 7466  states in its abstract: \u00a0  Neighborhood Discovery Protocol (NHDP) enables \"ignoring\" some 1-hop \u00a0  neighbors if the measured link quality from that 1-hop neighbor is \u00a0  below an acceptable threshold while still retaining the corresponding \u00a0  link information as acquired from the HELLO message exchange.\u00a0 This \u00a0  allows immediate reinstatement of the 1-hop neighbor if the link \u00a0  quality later improves sufficiently.   \u00a0  NHDP also collects information about symmetric 2-hop neighbors. \u00a0  However, it specifies that if a link from a symmetric 1-hop neighbor \u00a0  ceases being symmetric, including while \"ignored\" (as described \u00a0  above), then corresponding symmetric 2-hop neighbors are removed. \u00a0  This may lead to symmetric 2-hop neighborhood information being \u00a0  permanently removed (until further HELLO message received) if \u00a0  the link quality of a symmetric 1-hop neighbor drops below the \u00a0  acceptable threshold, even if only for a moment.\u00a0    Major concern 5:\u00a0 Experiments should drive to create operational guidelines for deployment, configuration knobs, and use cases (ADOV-2, OLSR-v2, MT-OLSR-v2)   While all these major issues are not directly operations, early experiments will help the operations people to set the management variables in section 10:\u00a0  1)\u00a0 \u00a0 \u00a0 Reasonable TE metrics, 2)\u00a0 \u00a0 \u00a0 Detecting that MANET is sufficiently connected, 3)\u00a0 \u00a0 \u00a0 Providing guidance to deployments on performance of route sets for diff-serv in different environments (Wifi and other mobile radio nodes), 4)\u00a0 \u00a0 \u00a0 Determine how the mixture of OLSR-v2 and MT-OLSR-v2 work in different environments. 5)\u00a0 \u00a0 \u00a0 Determine how to design for OLSR-v2 and MT-OLSR-v2 networks for better MPR assignment with NHDP\u00a0    Major 6: The IANA section does not answer all the IANA questions.  It has most of the information, but I think it is not up to the latest IANA format and information.\u00a0  Barry Leiba and others have noted that the  RFC 7181  and  RFC7188  do not match this IANA section.\u00a0 Rather than repeat these comments, I will simple state the data needs to be consistent and the format match IANA\u2019s comments.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-07 00:42:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-05-26 06:30:30-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-26 06:30:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-05-27 09:24:46-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 09:24:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-05-27 12:52:04-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 12:52:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-05-27 03:45:48-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 03:45:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-05-28 05:59:03-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-28 05:59:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-10-07 14:53:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-17 05:06:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc7722",
+  "evaluation_end": "2015-10-07 14:53:14-07:00",
+  "evaluation_start": "2015-05-17 05:06:55-07:00"
+}

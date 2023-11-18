@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-07-08 12:57:17-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-09-29 08:13:32-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-07-08 12:57:17-07:00",
+        "text": "In general, this draft is well-written and easy to understand.\u00a0 I do have a few points of technical clarity that I think are important. First, a minor point on the \"Reserved\" bits.\u00a0 In Sec 2.1, it says \"Z (7 bits):\u00a0 Reserved.\u00a0 Should be 0.\" and then in Sec 2.2: \"\u00a0  Clients MUST discard the MPL Parameter Configuration Option if it is invalid (e.g., it sets reserved bits).\"\u00a0 Frequently, Reserved bits are available for future enhancements - so setting to zero on write and ignoring the value on read is a useful default.\u00a0 If these bits are really always going to be zero and interpreted as an error, then could you rename them to MBZ (Must Be Zero) and indicate in the field definition that a value other than zero is an error.\u00a0  Also, from what I read in the rest of the draft, if an invalid option is received, that could cause the client to be removed from the MPL region.\u00a0 Could you clarify in the document what the expected behavior is if an invalid option is discarded?\u00a0 Is that like having no option?\u00a0 Is that pretending that the client didn't get one and staying with the previous option?\u00a0 It seems like it would be pretty easy to remove a client from the MPL region by flipping a bit.\u00a0 I would also like to see better clarification of how an option is considered invalid; while it may seem obvious, it's these details that impact interoperability.\u00a0 In the write-up, I don't see any indications that there have been interoperable implementations yet? Second, given that the meaning of the *_IMAX values is based on  RFC6206  (as indicated in the update history) and that the *_IMAX and *_IMIN are confusing values, PLEASE have a reference to  RFC6206 .\u00a0  To continue, it seems that DATA_MESSAGE_IMIN and DATA_MESSAGE_IMAX have different units - as is explained in  RFC6206  where *_IMAX is the number of doublings and *_IMIN is the value in milliseconds.\u00a0 However, in  draft-ietf-roll-trickle-mcast-12 , Section 5.4, the definition of DATA_MESSAGE_IMIN and DATA_MESSAGE_IMAX and C_IMIN and C_IMAX are given as: \"\u00a0  DATA_MESSAGE_IMIN\u00a0 The minimum Trickle timer interval, as defined in \u00a0 \u00a0 \u00a0 [ RFC6206 ], for MPL Data Message transmissions.\u00a0 DATA_MESSAGE_IMIN \u00a0 \u00a0 \u00a0 has a default value of 10 times the expected link-layer latency. \u00a0  DATA MESSAGE_IMAX\u00a0 The maximum Trickle timer interval, as defined in \u00a0 \u00a0 \u00a0 [ RFC6206 ], for MPL Data Message transmissions.\u00a0 DATA_MESSAGE_IMAX \u00a0 \u00a0 \u00a0 has a default value equal to DATA_MESSAGE_IMIN. \u00a0  CONTROL_MESSAGE_IMIN\u00a0 The minimum Trickle timer interval, as defined \u00a0 \u00a0 \u00a0 in [ RFC6206 ], for MPL Control Message transmissions. \u00a0 \u00a0 \u00a0 CONTROL_MESSAGE_IMIN has a default value of 10 times the worst- \u00a0 \u00a0 \u00a0 case link-layer latency. \u00a0  CONTROL_MESSAGE_IMAX\u00a0 The maximum Trickle timer interval, as defined \u00a0 \u00a0 \u00a0 in [ RFC6206 ], for MPL Control Message transmissions. \u00a0 \u00a0 \u00a0 CONTROL_MESSAGE_IMAX has a default value of 5 minutes. \" Clearly, if DATA_MESSAGE_IMIN is a 16 bit value and DATA_MESSAGE_IMAX is only an 8-bit value, they are expected to have different ranges.\u00a0  Additionally, it's quite unclear which actually needs to be divided by TUNIT.\u00a0 The draft describes this as happening for DM_IMIN and C_IMIN, but then goes on to say \u00a0 \" Note that all time values (Trickle timers and expiration periods) are \u00a0  in TUNIT milliseconds precision.\u00a0 For example, if TUNIT is 20 and the \u00a0  data message interval minimum (DATA_MESSAGE_IMIN) is 1000ms, then \u00a0  DM_IMIN shall be set to 50.\" Unfortunately, the draft doesn't describe which parameters are time values and apparently  draft-ietf-roll-trickle-mcast-12 has some confusion as well.\u00a0 For instance, CONTROL_MESSAGE_IMAX is defined as a time value (5 minutes). I suspect that the solution here is to clarify/fix  draft-ietf-roll-trickle-mcast-12 , add references in Sec 2 to where the parameters are defined, indicate which are considered \"time values\", and clean up the language in Sec 2.1. Thanks!\u00a0 It looks like a useful document to address an operational problem once these clarity issues are addressed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-29 08:13:32-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-07-06 17:13:19-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-06 17:13:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-07-01 09:38:55-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-07-07 11:17:58-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-11-01 16:33:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-07-07 11:17:58-07:00",
+        "text": "This should be a very easy discussion to resolve: -- Section 2.3 -- \u00a0  A node SHOULD leave an MPL domain if it receives an updated MPL \u00a0  Parameter Configuration Option without a configuration for the MPL \u00a0  domain, unless it has overriding manual configuration on the MPL \u00a0  domain.\u00a0 In other words, if a node is configured to work as a MPL \u00a0  Forwarder for a MPL domain regardless of DHCPv6 Options, the node MAY \u00a0  stay on the MPL domain even if it receives an MPL Parameter \u00a0  Configuration Option without configuration for the MPL domain. I'm confused by this, because it appears to contradict itself. Some questions might help he understand: If I receive an updated MPL PCO that lacks a config for the MPL domain, then there are two possible situations: Case 1: I do *not* have an overriding manual config for the domain.\u00a0 In this case, the text says that I SHOULD leave the domain.\u00a0 Is that correct?\u00a0 Is it OK in this case for me to decide to stay on the domain anyway, even if I have no manual configuration for it? Case 2: I *do* have an overriding manual config for the domain.\u00a0 In this case, the text seems to say that it's entirely my choice (\"MAY\") whether or not I stay on the domain or leave it.\u00a0 Is that correct? Please discuss this with me, so I can suggest how to make the text clearer, depending upon the answers to those questions.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-01 16:33:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-07-07 19:35:42-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-07 19:35:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-07-08 06:16:23-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 06:16:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-07-08 07:15:29-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-09-09 07:39:54-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-07-08 07:15:29-07:00",
+        "text": "Some of these points come from Bernie Volz's INT-Dir review... 1. This is one of the few options that is not a singleton, as defined in section 16 of  RFC 7227 . While the use of multiple options seems appropriate here, it would be best to clarify that clients (section 2.2) and servers (section 2.4) must be able to support multiple instances of this option. Given the discussion around supporting multiple MPL domains in  draft-ietf-roll-trickle-mcast , I would expect there to be situations where the option appears multiple times. 2. In section 2.3 (MPL Forwarder Behavior), there should be a brief discussion of the role of the MPL Domain Address and include a reference to [ I-D.ietf-roll-trickle-mcast ]. 3. In section 2.6 (Operational Considerations), the text is a bit odd. Why should a parameter set not be updated more often than twice the Information Refresh Time? How does the failure to refresh the option play with text in section 2.3 that indicates a missing option means the node should leave the MPL domain? Perhaps defining what \"failure to refresh\" means (i.e., I think it refers to lack of a DHCPv6 server response to a Renew or Information Request). Note also that Information Refresh Time is only applicable to Information-Request messages (see  RFC 4242 ) so work may be needed as to how this this sections relate to Renew/Rebind operations? I am also not sure why 2.6 is a standalone section when it appears to be only applicable to clients and should be in either section 2.2 or 2.3.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-11-11 06:03:13-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-09-09 07:39:54-07:00",
+        "text": "Updated for -07... 1. Resolved 2. In section 2.3 (MPL Forwarder Behavior), there should be a brief discussion of the role of the MPL Domain Address and include a reference to [ I-D.ietf-roll-trickle-mcast ]. 3. Resolved",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-11 06:03:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-07-08 12:35:07-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 12:35:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-07-08 15:08:04-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 15:08:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-07-08 21:45:56-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 21:45:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-07-08 12:53:17-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 12:53:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-07-09 01:09:13-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-09 01:09:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-07-08 21:10:00-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 21:10:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-07-08 01:04:33-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 01:04:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-07-07 15:47:09-07:00",
+        "end_reason": "new_position",
+        "start": "2015-07-01 09:38:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-11-11 08:17:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-07 15:47:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7774",
+  "evaluation_end": "2015-11-11 08:17:24-08:00",
+  "evaluation_start": "2015-07-01 09:38:55-07:00"
+}

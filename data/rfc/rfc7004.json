@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-02-19 13:18:39-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-04-03 06:35:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-19 13:18:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-02-12 15:24:52-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-03-07 07:58:27-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-02-12 15:24:52-08:00",
+        "text": "This is a fine document, which I'll be happy to see approved.\u00a0 I'm confused, though, by the definitions of four items, and I worry that it might result in incorrect implementations. -- Sections 3.1.2 and 3.2.2 -- This comment applies to Burst Loss Rate, Gap Loss Rate, Burst Discard Rate, and Gap Discard Rate.\u00a0 I'm using the first as an example. \u00a0  Burst Loss Rate: 16 bits \u00a0 \u00a0 \u00a0 The fraction of packets lost during bursts since the beginning of \u00a0 \u00a0 \u00a0 reception, expressed as a fixed point number with the binary point \u00a0 \u00a0 \u00a0 at the left edge of the field.\u00a0 This value is calculated by \u00a0 \u00a0 \u00a0 dividing Packets Loss in Bursts by Total Packets expected in \u00a0 \u00a0 \u00a0 Bursts, multiplying the result of the division by 7FFF, with the \u00a0 \u00a0 \u00a0 maximum value 7FFF, and taking the integer part as follows: \u00a0 \u00a0 \u00a0 Packets Loss in Bursts / Total Packets expected in Bursts I scratched my head over the \"and taking the integer part as follows\" bit followed by the formula, which appeared to go together and be separate from the rest.\u00a0 I also didn't understand the formula, because it lacks the multiplier.\u00a0 And then I think it finally dawned on me what you mean. Shortening a little here (and assuming that \"packets loss\" should be \"packets lost\"), I think you mean for the formula to be >>\u00a0 integer-part( (PLB / TPEB) * 32767 )\u00a0 << So, if the total packets expected in bursts (TPEB) is 2,591, and the packets lost in bursts (PLB) is 39, then the Burst Loss Rate value should be 493, or 0x01ED.\u00a0 Do I have that right? Assuming I understand correctly, I think a little change would have helped my confusion.\u00a0 Would you mind doing these four items this way (again, using this one as an example)?: NEW \u00a0 \u00a0 \u00a0 The fraction of packets lost during bursts since the beginning of \u00a0 \u00a0 \u00a0 reception, expressed as a fixed point number with the binary point \u00a0 \u00a0 \u00a0 at the left edge of the field.\u00a0 This value is calculated by \u00a0 \u00a0 \u00a0 dividing Packets Lost in Bursts by Total Packets Expected in \u00a0 \u00a0 \u00a0 Bursts, multiplying the result of the division by 32767 (0x7FFF), \u00a0 \u00a0 \u00a0 and keeping only the integer part.\u00a0 The maximum value is thus \u00a0 \u00a0 \u00a0 7FFF.\u00a0 Representing this as a formula: \u00a0 \u00a0 \u00a0 integer-part( (Packets Lost in Bursts / Total Packets Expected in \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Bursts) * 0x7FFF ) END Do you see where I was confused before?\u00a0 Does a change like this work for you? I'll also note that the \"binary point\" (I presume this is a binary variant of \"decimal point\") is not actually at the left edge of the field.\u00a0 For one thing, the left-most bit is always 0 for any valid value, so the point is at least one bit to the right of that.\u00a0 For another, a value of \"1\" (total loss) is represented not by \"1.000 0000 0000 0000\", but by \"0.111 1111 1111 1111\".\u00a0 I don't know how to describe that in terms of the binary point, but I don't think saying that the binary point is at the left edge works.\u00a0 But if the rest of the description is clear about how to compute the value, I think you can just remove that bit. (I actually don't understand why you don't multiply by 32768 (0x1000), and use 0xFFFF as the unknown value, because that does put the binary point in a sensible place, and has total loss represented as \"1.000 0000 0000 0000\".\u00a0 I see that you do use 0xFFFF as the unknown value for some of the other fields (such as Burst Duration Mean and Burst Duration Variance).\u00a0 Why not be consistent?)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-04-03 06:35:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-07 07:58:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-02-19 15:55:36-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-03-22 01:48:43-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-02-19 15:55:36-08:00",
+        "text": "Please keep in mind the agreement with the XRBLOCK regarding  RFC 6390 . See  http://datatracker.ietf.org/doc/draft-ietf-xrblock-rtcp-xr-pdv/ballot/#benoit-claise When I see the following (to take just one example): \u00a0 \u00a0  Burst Loss Rate: 16 bits \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 The fraction of packets lost during bursts since the beginning of \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 reception, expressed as a fixed point number with the binary point \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 at the left edge of the field.\u00a0 This value is calculated by \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 dividing Packets Loss in Bursts by Total Packets expected in \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Bursts, multiplying the result of the division by 7FFF, with the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 maximum value 7FFF, and taking the integer part as follows: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Packets Loss in Bursts / Total Packets expected in Bursts \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 If the measurement is unavailable, the value 0x8000 MUST be \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 reported. ... you define new metrics in this document. Therefore the  RFC 6390  template must be applied. Regards, Benoit",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-04-03 06:35:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-22 01:48:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-02-19 08:35:33-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-04-03 06:35:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-19 08:35:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-02-11 01:17:40-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-04-03 06:35:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-11 01:17:40-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-02-19 05:29:17-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-04-03 06:35:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-19 05:29:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-02-20 21:09:34-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-04-03 06:35:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-20 21:09:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-02-16 19:38:59-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-03-07 07:01:17-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-02-16 19:38:59-08:00",
+        "text": "Following up on Barry's Discuss, and getting some additional background from  RFC 3611 , I understand the \"Rates\" in sections 3.1 and 3.2 to be fixed-point binary fractions, with as assumed binary point to the left of the fraction carried in the field.\u00a0 I have to say I found the description of the computation a little confusing, as I didn't understand that it was literally telling me how to compute a decimal number that, when converted to binary, would yield the correct bit pattern in the field. However, there is a precedent in  RFC 3611  for this descriptive text, so it makes sense to use the same style in this document.\u00a0 But, I don't think the computation still quite yields the right result - why multiply by 0x7FF rather than 0x10000 (the equivalent of 0x100 as used in  RFC 3611  for an 8-bit field)? Here's my suggestion, based on Barry's text and using  RFC 3611  as a template: NEW \u00a0 \u00a0 \u00a0 The fraction of packets lost during bursts since the beginning of \u00a0 \u00a0 \u00a0 reception, expressed as a fixed point number with the binary point \u00a0 \u00a0 \u00a0 at the left edge of the field.\u00a0 This value is calculated by \u00a0 \u00a0 \u00a0 dividing Packets Lost in Bursts by Total Packets Expected in \u00a0 \u00a0 \u00a0 Bursts, multiplying the result of the division by 65536, \u00a0 \u00a0 \u00a0 limiting the maximum value to 65535 (to avoid overflow)  \u00a0 \u00a0 \u00a0 and keeping only the integer part.\u00a0 This field MUST be populated \u00a0 \u00a0 \u00a0 and MUST be set to zero if no packets have been received. END",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-03-07 07:01:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-02-14 11:01:25-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-03-07 08:07:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-02-14 11:01:25-08:00",
+        "text": "The ABNF in section 5.1 needs a minor tweak. You have double-quote space stuff space double-quote on all three lines that you are adding to xr-format. You want double-quote stuff double-quote. That is \"burst-gap-loss-stat\", not \" bust-bap-loss-stat \". The shepherd's writeup indicates N/A for formal language checks? I'm also not seeing evidence of an SDP directorate review (this is, admittedly a trivial extension to SDP, but that review would have caught this bug).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-03-07 08:07:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-02-17 12:30:13-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-02-17 12:30:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2013-02-20 18:32:21-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-02-20 18:32:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-02-19 12:56:09-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-04-03 06:35:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-19 12:56:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-02-18 07:10:08-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-04-03 06:35:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-18 07:10:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-02-19 10:37:15-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-04-03 06:35:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-19 10:37:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-02-20 19:46:30-08:00",
+        "end_reason": "new_position",
+        "start": "2013-02-11 01:17:39-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-02-20 19:46:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7004",
+  "evaluation_end": "2013-04-03 06:35:50-07:00",
+  "evaluation_start": "2013-02-11 01:17:39-08:00"
+}

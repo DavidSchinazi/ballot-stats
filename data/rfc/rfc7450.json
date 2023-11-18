@@ -1,0 +1,461 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-01-07 13:33:45-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-12-08 09:27:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-07 13:33:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-12-31 13:15:21-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-01-01 11:48:55-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-12-31 13:15:21-08:00",
+        "text": "This is an exceptionally well written document, and was generally easy to understand.\u00a0 I have only one, small DISCUSS point that will be very easy to sort out: -- Section 5.2.3.7 -- \u00a0  Gateway support for the Teardown message is OPTIONAL but RECOMMENDED. This is twisted 2119 language: \"OPTIONAL\" and \"RECOMMENDED\" have specific, contradictory meanings in  RFC 2119 , and the statement above makes no sense; if it's RECOMMENDED, then it's *not* OPTIONAL, and vice versa.\u00a0 I think the best way to fix this is just to remove \"OPTIONAL but\" from the sentence.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-12-08 09:27:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-01 11:48:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-01-10 07:36:40-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-01-10 09:00:31-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-01-10 07:36:40-08:00",
+        "text": "More of a DISCUSS-DISCUSS type of feedback. This document IANA considerations section should update the IPv4 and IPv6 Special- Purpose Address Registries ( draft-bonica-special-purpose-05 ), correct?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-01-10 09:32:12-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-01-10 09:00:31-08:00",
+        "text": "More of a DISCUSS-DISCUSS type of feedback. This document IANA considerations section should update the IPv4 and IPv6 Special- Purpose Address Registries ( draft-bonica-special-purpose-05 ), correct? As discussed during the IESG telechat on Jan 10th, I'm holding the DISCUSS on behalf of IANA (Michelle Cotton) for all IANA issues.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-07-16 02:08:39-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-01-10 09:32:12-08:00",
+        "text": "More of a DISCUSS-DISCUSS type of feedback. This document IANA considerations section should update the IPv4 and IPv6 Special- Purpose Address Registries ( draft-bonica-special-purpose-05 ), correct? As discussed during the IESG telechat on Jan 10th, I'm holding the DISCUSS on behalf of IANA (Michelle Cotton) for all IANA issues: IANA has reviewed  draft-ietf-mboned-auto-multicast-14  and has  the following comments: IANA has questions about the IANA actions requested in this document. The title of 7.1 is \"IPv4 and IPv6 Anycast Prefix Allocation\". IANA understands this to mean that the authors actually want unicast prefixes which will be used for anycast routing.  RFC 3513 , section 2.4 notes that \"Anycast addresses are taken from the unicast address spaces (of any scope) and are not syntactically distinguishable from unicast addresses.\" IANA believes that 7.1.1 could be more efficiently written as \"IANA has assigned 154.7.0/24 for IPv4 AMT Relays.\" IANA would also prefer that 7.1.2 should use similar language and we would like to propose 2001:0003::/32 as a prefix. IANA believes that 7.2 could be more efficiently written as \"IANA has assigned 154.7.1/24 as a prefix for IGMP source addresses.\" In 7.3 it says \"IANA has reserved UDP port number 2268 for AMT.\" It is not clear to IANA if the authors are asking for a reservation to be turned into an assignment or noting an action that was previously taken and does not need to be modified. IANA has examined the ports registry and can see the registration but no link to an I-D or RFC. Do the authors want the current registrant name to be replaced with this I-D and the RFC number when it is approved? IANA also believes these prefixes should be registered in the IANA IPv4 and IPv6 Special Registries. It would be helpful if the authors could provide the basic data for the registry in addition to the prefix: Assignment Termination Date Purpose Contact Details Routing Scope Reference The routing scope is particularly helpful for the future as IANA will use it when developing a set of RPKI objects as defined in  RFC 6491 .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-06-24 08:27:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-07-16 02:08:39-07:00",
+        "text": "This document IANA considerations section should update the IPv4 and IPv6 Special- Purpose Address Registries ( RFC 6890 ) As discussed during the IESG telechat on Jan 10th, I'm holding the DISCUSS on behalf of IANA (Michelle Cotton) for all IANA issues. Waiting for Michelle Cotton's answer to see if this is fixed. IANA has reviewed  draft-ietf-mboned-auto-multicast-14  and has the following comments: IANA has questions about the IANA actions requested in this document. The title of 7.1 is \"IPv4 and IPv6 Anycast Prefix Allocation\". IANA understands this to mean that the authors actually want unicast prefixes which will be used for anycast routing.  RFC 3513 , section 2.4 notes that \"Anycast addresses are taken from the unicast address spaces (of any scope) and are not syntactically distinguishable from unicast addresses.\" IANA believes that 7.1.1 could be more efficiently written as \"IANA has assigned 154.7.0/24 for IPv4 AMT Relays.\" IANA would also prefer that 7.1.2 should use similar language and we would like to propose 2001:0003::/32 as a prefix. IANA believes that 7.2 could be more efficiently written as \"IANA has assigned 154.7.1/24 as a prefix for IGMP source addresses.\" In 7.3 it says \"IANA has reserved UDP port number 2268 for AMT.\" It is not clear to IANA if the authors are asking for a reservation to be turned into an assignment or noting an action that was previously taken and does not need to be modified. IANA has examined the ports registry and can see the registration but no link to an I-D or RFC. Do the authors want the current registrant name to be replaced with this I-D and the RFC number when it is approved? IANA also believes these prefixes should be registered in the IANA IPv4 and IPv6 Special Registries. It would be helpful if the authors could provide the basic data for the registry in addition to the prefix: Assignment Termination Date Purpose Contact Details Routing Scope Reference The routing scope is particularly helpful for the future as IANA will use it when developing a set of RPKI objects as defined in  RFC 6491 .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-12-08 09:27:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-24 08:27:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-01-07 10:34:17-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-09-23 08:37:45-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-01-07 10:34:17-08:00",
+        "text": "I found this document very well-written and will ballot \"Yes\" once I get a few points clarified. 1. I am surprised that this draft specifically disallows IGMPv1.\u00a0 Is there some rationale for that? 2. In section 4.1.2.2, there is a use case described as a proxy.\u00a0 How does an AMT proxy relate to the standard IGMP/MLD proxy defined in  RFC 4605  (it is in the normative reference list, but not actually referenced).\u00a0 It appears to be the same functionality with new rules for the upstream interface.\u00a0 It would be nice to see some clarifications in this draft on that relationship.\u00a0 And if there is a tight relationship when operating in this mode, what affect does that have on the gateway needing to generate query messages? 3. Section 4.2.1.2 makes no statement about the version of the IGMP/MLD queries sent by the relays.\u00a0 Later sections mandate the sending of IGMPv3 or MLDv2 queries.\u00a0 Why is there a restriction on the version of the queries?\u00a0 Given that the relays are acting as IGMP/MLD Queries, should there also be discussion as to relaxation of the rules for compatibility modes? 4. Sections 4.2.1.3 and 5.3.3.5 seem to disagree on whether AMT relays must handle TEARDOWN messages.\u00a0 I suspect that 4.2.1.3 needs to be revised to be consistent with the normative description in 5.3.3.5. 5. Do AMT gateways need to perform any type of RPF check before forwarding packets received via an AMT Multicast Data message, especially when functioning as a proxy? 6. Sections 5.1.2.5 and 5.3.1 indicate that AMT can carry IPv6 payloads encapsulated in IPv4 packets and vice versa.\u00a0 However, there is no discussion on the implications of doing such address family mixing, especially during the relay discovery process.\u00a0 I recall having discussions about this in mboned and the consensus seemed to be to disallow the mixing of address families.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-12-08 09:27:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-23 08:37:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-01-10 03:54:31-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-01-10 03:54:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-06-25 08:39:11-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-10 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-12-08 09:27:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-25 08:39:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-03-26 21:27:06-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-10 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-12-08 09:27:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-26 21:27:06-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-06-26 07:38:52-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-02 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-12-08 09:27:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-26 07:38:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-01-08 07:32:08-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-01-09 05:34:30-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-01-08 07:32:08-08:00",
+        "text": "This is a placeholder DISCUSS referring to Magnus Westerlunds' review: http://www.ietf.org/mail-archive/web/ietf/current/msg76475.html Magnus raised a number of DISCUSS issues in his review, e.g., the lack of congestion control.  The issues have not been discussed or addressed yet.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-01-09 05:37:37-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-01-09 05:34:30-08:00",
+        "text": "I have no general objection to the AMT protocol as such, but the below DISCUSS issues.  The overall description of the protocol and its framework is well done.  The current AMT protocol has these DISCUSS issues that must be addressed: 1) lack of congestion control of the AMT traffic between relay and gateway \u00a0 -- Then tunnel multicast traffic can exceed a path's capacity. Further, such a relay will send out a number of tunnelled multicast flows to a huge number of destinations, either competing with themselves or with other flows.  2) lack of MTU handling \u00a0 -- There absolutely no mentioning of MTU issues in the draft. However, tunnelled packets can easily exceed the path MTU. How does AMT react to this? 3) Use of zero IPv6/UDP checksum and failure handling, if any middlebox enroute is not allowing zero UDP checksum packets to traverse. This is also a question on what happens, if the traffic is black holed for any other reasons, i.e., when no ICMP error message is returned at all.  4) Security: There is a change in the threat model, i.e., multicast requires LAN access but with AMT almost anybody can access the multicast feed. I can understand that this is not needed in certain deployments, e.g., a mobile phone network, but this is not well documented in any part of the draft.  5) NAT traversal and the IANA-assigned port.  Section 4.2.2.2 assumes a simple NAPT with translation from IPv4 to IPv4. However there can be other NATs than even change the source IP address for incoming flows and potentially also the port number. Is there any specific reason to nail down the source port of the relay? The discovery mechanism could also return an arbitrary port number.  6) Section 5.2.3.5.4, start of page 58: NAT timer. Also noted by Magnus. The NAT timer is independent of any other time, as this really depends on the NAT on the path.  Magnus did an excellent summary of the above points in his review:  http://www.ietf.org/mail-archive/web/ietf/current/msg76475.html I can see three potential ways forward for this draft: - Address the above topics to make the draft ready for the Standards Track and thus safely deployable in the public Internet - Reclassify it as experimental and figure out all missing parts. - Limit the scope of this to wallened gardens and adding operational consinderations describing the limits of it.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-06-23 04:08:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-01-09 05:37:37-08:00",
+        "text": "[Updated as issue no 7 was missing] I have no general objection to the AMT protocol as such, but the below DISCUSS issues.  The overall description of the protocol and its framework is well done.  The current AMT protocol has these DISCUSS issues that must be addressed: 1) lack of congestion control of the AMT traffic between relay and gateway \u00a0 -- Then tunnel multicast traffic can exceed a path's capacity. Further, such a relay will send out a number of tunnelled multicast flows to a huge number of destinations, either competing with themselves or with other flows.  2) lack of MTU handling \u00a0 -- There absolutely no mentioning of MTU issues in the draft. However, tunnelled packets can easily exceed the path MTU. How does AMT react to this? 3) Use of zero IPv6/UDP checksum and failure handling, if any middlebox enroute is not allowing zero UDP checksum packets to traverse. This is also a question on what happens, if the traffic is black holed for any other reasons, i.e., when no ICMP error message is returned at all.  4) Security: There is a change in the threat model, i.e., multicast requires LAN access but with AMT almost anybody can access the multicast feed. I can understand that this is not needed in certain deployments, e.g., a mobile phone network, but this is not well documented in any part of the draft.  5) NAT traversal and the IANA-assigned port.  Section 4.2.2.2 assumes a simple NAPT with translation from IPv4 to IPv4. However there can be other NATs than even change the source IP address for incoming flows and potentially also the port number. Is there any specific reason to nail down the source port of the relay? The discovery mechanism could also return an arbitrary port number.  6) Section 5.2.3.5.4, start of page 58: NAT timer. The NAT timer is independent of any other time, as this really depends on the NAT on the path.  7) The current AMT specification cuts away the possibility to return ASM receiver feedback to the source. This is not documented nor described.  Magnus did an excellent summary of the above points in his review:  http://www.ietf.org/mail-archive/web/ietf/current/msg76475.html I can see three potential ways forward for this draft: - Address the above topics to make the draft ready for the Standards Track and thus safely deployable in the public Internet - Reclassify it as experimental and figure out all missing parts. - Limit the scope of this to wallened gardens and adding operational consinderations describing the limits of it.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-06-23 04:08:27-07:00",
+        "end_reason": "comment_updated",
+        "start": "2014-06-23 04:08:17-07:00",
+        "text": "I am moving to Abstain, as some issues have been addressed, namely 2 and 3 (partly), but others such as 1) are not addressed and will probably not be solved by this draft.  I still do not see that this protocol is safe for operations across the public Internet, as the major point 1) isn't solved.  Therefore, I would appreciate very much to emphasize the point \"- Limit the scope of this to wallened gardens and adding operational consinderations describing the limits of it.\" *************************************** The old DISCUSS as reference.  I have no general objection to the AMT protocol as such, but the below DISCUSS issues.  The overall description of the protocol and its framework is well done.  The current AMT protocol has these DISCUSS issues that must be addressed: 1) lack of congestion control of the AMT traffic between relay and gateway \u00a0 -- Then tunnel multicast traffic can exceed a path's capacity. Further, such a relay will send out a number of tunnelled multicast flows to a huge number of destinations, either competing with themselves or with other flows.  2) lack of MTU handling \u00a0 -- There absolutely no mentioning of MTU issues in the draft. However, tunnelled packets can easily exceed the path MTU. How does AMT react to this? 3) Use of zero IPv6/UDP checksum and failure handling, if any middlebox enroute is not allowing zero UDP checksum packets to traverse. This is also a question on what happens, if the traffic is black holed for any other reasons, i.e., when no ICMP error message is returned at all.  4) Security: There is a change in the threat model, i.e., multicast requires LAN access but with AMT almost anybody can access the multicast feed. I can understand that this is not needed in certain deployments, e.g., a mobile phone network, but this is not well documented in any part of the draft.  5) NAT traversal and the IANA-assigned port.  Section 4.2.2.2 assumes a simple NAPT with translation from IPv4 to IPv4. However there can be other NATs than even change the source IP address for incoming flows and potentially also the port number. Is there any specific reason to nail down the source port of the relay? The discovery mechanism could also return an arbitrary port number.  6) Section 5.2.3.5.4, start of page 58: NAT timer. The NAT timer is independent of any other time, as this really depends on the NAT on the path.  7) The current AMT specification cuts away the possibility to return ASM receiver feedback to the source. This is not documented nor described.  Magnus did an excellent summary of the above points in his review:  http://www.ietf.org/mail-archive/web/ietf/current/msg76475.html I can see three potential ways forward for this draft: - Address the above topics to make the draft ready for the Standards Track and thus safely deployable in the public Internet - Reclassify it as experimental and figure out all missing parts. - Limit the scope of this to wallened gardens and adding operational consinderations describing the limits of it.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-12-08 09:27:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-23 04:08:27-07:00",
+        "text": "I am moving to Abstain, as some issues have been addressed, namely 2 and 3 (partly), but others such as 1) are not addressed and will probably not be solved by this draft.  I still do not see that this protocol is safe for operations across the public Internet, as the major point 1) isn't solved.  Therefore, I would appreciate very much to emphasize the point \"- Limit the scope of this to wallened gardens and adding operational consinderations describing the limits of it.\" *************************************** The old DISCUSS as reference: I have no general objection to the AMT protocol as such, but the below DISCUSS issues.  The overall description of the protocol and its framework is well done.  The current AMT protocol has these DISCUSS issues that must be addressed: 1) lack of congestion control of the AMT traffic between relay and gateway \u00a0 -- Then tunnel multicast traffic can exceed a path's capacity. Further, such a relay will send out a number of tunnelled multicast flows to a huge number of destinations, either competing with themselves or with other flows.  2) lack of MTU handling \u00a0 -- There absolutely no mentioning of MTU issues in the draft. However, tunnelled packets can easily exceed the path MTU. How does AMT react to this? 3) Use of zero IPv6/UDP checksum and failure handling, if any middlebox enroute is not allowing zero UDP checksum packets to traverse. This is also a question on what happens, if the traffic is black holed for any other reasons, i.e., when no ICMP error message is returned at all.  4) Security: There is a change in the threat model, i.e., multicast requires LAN access but with AMT almost anybody can access the multicast feed. I can understand that this is not needed in certain deployments, e.g., a mobile phone network, but this is not well documented in any part of the draft.  5) NAT traversal and the IANA-assigned port.  Section 4.2.2.2 assumes a simple NAPT with translation from IPv4 to IPv4. However there can be other NATs than even change the source IP address for incoming flows and potentially also the port number. Is there any specific reason to nail down the source port of the relay? The discovery mechanism could also return an arbitrary port number.  6) Section 5.2.3.5.4, start of page 58: NAT timer. The NAT timer is independent of any other time, as this really depends on the NAT on the path.  7) The current AMT specification cuts away the possibility to return ASM receiver feedback to the source. This is not documented nor described.  Magnus did an excellent summary of the above points in his review:  http://www.ietf.org/mail-archive/web/ietf/current/msg76475.html I can see three potential ways forward for this draft: - Address the above topics to make the draft ready for the Standards Track and thus safely deployable in the public Internet - Reclassify it as experimental and figure out all missing parts. - Limit the scope of this to wallened gardens and adding operational consinderations describing the limits of it.",
+        "type": "Abstain"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-06-25 16:02:31-07:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-12-08 09:27:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-25 16:02:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-01-09 08:52:27-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-01-09 08:52:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-01-09 14:50:41-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-01-09 14:50:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-12-17 06:48:42-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2012-12-17 13:38:21-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-12-17 13:38:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-01-09 12:50:13-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-01-09 12:50:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-06-24 22:00:34-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-10 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-12-08 09:27:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-24 22:00:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-01-07 16:16:33-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-07-19 03:52:01-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-01-07 16:16:33-08:00",
+        "text": "(1) I'm not getting the trust model. Why is that \"MAC\" not the same as a random number chosen by the relay? And that'd be more robust against mobile gateways for example. Even better would be an open-channel DH exchange.\u00a0 I don't understand what the current design gets you. (2) I also entirely don't get why its ok to use a fixed-width 48-bit MAC with a home-grown algorithm based on MD5 and no agility and that page 67 says a relay \"MAY skip\" sometimes. I'd also suspect the home-grown algorithm specified in 5.3.5 may have weaknesses - the gateway knows or picks all the inputs up to the secret which therefore MUST be long and strong, and side-channel attacks (timing) might be effective against a relay. That all seems far too ad-hoc for a standard when hmac exists and is better. Can you point me at where this has gotten some cryptographic review? (But note the answer to point 1  might impact on this, so bottoming out point 1 first would be best maybe.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-10-30 06:19:20-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-07-19 03:52:01-07:00",
+        "text": "I see there's a -15 of this but don't see that it addresses the discuss points below. And I've of course lost the context  since January;-) So can we re-start the discussion about this? Thanks. S. (1) I'm not getting the trust model. Why is that \"MAC\" not the same as a random number chosen by the relay? And that'd be more robust against mobile gateways for example. Even better would be an open-channel DH exchange.\u00a0 I don't understand what the current design gets you. (2) I also entirely don't get why its ok to use a fixed-width 48-bit MAC with a home-grown algorithm based on MD5 and no agility and that page 67 says a relay \"MAY skip\" sometimes. I'd also suspect the home-grown algorithm specified in 5.3.5 may have weaknesses - the gateway knows or picks all the inputs up to the secret which therefore MUST be long and strong, and side-channel attacks (timing) might be effective against a relay. That all seems far too ad-hoc for a standard when hmac exists and is better. Can you point me at where this has gotten some cryptographic review? (But note the answer to point 1  might impact on this, so bottoming out point 1 first would be best maybe.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-05-28 02:41:56-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-10-30 06:19:20-07:00",
+        "text": "I see there's a -16 of this but don't see that it addresses the discuss points below. And I've of course lost the context  since January;-) Seems like the TSV area discusses get priority on this one. (1) I'm not getting the trust model. Why is that \"MAC\" not the same as a random number chosen by the relay? And that'd be more robust against mobile gateways for example. Even better would be an open-channel DH exchange.\u00a0 I don't understand what the current design gets you. (2) I also entirely don't get why its ok to use a fixed-width 48-bit MAC with a home-grown algorithm based on MD5 and no agility and that page 67 says a relay \"MAY skip\" sometimes. I'd also suspect the home-grown algorithm specified in 5.3.5 may have weaknesses - the gateway knows or picks all the inputs up to the secret which therefore MUST be long and strong, and side-channel attacks (timing) might be effective against a relay. That all seems far too ad-hoc for a standard when hmac exists and is better. Can you point me at where this has gotten some cryptographic review? (But note the answer to point 1  might impact on this, so bottoming out point 1 first would be best maybe.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-12-01 13:29:19-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-05-28 02:41:56-07:00",
+        "text": "I see there's a -17 of this but don't see that it addresses the discuss points below. And I've of course lost the context  since January;-) Seems like the TSV area discusses get priority on this one (still;-). (1) I'm not getting the trust model. Why is that \"MAC\" not the same as a random number chosen by the relay? And that'd be more robust against mobile gateways for example. Even better would be an open-channel DH exchange.\u00a0 I don't understand what the current design gets you. (2) I also entirely don't get why its ok to use a fixed-width 48-bit MAC with a home-grown algorithm based on MD5 and no agility and that page 67 says a relay \"MAY skip\" sometimes. I'd also suspect the home-grown algorithm specified in 5.3.5 may have weaknesses - the gateway knows or picks all the inputs up to the secret which therefore MUST be long and strong, and side-channel attacks (timing) might be effective against a relay. That all seems far too ad-hoc for a standard when hmac exists and is better. Can you point me at where this has gotten some cryptographic review? (But note the answer to point 1  might impact on this, so bottoming out point 1 first would be best maybe.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-12-08 09:27:40-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-01 13:29:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-01-09 10:31:14-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-01-09 10:31:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-01-09 17:28:16-08:00",
+        "end_reason": "new_position",
+        "start": "2012-12-17 06:48:42-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-01-09 17:28:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7450",
+  "evaluation_end": "2014-12-08 09:27:40-08:00",
+  "evaluation_start": "2012-12-17 06:48:42-08:00"
+}

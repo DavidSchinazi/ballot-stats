@@ -1,0 +1,341 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-09-26 16:22:04-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-09-27 07:21:10-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-09-26 16:22:04-07:00",
+        "text": "I found rather a number of issues. I have tried to split them between  my Discuss and Comment according to their magnitude. Inevitably I will have got this wrong, so please debate them with me. --- This document clearly updates  RFC 5102 . That RFC defined the registry and set up the guidelines for expert review of allocation requests. This document is changing those guidelines. Not quite sure how that will fit in when you come to publish  I-D.ietf-ipfix-information-model-rfc5102bis , and I know that this I-D has a normative reference to that I-D so they will pop out together.  --- Section 4 \u00a0  o\u00a0 The Information Element MUST be unique within the registry.\u00a0 Its \u00a0 \u00a0 \u00a0 description MUST represent a substantially different meaning from \u00a0 \u00a0 \u00a0 that of any existing Information Element.\u00a0 A proposed Information \u00a0 \u00a0 \u00a0 Element which is a substantial duplicate of an existing \u00a0 \u00a0 \u00a0 Information Element is to be represented using the existing \u00a0 \u00a0 \u00a0 Information Element. Surely this is too subjective. What does \"substantially different\"  actually mean? I tried to rewrite this for you in terms of data type, units, and range, but I think that is probably only a part of what you are talking about. For re-use of an existing Information Element you presumably need those three parameters to be the same, *and* some other quality has to be the same. Depending on the description being similar seems really doubtful. Can you clarify this? --- Section 4 \u00a0  o\u00a0 The Information Element SHOULD contain minimal internal structure; Do you mean \"minimal\". I suppose you use this in the meaning \"the least possible\".  Given the existence of parallel export and Structured Data, is there any reason not to interpret this statement as: you must only use a single Abstract Data Type. Of course, you may be attempting to also control the definition of new Abstract Data Types, but if so, you probably ought to call that out. --- Section 4 \u00a0  o\u00a0 The Information Element SHOULD be generally applicable to the \u00a0 \u00a0 \u00a0 application at hand, which SHOULD be of general interest to the \u00a0 \u00a0 \u00a0 community. I find this a bit worrying. What are you saying about proposals from  outside the IETF? How is the \"general interest to the community\" to be measured? Are the designated experts called upon to call consensus? --- Section 4.3 defines rules for IANA Allocation of code points. Including notes on the ranges. Is it your intention that the registry is updated to point to this document? If so, you should make that statement in the IANA considerations section. On the other hand, this seems to be a restatement of what is already in the registry, so I wonder whether the section can be left out. --- Doesn't Section 11 give rise to some additional rules that are not captured in the body of the document and (importantly) not in the checklists of Section 7? --- Section 12 Do you need to tell IANA how to populate the Revision and Date fields in the IE registry for IEs that have already been defined?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-09-27 09:57:54-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-09-27 07:21:10-07:00",
+        "text": "Updated first point of the Discuss after conversation with Ron Bonica. I found rather a number of issues. I have tried to split them between  my Discuss and Comment according to their magnitude. Inevitably I will have got this wrong, so please debate them with me. --- This document appears to update  RFC 5102 . That RFC defined the registry and sets up the guidelines for expert review of allocation requests.This document is changing those  guidelines. Not quite sure how that will fit in when you come to publish  I-D.ietf-ipfix-information-model-rfc5102bis , and I know that this I-D has a normative reference to that I-D so they will pop out together.  A way to fix this would be to yank all of the IANA stuff and put it in 5102bis. Then this document simply instruct the IE-doctors to ensure the IANA allocation requests match the rules. --- Section 4 \u00a0  o\u00a0 The Information Element MUST be unique within the registry.\u00a0 Its \u00a0 \u00a0 \u00a0 description MUST represent a substantially different meaning from \u00a0 \u00a0 \u00a0 that of any existing Information Element.\u00a0 A proposed Information \u00a0 \u00a0 \u00a0 Element which is a substantial duplicate of an existing \u00a0 \u00a0 \u00a0 Information Element is to be represented using the existing \u00a0 \u00a0 \u00a0 Information Element. Surely this is too subjective. What does \"substantially different\"  actually mean? I tried to rewrite this for you in terms of data type, units, and range, but I think that is probably only a part of what you are talking about. For re-use of an existing Information Element you presumably need those three parameters to be the same, *and* some other quality has to be the same. Depending on the description being similar seems really doubtful. Can you clarify this? --- Section 4 \u00a0  o\u00a0 The Information Element SHOULD contain minimal internal structure; Do you mean \"minimal\". I suppose you use this in the meaning \"the least possible\".  Given the existence of parallel export and Structured Data, is there any reason not to interpret this statement as: you must only use a single Abstract Data Type. Of course, you may be attempting to also control the definition of new Abstract Data Types, but if so, you probably ought to call that out. --- Section 4 \u00a0  o\u00a0 The Information Element SHOULD be generally applicable to the \u00a0 \u00a0 \u00a0 application at hand, which SHOULD be of general interest to the \u00a0 \u00a0 \u00a0 community. I find this a bit worrying. What are you saying about proposals from  outside the IETF? How is the \"general interest to the community\" to be measured? Are the designated experts called upon to call consensus? --- Section 4.3 defines rules for IANA Allocation of code points. Including notes on the ranges. Is it your intention that the registry is updated to point to this document? If so, you should make that statement in the IANA considerations section. On the other hand, this seems to be a restatement of what is already in the registry, so I wonder whether the section can be left out. --- Doesn't Section 11 give rise to some additional rules that are not captured in the body of the document and (importantly) not in the checklists of Section 7? --- Section 12 Do you need to tell IANA how to populate the Revision and Date fields in the IE registry for IEs that have already been defined?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-11-24 12:35:03-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-09-27 09:57:54-07:00",
+        "text": "Updated Discuss further after email exchange with Brian and discussions with Benoit. Please note that I am also holding my Discuss for IANA to ensure they are fully happy with their actions for this I-D. --- This document appears to update  RFC 5102 . That RFC defined the registry and sets up the guidelines for expert review of allocation requests.This document is changing those  guidelines. Not quite sure how that will fit in when you come to publish  I-D.ietf-ipfix-information-model-rfc5102bis , and I know that this I-D has a normative reference to that I-D so they will pop out together.  A way to fix this would be to yank all of the IANA stuff and put it in 5102bis. Then this document simply instruct the IE-doctors to ensure the IANA allocation requests match the rules. --- Section 4 \u00a0  o\u00a0 The Information Element MUST be unique within the registry.\u00a0 Its \u00a0 \u00a0 \u00a0 description MUST represent a substantially different meaning from \u00a0 \u00a0 \u00a0 that of any existing Information Element.\u00a0 A proposed Information \u00a0 \u00a0 \u00a0 Element which is a substantial duplicate of an existing \u00a0 \u00a0 \u00a0 Information Element is to be represented using the existing \u00a0 \u00a0 \u00a0 Information Element. Surely this is too subjective. What does \"substantially different\"  actually mean? I tried to rewrite this for you in terms of data type, units, and range, but I think that is probably only a part of what you are talking about. For re-use of an existing Information Element you presumably need those three parameters to be the same, *and* some other quality has to be the same. Depending on the description being similar seems really doubtful. Can you clarify this? --- Section 4 \u00a0  o\u00a0 The Information Element SHOULD be generally applicable to the \u00a0 \u00a0 \u00a0 application at hand, which SHOULD be of general interest to the \u00a0 \u00a0 \u00a0 community. I find this a bit worrying. What are you saying about proposals from  outside the IETF? How is the \"general interest to the community\" to be measured? Are the designated experts called upon to call consensus? --- Section 4.3 defines rules for IANA Allocation of code points. Including notes on the ranges. Is it your intention that the registry is updated to point to this document? If so, you should make that statement in the IANA considerations section. On the other hand, this seems to be a restatement of what is already in the registry, so I wonder whether the section can be left out. --- Doesn't Section 11 give rise to some additional rules that are not captured in the body of the document and (importantly) not in the checklists of Section 7? --- Section 12 Do you need to tell IANA how to populate the Revision and Date fields in the IE registry for IEs that have already been defined?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-24 12:35:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-09-23 16:33:38-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-09-26 16:09:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-09-23 16:33:38-07:00",
+        "text": "I have to finish reviewing this document, but I wanted to get this in as early as possible, so it can be responded to. This document, at least through the beginning of Section 3, very strongly smells like an Applicability Statement, which should be on Standards Track.\u00a0  RFC 5472  (which is actually *titled* \"Applicability Statement\") was published as Informational, and should also have been Standards Track as the Applicability Statement that it is, but that's history now.\u00a0 We can, though, do this one right.\u00a0 I believe that the information given here (and in 5472) is information that should be considered to define standards for network operation & management, and that should be progressed along the Standards Track as it gets deployment and use, and matures. The shepherd writeup doesn't help: it just says that this is a BCP, which I can see from the header, and says nothing about *why* BCP is appropriate, and nothing about the working group's discussion on the matter.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-26 16:09:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2012-07-11 07:31:57-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2012-07-23 13:11:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-07-11 07:31:57-07:00",
+        "text": null,
+        "type": "Abstain"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-07-23 13:11:02-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-09-26 05:38:31-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-26 05:38:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2012-09-27 07:44:52-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-27 07:44:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-09-25 05:17:37-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-25 05:17:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-09-26 17:27:44-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-26 17:27:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2012-09-27 06:00:22-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-27 06:00:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2012-09-25 13:43:09-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-25 13:43:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-07-11 07:25:26-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2012-09-24 08:49:57-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-24 08:49:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2012-09-26 08:02:20-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-26 08:02:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-09-25 18:10:30-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-09-26 03:46:15-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-09-25 18:10:30-07:00",
+        "text": "- 4.3: Why does a CISCO-specific informational RFC end up generating a MUST NOT in a BCP with a set of experts for the vendor-specific protocol whose views are \"exempt\" from review by the reviewers for the IETF standards track protocol? I don't understand why that's appropriate. I would suggest just deleting the last paragraph of 4.3 entirely. Same for the last para of 5.2 and the 3rd last in 5.3 and in section 7, checklist 1, point 8, and section 7, checklist 2, item 10. - 5.2 & 5.3: I hope you've convinced yourself that this set of rules don't allow the IE-doctors to overrule IETF consensus, even in an interoperable manner. That's not clear to me. I think you ought say that explicitly, i.e.\u00a0 \"These rules do not allow IE-doctors to override or change IETF consensus\" or however you'd rather say that.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-09-26 07:01:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-09-26 03:46:15-07:00",
+        "text": "(1) 4.3: Why does a CISCO-specific informational RFC end up generating a MUST NOT in a BCP with a set of experts for the vendor-specific protocol whose views are \"exempt\" from review by the reviewers for the IETF standards track protocol? I don't understand why that's appropriate. I would suggest just deleting the last paragraph of 4.3 entirely. Same for the last para of 5.2 and the 3rd last in 5.3 and in section 7, checklist 1, point 8, and section 7, checklist 2, item 10. In an offlist conversation with Ron we figured the changes  below might suffice - they look good to me but I need to just check they hits all the bits and make sure they're clear enough for an editor. OLD< \u00a0  Information Element identifiers in the range 1-127 MUST NOT be \u00a0  assigned unless the Information Element is compatible with the \u00a0  NetFlow V9 protocol as described in [ RFC3954 ].\u00a0 Such Information \u00a0  Elements may ONLY be requested by a NetFlow v9 expert, to be \u00a0  designated by the IESG to consult with IANA on NetFlow v9 \u00a0  compatibility with IPFIX.\u00a0 These information elements are exempt from \u00a0  IE-DOCTORS review; it is the responsibility of the NetFlow v9 expert \u00a0  to ensure that the requested IEs substantially conform to the \u00a0  guidelines in this document, with consideration given for already- \u00a0  implemented and already-deployed features. \u00a0  Information Element identifiers in the range 1-127 MUST NOT be \u00a0  assigned. These are used by Netflow V9 [ RFC3954 ], a pre-standard  \u00a0 version of IPFIX \u00a0 Information Elements with identifiers in the range 1-127 are \u00a0  compatible with the NetFlow V9 protocol as described in [ RFC3954 ]; to \u00a0  maintain this compatibility, all deprecations of such Information \u00a0  Elements are subject to additional review by the appointed NetFlow V9 \u00a0  expert. OLD> NEW> Information Elements with identifiers in the range 1-127 are \u00a0  compatible with the NetFlow V9 protocol as described in [ RFC3954 ]; to \u00a0  maintain this compatibility, all deprecations of such Information \u00a0  Elements are subject to additional review by the appointed NetFlow V9 \u00a0  expert. <NEW (2) 5.2 & 5.3: I hope you've convinced yourself that this set of rules don't allow the IE-doctors to overrule IETF consensus, even in an interoperable manner. That's not clear to me. I think you ought say that explicitly, i.e.\u00a0 \"These rules do not allow IE-doctors to override or change IETF consensus\" or however you'd rather say that.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-26 07:01:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-09-25 05:18:54-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-09-26 07:54:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-09-25 05:18:54-07:00",
+        "text": "I am a little concerned about the advice in Section 4 bullet 2 as being interpreted closer to a MUST than a MAY. Surely the important think is that the Reviewer consider this in the context of the application and then does the right thing for the application and its context.  I think that it would be useful if advice to that effect was more prominent in the document that is currently the case. As I read the advice it is very much written from the traditional use/flow reporting perspective, rather than from the point of view of a general use push protocol, and this conservative approach I think limits the potential of the IPFIX protocol.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-26 07:54:41-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-09-26 19:43:17-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-11 07:25:26-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-12-03 08:25:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-26 19:43:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7013",
+  "evaluation_end": "2012-12-03 08:25:29-08:00",
+  "evaluation_start": "2012-07-11 07:25:26-07:00"
+}

@@ -1,0 +1,345 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-16 10:20:12-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-20 09:14:40-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-02-16 10:20:12-08:00",
+        "text": "I have yet to do my own review of this document, but I note that during the discussion of Martin Vigoureux's Routing Directorate review, Martin suggested changes to the text in the Abstract and introduction. I have seen no follow-up on these suggestions and the text doesn't appear to have been changed. === Fernando, thanks for following up. Your explanations clarify a lot, so I think these clarifications need to  be brought to the draft. You are free not to take the suggested text as  is, but I think you need to keep the objective. I would start by clarifying the Abstract: OLD: That is, traffic meant to be transferred over a VPN connection may leak  out of such connection and be transferred in the clear from the local  network to the final destination. NEW: That is, traffic meant to be transferred over a VPN connection may leak  out of such connection and be sent in the clear on the local network  towards the final destination. OLD: This document discusses some scenarios in which such VPN leakages may occur, either as a side effect of enabling IPv6 on a local network, or as a result of a deliberate attack from a local attacker. NEW: This document discusses some scenarios in which such VPN leakages may occur as a result of employing IPv6-unaware VPN software. Then I believe you need to rework the first paragraph of the  Introduction to clearly and rapidly state your problem space rather than  loosing the reader in the VPN-to-corporate-resources sink. This echoes  the comment you also received from Lee and the original one from KK. OLD: \u00a0 \u00a0 It is a very common practice for employees working at remote \u00a0 \u00a0 locations to establish a VPN connection with their office or home \u00a0 \u00a0 office.\u00a0 This is typically done to gain access to some resources only \u00a0 \u00a0 available within the company's network, but also to secure the host's \u00a0 \u00a0 traffic against attackers that might be connected to the same remote \u00a0 \u00a0 location.\u00a0 The same is true for mobile nodes that establish VPN \u00a0 \u00a0 connections to secure their traffic while they roam from one network \u00a0 \u00a0 to another.\u00a0 In some scenarios, it is even assumed that employing a \u00a0 \u00a0 VPN connection makes the use of insecure protocols (e.g. that \u00a0 \u00a0 transfer sensitive information in the clear) acceptable, as the VPN \u00a0 \u00a0 provides security services (such as data integrity and/or \u00a0 \u00a0 confidentiality) for all communications made over the VPN. NEW: \u00a0 \u00a0 It is a very common practice for users of a VPN software to \u00a0 \u00a0 establish a VPN connection towards a targeted endpoint when their \u00a0 \u00a0 terminal, which hosts the VPN software, is itself connected to a \u00a0 \u00a0 local network (e.g., a conference network). This is typically done \u00a0 \u00a0 to gain access to some resources which are otherwise not accessible, \u00a0 \u00a0 but also to secure the terminal's traffic through the local network \u00a0 \u00a0 (e.g., against attackers that might be connected to the same local \u00a0 \u00a0 network). The latter case constitute the problem space of this \u00a0 \u00a0 document. Indeed, it is sometimes assumed that employing a VPN \u00a0 \u00a0 connection makes the use of insecure protocols (e.g., that transfer \u00a0 \u00a0 sensitive information in the clear) acceptable, as a VPN provides \u00a0 \u00a0 security services (such as data integrity and/or confidentiality) \u00a0 \u00a0 for all communications made over that VPN. However, this document \u00a0 \u00a0 illustrates that under certain circumstances, some traffic might not \u00a0 \u00a0 be mapped onto the VPN and thus be sent in the clear on the local \u00a0 \u00a0 network.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-04 10:11:11-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-20 09:14:40-08:00",
+        "text": "I have yet to do my own review of this document, but I note that during the discussion of Martin Vigoureux's Routing Directorate review, Martin suggested changes to the text in the Abstract and introduction. I have seen no follow-up on these suggestions and the text doesn't appear to have been changed. === Fernando, thanks for following up. Your explanations clarify a lot, so I think these clarifications need to  be brought to the draft. You are free not to take the suggested text as  is, but I think you need to keep the objective. I would start by clarifying the Abstract: OLD: That is, traffic meant to be transferred over a VPN connection may leak  out of such connection and be transferred in the clear from the local  network to the final destination. NEW: That is, traffic meant to be transferred over a VPN connection may leak  out of such connection and be sent in the clear on the local network  towards the final destination. OLD: This document discusses some scenarios in which such VPN leakages may occur, either as a side effect of enabling IPv6 on a local network, or as a result of a deliberate attack from a local attacker. NEW: This document discusses some scenarios in which such VPN leakages may occur as a result of employing IPv6-unaware VPN software. Then I believe you need to rework the first paragraph of the  Introduction to clearly and rapidly state your problem space rather than  loosing the reader in the VPN-to-corporate-resources sink. This echoes  the comment you also received from Lee and the original one from KK. OLD: \u00a0 \u00a0 It is a very common practice for employees working at remote \u00a0 \u00a0 locations to establish a VPN connection with their office or home \u00a0 \u00a0 office.\u00a0 This is typically done to gain access to some resources only \u00a0 \u00a0 available within the company's network, but also to secure the host's \u00a0 \u00a0 traffic against attackers that might be connected to the same remote \u00a0 \u00a0 location.\u00a0 The same is true for mobile nodes that establish VPN \u00a0 \u00a0 connections to secure their traffic while they roam from one network \u00a0 \u00a0 to another.\u00a0 In some scenarios, it is even assumed that employing a \u00a0 \u00a0 VPN connection makes the use of insecure protocols (e.g. that \u00a0 \u00a0 transfer sensitive information in the clear) acceptable, as the VPN \u00a0 \u00a0 provides security services (such as data integrity and/or \u00a0 \u00a0 confidentiality) for all communications made over the VPN. NEW: \u00a0 \u00a0 It is a very common practice for users of a VPN software to \u00a0 \u00a0 establish a VPN connection towards a targeted endpoint when their \u00a0 \u00a0 terminal, which hosts the VPN software, is itself connected to a \u00a0 \u00a0 local network (e.g., a conference network). This is typically done \u00a0 \u00a0 to gain access to some resources which are otherwise not accessible, \u00a0 \u00a0 but also to secure the terminal's traffic through the local network \u00a0 \u00a0 (e.g., against attackers that might be connected to the same local \u00a0 \u00a0 network). The latter case constitute the problem space of this \u00a0 \u00a0 document. Indeed, it is sometimes assumed that employing a VPN \u00a0 \u00a0 connection makes the use of insecure protocols (e.g., that transfer \u00a0 \u00a0 sensitive information in the clear) acceptable, as a VPN provides \u00a0 \u00a0 security services (such as data integrity and/or confidentiality) \u00a0 \u00a0 for all communications made over that VPN. However, this document \u00a0 \u00a0 illustrates that under certain circumstances, some traffic might not \u00a0 \u00a0 be mapped onto the VPN and thus be sent in the clear on the local \u00a0 \u00a0 network.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-04 10:11:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-05-15 10:01:06-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-02 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-15 10:01:06-07:00",
+        "text": null,
+        "type": "Abstain"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-02-17 19:50:32-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-17 19:50:32-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-02-20 09:39:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 09:39:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-20 05:45:07-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 05:45:07-08:00",
+        "text": "What Pete said... This is another example of giving guidance to disable IPv6 rather than guidance on how to address the limitations causing the perceived problem.\u00a0 I would have liked to have seen, for example, guidance on what DNS record types should be available via a VPN connection running over IPv4.",
+        "type": "Abstain"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-02-20 07:10:01-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-02-20 07:10:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-02-19 15:15:40-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 15:15:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-01-31 11:41:22-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-03-31 12:01:22-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-02 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-31 12:01:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-02-18 02:07:44-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-18 02:07:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-02-19 20:12:07-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-05-13 21:45:08-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-02-19 20:12:07-08:00",
+        "text": "The scenarios and the solutions in this document strike me as somewhat bogus, and I'd like to hear if the WG had any data on these usage scenarios: - Most VPN installations I know of secure traffic to particular addresses by employing the VPN to do two things: a) Encrypt the traffic, and b) Get through a firewall that prevents traffic not coming through the VPN to never get to the hosts. In that case, if a non-v6 supporting VPN is used, the v6 traffic never even begins, because the traffic simply can't reach the v6 endpoints behind the firewall. Are most VPNs not employed in the way that I describe? - The document seems to assume that VPNs are somehow used to generically encrypt traffic that is not encrypted. But the vulnerability here seems to be the use of the VPN for such purposes. To secure traffic to a service, what you want to do is have the application secure the stream of data in some way (e.g., TLS), not have applications that blindly send clear traffic and then hope it goes through the VPN. Are VPNs actually being used to do this generic blind encryption? Are most of the instances of this not also instances of the firewalled scenario I asked about above? - The document refers to v4 and v6 being \"'tied' together by the DNS\". However, most VPNs I am aware of actually force the use of a particular DNS server on the user of the VPN. In those cases, if the VPN is v4 only, and that DNS is returning v6 addresses, it seems like the appropriate mitigation is to stop returning v6 addresses through that VPN-configured DNS server, not to disable all v6 interfaces. Are most VPNs not using their own configured DNS? - The mitigations in 7.1 never say, \"Fix the VPN software to support v6\", nor does it say, \"stop advertising v6 addresses for things that you expect to go through the VPN\". Those seems like much more sensible mitigations. The choices in the document are \"use v6-enabled VPNs\" or \"don't use v6\". Those seem like lousy choices. The analysis in this document seems very weak to me. I'm not a security guy, but the scenarios and mitigations described in this document don't seem truly representative of VPN usage. At the very least, the document never gives any data indicating that the scenarios are the real problem.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-06-21 21:22:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-05-13 21:45:08-07:00",
+        "text": "I have moved my technical concerns on the document to the comments section, as I expect that I will be moving to Abstain on this document; whatever the outcome, I can't in good conscience recommend this document. But I want to DISCUSS this one last time on this telechat for two reasons: - I have read over the OPSEC archive discussion of this document since IESG review, with the WG being specifically pressed to address some of the comments. The response was not impressive. - It seems to me that from Benoit's comments, he is likely an abstention as well. Even though his change in ballot would not make a formal difference to the outcome (it is an Informational document, and therefore a single \"Yes\" is sufficient), perhaps 4 abstentions would give Joel pause. (Perhaps not. ;-) ) If this is a substantive problem with VPN deployments, I would have expected OPSEC to be pushing this as a BCP with specific instructions on how to address the problem and harsh words for broken implementations. But I don't see that motivation or urgency. So I continue to doubt the worth of this document, and I think its continued implication that disabling v6 is a reasonable path forward is a shame. But short of a change of heart of the WG or the rest of the IESG, I will not stand alone in front of this document past this telechat.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-21 21:22:17-07:00",
+        "text": "With the IESG Note, I consider the DISCUSSion of this document complete. I still don't support it's publication, but the IESG Note serves to explain the issue.",
+        "type": "Abstain"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-02-20 09:34:33-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 09:34:33-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2014-02-20 09:18:12-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-02-20 09:18:12-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-02-19 09:59:23-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 09:59:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-02-19 06:25:08-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 06:25:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-19 07:30:44-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-02-19 07:30:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-02-20 08:41:27-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-31 11:41:22-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-07-10 08:48:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 08:41:27-08:00",
+        "text": " just can't sign on to another document that recommends turning off IPv6 as a mitigation strategy.\u00a0  Please take that out.",
+        "type": "Abstain"
+      }
+    ]
+  },
+  "doc_name": "rfc7359",
+  "evaluation_end": "2014-07-10 08:48:50-07:00",
+  "evaluation_start": "2014-01-31 11:41:22-08:00"
+}

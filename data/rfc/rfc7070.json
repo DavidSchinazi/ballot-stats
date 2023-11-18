@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-09-11 23:24:32-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-11 23:24:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-09-10 21:54:56-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-10 21:54:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-09-09 13:34:34-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-09-17 09:09:47-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-09 13:34:34-07:00",
+        "text": "1. The notion of application is not clear, and lead to some ambiguities. Example 1: OLD: IANA registries are created in a separate document. NEW: IANA registries are created in a separate document, application-specific. Example 2: you don't say that reputon are application-specific. This is a key concept Example 3: \u00a0  One of the key properties of a Response Set is called an Assertion. \u00a0  Assertions are claims made about the subject of a reputation query. \u00a0  For example, one might assert that a particular restaurant serves \u00a0  good food.\u00a0 In the context of this model, the assertion would be \u00a0  \"serves good food\". Isn't it? \u00a0  In the context of this model, the assertion would be \u00a0  \"serves good food\" for the application \"restaurant\"? Because I guess that \"serves good food\" is not valid for email You see, an application definition and explaining that reputon are per application would clarify a lot of things. 2. The document discussed the Response Set, but doesn't tell what is contained in the Query (*) So I can only guess that the application is part of query. Explaining what MUST/SHOULD/MAY be part of the query and reply are important topics for an architecture document. Also, can I query: get me all the reputons you know about the application \"application context = X\" and \"identity = Y\". I'm asking for good food, but I might interested to know that they have good wine, or slow service, etc... It's a basic answer the architecture document should be answering (**) (*) is this  http://datatracker.ietf.org/doc/draft-ietf-repute-query-http/  section 3.1 \u00a0 \u00a0 The components to the question being asked comprise the following: \u00a0 \u00a0 \u00a0  o\u00a0 The subject of the query; \u00a0 \u00a0 \u00a0  o\u00a0 The name of the host, or the IP address, at which the reputation \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 service is available; \u00a0 \u00a0 \u00a0  o\u00a0 The name of the reputation application, i.e., the context within \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 which the subject is being evaluated; \u00a0 \u00a0 \u00a0  o\u00a0 Optionally, name(s) of the specific reputation assertions or \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 attributes that are being requested. (**) I eventually found the information in  http://datatracker.ietf.org/doc/draft-ietf-repute-media-type/ \u00a0  If a client makes a \u00a0  request about a subject but does not specify an assertion of \u00a0  interest, the server can return reputons about any assertion for \u00a0  which it has data; in effect, the client has asked for any available \u00a0  information about the subject.\u00a0 A client that receives an irrelevant \u00a0  reputon simply ignores it. 3. \u00a0  Each application requires its own specification of the Response Set. What I understand now (after speaking to Pete who clarified a few things for me) is that each application requires its own registry, with its own set of reputons, but not necessary its own new protocol, with its own new encoding.  http://datatracker.ietf.org/doc/draft-ietf-repute-query-http/  is one example of protocol encoding, and this could be reused.  This was very confusing to me. It seems that there are good piece of information in the different drafts to solve the points 2 and 3 (without rewriting or cutting and pasting a lot of information between the different drafts, which would be ideal solution obviously), but those drafts are not even referenced. At the very minimum, you would need pointers like the following: \u00a0  The key pieces of data found in a reputon for all reputation \u00a0  applications are defined in  http://datatracker.ietf.org/doc/draft-ietf-repute-media-type/  section 3.1 \u00a0  The ABNF syntax of a reputon is specified in  http://datatracker.ietf.org/doc/draft-ietf-repute-media-type/  section XXX \u00a0   \u00a0  Some good examples (and you would need these to understand this architecture: OK, no need to mention this :-)) \u00a0  are specified at  http://datatracker.ietf.org/doc/draft-ietf-repute-media-type/  section 6.2 \u00a0   http://datatracker.ietf.org/doc/draft-ietf-repute-query-http/  specifies one example of protocol encoding:  \u00a0  over the Hypertext Transfer Protocol using JSON as the payload meta-format. Other encodings could be envisaged.  \u00a0   draft-ietf-repute-media-type  must be normative, right? Bottom line: assuming that the architecture draft is the first draft a newcomer to the repute work will read, it lacks some key pieces of information. And this information is spread across the different drafts. Once you have the different pointers, I advice you to review the 4 drafts\u00a0 with the fresh mind of a newcomer, and if the story is complete. Therefore, this DISCUSS is valid for the set of 4 repute documents.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-17 09:09:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-09-10 05:37:50-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-10 05:37:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-09-12 05:00:21-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-12 05:00:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-09-11 04:25:47-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-11 04:25:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-09-09 00:08:18-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-09 00:08:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-09-09 02:47:46-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-09 02:47:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-09-07 06:25:23-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-09-11 20:39:26-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-11 20:39:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-09-11 10:37:38-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-11 10:37:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-09-07 12:12:24-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-07 12:12:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-09-10 09:13:34-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-09-16 03:49:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-10 09:13:34-07:00",
+        "text": "8.1 says it is \"imperative\" to protect sensitive information in transit. I have no idea how DNS is a suitable transport for that without a way to encrypt data accessed via the DNS.\u00a0 In addition, there doesn't seem to be any object-level data integrity/origin-authentication scheme defined for the non-DNS transports. And you don't even recommend TLS for the http transport. How's that all fit together?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-16 03:49:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-09-10 08:01:29-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-10 08:01:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-09-10 11:07:23-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:25:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-09-10 11:08:02-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-09-10 11:07:23-07:00",
+        "text": "Section 4.1 appears to be confusing two different things by referring to them with the same term: \"response set.\"\u00a0  I think a response set is a predefined data type.\u00a0  But the first paragraph of 4.1 refers to a response set as if it were data, not a data type.\u00a0  The second paragraph says that each response set has an IANA-registered name, which is consistent with a response set being a data type.\u00a0  You also have a related draft that actually defines a response set for email, so that confirms my belief that a response set is a data type, not data. In order to address this DISCUSS, you need to reword the first paragraph of section 4.1 so that it clearly distinguishes between response sets and instances of response sets\u2014that is, the data type from a collection of data of that type.\u00a0  Suggestion: OLD: \u00a0  A \"Response Set\" comprises those data that are returned in response \u00a0  to a reputation query about a particular entity.\u00a0 The types of data \u00a0  are specific to an application; the data returned in the evaluation \u00a0  of email senders would be different than the reputation data returned \u00a0  about a movie or a baseball player. NEW: \u00a0  A \"Response Set\" is a data representation for data that is returned \u00a0  in response \u00a0  to a reputation query about a particular entity.\u00a0 The data representation \u00a0  is specific to the application; the type of reputation data returned in the \u00a0  evaluation of email senders would be different than that returned \u00a0  about a movie or a baseball player. BTW, I realize that this DISCUSS could be taken as merely a pedantic comment; the reason I think it's DISCUSS-worthy is that a lack of clarity about what a \"response set\" is could bite you down the road if this proposal sees widespread adoption.\u00a0  Right now, this isn't a serious problem, and it won't be unless the proposal catches on.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-09-10 11:09:07-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-09-10 11:08:02-07:00",
+        "text": "Section 4.1 appears to be confusing two different things by referring to them with the same term: \"response set.\"\u00a0  I think a response set is a predefined data type.\u00a0  But the first paragraph of 4.1 refers to a response set as if it were data, not a data type.\u00a0  The second paragraph says that each response set has an IANA-registered name, which is consistent with a response set being a data type.\u00a0  You also have a related draft that actually defines a response set for email, so that confirms my belief that a response set is a data type, not data. In order to address this DISCUSS, you need to reword the first paragraph of section 4.1 so that it clearly distinguishes between response sets and instances of response sets\u2014that is, the data type from a collection of data of that type.\u00a0  Suggestion: OLD: \u00a0  A \"Response Set\" comprises those data that are returned in response \u00a0  to a reputation query about a particular entity.\u00a0 The types of data \u00a0  are specific to an application; the data returned in the evaluation \u00a0  of email senders would be different than the reputation data returned \u00a0  about a movie or a baseball player. NEW: \u00a0  A \"Response Set\" is a data representation for data that is returned \u00a0  in response \u00a0  to a reputation query about a particular entity.\u00a0 The data \u00a0  representation is specific to the application; the type of \u00a0  reputation data returned in the evaluation of email senders \u00a0  would be different than that returned about a movie or a \u00a0  baseball player. BTW, I realize that this DISCUSS could be taken as merely a pedantic comment; the reason I think it's DISCUSS-worthy is that a lack of clarity about what a \"response set\" is could bite you down the road if this proposal sees widespread adoption.\u00a0  Right now, this isn't a serious problem, and it won't be unless the proposal catches on.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-09-10 11:09:45-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-09-10 11:09:07-07:00",
+        "text": "Section 4.1 appears to be confusing two different things by referring to them with the same term: \"response set.\"\u00a0  I think a response set is a predefined data type.\u00a0  But the first paragraph of 4.1 refers to a response set as if it were data, not a data type.\u00a0  The second paragraph says that each response set has an IANA-registered name, which is consistent with a response set being a data type.\u00a0  You also have a related draft that actually defines a response set for email, so that confirms my belief that a response set is a data type, not data. In order to address this DISCUSS, you need to reword the first paragraph of section 4.1 so that it clearly distinguishes between response sets and instances of response sets\u2014that is, the data type from a collection of data of that type.\u00a0  Suggestion: OLD: \u00a0  A \"Response Set\" comprises those data that are returned in response \u00a0  to a reputation query about a particular entity.\u00a0 The types of data \u00a0  are specific to an application; the data returned in the evaluation \u00a0  of email senders would be different than the reputation data returned \u00a0  about a movie or a baseball player. NEW: \u00a0  A \"Response Set\" is a data representation for data that is returned \u00a0  in response to a reputation query about a particular entity.\u00a0 The \u00a0  data representation is specific to the application; the type of \u00a0  reputation data returned in the evaluation of email senders \u00a0  would be different than that returned about a movie or a \u00a0  baseball player. BTW, I realize that this DISCUSS could be taken as merely a pedantic comment; the reason I think it's DISCUSS-worthy is that a lack of clarity about what a \"response set\" is could bite you down the road if this proposal sees widespread adoption.\u00a0  Right now, this isn't a serious problem, and it won't be unless the proposal catches on.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-09-10 11:31:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-10 11:09:45-07:00",
+        "text": "Section 4.1 appears to be confusing two different things by referring to them with the same term: \"response set.\"\u00a0  I think a response set is a predefined data type.\u00a0  But the first paragraph of 4.1 refers to a response set as if it were data, not a data type.\u00a0  The second paragraph says that each response set has an IANA-registered name, which is consistent with a response set being a data type.\u00a0  You also have a related draft that actually defines a response set for email, so that confirms my belief that a response set is a data type, not data. In order to address this DISCUSS, you need to reword the first paragraph of section 4.1 so that it clearly distinguishes between response sets and instances of response sets\u2014that is, the data type from a collection of data of that type.\u00a0  Suggestion: OLD: \u00a0  A \"Response Set\" comprises those data that are returned in response \u00a0  to a reputation query about a particular entity.\u00a0 The types of data \u00a0  are specific to an application; the data returned in the evaluation \u00a0  of email senders would be different than the reputation data returned \u00a0  about a movie or a baseball player. NEW: \u00a0  A \"Response Set\" is a data representation for data that is returned \u00a0  in response to a reputation query about a particular entity.\u00a0 The \u00a0  data representation is specific to the application; the type of \u00a0  reputation data returned in the evaluation of email senders \u00a0  would be different than that returned about a movie or a \u00a0  baseball player. BTW, I realize that this DISCUSS could be taken as merely a pedantic comment; the reason I think it's DISCUSS-worthy is that a lack of clarity about what a \"response set\" is could bite you down the road if this proposal sees widespread adoption.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-09-30 10:36:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-10 11:31:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7070",
+  "evaluation_end": "2013-09-30 10:36:59-07:00",
+  "evaluation_start": "2013-09-07 06:25:23-07:00"
+}

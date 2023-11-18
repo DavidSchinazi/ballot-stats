@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-01-01 12:06:33-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-09 14:30:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-01 12:06:33-08:00",
+        "text": "In my review of this document I have tried to separate major and minor issues into Discuss and Comment respectively. Inevitably, with so many issues, some sit on the boundary and I may have put them in the Discuss category by a habit of grousiness: please just holler if that is the case. --- I am surprised by the description at the start of Section 1.4 \u00a0  T-PE1 and T-PE2 provide an emulated service to Customer Edge (CE) CE1 \u00a0  and CE2. These Provider Edge (PE) nodes reside in different PSNs.\u00a0 A \u00a0  PSN tunnel extends from T-PE1 to S-PE1 across PSN1, and a second PSN \u00a0  tunnel extends from S-PE1 to T-PE2 across PSN2. PWs are used to \u00a0  connect the attachment circuits (ACs) attached to T-PE1 to the \u00a0  corresponding AC attached to T-PE2. While I understand that the T-PEs *can* reside in different PSNs, I did not believe that they *must* be in different PSNs. In fact, I thought a things had come on a bit since  RFC 5659  and a common MS-PW deployment placed an S-PE inside the PSN as a way of mitigating the n-squared LDP sessions (and tunnels) needed to provide a full mesh of PWs. --- The paragraph at the end of Section 1.4 is ambiguous: \u00a0  Note that although Figure 1 only shows a single S-PE, a PW may \u00a0  transit more than one S-PE along its path. For instance, in the \u00a0  multi-provider case, there can be an S-PE at the border of one \u00a0  provider domain and another S-PE at the border of the other provider \u00a0  domain. The first sentence is fine. but the example is strange because it says (or seems to say) that in the case of an inter-domain MS-PW there are two S-PEs that are immediately adjacent (i.e., the ASBRs with the inter- AS link connecting them). This is sufficiently a special case that it probably demands documentation. It is also an odd case, because it is not clear whether the inter-AS piece of the MS-PW would be signaled or manually configured (or exist as ACs). You may, therefore, find it better to steer away from inter-provider  MS-PWs (perhaps even noting them for separate study) and limit your example to an intra-provider case with multiple S-PEs (which should be an obvious use case). --- 4.2.2 having used \"MUST\" to say that there has to be a process for determining which is the ST-PE and which the TT-PE, then only uses  \"SHOULD\" in describing the process to be used. However, it seems to me that the \"MUST\" can only be satisfied if the two T-PEs use mechanisms that are at least the same in their result, and that that is almost certainly only guaranteed by actually defining the algorithm to use. Furthermore, the algorithm given seems to be a little bit broken! \u00a0  - If the SAII Global ID > TAII Global ID, then the T-PE is active \u00a0 \u00a0  - else if the SAII Prefix > TAII Prefix, then the T-PE is active \u00a0 \u00a0 \u00a0  - else if the SAII AC-ID > TAII AC-ID, then the T-PE is active \u00a0 \u00a0 \u00a0 \u00a0  - else the T-PE is passive. Consider T-PE1's view of {SAII == 123.45.67, TAII == 100.89.15} 123 > 100 therefore T-PE1 is active. Now consider T-PE2's view {SAII == 100.89.15, TAII == 123.45.67} 100 < 123 89 > 45 therefore T-PE2 is active. So, I think you need... \u00a0  - If the SAII Global ID > TAII Global ID, then the T-PE is active \u00a0 \u00a0  - else if the SAII Global ID < TAII Global ID then the T-PE is passive \u00a0 \u00a0 \u00a0  - else if the SAII Prefix > TAII Prefix, then the T-PE is active \u00a0 \u00a0 \u00a0 \u00a0  - else if the SAII Prefix < TAII Prefix, then the T-PE is passive \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  - else if the SAII AC-ID > TAII AC-ID, then the T-PE is active \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  - else if the SAII AC-ID < TAII AC-ID, then the T-PE is passive \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  - else there is a configuration error --- 4.2.3 has \u00a0 \u00a0  - If it is already installed, and the received mapping was received \u00a0 \u00a0 \u00a0  from the same LDP peer to which the forward LDP label mapping was \u00a0 \u00a0 \u00a0  sent, then this label mapping represents signaling in the reverse \u00a0 \u00a0 \u00a0  direction for this MS-PW segment. \u00a0 \u00a0  - If it is already installed, and the received mapping was received \u00a0 \u00a0 \u00a0  from a different LDP peer to which the forward LDP label mapping \u00a0 \u00a0 \u00a0  was sent, then the received label mapping MUST be released with \u00a0 \u00a0 \u00a0  the status code of \"PW_LOOP_DETECTED\". What am I missing? If the mapping comes back along the path it is not a loop (or micro loop) but a reverse path signal. If the mapping comes along a different path it is not a reverse path taking a different path through the network (which you may define as an error even if it could be a transient error) but a loop. Why is that distinction obvious? --- Section 5.1 has... \u00a0  If \u00a0  the PSN is unable to re-establish the PSN tunnel, then the S-PE \u00a0  SHOULD follow the procedures defined in Section 8 of [ RFC6073 ]. Section 8 of  RFC 6073  is titled \"MPLS-PW to L2TPv3-PW Control Plane Switching\" so something is broken. --- Section 5.3 talks of \"L2 PW reachability\" where previously the document  has discussed \"AII reachability\" (or \"TAII reachability\"). This change in terminology causes the reader to wonder whether you are describing a different concept. I think you are, however, talking about the same  thing. You should clarify this. At the same time, I think that having introduced \"MAY tear down\" and  \"this procedure is OPTIONAL\" you would do well to advise the implementer of the consequences. Since you don't offer a \"make-before-break\"  equivalent, such a change is going to be highly disruptive to the PW service. Wouldn't it be better to use a non-disruptive report to the ST-PE to let it signal a new MS-PW from end to end, switch the traffic over, and then tear down the old one?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-09 14:30:04-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-12-30 06:43:40-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-30 06:43:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-01-09 06:10:30-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-09 06:10:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-01-07 09:03:00-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-07 09:03:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-01-09 04:43:33-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-01-09 04:43:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-01-06 04:45:50-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-06 04:45:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-01-08 07:33:49-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-03-10 00:15:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-08 07:33:49-08:00",
+        "text": "upport Adrian's discuss.Also awaiting proposed text to address the security area review concerns.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-10 00:15:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-01-08 02:50:13-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-08 02:50:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-01-08 19:16:38-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-08 19:16:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2014-01-09 06:56:33-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-01-09 06:56:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-01-07 07:04:31-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-07 07:04:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-08 10:18:04-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-08 10:18:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-12-24 06:39:59-08:00",
+        "end_reason": "new_position",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-03-11 10:34:17-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-24 06:39:59-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc7267",
+  "evaluation_end": "2014-03-11 10:34:17-07:00",
+  "evaluation_start": "2013-12-24 06:39:59-08:00"
+}

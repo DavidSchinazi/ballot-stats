@@ -1,0 +1,317 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-10-11 07:58:31-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-07-28 08:00:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-11 07:58:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-10-10 12:56:21-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-07-28 08:00:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-10 12:56:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2012-10-10 16:43:14-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-07-28 08:00:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-10 16:43:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-10-09 13:40:04-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-01-15 10:13:45-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-10-09 13:40:04-07:00",
+        "text": "* In section 4.2.2.3.4, the first paragraph states : \"This Section lists the situations in which fenced response behavior is REQUIRED in iSCSI target implementations. However, this is not an exhaustive enumeration.\" Is the list of use cases exhaustive as currently known within the existing implementations?\u00a0 If it is, the second sentence is not needed.\u00a0 No one should expect a spec to be able to address use cases created after its publication.\u00a0 If it is not, why not? * Section 6.2 states : \"The proper way to handle a NotUnderstood response depends on where the key is specified and whether the key is declarative vs. negotiated. An iSCSI implementation MUST comprehend all text keys defined in iSCSI Protocol specifications from  RFC 3720  through the RFC associated with the highest protocol version that the implementation has offered (or has negotiated, in the case of an acceptor) for the iSCSIProtocolLevel key in a negotiation. If I understand all of the relevant RFCs and this draft, iSCSIProtocolLevel is still 1.\u00a0 Is there a spec for level 0?\u00a0 I am unsure why this draft would reference back to 3720, when it is making that RFC obsolete and subsuming all of its functionality.\u00a0 The above text is making assumptions about what future iSCSI specifications may or may not require.\u00a0 Why is the requirement for handling NotUnderstood responses not more concrete and contained within this spec? * This spec states that it is updating RFCs 3721 and 3723.\u00a0 If that is the case, why is  RFC 3721  listed as an Informative reference while 3723 is a Normative reference?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-06-30 15:42:27-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-01-15 10:13:45-08:00",
+        "text": "Thanks resolving two of my three DISCUSS points.\u00a0 Upon reviewing the e-mail exchanges about these issues, I am curious as to the lack of document changes for the 2nd point below.\u00a0 The response from David indicated that the referenced text in 6.2 will either be revised or removed based on edits to the iscsi-sam draft. Was something missed? * [RESOLVED] In section 4.2.2.3.4, the first paragraph states : \"This Section lists the situations in which fenced response behavior is REQUIRED in iSCSI target implementations. However, this is not an exhaustive enumeration.\" Is the list of use cases exhaustive as currently known within the existing implementations?\u00a0 If it is, the second sentence is not needed.\u00a0 No one should expect a spec to be able to address use cases created after its publication.\u00a0 If it is not, why not? * Section 6.2 states : \"The proper way to handle a NotUnderstood response depends on where the key is specified and whether the key is declarative vs. negotiated. An iSCSI implementation MUST comprehend all text keys defined in iSCSI Protocol specifications from  RFC 3720  through the RFC associated with the highest protocol version that the implementation has offered (or has negotiated, in the case of an acceptor) for the iSCSIProtocolLevel key in a negotiation. If I understand all of the relevant RFCs and this draft, iSCSIProtocolLevel is still 1.\u00a0 Is there a spec for level 0?\u00a0 I am unsure why this draft would reference back to 3720, when it is making that RFC obsolete and subsuming all of its functionality.\u00a0 The above text is making assumptions about what future iSCSI specifications may or may not require.\u00a0 Why is the requirement for handling NotUnderstood responses not more concrete and contained within this spec? * [RESOLVED] This spec states that it is updating RFCs 3721 and 3723.\u00a0 If that is the case, why is  RFC 3721  listed as an Informative reference while 3723 is a Normative reference?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-07-28 08:00:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-30 15:42:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2012-10-11 03:14:03-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-07-28 08:00:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-11 03:14:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-09-04 03:10:45-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-07-28 08:00:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-10-10 13:32:00-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-07-28 08:00:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-10 13:32:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2012-10-09 13:27:02-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-10-09 13:27:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-10-08 06:33:28-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-10-08 06:33:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2012-10-08 07:54:27-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-10-08 07:54:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2012-10-10 08:15:55-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-01-15 16:59:55-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-10-10 08:15:55-07:00",
+        "text": "CHAP has long been known to be vulnerable to dictionary attacks (prior to '07).\u00a0 You've got considerations for how to use it, but can we please put something in to support will be dropped in the next version?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-07-28 08:00:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-15 16:59:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-10-09 09:12:46-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-10-12 06:34:52-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-10-09 09:12:46-07:00",
+        "text": "(1) Is IPsec mandatory to implement or not? While it might be ok to omit that detail for an initiator running on a standard OS, it needs to be clear for e.g. a LUN that runs on an embedded OS. (2) p153, 2nd last para: how can an implementation above TCP verify that IPsec encryption is being used?\u00a0 Same at the end of setion 9.3. (3) Why are sections 2.4.x and the intro to 11 both needed? Do they even say the same thing? Having text like that twice is bad. Section 11 seems clearer.  (4) If there is a conflict between the text in section 11/12/13 and earlier text, which wins? Where's that stated? I think you need that given how much overlap there is.  (5) 12.1.1: how are the krb-ap-req & rep encoded? Those are binary messages. I don't get how that's handled.\u00a0 (Same for 12.1.2)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-01-15 09:31:26-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-10-12 06:34:52-07:00",
+        "text": "(1) Is IPsec mandatory to implement or not? While it might be ok to omit that detail for an initiator running on a standard OS, it needs to be clear for e.g. a LUN that runs on an embedded OS. (2) cleared (3) Why are sections 2.4.x and the intro to 11 both needed? Do they even say the same thing? Having text like that twice is bad. Section 11 seems clearer.  (4) If there is a conflict between the text in section 11/12/13 and earlier text, which wins? Where's that stated? I think you need that given how much overlap there is.  (5) 12.1.1: how are the krb-ap-req & rep encoded? Those are binary messages. I don't get how that's handled.\u00a0 (Same for 12.1.2)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-06-28 07:09:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-01-15 09:31:26-08:00",
+        "text": "Looks like -08 cleared all my discuss points except the kerberos encoding issue.  (1) cleared based on -08 (2) cleared (3) cleared based on -08 (4) cleared based on -08 (5) 12.1.1: how are the krb-ap-req & rep encoded? Those are binary messages. I don't get how that's handled.\u00a0 (Same for 12.1.2) - I don't see any change here yet in -08, so leaving this one for now.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-07-28 08:00:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-28 07:09:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-10-07 20:51:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-07-28 08:00:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-07 20:51:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-10-09 19:20:37-07:00",
+        "end_reason": "new_position",
+        "start": "2012-09-04 03:10:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-10-09 19:20:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7143",
+  "evaluation_end": "2013-07-28 08:00:25-07:00",
+  "evaluation_start": "2012-09-04 03:10:45-07:00"
+}

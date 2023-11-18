@@ -1,0 +1,359 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-03-27 13:50:45-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-27 13:50:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-03-11 05:28:37-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-03-25 09:49:41-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-25 09:49:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-03-28 06:55:21-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-28 06:55:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-03-27 00:38:34-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-27 00:38:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-03-27 23:22:56-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-27 23:22:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-03-25 03:38:44-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-25 03:38:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-03-25 20:09:44-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-06-21 13:26:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-03-25 20:09:44-07:00",
+        "text": "Before I open the can of worms on the webfinger list, I'd like to understand the reasoning behind this being a URI. I've sent this to not only the author, chairs, and IESG, but I've copied the URI Expert. As far as I can tell, this is *purely* identifying URI; there is no concept that it will ever be \"resolved\" in a meaningful way. Normally, when we create such an identifier scheme, it's because we need the semantics of a particular kind of identifier in a place in a protocol that would otherwise take a URI. But looking at the webfinger document, the only place that this kind of URI will go is in the \"subject\" field of the JRD, which webfinger is defining and therefore needn't take a URI, or in the resource attribute of the URL to retrieve the webfinger information, which also needn't be a URI. Is there an instance in which this account identifier is going to be used in a context that *would* require a URI? I just don't see the point in creating a URI scheme whose only semantics seem to be, \"It's an account of some sort that is only interesting to the thing you will hand this identifier\". Please explain why this is an appropriate use for a URI.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-21 13:26:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-03-25 12:39:04-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-03-25 12:40:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-03-25 12:39:04-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-05-06 23:23:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-03-25 12:40:04-07:00",
+        "text": "upport Stephen's DISCUSS on this.\u00a0 There should be an algorithm for comparing \"acct:\" URIs.\u00a0 Otherwise, this looks very good.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-06 23:23:51-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-03-26 15:58:56-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-05-09 02:32:15-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-03-26 15:58:56-07:00",
+        "text": "There's this RADEXT draft: http://datatracker.ietf.org/doc/draft-ietf-radext-nai/ Don't these two drafts do some of the same things?\u00a0 Is there some way one can leverage the other?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-09 02:32:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-03-22 17:02:32-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-05-02 01:36:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-03-22 17:02:32-07:00",
+        "text": "I'll clear this when you tell me any one of the reasonable answers:-) How do you compare acct URIs? Are the host and userpart parts case sensitive? What about punycode? Is  fred@example.com  the same as %72red@example.com  or  %46red@example.com ? Who defines that? I think maybe you need to do it here but if not then I think you need to say who does it where.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-02 01:36:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-03-14 08:08:48-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-14 08:08:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-03-26 19:33:48-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-03-28 09:01:15-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-03-26 19:33:48-07:00",
+        "text": "I'm concerned that this appears to be a URN, not just any old URI, and (I think!) we expect URNs to uniquely identify things.\u00a0  But these identifiers really don't uniquely identify things\u2014 mellon@fugue.com ,  mellon@toccata.fugue.com , etc, are all in some sense the same identifier, even though the host part varies.\u00a0  Also, mellon@204.152.186.142 definitely identifies the exact same user as  mellon@toccata.fugue.com . So this seems like neither a URL nor a URN.\u00a0  Really it's just a string with some syntax; why does it need to be a URI?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-07-10 08:07:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-03-28 09:01:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-03-11 05:28:37-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc7565",
+  "evaluation_end": "2013-07-10 08:07:27-07:00",
+  "evaluation_start": "2013-03-11 05:28:37-07:00"
+}

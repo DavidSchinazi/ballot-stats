@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-12-02 10:41:19-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-12-30 07:48:31-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-12-02 10:41:19-08:00",
+        "text": "I have no objection to the publication of this document, but there is a small issue I'd like you to look at before I change by ballot to No Objection. --- I think [ I-D.ietf-cdni-framework ] is a normative reference as you rely  on it for terminology. But there has to be some concern about Section 2. You are quoting for convenience, but what happens when/if the text in [ I-D.ietf-cdni-framework ] is changed?\u00a0 That could easily happen because that document is not out of the WG yet.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-30 07:48:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-12-04 08:36:35-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-04 08:36:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-12-05 03:14:37-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-01-13 08:58:58-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-12-05 03:14:37-08:00",
+        "text": "- Like Adrian, I'm surprised that the priority scheme you have applied to the  requirements says nothing about the importance of the functions to  CDNI. I've seen Kent's reply to Adrian's feedback. However, I had to review multiple times the HIGH/MEDIUM/LOW definitions while reading the doc. This was bothering me, and I called Fran\u00e7ois to clarify a few things. What elevates this to a DISCUSS is that the High/Medium/Low don't speak about the same criteria: \"can be met\" on one side, delay the WG on the other side The outcome of discussion with Fran\u00e7ois is that - There is no notion of requirements importance in High/Medium/Low  - What's missing is that all requirements in this document are really about all important day 1 requirements. - It's really about priority sequence for what the WG should be working on. \u00a0 Hence the name \"High Priority\" versus High (implicitly meaning Importance) So  * important req. for day 1 and if WG needs to delay the solution to solve it, so be it = high * important req. for day 1 but if it takes too long for the WG to solve it for the day 1 solution, this req. could be dropped = medium * important req. for day 1 and would do it if the WG finds an easy fix that would not delay the day 1 solution = low   From here, two proposals: 1. An extra sentence in \"High Priority\" \u00a0 \u00a0 \u00a0 \"High Priority\" indicates requirements that are to be supported by \u00a0 \u00a0 \u00a0 the CDNI interfaces.\u00a0 A requirement is stated as \"High Priority\" \u00a0 \u00a0 \u00a0 when it is established by the working group that it can be met to \u00a0 \u00a0 \u00a0 achieve the goal of a deployable solution in a short timeframe as \u00a0 \u00a0 \u00a0 needed by the industry.\u00a0 The WG would be willing to delay the solution \u00a0 \u00a0 \u00a0 to meet that requirement. This is tagged as \"{HIGH}\". And add a sentence about: all requirements in this document are really about all important day 1 requirements. Now, I understand that, since the WG has been working on the solution already, the WG knows already that the High Priority requirement can be met.   2. Don't change the definitions but add an extra paragraph explaining: * important req. for day 1 and if WG needs to delay the solution to solve it, so be it = high * important req. for day 1 but if it takes too long for the WG to solve it for the day 1 solution, this req. could be dropped = medium * important req. for day 1 and would do it if the WG finds an easy fix that would not delay the day 1 solution = low - Data model extensibility (extensions or proprietary informations) I see this requirements for the CDNI Logging interface. This is fine. \u00a0  LI-14\u00a0 {HIGH} The CDNI Logging interface shall support the exchange \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 of extensible log file formats to support proprietary \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 information fields.\u00a0 These information fields shall be agreed \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 upon ahead of time between the corresponding CDNs. However, I don't see the same requirement for metadata (section 7) and capabilities advertisement (section 6) The metadata and capabilities advertisement requirements will need to be different in the future, to enable new services. Such requirements in this document would lead to \t- thinking on how to do your data model \t- thinking on how to extend the data model and specify protocol extensions \t- IANA potential implications",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-13 08:58:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-12-05 08:43:47-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-05 08:43:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-12-02 22:29:03-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-02 22:29:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-12-05 08:06:20-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-05 08:06:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-12-02 02:06:33-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-02 02:06:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-12-04 19:55:38-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-04 19:55:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-12-04 08:52:58-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-12-04 08:53:25-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-12-04 08:52:58-08:00",
+        "text": "GEN-5 and GEN-6 levy HTTP requirements on the UA - don't you also need to levy requirements on TLS to the UA in s9? If you're requiring HTTP to the UA what else are you going to realistically use other than TLS? Because the UA is kind of in scope now is access control included as well - or is that part of authentication?\u00a0 Assuming SEC-1 also applies to the UA are you going to allow HTTP-Basic or HTTP-Digest?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-01-16 09:16:10-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-12-04 08:53:25-08:00",
+        "text": "GEN-5 and GEN-6 levy HTTP requirements on the UA - don't you also need to levy requirements on TLS to the UA in s9? If you're requiring HTTP to the UA what else are you going to realistically use other than TLS? Because the UA is kind of in scope now is access control included as well - or is that part of authentication?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-16 09:16:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-11-26 21:06:57-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-12-05 06:26:12-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-05 09:23:05-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-12-05 06:26:12-08:00",
+        "text": "(1) GEN-12 (and probably elsewhere) - when this says \"identify a user agent\" does that mean e.g. \"FF/chrome\" or \"Joe User using FF/chrome\"? In the latter case the privacy issues are harder to handle, so I think you should be precise with such statements. (2) RI-8 - including location-determining information here is privacy sensitive - what requirements exist to obfuscate or protect privacy in such cases? (3) RI-14 - this reads like a solution and not a requirement and at least needs some reference to the \"authorization group ID.\" I'm not sure what to suggest to fix that though - is there a more generic way to state what you need, that's less solution-like? (4) LI-17 - I don't get the justification for why this is \"{MED}\" and would personally consider it \"{HIGH}\" - what is that justifiction? But thank you for inlcluding this, it will I suspect be important for CDNI to be accepted in various places at various times in the future. (5) Overall: I would have preferred to see some overall privacy requirements stated - don't you think that that would offer advantages? Did the WG consider doing that? I'll clear this point when you answer but wanted to at least give you the chance to think about whether to ask the WG, if that didn't happen before.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-28 17:38:55-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-05 09:23:05-08:00",
+        "text": "(1) GEN-12 (and probably elsewhere) - when this says \"identify a user agent\" does that mean e.g. \"FF/chrome\" or \"Joe User using FF/chrome\"? In the latter case the privacy issues are harder to handle, so I think you should be precise with such statements. (2)-(5) cleared",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-28 17:38:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-12-02 10:30:33-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-02 10:30:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-12-01 11:49:55-08:00",
+        "end_reason": "new_position",
+        "start": "2013-11-26 21:06:57-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-01-30 13:00:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-01 11:49:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7337",
+  "evaluation_end": "2014-01-30 13:00:03-08:00",
+  "evaluation_start": "2013-11-26 21:06:57-08:00"
+}

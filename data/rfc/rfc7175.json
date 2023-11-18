@@ -1,0 +1,333 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-06-06 15:37:20-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-06-06 15:41:37-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-06-06 15:37:20-07:00",
+        "text": "John Scudder raised a number of concerns in his Routing Directorate  review. I support these in my Discuss as follows. 1. It is not clear why demand mode was explicitly excluded. TRILL \u00a0  would actually seem to be a reasonable fit for demand mode. \u00a0  Please either include demand mode, or a short note on why it is \u00a0  excluded. 2. \"there will be only a single TRILL BFD Control session between \u00a0  two RBridges over a given interface visible to TRILL.\" \u00a0  This text is a little hard to parse and may be ambiguous. Please \u00a0  find a way to re-write it with reference to a pair of RBridges RB1 \u00a0  and RB2 and their interfaces RB1_Int1 and RB2_Int1. Or something \u00a0  like that. 3. \"the entire TRILL BFD Echo protocol specific \u00a0  data area is considered opaque and left to the discretion of the \u00a0  originating RBridge.\u00a0 Nevertheless, it is RECOMMENDED that this data \u00a0  include information by which the originating RBridge can authenticate \u00a0  the returned BFD Echo frame and confirm the neighbor that echoed the \u00a0  frame back.\" \u00a0  The use of \"RECOMMENDED\" contradicts \"left to the discretion of\" \u00a0  because \"RECOMMENDED\" is a very strong encouragement to do something. \u00a0  I think you need \"suggested\" as this is just general advice to an \u00a0  implementation. 4. In two places text like the following appears: \u00a0  \"Is the M-bit in the TRILL Header non-zero?\u00a0 If so, discard the  \u00a0  frame. TRILL support of multi-destination BFD Echo is beyond the \u00a0  scope of this document.\" \u00a0  If multi-destination doesn't make sense in the context of TRILL, it \u00a0  is fine to exclude it by enforcing that the M-bit be zero. However, \u00a0  \"beyond the scope of this document\" normally means something like  \u00a0  \"we may do it in the future but haven't worked it out yet\". By  \u00a0  forcing the discard under these conditions you are doing more than \u00a0  putting the function out of scope: you are disabling it. \u00a0  You might solve this by mandating the setting of the bit to zero, \u00a0  and saying that if the bit is non-zero the behavior is future \u00a0  description, and that an implementation MAY discard the packet. \u00a0   5. The Security Considerations section specifies how authentication is \u00a0  to be done, but doesn't provide an analysis of it or of any broader \u00a0  issues. According to  RFC 3552  (Section 5) the Security Considerations \u00a0  section should include an analysis of issues that arise from the  \u00a0  operation of the protocol defined in the rest of the document, \u00a0  including but not limited to the security features of that protocol.  \u00a0  You could place the current text in a subsection of the Security  \u00a0  Considerations (called \"Authentication\") and add more text to the \u00a0  core section. Additionally, I think you are missing a normative reference to https://datatracker.ietf.org/doc/draft-ietf-trill-rbridge-oam/ This is necessary to set the context for why you are using BFD and for what purpose. It would also clarify which BFD features are needed and what OAM features (from the whole set) are addressed by BFD.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-06-09 09:36:37-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-06-06 15:41:37-07:00",
+        "text": "John Scudder raised a number of concerns in his Routing Directorate  review. I support these in my Discuss as follows. 1. It is not clear why demand mode was explicitly excluded. TRILL \u00a0  would actually seem to be a reasonable fit for demand mode. \u00a0  Please either include demand mode, or a short note on why it is \u00a0  excluded. 2. \"there will be only a single TRILL BFD Control session between \u00a0  two RBridges over a given interface visible to TRILL.\" \u00a0  This text is a little hard to parse and may be ambiguous. Please \u00a0  find a way to re-write it with reference to a pair of RBridges RB1 \u00a0  and RB2 and their interfaces RB1_Int1 and RB2_Int1. Or something \u00a0  like that. 3. \"the entire TRILL BFD Echo protocol specific \u00a0  data area is considered opaque and left to the discretion of the \u00a0  originating RBridge.\u00a0 Nevertheless, it is RECOMMENDED that this data \u00a0  include information by which the originating RBridge can authenticate \u00a0  the returned BFD Echo frame and confirm the neighbor that echoed the \u00a0  frame back.\" \u00a0  The use of \"RECOMMENDED\" contradicts \"left to the discretion of\" \u00a0  because \"RECOMMENDED\" is a very strong encouragement to do something. \u00a0  I think you need \"suggested\" as this is just general advice to an \u00a0  implementation. 4. In two places text like the following appears: \u00a0  \"Is the M-bit in the TRILL Header non-zero?\u00a0 If so, discard the  \u00a0  frame. TRILL support of multi-destination BFD Echo is beyond the \u00a0  scope of this document.\" \u00a0  If multi-destination doesn't make sense in the context of TRILL, it \u00a0  is fine to exclude it by enforcing that the M-bit be zero. However, \u00a0  \"beyond the scope of this document\" normally means something like  \u00a0  \"we may do it in the future but haven't worked it out yet\". By  \u00a0  forcing the discard under these conditions you are doing more than \u00a0  putting the function out of scope: you are disabling it. \u00a0  You might solve this by mandating the setting of the bit to zero, \u00a0  and saying that if the bit is non-zero the behavior is future \u00a0  description, and that an implementation MAY discard the packet. \u00a0   5. The Security Considerations section specifies how authentication is \u00a0  to be done, but doesn't provide an analysis of it or of any broader \u00a0  issues. According to  RFC 3552  (Section 5) the Security Considerations \u00a0  section should include an analysis of issues that arise from the  \u00a0  operation of the protocol defined in the rest of the document, \u00a0  including but not limited to the security features of that protocol.  \u00a0  You could place the current text in a subsection of the Security  \u00a0  Considerations (called \"Authentication\") and add more text to the \u00a0  core section. Additionally, I think you are missing a normative reference to https://datatracker.ietf.org/doc/draft-ietf-trill-rbridge-oam/ This is necessary to set the context for why you are using BFD and for what purpose. It would also clarify which BFD features are needed and what OAM features (from the whole set) are addressed by BFD. Finally, although I understand that the scope of this document is limited to encapsulation, I think that this leaves the solution deficient. It needs a description of bootstrapping in the Trill environment.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-07-17 05:21:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-06-09 09:36:37-07:00",
+        "text": "I've updated my Discuss to take into account some email exchanges with the authors. The net effect is to move points 1 and 2 of the Discuss to a Comment with a suggested action. === John Scudder raised a number of concerns in his Routing Directorate  review. I support these in my Discuss as follows. 3. \"the entire TRILL BFD Echo protocol specific \u00a0  data area is considered opaque and left to the discretion of the \u00a0  originating RBridge.\u00a0 Nevertheless, it is RECOMMENDED that this data \u00a0  include information by which the originating RBridge can authenticate \u00a0  the returned BFD Echo frame and confirm the neighbor that echoed the \u00a0  frame back.\" \u00a0  The use of \"RECOMMENDED\" contradicts \"left to the discretion of\" \u00a0  because \"RECOMMENDED\" is a very strong encouragement to do something. \u00a0  I think you need \"suggested\" as this is just general advice to an \u00a0  implementation. 4. In two places text like the following appears: \u00a0  \"Is the M-bit in the TRILL Header non-zero?\u00a0 If so, discard the  \u00a0  frame. TRILL support of multi-destination BFD Echo is beyond the \u00a0  scope of this document.\" \u00a0  If multi-destination doesn't make sense in the context of TRILL, it \u00a0  is fine to exclude it by enforcing that the M-bit be zero. However, \u00a0  \"beyond the scope of this document\" normally means something like  \u00a0  \"we may do it in the future but haven't worked it out yet\". By  \u00a0  forcing the discard under these conditions you are doing more than \u00a0  putting the function out of scope: you are disabling it. \u00a0  You might solve this by mandating the setting of the bit to zero, \u00a0  and saying that if the bit is non-zero the behavior is future \u00a0  description, and that an implementation MAY discard the packet. \u00a0   5. The Security Considerations section specifies how authentication is \u00a0  to be done, but doesn't provide an analysis of it or of any broader \u00a0  issues. According to  RFC 3552  (Section 5) the Security Considerations \u00a0  section should include an analysis of issues that arise from the  \u00a0  operation of the protocol defined in the rest of the document, \u00a0  including but not limited to the security features of that protocol.  \u00a0  You could place the current text in a subsection of the Security  \u00a0  Considerations (called \"Authentication\") and add more text to the \u00a0  core section. Additionally, I think you are missing a normative reference to https://datatracker.ietf.org/doc/draft-ietf-trill-rbridge-oam/ This is necessary to set the context for why you are using BFD and for what purpose. It would also clarify which BFD features are needed and what OAM features (from the whole set) are addressed by BFD. Finally, although I understand that the scope of this document is limited to encapsulation, I think that this leaves the solution deficient. It needs a description of bootstrapping in the Trill environment.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-07-17 05:21:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-06-05 01:07:26-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-06-05 01:07:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2012-06-06 18:21:09-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-06-06 18:21:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-05-30 12:56:34-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-06-04 04:58:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-05-30 12:56:34-07:00",
+        "text": "It is unclear what table the IANA Considerations section is referencing when it asks for two values of out the \"Rbridge Channel Protocol\" range.\u00a0 The IANA website does not have any such entry under TRILL that fits that description.\u00a0 Please reference the exact table name IANA should use to allocate these values.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-06-04 04:58:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2012-06-06 03:34:23-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-06-06 03:34:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-06-04 05:34:14-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-07-17 12:49:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-06-04 05:34:14-07:00",
+        "text": "I wonder if what is said about congestion control\u00a0 in Section 7 of  RFC 5880  is also applicable to this draft.  The current draft text denies this, as it states in Section 5: >\u00a0 \u00a0 It is up to the operator of an RBridge campus to configure the rates >\u00a0 \u00a0 at which TRILL BFD frames are transmitted on a link to avoid >\u00a0 \u00a0 congestion (e.g., link, I/O, CPU) and false failure detection. This seems to be absolutely contradicting  RFC 5880  on the matter of congestion control.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-07-17 12:49:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-06-05 08:49:40-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-06-05 08:49:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2012-05-25 14:27:04-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-05-25 14:27:04-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2012-06-06 11:49:45-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-06-06 11:49:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-06-06 11:09:49-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-06-06 11:09:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2012-06-05 11:10:45-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-06-05 11:10:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2012-06-06 04:54:06-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2012-07-18 21:59:30-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-06-06 04:54:06-07:00",
+        "text": "s6 contains the following: \u00a0  If such IS-IS authentication is in effect then, unless configured \u00a0  otherwise, TRILL BFD Control frames sent between those RBridges use \u00a0  BFD Meticulous Keyed SHA1 authentication [ RFC5880 ] with keying \u00a0  material derived as shown below I think you need to say what the MTI is in this case.\u00a0 That might be as simple as adding \"MUST\" before \"use\" but that's a little more than MTI that's mandatory to use.\u00a0 Are you trying to say that in this case,\u00a0 BFD Meticulous Keyed SHA1 authentication [ RFC5880 ] with keying material derived as shown below MUST be supported as a configurable option: ey [material derivation here]?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-07-18 21:59:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-06-05 06:17:21-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-06-05 06:17:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-06-06 09:06:49-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-08-14 02:35:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-06-06 09:06:49-07:00",
+        "text": "This is I believe comparing the TRILL case with MPLS-TP \"TRILL BFD uses the TRILL Rbridge Channel [TRILLChannel] similar to the way that MPLS OAM protocols use the MPLS Generic Associated Channel [ RFC5586 ].\u00a0 However, the RBridges that implement TRILL are IS-IS [IS-IS] based routers, not label switched routers; thus TRILL BFD is closer to IPv4/IPv6 BFD than to MPLS BFD.\" It is unclear what the above statement means. Whilst TRILL uses ISIS and MPLS-TP does not, the fundamentals high speed detection is is common to all. Where TRILL and MPLS-TP are closer than that are to the IP case is that neither have the use of IP addresses available to them.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-08-14 02:35:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-06-04 17:06:29-07:00",
+        "end_reason": "new_position",
+        "start": "2012-05-25 14:27:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-09-29 08:28:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-06-04 17:06:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7175",
+  "evaluation_end": "2012-09-29 08:28:41-07:00",
+  "evaluation_start": "2012-05-25 14:27:03-07:00"
+}

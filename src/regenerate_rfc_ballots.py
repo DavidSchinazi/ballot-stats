@@ -36,6 +36,6 @@ if __name__ == "__main__":
     if len(argv) > 1:
         parsed_rfc.parse_rfc(argv[1:])
     else:
-        parsed_rfc.parse_rfc("9600-1000")
+        parsed_rfc.parse_rfc("9600-7000")
     for rfc_num in parsed_rfc.rfc_nums:
         parse_ballot("rfc{r}".format(r=rfc_num))

@@ -1,0 +1,349 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Dan Romascanu": [
+      {
+        "ad": "Dan Romascanu",
+        "end": "2011-06-23 07:22:11-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Dan Romascanu",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-23 07:22:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "David Harrington": [
+      {
+        "ad": "David Harrington",
+        "end": "2011-06-23 08:37:58-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "David Harrington",
+        "end": "2011-09-09 07:29:39-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2011-06-23 08:37:58-07:00",
+        "text": "1) This normative reference is 'expired' ( http://datatracker.ietf.org/doc/draft-ietf-6man-addr-select-opt/ ). 2) This normative reference is 'IESG dead' ( http://datatracker.ietf.org/doc/draft-ietf-6man-addr-select-sol/ ). 3) Without these expired drafts, the proposal would be incomplete.  4) - The document covers host and gateway requirements, but omits any service provider requirements (eg DHCPv6 option support). A lack of service provider support for the necesary operational infrastructure could prevent deployments from working properly.  This draft puts requirements on the host (O/S), home gateway and ISP. Any one missing piece will break this solution. This all-or-broken approach makes this solution unlikely to be successful for some time because we can't have an incremental approach. 5) Security Considerations provides no details about the threats or mitigation specific to this specification.\u00a0 The reference to [ RFC4218 ] does not cover any vulnerabilities introduced by the solutions proposed here, nor how to mitigate those new vulnerabilities. I recommend including a quick summary of the threats for IPv6 multihoming here, then a discussion of how the proposed solutions mitigate the threats, and introduce new vulnerabilities. A few specific issues, for example: administrators of different networks seem to need to control policies (and nodes' behaviors) independently of other administrators. The need to have access controls for such adninistrative access is not discussed in the security considerations.  The need to resolve potential conflicts between policies configured by different administrators is not really addressed in the security considerations. How will policy conflicts be resolved? If they are not resolved consistently by different implementations, that could affect interoperability and security trust boundaries. 6) 5.3 contains a number of \"should\" statements. Are these  RFC2119  SHOULDs? That is why we have the  RFC2119  text in section 2, right? If so, they would stand out better if capitalized. If so, why is this an Informational document? If this is an Informational document, why are we using SHOULDs?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "David Harrington",
+        "end": "2011-12-14 11:35:31-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2011-09-09 07:29:39-07:00",
+        "text": "updated for -01- 1,2,3,4) OK 5) Security Considerations provides details about the threats or mitigation specific to this specification. This is a significant improvement from -00-. However, there are still a few threats/considerations that deserve more mention.  - administrators of different networks seem to  need to control policies (and nodes' behaviors) independently of other administrators. The need to have **access controls** for such cross-administrative  policy access is not discussed. - administrators must control only nodes that are part of their own networks, or some administrators must control only nodes that are part of their own networks, while others are authorized to control nodes across administrative boundaries. So per-user authorization might be required. Existing AAA and network management standards might be able to provide this. - If administrators control nodes across administrative boundaries, there need to be access controls to prevent violating privacy polices, such as making sure the ISP cannot access names and addresses of employees, or names of customers, or deduce organizational structure. - The need to resolve potential conflicts between policies configured by different administrators is now discussed in -01- Security Consideration. But specific  recommendations for resolving policy conflict is not covered. It is left to the  implementation to decide how to resolve the conflicts. If they are not resolved  consistently by different implementations, that could affect interoperability and  security trust boundaries. So future work should explicitly address the need for consistent  policy resolution to avoid interoperability and security trust boundary issues. - Integrity checking for message carrying policies on-the-wire, to prevent policy tampering. The security directorate review comments in   are worth noting. A lot of the text in the email might be adapted into considerations. I reproduce the message text here for the editor's consideration as document text: There is a fundamental question of who should be trusted to distribute policy. How is the trust established, and how can the network element be assured that it can established that trust before the network is fully configured? This might be quite difficult, because there could be more than one policy distributor, each with a slightly different view of the network (imagine P1 that can see external networks A and B, and P2 that can see networks B and C). It seems inevitable that a host will have to be able to merge policies and deal with updates.  Further, a host might have its own policies to merge into the mix. For example, it might require a DNSSEC capable server for queries about network A, but the policy might specify a non-DNSSEC server for that network. Thus, I can see a need for hosts to communicate their security requirements to the policy server.  There are issues about the privacy of the policy itself. Perhaps particular network prefixes reveal business relationships that are confidential. Thus, some policy information might be sent on encrypted channels.  What kind of policy enforcement is necessary? If a host violates the multihoming policy and sends a packet with a source address that is appropriate to network A over the path to network B, should the packet be blocked, redirected, or allowed? What about DNS queries that are sent to a server that is not recommended for the target? Quash, redirect, or allow? What information should go back to the host?  I think that most of these comments apply to any policy server, and I believe that various IETF documents in the past have attempted to define generic security considerations for them.  6) This is an Informational document, why are we using  RFC2119  keywords? (i.e., why are we including the reference to  RFC2119  in the text?) 5.3 contains a number of \"should\" statements. Are these  RFC2119  SHOULDs? If so, they would stand out better if capitalized.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "David Harrington",
+        "end": "2012-02-20 14:59:38-08:00",
+        "end_reason": "position_updated",
+        "start": "2011-12-14 11:35:31-08:00",
+        "text": "updated for -03- 5) Security Considerations needs to better address a few threats/considerations.  The additional text echoes my earlier questions, but doesn't have any proposed mitigation other than some hand-waving. What should an operator do to mitigate these problems? There is no guidance. In some cases, not mitigating the threat in a consistent manner across implementations means implementing this specification could create security holes in a multi-vendor environment. - administrators of different networks need to control policies (and nodes' behaviors) independently of other administrators. Some administrators control only nodes that are part of their own networks, while others apparently must be authorized to control nodes across administrative boundaries. So per-user authorization to access and modify the policy configuration might be required.  Existing AAA and network management standards might be able to be used to provide access controls. However, to prevent security holes between trust domains, these access controls need to be able to be configured consistently across vendors' equipment and across administrative boundaries. - If administrators control nodes across administrative boundaries, there need to be access controls to prevent violating privacy polices, such as making sure the ISP cannot access names and addresses of a customer's employees, or names of customers, or deduce organizational structure. - The need to resolve potential conflicts between policies configured by different administrators is mentioned, but specific  recommendations for resolving policy conflict is not covered. It is left to the  implementation to decide how to resolve the conflicts. If these conflicts are not resolved  consistently by different implementations, that could affect interoperability and  security trust boundaries. So future work should explicitly address the need for consistent  policy resolution to avoid interoperability and security trust boundary issues. Until that future work is done, this document should say what implementers should do in their implementations, and what operators should do in their deployments to prevent this issue from compromising their networks. - Integrity checking for messages carrying policies on-the-wire is needed to prevent policy tampering. The security directorate review comments in   are worth noting. A lot of the text in the email might be adapted into considerations. I reproduce the message text here for the editor's consideration as document text: There is a fundamental question of who should be trusted to distribute policy. How is the trust established, and how can the network element be assured that it can established that trust before the network is fully configured? This might be quite difficult, because there could be more than one policy distributor, each with a slightly different view of the network (imagine P1 that can see external networks A and B, and P2 that can see networks B and C). It seems inevitable that a host will have to be able to merge policies and deal with updates.  Further, a host might have its own policies to merge into the mix. For example, it might require a DNSSEC capable server for queries about network A, but the policy might specify a non-DNSSEC server for that network. Thus, I can see a need for hosts to communicate their security requirements to the policy server.  There are issues about the privacy of the policy itself. Perhaps particular network prefixes reveal business relationships that are confidential. Thus, some policy information might be sent on encrypted channels.  What kind of policy enforcement is necessary? If a host violates the multihoming policy and sends a packet with a source address that is appropriate to network A over the path to network B, should the packet be blocked, redirected, or allowed? What about DNS queries that are sent to a server that is not recommended for the target? Quash, redirect, or allow? What information should go back to the host?  I think that most of these comments apply to any policy server, and I believe that various IETF documents in the past have attempted to define generic security considerations for them.  6) This is an Informational document, why are we using  RFC2119  keywords? (i.e., why are we including the reference to  RFC2119  in the text?) 5.3 contains a number of \"should\" statements. Are these  RFC2119  SHOULDs? If so, they would stand out better if capitalized. 7) new. The new text is apparently written by a non-native-English speaker, and some of the sentences are difficult to parse. Worse, this makes it difficult to interpret the meaning of some sentences to be clear and unambiguous. I recommend the use of active voice to make it clear which actors are expected to perform what actions. I find the following very unclear about who is supposed to trust (authenticate/authorize) whom: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  For policy receiver side, who should be trusted to accept\u00a0  \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  policies is a fundamental issue.\u00a0 How is the trust established,\u00a0  \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  and how can the network element be assured that it can\u00a0  \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  established that trust before the network is fully configured.\u00a0  \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  If a policy receiver trusts untrusted network, it will cause\u00a0  \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  that distributing unwanted and unauthorized policy that\u00a0  \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  described below.  This text came from questions from a secdir review, and the questions are echoed, but not responded to.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "David Harrington",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-02-20 14:59:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2011-06-23 02:30:51-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-23 02:30:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2011-06-23 06:47:30-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-23 06:47:30-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2011-06-23 06:24:37-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2011-12-13 17:47:22-08:00",
+        "end_reason": "position_updated",
+        "start": "2011-06-23 06:24:37-07:00",
+        "text": "I support Wes's DISCUSS. This document is very thin when it comes to examining technologies available to hosts having to deal with multihoming. Indeed, in addition to SCTP, HIP and SHIM6, the document also ignores MPTCP. But overall, the document does a lot of \"handwaving\" when it comes to issues of how applications deal with a multihomed environment. The document ignores the requirement of legacy apps that IP addresses remain stable over long periods of time (because once address selection is done for an app, connections will be torn down if that address changes). It refers to different DNS resolvers, but waits until section 6 to even mention that the reason that any of this makes a difference is because of broken split-horizon implementations, and even there only vaguely mentions split-horizon. This document does not seem to have had enough review.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-12-13 17:47:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Peter Saint-Andre": [
+      {
+        "ad": "Peter Saint-Andre",
+        "end": "2011-06-21 15:14:24-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Peter Saint-Andre",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-21 15:14:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2011-06-22 15:46:59-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-22 15:46:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2011-06-22 08:57:46-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-22 08:57:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2011-06-07 12:23:37-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-07 12:23:37-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2011-06-22 13:34:46-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-22 13:34:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2011-06-21 05:34:54-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-21 05:34:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2011-06-21 03:45:30-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-21 03:45:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2011-06-22 10:35:22-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-06-22 10:35:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2011-06-22 18:56:00-07:00",
+        "end_reason": "new_position",
+        "start": "2011-06-07 12:23:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2011-06-22 19:30:54-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2011-06-22 18:56:00-07:00",
+        "text": "The mention of SCTP multihoming in the introduction is not quite correctly used here, since it only works for applications that are built on top of SCTP, and only provides limited functionality for those specific applications within an SCTP association, not host-level or interface-level functions as can be provided below in the network layer.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2011-06-22 19:33:58-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2011-06-22 19:30:54-07:00",
+        "text": "Section 6 and 7 are outside of the Abstract's stated scope and are a little confusing because they don't seem to very clearly or directly give any conclusion about these approaches with regard to the stated requirements.\u00a0 If this is really supposed to be a problem statement and requirements document, then these sections either don't belong, or at least need to be better described with regards to the stated requirements. The mention of SCTP multihoming in the introduction is not quite correctly used here, since it only works for applications that are built on top of SCTP, and only provides limited functionality for those specific applications within an SCTP association, not host-level or interface-level functions as can be provided below in the network layer. Strangely, there is no mention of SHIM6 or HIP, both of which would be more appropriate than SCTP to bring into the discussion. In the third paragraph of the introduction that says \"... more than one active IPv6 addresses\", it should be more clear that the multiple addresses are actually multiple global scope addresses with different prefixes, since all IPv6 hosts have multiple addresses even with only one provider.\u00a0 The \"For example\" sentence is also strange in this paragraph since it points to a situation not with multiple link providers but with a single link provider and an additional address from another network connected via a tunnel which is a different use case than multihoming via multiple link providers. One point of confusion in all of the scenarios in section 3 is why there is only a single host, rather than a small network as was described in the introduction.\u00a0 In a small network, is it expected that all hosts are on a link, or do they have independent links to the routers in some of the scenarios?\u00a0 This is not clear. Section 3.1, Scenario 1 lists broadband service as an example.\u00a0 I may just be uninformed, but I've used several broadband service providers and never had such a setup with multiple routers connected to a single host on the same link.\u00a0 Is this really a good example of how this scenario would occur in real life? Scenario 2 lists VPN as an example, but this would usually have Router 2 and Network 2 on the right side of Network 1 connected to the host or gateway via a tunnel, so I don't understand this example.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2011-09-07 17:39:12-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2011-06-22 19:33:58-07:00",
+        "text": "1- Section 6 and 7 are outside of the Abstract's stated scope and are a little confusing because they don't seem to very clearly or directly give any conclusion about these approaches with regard to the stated requirements.\u00a0 If this is really supposed to be a problem statement and requirements document, then these sections either don't belong, or at least need to be better described with regards to the stated requirements. 2- The mention of SCTP multihoming in the introduction is not quite correctly used here, since it only works for applications that are built on top of SCTP, and only provides limited functionality for those specific applications within an SCTP association, not host-level or interface-level functions as can be provided below in the network layer. 3 - Strangely, there is no mention of SHIM6 or HIP, both of which would be more appropriate than SCTP to bring into the discussion.\u00a0 There's only a very passing reference to SHIM6 and no discussion of a technical shortcoming or comparison of the resulting requirements that this document develops. 4 - One point of confusion in all of the scenarios in section 3 is why there is only a single host, rather than a small network as was described in the introduction.\u00a0 In a small network, is it expected that all hosts are on a link, or do they have independent links to the routers in some of the scenarios?\u00a0 This is not clear. 5- Section 3.1, Scenario 1 lists broadband service as an example.\u00a0 I may just be uninformed, but I've used several broadband service providers and never had such a setup with multiple routers connected to a single host on the same link.\u00a0 Is this really a good example of how this scenario would occur in real life? 6 - Scenario 2 lists VPN as an example, but this would usually have Router 2 and Network 2 on the right side of Network 1 connected to the host or gateway via a tunnel, so I don't understand this example, even though the scenario itself makes sense, the example seems either poor or poorly described (overly terse).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2011-09-07 17:40:05-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2011-09-07 17:39:12-07:00",
+        "text": "2- The mention of SCTP multihoming in the introduction is not quite correctly used here, since it only works for applications that are built on top of SCTP, and only provides limited functionality for those specific applications within an SCTP association, not host-level or interface-level functions as can be provided below in the network layer. 1 - SCTP is mentioned as \"application transport level\"; do you mean \"transport layer for applications that can use SCTP?\" 2 - There is no mention of SHIM6 or HIP, both of which are relevant to the goal of supporting multihoming without NAT in IPv6.\u00a0 If the authors (and presumably the WG?) feel these are inappropriate for the goal, it should really be explained why.\u00a0 Is there WG consensus on this? 3 - Section 3.1, Scenario 1 has: \"e.g., broadband service (Internet, VoIP, IPTV, etc.)\", but I don't understand how that relates to the figure, should it actually say \"e.g. multiple broadband service providers\"?\u00a0 The parts in parenthesis don't make sense to me in how they relate to the figure or rest of the text.\u00a0 For instance, every VoIP service I've used always worked over the existing broadband provider I had, or was a service from that provider, and did not involve a separate router from the Internet service. 4 - Scenario 2 lists VPN as an example, but this would usually have Router 2 and Network 2 on the right side of Network 1 connected to the host or gateway via a tunnel, so I don't understand this example, even though the scenario itself makes sense, the example seems either poor or poorly described (overly terse).\u00a0 This doesn't seem to illustrate anything to do with how VPN works.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2011-11-03 16:32:57-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2011-09-07 17:40:05-07:00",
+        "text": "1 - SCTP is mentioned as \"application transport level\"; do you mean \"transport layer for applications that can use SCTP?\"\u00a0 It should be clear that SCTP only works for applications that use it, not host-wide. 2 - There is no mention of SHIM6 or HIP, both of which are relevant to the goal of supporting multihoming without NAT in IPv6.\u00a0 If the authors (and presumably the WG?) feel these are inappropriate for the goal, it should really be explained why.\u00a0 Is there WG consensus on this? 3 - Section 3.1, Scenario 1 has: \"e.g., broadband service (Internet, VoIP, IPTV, etc.)\", but I don't understand how that relates to the figure, should it actually say \"e.g. multiple broadband service providers\"?\u00a0 The parts in parenthesis don't make sense to me in how they relate to the figure or rest of the text.\u00a0 For instance, every VoIP service I've used always worked over the existing broadband provider I had, or was a service from that provider, and did not involve a separate router from the Internet service. 4 - Scenario 2 lists VPN as an example, but this would usually have Router 2 and Network 2 on the right side of Network 1 connected to the host or gateway via a tunnel, so I don't understand this example, even though the scenario itself makes sense, the example seems either poor or poorly described (overly terse).\u00a0 This doesn't seem to illustrate anything to do with how VPN works.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2011-11-14 22:36:44-08:00",
+        "end_reason": "position_updated",
+        "start": "2011-11-03 16:32:57-07:00",
+        "text": "There is no mention of SHIM6 or HIP, both of which are relevant to the goal of supporting multihoming without NAT in IPv6.\u00a0 If the authors (and presumably the WG?) feel these are inappropriate for the goal, it should really be explained why.\u00a0 Is there WG consensus on this?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-02-21 12:56:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2011-11-14 22:36:44-08:00",
+        "text": "",
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7157",
+  "evaluation_end": "2012-02-21 12:56:22-08:00",
+  "evaluation_start": "2011-06-07 12:23:36-07:00"
+}

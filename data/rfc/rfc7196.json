@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-09-30 11:55:27-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-30 11:55:27-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-10-04 09:26:31-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-10-14 19:13:14-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-10-04 09:26:31-07:00",
+        "text": "This is surely an issue of my barely knowing how to spell BGP and RFD, much less fully understand them, and so perhaps this just requires a little education: 1. Where are the RFD parameters in Table 1 in Section 3 defined?\u00a0 Where can I find their meanings?\u00a0 They aren't mentioned in  RFC 2439  (nor in 4271, but I didn't expect to find them there).\u00a0 The mao2002 and pelsser2011 references have similar tables, but also don't define these parameters. 2. Section 6 says that implementations SHOULD NOT change the default values in Table 1.\u00a0 But the default value for Re-Advertisement is vastly different, depending upon whether I get my router from Cisco or from Juniper.\u00a0 I don't understand what this SHOULD NOT is telling me.\u00a0 If I'm someone else building a router, am I supposed to use 0 for Re-Advertisement, or 1000?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-02-06 09:14:50-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-10-14 19:13:14-07:00",
+        "text": "UPDATED after the IESG telechat: In the telechat discussion, Joel's explanation and Adrian's analysis were significant in clearing up what it was that I didn't understand, and in figuring out how to resolve it.\u00a0 Section 3 looks like general recommendations of default values, and Section 6 looks like it's telling everyone to use those default values.\u00a0 The combination is confusing because it appears at the same time to be specific to two vendors, and yet perhaps to tell other vendors what values to use.\u00a0 And I'm not sure what to do if I'm a new vendor aiming to support this. Section 3 needs to make it clear what the purpose of the table is -- the text that's there is too minimal for anyone to understand the intent.\u00a0 On the telechat, we agreed that the following text is clear, and the RTG ADs thought it correctly reflects what's intended: OLD (version -03) \u00a0 \u00a0The following RFD parameters are common to all implementations. \u00a0Some \u00a0 \u00a0may be tuned by the operator, some not. NEW \u00a0 \u00a0This table shows key parameters for RFD implementations, and lists some \u00a0 \u00a0existing default settings for those parameters. \u00a0Some may be tuned by the \u00a0 \u00a0operator, some not. \u00a0There is currently no consensus on a single set of \u00a0 \u00a0default values. END The part of Section 6 that talks about default configurable parameters needs to make it clear that it's not talking just to Cisco and Juniper, and that it's not telling other vendors to use the specific values in Table 1 (and how could it, as the values differ between the two vendors listed).\u00a0 On the telechat, we agreed that the following text is clear, and the RTG ADs thought it correctly reflects what's intended: OLD (version -03) \u00a0 \u00a0Default Configurable Parameters: \u00a0In order not to break existing \u00a0 \u00a0 \u00a0 operational configurations, BGP implementations SHOULD NOT change \u00a0 \u00a0 \u00a0 the default values in Table 1. NEW \u00a0 \u00a0Default Configurable Parameters: \u00a0In order not to break existing \u00a0 \u00a0 \u00a0 operational configurations, deployed BGP implementations SHOULD \u00a0 \u00a0 \u00a0 NOT change their default values for the parameters listed in Table 1. END",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-06 09:14:50-08:00",
+        "text": "Moved to a comment... UPDATED after the IESG telechat: In the telechat discussion, Joel's explanation and Adrian's analysis were significant in clearing up what it was that I didn't understand, and in figuring out how to resolve it.\u00a0 Section 3 looks like general recommendations of default values, and Section 6 looks like it's telling everyone to use those default values.\u00a0 The combination is confusing because it appears at the same time to be specific to two vendors, and yet perhaps to tell other vendors what values to use.\u00a0 And I'm not sure what to do if I'm a new vendor aiming to support this. Section 3 needs to make it clear what the purpose of the table is -- the text that's there is too minimal for anyone to understand the intent.\u00a0 On the telechat, we agreed that the following text is clear, and the RTG ADs thought it correctly reflects what's intended: OLD (version -03) \u00a0 \u00a0The following RFD parameters are common to all implementations. \u00a0Some \u00a0 \u00a0may be tuned by the operator, some not. NEW \u00a0 \u00a0This table shows key parameters for RFD implementations, and lists some \u00a0 \u00a0existing default settings for those parameters. \u00a0Some may be tuned by the \u00a0 \u00a0operator, some not. \u00a0There is currently no consensus on a single set of \u00a0 \u00a0default values. END The part of Section 6 that talks about default configurable parameters needs to make it clear that it's not talking just to Cisco and Juniper, and that it's not telling other vendors to use the specific values in Table 1 (and how could it, as the values differ between the two vendors listed).\u00a0 On the telechat, we agreed that the following text is clear, and the RTG ADs thought it correctly reflects what's intended: OLD (version -03) \u00a0 \u00a0Default Configurable Parameters: \u00a0In order not to break existing \u00a0 \u00a0 \u00a0 operational configurations, BGP implementations SHOULD NOT change \u00a0 \u00a0 \u00a0 the default values in Table 1. NEW \u00a0 \u00a0Default Configurable Parameters: \u00a0In order not to break existing \u00a0 \u00a0 \u00a0 operational configurations, deployed BGP implementations SHOULD \u00a0 \u00a0 \u00a0 NOT change their default values for the parameters listed in Table 1. END",
+        "type": "Abstain"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-10-08 13:47:59-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-10-15 07:34:34-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-10-08 13:47:59-07:00",
+        "text": "Along the same lines as Barrry's DISCUSS... \u00a0  Default Configurable Parameters:\u00a0 In order not to break existing \u00a0 \u00a0 \u00a0 operational configurations, BGP implementations SHOULD NOT change \u00a0 \u00a0 \u00a0 the default values in Table 1. Table 1 mentions  \u00a0 \u00a0 \u00a0 \u00a0 +-------------------------+----------+-------+---------+ \u00a0 \u00a0 \u00a0 \u00a0  | Parameter\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | Tunable? | Cisco | Juniper | \u00a0 \u00a0 \u00a0 \u00a0  +-------------------------+----------+-------+---------+ \u00a0 \u00a0 \u00a0 \u00a0  | Withdrawal\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | No\u00a0 \u00a0 \u00a0  |\u00a0 1000 |\u00a0 \u00a0 1000 | \u00a0 \u00a0 \u00a0 \u00a0  | Re-Advertisement\u00a0 \u00a0 \u00a0 \u00a0 | No\u00a0 \u00a0 \u00a0  |\u00a0 \u00a0  0 |\u00a0 \u00a0 1000 | It's fine to say that Cisco and Juniper SHOULD NOT change their default values, but you also have to say what another new vendor must be doing for the Re-Advertisment parameter. The choices are: \u00a0 \u00a0 1. 0 as default value \u00a0 \u00a0 2. 1000 as default value \u00a0 \u00a0 3. 0 or 1000 as default value Let's not forget that this is a Standards Track document, to which all vendors want to be compliant. Proposal:  \u00a0  Default Configurable Parameters:\u00a0 In order not to break existing \u00a0 \u00a0 \u00a0 operational configurations, BGP implementations SHOULD NOT change \u00a0 \u00a0 \u00a0 the default values in Table 1. New implementations MUST select either 0 or 1000  \u00a0 \u00a0 \u00a0 for the Re-Advertisment parameter default value.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-02-06 09:54:01-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-10-15 07:34:34-07:00",
+        "text": "See Barrry's DISCUSS for the latest proposed changes, as agreed during the IESG telechat; This would solve my DISCUSS. Below is my initial DISCUSS text. \u00a0  Default Configurable Parameters:\u00a0 In order not to break existing \u00a0 \u00a0 \u00a0 operational configurations, BGP implementations SHOULD NOT change \u00a0 \u00a0 \u00a0 the default values in Table 1. Table 1 mentions  \u00a0 \u00a0 \u00a0 \u00a0 +-------------------------+----------+-------+---------+ \u00a0 \u00a0 \u00a0 \u00a0  | Parameter\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | Tunable? | Cisco | Juniper | \u00a0 \u00a0 \u00a0 \u00a0  +-------------------------+----------+-------+---------+ \u00a0 \u00a0 \u00a0 \u00a0  | Withdrawal\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | No\u00a0 \u00a0 \u00a0  |\u00a0 1000 |\u00a0 \u00a0 1000 | \u00a0 \u00a0 \u00a0 \u00a0  | Re-Advertisement\u00a0 \u00a0 \u00a0 \u00a0 | No\u00a0 \u00a0 \u00a0  |\u00a0 \u00a0  0 |\u00a0 \u00a0 1000 | It's fine to say that Cisco and Juniper SHOULD NOT change their default values, but you also have to say what another new vendor must be doing for the Re-Advertisment parameter. The choices are: \u00a0 \u00a0 1. 0 as default value \u00a0 \u00a0 2. 1000 as default value \u00a0 \u00a0 3. 0 or 1000 as default value Let's not forget that this is a Standards Track document, to which all vendors want to be compliant. Proposal:  \u00a0  Default Configurable Parameters:\u00a0 In order not to break existing \u00a0 \u00a0 \u00a0 operational configurations, BGP implementations SHOULD NOT change \u00a0 \u00a0 \u00a0 the default values in Table 1. New implementations MUST select either 0 or 1000  \u00a0 \u00a0 \u00a0 for the Re-Advertisment parameter default value.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-06 09:54:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-10-04 04:49:36-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-04 04:49:36-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-10-10 08:07:35-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-10 08:07:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-10-09 11:55:58-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-09 11:55:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-10-09 20:37:52-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-09 20:37:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-10-07 02:40:47-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-07 02:40:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-10-08 17:00:23-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-08 17:00:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-10-08 08:30:42-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-08 08:30:42-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-10-07 15:00:38-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-07 15:00:38-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-10-07 21:00:32-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-07 21:00:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-10-08 02:39:59-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-08 02:39:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-09-30 09:46:22-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-10-03 19:25:49-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-30 09:46:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-02-10 10:47:42-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-03 19:25:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7196",
+  "evaluation_end": "2014-02-10 10:47:42-08:00",
+  "evaluation_start": "2013-09-30 09:46:22-07:00"
+}

@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-12-15 06:31:47-08:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-12-16 07:45:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-15 06:31:47-08:00",
+        "text": "Sorry to place a small Discuss on a document I think should be published. The URL\u00a0 in the Description clause of batteryTechnology and in section 3.2 doesn't resolve. You probably need  http://www.iana.org/assignments/power-state-sets",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-12-16 07:45:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-07-07 18:36:37-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-05-04 15:54:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-07 18:36:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-07-07 21:25:38-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-12-01 11:22:13-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-07-07 21:25:38-07:00",
+        "text": "Section 5 says: \"All potentially sensible or vulnerable objects of this MIB module are \u00a0  in the batteryTable.\u00a0 In general, there are no serious operational \u00a0  vulnerabilities foreseen in case of an unauthorized read access to \u00a0  this table.\u00a0 However, privacy issues need to be considered.\u00a0 It may \u00a0  be a trade secret of the operator \u00a0  o\u00a0 how many batteries are installed in a managed node (batteryIndex) \u00a0  o\u00a0 how old these batteries are (batteryActualCapacity and \u00a0 \u00a0 \u00a0 batteryChargingCycleCount) \u00a0  o\u00a0 when the next replacement cycle for batteries can be expected \u00a0 \u00a0 \u00a0 (batteryAlarmLowCapacity and batteryAlarmHighCycleCount) \u00a0  o\u00a0 what battery type and make are used with which firmware version \u00a0 \u00a0 \u00a0 (batteryIdentifier, batteryFirmwareVersion, batteryType, and \u00a0 \u00a0 \u00a0 batteryTechnology)\" The above is a list of corporate confidentiality issues, so I would suggest s/privacy/corporate confidentiality/. Furthermore, discussion of actual privacy issues -- affecting individuals -- is missing.  Just as the document notes the corporate confidentiality issues, it should note the potential privacy issues, e.g., by adding something along the following lines: \"For any battery-powered device whose use can be correlated to an individual or a small group of individuals, the following objects have the potential to reveal information about those individuals' activities or habits (e.g., if they are near a power outlet, if they've been using their devices heavily, etc.): batteryChargingCycleCount batteryLastChargingCycleTime batteryChargingOperState batteryActualCharge batteryActualVoltage batteryActualCurrent batteryTemperature batteryAlarmLowCharge batteryAlarmLowVoltage batteryAlarmLowCapacity batteryAlarmHighCycleCount batteryAlarmHighTemperature batteryAlarmLowTemperature Implementors of this specification should use appropriate privacy protections as discussed in Section 9 of  RFC 6988 . Battery monitoring of devices used by individuals should only occur with proper authorization.\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-05-04 15:54:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-01 11:22:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-07-07 12:37:51-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-05-04 15:54:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-07 12:37:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-07-09 09:47:21-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-12-01 02:00:28-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-07-09 09:47:21-07:00",
+        "text": "1. There is a discrepancy between section 3.2 \"Battery Technologies\" and the related section 6.2 (IANA considerations) Section 3.2 mentions: \u00a0 \u00a0 New entries should be added to the IANA \u00a0 \u00a0 registry only if the respective technologies are in commercial use \u00a0 \u00a0 and relevant to standardized battery monitoring over the Internet. Section 6.2 mentions: \u00a0 \u00a0 Experts must check for sufficient relevance of a battery technology to be added. If the sentence in 3.2 is the guideline for the Expert Review, it should be mentioned in section 6.2. Alternatively a pointer to it should be provided. Here is a proposal. OLD: 3.2.\u00a0 Battery Technologies \u00a0  Static information in the batteryTable includes battery type and \u00a0  technology.\u00a0 The battery type distinguishes primary (not \u00a0  rechargeable) batteries from rechargeable (secondary) batteries and \u00a0  capacitors.\u00a0 The battery technology describes the actual technology \u00a0  of a battery, which typically is a chemical technology. \u00a0  Since battery technologies are subject of intensive research and \u00a0  widely used technologies are often replaced by successor technologies \u00a0  within an few years, the list of battery technologies was not chosen \u00a0  as a fixed list.\u00a0 Instead, IANA has created a registry for battery \u00a0  technologies at  http://www.iana.org/assignments/eman  where numbers \u00a0  are assigned to battery technologies (TBD). \u00a0  The table below shows battery technologies known today that are in \u00a0  commercial use with the numbers assigned to them by IANA.\u00a0 New \u00a0  entries can be added to the IANA registry if new technologies are \u00a0  developed or if missing technologies are identified.\u00a0 Note that there \u00a0  exists a huge number of battery types that are not listed in the IANA \u00a0  registry.\u00a0 Many of them are experimental or cannot be used in an \u00a0  economically useful way.\u00a0 New entries should be added to the IANA \u00a0  registry only if the respective technologies are in commercial use \u00a0  and relevant to standardized battery monitoring over the Internet. \u00a0 \u00a0 \u00a0 +----------------------------+----------+ \u00a0 \u00a0 \u00a0 | battery technology\u00a0 \u00a0 \u00a0 \u00a0  | assigned | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 number\u00a0 | \u00a0 \u00a0 \u00a0 +----------------------------+----------+ \u00a0 \u00a0 \u00a0 | Unknown\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 1 | \u00a0 \u00a0 \u00a0 | Other\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 2 | \u00a0 \u00a0 \u00a0 | Zinc-carbon\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 3 | \u00a0 \u00a0 \u00a0 | Zinc chloride\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 4 | \u00a0 \u00a0 \u00a0 | Nickel oxyhydroxide\u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 5 | \u00a0 \u00a0 \u00a0 | Lithium-copper oxide\u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 6 | \u00a0 \u00a0 \u00a0 | Lithium-iron disulfide\u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 7 | \u00a0 \u00a0 \u00a0 | Lithium-manganese dioxide\u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 8 | \u00a0 \u00a0 \u00a0 | Zinc-air\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 9 | \u00a0 \u00a0 \u00a0 | Silver oxide\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0  10 | \u00a0 \u00a0 \u00a0 | Alkaline\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0  11 | \u00a0 \u00a0 \u00a0 | Lead acid\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0  12 | \u00a0 \u00a0 \u00a0 | Nickel-cadmium\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0  13 | \u00a0 \u00a0 \u00a0 | Nickel-metal hydride\u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0  14 | \u00a0 \u00a0 \u00a0 | Nickel-zinc\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0  15 | \u00a0 \u00a0 \u00a0 | Lithium-ion\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0  16 | \u00a0 \u00a0 \u00a0 | Lithium polymer\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0  17 | \u00a0 \u00a0 \u00a0 | Double layer capacitor\u00a0 \u00a0  |\u00a0 \u00a0 \u00a0  18 | \u00a0 \u00a0 \u00a0 +----------------------------+----------+ NEW: 3.2.\u00a0 Battery Technologies \u00a0  Static information in the batteryTable includes battery type and \u00a0  technology.\u00a0 The battery type distinguishes primary (not \u00a0  rechargeable) batteries from rechargeable (secondary) batteries and \u00a0  capacitors.\u00a0 The battery technology describes the actual technology \u00a0  of a battery, which typically is a chemical technology. \u00a0  Since battery technologies are subject of intensive research and \u00a0  widely used technologies are often replaced by successor technologies \u00a0  within an few years, the list of battery technologies was not chosen \u00a0  as a fixed list.\u00a0 Instead, IANA has created a registry for battery \u00a0  technologies at  http://www.iana.org/assignments/eman  where numbers \u00a0  are assigned to battery technologies (TBD). \u00a0  The table below shows battery technologies known today that are in \u00a0  commercial use with the numbers assigned to them by IANA.\u00a0  \u00a0 \u00a0 \u00a0 +----------------------------+----------+ \u00a0 \u00a0 \u00a0 | battery technology\u00a0 \u00a0 \u00a0 \u00a0  | assigned | \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 number\u00a0 | \u00a0 \u00a0 \u00a0 +----------------------------+----------+ \u00a0 \u00a0 \u00a0 | Unknown\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 1 | \u00a0 \u00a0 \u00a0 | Other\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 2 | \u00a0 \u00a0 \u00a0 | Zinc-carbon\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 3 | \u00a0 \u00a0 \u00a0 | Zinc chloride\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 4 | \u00a0 \u00a0 \u00a0 | Nickel oxyhydroxide\u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 5 | \u00a0 \u00a0 \u00a0 | Lithium-copper oxide\u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 6 | \u00a0 \u00a0 \u00a0 | Lithium-iron disulfide\u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 7 | \u00a0 \u00a0 \u00a0 | Lithium-manganese dioxide\u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 8 | \u00a0 \u00a0 \u00a0 | Zinc-air\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 9 | \u00a0 \u00a0 \u00a0 | Silver oxide\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0  10 | \u00a0 \u00a0 \u00a0 | Alkaline\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0  11 | \u00a0 \u00a0 \u00a0 | Lead acid\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0  12 | \u00a0 \u00a0 \u00a0 | Nickel-cadmium\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0  13 | \u00a0 \u00a0 \u00a0 | Nickel-metal hydride\u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0  14 | \u00a0 \u00a0 \u00a0 | Nickel-zinc\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0  15 | \u00a0 \u00a0 \u00a0 | Lithium-ion\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0  16 | \u00a0 \u00a0 \u00a0 | Lithium polymer\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0  17 | \u00a0 \u00a0 \u00a0 | Double layer capacitor\u00a0 \u00a0  |\u00a0 \u00a0 \u00a0  18 | \u00a0 \u00a0 \u00a0 +----------------------------+----------+ 3.2.1 Guidelines for Addition to the Battery Technology List \u00a0  New \u00a0  entries can be added to the IANA registry if new technologies are \u00a0  developed or if missing technologies are identified.\u00a0 Note that there \u00a0  exists a huge number of battery types that are not listed in the IANA \u00a0  registry.\u00a0 Many of them are experimental or cannot be used in an \u00a0  economically useful way.\u00a0 New entries should be added to the IANA \u00a0  registry only if the respective technologies are in commercial use \u00a0  and relevant to standardized battery monitoring over the Internet. OLD (section 6.2) \u00a0  New assignments of numbers for battery technologies will be \u00a0  administered by IANA through Expert Review ([ RFC5226 ]).\u00a0 Experts must \u00a0  check for sufficient relevance of a battery technology to be added. NEW: \u00a0  New assignments of numbers for battery technologies will be \u00a0  administered by IANA through Expert Review ([ RFC5226 ]).\u00a0 Experts must \u00a0  check for sufficient relevance of a battery technology to be added, \u00a0  according to the guidelines in section 3.2.1 2. While searching through the archives, I found that \"Comments on  draft-ietf-eman-battery-mib-12 \" from Alan Luchuk, March 12th 2014,\u00a0 (see  http://www.ietf.org/mail-archive/web/eman/current/msg02255.html ) has not been addressed. Note: version 12 is the version presented to the IESG Alan has got some valid feedback. 3. \u00a0  Batteries are indexed by the entPhysicalIndex of the entPhysicalTable \u00a0  defined in the ENTITY-MIB module [ RFC6933 ].\u00a0 An implementation of the \u00a0  ENTITY-MIB module complying with the entity4CRCompliance MODULE- \u00a0  COMPLIANCE statement is required for compliant implementations of the \u00a0  BATTERY-MIB module. \u00a0  If batteries are replaced, and the replacing battery uses the same \u00a0  physical connector as the replaced battery, then the replacing \u00a0  battery SHOULD be indexed with the same value of object \u00a0  entPhysicalIndex as the replaced battery. Can you please explain why a SHOULD and not a MUST? 4. There are 3 EMAN MIB modules on the IESG this week. On two of them, there is a discussion on changing the \"Security Guidelines for IETF MIB modules\". If this is changed, this should be changed for the 3 EMAN MIB modules. This DISCUSS is for document only.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-12-01 23:18:05-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-01 02:00:28-08:00",
+        "text": "Thanks J\u00fcrgen for posting a new version, and addressing most of my points. One left, regarding the Security Considerations. Kathleen should provide her feedback on this one. 5. Security Considerations \u00a0  There are a number of management objects defined in this MIB module \u00a0  with a MAX-ACCESS clause of read-write.\u00a0 Such objects may be \u00a0  considered sensitive or vulnerable in some network environments.\u00a0 The \u00a0  support for SET operations in a non-secure environment without proper \u00a0  protection can have a negative effect on network operations.\u00a0 These \u00a0  are the tables and objects and their sensitivity/vulnerability: For consistency with the other EMAN drafts, and the new boilerplate, this should be changed to\u00a0 \"open devices to attack\" Also, in the other 2 EMAN drafts, the following paragraph has been added: \u00a0 \u00a0 \u00a0  In certain situations, energy and power monitoring can reveal \u00a0 \u00a0 \u00a0  sensitive information about individuals' activities and habits. \u00a0 \u00a0 \u00a0  Implementors of this specification should use appropriate \u00a0 \u00a0 \u00a0  privacy protections as discussed in Section 9 of  RFC 6988  and \u00a0 \u00a0 \u00a0  monitoring of individuals and homes should only occur with \u00a0 \u00a0 \u00a0  proper authorization. You have inserted (to address this point): \u00a0  Implementers SHOULD use appropriate privacy protections.\u00a0 Battery \u00a0  monitoring of devices used by individuals SHOULD only occur with \u00a0  proper authorization.\u00a0 See the relevant discussion in Section 9 of \u00a0  the Requirements for Energy Management [ RFC6988 ]. Shouldn't we be consistent between the 3 EMAN docs? See  http://tools.ietf.org/rfcdiff?url2=draft-ietf-eman-energy-aware-mib-17.txt  for the diff",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-05-04 15:54:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-01 23:18:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-12-15 05:33:51-08:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-05-04 15:54:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-15 05:33:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-07-10 06:46:52-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-05-04 15:54:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-10 06:46:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-07-01 10:00:30-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-05-04 15:54:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-07-09 12:23:08-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-12-03 08:48:04-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-07-09 12:23:08-07:00",
+        "text": "I'd like to see if an update to the security considerations for MIBs could be made.\u00a0 There are 3 different drafts that have IoT related security & privacy concerns that are not covered by the current template well enough.\u00a0 Concerns were raised in each of the SecDir reviews as well as in my own.\u00a0 I proposed some edits to the energy-aware mib that would also apply to this draft. See:  https://datatracker.ietf.org/doc/draft-ietf-eman-energy-aware-mib/ballot/",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-05-04 15:54:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 08:48:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-07-08 03:43:50-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-05-04 15:54:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-08 03:43:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-07-09 19:42:40-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-12-13 16:01:22-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-07-09 19:42:40-07:00",
+        "text": "I've been concerned since the requirements document came out, and mentioned it again when the framework document came out, that this WG has not taken seriously energy management that is beyond the realm of very small devices with very small power consumption and a limited kind of battery bank. This MIB is a clear indication to me that the WG still has not taken larger more complicated systems into account. I am not an expert on these systems; I know a limited amount from the work I do with renewable energy systems. But there are obvious omissions from this MIB that make me believe that the WG did little research into the needs of systems that I am sure would be using this kind of MIB. I have below some additions that I think are obviously missing, but I think it is worth some research to find out if there are other features missing. (If MIBs are sufficiently extensible in current management systems that the following can be added later without causing disruption, then I'm happy to clear my DISCUSS if these things can be added later with ease. But I fear things may get locked-in in ways that will make it difficult to add in the future.) 3.1: Some battery characteristics that seem obviously missing from the list: - Recharge voltage: The low voltage at which the battery should be recharged, independent of raising an alarm - Equalization voltage: The voltage to be held for the equalization portion of the charging cycle  - Bulk voltage: The voltage to rise to during the bulk stage of the charging cycle before transitioning to absorption - Absorb voltage: The voltage to be held for the absorption stage of the charging cycle - Float voltage: The voltage to be held by the charger after charging is complete - Absorb time: The time to spend in the absorption portion of the charging cycle - Temperature compensation: The value by which to change the charging voltage per degree based on the battery temperature These are features of batteries that a charger must know about in order to properly charge them, and they are characteristics that are specified by the battery manufacturer. These are all read-only. Some of them *might* be a range of acceptable values, so there might need to be some accommodation for that too. Also, adding a notification for *high* battery voltage seems important. 3.2: Why are the three types of lead-acid batteries -- Flooded, Gel, and Absorbed Glass Mat (AGM) -- not separated out as different types? Those types of batteries have very different charging characteristics, which a charging system is going to want to retrieve so that it can properly handle the battery, and they should have separate entries. The following are concerns I have with items in the current MIB: 4: What is the difference between batteryActualCharge and batteryActualCapacity? When could these values be different? (Similarly with the alarms that distinguish between the two.) The charging states (unknown(1), charging(2), fastCharging(3), maintainingCharge(4), noCharging(5), discharging(6)) and associated other data relating to charging states seems a bit odd. They appear more to be states of the charger than states of the battery. Many batteries don't \"know\" whether they are being charged vs. fast-charged vs. maintenance charged. If we are going to start introducing charger states into what the battery MIB, I think charge states like \"absorbing charge\", \"bulk charge\", and \"equalizing charge\" might also make sense. But this seems like a weird road to go down.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-03-24 13:36:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-13 16:01:22-08:00",
+        "text": "I'm updating my ballot to reflect the discussion we've had so far. My conclusion is that energy generation systems (solar, wind, or nuclear and coal for that matter) are out of scope for EMAN generally, and batteries used in such systems are out of sope for the battery MIB. I'm a bit disappointed by that, but I won't object to the document if that is the intent of the WG. However, if that is true, it really needs to be said in the introduction to this document, and likely should be even more explicit in the applicability statement document. I suggest inserting the following paragraph in section 1, just before the discussion of UPS devices. (Feel free to edit.) \u00a0  Specifically out of scope for this document are batteries that are \u00a0  part of energy generation systems. Such systems, whether they are \u00a0  off-grid power generation systems (e.g., solar, wind, fuel-cell) that \u00a0  maintain their own storage or traditional small- or large-scale \u00a0  generators (anything from microgenerators to utility-scale power \u00a0  plants), have much different monitoring and control interfaces to \u00a0  their battery systems than those of the type of network-attached \u00a0  devices that this document is trying to support. See \u00a0  [ draft-ietf-eman-applicability-statement ] for more information \u00a0  regarding the applicability of this technology.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-03-24 13:36:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-07-09 08:35:07-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-07-09 08:35:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-07-07 23:52:17-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-05-04 15:54:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-07 23:52:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-07-10 04:40:06-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-05-04 15:54:56-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-10 04:40:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-07-01 10:00:30-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc7577",
+  "evaluation_end": "2015-05-04 15:54:56-07:00",
+  "evaluation_start": "2014-07-01 10:00:30-07:00"
+}

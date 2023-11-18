@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-28 02:52:40-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-28 02:52:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-10-30 08:32:47-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 08:32:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-10-28 16:34:04-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-28 16:34:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-28 23:33:11-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-12-18 11:47:53-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-28 23:33:11-07:00",
+        "text": "DISCUSS point 1, on the clarity of the text about matching: -- Section 4 -- The matching is of labels from right to left... You and I know that, but will every reader understand that?\u00a0 With gTLDs upon us, will it always be clear to everyone that a registry entry of \"nyc\" matches \" coffee.nyc \", but does not match \" nyc.com \"?\u00a0 Will everyone understand that a registry entry of \" example.com \" matches \" good.example.com \", but does not match \" goodexample.com \"? There's also nothing said about what happens if there are multiple matches at the same specificity.\u00a0 What if there are two Entry Arrays that both contain \" example.com \"?\u00a0 More likely, what if someone makes an error in specifying AS numbers, we get one entry for 10000-12000 and another for 12000-14000... and then we query for 12000? It might be good to be clearer about exactly what matching is intended, and what doesn't match.\u00a0 Feel free to use my examples above, if that helps. ----- DISCUSS point 2: the scope of what we're asking IANA to do, and the question of whether it's really clear both to us and to them what it is, what it will entail, and what it will cost: -- Section 8 -- \u00a0  Clients SHOULD cache the \u00a0  registry, but use underlying protocol signalling, such as the HTTP \u00a0  Expires header field [ RFC7234 ], to identify when it is time to \u00a0  refresh the cached registry. Now you're putting another requirement on IANA, which I'm not sure has been part of the discussion: they have to present the registries in the right format AND manage the TTL of the queries with the Expires header.\u00a0 Please, please make sure that IANA is very clear about the entire scope of what we're asking, and signs off on it. -- Section 12 -- \u00a0  IANA is expected to generate the RDAP Bootstrap \u00a0  Services Registries data from these above mentioned registries, \u00a0  according to their own registration policies. I presume \"their\" refers to the registries, not to IANA, but that's ambiguous, and should be fixed.\u00a0 The above-mentioned registries do not have RDAP URLs, do they?\u00a0 Whence is IANA meant to get that information, in order to generate these new registries? If IANA generates these by periodically re-processing the source registries to pick up changes, how current are the RDAP registries expected to be? Is it OK for them to be updated once a week?\u00a0 Once a month?\u00a0 Are we setting up any SLAs for the timeliness and reliability of these registries?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-18 11:47:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-28 10:18:07-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-28 10:18:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-30 06:18:31-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-30 08:14:56-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-30 06:18:31-07:00",
+        "text": "Everyone should be aware though that we are creating a live database that would be queried by software, not by implementors.  Anyway, I think that is fine, but I have a question mark. This could be due to my lack of understanding of WEIRDS. But as far as I can see, the document asks IANA to create a newly formatted view based on the contents of the existing registry database. I understand how most of the data is filled in, but I do not understand how the URLs are created. For instance, for ASes the document says to generate something like this: \u00a0 \u00a0 \u00a0 \u00a0 [ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  [\"2045-2045\"], \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  [ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \" https://rir3.example.com/myrdap/ \" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ] \u00a0 \u00a0 \u00a0 \u00a0  ], but if I look at the existing registry, it does not have these URLs, it has something else. E.g., from  http://www.iana.org/assignments/as-numbers/as-numbers.xhtml: \u00a0  Number \tDescription \tWhois \tReference \tRegistration Date  \u00a0 \u00a0 0\tReserved\t\t[RFC-ietf-idr-as0-06]\t \u00a0 \u00a0 1-6\tAssigned by ARIN\t whois.arin.net   \u00a0 \u00a0 7\tAssigned by RIPE NCC\t whois.ripe.net   \u00a0 \u00a0 8-27\tAssigned by ARIN\t whois.arin.net   \u00a0 \u00a0 28\tAssigned by RIPE NCC\t whois.ripe.net   and I do not see the RDAP URLs there. Only WHOIS URLs. Does filling out the RDAP URLs require IANA to contact the people who have made registrations, and ask what the proper URL is? Or am I missing something?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 08:14:56-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-10-30 00:41:53-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 00:41:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-10-29 16:43:44-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 16:43:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-29 13:43:43-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 13:43:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-27 15:42:42-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-29 23:29:23-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 23:29:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-10-30 07:32:07-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 07:32:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-30 06:48:26-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 06:48:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-29 12:57:33-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-27 15:42:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-01-01 15:21:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 12:57:33-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7484",
+  "evaluation_end": "2015-01-01 15:21:18-08:00",
+  "evaluation_start": "2014-10-27 15:42:42-07:00"
+}

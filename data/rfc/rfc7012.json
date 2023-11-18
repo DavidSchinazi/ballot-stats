@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-01-22 11:46:21-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-22 11:46:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-01-21 16:05:16-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-01-22 07:47:36-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-01-21 16:05:16-08:00",
+        "text": "I have no objection to this document, and we should be able to quickly clear up a couple of easy issues with Unicode and references: -- Section 3.1.14 -- I realize that this is unchanged from 5102, and that it didn't seem to cause problems there, but it looks like \"string\" is underspecified: it says what *characters* are valid, but doesn't specify the encoding to use.\u00a0 Is it meant to be UTF-8?\u00a0 It doesn't say.\u00a0 It could be UTF-16.\u00a0 Or UCS-2, for that matter, given the age of your reference (see below). I initially thought it was OK, because this is an abstract type, and maybe it's defined elsewhere.\u00a0 But I picked an item defined in the registry as \"string\" (96, applicationName) and checked the reference for that ( RFC 6759 , a nice, recent one), and I see nothing there that specifies the encoding either. What encoding is actually used, and where is that specified unambiguously? -- References -- \u00a0  The process for modifying [IPFIX-IANA] has been improved, and is \u00a0  now described in [IPFIX-IE-DOCTORS] Given that a substantive part of  RFC 5102  is now in the IE-DOCTORS doc, I can't understand why that's an informative reference here.\u00a0 Why should it not be normative? And do you really mean to cite the 1993 version of ISO 10646-1, rather than a more recent one (like maybe 2012)?\u00a0 (And for that matter (this part is non-blocking), why use an ISO reference for ASCII, rather than ANSI X3.4, or even  RFC 20 ?)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-22 07:47:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-01-17 23:46:42-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-17 23:46:42-08:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-01-22 08:05:03-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-22 08:05:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-01-21 01:37:01-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-21 01:37:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-01-23 21:06:27-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-23 21:06:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-01-24 04:15:49-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-02-13 03:39:53-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-01-24 04:15:49-08:00",
+        "text": "This Discuss issue should be easy to resolve. This document does not appear to include any instructions about updating the \"Requester\" column of www.iana.org/assignments/ipfix/ipfix.xml  to correct references to the obsoleted  RFC 5102 . Has there been a review of relevant documents and other sources of information to identify and correct similar references to  RFC 5102 ?\u00a0 I can't think of any myself.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-13 03:39:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-01-22 10:58:13-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-02-12 08:08:03-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-01-22 10:58:13-08:00",
+        "text": "The text in 7.3 about \"tools that can automatically adapt to extensions\" could be read by an implementer to imply that their implementation should be reading this registry without an administrator telling them to do so - staying \"up to date\" all the time. Do you want implementations automatically polling this registry on a regular interval or trying to subscribe to changes? (if so, the draft should discuss the expected load on IANA.) Or was it the intent just to point out that this makes updating IPFIX-aware tools easier when the administrator wants to update the tool?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-12 08:08:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-01-17 07:50:03-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2013-01-23 09:12:46-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-23 09:12:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-01-23 05:35:44-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-23 05:35:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-01-21 17:50:01-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-21 17:50:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-01-22 05:34:53-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-22 05:34:53-08:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-01-23 20:45:19-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-17 07:50:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-02-13 08:20:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-23 20:45:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7012",
+  "evaluation_end": "2013-02-13 08:20:16-08:00",
+  "evaluation_start": "2013-01-17 07:50:03-08:00"
+}

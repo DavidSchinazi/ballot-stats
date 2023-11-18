@@ -1,0 +1,253 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-08-24 11:59:35-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-12-30 08:40:20-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-08-24 11:59:35-07:00",
+        "text": "Thanks for this document. I think it is critical for the next steps with LISP for people to understand the deployment options, benefits, and  costs. I hope we can polish this document to make it more helpful to network operators in explaining how they can choose between the different deployment models. --- This issue is border-line Discuss/Comment, but it is actionable, and it is a matter of clarity and interaction with other documents, so I think it is worth handling as a Discuss. You are, I think, free to define terms for use within the scope of this document, and given the title of the document, a clear definition of \"network element\" is important.\u00a0 However, where Section 1 says... \u00a0  We formally define the following two terms: \u00a0  Network element:\u00a0 Active or passive device that is connected to other \u00a0 \u00a0 \u00a0 active or passive devices for transporting packet switched data. ... I think you need to explicitly scope the definition to this  document.\u00a0 The point here is that \"network element\" is an extremely  widely used term. It even has its own Wikipedia entry. And, sadly, the common usage is not that close to the definition you have here (although maybe you have defined a subset of the common usage). I think it is important that you carefully disambiguate the term from the normal  meaning and set your scope to \"within the document we define...\" As an aside, your current definition does not include end-systems. That is nodes that source or consume packets since they do not \"transport\" those packets.\u00a0 Thus the definition of LISP Site as \"A single host or a set of network elements\" does not seem to allow for \"a set of hosts and network elements\". --- I tried to correlate the LISP features shown in Section 2.6 with the applications detailed in draft-ietf-lisp-introduction.\u00a0 In the latter I found 7 principal applications (section 5) of which just one (Traffic Engineering) appears in Section 2.6 of this document. There are several possibilities here: - I may be misunderstanding the terms used so that there is actually a  \u00a0 larger overlap than I am seeing (in which case some alignment of terms \u00a0 would be handy) - It might not be appropriate to compare the lists (which you could  \u00a0 explain to me in an email, and might result in a little text to  \u00a0 clarify the context of 2.6) -  draft-ietf-lisp-introduction  may be at a really early stage and so it \u00a0 would be appropriate to update *that* document to be in synch with  \u00a0 this one. - There may be some discussion of other features missing from this \u00a0 document. --- The Recursive Deployment Model Reading Section 2.4 I found the recursive deployment model burried in  the text.\u00a0 I think that this is an important model that is mentioned in several other documents and adds quite a lot of function for the  operator. So I believe that you should have a separate section  specifically for the recursive model. (Note that even the table in Section 2.6 acknowledges the recursive model as a deployment model.) In particular how is the recursive model deployed, what are the  identifiers and what are the locators? Perhaps a picture, too. But this did raise for me the question of \"Deployment Model or  Functional Model?\"\u00a0 Clearly Sections 2.1, 2.2, and 2.3 are deployment models.\u00a0 Similarly, a new section on the Recursive Model would be about a deployment model. But the current Section 2.4 seems to be a functional model, not a deployment model. It would be helpful to separate deployment models from functional models within the document.\u00a0  --- Section 2.5 I don't understand what happens when there is not enough global address space for EIDs.\u00a0 The same question for RLOCs.\u00a0 And what if there is not enough global address space for *both* EIDs and RLOCs? Even if there is a simple answer to this question, it would be nice to add a couple of lines to make it a bit easier for the deployer. --- Root Operators Section 3.1 seems to make a statement that DDT-like operation is to be used to the exclusion of ALT.\u00a0 I don't (particularly) have a problem  with that, although it would be nice if this document was far clearer about advising on the selection between these two modes. \u00a0  Participation in the mapping \u00a0  database, and the storing of EID-to-RLOC mapping data is subject to \u00a0  the policies of the \"root\" operators, who should check ownership \u00a0  rights for the EID prefixes stored in the database by participants. \u00a0  These policies are out of the scope of this document. But I think there is quite a chunk missing in the document about what a \"root operator\" is in the LISP context. In particular, how will a root operator be selected in such deployments? There is a tiny mention of this in Section 3.2, but surely this is a  major issue for deployment.\u00a0 How does a root get selected, how is it governed, what are the administrative policies, how is it funded? How do you make sure there is only one root (if that is a requirement)? --- It seems that there is a missing piece of discussion about what happens when an ITR operator advertises stuff it shouldn't (e.g., to attract traffic). This is policeable, but the policing function is a critical part of the deployment model. It needs to be described. The nearest discussion I could find to this was in 5.3, but it doesn't go close to talking about the problem. Of course, a chunk of this could easily be argued to be an operational discussion that belongs in a separate document.\u00a0 I'd be OK with that, on the whole, but there are surely some deployment considerations as well. Which model is best able to protect against this? What are the deployment concerns related to this problem?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-12 14:21:38-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-12-30 08:40:20-08:00",
+        "text": "Thanks for this document. I think it is critical for the next steps with LISP for people to understand the deployment options, benefits, and  costs. I hope we can polish this document to make it more helpful to network operators in explaining how they can choose between the different deployment models. This Discuss has been updated for revision 11. Points that have been addressed have been removed. New text is prefixed '#'  Thanks for the work so far. --- This issue is border-line Discuss/Comment, but it is actionable, and it is a matter of clarity and interaction with other documents, so I think it is worth handling as a Discuss. You are, I think, free to define terms for use within the scope of this document, and given the title of the document, a clear definition of \"network element\" is important.\u00a0 However, where Section 1 says... \u00a0  We formally define the following two terms: \u00a0  Network element:\u00a0 Active or passive device that is connected to other \u00a0 \u00a0 \u00a0 active or passive devices for transporting packet switched data. ... I think you need to explicitly scope the definition to this  document.\u00a0 The point here is that \"network element\" is an extremely  widely used term. It even has its own Wikipedia entry. And, sadly, the common usage is not that close to the definition you have here (although maybe you have defined a subset of the common usage). I think it is important that you carefully disambiguate the term from the normal  meaning and set your scope to \"within the document we define...\" As an aside, your current definition does not include end-systems. That is nodes that source or consume packets since they do not \"transport\" see  those packets.\u00a0 Thus the definition of LISP Site as \"A single host or a set of network elements\" does not seem to allow for \"a set of hosts and network elements\". # In an email thread, Lori proposed to change to # # Network element:\u00a0 facility or equipment used in the provision of a  # communications service over the Internet. # # I don't see that change. Maybe also including a citation for the  # definition would be helpful. --- It seems that there is a missing piece of discussion about what happens when an ETR operator advertises stuff it shouldn't (e.g., to attract traffic). This is policeable, but the policing function is a critical part of the deployment model. It needs to be described. The nearest discussion I could find to this was in 5.3, but it doesn't go close to talking about the problem. Of course, a chunk of this could easily be argued to be an operational discussion that belongs in a separate document.\u00a0 I'd be OK with that, on the whole, but there are surely some deployment considerations as well. Which model is best able to protect against this? What are the deployment concerns related to this problem? # This comment is related to an ETR operator attracting traffic by # overclaiming an EID-prefix and could be handled by a forward  # reference to [ I-D.ietf-lisp-threats ]\u00a0 (Section 4.4.3).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-12 14:21:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-08-26 07:08:42-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-26 07:08:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-07-19 11:55:06-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 11:55:06-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-08-29 06:52:57-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-29 06:52:57-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-08-27 06:01:59-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-27 06:01:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-08-28 13:03:59-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-28 13:03:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-08-28 07:16:24-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-01-01 09:07:46-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-08-28 07:16:24-07:00",
+        "text": "At this point, I think you need to add a deployment consideration along the lines of \"There is no standardized security to implement.\u00a0 Beware that there are no counter measures for any of the threats identified in [ I-D.ietf-lisp-threats ].\"\u00a0 I'm basing this on the long expired [ I-D.ietf-lisp-sec ] draft.\u00a0 Maybe I'm wrong (and I hope I am). [ I-D.ietf-lisp-sec ] appears to rely on manual key management.\u00a0 What consideration has been given to the frequency with which the keys authentication keys should be changed?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-01 09:07:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-08-28 07:47:58-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-28 07:47:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-08-28 07:30:52-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-28 07:30:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-02-14 11:13:15-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 11:54:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc7215",
+  "evaluation_end": "2014-02-14 11:13:15-08:00",
+  "evaluation_start": "2013-07-19 11:54:57-07:00"
+}

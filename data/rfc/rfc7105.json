@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-06-13 06:54:00-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-13 06:54:00-07:00",
+        "text": "As I observed in my Abstain on  RFC 6772 , I am not comfortable with the motivation for this work, but I (of course) accept that there is a  working group chartered to do the work and that there is support from part of the community. In this document my concern manifests that, under the guise of a device doing something to find out where it is located, the device supplies  information to a third party that allows that third party to work out where is is located and then (possibly) report back to the device. I can't see how that is consistent with privacy and I regret that we have not devised a way for a device to determine its location without giving away its location. The argument that a Device does not have to supply information to an LIS or ask for its location is true. However, I am exceedingly doubtful that such features will be off by default or that they will be configurable  by the average user. We should be looking for ways to improve function for the user without sacrificing privacy or security.  It is almost certain that this work could be turned around to allow the Device to request, and the LIS to supply, information that the Device could use together with its own measurements to determine its location. Such an approach is computationally identical, but moves the venue of  the computation to the Device and so preserves privacy. It seems doubtful that there is anything that the authors can do to this document to resolve my concerns, and so rather than force a debate with unlikely positive outcome, I will Abstain on this document. --- There are so many Discusses and Comments on this document it is hard to find something new to say. I would observe that I found the document generally quite readable, and that the techncial work seems sound modulo the concerns expressed by others. --- Need to expand LIS in the Abstract. --- 4.1.2 \u00a0  A Device can use this attribute to prevent the LIS \u00a0  from retaining measurement data or limit the time that a LIS retains \u00a0  this information. I doubt this! I think the attribute is a request. The device cannot  actually control the LIS. And this is not mitigated by: \u00a0  The LIS MUST NOT keep location-related measurement data beyond the \u00a0  time indicated in the \"expires\" attribute. You are attempting to use 2119 language to constrain implementations of function that are not relevant to bits on the wire. Such statements are at best false comforts. It would be better to not include them. Perhaps there is a relationship to how the information is used in the scope of this document that you *can* say. For example: \u00a0  The LIS MUST NOT use location-related measurement data to determine \u00a0  location information returned to the Device beyond the time indicated \u00a0  in the \"expires\" attribute. --- 6.1 \u00a0  It is less desirable to distribute measurement data in the same \u00a0  fashion as location information.\u00a0 Measurement data is less useful to \u00a0  location recipients than location information.\u00a0 Therefore, a simple \u00a0  distribution model is desirable. I think there is a double negative here. If there is an implicit  statement that location information is distributed in a privacy-safe  way, then you are probably saying that the measurement information is less privacy-sensistive and could be distributed in a less privacy-safe way. But that is not \"it is less desirable\" which would mean there is a  desire not to. Maybe \"there is less need\". --- 6.1 \u00a0  No entity is permitted to redistribute measurement data.\u00a0 The Device \u00a0  directs other entities in how measurement data is used and retained. You surely understand that writing this in an RFC will not actually have any impact on what implementations of an LIS do, or what the NSA instructs operators to do. [Other secret agencies also exist.] What, then, is the value of this statement? Ditto 6.2 \u00a0  A LIS MUST NOT reveal location-related measurement data or location \u00a0  information based on measurement data to any other entity unless \u00a0  directed to do so by the Device.",
+        "type": "Abstain"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-06-08 08:29:52-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-06-24 13:58:13-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-06-08 08:29:52-07:00",
+        "text": "Three points I'd like to clarify, please: 1... There's probably just something basic I'm missing here, and when you tell me I'll slap myself on the forehead. -- Section 3 -- \u00a0  Location-related measurement data need not be provided exclusively by \u00a0  Devices.\u00a0 A third party location requester can request location \u00a0  information using measurement data, if they are able and authorized. I am now confused.\u00a0 Based on what I've read up to this point, I thought that devices were giving the LIS masurement data, the LIS was using that to aid in figuring out the locations of the devices, and then whenever any query was made for a device's location, the LIS would give out whatever location it had for the device, as long as the requestor was authorized to make the query. But now I'm not sure that's right.\u00a0 I now think that the device asks for its own location, and as part of the query it gives the measurement data.\u00a0 Do I have that right?\u00a0 Or am I really completely confused? And how do third parties \"request location information using measurement data\"?\u00a0 Where do they get the measurement data from?\u00a0 Did the device they're asking about give it to them, too? 2... -- Section 7.1.5 -- \u00a0  Measurement data that is susceptible to this sort of influence MUST \u00a0  be treated as though it were produced by an untrusted Device for \u00a0  those cases where a location recipient might attribute the location \u00a0  information to the LIS. That's a very strong MUST: in order to have a MUST here, I think you have to be sure you've completely identified the \"data that is susceptible to this sort of influence\", or at least given enough information that implementors can reliably and completely do the identification.\u00a0 That strikes me as a tall order, and I don't think you've met that here.  3... -- Section 7.2.1 -- \u00a0  Independent confirmation of the veracity of measurement data ensures \u00a0  that the measurement is accurate and that it applies to the correct \u00a0  Device.\u00a0 By gathering the same measurement data from a trusted and \u00a0  independent source, the LIS is able to check that the measurement \u00a0  data is correct. I don't understand: if the LIS can do that, what value is there in having the device sent it?\u00a0 Isn't the whole point of this protocol that having the LIS do that is not possible, or is too difficult or expensive?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-06-24 15:11:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-06-24 13:58:13-07:00",
+        "text": "One point remains from discussion; discussion pasted here for reference: Barry: >> There's probably just something basic I'm missing here, and when you tell me >> I'll slap myself on the forehead. >> >> -- Section 3 -- >>\u00a0 \u00a0 Location-related measurement data need not be provided exclusively by >>\u00a0 \u00a0 Devices.\u00a0 A third party location requester can request location >>\u00a0 \u00a0 information using measurement data, if they are able and authorized. >> >> I am now confused.\u00a0 Based on what I've read up to this point, I thought that >> devices were giving the LIS measurement data, the LIS was using that to aid in >> figuring out the locations of the devices, and then whenever any query was >> made for a device's location, the LIS would give out whatever location it had >> for the device, as long as the requestor was authorized to make the query. >> >> But now I'm not sure that's right.\u00a0 I now think that the device asks for its own >> location, and as part of the query it gives the measurement data. >>\u00a0 Do I have that right?\u00a0 Or am I really completely confused? Martin: > Yes, the device requests its own location, providing measurement data along > with the query. > > In the simple case, measurement data is only used for serving the request that > it is contained in.\u00a0 Though location by reference complicates things.\u00a0 I've added > a paragraph to the overview to make this clearer. Barry: I can't find that paragraph.\u00a0 Can you point it out to me, please?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-24 15:11:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-06-12 03:17:00-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-09-23 07:21:45-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-06-12 03:17:00-07:00",
+        "text": "4.1.1. Time of Measurement Do you require synchronized times between the Device and the LIS, or it doesn't matter because you don't need to correlate any information from different Devices? AFAICT, the following sentence implies that synchronization is required: \u00a0  The LIS MUST NOT keep location-related measurement data beyond the \u00a0  time indicated in the \"expires\" attribute. AFAICT, the LIS coul combine information from the Device and from the Third Party (other), so time synchronization is required between Device and Third Party devices as well. I see section 4.2.1, but don't find the information in there. Background: This is the typical syslog situation for which the NMS doesn't know if the time is synchronized. The convention (at least in Cisco,  http://www.cisco.com/en/US/technologies/collateral/tk869/tk769/white_paper_c11-557812.html ) is: \u00a0 \u00a0 * Means that time is not authoritative: the software clock is not in sync or has never been set. \u00a0 \u00a0 The * (asterisk) and. (period) characters preceding a syslog message are indicators of a problem with NTP.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-23 07:21:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-06-13 06:49:38-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-13 06:49:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-06-13 06:10:01-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-13 06:10:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-06-11 22:46:45-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-10-01 08:05:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-06-11 22:46:45-07:00",
+        "text": "Discussion between Martin and Suresh (based on Suresh's Gen-ART review) resulted in an agreement to make some changes. Shouldn't we wait for the agreed changes to be submitted in a -08 before approving this document?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-01 08:05:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-06-13 07:36:51-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-13 07:36:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-06-12 00:58:53-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-12 00:58:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-06-11 20:08:29-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-11 20:08:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-06-04 09:59:53-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-06-12 11:53:36-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-12 11:53:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-06-10 19:15:42-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-10 19:15:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-06-12 07:16:57-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-06-28 07:20:36-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-06-12 07:16:57-07:00",
+        "text": "As a bit of background, geopriv's security and privacy model does my head in (that's my fault, not yours;-).  I really do appreciate the obvious effort that's been devoted to security and privacy issues in this draft, but yet again, I don't see how it all adds up to being other than privacy unfriendly. That said, I have a number of specific discuss points - some of 'em should be very easy to clear, so don't be put off that there's so many. There may also be some that can be cleared based on a bit more text describing the schema, which I didn't go over fully. (1) I think this draft needs to say that a device MUST include some interface(s) that allows for user or sysadmin control over what measurements will be sent and to whom. I don't think that can be done in a single sentence so I'm not sure right now how to fix this. You may argue that those controls are elsewhere in the geopriv set of RFCs, but I didn't see any references that helped me on this. So putting this as a question: how is an implementer supposed to know when to just send a requested measurement and when to not send some?\u00a0 (If all implementers just make this up, then the only way to get good interop seems to be if all coders send all the measurements that they can all the time.) (2) There are a bunch of IPR declarations on this. I didn't see where the WG had discussed those. Can someone point me at the relevant bit of WG archive or minutes? I did see discussion on IPR related to 4119 but I've no idea if that's the same thing or not. I'm also not clear if the 4 declarations are really one or not, but I expect the WG know, so I'm just checking that the WG did consider all that and were ok to proceed. (The write-up says there is one disclosure and that was discussed, but I see 4, hence the question, maybe its just the writeup or maybe all 4 are really one thing, I dunno.) (3) section 3 says: \"Use of location-related measurement data is at the discretion of the LIS\" - that's ambiguous and in a possibly bad way. I think you mean that the LIS can use the data its given in order to estimate a location using any algorithm. There are two ambiguities in how its stated though: a) it might be read as saying that the LIS is in charge of telling the Device what location-related measurements are to be supplied, and b) it might be read as saying that the LIS can do whatever it wants with the measurements, e.g. send all measurements off to big brother for archiving or to a marketing company without asking. Both a) and b) should be stated as not being at the discretion of the LIS and the statement ought be unambiguous. (4) 4.1.2: What does \"MUST NOT keep\" mean? If the request containing the measurements was logged has the LIS \"kept\" the measurement?\u00a0 I think you need to be clear on that. I'd prefer if you said it means yes, the measurements MUST NOT be logged. But will implementers really do that? If not, then it seems that the draft is at least a bit misleading. (5) 4.3: could a compromised LIS mount a nice DoS on a network by asking a lot of devices to make many measurements that impact on those devices but maybe also on the n/w as a whole? Is that threat noted?\u00a0 Should you RECOMMEND that devices have some way to sanity check what they're asked to do by/for a LIS? (6) 5.1, if LLDP measurements expose IP addressing then that may a) expose topology information that a sys admin would rather hide and b) involve sending private IP addresses over the public Internet. Don't you need to note those issues and say how to deal with them? You do approach saying that in section 6/7 but I think you need to be more explicit and say which pieces of measurement information are sensitive in which ways (e.g. by adding a list of them) so that implementers can get this right.\u00a0 As-is, I don't think there's enough information in the draft for coders to do a good job. (7) 5.2, (just checking) - aren't there models for using DHCP where the subscriber-id is considered sensitive information? I seem to recall some cases like that but didn't check. Did you?  (8) 5.2, if I tell the LIS my DHCP relay/server address doesn't that allow the LIS to start pretending to be that DHCP server in some networks? I didn't see that noted in section 7. (9) 5.3, Why is so much information about an AP allowed to be sent? Why is that all needed?\u00a0  (10) section 6, why don't you say that measurement data MUST be afforded the same protection as location information and then say what that means for interop, e.g. that if location data has to go via TLS, then so MUST measurement data? (11) 6.1, \"No entity is permited to redistribute measurement data\" also needs a MUST NOT I think, as in \"A LIS MUST NOT redistribute measurement data.\" But then in 6.2 you (twice) say \"unless directed to do so by the Device\" - I didn't get how a device can do that? (12) 6.3 - I just want to check since I don't think I get the implications. When would a device request a location URI? What does \"use the measurement data in serving requests\" mean? If it means, use the measurements to generate the URI and location information that seems ok (modulo the 1st question). If it means \"also expose the measurement when the location URI is de-referenced\" that'd be problematic I think. (13) 6.4 - I don't understand how the \"MUST be trusted\" by the LIS thing works. Can you explain?\u00a0 And if that's not covered here, where it it specified?\u00a0 Otherwise how can it be implemented so as to achieve interop? (14) 7.1 - why are threats caused by a LIS revealing location measurements or location information not part of the threat model? (15) 7.1.1 - I don't get this - are you saying that knowing measurement data alone is enough to convince any LIS to hand over location information? That would seem fatal if true so I must be missing something. (16) 7.2.1 to 7.2.3 - what are the mitigations here that I can implement? I don't see 'em. (17) 7.2.4 - this has a MUST saying to put \"trusted\" location information first, but doesn't say how to decide if location information is trusted or not so how can I implement that MUST? (18) 7.2.5 - I don't understand what \"stateful examination\" might mean here so how can I implement something? Can you clarify what you mean?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-10-02 13:27:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-06-28 07:20:36-07:00",
+        "text": "Thanks for clearing my discuss points. The IPR declaration check/clear-up is the only remaining issue. Ping me when you think that's sorted (or if its sorted already, sorry but I've forgotten, and you need to ping me again:-) (2) There are a bunch of IPR declarations on this. I didn't see where the WG had discussed those. Can someone point me at the relevant bit of WG archive or minutes? I did see discussion on IPR related to 4119 but I've no idea if that's the same thing or not. I'm also not clear if the 4 declarations are really one or not, but I expect the WG know, so I'm just checking that the WG did consider all that and were ok to proceed. (The write-up says there is one disclosure and that was discussed, but I see 4, hence the question, maybe its just the writeup or maybe all 4 are really one thing, I dunno.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-02 13:27:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-06-10 11:43:19-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-10 11:43:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-06-13 06:15:45-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-04 09:59:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-10-28 15:32:43-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-13 06:15:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7105",
+  "evaluation_end": "2013-10-28 15:32:43-07:00",
+  "evaluation_start": "2013-06-04 09:59:53-07:00"
+}

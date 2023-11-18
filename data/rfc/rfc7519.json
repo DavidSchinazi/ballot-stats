@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-09-28 12:11:57-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-28 12:11:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-10-01 12:24:29-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-11-04 15:52:42-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-01 12:24:29-07:00",
+        "text": "== Section 12 == \"A JWT may contain privacy-sensitive information.\u00a0 When this is the \u00a0  case, measures must be taken to prevent disclosure of this \u00a0  information to unintended parties.\"\u00a0  It seems to me that this should be a normative MUST, particularly in light of the fact that claims are being defined that are meant to directly identify users (e.g., sub) and other claims defined here or later could do so as well. \"One way to achieve this is to use \u00a0  an encrypted JWT.\u00a0 Another way is to ensure that JWTs containing \u00a0  unencrypted privacy-sensitive information are only transmitted over \u00a0  encrypted channels or protocols, such as TLS.\" Since sensitive JWTs should be protected from both intermediary observation and from being sent to unintended recipients, I would suggest: One way to achieve this is to use an encrypted JWT and authenticate the recipient. Another way is to ensure that JWTs containing unencrypted privacy-sensitive information are only transmitted over encrypted channels or protocols that also support endpoint authentication, such as TLS.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-04 15:52:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-01 08:53:59-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-21 11:45:44-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-01 08:53:59-07:00",
+        "text": "I have two points that I'd like to get resolved before happily approving this fine document: -- Section 7.1 -- The comparison you specify is as specified in  RFC 7159 , Section 8.3, which is to \"transform the textual representation into sequences of Unicode code units and then perform the comparison numerically, code unit by code unit\".\u00a0 This has no regard for text case, and so it's a case-sensitive comparison. And, yet, Sections 5.1 and 5.2 specify that the values of typ and cty are case-insensitive, and specify using upper case as a SHOULD, for \"compatibility with legacy implementations\". It doesn't seem that \"legacy\" has anything to do with this: someone conforming to *this* specification will compare the values of typ and cty Unicode-character by Unicode-character, and will fail to match \"JWT\" with \"jwt\". Is there not a problem here? -- Section 10.3.1 -- Nice that you cite 2046 for media types, but the *registration* of media types is documented in  RFC 6838 , and this document doesn't quite conform to that.\u00a0 The only thing missing in the doc is \"Fragment identifier considerations\" in the registration template, but 6838 also strongly suggests review of the media-type registration on the media-types mailing list.\u00a0 Given that this will not get expert review (because it's an IETF-stream RFC), I'd like to ask for an explicit review on the media-types list to make sure that the registration information is complete and makes sense.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-21 11:45:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-09-29 17:01:08-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-01 07:54:22-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-09-29 17:01:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-02 04:51:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-01 07:54:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-02 04:51:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-01 14:36:23-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-01 14:36:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-10-01 22:43:55-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-01 22:43:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-09-25 08:00:32-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-09-30 13:14:54-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-30 13:14:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-02 07:55:23-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-02 07:55:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-01 19:56:56-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-10 14:36:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-01 19:56:56-07:00",
+        "text": "Section 7. In order to prevent confusion between secured and Unsecured JWTs, the validation steps here need to call for the application to specify which is required.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-10 14:36:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-10-02 08:24:06-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-02 08:24:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-02 05:03:03-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-06 14:43:10-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-10-02 05:03:03-07:00",
+        "text": "(1) 4.1.1 and elsewhere you say case-sensitive: the same thing I raised wrt DNS names for another JOSE spec - do you need to say those SHOULD be [upper|lower]cased when used in these? (2) Section 8: Why is \"none\" MTI? That seems both broken and going in the oppostite direction from other WGs and so should be explicitly jusified I think. (If a good enough justification exists that is.) (3) Section 12: another way to handle privacy is to not include sensitive data - I think you ought mention that as a bit of thought along those lines can be much simpler than putting in place the key management to handle thoughtlessly included PII.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-21 06:16:09-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-10-06 14:43:10-07:00",
+        "text": "(1) cleared, being handled elsewhere (2) Section 8: Why is \"none\" MTI? That seems both broken and going in the oppostite direction from other WGs and so should be explicitly jusified I think. (If a good enough justification exists that is.) (3) Section 12: another way to handle privacy is to not include sensitive data - I think you ought mention that as a bit of thought along those lines can be much simpler than putting in place the key management to handle thoughtlessly included PII.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-11-12 03:24:16-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-21 06:16:09-07:00",
+        "text": "Still checking on #2 (1) cleared, being handled elsewhere (2) Section 8: Why is \"none\" MTI? That seems both broken and going in the oppostite direction from other WGs and so should be explicitly jusified I think. (If a good enough justification exists that is.) (3) cleared",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-12 03:24:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-02 06:58:22-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-25 08:00:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-01-12 16:13:10-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-02 06:58:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7519",
+  "evaluation_end": "2015-01-12 16:13:10-08:00",
+  "evaluation_start": "2014-09-25 08:00:32-07:00"
+}

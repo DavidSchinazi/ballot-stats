@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-04-21 15:46:22-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-21 15:46:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-04-24 12:08:40-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-24 12:08:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-04-24 05:52:54-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-04-26 03:48:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-04-24 05:52:54-07:00",
+        "text": "No problem with the publication of this document.  However, before doing so, I have 2 points I want to address: I'm missing something, and I don't know what. 1.  In this sentence, I wonder which jitter calculation you were speaking about: \u00a0  The new block type \u00a0  supports the reporting of the proportion of packets discarded by the \u00a0  receiver due to jitter.\u00a0 The discards during discard bursts are \u00a0  reported, together with the number of bursts.\u00a0 This block is intended \u00a0  to be used in conjunction with [DISCARD] which provides the total \u00a0  packets discarded, and on which this block therefore depends. \u00a0  However the metric in [DISCARD] may be used independently of the \u00a0  metrics in this block. I know of the two methods [ RFC 5481 ] \u00a0 \u00a0 \u00a0 4.1. IPDV: Inter-Packet Delay Variation ........................11 \u00a0 \u00a0 \u00a0 4.2. PDV: Packet Delay Variation ...............................11 Or maybe the results are independent of the jitter calculation method, in which case you want to clearly mention it. Maybe it's explained with this sentence, but I don't know how to interpret it: \u00a0  To accommodate the range of jitter buffer \u00a0  algorithms and packet discard logic that may be used by implementors, \u00a0  the method used to distinguish between bursts and gaps may be an \u00a0  equivalent method to that defined in[ RFC3611 ]. So it \"may be an equivalent method to that defined in[ RFC3611 ].\" What if it's not the case? 2. You define \"Discarded\" as: \u00a0 \u00a0 \u00a0 A packet that arrives within \u00a0 \u00a0 \u00a0 this time window but is too early or late to be played out or \u00a0 \u00a0 \u00a0 thrown away before playout due to packet duplication or redundancy \u00a0 \u00a0 \u00a0 shall be regarded as discarded.  I wonder: what's the point to include the discarded duplicated packet. Those don't affect the quality. On top of that, it's inconsistent with \"Discard\" definition of  RFC 3611 . You wrote in the draft: \u00a0  The definitions of Burst, Gap, Loss and Discard are consistent with \u00a0  definitions in [ RFC3611 ]. And  RFC 3611  Discard mentions: \u00a0  discard rate: 8 bits \u00a0 \u00a0 \u00a0 \u00a0  The fraction of RTP data packets from the source that have been \u00a0 \u00a0 \u00a0 \u00a0  discarded since the beginning of reception, due to late or \u00a0 \u00a0 \u00a0 \u00a0  early arrival, under-run or overflow at the receiving jitter \u00a0 \u00a0 \u00a0 \u00a0  buffer.\u00a0 This value is expressed as a fixed point number with \u00a0 \u00a0 \u00a0 \u00a0  the binary point at the left edge of the field.\u00a0 It is \u00a0 \u00a0 \u00a0 \u00a0  calculated by dividing the total number of packets discarded \u00a0 \u00a0 \u00a0 \u00a0  (excluding duplicate packet discards) by the total number of \u00a0 \u00a0 \u00a0 \u00a0  packets expected, multiplying the result of the division by \u00a0 \u00a0 \u00a0 \u00a0  256, limiting the maximum value to 255 (to avoid overflow), and \u00a0 \u00a0 \u00a0 \u00a0  taking the integer part. So you want to report the \"Packets discarded in bursts\", i.e. \"The total number of packets discarded during discard bursts.\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-26 03:48:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-04-17 06:53:13-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-17 06:53:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-04-11 23:33:37-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-04-24 00:53:35-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-24 00:53:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-04-25 08:04:49-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-25 08:04:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-04-22 02:48:04-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-22 02:48:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-04-24 06:57:03-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-24 06:57:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-04-24 20:35:54-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-24 20:35:54-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-04-24 18:30:35-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-24 18:30:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-04-22 08:29:40-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-04-26 07:39:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-04-22 08:29:40-07:00",
+        "text": "There are a couple of things, esp. [DISCARD] that appear like they ought be normative references here, or am I wrong? If I'm not wrong, then making [DISCARD] normative will sort this discuss. Otherwise, I'm concerned that [DISCARD] could change in ways that break code after we've approved this one, causing a bit of a mess. For example, see my comment on 2.1 below, where a change to [DISCARD] could cause the numbers reported by an implementation of this to be wrong if that implementation was based on [DISCARD] vesion -12.\u00a0 (The other things that ought be normative are an RFC and a draft in the RFC editor queue so aren't a discuss-level problem for me.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-26 07:39:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-04-23 10:59:12-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-23 10:59:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-04-25 06:33:39-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-11 23:33:37-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-05-07 09:09:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-25 06:33:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7003",
+  "evaluation_end": "2013-05-07 09:09:52-07:00",
+  "evaluation_start": "2013-04-11 23:33:37-07:00"
+}

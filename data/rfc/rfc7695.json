@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-07-08 15:06:03-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 15:06:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-07-08 11:20:38-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 11:20:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-07-06 21:08:24-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-06 21:08:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-06-25 06:01:26-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-25 06:01:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-07-07 19:21:50-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-07 19:21:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-07-09 06:26:17-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-09 06:26:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-07-08 08:34:37-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-07-09 05:30:38-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-07-08 08:34:37-07:00",
+        "text": "I don't object to the publication of this document, but there are some issues that need to be remedied. 1. Section 5 provides the considerations for selecting prefixes. However, those considerations are incomplete.  RFC 7421  provides the analysis for the use of the /64 boundary.\u00a0 The Homenet Architecture ( RFC 7368 ) discusses various Homenet-related issues around not getting sufficient address space to allocate /64 prefixes to links.  RFC 6164  discusses the use of 127-bit prefixes on point-to-point links. Why does this section not mention any of these considerations when selecting a prefix? 2. I am raising Alvaro's point about the impact of topology changes to a DISCUSS.\u00a0 I think there needs to be sufficient discussion in the document on the impact of topology changes on the prefix assignment algorithm and the impact of changing prefix assignments on nodes in the network. This ties in to the point raised by Brian Carpenter on the claim in the Introduction that this algorithm can be used in \"fully autonomic as well as professionally managed networks\". This is especially true when convergence is described as occurring \"eventually\". 3. I understand that this document became standalone when the HNCP and DNCP documents split. What dependencies/assumptions does this document have on either one of them?\u00a0 There appears to be some assumptions on the Node ID and the flood algorithm.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-09-01 08:11:56-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-07-09 05:30:38-07:00",
+        "text": "Updated position based on feedback from Int-Dir review (Suresh Krishnan)... I don't object to the publication of this document, but there are some issues that need to be remedied. 1. Section 5 provides the considerations for selecting prefixes. However, those considerations are incomplete.  RFC 7421  provides the analysis for the use of the /64 boundary.\u00a0 The Homenet Architecture ( RFC 7368 ) discusses various Homenet-related issues around not getting sufficient address space to allocate /64 prefixes to links.  RFC 6164  discusses the use of 127-bit prefixes on point-to-point links. Why does this section not mention any of these considerations when selecting a prefix? 2. I am raising Alvaro's point about the impact of topology changes to a DISCUSS.\u00a0 I think there needs to be sufficient discussion in the document on the impact of topology changes on the prefix assignment algorithm and the impact of changing prefix assignments on nodes in the network. This ties in to the point raised by Brian Carpenter on the claim in the Introduction that this algorithm can be used in \"fully autonomic as well as professionally managed networks\". This is especially true when convergence is described as occurring \"eventually\". 3. I understand that this document became standalone when the HNCP and DNCP documents split. What dependencies/assumptions does this document have on either one of them?\u00a0 There appears to be some assumptions on the Node ID and the flood algorithm. 4. How does the algorithm deal with prefix delegations that have holes (e.g.  RFC6603 )? This text seems to preclude such delegations. 5. Section 6 discusses Listener nodes. Does there need to be some discussion/warning about links that consist of all Listeners?\u00a0 The link will not get a prefix assigned to it in such a situation. 6. How does this approach deal with asynchronous link state changes?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-01 08:11:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-07-08 12:34:28-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 12:34:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-07-08 15:05:06-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 15:05:06-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-07-08 21:58:00-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 21:58:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-07-08 14:39:59-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 14:39:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-07-09 01:07:53-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-09 01:07:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-07-08 11:26:19-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 11:26:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-07-08 08:36:40-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-08 08:36:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-06-15 17:26:33-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-09-10 07:47:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-15 17:26:33-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7695",
+  "evaluation_end": "2015-09-10 07:47:12-07:00",
+  "evaluation_start": "2015-06-15 17:26:33-07:00"
+}

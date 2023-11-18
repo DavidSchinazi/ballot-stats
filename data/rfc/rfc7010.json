@@ -1,0 +1,317 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-05-03 07:11:46-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-03 07:11:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-05-10 04:54:33-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-10 04:54:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-05-15 09:29:31-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-06-10 05:27:00-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-05-15 09:29:31-07:00",
+        "text": "In section 7, you miss a discussion regarding the host/router unique id in the NMS applications Let's start with syslog, SNMP notification, and IPFIX. For all of these protocols, the host or router id is the UDP message source IP address. Sometimes this matches the device loopback IP address: indeed, we can force the loopback IP address as the source IP address for IPFIX/syslog message/SNMP notifications. If the source IP address is changed (whether it matches the loopback is irrelevant), the syslogd, trapd, or IPFIX collector will consider that a new device appeared in the network. This is a problem. I don't want to say that the IP address mapping must be sent in band (i.e. in SNMP, syslog, or IPFIX), maybe updating DNS is sufficient, maybe querying a UUID is the solution, or maybe the solution depends on the protocol (sending the MAC or a UUID in IPFIX would help, as Options Template Record). So maybe there are different solutions for the different protocols. A discussion/some text is required concerning the host and router unique IDs in NMS applications: these applications should be aware of the IP address mapping. This might lead to some extra bullet point in the section 9.4",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-06-24 05:53:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-06-10 05:27:00-07:00",
+        "text": "My initial DISCUSS was:  In section 7, you miss a discussion regarding the host/router unique id in the NMS applications Let's start with syslog, SNMP notification, and IPFIX. For all of these protocols, the host or router id is the UDP message source IP address. Sometimes this matches the device loopback IP address: indeed, we can force the loopback IP address as the source IP address for IPFIX/syslog message/SNMP notifications. If the source IP address is changed (whether it matches the loopback is irrelevant), the syslogd, trapd, or IPFIX collector will consider that a new device appeared in the network. This is a problem. I don't want to say that the IP address mapping must be sent in band (i.e. in SNMP, syslog, or IPFIX), maybe updating DNS is sufficient, maybe querying a UUID is the solution, or maybe the solution depends on the protocol (sending the MAC or a UUID in IPFIX would help, as Options Template Record). So maybe there are different solutions for the different protocols. A discussion/some text is required concerning the host and router unique IDs in NMS applications: these applications should be aware of the IP address mapping. This might lead to some extra bullet point in the section 9.4 You have correctly addressed one part of the DISCUSS, in section 7.1. Renumbering Notification, with \"logs collected through syslog, SNMP notification, IPFIX, etc.\", but you miss a second part of it: the host/router unique id in the NMS applications. So any NMS topology map, based on network discovery, needs to be aware of the host/router unique id mappings. This new text should be section 7.2, or even better in a new section.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-24 05:53:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-05-13 06:43:47-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-13 06:43:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-05-16 04:55:43-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-16 04:55:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-05-15 13:45:31-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-15 13:45:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-04-30 01:31:48-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-05-14 08:01:34-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-14 08:01:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-05-15 18:48:13-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-15 18:48:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-05-15 08:45:14-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-15 08:45:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-05-14 11:08:51-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-14 11:08:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-05-15 12:28:33-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-15 12:28:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-05-14 05:06:40-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-14 05:06:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-05-10 07:52:30-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-10 07:52:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-05-15 16:07:23-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-30 01:31:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-05-15 16:20:37-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-05-15 16:07:23-07:00",
+        "text": "I don't think this document is ready for publication yet.\u00a0  I've mentioned in the comments a number of cases where the document doesn't appear to be referring to use cases that could actually happen; I'm concerned that as it is written, it will lead readers to misunderstand how renumbering ought to work, and will actually lead them to do things that make their lives worse during a renumbering event. At the very least, I think that this document needs to strongly emphasize the need for readers to familiarize themselves with  RFC 4192  before proceeding.\u00a0  I've included a bunch of comments that I hope will help to address some of the issues that I'm talking about, if the authors agree. The fundamental concern in this DISCUSS is that the document seems unclear as to the exact scenario it is addressing.\u00a0  If it is essentially addressing the scenario described in  RFC 4192 , the document needs to be reviewed to make sure that the gaps identified are real gaps that could actually happen in an  RFC 4192  scenario.\u00a0  If that is not the scenario that this document is intended to address, the document needs to clarify what scenario it does intend to address. I think the document is going in a good direction, and I would support publication if this problem can be addressed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-05-15 16:34:05-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-05-15 16:20:37-07:00",
+        "text": "This document seems unclear as to the exact scenario it is addressing.\u00a0  If it is essentially addressing the scenario described in  RFC 4192 , the document needs to be reviewed to make sure that the gaps identified are real gaps that could actually happen in an  RFC 4192  scenario.\u00a0  If that is not the scenario that this document is intended to address, the document needs to clarify what scenario it does intend to address. I've mentioned in the comments a number of cases where the document doesn't appear to be referring to use cases that could actually happen in an  RFC 4192  scenario; I'm concerned that as it is written, it will lead readers to misunderstand how renumbering ought to work, and will actually lead them to do things that make their lives worse during a renumbering event.\u00a0  At the very least, I think the document needs to strongly advice readers to familiarize themselves with  RFC 4192  before proceeding, because if they read this document without reading 4192, I really think they will get the wrong impression. I think the document is going in a good direction, and I would support publication if this problem can be addressed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-06-17 06:52:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-05-15 16:34:05-07:00",
+        "text": "This document seems unclear as to the exact scenario it is addressing.\u00a0  If it is essentially addressing the scenario described in  RFC 4192 , the document needs to be reviewed to make sure that the gaps identified are real gaps that could actually happen in an  RFC 4192  scenario.\u00a0  If that is not the scenario that this document is intended to address, the document needs to clarify what scenario it does intend to address. I've mentioned in the comments a number of cases where the document doesn't appear to be referring to use cases that could actually happen in an  RFC 4192  scenario; I'm concerned that as it is written, it will lead readers to misunderstand how renumbering ought to work, and will actually lead them to do things that make their lives worse during a renumbering event.\u00a0  At the very least, I think the document needs to strongly state that it presumes the reader already has a clear understanding of  RFC 4192 , because if they read this document without reading 4192, I really think they will get the wrong impression. I think the document is going in a good direction, and I would support publication if this problem can be addressed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-07-11 08:06:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-17 06:52:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7010",
+  "evaluation_end": "2013-07-11 08:06:08-07:00",
+  "evaluation_start": "2013-04-30 01:31:48-07:00"
+}

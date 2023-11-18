@@ -1,0 +1,253 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-29 15:04:25-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-30 10:05:59-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-29 15:04:25-07:00",
+        "text": "I could not parse the IANA considerations section of this document. \u00a0  IANA is requested to allocate the following: \u00a0  o\u00a0 One DHCPv6 option codes TBD1 for OPTION_4RD of Section 4.9 \u00a0 \u00a0 \u00a0 respectively (to be added to section 24.3 of [ RFC3315 ]. \u00a0 \u00a0 \u00a0 Encapsulated options of OPTION_4RD, 4RD_MAP_RULE (TBD2) and \u00a0 \u00a0 \u00a0 4RD_NON_MAP_RULE (TBD3) should also be recorded into the DHCPv6 \u00a0 \u00a0 \u00a0 option code space. \u00a0 \u00a0 \u00a0 \u00a0  Value\u00a0  |\u00a0 \u00a0 Description\u00a0  |\u00a0 Reference \u00a0 \u00a0 \u00a0 -----------+------------------+--------------- \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 TBD1\u00a0  |\u00a0 \u00a0 OPTION_4RD\u00a0 \u00a0 | this document \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 TBD2\u00a0  |\u00a0  4RD_MAP_RULE\u00a0  | this document \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 TBD3\u00a0  | 4RD_NON_MAP_RULE | this document I think it is just jumbled words. You are asking for three new DHCPv6 option codes from the \"Dynamic Host Configuration Protocol for IPv6 (DHCPv6)\" registry \"Option Codes\" sub-registry. Now, that sub-registry is marked \"Expert Review and Standards Action\" which is slightly ambiguous.\u00a0 So I went to  RFC 3315  where I found... \u00a0  New DHCP option codes are tentatively assigned after the \u00a0  specification for the associated option, published as an Internet \u00a0  Draft, has received expert review by a designated expert [11].\u00a0 The \u00a0  final assignment of DHCP option codes is through Standards Action, as \u00a0  defined in  RFC 2434  [11]. So, you can't have code points for an Experimental RFC. Rather than move this document to the Standards Track, I suggest you take advantage of  draft-ietf-softwire-map-dhcp  which is on the Standards Track and is already in the pipe.\u00a0 If you update that document to ask for these code points, and include a normative reference to this I-D everything should work out fine.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 10:05:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-29 10:44:03-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 10:44:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-10-30 05:12:15-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 05:12:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-14 07:54:59-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-14 07:54:59-07:00",
+        "text": "I find it a dis-service to the community for the softwire WG to put forth multiple solutions that solve essentially the same problem ( https://mailarchive.ietf.org/arch/msg/ietf/jcscmIHmAQSvXLAlLLvfhnC2P8A ).\u00a0 I believe the confusion caused by a myriad of solutions in this space, regardless of whether they are Standards Track or Experimental, will adversely impact vendors, operators, and end-users.\u00a0 My only hope is that this confusion will speed up the transition to IPv6-only operations within the affected networks.",
+        "type": "Abstain"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-30 06:50:01-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 06:50:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-10-30 00:33:49-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 00:33:49-07:00",
+        "text": "I don't see a lot of positive outcomes from advancing additional transition mechanisms I find myself altogether better off when I can avoid using any of them.",
+        "type": "Abstain"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-10-26 16:26:02-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-12-08 18:39:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-26 16:26:02-07:00",
+        "text": "Could you please work through the suggestions made in the SecDir review on the SecDir list with Derek, I don't see a response on list yet.\u00a0 I agree with Derek that the first section in the security considerations section on anti-spoofing is difficult to understand as written: Spoofing attacks \u00a0 \u00a0 \u00a0 With IPv6 ingress filtering effective in the Domain [ RFC3704 ], and \u00a0 \u00a0 \u00a0 with consistency checks between 4rd IPv4 and IPv6 addresses of \u00a0 \u00a0 \u00a0 Section 4.5, no spoofing opportunity in IPv4 is introduced by 4rd. I'm not exactly sure what is meant, otherwise, I'd suggest text. Here is a link to the SecDir review: https://www.ietf.org/mail-archive/web/secdir/current/msg05134.html Thank you.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-08 18:39:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-29 15:31:51-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 15:31:51-07:00",
+        "text": "I'm with Brian and Adrian on this draft: It is not clear to me why the softwire WG\u00a0 is publishing this document. It could have been submitted via the ISE, if there is the desire to document the existence of a different approach.",
+        "type": "Abstain"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-30 00:19:52-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 00:19:52-07:00",
+        "text": "or the same reasons as Brian.",
+        "type": "Abstain"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-12 17:40:30-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-03-09 10:31:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-12 17:40:30-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7600",
+  "evaluation_end": "2015-03-09 10:31:25-07:00",
+  "evaluation_start": "2014-10-12 17:40:30-07:00"
+}

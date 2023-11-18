@@ -1,0 +1,547 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-13 12:08:31-08:00",
+        "end_reason": "new_position",
+        "start": "2009-03-22 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-05 09:57:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-13 12:08:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-02-17 20:05:31-08:00",
+        "end_reason": "new_position",
+        "start": "2012-03-25 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-03-01 02:11:47-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-02-17 20:05:31-08:00",
+        "text": "This document's been around for a long time, and we should get it through already. That said, there's an issue I want to talk about: -- Section 3 -- \u00a0  future-specifier = gsma-defined-nonempty ;GSMA defined and \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ;IETF consensus \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ;required ... \u00a0  Additional NSS may be added for future identifiers needed by the \u00a0  GSMA using the procedure for URN NSS changes and additions \u00a0  (currently through the publication of future Informational RFCs \u00a0  approved by IETF consensus). Having registered your \"gsma\" namespace and defined a \"urn:gsma:imei:\" sub-namespace, do you really want to require IETF consensus to create other sub-namespaces under \"urn:gsma:\"?\u00a0 That seems odd.\u00a0 I should think you'd want to have the authority to register things under \"urn:gsma:\" go to some GSMA management entity instead of to the IETF. If you really want to have it be through IETF consensus, I'll clear my DISCUSS forthwith.\u00a0 But let's please talk about what the right path here is.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-03-03 00:37:35-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-03-01 02:11:47-08:00",
+        "text": "UPDATED after some discussion... Having registered your \"gsma\" namespace and defined a \"urn:gsma:imei:\" sub-namespace, do you really want to require IETF consensus to create other sub-namespaces under \"urn:gsma:\"?\u00a0 That seems odd.\u00a0 I should think you'd want to have the authority to register things under \"urn:gsma:\" go to some GSMA management entity instead of to the IETF. I discussed this with Cullen, and I understand the issue: the SIP community wants to be sure that other sub-namespaces, with different semantics, can't be used where gsma:imei: URNs can, as an instance ID.  I think we're already mostly there, because the other document, draft-allen-dispatch-imei-urn-as-instanceid , is already full of references to \"GSMA IMEI URN\". I propose the following changes to this document, which should give full control of the gsma: URN namespace to GSMA, where it belongs, while highlighting that only the gsma:imei: URNs are applicable to the SIP instance ID.\u00a0 I've discussed this with Cullen, and he's OK with it. In Section 3: OLD \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  future-specifier = gsma-defined-nonempty ;GSMA defined and \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ;IETF consensus \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ;required NEW \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  future-specifier = gsma-defined-nonempty ;GSMA defined END OLD \u00a0 \u00a0 \u00a0 The GSMA will take responsibility for the NSS 'imei'. \u00a0 \u00a0 \u00a0 Additional NSS may be added for future identifiers needed by the \u00a0 \u00a0 \u00a0 GSMA using the procedure for URN NSS changes and additions \u00a0 \u00a0 \u00a0 (currently through the publication of future Informational RFCs \u00a0 \u00a0 \u00a0 approved by IETF consensus). NEW \u00a0 \u00a0 \u00a0 The GSMA will take responsibility for the \"gsma\" namespace, \u00a0 \u00a0 \u00a0 including the \"imei\" NSS. \u00a0 \u00a0 \u00a0 Additional NSS may be added for future identifiers needed by the \u00a0 \u00a0 \u00a0 GSMA, at their discretion.\u00a0 Only URNs with the \"imei\" NSS are \u00a0 \u00a0 \u00a0 considered to be \"GSMA IMEI URNs\", and use in IETF protocols of \u00a0 \u00a0 \u00a0 other NSS that might be defined in the future will require \u00a0 \u00a0 \u00a0 IETF consensus. END In Section 4.1: OLD \u00a0  Any change to the format specified here requires the use of the \u00a0  procedure for URN NSS changes and additions (currently the \u00a0  publication of a future Informational RFCs approved by IETF \u00a0  consensus). NEW \u00a0   \u00a0  Any change to the format of the \"imei\" NSS requires the use of \u00a0  the procedure for URN NSS changes and additions (currently the \u00a0  publication of a future Informational RFCs approved by IETF \u00a0  consensus). END",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-03-05 09:57:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-03 00:37:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Chris Newman": [
+      {
+        "ad": "Chris Newman",
+        "end": "2007-05-04 17:51:07-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Chris Newman",
+        "end": "2009-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2007-05-04 17:51:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Cullen Jennings": [
+      {
+        "ad": "Cullen Jennings",
+        "end": "2007-05-22 01:58:15-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Cullen Jennings",
+        "end": "2007-06-14 11:41:25-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2007-05-22 01:58:15-07:00",
+        "text": "There is nothing experimental about how this URN will be used (Just a few billion end hosts :-) - I think it needs to be standards track.  The motivation section implies this is a solution to problem which I don't think we have IETF consensus that this is a solution too. That said, if GSMA wants a URN for IMEI's, i think it is reasonable to ask for that without getting into how they are used. However, the whole motivation section is something we probably don't have consensus on - this could be fixed by removing it.  I think we need to verify that GSMA will run the allocation - this is purely a formality - I'm sure the answer will be yes but this document asserts GSMA will do something and it likely worth checking.\u00a0 Is there agreement at 3GPP that use this that the syntax is appropriate? (I just wondering about the - separators). To resolve this we just need to consider how we would verify that 3GPP was OK with this.  I think the documents should register two URNs, imei and imeisv and not arbitrary other ones because the arbitrary space does not seem to have an allocation procedure in place that ensure they stay a URN.  It is not clear to me that IMEI are required to be in tamper proof hardware - particularly in the case of IMS compatible softphones. Could we just remove this.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Cullen Jennings",
+        "end": "2007-10-06 16:04:55-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2007-06-14 11:41:25-07:00",
+        "text": "There is nothing experimental about how this URN will be used (Just a few billion end hosts :-) - I am fine with informational The motivation section implies this is a solution to problem which I don't think we have IETF consensus that this is a solution too. That said, if GSMA wants a URN for IMEI's, i think it is reasonable to ask for that without getting into how they are used. However, the whole motivation section is something we probably don't have consensus on - this could be fixed by removing it.  I think we need to verify that GSMA will run the allocation - this is purely a formality - I'm sure the answer will be yes but this document asserts GSMA will do something and it likely worth checking.\u00a0 Is there agreement at 3GPP that use this that the syntax is appropriate? (I just wondering about the - separators). To resolve this we just need to consider how we would verify that 3GPP was OK with this.  I think the documents should register two URNs, imei and imeisv and not arbitrary other ones because the arbitrary space does not seem to have an allocation procedure in place that ensure they stay a URN.  It is not clear to me that IMEI are required to be in tamper proof hardware - particularly in the case of IMS compatible softphones. Could we just remove this.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Cullen Jennings",
+        "end": "2009-04-02 08:14:45-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2007-10-06 16:04:55-07:00",
+        "text": "Just updating this based on having learned more about URNs. I have removed objects about allocating a subdeligated space.  There is nothing experimental about how this URN will be used (Just a few billion end hosts :-) - I am fine with informational. It also seems that an experimental may not imply the long term stability one is looking for in defining a new registry for URNs.  The motivation section implies this is a solution to problem which I don't think we have IETF consensus that this is a solution too. That said, if GSMA wants a URN for IMEI's, i think it is reasonable to ask for that without getting into how they are used. However, the whole motivation section is something we probably don't have consensus on - this could be fixed by removing it.  I think we need to verify that GSMA will run the allocation and we will not end up with nearly identical URNs from 3GPP and 3GPP2.\u00a0  It is not clear to me that IMEI are required to be in tamper proof hardware - particularly in the case of IMS compatible softphones. Could we just remove this.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Cullen Jennings",
+        "end": "2009-04-24 18:18:39-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2009-04-02 08:14:45-07:00",
+        "text": "I want to understand why this request is coming from GSM not 3GPP and be sure that IETF is not being used as a tool in some politics between two other SDOs. The text  \u00a0  The IMEI and IMEISV URNs MAY be used as an Instance ID and included \u00a0  in the sip.instance parameter of a Contact header field of a SIP \u00a0  Register request as specified in  draft-ietf-sip-outbound  [8]. requires an IETF RFC that updates SIP outbound to define this. This use of IMEISV in outbound would directly contradict the text in the security section of this draft. I view overriding the 3GPP specs on tamper residence of IMEI in an IETF spec as a really bad plan. This is not within the scope of IETF. One of the key normative references [3], does not exist leading me to seriously question the stability of such things.  The IANA consideration make no sense. I don't understand what usage would require the software version in the URN other than the whole malware prevention proposal from RIM. It seemed everyone thought that there were much better ways to deal with this than using the URN so I don't understand the need for the SV version and see no IETF discussion, much less consensus, about why it is needed.  The idea that the IMEISV has to be tamper resistant and can be changed by malware software, but that an over the air software upgrade has to change exactly IMEISV sounds to me as something that has a lot of wishful thinking involved with it. I'd like to know how to implement this.  The requirements of this draft make it difficult for a soft phone running on a PC to ever use one of these. While this would be great for manufactures of hardware phones to lock out other types of phones, I doubt it has IETF consensus. This draft does far more than register the IMEI as a URN. I have no problems with the IMEI as an URN part of the draft.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Cullen Jennings",
+        "end": "2010-03-26 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2009-04-24 18:18:39-07:00",
+        "text": "The most resent version did not seem to address my comments not have I received any email on them that I can find. If I'm missing some email, please let me know.  The text  \u00a0  The IMEI and IMEISV URNs MAY be used as an Instance ID and included \u00a0  in the sip.instance parameter of a Contact header field of a SIP \u00a0  Register request as specified in  draft-ietf-sip-outbound  [8]. requires an IETF RFC that updates SIP outbound to define this. This use of IMEISV in outbound would directly contradict the text in the security section of this draft. I view overriding the 3GPP specs on tamper residence of IMEI in an IETF spec as a really bad plan. This is not within the scope of IETF.n As it stands the advice in the draft does not seem to be implementable.  One of the key normative references [3], does not exist leading me to seriously question the stability of such things.  I don't understand what usage would require the software version in the URN other than the whole malware prevention proposal from RIM. It seemed everyone thought that there were much better ways to deal with this than using the URN so I don't understand the need for the SV version and see no IETF discussion, much less consensus, about why it is needed. For the reason stated in the security consideration, this seems like an inappropriate type of information in the URN for a device.  This draft does address the reasons for IMEI but URN but not a namespace delegation.  The idea that the IMEISV has to be tamper resistant and can be changed by malware software, but that an over the air software upgrade has to change exactly IMEISV sounds to me as something that has a lot of wishful thinking involved with it. I'd like to know how to implement this.  The requirements of this draft make it difficult for a soft phone running on a PC to ever use one of these. While this would be great for manufactures of hardware phones to lock out other types of phones, I doubt it has IETF consensus. This draft does far more than register the IMEI as a URN. I have no problems with the IMEI as an URN part of the draft.",
+        "type": "Discuss"
+      }
+    ],
+    "Dan Romascanu": [
+      {
+        "ad": "Dan Romascanu",
+        "end": "2007-05-08 11:14:58-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Dan Romascanu",
+        "end": "2009-04-01 07:02:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2007-05-08 11:14:58-07:00",
+        "text": "From Section 1:  \u00a0  This specification defines a Uniform Resource Name namespace for the \u00a0  GSMA (GSM Association) and sub namespaces for the IMEI (International \u00a0  Mobile station Equipment Identity), and for the IMEISV (International \u00a0  Mobile station Equipment Identity and Software Version number as per \u00a0  the namespace registration requirement found in [1]. [1] is  RFC3406 . However, the document never makes clear what type of URN space it is requiring as per Section 4 of  RFC 3406 . If this is targeting Experimental, as the Proposed Status of the document suggests the name should take the form X- as per Section 4.1 in  RFC 3406 . If this targets Formal, the Community Considerations section cannot be void, and an IANA section should be present, as per Section 4.3 in  RFC 3406 .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Dan Romascanu",
+        "end": "2012-03-30 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2009-04-01 07:02:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "David Ward": [
+      {
+        "ad": "David Ward",
+        "end": "2007-05-09 23:51:21-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "David Ward",
+        "end": "2009-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2007-05-09 23:51:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-02-13 11:53:17-08:00",
+        "end_reason": "new_position",
+        "start": "2010-03-21 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-05 09:57:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-13 11:53:17-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2007-05-09 15:10:11-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2012-03-30 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2007-05-09 15:10:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-02-20 07:39:48-08:00",
+        "end_reason": "new_position",
+        "start": "2013-03-10 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-03-05 09:57:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 07:39:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jon Peterson": [
+      {
+        "ad": "Jon Peterson",
+        "end": "2009-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2007-05-07 20:22:19-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2011-04-01 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2007-05-07 20:22:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lisa Dusseault": [
+      {
+        "ad": "Lisa Dusseault",
+        "end": "2007-04-18 14:04:30-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lisa Dusseault",
+        "end": "2010-03-26 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2007-04-18 14:04:30-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2007-05-24 08:25:32-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2009-04-01 04:43:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2007-05-24 08:25:32-07:00",
+        "text": "The syntax definition for the URN is not complete. In addition to the noted issues with the IMEI and IMEISV formats, also there is to much handwaving around the general structure and what can appear in any future extensions. I assume they basically want to allow full  RFC 3986  syntax. However that needs to be explicitly said.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2009-04-02 09:17:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2009-04-01 04:43:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2010-03-26 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2009-04-02 09:17:46-07:00",
+        "text": "1. The reference to the syntax is to the general URI spec. However, to my understanding the URN syntax is more restricted than the URI syntax. Thus changing the reference for the syntax to the URN ( RFC 2141 ).",
+        "type": "Discuss"
+      }
+    ],
+    "Mark Townsley": [
+      {
+        "ad": "Mark Townsley",
+        "end": "2009-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-02-19 13:19:40-08:00",
+        "end_reason": "new_position",
+        "start": "2012-03-25 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-03-05 09:57:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 13:19:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-02-19 17:47:15-08:00",
+        "end_reason": "new_position",
+        "start": "2011-03-27 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-03-05 09:57:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 17:47:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-02-19 19:30:49-08:00",
+        "end_reason": "new_position",
+        "start": "2013-03-10 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-03-05 09:57:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 19:30:49-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2007-04-28 19:44:30-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2007-04-28 19:44:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ross Callon": [
+      {
+        "ad": "Ross Callon",
+        "end": "2007-05-09 23:15:32-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ross Callon",
+        "end": "2010-03-26 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2007-05-09 23:15:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2007-05-07 16:16:48-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2009-03-03 14:45:38-08:00",
+        "end_reason": "position_updated",
+        "start": "2007-05-07 16:16:48-07:00",
+        "text": "Why is this document going forward as Experimental?\u00a0 What happens \u00a0 to the URN space of the experiment fails?It seems to me that  \u00a0 Informational is more appropriate.\u00a0  \u00a0 From Gen-ART Review by Pasi Eronen: \u00a0  \u00a0 Per  RFC 3406 , \"registration information\" section must  \u00a0 include a version number; this is missing. \u00a0 Per  RFC 3406 , \"declared registrant of the namespace\"  \u00a0 must include organization's address, designated contact person,  \u00a0 and that person's contact information. All of these are missing. \u00a0 The structure definition (\"urn:gsma:...\") \u00a0 should have colon (\":\") after \"\". \u00a0 Community considerations section is empty. This section is \u00a0 required by  RFC 3406 .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2009-03-03 14:45:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sam Hartman": [
+      {
+        "ad": "Sam Hartman",
+        "end": "2008-03-14 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-02-17 20:54:43-08:00",
+        "end_reason": "new_position",
+        "start": "2013-03-10 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-03-05 09:57:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-17 20:54:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-02-18 08:52:43-08:00",
+        "end_reason": "new_position",
+        "start": "2011-03-27 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-05 04:45:40-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-02-18 08:52:43-08:00",
+        "text": "I do recall but didn't have a chance to review the IETF LC discussion of this so feel free to point me at relevant bits of that. FWIW, I appreciate that the authors were responsive to the privacy issues raised in that discussion, but I also think there's maybe a bit more work to be done. (1) I accept that there are valid uses for these URNs at least within mobile operator networks, but, like others, am concerned that we're defining a pretty invasive form of PII that can be perhaps too easily dropped into protocols that don't properly protect such information or that are typically not deployed with such protection enabled. I'm not sure how best to address this in general and would like to discuss that with the IESG and authors in general as well as the more specific discuss points below.  (2) I think the abstract should have a brief mention of the privacy issue, e.g. something like \"URNs from this namespace almost always contain Personally Identifying Information and need to be treated accordingly.\" If doing this, then a slightly longer paragraph along the same lines in the intro would probably also make sense. (3) Given that IMEIs are PII, and that devices may then emit those, would there not be value in defining an \"I'm not telling\" URN value that could be used by devices (whose users) would (sometimes) prefer privacy over convienence? As-is, when a protocol uses one of these URNs, then the only option is to not run the protocol or to expose the PII. Wouldn't the existence of such a URN value help there, e.g. perhaps \"urn:gsma:imei:anon\" or it could of course use the existing syntax but just some numbers never allocated to a real device as an IMEI, and I'm sure there are such values that could be added here as a special case.  (4) \"care SHOULD be taken\" seems meaningless to me and \"MUST NOT be delivered to devices that are not trusted\" is definitely meaningless in my universe (though perhaps it seems less so in GSM). I think you need to say when these URNs can be safely used, and then say that other uses are NOT RECOMMENDED. Is there a way to characterise that crisply? If there's not, then how is this safe really? (5) \"loosely correlated to a user\" seems like its trying to hide that IMEIs are PII. And \"messages intended to convey any level on anonymity\" is not meaningful - what does that really mean when you look at it? (I suspect that might just be unfortunate phrasing from IETF LC discussion.) I suggest you simply state that \"almost all IMEIs are almost always PII and so these URNs MUST be treated as PII in all cases.\"  (6) I personally think you should state that protocols carrying these URNs MUST or SHOULD do so over strongly hop-by-hop encrypted channels at least, and ideally encrypted end-to-end.\u00a0 I can imagine that might not fit with some real planned uses though, but I'd like to discuss it a bit to see. The \"if sent in clear\" paragraph is just too weak I think.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-05 04:49:28-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-03-05 04:45:40-08:00",
+        "text": "I do recall but didn't have a chance to review the IETF LC discussion of this so feel free to point me at relevant bits of that. FWIW, I appreciate that the authors were responsive to the privacy issues raised in that discussion, but I also think there's maybe a bit more work to be done. (1) I accept that there are valid uses for these URNs at least within mobile operator networks, but, like others, am concerned that we're defining a pretty invasive form of PII that can be perhaps too easily dropped into protocols that don't properly protect such information or that are typically not deployed with such protection enabled. I'm not sure how best to address this in general and would like to discuss that with the IESG and authors in general as well as the more specific discuss points below.  (2) cleared (3) cleared (4) \"care SHOULD be taken\" seems meaningless to me and \"MUST NOT be delivered to devices that are not trusted\" is definitely meaningless in my universe (though perhaps it seems less so in GSM). I think you need to say when these URNs can be safely used, and then say that other uses are NOT RECOMMENDED. Is there a way to characterise that crisply? If there's not, then how is this safe really? (5) cleared (6) cleared",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-05 09:57:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-05 04:49:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-18 09:53:17-08:00",
+        "end_reason": "new_position",
+        "start": "2010-03-21 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-05 09:57:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-18 09:53:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-02-20 06:36:29-08:00",
+        "end_reason": "new_position",
+        "start": "2013-03-10 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-03-05 09:57:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 06:36:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Tim Polk": [
+      {
+        "ad": "Tim Polk",
+        "end": "2007-05-09 13:20:37-07:00",
+        "end_reason": "new_position",
+        "start": "2007-04-18 14:04:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Tim Polk",
+        "end": "2011-04-01 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2007-05-09 13:20:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7254",
+  "evaluation_end": "2014-03-05 09:57:34-08:00",
+  "evaluation_start": "2007-04-18 14:04:29-07:00"
+}

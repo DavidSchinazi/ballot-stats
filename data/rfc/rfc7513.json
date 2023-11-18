@@ -1,0 +1,547 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-08-07 09:44:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-09-01 05:00:31-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-01 05:00:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-02-05 07:05:08-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-05 07:05:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-02-04 14:29:27-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-02-18 16:44:46-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-02-04 14:29:27-08:00",
+        "text": "I have one point I'd like to discuss that shouldn't be hard to resolve. = Section 4.3.4 = \"In common deployment practice, the traffic from the unprotected \u00a0  network is treated as trustworthy, which is to say that it is not \u00a0  filtered.\u00a0 ... \u00a0  To configure such a perimeter, at minimum the DHCP messages from \u00a0  unprotected networks MUST be ensured to be trustworthy. Achieving \u00a0  this is beyond the scope of this document.\" The first sentence says that trustworthy == not filtered, then the later sentence says that messages MUST be ensured to be trustworthy. The implication could be that messages MUST not be filtered, but that seems backwards. On the other hand, it doesn't seem right to have a normative requirement that messages be \"ensured to be trustworthy\" somehow, using some unspecified mechanism, without really explaining what counts as trustworthy. I would suggest deleting the second paragraph altogether unless it can be made meaningful for a network operator.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-18 16:44:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-04-09 10:08:15-07:00",
+        "end_reason": "new_position",
+        "start": "2012-03-25 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-08-07 09:44:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-04-09 10:08:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-08-13 08:36:49-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-12-04 10:28:02-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-13 08:36:49-07:00",
+        "text": "1. The shepherd writeup notes that the reference to  RFC 7039  needs to be moved to informative.\u00a0 This is at DISCUSS-level because no downref was mentioned in the last call.\u00a0 But as part of this DISCUSS point, and before you make the reference informative: Is it really possible to understand this document without understanding what a binding anchor is (and, thus, without reading  RFC 7039 )? 2. In Section 4.3.5, if I understand the first paragraph correctly, you're saying that of the six types of binding anchors described in 7039, one of them -- the MAC address -- is insecure because it's too easily spoofed and one -- switch port -- is secure and recommended... and that the other four need more analysis before a recommendation can be made.\u00a0 Is that correct? The second paragraph then says that switch ports can be shared, and you recommend using an unshared binding anchor.\u00a0 Is that correct? When I put those together, I get a situation where the document can't give me any recommendation about what binding anchor to use (if my switch ports are shared).\u00a0 Why is that not a failure of the spec?\u00a0 Why is no analysys done, and recommendation made, with respect to the other four binding anchor types? 3. I think Sections 6 and 7 need quite a bit of work to be understandable and useful.\u00a0 See my comments below for my suggestions -- but those are only suggestions.\u00a0 The DISCUSS point is to get some sort of clarity there, and, of course, I'm happy to help if I can.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 10:28:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-02-05 03:09:49-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-05 03:09:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-08-27 12:32:14-07:00",
+        "end_reason": "new_position",
+        "start": "2012-03-25 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-12-04 05:34:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-08-27 12:32:14-07:00",
+        "text": "I believe the following can be resolved relatively easily with some additional text in the document... 1. Does section 8 describe the mechanism that a SAVI device must perform if it has been unable to snoop the DHCP traffic between a host and a DHCP server?\u00a0 It appears that way in the document, but it would be good to explicitly state that early in the document when the discussion of topologies is being carried out.\u00a0 This becomes important when arbitrary topologies do not provide a means for the SAVI device to eavesdrop on the DHCP traffic. 2. Section 12 refers to the \"tentative address multicast group\".\u00a0 Do you really mean the Solicited Node Multicast address that is generated from the configured IPv6 unicast address?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-08-07 09:44:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-12-04 05:34:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-02-02 06:16:40-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-02 06:16:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Dan Romascanu": [
+      {
+        "ad": "Dan Romascanu",
+        "end": "2012-03-30 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "David Harrington": [
+      {
+        "ad": "David Harrington",
+        "end": "2012-03-30 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2012-03-06 01:23:03-08:00",
+        "end_reason": "new_position",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2012-03-30 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-03-06 01:23:03-08:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-02-05 07:09:47-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-05 07:09:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-02-04 13:20:50-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 13:20:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-02-03 16:42:13-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-03 16:42:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-08-16 03:26:22-07:00",
+        "end_reason": "new_position",
+        "start": "2012-03-25 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-08-07 09:44:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-08-16 03:26:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-02-05 03:41:01-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-05 03:41:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-08-07 09:44:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-02-04 20:57:00-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 20:57:00-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Peter Saint-Andre": [
+      {
+        "ad": "Peter Saint-Andre",
+        "end": "2012-03-30 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2012-04-06 14:54:44-07:00",
+        "end_reason": "new_position",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-04-06 14:54:44-07:00",
+        "text": "I'm taking the unusual position of posting a Discuss on a document I am responsible for.\u00a0 I've taken over this document from Jari.\u00a0 Eric Levy-Abegnoli raised some issues in e-mail to  ietf.org : http://www.ietf.org/mail-archive/web/savi/current/msg01778.html The authors posted revisions to respond to Eric's e-mail: http://www.ietf.org/mail-archive/web/savi/current/msg01779.html I will hold the Discuss until rev -13 is published.",
+        "type": "Discuss"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-02-04 16:49:35-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 16:49:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-04-09 12:12:06-07:00",
+        "end_reason": "new_position",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-04-09 12:14:37-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-04-09 12:12:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-04-09 12:14:37-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2012-04-09 10:50:16-07:00",
+        "end_reason": "new_position",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-04-09 10:50:16-07:00",
+        "text": "\u00a0 This document needs significant rewrite to be clear enough to produce \u00a0 interoperable implementations.\u00a0 This view is supported by the Gen-ART \u00a0 Review by Elwyn Davies supports this view, and it can be found here: \u00a0  http://www.ietf.org/mail-archive/web/gen-art/current/msg07297.html",
+        "type": "Discuss"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-02-04 18:32:51-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 18:32:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-08-07 09:44:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-02-05 08:20:17-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-05 08:20:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-08-07 05:20:51-07:00",
+        "end_reason": "new_position",
+        "start": "2013-03-10 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-08-07 09:44:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-07 05:20:51-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-01-26 07:16:31-08:00",
+        "end_reason": "new_position",
+        "start": "2014-08-07 09:44:36-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-02-19 14:31:13-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-26 07:16:31-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2012-03-06 01:23:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc7513",
+  "evaluation_end": "2015-02-19 14:31:13-08:00",
+  "evaluation_start": "2014-08-07 09:44:36-07:00"
+}

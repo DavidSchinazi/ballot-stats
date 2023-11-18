@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-01 14:31:31-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-01 14:31:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-01-21 00:28:12-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-21 00:28:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-01-23 06:04:03-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-02-05 21:43:28-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-01-23 06:04:03-08:00",
+        "text": "This is an important document, specifically as it relates to network operations and management protocol developments. I'm currently hesitating between a no-record (like Stewart) to buy me some time, but I don't want to lose my chance to put a DISCUSS on it, so let me go for a DISCUSS-DISCUSS for now. I will update my ballot after the discussion with the IESG, to stress what is DISCUSS worhty. I also would like to hear from others. Disclaimer: * I read the version 00, provided some feedback, and asked questions. Since that, I have not kept up to date with the perpass related emails. A quick search in my system tells me \"1942 emails with perpass in the subject\", and  https://mailarchive.ietf.org/arch/search/?q=perpass  shows even more emails. * I have not had the chance to synch up with Joel Jaeggli on this topic On the Internet, there are actually conflicting interests: The end user (and I'm one of them) wants access to every services, with good SLAs all the time, for free, and demand confidentiality on top of that. The network operators (in a typical enterprise network), on the other hand, have to manage the users, the network, the services, and introduce innovation through some new services. Point 1: How do we bring innovation to the Internet, and where? How do we distinguish good attack versus bad attack (referring to the last paragraph of section 1, \"In particular, the term attack, used technically, implies nothing about the motivation of the actor mounting the attack. ...\")? How do we distinguish pervasive monitoring for a noble goal from the rest (for example: Internet surveillance) This is the key difference between the security world and my OPS world, between the end user interest and the network operator job. What's called an attack in the document could actually be the basis for a service in my OPS world: \u00a0 \u00a0 - \"measuring packet sizes\"for a billing service \u00a0 \u00a0 - \"Active or passive wiretaps and traffic analysis, (..., timing or measuring packet sizes)\", required for SLA measurements, in order to understand if voice or video flows should be treated differently than the rest. \u00a0 \u00a0 - \"including application content \", required for data leakage (a real problem in today networks), malware detection, etc. \u00a0 \u00a0 - \"looking at traffic header\" to route traffic between a primary costly link with SLA, and a cheap backup \u00a0 \u00a0 - load balancer \u00a0 \u00a0 - traffic redirection (WCCP) \u00a0 \u00a0  - etc... The point is that middleboxes needs to provide a service, and they need some input for that. So if this is not provided by traffic monitoring, the only solution is that the end points need to send their metadata to the middleboxes. This was not well received at the IETF lately, and this goes against the principles of this draft: \u00a0  Pervasive monitoring is a technical attack that should be mitigated \u00a0  in the design of IETF protocols, where possible. Alternatively, we could say: all innovation will come from the end points. IMO, some innovation (read some new services) must happen inside the network, as opposed to the end points. Yes, if we had 1000 times the bandwidth we have today on all end points, and btw, no constrained devices, then yes, we could delegate all innovations to the end points. But that's not the case! Don't get me wrong: I like what this draft tries to do, but it doesn't make any distinction between good and reasons for pervasive monitoring. This leads to my point 2. Point 2: who decides what's right or wrong? The following text goes in the right direction for OPS. Thanks. \u00a0  While PM is an attack, other forms of monitoring can be beneficial \u00a0  and not part of any attack, e.g. network management functions monitor \u00a0  packets or flows and anti-spam mechanisms need to see mail message \u00a0  content.\u00a0 Some monitoring can even be part of the mitigation for PM, \u00a0  for example Certificate Transparency [ RFC6962 ] involves monitoring \u00a0  Public Key Infrastructure in ways that could detect some PM attack \u00a0  techniques.\u00a0 There is though a clear potential for monitoring \u00a0  mechanisms to be abused for PM, so this tension needs careful \u00a0  consideration in protocol design.\u00a0 Making networks unmanageable to \u00a0  mitigate PM is not an acceptable outcome, but ignoring PM would go \u00a0  against the consensus documented here.\u00a0 An appropriate balance will \u00a0  emerge over time as real instances of this tension are considered. However, who will be the judge to tell whether work at the IETF is a good PM (for monitoring) or a bad PM? I wonder: if the IPFIX work would starting today at the IETF, would this be considered as a PM and blocked? Who would decide? Consensus based, IESG, IAB? Point 3: pervasive monitoring versus monitoring We could say that points 1 and 2 don't matter because the PM definition doesn't apply (\"PM is distinguished by being indiscriminate and very large-scale\") to the services I described in point 1. It depends. Data leakage analysis is done all traffic existing an enterprise network, SLA are typical metered in all branch offices or all Point of Presence (PoP), etc.\u00a0  I guess that\u00a0 \"very large-scale\" means outside of the network operator administrative admin?\u00a0   Point 4: unmanageable networks I like this sentence \"Making networks unmanageable to mitigate PM is not an acceptable outcome\". Note: half-joking, I mentioned to Stephen after the version 00 of the document, I would be looking for a \"close the OPS area\" button in the tracker if this \"let's have end-to-end privacy at all costs\" principle would be accepted without any balance, as they would nothing left to manage in OPS. Maybe that's a good thing. :-) Not sure where to go from here. I'm not sure. - I would like to get a discussion with the IESG - I could also review all perpass emails. If some specific points were discussed already, a pointer to the discussion would be appreciated. - I could synch up more with the OPS DIR - I could have a call with the authors Don't get me wrong, I'm against the document, but we need some more nuance. Below is some good feedback fromDan Romascanu (OPS DIR review): The principal impact that this document has on operations and management of the IETF protocol is included in the following paragraph in Section 2: \u00a0  While PM is an attack, other forms of monitoring can be beneficial \u00a0  and not part of any attack, e.g. network management functions monitor \u00a0  packets or flows and anti-spam mechanisms need to see mail message \u00a0  content.\u00a0 Some monitoring can even be part of the mitigation for PM, \u00a0  for example Certificate Transparency [ RFC6962 ] involves monitoring \u00a0  Public Key Infrastructure in ways that could detect some PM attack \u00a0  techniques.\u00a0 There is though a clear potential for monitoring \u00a0  mechanisms to be abused for PM, so this tension needs careful \u00a0  consideration in protocol design.\u00a0 Making networks unmanageable to \u00a0  mitigate PM is not an acceptable outcome, but ignoring PM would go \u00a0  against the consensus documented here.\u00a0 An appropriate balance will \u00a0  emerge over time as real instances of this tension are considered. The text above was carefully crafted and debated during the various reviews I believe that it is OK as it is, but the OPS community should debate whether work is necessary in the area (maybe in the OPSEC WG) in order to look at the following aspects: -\u00a0 \u00a0 Issue recommendations that could help protect the tools (applications, protocols, data repositories) used by operators for the day to day tasks or running and managing the networks from being used for pervasive monitoring (in the words of the document \u2013 how can we make sure in practical terms that useful monitoring mechanisms are not abused for PM?) -\u00a0 \u00a0 Review the existing protocols designed in the OPS area which have broad deployment and make sure that they have been designed in such a manner that the threat of a pervasive monitoring attack can be mitigated. If necessary (gaps were found out) issue recommendations for \u2018ruggedizing\u2019 these protocols against PM attacks A few more observations: -\u00a0 \u00a0 In Section 2 the following sentence is IMO not clear enough: \u2018It means that, if asked, there needs to be a good answer to the question \"is pervasive monitoring relevant to this work and if so how has it been considered?\"\u2019 Who asks? Is this about the IESG reviews, or maybe about some kind of privacy assessment (done by whom?) -\u00a0 \u00a0 I found too little relation between this document and  RFC6973 . That Informational RFC provides actually a set of good recommendations on mitigation for privacy issues, many of them directly applicable against PM threats. It is also a very recent document, published only six months ago. It seems odd that the information[ RFC6973 ] is mentioned only once and in an unclear way \u2013 the reference is just written in brackets between two sentences, not clear if it belongs to the sentence before or the sentence after.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-02-11 07:01:39-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-05 21:43:28-08:00",
+        "text": "My previous DISCUSS DISCUSS contained my own thoughts on the topic, was created to start the discussion within the IESG, and was not really actionable (hence the DISCUSS DISCUSS). This discussion took place during the informal telechat.  This is an important document, specifically as it relates to network operations and management protocol developments. Not all PMs are attacks.\u00a0 Take IPFIX, take data leakage analysis (done on all traffic existing an enterprise network, IP SLA measurements done all branch offices or all Point of Presence (PoP), etc. These are not attacks. What makes a difference IMO is the notion of network operators managing their network versus the PM being used to gather information outside of the management domain. So adding this notion of \"outside the management domain\" to PM would make sense to me.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-11 07:01:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-01-21 06:10:49-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-06 09:38:11-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-21 06:10:49-08:00",
+        "text": "This DISCUSS is a placeholder until we can determine the right status (BCP or Informational) for this document.\u00a0 No action is needed as the IESG will resolve this on the telechat.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-06 09:38:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-01-23 03:50:45-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-23 03:50:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-01-20 06:18:18-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-02-02 17:20:34-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-02 17:20:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-01-21 01:59:43-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-21 01:59:43-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-01-22 21:31:37-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-02-06 09:28:25-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-22 21:31:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-06 09:28:25-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-01-23 04:41:24-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-23 04:41:24-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2014-01-23 04:29:26-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-01-30 08:38:17-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-23 04:29:26-08:00",
+        "text": null,
+        "type": "Recuse"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-30 08:38:17-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-01-22 22:45:10-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-22 22:45:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-20 06:32:51-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-20 06:32:51-08:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-01-23 05:39:47-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-05 10:42:11-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-01-23 05:39:47-08:00",
+        "text": "This is an important document, and although it is short it has the potential to have important and subtle implications. I am concerned that it is premature to put this on a telechat for approval given the extent of debate that continues. Below are a number of points that I would like to discuss with the authors and other members of the IESG. I accept that I  am likely to end up in a minority position and will need to choose between no-objection, no-position or abstain with the latter currently the most likely.  I am concerned that the text lacks balance. For example it fundamentally assumes that there is no case for PM and that it is fundamentally bad. On the other hand I can see that it has the potential to be a useful servant of a free society in post event forensics. Provided the  gathered information is secured and only analysed when warranted (in both senses of the term) I can see its use as a societal benefit. I think that it is important that we provide an balanced view between the human right to privacy and the human right to safety as enabled by the actions of law enforcement. Thus perfect security and inviolable privacy may not be desirable goals.  I am concerned that the use of the work attack is unnecessarily emotive. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Pervasive Monitoring is an Attack \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  draft-farrell-perpass-attack-05.txt Abstract \u00a0  Pervasive monitoring is a technical attack that should be mitigated \u00a0  in the design of IETF protocols, where possible. SB> I think that is one conclusion, and it is a judgement, but surely SB> an abstract should tell you rather more about the contents of the  SB> text so at to determine whether or not you want to read the detail. SB>  SB> How about something like this: SB> SB> Pervasive Monitoring is the large scale collection of Internet SB> traffic and/or its associated metadata at many level of the  SB> Internet protocol stack. There is evidence that deployed PM systems SB> end ran the assumed security models of the Internet, and in  SB> some cases subverted them. It is the conclusion of the IETF that SB> IETF protocols should in future be designed to provide greater SB> (maybe: \", but not necessarily perfect\") privacy in the presence of PM.  1.\u00a0 Pervasive Monitoring is a Widespread Attack on Privacy SB> Yes and no. It is not clear whether the passive collection of the  SB> data is such an attack. For example if the collected data SB> were held in some unreadable form (for example encrypted) SB> would this be an attack? It surely becomes an invasion of SB> privacy at the point where it is subjected to unwarranted SB> (in both senses of the word) analysis of its content. SB> The subversion of security with its wider implications for SB> the introduction of exploits by others is in a different SB> (worse) class than basic collection of bytes passing by. \u00a0  Pervasive Monitoring (PM) is widespread (and often covert) \u00a0  surveillance through intrusive gathering of protocol artefacts, \u00a0  including application content, or protocol meta-data such as headers. SB> Some forms of PM are seemingly intrusive in that they actively SB> damage the security model leaving it more vulnerable, others  SB> it seems are passive. \u00a0  Active or passive wiretaps and traffic analysis, (e.g., correlation, \u00a0  timing or measuring packet sizes), or subverting the cryptographic \u00a0  keys used to secure protocols can also be used as part of pervasive \u00a0  monitoring. SB> You do not distinguish between these two classes of action SB> but I think they are importantly different. \u00a0  The IETF community's technical assessment is that PM is an attack on \u00a0  the privacy of Internet users and organizations.\u00a0  SB> I am not sure you can say that without a lot more information on the  SB> technical details of what was done.  \u00a0  PM is distinguished \u00a0  by being indiscriminate and very large-scale, rather than by \u00a0  introducing new types of technical compromise.\u00a0  SB> I think that this contradicts the earlier text and is technically SB> incorrect. I think that there were some technical approaches used. \u00a0  The IETF community \u00a0  has expressed strong agreement that PM is an attack that needs to be \u00a0  mitigated where possible, via the design of protocols that make PM \u00a0  significantly more expensive or infeasible.\u00a0 Pervasive Monitoring was \u00a0  discussed at the technical plenary of the November 2013 IETF meeting \u00a0  [IETF88Plenary] and then through extensive exchanges on IETF mailing \u00a0  lists.\u00a0 This document records the IETF community's consensus and \u00a0  establishes the technical nature of PM. SB> There were three hums were there not. Not all were fully endorsed SB> as others. Surely to be a fair record we need to qualify the above. \u00a0 \u00a0 The term \"attack\" is used here in a technical sense that differs \u00a0  somewhat from common English usage.\u00a0 In common English usage, an \u00a0  attack is an aggressive action perpetrated by an opponent, intended \u00a0  to enforce the opponent's will on the attacked party.\u00a0 The term is \u00a0  used here to refer to behavior that subverts the intent of \u00a0  communicating parties without the agreement of those parties.\u00a0  SB> It seems to me that rather than take advantage of the emotivity SB> of the technical word, we should use a more objective term and then SB> qualify then note the equivalence for the security technical SB> community. \u00a0  An \u00a0  attack may change the content of the communication, record the \u00a0  content or external characteristics of the communication, or through \u00a0  correlation with other communication events, reveal information the \u00a0  parties did not intend to be revealed.\u00a0 It may also have other \u00a0  effects that similarly subvert the intent of a communicator. SB> I think that you are taking advantage of the technical definition SB> to introduce emotion rather than strict objectivity and impartiality. \u00a0  [ RFC4949 ] contains a more complete definition for the term attack. \u00a0  We also use the term in the singular here, even though PM in reality \u00a0  may require a multi-faceted set of coordinated attacks. \u00a0  In particular, the term attack, used technically, implies nothing \u00a0  about the motivation of the actor mounting the attack.\u00a0 The \u00a0  motivation for PM is not relevant for this document, but can range \u00a0  from non-targeted nation-state surveillance, to legal but privacy- \u00a0  unfriendly purposes by commercial enterprises, to illegal actions by \u00a0  criminals.\u00a0 The same techniques can be used regardless of motivation. \u00a0  Thus we cannot defend against the most nefarious actors while \u00a0  allowing monitoring by other actors no matter how benevolent some \u00a0  might consider them to be, since the actions required are \u00a0  indistinguishable from other attacks. SB> That is the crux of the dilemma and deserves to be more prominent. SB> I think the text \"no matter how benevolent some might consider them\" SB> is unnecessarily judgmental. We may all have different thresholds SB> for warranted analysis, but there are cases where most ordinary SB> people would consider the gathering of the information was  SB> morally justified. 2.\u00a0 The IETF will work to Mitigate Pervasive Monitoring \u00a0  \"Mitigation\" is a technical term that does not imply an ability to \u00a0  completely prevent or thwart an attack.\u00a0 Protocols that mitigate PM \u00a0  will not prevent the attack, but can significantly change the threat. \u00a0  (See the diagram on page 24 of  RFC 4949  for how the terms attack and \u00a0  threat are related.)\u00a0 This can significantly increase the cost of \u00a0  attacking, force what was covert to be overt, or make the attack more \u00a0  likely to be detected, possibly later. SB> I am not sure forcing all monitoring to be overt is a good thing. SB> Overt implies detectability from outside the monitoring system SB> and its associated control environment. There are cases in law  SB> enforcement where few would consider the complete removal of  SB> undetectability desirable or morally defensible. \u00a0  IETF standards already provide mechanisms to protect Internet \u00a0  communications and there are guidelines [ RFC3552 ] for applying these \u00a0  in protocol design.\u00a0 But those generally do not consider PM, the \u00a0  confidentiality of protocol meta-data, countering traffic analysis \u00a0  nor data minimisation.\u00a0 [ RFC6973 ] In all cases, there will remain \u00a0  some privacy-relevant information that is inevitably disclosed by \u00a0  protocols.\u00a0 As technology advances, techniques that were once only \u00a0  available to extremely well funded actors become more widely \u00a0  accessible.\u00a0 Mitigating PM is therefore a protection against a wide \u00a0  range of similar attacks. SB> Maybe it's later, but I thought that we agreed that there were SB> operational reasons to gather some of the protocol artifacts. \u00a0  It is therefore timely to revisit the security and privacy properties \u00a0  of our standards.\u00a0 The IETF will work to mitigate the technical \u00a0  aspects of PM, just as we do for protocol vulnerabilities in general. \u00a0  The ways in which IETF protocols mitigate PM will change over time as \u00a0  mitigation and attack techniques evolve and so are not described \u00a0  here. \u00a0  Those developing IETF specifications need to be able to describe how \u00a0  they have considered PM, and, if the attack is relevant to the work \u00a0  to be published, be able to justify related design decisions.\u00a0 This \u00a0  does not mean a new \"pervasive monitoring considerations\" section is \u00a0  needed in IETF documentation.\u00a0 It means that, if asked, there needs \u00a0  to be a good answer to the question \"is pervasive monitoring relevant \u00a0  to this work and if so how has it been considered?\" \u00a0  In particular, architectural decisions, including which existing \u00a0  technology is re-used, may significantly impact the vulnerability of \u00a0  a protocol to PM.\u00a0 Those developing IETF specifications therefore \u00a0  need to consider mitigating PM when making these architectural \u00a0  decisions.\u00a0 Getting adequate, early review of architectural decisions \u00a0  including whether appropriate mitigation of PM can be made is \u00a0  important.\u00a0 Revisiting these architectural decisions late in the \u00a0  process is very costly. SB> For balance the following needs to be earlier in the text. SB> As it is here it is something of an afterthought which belittles SB> its legitimacy and importance. \u00a0  While PM is an attack, other forms of monitoring can be beneficial \u00a0  and not part of any attack, e.g. network management functions monitor \u00a0  packets or flows and anti-spam mechanisms need to see mail message \u00a0  content.\u00a0 Some monitoring can even be part of the mitigation for PM, \u00a0  for example Certificate Transparency [ RFC6962 ] involves monitoring \u00a0  Public Key Infrastructure in ways that could detect some PM attack \u00a0  techniques.\u00a0 There is though a clear potential for monitoring \u00a0  mechanisms to be abused for PM, so this tension needs careful \u00a0  consideration in protocol design.\u00a0 Making networks unmanageable to \u00a0  mitigate PM is not an acceptable outcome, but ignoring PM would go \u00a0  against the consensus documented here.\u00a0 An appropriate balance will \u00a0  emerge over time as real instances of this tension are considered. \u00a0  Finally, the IETF, as a standards development organisation, does not \u00a0  control the implementation or deployment of our specifications \u00a0  (though IETF participants do develop many implementations), nor does \u00a0  the IETF standardise all layers of the protocol stack.\u00a0 Moreover, the \u00a0  non-technical (e.g. legal and political) aspects of mitigating \u00a0  pervasive monitoring are outside of the scope of the IETF.\u00a0 The \u00a0  broader Internet community will need to step forward to tackle PM, if \u00a0  it is to be fully addressed. \u00a0  To summarise: current capabilities permit some actors to monitor \u00a0  content and meta-data across the Internet at a scale never before \u00a0  seen.\u00a0 This pervasive monitoring is an attack on Internet privacy. SB> Do you mean Internet privacy, or the privacy of Internet transactions? SB> Other than to prevent attack, or compromise the commercial secrets SB> of operators, I am not sure the Internet has any right to privacy. SB> On the other hand internet users have the right to have their SB> Internet transactions guarded to the degree agreed by their society.   \u00a0  The IETF will strive to produce specifications that mitigate \u00a0  pervasive monitoring attacks. SB> I think we mean appropriately mitigate, since the degree of SB> acceptable mitigation is a societal matter.  3.\u00a0 Process Note \u00a0  In the past, architectural statements of this sort, e.g., [ RFC1984 ] \u00a0  and [ RFC2804 ] have been published as joint products of the Internet \u00a0  Engineering Steering Group (IESG) and the Internet Architecture Board \u00a0  (IAB).\u00a0 However, since those documents were published, the IETF and \u00a0  IAB have separated their publication \"streams\" as described in \u00a0  [ RFC4844 ] and [ RFC5741 ].\u00a0 This document was initiated by both the \u00a0  IESG and IAB, but is published as an IETF-stream consensus document, \u00a0  in order to ensure that it properly reflects the consensus of the \u00a0  IETF community as a whole. \u00a0  [[Note (to be removed before publication): This draft is written as \u00a0  if IETF consensus has been established for the text.]] 4.\u00a0 Security Considerations \u00a0  This document is entirely about privacy.\u00a0 More information about the \u00a0  relationship between security and privacy threats can be found in \u00a0  [ RFC6973 ].\u00a0 Section 5.1.1 of [ RFC6973 ] specifically addresses \u00a0  surveillance as a combined security-privacy threat. SB> I think that the security considerations are surely more complex than SB> this. Given that some degree of monitoring is inevitable should SB> we not develop some security guidelines of the form \"and if SB> you really must do some form of information gathering, here is SB> how you should secure it from illegitimate access\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-05 10:42:11-08:00",
+        "text": "Adrian in his comment of 2014-02-01 articulates extremely well points that have been giving me cause for concern since the first version of this text was put forward, and continue to give me concern. To pick the most important points it is my view that the unqualified use of the word \"attack\" in most places in the text, whilst sensational does a dis-service particularly in its wider operational context. Secondly I am concerned that PM, or techniques similar to PM have a valid law enforcement use, and that to make PM infeasible  (section 1 para 2) would not be in the best long term interest  of the IETF designed Internet. The text: \"While PM is an attack, other forms of monitoring can be beneficial and not part of any attack, e.g. network management functions monitor packets or flows and anti-spam mechanisms need to see mail message content.\" can be construed to permit the use of PM or similar techniques in law enforcement but it would be better to explicitly note this. I am also concerned that the lack of explicit guidance on what is needed in IETF specifications will cause difficulties\u00a0 with future RFCs resulting in inconsistent application of the advice in published RFCs. I accept however that there is a strong desire by many in the  IETF to submit text for publication before the London meeting, and  therefore consider that I should abstain from further discussion.",
+        "type": "Abstain"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-01-22 18:06:35-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-20 06:18:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-03-05 06:03:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-22 18:06:35-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7258",
+  "evaluation_end": "2014-03-05 06:03:35-08:00",
+  "evaluation_start": "2014-01-20 06:18:18-08:00"
+}

@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-12-29 08:08:54-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-01-06 10:16:33-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-29 08:08:54-08:00",
+        "text": "I'm placing this Discuss because I found the description of the algorithm in 4.2.1 and the worked example in Section 2 to be at odds with the definitions of P-space, extended P-space, and Q-space. I have been able to make things work by messing with the algorithm and keeping the current definitions. You could probably do it by keeping the algorithm and messing with the definitions. My workings were as follows, based on the example in Section 2: >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 S---E >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  /\u00a0 \u00a0  \\ >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 A\u00a0 \u00a0 \u00a0  D >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \\\u00a0 \u00a0  / >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 B---C > >\u00a0 In Figure 1 S can reach A, B, and C without going via E; >\u00a0 these form S's extended P-space. First, this should say \"via S-E\" and \"extended P-space with respect to S-E\". But... >\u00a0 Extended P-space >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  The union of the P-space of the neighbours of a >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  specific router with respect to the protected link (Noting that 4.2.1.2 changes this definition *significantly* by saying that the neighbour at the far end of the failing link - i.e., E in this case - must be excised from the list of neighbours whose P-spaces are combined). ...and... >\u00a0 P-space\u00a0 \u00a0 \u00a0 \u00a0 P-space is the set of routers reachable from a >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  specific router using the normal FIB, without any path >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  (including equal cost path splits) transiting the >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  protected link. Now, S's neighbours are A and E. The P-space of A with respect to S-E is {B, C} And the P-space of E with respect to S-E is {C, D} So the extended P-Space of S with respect to S-E is {B, C, D} Something is broken!  {A, B, C} is not even the (not extended) P-space of S with respect to S-E which is {A, B} since C is not in that set because of SEDC. On the other hand {A, B, C} *is* the extended P-space of E wrt S-E. Although, I would observe that the pseudocode in 4.2.1 does derive A, B, C as the extended P-space of S wrt S-E, but I think that is  because it has an entirely different definition of an extended P-space. Now... >\u00a0 Q-space\u00a0 \u00a0 \u00a0 \u00a0 Q-space is the set of routers from which a specific >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  router can be reached without any path (including >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  equal cost path splits) transiting the protected link. ...so the Q-space of S wrt S-E is {A, B} since CDES. And, for the record, the Q-space or E wrt S-E is {C, D} Now, to compound the confusion, the example determines the PQ nodes for S wrt S-E by taking the intersection of the extended P-space for S wrt S-E\u00a0 and the Q-space of E wrt S-E. This is done notwithstanding the  definition... >\u00a0 PQ node\u00a0 \u00a0 \u00a0 \u00a0 A node which is a member of both the P-space and the >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Q-space.\u00a0 Where extended P-space is in use it is a >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  node which is a member of both the extended P-space >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  and the Q-space.\u00a0 In remote LFA this is used as the >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  repair tunnel endpoint. This definition gives the PQ nodes of S wrt SE as either  - the intersection of {A, B} and {A, B} if P-space is being discussed or - the intersection of {B, C, D} and {A, B} if extended P-space is being  \u00a0 used. So the correct tunnel end point for your example is B. But it clearly doesn't work since traffic to E that is tunneled to B may still be ECMP routed back along BAS. So I think in this whole example, you sit at S and you say \"I want to  protect traffic to E\". Then you work out the extended P-space of *E* wrt S-E (which is {A, B, C}) and the Q-space of *E* wrt S-E (which is {C, D}) giving you the correct PQ node for S to use to protect traffic  to E in the event of a failure of S-E as C. It is simple! All you have to do is update the text to describe the actual process and not the wrong one. Then the right result will pop  out :-) The replacement is  OLD \u00a0  In Figure 1 S can reach A, B, and C without going via E; \u00a0  these form S's extended P-space. NEW \u00a0  In Figure 1 S can reach A and B without going via S-E, and  \u00a0  D can reach B and C without going via S-E. So E's extended P-space \u00a0  with respect to S-E is the nodes A, B, and C. END BUT, given all of this, are you sure that Section 4.2.1 is right? I'm  not. ------ Shouldn't the pseudocode in 4.3 be enclosed in code component macros to match with the copyright TLP etc.?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-06 10:16:33-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-12-25 18:38:40-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-01-07 10:37:24-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 10:37:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-05 09:30:47-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-05 09:30:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-01-06 11:29:13-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-06 11:29:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-07 01:13:50-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 01:13:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-01-07 23:06:35-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 23:06:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-01-06 15:30:55-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-06 15:30:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-01-07 06:03:44-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 06:03:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-01-07 15:42:12-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 15:42:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-07 16:21:38-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 16:21:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-12-29 13:12:58-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-29 13:12:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-01-07 04:56:05-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 04:56:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-01-07 17:10:36-08:00",
+        "end_reason": "new_position",
+        "start": "2014-12-25 18:38:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-02-05 13:34:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-07 17:10:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7490",
+  "evaluation_end": "2015-02-05 13:34:03-08:00",
+  "evaluation_start": "2014-12-25 18:38:40-08:00"
+}

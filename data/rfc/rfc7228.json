@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-08-13 14:15:43-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-12 14:01:40-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-08-13 14:15:43-07:00",
+        "text": "I have struggled hard in my review of this document, and Brian  Habermann has helped me a lot with understanding the value and purpose of the work.\u00a0 In my Discuss, below, I have tried to list actionable work that I feel is necessary for the publication of this document as a definition of terminology, and I have pushed  out to my Comment other issues that I think would be good to fix but which are not blocking. Before reading and attempting to resolve the Discuss issues, the authors might like to consider whether this document could be re- positioned as \"A Discussion of Some Concept in Constrained Networks\". I believe that this re-branding complete with a few minor tweaks to the text to be consistent would pretty much defuse most of my Discuss comments (except, perhaps some on the Abstract and Section 2.3.1). --- The Abstract is confusing in that it introduces a \"small device with  severe constraints\" and uses it to define a \"constrained node network\", but never says what a \"constraint\" is. It then goes on to use the term \"constrained environment\" without explaining what this means. I think that the Abstract could give several examples of constraint for a node (memory, CPU, power). It could also replace \"constrained environment\" (which is not used in the rest of the document - except in a similar paragraph in the Introduction) with \"constrained network\"  together with a mention that links may also be constrained, and some examples of link constraints. --- Section 2.1 I agree that the definition of Constrained Node \"is less than  satisfying.\"\u00a0 Indeed, I think that the definition you provide is useless as a definition. I find it odd that the definition includes the reasons why the node is different, but not a list of the ways it might be different.  \u00a0 \u00a0 \u00a0 some of the characteristics that are \u00a0 \u00a0 \u00a0 otherwise pretty much taken for granted for Internet nodes in 2013 ...is so vague and unscoped. Of course, the text that follows does  list some of the constraints and these are helpful to an understanding of the definition. Probably the best way to handle this is to turn the whole section into prose and dispense with the formal definition that isn't. The same problem exists in Section 2.2. [These concerns are consistent with my suggestion to back away from  providing definitions, and to offer a discussion of concepts instead.] --- Section 2.3.1 is full of issues. \u00a0  In common usage, LLN often stands for \"the network characteristics \u00a0  that RPL has been designed for\".  Asides from being cryptic (or possibly sarcastic), that definition is so clearly circular as to be of no value. You could, instead stop after the  quote from draft-ietf-roll-terminology. Also, please expand RPL and give a reference. \u00a0  LLNs do appear to have significant loss at the \u00a0  physical layer How do you mean \"appear\"? Do they or don't they? \u00a0  Actual \"low power\" does not seem to be \u00a0  required for an LLN [ I-D.hui-vasseur-roll-rpl-deployment ], and the \u00a0  positions on scaling of LLNs appear to vary widely \u00a0  [ I-D.clausen-lln-rpl-experiences ]. Again \"seem to be\". If you cannot provide a definition in this document then probably best to not try. The reference to [ I-D.clausen-lln-rpl-experiences ] in the discussion of scaling LLNs is curious.\u00a0 That document talks about experiences trying  to scale RPL. It does not, as far as I can tell, discuss the size or scalability of a LLN. \u00a0  The ROLL terminology document states that LLNs typically are composed \u00a0  of constrained nodes; this is also supported by the design of \u00a0  operation modes such as RPL's \"non-storing mode\".\u00a0 So, in the \u00a0  terminology of the present document, an LLN seems to be a constrained \u00a0  node network with certain network characteristics, which include \u00a0  constraints on the network as well. What do you mean \"is also supported by\"? Are you saying that the composition of a network is defined by the widgits built into a protocol that runs over it? What do you mean \"an LLN seems to be...\" Can you not write a clear definition? --- Section 2.3.2 I don't see a definition in this section of either LoWPAN or 6LoWPAN. I only find a discussion of the expansion of the acronym. [Again, if the document is not seeking or claiming to provide  definitions this is not a problem.] --- In Section 3, the description of a Class 0 node seems to be prejudging the work of LWIG. It is mixing what the physical capabilities of the  node are (memory, CPU, power) with what the node will be capable of  doing (using security).\u00a0 That is surely interesting and equally surely not part of the definition of the node class. Similar issues apply to the discussion of Class 1 and Class 2 nodes. [Yet again, if you are not defining but only discussing then this  issue is much less pronounced.] ---  Section 5 is missing some thoughts about the availability of security mechanisms in constrained devices. Since these are mentioned in Section 3, you can't duck them in Section 5.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-12 14:01:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-07-09 12:37:50-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-09 12:37:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-07-09 08:48:52-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-08-13 13:15:33-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-13 13:15:33-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-08-14 21:53:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 21:53:26-07:00",
+        "text": null,
+        "type": "Abstain"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-08-08 12:35:17-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-08 12:35:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-08-14 18:00:05-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 18:00:05-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-08-14 15:26:12-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 15:26:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-08-09 12:39:10-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-09 12:39:10-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-08-15 04:36:59-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-05 10:55:28-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-08-15 04:36:59-07:00",
+        "text": "I have one discuss point, that I'll probably quickly clear when told the wg could rather not, and then I'll move to abstain. My discuss is: I think we're missing an opportunity here to do much better than this and could do so if this document were re-worked with the goal of making the text be such that it would likely still be useful in 5 years time. Would the WG like to do that? Assuming the answer will be \"no, thanks\" then I'll move to an abstain since I think that's unfortunate, and very little, but some, harm will ensue, in terms of confusion when these terms are used in the not too distant future. I'm happy discuss my comments of course, in any case, but really handling many of them would only make sense if the wg wanted to re-do this, so if I do end up abstaining, it'll be entirely fine to pretty much ignore my comments:-)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-05 10:57:04-08:00",
+        "end_reason": "comment_updated",
+        "start": "2014-01-05 10:55:28-08:00",
+        "text": "write-up: I slightly dislike being told that \"experts from companies x, y & z\" think something. Much better would be to have been told that \"Fred Bloggs, Joe Blow and A.N.Other\" read it and said on the list that they were ok with it.\u00a0 I've worked for large companies and some of our company \"experts\" were not. And even if they were, they were sometimes more intersted in achieving company goals and not in objectively applying their expertise. (And just in case, for a protocol spec, it would be fine to say that company x have implemented since that's something one could in principle check. So I'm not saying that write-ups ought never mention comapanies.) abstract: Devices years ago were arguably far more constrained in some ways than the ones you mean here. The tendency to forget what happened a decade or more ago is a real one, and it'd be good if some lwig document reflected that.\u00a0 That's not really actionable, but if you wanted, you could remove the first sentence of the abstract and still be ok. intro: all devices have limited CPU etc. (Except maybe some in THHGTTG:-) That's not entirely a nit - all the terminology here needs to be relative, and relative to what we consider today's \"standard candle\" which could be a typical laptop. If you re-cast the discussion here in to only use relative terms, (except for examples) then perhaps this terminology could be current for far longer?  intro: sigh. The Internet has always been made of things. The IoT is of course a new marketing term, but doesn't reflect any new reality really. And \"becomes a reality\" is just pure marketing which'd be better omitted.  section 2: why is 5x10^10 an interesting number? That's just 7 devices per person. section 2: I don't understand the 2nd bullet at all. What is it meant to say? section 2: I disagree with the last sentence - there will always be \"constrained\" nodes (relative to some standard candle) and both the practical definition of constrained and standard will move as technology develops. I don't see how that *has to* to relate to scaling at all. (There are relationships, but I don't think \"scaling down\" is causitive.) 2.1: I assert that mentioning 2013 in the definition is a mistake. 2.1: A definition that does not consider a smartphone a constrained node seems wrong. Those are differently constrained compared to a tension sensor, but both should be considered constrained IMO. (\"My problems are worse than your problems\" doesn't seem like a good basis for terminology.) 2.1, bullet list: I would argue that you ought include \"constrained user interfaces\" here. (A LED is a user interface as is a factory-reset button, or even a replacable battery arguably.) 2.1: bullet list: I think you're again making the mistake of not being relative, e.g. \"maximum node complexity\" isn't even really understandable (why's it a max? can't I just add more? yes, I can!\u00a0 but of course then its a different device). Again the right approach (I claim:-) would be to cast all this in relative terms. 2.1: batterys vs. harvesting is not a real dichotomy, afaik almost all harvesting nodes have a battery or charge up a capacitor. There are vanishingly few nodes with no energy storage or accumulation mechanism and if they did become popular I suspect they ought be a class of their own. Or am I wrong there? 2.2: again 2013 in the definition is an error IMO.  2.2: constrained n/w definition also seems wrong in that there are networks today that are high speed that fit this definition e.g. fibre based networks doing quantum key distribution.   2.2.1: I don't think this is really a useful section at all, unless the goal is simply to say that DTN protocols are out of scope, which they are, since all protocols are out of scope. I'd say just delete this section (if you fix the definitions). 2.3: Just to note that this defintion is fine! 2.3.x: again you seem to be just dealing with territory here but I guess this could be useful 3 - I bet you some beers you live to regret using absolute numbers here. I don't find this table that useful. The text definitions saying what the nodes in various classes can and cannot do however is good and should be used in the definitions. 4.1 says you're not defining classes, but then 4.2 seems to do exactly that, which I find confusing. 4.2: I'd suggest s/E3/Einf/ so you could introduce new classes when you find out that E0..2 aren't sufficiently descriptive of interesting classes of device. For example, this section doesn't seem to consider duty-cycles which IMO can siginifcantly influence designs and which also provide a handy way to talk about device power requirements and capabilities in a n/w. - table 4: Sn as classes is a terrible choice since it conflicts with existing sleep state terminology for ACPI. - I agree with the secdir reviewer's suggestion [1] that it'd be good to note the security characteristics of the various classes defined (even if the current classes are kept). A table could usefully do that. (The exercise of generating that table might also help to see if the current class definitions are meaningful.) \u00a0  [1]  http://www.ietf.org/mail-archive/web/secdir/current/msg03964.html",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-05 10:57:04-08:00",
+        "text": "I'm abstaining because I think there's a missed opportunity here to define terms that would last significantly longer  if they were not based on absolutes, which seems short sighted to me.  write-up: I slightly dislike being told that \"experts from companies x, y & z\" think something. Much better would be to have been told that \"Fred Bloggs, Joe Blow and A.N.Other\" read it and said on the list that they were ok with it.\u00a0 I've worked for large companies and some of our company \"experts\" were not. And even if they were, they were sometimes more intersted in achieving company goals and not in objectively applying their expertise. (And just in case, for a protocol spec, it would be fine to say that company x have implemented since that's something one could in principle check. So I'm not saying that write-ups ought never mention comapanies.) abstract: Devices years ago were arguably far more constrained in some ways than the ones you mean here. The tendency to forget what happened a decade or more ago is a real one, and it'd be good if some lwig document reflected that.\u00a0 That's not really actionable, but if you wanted, you could remove the first sentence of the abstract and still be ok. intro: all devices have limited CPU etc. (Except maybe some in THHGTTG:-) That's not entirely a nit - all the terminology here needs to be relative, and relative to what we consider today's \"standard candle\" which could be a typical laptop. If you re-cast the discussion here in to only use relative terms, (except for examples) then perhaps this terminology could be current for far longer?  intro: sigh. The Internet has always been made of things. The IoT is of course a new marketing term, but doesn't reflect any new reality really. And \"becomes a reality\" is just pure marketing which'd be better omitted.  section 2: why is 5x10^10 an interesting number? That's just 7 devices per person. section 2: I don't understand the 2nd bullet at all. What is it meant to say? section 2: I disagree with the last sentence - there will always be \"constrained\" nodes (relative to some standard candle) and both the practical definition of constrained and standard will move as technology develops. I don't see how that *has to* to relate to scaling at all. (There are relationships, but I don't think \"scaling down\" is causitive.) 2.1: I assert that mentioning 2013 in the definition is a mistake. 2.1: A definition that does not consider a smartphone a constrained node seems wrong. Those are differently constrained compared to a tension sensor, but both should be considered constrained IMO. (\"My problems are worse than your problems\" doesn't seem like a good basis for terminology.) 2.1, bullet list: I would argue that you ought include \"constrained user interfaces\" here. (A LED is a user interface as is a factory-reset button, or even a replacable battery arguably.) 2.1: bullet list: I think you're again making the mistake of not being relative, e.g. \"maximum node complexity\" isn't even really understandable (why's it a max? can't I just add more? yes, I can!\u00a0 but of course then its a different device). Again the right approach (I claim:-) would be to cast all this in relative terms. 2.1: batterys vs. harvesting is not a real dichotomy, afaik almost all harvesting nodes have a battery or charge up a capacitor. There are vanishingly few nodes with no energy storage or accumulation mechanism and if they did become popular I suspect they ought be a class of their own. Or am I wrong there? 2.2: again 2013 in the definition is an error IMO.  2.2: constrained n/w definition also seems wrong in that there are networks today that are high speed that fit this definition e.g. fibre based networks doing quantum key distribution.   2.2.1: I don't think this is really a useful section at all, unless the goal is simply to say that DTN protocols are out of scope, which they are, since all protocols are out of scope. I'd say just delete this section (if you fix the definitions). 2.3: Just to note that this defintion is fine! 2.3.x: again you seem to be just dealing with territory here but I guess this could be useful 3 - I bet you some beers you live to regret using absolute numbers here. I don't find this table that useful. The text definitions saying what the nodes in various classes can and cannot do however is good and should be used in the definitions. 4.1 says you're not defining classes, but then 4.2 seems to do exactly that, which I find confusing. 4.2: I'd suggest s/E3/Einf/ so you could introduce new classes when you find out that E0..2 aren't sufficiently descriptive of interesting classes of device. For example, this section doesn't seem to consider duty-cycles which IMO can siginifcantly influence designs and which also provide a handy way to talk about device power requirements and capabilities in a n/w. - table 4: Sn as classes is a terrible choice since it conflicts with existing sleep state terminology for ACPI. - I agree with the secdir reviewer's suggestion [1] that it'd be good to note the security characteristics of the various classes defined (even if the current classes are kept). A table could usefully do that. (The exercise of generating that table might also help to see if the current class definitions are meaningful.) \u00a0  [1]  http://www.ietf.org/mail-archive/web/secdir/current/msg03964.html",
+        "type": "Abstain"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-08-14 14:31:27-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-09 08:48:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-02-21 07:38:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 14:31:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7228",
+  "evaluation_end": "2014-02-21 07:38:35-08:00",
+  "evaluation_start": "2013-07-09 08:48:52-07:00"
+}

@@ -1,0 +1,317 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-23 10:39:21-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-27 09:45:55-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-03-23 10:39:21-07:00",
+        "text": "I believe that my discuss concerns can be handled really easily, and I hope we can advance this document quickly. --- RFC 6241  should be a normative reference from the way it is used. --- A number of terms are used without being mentioned in Section 1.1. From recent experience discussing these issues in the Ops Area where it was  not clear that everyone had a common understanding of some of the terms, the absence of referenced definitions make this a Discuss point. configuration data list key tree subtree node presence container leaf-list choice node case node It may be that you can make a wholesale reference such as \"The  terminology for describing YANG data models is found in RFC foo\" but check that all of the terms are actually defined there. --- This Discuss issue is intended for discussion with the OPS ADs and is not for action by the document authors. It will be removed from the Discuss after we have talked about it on the IESG telechat Are there really no tools for checking YANG consistency and  compilability?  Are there no formal review criteria equivalent to the MIB doctor and associated guidance? The shepherd write-up implies not. These are surely things that we need to get in place PDQ.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-04-03 08:05:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-03-27 09:45:55-07:00",
+        "text": "I believe that my discuss concerns can be handled really easily, and I hope we can advance this document quickly. --- RFC 6241  should be a normative reference from the way it is used. --- A number of terms are used without being mentioned in Section 1.1. From recent experience discussing these issues in the Ops Area where it was  not clear that everyone had a common understanding of some of the terms, the absence of referenced definitions make this a Discuss point. configuration data list key tree subtree node presence container leaf-list choice node case node It may be that you can make a wholesale reference such as \"The  terminology for describing YANG data models is found in RFC foo\" but check that all of the terms are actually defined there.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-03 08:05:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-03-21 10:26:54-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-21 10:26:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-03-26 11:27:48-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-03-27 16:55:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-03-26 11:27:48-07:00",
+        "text": "These type definition descriptions for ip-address-origin in Section 4 don't seem quite right:  \u00a0 \u00a0 \u00a0 \u00a0 enum link-layer { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"Indicates an address created by IPv6 stateless \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  auto-configuration.\"; \u00a0 \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 \u00a0 \u00a0 enum random { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"Indicates an address chosen by the system at \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  random, e.g., an IPv4 address within 169.254/16, or an \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0   RFC 4941  privacy address.\"; \u00a0 \u00a0 \u00a0 \u00a0 } Randomized IIDs, whether static or generated according to  RFC 4941 , are used in statelessly auto-configured addresses (that is, those addresses are a subset of what is enumerated as \"link-layer\" above). Also, in the random type definition for ip-address-origin, I think it makes sense to include addresses generated via  draft-ietf-6man-stable-privacy-addresses  (about to be published as an RFC I believe). So, perhaps the following is closer to what was intended: \u00a0 \u00a0 \u00a0 \u00a0 enum link-layer { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"Indicates an address created by IPv6 stateless \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  auto-configuration that embeds a link-layer address in its interface identifier.\"; \u00a0 \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 \u00a0 \u00a0 enum random { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"Indicates an address chosen by the system at \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  random, e.g., an IPv4 address within 169.254/16, an \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0   RFC 4941  temporary address, or a semantically opaque address [ I-D.ietf-6man-stable-privacy-addresses ].\"; \u00a0 \u00a0 \u00a0 \u00a0 } A further question is whether the WG considered including the choice of configuring a semantically opaque address in the data model itself? I don't know enough about YANG to know whether there are extensibility options that would make that easy to add later (after further deployment of semantically opaque IIDs, say).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-27 16:55:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-03-21 13:43:31-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-21 13:43:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-03-21 03:10:20-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-03-24 07:13:26-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-03-24 08:27:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-03-24 07:13:26-07:00",
+        "text": "I think this will be a quick discussion, but I am concerned with the use of ipv6-address-no-zone within this document.\u00a0 Is it the case that IPv6 addresses that need  RFC 4007  scope zone information will be delineated by the parent interface information?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-24 08:27:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-03-25 22:42:16-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-25 22:42:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-03-26 23:53:54-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-26 23:53:54-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-03-21 11:31:28-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-21 11:31:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-03-24 13:09:05-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-24 13:09:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-03-25 15:40:15-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-25 15:40:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-03-26 15:03:20-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-26 15:03:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-03-27 06:09:08-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-27 06:09:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-23 08:43:25-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-27 06:32:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-03-23 08:43:25-07:00",
+        "text": "I just have one hopefully quickly handled question, most likely the answer won't need changes, just educating me a bit:-) Should CGAs be mentioned in the model? Right now they are not (or I missed it:-) Only reason to ask is just in case some less common option like that isn't supported here and where that could in future become a barrier to adoption. I'm guessing this is ok and CGA handling is part of \"temporary\" address handling probably.\u00a0 Is that right? If so, I'm not clear how various different forms of temporary address might be handled nor why its ok to not represent that here.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-27 06:32:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-03-27 08:28:08-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-21 03:10:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-04-14 06:40:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-27 08:28:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7277",
+  "evaluation_end": "2014-04-14 06:40:24-07:00",
+  "evaluation_start": "2014-03-21 03:10:20-07:00"
+}

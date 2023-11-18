@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-06 03:52:35-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-06 03:52:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-02-05 13:16:40-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-05 13:16:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-05 12:17:35-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-05 12:17:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-01-22 02:27:05-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-02-05 10:08:58-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-05 10:08:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-02-05 21:15:15-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-05 21:15:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-02-04 02:53:04-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-03-02 04:44:23-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-04 02:53:04-08:00",
+        "text": "I have no general objections to the publication of the draft but a few relative easy points to fix: First a procedural question about adding flags to the ForwardingOption: Apparently this draft adds a new value to the flags in the ForwardingOption header. However, there is no registry that keeps track of the flags in any coordinated way. Is this intentional? Second, which of the RPR or DRR draft is creating the new flag? Section 4.2., paragraph 2: >\u00a0 \u00a0 According to base draft [ I-D.ietf-p2psip-base ], SRR MUST be >\u00a0 \u00a0 supported.\u00a0 An overlay MAY be configured to use alternative routing >\u00a0 \u00a0 algorithms, and alternative routing algorithms MAY be selected on a >\u00a0 \u00a0 per-message basis.\u00a0 I.e., a node in an overlay which supports SRR and >\u00a0 \u00a0 some other routing algorithm, for example DRR, might use SRR some of >\u00a0 \u00a0 the time and DRR some of the time.\u00a0 A node joining the overlay should >\u00a0 \u00a0 get from the configuration file the preferred routing mode.\u00a0 If an >\u00a0 \u00a0 overlay runs within a private network and all peers in the system can >\u00a0 \u00a0 reach each other directly, peers MAY send most of the transactions >\u00a0 \u00a0 with DRR.\u00a0 On the contrary, using DRR SHOULD be discouraged in the \u00a0 Same point as for the RPR draft: Is \"SHOULD be discouraged\" actually \u00a0 meaning \"SHOULD NOT be used in the open Internet\"?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-02 04:44:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-02-04 18:53:07-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-04 18:53:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-02-05 17:35:19-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-05 17:35:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2014-02-06 05:41:24-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-06 05:41:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-02-03 16:19:41-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-02-27 08:28:24-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-03 16:19:41-08:00",
+        "text": "I expect to ballot YES on this draft, but wanted to ask a question first ... I'm looking at  http://tools.ietf.org//rfcdiff?url1=http://tools.ietf.org/id/draft-ietf-p2psip-rpr-11.txt&url2=http://tools.ietf.org/id/draft-ietf-p2psip-drr-11.txt  and seeing a lot of duplication between these drafts. That could be OK, although some protocol machinery looks like it's defined in both drafts (for instance, 0x08 IGNORE-STATE-KEEPING), but what I hoped to see is some discussion of RPR versus DRR - when you implement RELOAD, does it make sense to pick either RPR or DDR, and then fall back to SSR, or would you expect anyone to implement both SRR and RPR, or even attempt both in succession before falling back to SSR? I would guess that attempting DDR (directly route the reply), then attempting RPR (route using a relay), and only then falling back to SSR would make sense. Is there any guidance you can give? You'll notice I'm a coauthor on  http://tools.ietf.org/html/draft-ietf-p2psip-concepts-05 , so if you tell me \"there's no energy for new text\", I'll believe you, but I wanted to ask ...",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-27 08:28:24-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-02-06 04:05:01-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-06 04:05:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-04 10:13:36-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-04 10:13:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-02-05 16:51:18-08:00",
+        "end_reason": "new_position",
+        "start": "2014-01-22 02:27:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-03-02 05:43:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-05 16:51:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7263",
+  "evaluation_end": "2014-03-02 05:43:28-08:00",
+  "evaluation_start": "2014-01-22 02:27:05-08:00"
+}

@@ -1,0 +1,349 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-04-18 15:01:15-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-18 15:01:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-04-23 15:11:52-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-23 15:11:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-04-22 09:21:11-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-09-01 01:28:27-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-04-22 09:21:11-07:00",
+        "text": "\u00a0  Otherwise for messages to be sent over IPv6 it is RECOMMENDED to use \u00a0  value 1280 bytes as a maximum IP Datagram size ([ RFC2460 ]) \u00a0 \u00a0 \u00a0 ... \u00a0  Initiator MAY try to discover path MTU by probing several values of \u00a0  fragmentation threshold.  \u00a0 \u00a0  ... \u00a0  In most cases PMTU discovery will not be \u00a0  needed, as using values, recommended in section Section 2.5.1, should \u00a0  suffice.\u00a0 It is expected, that PMTU discovery may be useful in \u00a0  environments where PMTU size are smaller, than those listed in \u00a0  Section 2.5.1, for example due to the presence of intermediate \u00a0  tunnels. There is no MUST for PMTUD (like in  RFC 2460  btw). However, you have tunnels, you believe that you have avoided IP fragmentation (and the attack) by implementing this spec, but actually you have no protection. Don't you want to impose PMTUD with a single packet size = 1280 octets (the recommended value in  RFC 2460 ), as condition to understand if a full PMTUD is required? What is discussed in the WG?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-01 01:28:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-04-22 16:25:05-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-07-14 07:18:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-04-22 16:25:05-07:00",
+        "text": "I have no problems with the publication of this document, but there are some points I would like to see discussed. 1. Like Benoit's DISCUSS, I know there is useful information available on fragmentation issues in other documents.\u00a0 Ron Bonica put together useful information in the expired  draft-bonica-6man-frag-deprecate  that describes why fragmentation at the IP layer is troublesome.\u00a0 Since it is expired, I would suggest working with those authors to include some of their clearer justification text in this document. 2. I am troubled by the choice of 2119 keywords in some places.\u00a0 For example, section 2.3 says: \"Initiator MAY indicate its support for IKE Fragmentation and willingness to use it by ...\"\u00a0 Why is this a MAY?\u00a0 It is not needed for interoperability.\u00a0 The inclusion of the indicator is driven by support for this spec and any user configuration implemented for it. 3. The rules in Section 2.4 are rather loose.\u00a0 Why is there so much leeway in the rules for sending and receiving?\u00a0 How does an implementer code suspicions?\u00a0 Can the first two guidelines for initiators be combined?\u00a0 The first rule for responders assumes that network paths are symmetric.\u00a0 Is there justification for that assumption? 4. The third bullet in Section 2.5.2 seems to contradict the need to do any PMTUD.\u00a0 Couldn't you just fragment IKE_AUTH messages to the 1280/576 sizes and be done with it?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-14 07:18:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-04-23 08:53:44-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-23 08:53:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-04-24 07:55:02-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-24 07:55:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-04-18 13:51:23-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-04-23 07:18:27-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-04-24 02:53:53-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-04-23 07:18:27-07:00",
+        "text": "I am already raising my DISCUSS just to let the responsible AD and the authors know in advance. I am late with reading and will still need until Thursday to get my full review entered.  My biggest issue with the draft (amongst a number of others) is:  This draft must not invent any new path MTU discovery, as we have already two RFCs describing PMTU. Those two are mentioned in this draft, but I have not seen any reasons why another mechanism is needed. Further, there are some values to be defined before any PMTU can be done successfully. For instance, this draft says in Section 2.5.2 \"resaonable time after several retransmissions\". What is such a\u00a0 resonable time?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-04-24 02:57:43-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-04-24 02:53:53-07:00",
+        "text": "I have a concern about this draft being published as it is right now and this concern is about not re-using  RFC 4821  in an appropriate way.  Let's go step by step: 1) In Section 2.4, the first bullet list: It is easy to write text that an initiator can decide on some other knowledge whether it should or shouldn't fragment right away from the beginning. However, when saying this, you will need more text that discusses the operational side of this. For instance, it is not sufficient to blindly trust old data about the path's MTU between the initiator and the responder, as the characteristics of the path might have changed or the believe to use the same path as before is just wrong.  2) In Section 2.4, the second bullet list on page 6, bullet 1 and bullet 2: This bullet assumes that the the way back from the responder to the initiator shares the same properties as the way forward from the initiator to the responder. I am not an IKE expert, but if the response is big, actually bigger than the PMTU on the way back, and the request was not fragmented, what happens in this case?  Bullet 2 is pointing ot this, but the current text is not very precis other than saying \"has some knowledge\". Further, bullet 2 contradicts bullet 1's SHOULD.  3) Section 2.5.2: This section is hitting my main concern about not re-using  RFC 4821 's mechnism. For instance: - You start from a large value and if this doesn't work you move to a smaller value. What is the recommended value for this and what steps do you take in decreasing the packet size? This sounds implementation specific, but implementers will value guidance on what to do.  - You talk about a timer that should be reasonable. What is reasonable? - The text here worries me: \"After reaching the smallest allowed value for fragmentation threshold implementation MUST continue probing using it until either exchange completes or times out.\" So, you are continuesly probing the network though have rached your threshold and you still do not have success? I can continue this list of open issues and questions, but instead let's ask the questions about why not re-using  RFC 4821 : In  RFC 4821  there is text about what is required by the particular protocol in order to enable PLPMTUD, in Section 6.1.\u00a0 \"Mechanism to Detect Loss\" it says: \u00a0  \"It is important that the Packetization Layer has a timely and robust \u00a0  mechanism for detecting and reporting losses.\" Ok, I can see that UDP itself does not have this type of information built-in, but the rest of the document makes reasonable assumptions on how you can use PLPMTUD even without using TCP or SCTP.  For example, Section 10.4.\u00a0 \"Probing Method Using Applications\" even discusses doing PLPMTUD out of an application, which IKE is.  Please note that similar concerns where raised in Oct 2013 during the TSV-DIR review by Joe Touch and Matt Mathis. Thread starts here:  http://www.ietf.org/mail-archive/web/ipsec/current/msg08653.html .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-04-24 03:01:12-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-04-24 02:57:43-07:00",
+        "text": "I have a concern about this draft being published as it is right now and this concern is about not re-using  RFC 4821  in an appropriate way.  Let's go step by step: 1) In Section 2.4, the first bullet list: It is easy to write text that an initiator can decide on some other knowledge whether it should or shouldn't fragment right away from the beginning. However, when saying this, you will need more text that discusses the operational side of this. For instance, it is not sufficient to blindly trust old data about the path's MTU between the initiator and the responder, as the characteristics of the path might have changed or the believe to use the same path as before is just wrong.  2) In Section 2.4, the second bullet list on page 6, bullet 1 and bullet 2: This bullet assumes that the the way back from the responder to the initiator shares the same properties as the way forward from the initiator to the responder. I am not an IKE expert, but if the response is big, actually bigger than the PMTU on the way back, and the request was not fragmented, what happens in this case?  Bullet 2 is pointing ot this, but the current text is not very precis other than saying \"has some knowledge\". Further, bullet 2 contradicts bullet 1's SHOULD.  3) Section 2.5.2: This section is hitting my main concern about not re-using  RFC 4821 's mechnism. For instance: - You start from a large value and if this doesn't work you move to a smaller value. What is the recommended value for this and what steps do you take in decreasing the packet size? This sounds implementation specific, but implementers will value guidance on what to do.  - You talk about a timer that should be reasonable. What is reasonable? - The text here worries me: \"After reaching the smallest allowed value for fragmentation threshold implementation MUST continue probing using it until either exchange completes or times out.\" So, you are continuesly probing the network though have rached your threshold and you still do not have success? 4) Section 2.6, page 11: \"If receiver doesn't get all IKE Fragment Messages needed to reassemble original Message for some Exchange within a timeout interval,\". This draft isn't specifying any timeout value. See also my comment about interworking with any IKE timers. 5)I can continue this list of open issues and questions, but instead let's ask the questions about why not re-using  RFC 4821 : In  RFC 4821  there is text about what is required by the particular protocol in order to enable PLPMTUD, in Section 6.1.\u00a0 \"Mechanism to Detect Loss\" it says: \u00a0  \"It is important that the Packetization Layer has a timely and robust \u00a0  mechanism for detecting and reporting losses.\" Ok, I can see that UDP itself does not have this type of information built-in, but the rest of the document makes reasonable assumptions on how you can use PLPMTUD even without using TCP or SCTP.  For example, Section 10.4.\u00a0 \"Probing Method Using Applications\" even discusses doing PLPMTUD out of an application, which IKE is.  Please note that similar concerns where raised in Oct 2013 during the TSV-DIR review by Joe Touch and Matt Mathis. Thread starts here:  http://www.ietf.org/mail-archive/web/ipsec/current/msg08653.html .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-04-24 03:01:55-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-04-24 03:01:12-07:00",
+        "text": "I have a concern about this draft being published as it is right now and this concern is about not re-using  RFC 4821  in an appropriate way.  Let's go step by step: 1) In Section 2.4, the first bullet list: It is easy to write text that an initiator can decide on some other knowledge whether it should or shouldn't fragment right away from the beginning. However, when saying this, you will need more text that discusses the operational side of this. For instance, it is not sufficient to blindly trust old data about the path's MTU between the initiator and the responder, as the characteristics of the path might have changed or the believe to use the same path as before is just wrong.  2) In Section 2.4, the second bullet list on page 6, bullet 1 and bullet 2: This bullet assumes that the the way back from the responder to the initiator shares the same properties as the way forward from the initiator to the responder. I am not an IKE expert, but if the response is big, actually bigger than the PMTU on the way back, and the request was not fragmented, what happens in this case?  Bullet 2 is pointing ot this, but the current text is not very precis other than saying \"has some knowledge\". Further, bullet 2 contradicts bullet 1's SHOULD.  3) Section 2.5.2: This section is hitting my main concern about not re-using  RFC 4821 's mechnism. For instance: - You start from a large value and if this doesn't work you move to a smaller value. What is the recommended value for this and what steps do you take in decreasing the packet size? This sounds implementation specific, but implementers will value guidance on what to do.  - You talk about a timer that should be reasonable. What is reasonable? - The text here worries me: \"After reaching the smallest allowed value for fragmentation threshold implementation MUST continue probing using it until either exchange completes or times out.\" So, you are continuesly probing the network though have rached your threshold and you still do not have success? 4) Section 2.6, page 11: \"If receiver doesn't get all IKE Fragment Messages needed to reassemble original Message for some Exchange within a timeout interval,\". This draft isn't specifying any timeout value. See also my comment about interworking with any IKE timers. 5) Section 5, this text: \"To mitigate the impact of this attack, it is RECOMMENDED that \u00a0  receiver limits the number of fragments it stores in reassembling \u00a0  queue so that the sum of the sizes of Encrypted Fragment Payload \u00a0  contents (after decryption) for fragments that are already placed \u00a0  into reassembling queue be less than some value that is reasonable \u00a0  for the implementation. \" While buffer sizes are implementation specific, I do see this text as pure handwaiving, as it doesn't have any good guidance for implementers. I would add this as a comment, but if the number of fragments it stores in reassembling queue  is too small there is an interoperability issue, as the sender of the fragments cannot know what the acceptable lower limit is. Therefore this goes as an DISCUSS issue. 6)I can continue this list of open issues and questions, but instead let's ask the questions about why not re-using  RFC 4821 : In  RFC 4821  there is text about what is required by the particular protocol in order to enable PLPMTUD, in Section 6.1.\u00a0 \"Mechanism to Detect Loss\" it says: \u00a0  \"It is important that the Packetization Layer has a timely and robust \u00a0  mechanism for detecting and reporting losses.\" Ok, I can see that UDP itself does not have this type of information built-in, but the rest of the document makes reasonable assumptions on how you can use PLPMTUD even without using TCP or SCTP.  For example, Section 10.4.\u00a0 \"Probing Method Using Applications\" even discusses doing PLPMTUD out of an application, which IKE is.  Please note that similar concerns where raised in Oct 2013 during the TSV-DIR review by Joe Touch and Matt Mathis. Thread starts here:  http://www.ietf.org/mail-archive/web/ipsec/current/msg08653.html .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-07-19 11:13:50-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-04-24 03:01:55-07:00",
+        "text": "I have a concern about this draft being published as it is right now and this concern is about not re-using  RFC 4821  in an appropriate way.  Let's go step by step: 1) In Section 2.4, the first bullet list: It is easy to write text that an initiator can decide on some other knowledge whether it should or shouldn't fragment right away from the beginning. However, when saying this, you will need more text that discusses the operational side of this. For instance, it is not sufficient to blindly trust old data about the path's MTU between the initiator and the responder, as the characteristics of the path might have changed or the believe to use the same path as before is just wrong.  2) In Section 2.4, the second bullet list on page 6, bullet 1 and bullet 2: This bullet assumes that the the way back from the responder to the initiator shares the same properties as the way forward from the initiator to the responder. I am not an IKE expert, but if the response is big, actually bigger than the PMTU on the way back, and the request was not fragmented, what happens in this case?  Bullet 2 is pointing ot this, but the current text is not very precis other than saying \"has some knowledge\". Further, bullet 2 contradicts bullet 1's SHOULD.  3) Section 2.5.2: This section is hitting my main concern about not re-using  RFC 4821 's mechnism. For instance: - You start from a large value and if this doesn't work you move to a smaller value. What is the recommended value for this and what steps do you take in decreasing the packet size? This sounds implementation specific, but implementers will value guidance on what to do.  - You talk about a timer that should be reasonable. What is reasonable? - The text here worries me: \"After reaching the smallest allowed value for fragmentation threshold implementation MUST continue probing using it until either exchange completes or times out.\" So, you are continuesly probing the network though have rached your threshold and you still do not have success? 4) Section 2.6, page 11: \"If receiver doesn't get all IKE Fragment Messages needed to reassemble original Message for some Exchange within a timeout interval,\". This draft isn't specifying any timeout value. See also my comment about interworking with any IKE timers. 5) Section 5, this text: \"To mitigate the impact of this attack, it is RECOMMENDED that \u00a0  receiver limits the number of fragments it stores in reassembling \u00a0  queue so that the sum of the sizes of Encrypted Fragment Payload \u00a0  contents (after decryption) for fragments that are already placed \u00a0  into reassembling queue be less than some value that is reasonable \u00a0  for the implementation. \" While buffer sizes are implementation specific, I do see this text as pure handwaiving, as it doesn't have any good guidance for implementers. I would add this as a comment, but if the number of fragments it stores in reassembling queue  is too small there is an interoperability issue, as the sender of the fragments cannot know what the acceptable lower limit is. Therefore this goes as an DISCUSS issue. 6)I can continue this list of open issues and questions, but instead let's ask the questions about why not re-using  RFC 4821 : In  RFC 4821  there is text about what is required by the particular protocol in order to enable PLPMTUD, in Section 6.1.\u00a0 \"Mechanism to Detect Loss\" it says: \u00a0  \"It is important that the Packetization Layer has a timely and robust \u00a0  mechanism for detecting and reporting losses.\" Ok, I can see that UDP itself does not have this type of information built-in, but the rest of the document makes reasonable assumptions on how you can use PLPMTUD even without using TCP or SCTP.  For example, Section 10.4.\u00a0 \"Probing Method Using Applications\" even discusses doing PLPMTUD out of an application, which IKE is.  Please note that similar concerns where raised in Oct 2013 during the TSV-DIR review by Joe Touch and Matt Mathis. Thread starts here:  http://www.ietf.org/mail-archive/web/ipsec/current/msg08653.html .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-19 11:13:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-04-23 15:24:44-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-07-14 16:04:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-04-23 15:24:44-07:00",
+        "text": "2.4: I actually think that the problems in this section are more serious than Barry's COMMENT would indicate. Even leaving aside the grammatical issues, which makes some of this section confusing, as written I think this section is actually self-contradictory: The opening paragraph indicates that the initiator is free to fragment (or not) completely at its discretion, but then the bullets indicate that there are interoperability requirements with fragmenting that do not agree with that. My guess is that all of the SHOULDs and SHOULD NOTs in 2.4 are actually just suggestions, but honestly I can't be sure: None of them explain why it's problematic to deviate from them, so I can't tell if they're actually indicating interoperability or security problems or are simply implementation advice. Finally, I find this \"knowledge or suspicions\" text to be very odd in the context of requirements. I'm supposed to base my implementation on whether I have suspicions that something might happen? I could spend time giving you suggested text, but I figure that wouldn't be fruitful as you'd have to correct all of my technical errors. Please give this section another go. 2.5: \u00a0  Message to be fragmented MUST contain Encrypted Payload. Ungrammatical sentences with protocol requirements always give me pause, but I actually don't understand what the above requirement is trying to say. Is it that the fragment MUST be encrypted? I don't understand. \u00a0  When prepending IKE Header, Length field MUST be adjusted to reflect \u00a0  the length of constructed message and Next Payload field MUST reflect \u00a0  payload type of the first Payload in the constructed message (that in \u00a0  most cases will be Encrypted Fragment Payload). That isn't clear to me. Do you mean that the IKE Header Length field MUST be the length of the header plus the length of the fragment, or do you mean that it is the original length of the entire unfragmented payload? What does \"the constructed message\" refer to?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-14 16:04:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-04-23 18:17:50-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-23 18:17:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-04-20 15:12:52-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-04-20 15:17:06-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-04-20 15:12:52-07:00",
+        "text": "This is a well-written document - thanks for that. I have one concern (spread over two sections, but I think I'm poking the same bear in both sections) that I'd like to understand better before balloting No-Obj. In this text, in Section 2.6.\u00a0 Receiving IKE Fragment Message: \u00a0 \u00a0 \u00a0 *\u00a0 if reassembling has already started, check that Total Fragments \u00a0 \u00a0 \u00a0 \u00a0  field is equal to or greater than Total Fragments field in \u00a0 \u00a0 \u00a0 \u00a0  fragments, that have already received I'm really struggling to parse this bullet - I'm guessing  \u00a0 \u00a0 \u00a0 *\u00a0 if reassembling has already started, check that Total Fragments \u00a0 \u00a0 \u00a0 \u00a0  field is equal to or greater than Total Fragments field in \u00a0 \u00a0 \u00a0 \u00a0  fragments that have already been received \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^^^^ is close to what is meant (extra comma PLUS missing word), but I'm guessing - please fix it! So, beyond that ... I WAS reading this to say that I can fragment a payload into four fragments, send the first three with Total Fragments set to 3, and then send the fourth fragment with Total Fragments set to 4, and that works. But then the other shoe drops a couple of bullets later, in this text: \u00a0  o\u00a0 If reassembling isn't finished yet and Total Fragments field in \u00a0 \u00a0 \u00a0 received IKE Fragment Message is greater than this field in \u00a0 \u00a0 \u00a0 previously received fragments, receiver MUST discard all received \u00a0 \u00a0 \u00a0 fragments and start reassembling over with just received IKE \u00a0 \u00a0 \u00a0 Fragment Message. If so, is it correct to say \"a sender can't shrink Total Fragments below what's already been sent within the same Message ID, and can grow Total Fragments beyond what's already been sent with previous fragments with the same Message ID, but the receiver will discard all of the previous fragments and start reassembly with the fragment that arrived with the new, larger Total Fragments\", or something like that? Mumble. Is this all required to accommodate intermediate states that could happen during PMTU discovery? That would have all been part of my Comments, until I got down to this text, in 2.6.1.\u00a0 Changes in Replay Protection Logic \u00a0  If Responder receives a replay IKE Fragment Message for already \u00a0  reassembled, verified and processed fragmented message, it MUST \u00a0  retransmit response back to Initiator, but only if Fragment Number \u00a0  field in Encrypted Fragment Payload is equal to 1 and MUST silently \u00a0  discard received message otherwise.\u00a0 If Total Fragments field in \u00a0  received IKE Fragment Message is greater than in IKE Fragment \u00a0  Messages that already processed fragmented message was reassembled \u00a0  from, Responder MAY refragment its response message using smaller \u00a0  fragmentation threshold before resending it back to Initiator.\u00a0 In \u00a0  this case Total Fragments field in new IKE Fragment Messages MUST be \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^^^^^^ \u00a0  greater than in previously sent IKE Fragment Messages. \u00a0  ^^^^^^^^^^^^ \u00a0  If Initiator doesn't receive any of response IKE Fragment Messages \u00a0  within a timeout interval, it MAY refragment request Message using \u00a0  smaller fragmentation threshold before retransmitting it (see \u00a0  Section 2.5.1).\u00a0 In this case Total Fragments field in new IKE \u00a0  Fragment Messages MUST be greater than in previously sent IKE \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^^^^^^^^^^^^^^^^^^^^ \u00a0  Fragment Messages. it looks like you're using a changed Total Fragments value to signal the other side to discard everything (except the fragment with the changed Total Fragments field) and start over on reassembling this payload, is that right? If so, perhaps the MUST needs to state that explicitly - something like  \u00a0  In this case the new fragmentation threshold MUST be small enough  \u00a0  to increase number of fragments, so that the Total Fragments field  \u00a0  in new IKE Fragment Messages will be greater than in previously  \u00a0  sent IKE Fragment Messages. (I'm thinking of a scenario where payload length is 1000 bytes, the sender is using a fragmentation threshold of 400 bytes and tries to send 400+400+200, and then uses a smaller fragmentation threshold of 350 bytes and successfully sends 350+350+300, also in three fragments, so the receiver doesn't handle that correctly. You want the sender to use an even smaller fragmentation threshold of 333 bytes, sending 333+333+333+1 in four fragments - does that make sense?)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-04-23 13:41:44-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-04-20 15:17:06-07:00",
+        "text": "This is a well-written document - thanks for that. I have one concern (spread over two sections, but I think I'm poking the same bear in both sections) that I'd like to understand better before balloting No-Obj. In this text, in Section 2.6.\u00a0 Receiving IKE Fragment Message: \u00a0 \u00a0 \u00a0 *\u00a0 if reassembling has already started, check that Total Fragments \u00a0 \u00a0 \u00a0 \u00a0  field is equal to or greater than Total Fragments field in \u00a0 \u00a0 \u00a0 \u00a0  fragments, that have already received I'm really struggling to parse this bullet - I'm guessing  \u00a0 \u00a0 \u00a0 *\u00a0 if reassembling has already started, check that Total Fragments \u00a0 \u00a0 \u00a0 \u00a0  field is equal to or greater than Total Fragments field in \u00a0 \u00a0 \u00a0 \u00a0  fragments that have already been received \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^^^^ is close to what is meant (extra comma PLUS missing word), but I'm guessing - please fix it! So, beyond that ... I WAS reading this to say that I can fragment a payload into four fragments, send the first three with Total Fragments set to 3, and then send the fourth fragment with Total Fragments set to 4, and that works. But then the other shoe drops a couple of bullets later, in this text: \u00a0  o\u00a0 If reassembling isn't finished yet and Total Fragments field in \u00a0 \u00a0 \u00a0 received IKE Fragment Message is greater than this field in \u00a0 \u00a0 \u00a0 previously received fragments, receiver MUST discard all received \u00a0 \u00a0 \u00a0 fragments and start reassembling over with just received IKE \u00a0 \u00a0 \u00a0 Fragment Message. If so, is it correct to say \"a sender can't shrink Total Fragments below what's already been sent within the same Message ID, and can grow Total Fragments beyond what's already been sent with previous fragments with the same Message ID, but the receiver will discard all of the previous fragments and start reassembly with the fragment that arrived with the new, larger Total Fragments\", or something like that? Mumble. Is this all required to accommodate intermediate states that could happen during PMTU discovery? That would have all been part of my Comments, until I got down to this text, in 2.6.1.\u00a0 Changes in Replay Protection Logic \u00a0  If Responder receives a replay IKE Fragment Message for already \u00a0  reassembled, verified and processed fragmented message, it MUST \u00a0  retransmit response back to Initiator, but only if Fragment Number \u00a0  field in Encrypted Fragment Payload is equal to 1 and MUST silently \u00a0  discard received message otherwise.\u00a0 If Total Fragments field in \u00a0  received IKE Fragment Message is greater than in IKE Fragment \u00a0  Messages that already processed fragmented message was reassembled \u00a0  from, Responder MAY refragment its response message using smaller \u00a0  fragmentation threshold before resending it back to Initiator.\u00a0 In \u00a0  this case Total Fragments field in new IKE Fragment Messages MUST be \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^^^^^^ \u00a0  greater than in previously sent IKE Fragment Messages. \u00a0  ^^^^^^^^^^^^ \u00a0  If Initiator doesn't receive any of response IKE Fragment Messages \u00a0  within a timeout interval, it MAY refragment request Message using \u00a0  smaller fragmentation threshold before retransmitting it (see \u00a0  Section 2.5.1).\u00a0 In this case Total Fragments field in new IKE \u00a0  Fragment Messages MUST be greater than in previously sent IKE \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^^^^^^^^^^^^^^^^^^^^ \u00a0  Fragment Messages. it looks like you're using a changed Total Fragments value to signal the other side to discard everything (except the fragment with the changed Total Fragments field) and start over on reassembling this payload, is that right? If so, perhaps the MUST should say that more clearly - something like  \u00a0  In this case the new fragmentation threshold MUST be small enough  \u00a0  to increase number of fragments, so that the Total Fragments field  \u00a0  in new IKE Fragment Messages will be greater than in previously  \u00a0  sent IKE Fragment Messages, and the receiver will discard any  \u00a0  previously-received fragments and restart reassembly with this \u00a0  fragment. (I'm thinking of a scenario where payload length is 1000 bytes, the sender is using a fragmentation threshold of 400 bytes and tries to send 400+400+200, and then uses a smaller fragmentation threshold of 350 bytes and successfully sends 350+350+300, also in three fragments, so the receiver doesn't handle that correctly. You want the sender to use an even smaller fragmentation threshold of 333 bytes, sending 333+333+333+1 in four fragments - does that make sense?)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-23 13:41:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-04-24 05:12:24-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-06-06 06:39:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-04-24 05:12:24-07:00",
+        "text": "I just want to check one thing, which is probably ok, but not clear to me. (Apologies - I didn't have much time to read this;-) The concern I have is that a sender ought not be able to e.g. overwrite the value sent in a fragment with a later different fragment (say sending a good cert first and then a bogus one later and hoping that the good one is verified before reassembly is complete but the names from the bogus one are used for access control). I think this is probably ok, but just wanted to check.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-06 06:39:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-04-23 12:43:27-07:00",
+        "end_reason": "new_position",
+        "start": "2014-04-18 13:51:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-09-02 15:04:42-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-23 12:43:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7383",
+  "evaluation_end": "2014-09-02 15:04:42-07:00",
+  "evaluation_start": "2014-04-18 13:51:23-07:00"
+}

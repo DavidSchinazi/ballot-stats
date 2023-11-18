@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-01-17 13:13:06-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-17 13:13:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-01-21 20:00:40-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-21 20:00:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-01-21 06:13:22-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-21 06:13:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-19 14:45:23-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-19 14:45:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-01-19 06:08:14-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-19 06:08:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-01-21 07:24:54-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-01-22 05:14:31-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-01-21 07:24:54-08:00",
+        "text": "I have some questions on some of the procedures described in this draft.\u00a0 These are not showstoppers, but places where I think some clarification is needed. * It is unclear to me from reading this document,  RFC 6887 , and  RFC 7291  how a PCP client knows how to distinguish if it is configured with multiple PCP servers or a single PCP server with multiple addresses.\u00a0 It is possible that I missed something, so some guidance is requested.\u00a0 The nonce does not seem to help since the PCP server just echos back in the MAP Response what was received in the MAP Request.\u00a0 How does the PCP client know if it is talking to one or multiple PCP servers? * Section 3, bullet #4 says: \u00a0 \u00a0 \u00a0  The PCP client SHOULD ignore any response received from an IP \u00a0 \u00a0 \u00a0  address after exhausting MRC attempts for that particular IP \u00a0 \u00a0 \u00a0  address. If the PCP client is still trying to contact a PCP server, why would it willingly ignore a valid response?\u00a0 If I have 3 addresses for the PCP server and am in the process of trying address 3, what is wrong with accepting a late response that arrives from address 2? I am also confused about the SHOULD in this bullet that says \"If, when sending PCP requests, the PCP client receives a hard ICMP error [ RFC1122 ] it SHOULD immediately try the next IP address from the list of PCP server IP addresses.\"\u00a0 If it is a hard error, isn't this a MUST?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-22 05:14:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-22 05:01:11-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-22 05:01:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-01-22 07:17:37-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-22 07:17:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-01-21 11:02:46-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-21 11:02:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-01-21 02:12:59-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-21 02:12:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-01-19 00:11:36-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-19 00:11:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-21 20:16:39-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-21 20:16:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-01-19 15:06:38-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-19 15:06:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-01-21 06:18:15-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-21 06:18:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-01-12 10:30:14-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-01-26 09:22:35-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-12 10:30:14-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7488",
+  "evaluation_end": "2015-01-26 09:22:35-08:00",
+  "evaluation_start": "2015-01-12 10:30:14-08:00"
+}

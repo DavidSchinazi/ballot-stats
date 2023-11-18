@@ -1,0 +1,337 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-19 14:11:48-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-19 14:12:14-08:00",
+        "end_reason": "comment_updated",
+        "start": "2014-02-19 14:11:48-08:00",
+        "text": "I just so wish you hadn't made this \"LDP\" it shares so little with LDP that you might just as easily have made it a whole new protocol and saved all of the baggage and the strangeness that *will* happen when an implementation gets confused and sends a regular LDP message trying for a label. Indeed, the whole document basically fails to discuss how this fits within LDP in terms of session establishment etc. Thus, I think there is an assumption that there is already an MPLS LDP session between each pair of PEs in an RG such that the elements of this protocol can just piggy-back on that. Indeed, section 4.6 presents a hack for a \"separate\" session without saying separate from what. In the case where no labels exchange is needed between the PEs, this would be the normal case and it indicates that LDP is not really the best choice for this approach. However, \"I think this way of doing things sucks\" is clearly not a reason to place a Discuss or to block the document. It is also clear that this approach has been coded and shipped. I think it's a shame it wasn't done cleanly and I am suprised that LDP architects and the PWE3 WG didn't think this an unnecessary hack. --- I think Tom may want to change his coordinates --- I think that new LDP-based documents would do well to include references to further work on MPLS and LDP security. In particular,  RFC 5920 ,  RFC 6952 , and draft-ietf-mpls-ldp-hello-crypto-auth.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-20 09:50:37-08:00",
+        "end_reason": "comment_updated",
+        "start": "2014-02-19 14:12:14-08:00",
+        "text": "I just so wish you hadn't made this \"LDP\" it shares so little with LDP that you might just as easily have made it a whole new protocol and saved all of the baggage and the strangeness that *will* happen when an implementation gets confused and sends a regular LDP message trying for a label. Indeed, the whole document basically fails to discuss how this fits within LDP in terms of session establishment etc. Thus, I think there is an assumption that there is already an MPLS LDP session between each pair of PEs in an RG such that the elements of this protocol can just piggy-back on that. Indeed, section 4.6 presents a hack for a \"separate\" session without saying separate from what. In the case where no labels exchange is needed between the PEs, this would be the normal case and it indicates that LDP is not really the best choice for this approach. However, \"I think this way of doing things sucks\" is clearly not a reason to place a Discuss or to block the document. It is also clear that this approach has been coded and shipped. I think it's a shame it wasn't done cleanly and I am surprised that LDP architects and the PWE3 WG didn't think this an unnecessary hack. --- I think Tom may want to change his coordinates --- I think that new LDP-based documents would do well to include references to further work on MPLS and LDP security. In particular,  RFC 5920 ,  RFC 6952 , and draft-ietf-mpls-ldp-hello-crypto-auth.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 09:50:37-08:00",
+        "text": "Adding a note after discussion with Stewart and bearing in mind some observations from a couple of other ADs, I think that this I-D might make it more obvious that ICCP is running within LDP and why that choice was made. That will stop people \"expressing surprise\" and making claims of \"unwarranted piggybacking.\" While I accept that this information can be gleaned from the document, it is not really painted red. Perhaps add a short sentence to the Introduction (and not buried :-) saying something like.... This document assumes that it is normal to run LDP between the PEs in the RG, and that LDP components will in any case be present on the PEs to establish and maintain PWs. Therefore, ICCP is built as a secondary protocol running within LDP and taking advantage of the LDP session mechanisms and the underlying TCP and TCP-based security mechanisms already necessary for LDP operation. === I just so wish you hadn't made this \"LDP\" it shares so little with LDP that you might just as easily have made it a whole new protocol and saved all of the baggage and the strangeness that *will* happen when an implementation gets confused and sends a regular LDP message trying for a label. Indeed, the whole document basically fails to discuss how this fits within LDP in terms of session establishment etc. Thus, I think there is an assumption that there is already an MPLS LDP session between each pair of PEs in an RG such that the elements of this protocol can just piggy-back on that. Indeed, section 4.6 presents a hack for a \"separate\" session without saying separate from what. In the case where no labels exchange is needed between the PEs, this would be the normal case and it indicates that LDP is not really the best choice for this approach. However, \"I think this way of doing things sucks\" is clearly not a reason to place a Discuss or to block the document. It is also clear that this approach has been coded and shipped. I think it's a shame it wasn't done cleanly and I am surprised that LDP architects and the PWE3 WG didn't think this an unnecessary hack. --- I think Tom may want to change his coordinates --- I think that new LDP-based documents would do well to include references to further work on MPLS and LDP security. In particular,  RFC 5920 ,  RFC 6952 , and draft-ietf-mpls-ldp-hello-crypto-auth.",
+        "type": "Abstain"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-03-13 14:09:56-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-02 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-13 14:09:56-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-02-17 19:40:01-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-17 19:40:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-19 06:39:04-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-20 05:35:52-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-19 06:39:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-20 05:38:32-08:00",
+        "end_reason": "comment_updated",
+        "start": "2014-02-20 05:35:52-08:00",
+        "text": "Updated... Having read Adrian's comments, I re-read the specification and concur with his concern.\u00a0 Overloading existing protocols can lead to problems.\u00a0 I can envision future work where either the ICCP function or the LDP function needs to change its core behavior.\u00a0 It is quite possible that the requirements for the other function will interfere with making such changes.\u00a0 Given the nature of ICCP, it seems to me that a better design decision would have been to make it a separate protocol.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 05:38:32-08:00",
+        "text": "Updated... Having read Adrian's comments, I re-read the specification and concur with his concern.\u00a0 Overloading existing protocols can lead to problems.\u00a0 I can envision future work where either the ICCP function or the LDP function needs to change its core behavior.\u00a0 It is quite possible that the requirements for the other function will interfere with making such changes.\u00a0 Given the nature of ICCP, it seems to me that a better design decision would have been to make it a separate protocol. For the IESG... I equate this with the recent discussion we had over the ICMP AUP draft.\u00a0 Overloading existing protocols because they have similar semantics or functionality is not good protocol design.",
+        "type": "Abstain"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-02-20 07:09:58-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-02-20 07:09:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-02-19 14:57:27-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 14:57:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-02-20 07:49:20-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 07:49:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-03-25 10:08:12-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-02 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-25 10:08:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-02-19 01:31:57-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 01:31:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-02-19 18:17:04-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 18:17:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2014-02-20 08:51:45-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-02-20 08:51:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-02-20 05:47:57-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 05:47:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-02-20 04:20:49-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-14 07:56:30-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-20 04:20:49-08:00",
+        "text": "This draft says that some kind of \"transport security\" is required, but does not seem to say precisely what that means, nor does it say how to implement anything meeting the requirement. And the protocol does involve sensitive operations on non-colocated nodes, so I think a bit more work on the security issues is needed. Presumably that will mean clarifying assumptions made (e.g. that all connections, local or remote are somehow \"secure\") and providing better references to existing mechanisms that can be used, so I'd like to DISCUSS that.\u00a0 I've broken that down into four parts below to help move that discussion along more quickly, but depending on the answer to point (1) in particular, it might turn out to make sense for me to restructure the discuss points, so we should I guess focus on that point first. (1) 3.3: What does \"transport security\" mean in requirement vii? (2) section 4: which layer handles \"transport security\"? How can that be done? (3) 10, para 2: \"MUST provide a mechanism\" does not say what mechanism - how can this be implemented and achieve interop? (4) 10, para 3: \"SHOULD provide mechanisms\" does not say what mechanism - how can this be implemented and achieve interop?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-14 07:56:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-11 03:07:07-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-03-27 08:25:55-07:00",
+        "end_reason": "new_position",
+        "start": "2014-02-11 03:07:07-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-03-31 11:10:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-27 08:25:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7275",
+  "evaluation_end": "2014-03-31 11:10:12-07:00",
+  "evaluation_start": "2014-02-11 03:07:07-08:00"
+}

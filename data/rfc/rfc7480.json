@@ -1,0 +1,531 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-08-13 10:03:36-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-13 10:03:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-26 21:35:34-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-26 21:35:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-10-27 09:34:52-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-27 09:34:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-10-28 16:16:57-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-12-01 16:11:50-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-28 16:16:57-07:00",
+        "text": "= Section 5.6 = \"When responding to queries, it is RECOMMENDED that servers use the \u00a0  Access-Control-Allow-Origin header field, as specified by \u00a0  [ W3C.CR -cors-20130129].\u00a0 As the use of RDAP is for public resources, \u00a0  a value of \"*\" is suitable for most cases.\" What is the use case for cross-site RDAP queries? Also, I am confused by the claim in the second sentence. The message that I got from  draft-ietf-weirds-rdap-sec  and  draft-ietf-weirds-json-response  is that one of the motivations for using HTTP for RDAP was that its authentication features could be leveraged to provide tiered access to data on the server, such that some of the data would not be public but would be restricted to specific users (from  draft-ietf-weirds-json-response , Appendix A.1: \"In many use cases, it is necessary to hide or obscure the information of a registrant or contact due to policy or other operational matters.\"). So it seems like if cross-site requests are justified at all, there should be some text here explaining when that might be the case and when not.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-01 16:11:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-08-12 13:44:30-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-08-15 07:53:19-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-08-12 13:44:30-07:00",
+        "text": "Two small points, which shouldn't hold things up much: 1. Larry Masinter's AppsDir review notes an issue with using the HTTP 404 status code.\u00a0 404 is meant to say that the URL you're asking for doesn't exist (or the server isn't willing to disclose that it exists).\u00a0 The question is whether there's a useful distinction in RDAP between \"you're querying about something that doesn't exist\" and \"you're querying about something that exists, but there's no information available about it.\" \u00a0If not, then 404 might be OK (it's altering the sense of 404 a little, though). \u00a0If so, though, there should be different status codes, and 404 belongs to the former.\u00a0 Please discuss. 2. The registration of the application/rdap+json media type was removed in version -07, presumably to move it to the json-response document (which makes sense).\u00a0 But there are examples here in Appendix A that still use that media type, with no definition in sight.\u00a0 I'm not happy with that. I would be happy with an informative reference to the document where that media type is defined, and, of course, and update to that draft, including it (the latest posted version, json-response-04, predates this change).\u00a0 (An informative reference is OK, I think, because this is in an example.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-15 07:53:19-07:00",
+        "text": "I am satisfied with the response about the 404 status code, so I'm removing that from my DISCUSS position. 1. This point still has no response: The registration of the application/rdap+json media type was removed in version -07, presumably to move it to the json-response document (which makes sense).\u00a0 But there are examples here in Appendix A that still use that media type, with no definition in sight.\u00a0 I'm not happy with that. I would be happy with an informative reference to the document where that media type is defined, and, of course, and update to that draft, including it (the latest posted version, json-response-04, predates this change).\u00a0 (An informative reference is OK, I think, because this is in an example.) 2. And discussion has highlighted that there's a serious issue with *not* having a normative reference from this document to the rdap-query document.\u00a0 I can't see how it's possible for this document to make any sense at all and to have any use at all without rdap-query, and I don't see how we can reasonably evaluate this piece of the solution without understanding that piece along with it.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-28 23:40:31-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-28 23:40:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-10-29 15:39:34-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 15:39:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-08-12 06:18:46-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-12 06:18:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-28 11:54:56-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-28 11:54:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-08-12 10:46:09-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-12 10:46:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-30 06:34:15-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 06:34:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-08-12 21:17:09-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-12 21:17:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-10-26 21:09:06-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-26 21:09:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-10-30 04:48:01-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 04:48:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-29 13:45:23-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 13:45:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-08-09 14:33:14-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-28 10:13:49-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-28 10:13:49-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-08-14 18:22:25-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 18:22:25-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-29 23:44:22-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 23:44:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-08-14 10:42:38-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-08-14 16:15:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-08-14 10:42:38-07:00",
+        "text": "I am not an international character set expert ... This draft references  RFC 3986  and  RFC 3987  which in turn point to  RFC 3490  (IDNA 2003) - what if anything needs to be said about  RFC 5981  (IDNA 2008) (obsoletes  RFC 3490 )?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-08-14 17:22:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-08-14 16:15:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-08-14 17:22:10-07:00",
+        "text": "updated ... On .well-known point raised by Stephen ....\u00a0 when EST came through the authors were told\u00a0 by the appsdir reviewer that: IETF standards should not define URIs or patterns of URIs, because servers may wish to provide other services (implying the possibility of collision), or deploy resources in an alternate way, for implementation or operational reasons.  This is a fundamental concept in the Web architecture; see .  Possible remedies include: 1) Specifying a \"home document\" format that links (in the  RFC5988  sense) to the various resources as appropriate.  2) Specifying a well-known URI to root the interaction. Note that this is suboptimal; while it avoids collisions, it does not allow alternate deployments, or multiple deployments on the same host. Why doesn't the same recommendation apply here?",
+        "type": "Discuss"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-08-10 13:33:45-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-10 13:33:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-10-30 07:40:07-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 07:40:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-08-14 05:17:44-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 05:17:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-30 06:53:40-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 06:53:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-08-14 20:55:23-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:33:14-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-08-14 20:56:21-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-08-14 20:55:23-07:00",
+        "text": "This document doesn't talk about security, which sort of makes sense considering the other weirds document we're reviewing in the same telechat.\u00a0  However, I am concerned that there is a gap between the two documents that leaves open the possibility of key leakage. Suppose I go to an RDAP server wanting some information that is confidential, and requires authentication.\u00a0  Further suppose my request is to an http URL, not an https URL. Presumably the RDAP server would tell me I need to authenticate, by sending an HTTP 401 response.\u00a0  Suppose basic authentication is being used.\u00a0  The server must first redirect me to an https server, which _then_ would send the 401 response.\u00a0  If the response to the http query is 401, the client may send the password over the network in the clear, since this is allowed by the HTTP protocol. In practice, I would expect that anything that needs to be authenticated is going to have to go over TLS anyway, so this should be straightforward to specify. Possible responses to clear this DISCUSS would be (a) to point out that I am an idiot and this isn't a problem because I don't understand HTTP authentication properly (I know only enough to be dangerous, so this is a real possibility); (b) to argue that this needs to be fixed but should be addressed in the weirds-rdap-sec document and not in this document, or (c) to add some text to this document specifying how this should be done.\u00a0  Currently neither document explicitly discusses the 401 response code.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-10 15:28:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 20:56:21-07:00",
+        "text": "This document doesn't talk about security, which sort of makes sense considering the other weirds document we're reviewing in the same telechat.\u00a0  However, I am concerned that there is a gap between the two documents that leaves open the possibility of password leakage. Suppose I go to an RDAP server wanting some information that is confidential, and requires authentication.\u00a0  Further suppose my request is to an http URL, not an https URL. Presumably the RDAP server would tell me I need to authenticate, by sending an HTTP 401 response.\u00a0  Suppose basic authentication is being used.\u00a0  The server must first redirect me to an https server, which _then_ would send the 401 response.\u00a0  If the response to the http query is 401, the client may send the password over the network in the clear, since this is allowed by the HTTP protocol. In practice, I would expect that anything that needs to be authenticated is going to have to go over TLS anyway, so this should be straightforward to specify. Possible responses to clear this DISCUSS would be (a) to point out that I am an idiot and this isn't a problem because I don't understand HTTP authentication properly (I know only enough to be dangerous, so this is a real possibility); (b) to argue that this needs to be fixed but should be addressed in the weirds-rdap-sec document and not in this document, or (c) to add some text to this document specifying how this should be done.\u00a0  Currently neither document explicitly discusses the 401 response code.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-29 19:06:31-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:28:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-01-01 15:18:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 19:06:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7480",
+  "evaluation_end": "2015-01-01 15:18:09-08:00",
+  "evaluation_start": "2014-10-10 15:28:39-07:00"
+}

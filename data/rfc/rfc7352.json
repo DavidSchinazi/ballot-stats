@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-06-21 15:39:58-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-21 15:39:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-06-25 13:00:13-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-25 13:00:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-06-19 17:40:37-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-06-26 01:28:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-19 17:40:37-07:00",
+        "text": "o Section 3.3:  \"A default expiration time of around 7 days is usually \u00a0  appropriate. ... If that limit is exceeded by the \":seconds\" argument, the \u00a0  maximum value MUST silently be substituted\" The suggested default seems really long, especially for the example use case described in Section 1. On the other hand, it seems odd that the user's choice would be overriden by the preset maximum. This would make more sense to me if the default expiration were shorter and the user could override it with a longer :seconds argument if he wanted. What is the rationale for doing it the opposite way? o Section 6:  It seems like this section is missing a discussion of the privacy considerations associated with enabling the duplicate test. In the case where the Sieve filter is implemented server side, making use of the duplicate test means that some record of the receipt of a particular message will be persisted (for as long as specified by the logic in Section 3.3) even if the user downloads his messages or deletes a received message on the server that matches a test string in the meantime. If I want to filter all messages with duplicate message IDs, for example, this puts a requirement on the server to maintain a list of the message IDs of all messages I\u2019ve received (for the amount of time specified by the timing parameters). So if a third party wanted to find out that list, it could go to the operator of the server and ask for it. This introduces a privacy risk that is not discussed in the document and is exacerbated by the long default expiration time mentioned above. Tests that make use of the :header or :uniqueid arguments are also potentially problematic since the list of strings to match is kept on the server. It seems like these aspects should at least be noted in the document for implementers to consider. o Section 6:  Sieve scripts that include duplicate tests contain potentially sensitive information (e.g., subject or body strings). So it seems like the scripts should be confidentiality protected in transit. I checked with Barry and he said that there is no RFC that specifies if/when scripts should be protected in transit, and I understand that this document is probably not the right place to specify required behavior there, but I'd like to discuss (more with the ADs than the authors) if there is some plan for specifying that behavior somewhere.  o Section 6:  I think it would make sense to require that the tracked message list be stored with an equivalent level of protection as the user's messages themselves. E.g., if message headers and bodies are stored encrypted, then the duplicate tracking list should be as well. And the duplicate tracking list should be subject to the same access controls as the mailbox (perhaps this is obvious but I'm not sure).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-26 01:28:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-06-12 01:21:21-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-06-26 04:56:58-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-26 04:56:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-06-24 05:41:36-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-24 05:41:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-06-24 03:43:20-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-24 03:43:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-06-25 22:33:58-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-25 22:33:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-06-23 11:48:56-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-06-26 04:07:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-23 11:48:56-07:00",
+        "text": "The security considerations seem light, shouldn't there be a security consideration for the possibility of overwriting a message with another?\u00a0 If an attacker wants to prevent someone from receiving a certain version of a message, couldn't this be used to achieve that goal?\u00a0 I don't see anything to prevent this, with the exception of good security practices, trusted administrators, and monitoring for any tampering on sending servers.\u00a0 I'm not looking for too much of a description, but a statement on this possible risk.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-26 04:07:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-06-24 06:31:38-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-24 06:31:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-06-25 10:00:12-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-25 10:00:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-06-24 19:46:55-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-24 19:46:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-06-26 03:47:21-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-26 03:47:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-06-25 20:30:27-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-12 01:21:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-06-30 11:10:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-25 20:30:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7352",
+  "evaluation_end": "2014-06-30 11:10:29-07:00",
+  "evaluation_start": "2014-06-12 01:21:21-07:00"
+}

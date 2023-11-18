@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-06-11 03:59:18-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-11 03:59:18-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-06-21 11:30:58-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-21 11:30:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-06-26 16:32:01-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-07-23 09:25:56-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-06-26 16:32:01-07:00",
+        "text": "I agree with Joel. Section 3.3 GMPLS PCE Management is really too weak for a requirement document. It sounds like: \"hey, let's put a MIB to satisfy the OPS ADs.\" Are you really going to manage GMPLS PCE deployment with a read-only MIB module.  https://tools.ietf.org/html/draft-ietf-pce-pcep-mib-04  and  RFC 4802  are both read-only. This section is not about management, it's just monitoring. The WG should review  https://tools.ietf.org/html/rfc5706 , and tell us how they plan on \"managing\" GMPLS PCE? Please review  https://tools.ietf.org/html/rfc5706#appendix-A , and answer the different questions.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-23 09:25:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-06-27 05:00:51-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-27 05:00:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-06-27 04:41:22-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-27 04:41:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-06-25 09:48:24-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-06-26 07:55:46-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-06-25 09:48:24-07:00",
+        "text": "Some of the items here are nits I don't feel strongly about those but they are inline and I can shift them to a comment. Abstract \u00a0 The initial effort of the PCE (Path computation element) WG is \u00a0 specifically focused on MPLS.\u00a0 As a next step, this draft describes \u00a0  functional requirements for GMPLS application of PCE. Was specifically focused on mpls Is replicated in section 1 also I'm not sure it was  https://datatracker.ietf.org/doc/rfc4655/ is the very first document out the door for pce and it already states it's applicability to GMPLS. likewise GMPLS is included in the the charter. also in section 1 \u00a0  This document provides the investigated results of GMPLS applications \u00a0 of PCE for the support of GMPLS path computation.\u00a0 This document also \u00a0 provides requirements for GMPLS applications of PCE in GMPLS intra- \u00a0 domain and inter-domain environments. awkward \u00a0 This document provides requirements for GMPLS application  \u00a0 of PCE in support of GMPLS path computation, included are \u00a0 requirements for both intra-domain and inter-domain environments. 2.1.\u00a0 Path computation in GMPLS network \u00a0 Figure 1 depicts a typical GMPLS network, consisting of an ingress \u00a0 link, a transit link as well as an egress link, to investigate a \u00a0  consistent guideline for GMPLS path computation. awkward \u00a0 Figure 1 depicts a model GMPLS network, consisting of an ingress \u00a0 link, a transit link as well as an egress link. We will use this model to investigate \u00a0  consistent guidelines for GMPLS path computation. fig 2.  \u00a0 The \u00a0  client Ethernet service could be provided by a VC4 connection Virtual Concatenation is not a connection it's a mapping. 3.1.\u00a0 Requirements on Path Computation Request \u00a0 As for path computation in GMPLS-controlled networks as discussed in \u00a0 section 2, the PCE should consider the GMPLS TE attributes \u00a0 appropriately once a PCC or another PCE requests a path computation. \u00a0 Indeed, the path calculation request message from the PCC or the PCE \u00a0 must contain the information specifying appropriate attributes. \u00a0 According to [ RFC5440 ], [PCE-WSON-REQ] and to RSVP procedures like \u00a0 explicit label control(ELC),the additional attributes introduced are \u00a0 as follows: Starting an entirely new section with a subordinating conjunction is super painful it implies this is part of section 2  If this is just a subsection of section 2 then great it should be reorganized. Otherwise, consider: The PCE should consider the GMPLS TE attributes appropriately once a PCC or another PCE requests a Path computation in GMPLS-controlled networks as discussed in section 2. Appropriately really needs to be qualified as the the numbered elements below. remove Indeed 3.1 (4)\u00a0 if we are referring to the network\u00a0 technology in it's entirety is not G.709 OTUk not G.709 ODUk since the later is the wrapper for other client signals? 3.3  Mibs are not the sole manageability consideration associated with the application of PCE to GMPLS networks \u00a0 \u00a0  reliance on other protocols and functions are considerations (e.g. in or out of band signaling) are a considers \u00a0 \u00a0  impact on network operations are a consideration. 4.  imho the security considerations section is inadequate.\u00a0 at a minimum it should cite supporting PCE security considerations secretion of  RFC 4655",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-08-16 15:04:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-06-26 07:55:46-07:00",
+        "text": "Abstract \u00a0 The initial effort of the PCE (Path computation element) WG is \u00a0 specifically focused on MPLS.\u00a0 As a next step, this draft describes \u00a0  functional requirements for GMPLS application of PCE. Was specifically focused on mpls Is replicated in section 1 also I'm not sure it was  https://datatracker.ietf.org/doc/rfc4655/ is the very first document out the door for pce and it already states it's applicability to GMPLS. likewise GMPLS is included in the the charter. 3.3  Mibs are not the sole manageability consideration associated with the application of PCE to GMPLS networks \u00a0 \u00a0  reliance on other protocols and functions are considerations (e.g. in or out of band signaling) are a considers \u00a0 \u00a0  impact on network operations are a consideration. 4.  imho the security considerations section is inadequate.\u00a0 at a minimum it should cite supporting PCE security considerations secretion of  RFC 4655",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-16 15:04:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-06-24 07:45:06-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-24 07:45:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-06-26 17:14:03-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-26 17:14:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-06-25 13:59:42-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-25 13:59:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-06-25 06:18:40-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-25 06:18:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-06-25 08:59:25-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-25 08:59:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-06-25 01:50:06-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-25 01:50:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-08-19 07:56:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-11 03:59:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc7025",
+  "evaluation_end": "2013-08-19 07:56:27-07:00",
+  "evaluation_start": "2013-06-11 03:59:17-07:00"
+}

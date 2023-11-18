@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-09-22 03:09:07-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-22 03:09:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-09-10 18:58:22-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-09-26 07:37:12-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-09-10 18:58:22-07:00",
+        "text": "I have two very small points that I think are unclear, and important enough that we have to get them right, both regarding the check_host() function.\u00a0 These should be really easy to clear up: -- Section 4.6 -- \u00a0  The check_host() function parses and interprets the SPF record to \u00a0  find a result for the current test.\u00a0 If there are any syntax errors \u00a0  anywhere in the record, check_host() returns immediately with the \u00a0  result \"permerror\", without further interpretation. I think you're trying to say that syntax checking is done before any evaluation, but you aren't saying it.\u00a0 It matters, because implementations that make different choices in that regard won't get the same results from check_host() in all cases, as they're required to.\u00a0 Maybe this?: NEW \u00a0  The check_host() function parses and interprets the SPF record to \u00a0  find a result for the current test.\u00a0 The syntax of the record is \u00a0  validated first, and if there are any syntax errors anywhere in the \u00a0  record, check_host() returns immediately with the result \"permerror\", \u00a0  without further interpretation or evaluation. END -- Section 5.5 -- I have to say that I'm not happy about the pseudocode here: what situation are we in when the pseudocode differs from the text?\u00a0 Which wins? I already see a case where they differ: the new pseudocode says \"if more than 10 sending-domain_names are found, use at most 10\", and there's nothing of the sort in the text. Does the working group really think there's enough value in having pseudocode there that it's worth saying the same thing twice and relying on them to be truly the same?\u00a0 And is it really worth it for mechanism that's not recommended for use? I strongly suggest making sure that the text says what you want it to, and removing the pseudocode.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-09-26 07:39:28-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-09-26 07:37:12-07:00",
+        "text": "UPDATED for -21: It seems that resolutions for the DISCUSS points got left out of the update.\u00a0 :-( ------------------------------------------------------- I have two very small points that I think are unclear, and important enough that we have to get them right, both regarding the check_host() function.\u00a0 These should be really easy to clear up: -- Section 4.6 -- \u00a0  The check_host() function parses and interprets the SPF record to \u00a0  find a result for the current test.\u00a0 If there are any syntax errors \u00a0  anywhere in the record, check_host() returns immediately with the \u00a0  result \"permerror\", without further interpretation. I think you're trying to say that syntax checking is done before any evaluation, but you aren't saying it.\u00a0 It matters, because implementations that make different choices in that regard won't get the same results from check_host() in all cases, as they're required to.\u00a0 Maybe this?: NEW \u00a0  The check_host() function parses and interprets the SPF record to \u00a0  find a result for the current test.\u00a0 The syntax of the record is \u00a0  validated first, and if there are any syntax errors anywhere in the \u00a0  record, check_host() returns immediately with the result \"permerror\", \u00a0  without further interpretation or evaluation. END -- Section 5.5 -- I have to say that I'm not happy about the pseudocode here: what situation are we in when the pseudocode differs from the text?\u00a0 Which wins? I already see a case where they differ: the new pseudocode says \"if more than 10 sending-domain_names are found, use at most 10\", and there's nothing of the sort in the text. Does the working group really think there's enough value in having pseudocode there that it's worth saying the same thing twice and relying on them to be truly the same?\u00a0 And is it really worth it for mechanism that's not recommended for use? I strongly suggest making sure that the text says what you want it to, and removing the pseudocode.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-09-26 08:19:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-26 07:39:28-07:00",
+        "text": "UPDATED for -21: It seems that resolutions for the DISCUSS points got left out of the update.\u00a0 :-( ------------------------------------------------------- I have two very small points that I think are unclear, and important enough that we have to get them right, both regarding the check_host() function.\u00a0 These should be really easy to clear up: -- Section 4.6 -- \u00a0  The check_host() function parses and interprets the SPF record to \u00a0  find a result for the current test.\u00a0 If there are any syntax errors \u00a0  anywhere in the record, check_host() returns immediately with the \u00a0  result \"permerror\", without further interpretation. I think you're trying to say that syntax checking is done before any evaluation, but you aren't saying it.\u00a0 It matters, because implementations that make different choices in that regard won't get the same results from check_host() in all cases, as they're required to.\u00a0 Maybe this?: NEW \u00a0  The check_host() function parses and interprets the SPF record to \u00a0  find a result for the current test.\u00a0 The syntax of the record is \u00a0  validated first, and if there are any syntax errors anywhere in the \u00a0  record, check_host() returns immediately with the result \"permerror\", \u00a0  without further interpretation or evaluation. END -- Section 5.5 -- I have to say that I'm not happy about the pseudocode here: what situation are we in when the pseudocode differs from the text?\u00a0 Which wins? I already see a case where they differ: the new pseudocode says \"if more than 10 sending-domain_names are found, use at most 10\", and there's nothing of the sort in the text. Does the working group really think there's enough value in having pseudocode there that it's worth saying the same thing twice and relying on them to be truly the same?\u00a0 And is it really worth it for mechanism that's not recommended for use? I strongly suggest making sure that the text says what you want it to, and removing the pseudocode.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-09-26 08:20:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-26 08:19:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-26 08:20:06-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-09-12 03:46:54-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-12 03:46:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-09-23 05:35:41-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-23 05:35:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-09-12 05:00:26-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-12 05:00:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-09-12 07:54:52-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-12 07:54:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-09-09 22:04:13-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-09 22:04:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-09-12 02:03:09-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-12 02:03:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-09-07 06:50:12-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-09-07 06:54:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-07 06:50:12-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-09-13 07:44:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-07 06:54:46-07:00",
+        "text": "Holding my own DISCUSS: Text needs to be created (probably for section 3.1) to better describe the reason this document settled on TXT RR only and therefore why no precedent is set for future use of the TXT RR.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-13 07:44:05-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-09-11 20:44:17-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-11 20:44:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-09-12 04:43:07-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-12 04:43:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-09-07 13:37:39-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-07 13:37:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-09-12 03:15:08-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-12 03:15:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-09-11 07:02:09-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-11 07:02:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-09-12 08:46:05-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-07 06:50:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-01-17 11:48:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-12 08:46:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7208",
+  "evaluation_end": "2014-01-17 11:48:03-08:00",
+  "evaluation_start": "2013-09-07 06:50:11-07:00"
+}

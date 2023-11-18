@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-05-10 11:42:04-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-10 11:42:04-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-05-14 08:28:23-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-14 08:28:23-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-05-12 11:52:03-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-12 11:52:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-05-10 20:43:37-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-05-29 05:49:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-05-10 20:43:37-07:00",
+        "text": "I think this is a good document, and have two points I'd like to discuss before approval. The first is an easy one: -- Section 2.3.2 -- I hate to pick on this, I really do -- because I know what you're trying to say -- but there's too much wrong with this bit: \u00a0  Each implementation is free to choose its own method for handling \u00a0  this question.\u00a0 However, to allow for maximum interoperability an \u00a0  implementation SHOULD treat desired but unadvertised EAG bits as if \u00a0  they are set to 0. \"Free to choose\" and \"SHOULD\" really don't go together, at least not with the definition of \"SHOULD\" from 2119 and any meaning of \"free to choose\" that I can think of.\u00a0 What's more, you then have a \"MUST NOT\" later in the paragraph that should probably be a \"SHOULD NOT\" (because it goes with the \"SHOULD\".\u00a0 On the other hand, if you really mean that \"MUST NOT\", then the \"SHOULD\" ought to be a \"MUST\".\u00a0 Oh, and then there's a \"MAY\" in the next paragraph, which makes the whole thing worse.\u00a0 Oy. Because I really *do* hate to pick on this, and because I think I do know what you're trying to say, let me try proposing alternative wording for the last two paragraphs that should (ahem) keep us 2119-purists happy (or at least comparatively happier).\u00a0 As a side effect, it makes subjunctive-mood-pedants somewhat happier, as well (changing \"as if they are\" to \"as if they were\"): NEW \u00a0  To allow for maximum interoperability, an implementation SHOULD treat \u00a0  desired but unadvertised EAG bits as if they were set to 0.\u00a0 Consider \u00a0  the case where a node wants to only use links where the 127th bit of \u00a0  an EAG is set to 1.\u00a0 If a link is only advertising 64 EAG bits, clearly \u00a0  the 127th EAG bit is not defined - that is, it is neither explicitly 0 \u00a0  nor 1.\u00a0 The node that wants the 127th EAG bit to be 1 will not use this \u00a0  link when implementing the recommended behavior, as the assumption is \u00a0  than the unadvertised 127th bit is set to 0. \u00a0  That said, each implementation makes its own choices based on necessary \u00a0  constraints, and there might be reasons to provide other strategies for \u00a0  handling this case.\u00a0 A strategy that deviates from the behavior this \u00a0  document recommends SHOULD be configurable to use the recommended \u00a0  behavior, in order to provide maximum interoperability. END I think inverting the advice -- putting the desired behaviour first -- is a better choice anyway, because it highlights what you want implementations to do... and only after that does it backtrack and admit that, well, implementations will ultimately do what they want. The second is probably somewhat harder: -- Section 3 -- Is it really the case that there are no possible issues raised by suddenly having an open-ended number of EAG bits, having a different number of EAG bits than are expected or desired, and/or having uncertain behaviour in the face of a desired bit's not being there?\u00a0 I'm not sure of the answer to that, but I am sure that it strikes me as very much open to issues, and I want to make sure you explicitly thought about it carefully and decided that there aren't... and that \"no new security considerations\" isn't just what we're accustomed to putting in when we think we're making a minor change.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-29 05:49:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-05-12 15:01:59-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-12 15:01:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-05-12 07:18:41-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-12 07:18:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-05-15 06:26:45-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-15 06:26:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-05-12 07:37:28-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-12 07:37:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-05-14 13:49:45-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-14 13:49:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-05-14 05:02:15-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-14 05:02:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-05-14 14:25:36-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-14 14:25:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-05-15 00:28:25-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-15 00:28:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-05-14 13:19:25-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-14 13:19:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-05-13 18:13:24-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-13 18:13:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-05-13 14:23:57-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-10 11:42:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-05-29 07:12:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-13 14:23:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7308",
+  "evaluation_end": "2014-05-29 07:12:36-07:00",
+  "evaluation_start": "2014-05-10 11:42:03-07:00"
+}

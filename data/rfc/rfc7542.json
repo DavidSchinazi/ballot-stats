@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-12-04 03:55:05-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 03:55:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-12-03 17:47:50-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 17:47:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-12-02 12:18:50-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-12-04 10:24:25-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-02 12:18:50-08:00",
+        "text": "= General = This document seems to confuse an identifier format with an identifier, and I'd like to discuss that. In my reading, all this document specifies is an identifier format and length, plus some processing rules for use by AAA systems. It does not specify the particular contents of the identifier for any specific protocol or usage, nor does it specify any semantic rules for the construction of such identifiers (e.g., \"the same user should always use the same identifier\"). However, the document repeatedly makes the case -- in sections 1, 1.3, 2.1, 2.7, 2.8 -- that \"the NAI\" (whether the actual identifier or the format, it's not clear) should be the universal identifier of choice for all situations and protocols, because it \"simplifie[s] the management of credentials,\" allows other protocols to \"leverage AAA for user authentication,\" removes the need to \"maintain multiple identifiers for one user,\" etc. The claims in all of these sections seem to conflate a single user's use of the same identifier with a single user's use of the same identifier *format*. I thought what is being defined in this document is a format and nothing more. I'm perfectly fine with encouraging the use of a standard format across protocols and applications (although I still don't see the need to repeat the same recommendation over and over again in the document). That has basically happened already in lots of places. I'm not fine at all with a blanket recommendation to use a single identifier for the same user everywhere. The ability to authenticate to different services (and even to different networks!) using different identities is a fundamental building block for privacy on the Internet. The message from this document seems to be that we should erase that protection. I note that although the stated motivation for this document relates to internationalization, pretty much all of the text recommending One Identifier to Rule Them All is new. So perhaps there were multiple motivations for this document update? I could offer a bunch of detailed text suggestions, but first I'd like to understand what this document is actually trying to do, and whether the term \"the NAI\" is meant to refer to an identifier or an identifier format.  = Section 2.4 = \"Therefore, the utf8-username portion SHOULD be treated \u00a0  as opaque data when processed by nodes that are not a part of the \u00a0  authoritative domain (in the sense of Section 4) for that realm.\" What does it mean to treat a cleartext username as opaque data? Should the nodes outside the realm not log these usernames, or not process them in any way? \"Omitting the username part is RECOMMENDED over using a fixed username \u00a0  part, such as \"anonymous\", since it provides an unambiguous way to \u00a0  determine whether the username is intended to uniquely identify a \u00a0  single user.\" I don't understand why this is true, other than by convention. If I process a bunch of authentication transactions that use \"@example.com\" as the NAI, how am I supposed to know that each of those was intended to identify a single user? Is the usage of an NAI to authenticate a group of users discussed somewhere? In general, I'm uncomfortable with the approach this document takes of making a few notes about how the username part could be constructed without providing a more thorough analysis of threats and mitigations related to identifiability, uniqueness and persistence. This also comes up with the example in Section 2.8, where uniqueness is discussed in the context of the example, but there is no generalized discussion about uniqueness in identifier construction. This might get back to my larger point above about format versus content -- if this document is just specifying a format, it probably shouldn't be commenting on the identifier content or the consequences of it (although being able to omit the username part is certainly a format issue).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 10:24:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-12-01 09:17:12-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-12-03 11:12:52-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-01 09:17:12-08:00",
+        "text": "A significant thing that's new in this document is that you're recommending the use of a common identifier across different services and protocols.\u00a0 This introduces a significant issue: it can enable tracking of the identifier across those services, allowing correlation of a single user's activity.\u00a0 Did the working group consider that aspect?\u00a0 I don't see any discussion of this in the document, and it seems to be something that needs to be discussed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 11:12:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-11-26 04:03:20-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-26 04:03:20-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-12-01 06:25:51-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-01 06:25:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-12-04 05:13:47-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-12-04 05:21:59-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-12-04 05:13:47-08:00",
+        "text": "Thanks for writing this document. It was and is badly needed, and  as noted, roaming, network access authentication, and the use of  NAIs is growing and there is an obvious need to make sure  internationalised identifiers in particular work correctly. And as we  understand now,  RFC 4282  indeed didn't provide a satisfactory  answer on that issue. However, I have a couple observations of the text in the comment section and one question that I would like to discuss before recommending an approval of this draft. The question: I noticed the change from 4282 in terms of the bang syntax. This isn't my favourite syntax, but conditions for its use were specified in 4282. As far as I can see, the same conditions still exist in the draft, but the draft adds that the usage is NOT RECOMMENDED, and adds some rationale for this. Stating that the usage is historical.  I have two questions related to this. First, has the WG been aware of existing, not historical usage,  of this syntax? Quick search reveals that 3GPP networks use a routing convention with the syntax, see http://www.3gpp.org/DynaReport/23003.htm  and http://www.qtc.jp/3GPP/Specs/24302-a70.pdf  (note that I'm not the expert on these types of usage and there might be additional examples, or the experts might understand the situation better than what we can gain merely by looking at the existing specs). In any case, I think the WG should be aware of existing realities of deployed usage. Secondly, does that usage change any of your recommendations? Perhaps one could argue that when you understand your situation and have good justification, you can go against a SHOULD  or RECOMMEND. Or perhaps one could argue that specific conventions (such as the 3GPP usage) where  Thoughts?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-12-04 06:57:14-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-12-04 05:21:59-08:00",
+        "text": "Thanks for writing this document. It was and is badly needed, and  as noted, roaming, network access authentication, and the use of  NAIs is growing and there is an obvious need to make sure  internationalised identifiers in particular work correctly. And as we  understand now,  RFC 4282  indeed didn't provide a satisfactory  answer on that issue. However, I have a couple observations of the text in the comment section and one question that I would like to discuss before recommending an approval of this draft. The question: I noticed the change from 4282 in terms of the bang syntax. This isn't my favourite syntax, but conditions for its use were specified in 4282. As far as I can see, the same conditions still exist in the draft, but the draft adds that the usage is NOT RECOMMENDED, and adds some rationale for this. Stating that the usage is historical.  I have two questions related to this. First, has the WG been aware of existing, not historical usage,  of this syntax? Quick search reveals that 3GPP networks use a routing convention with the syntax, see http://www.3gpp.org/DynaReport/23003.htm  and http://www.qtc.jp/3GPP/Specs/24302-a70.pdf  (note that I'm not the expert on these types of usage and there might be additional examples, or the experts might understand the situation better than what we can gain merely by looking at the existing specs). In any case, I think the WG should be aware of existing realities of deployed usage. Secondly, does that usage change any of your recommendations? Perhaps one could argue that when you understand your situation and have good justification, you can go against a SHOULD  or RECOMMEND. Or perhaps one could argue that specific conventions (such as the 3GPP usage) where the routing table distribution is not an issue are safe. Thoughts?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-23 05:12:18-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-04 06:57:14-08:00",
+        "text": "Thanks for writing this document. It was and is badly needed, and  as noted, roaming, network access authentication, and the use of  NAIs is growing and there is an obvious need to make sure  internationalised identifiers in particular work correctly. And as we  understand now,  RFC 4282  indeed didn't provide a satisfactory  answer on that issue. However, I have a couple observations of the text in the comment section and one question that I would like to discuss before recommending an approval of this draft. The question: I noticed the change from 4282 in terms of the bang syntax. This isn't my favourite syntax, but conditions for its use were specified in 4282. As far as I can see, the same conditions still exist in the draft, but the draft adds that the usage is NOT RECOMMENDED, and adds some rationale for this. Stating that the usage is historical. The draft also removes the processing rules from what they were in 4282: \u00a0  In this case, the part before the (non-escaped) '!'\u00a0 MUST be a realm \u00a0  name as defined in the ABNF in Section 2.1.\u00a0 This realm name is an \u00a0  \"IDN-unaware domain name slot\", just like the realm name after the \u00a0  \"@\" character; see Section 2.4 for details.\u00a0 When receiving such an \u00a0  NAI, the other realm MUST convert the format back to \u00a0  \" user@homerealm.example.net \" when passing the NAI forward, as well as \u00a0  applying appropriate AAA routing for the transaction. I have two questions related to this. First, has the WG been aware of existing, not historical usage,  of this syntax? Quick search reveals that 3GPP networks use a routing convention with the syntax, see http://www.3gpp.org/DynaReport/23003.htm  and http://www.qtc.jp/3GPP/Specs/24302-a70.pdf  (note that I'm not the expert on these types of usage and there might be additional examples, or the experts might understand the situation better than what we can gain merely by looking at the existing specs). Also,  RFC 5729  discusses the use of decorated NAIs in Diameter context. In any case, I think the WG should be aware of existing realities of deployed usage. Secondly, does that usage change any of your recommendations? Perhaps one could argue that when you understand your situation and have good justification, you can go against a SHOULD  or RECOMMEND. Or perhaps one could argue that specific conventions (such as the 3GPP usage) where the routing table distribution is not an issue are safe. And finally, it seems that deprecating processing rules (regardless of the recommendation about general use of decoration) seems problematic if there are existing systems that rely on this. Thoughts?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-23 05:12:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-12-03 23:40:15-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 23:40:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-12-02 17:59:52-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-12-04 06:36:14-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-02 17:59:52-08:00",
+        "text": "Thanks for your work on this draft and helpful responses to other discusses.\u00a0 I just have one item I'd like to discuss to see if if we could further clarify what is intended with some additional text to the draft.\u00a0 I'm not clear on it, so I'll just list my questions: In 2.7 paragraph 2, the draft states inter-domain authentication would be useful.\u00a0 What do you mean by inter-domain authentication?\u00a0 Since the NAI is directed to the appropriate realm (if I am reading this correctly), do you mean that some form of inter-domain authorization would be used (like how OAuth)?\u00a0 I'd just like to be clear on what is proposed here.\u00a0 Or if the same username and authentication credentials would be used to authenticate across domains?  I ask the question because a similar idea of using authentication across domains has been discussed on the SecAuth list and it doesn't have much support.\u00a0 Everyone agrees it would be nice to be able to seamlessly join networks, but also that there is no way we'll be able to get providers to work together to make this possible.\u00a0 In responses to discuss questions, I believe you had said there is some of of this format for inter-domain authentication.\u00a0 It would help the reader to have an expanded explanation of what you mean by that.\u00a0  Thanks in advance.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 06:36:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-12-03 22:35:34-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-12-04 10:17:10-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-03 22:35:34-08:00",
+        "text": "1.4: OLD \u00a0  The intent \u00a0  appears to have been to encode, compare, and transport realms with \u00a0  the ToASCII operation defined in [ RFC5890 ]. RFC5890  does not define ToASCII. ToAscii is defined in 3490, which you really don't want to refer to. See section 2.3.4 of 5890. Instead try this: NEW \u00a0  The intent appears to have been to encode, compare, and transport \u00a0  realms by converting them to the Punycode [ RFC3492 ] encoding form as described \u00a0  in [ RFC5891 ]. 2.5: \u00a0  Internationalization of the realm portion of the \u00a0  NAI is based on \"Internationalized Email Headers\" [ RFC5335 ]. First of all, 5335 has been obsoleted by 6532, so you should use the updated reference if you need it. However, I have no idea why you'd use that for the *realm*. A reference to 5890 and/or 5891 should be completely sufficient for the realm portion. Conversely: \u00a0  In order to ensure a canonical representation, characters of the \u00a0  username portion in an NAI MUST match the ABNF in this specification \u00a0  as well as the requirements specified in [ RFC5891 ]. The username needn't follow 5891, does it? Do you have the username and realm reversed here? If you meant to base the username on 6532, perhaps what you want to say is: \u00a0  Internationalization of the username portion of the NAI is based on \u00a0  the \"Internet Message Format\" [ RFC5322 ] \"dot-atom\" form of the \u00a0  \"local-part\" portion of an email address, as extended by \u00a0  \"Internationalized Email Headers\" [ RFC6532 ] to allow for UTF-8 \u00a0  characters. \u00a0   \u00a0  In order to ensure a canonical representation, characters of the \u00a0  realm portion in an NAI MUST match the ABNF in this specification \u00a0  as well as the requirements specified in [ RFC5891 ]. Is that what you had in mind? Then down in 3.1, you can change the first two paragraphs as follows: \u00a0  As proposed in this document, the Network Access Identifier is of the \u00a0  form \"user@realm\".\u00a0 Please note that while the user portion of the \u00a0  NAI is based on the \"Internet Message Format\" [ RFC5322 ] \"local-part\" \u00a0  portion of an email address as extended by \"Internationalized Email \u00a0  Headers\" [ RFC6532 ], it has been modified for the purposes of Section \u00a0  2.2.\u00a0 It does not permit quoted text along with \"folding\" or \u00a0  \"non-folding\" whitespace that is commonly used in email addresses.  \u00a0  As such, the NAI is not necessarily equivalent to usernames used in \u00a0  e-mail. \u00a0  However, it is a common practice to use email addresses as user \u00a0  identifiers in AAA systems.\u00a0 The ABNF in Section 2.2 is defined to be \u00a0  close to the \"addr-spec\" portion of [ RFC5322 ] as extended by \u00a0  [ RFC6532 ], while still being compatible with [ RFC4282 ]. I have no idea why you wanted to reference 5198. 3.2: The ToAscii problem. OLD \u00a0  There is therefore no reason for a NAS to apply the ToAscii function \u00a0  to the \"utf8-realm\" portion of an NAI, prior to placing the NAI into \u00a0  a RADIUS User-Name attribute. NEW \u00a0  There is therefore no reason for a NAS to convert the \"utf8-realm\" \u00a0  portion of an NAI into Punycode encoding form [ RFC3492 ] prior to \u00a0  placing the NAI into a RADIUS User-Name attribute. OLD \u00a0  When the realm portion of the NAI is used as the basis for name \u00a0  resolution, it may be necessary to convert internationalized realm \u00a0  names to ASCII using the ToASCII operation defined in [ RFC5890 ]. As \u00a0  noted in [ RFC6055 ] Section 2, resolver Application Programming \u00a0  Interfaces (APIs) are not necessarily DNS-specific, so that the \u00a0  ToASCII operation needs to be applied carefully: \u00a0   NEW \u00a0  When the realm portion of the NAI is used as the basis for name \u00a0  resolution, it may be necessary to convert internationalized realm \u00a0  names to Punycode [ RFC3492 ] encoding form as described in [ RFC5891 ]. \u00a0  As noted in [ RFC6055 ] Section 2, resolver Application Programming \u00a0  Interfaces (APIs) are not necessarily DNS-specific, so conversion to \u00a0  Punycode needs to be done carefully: \u00a0   3.4: Same problem as above: OLD \u00a0  One example given in [ RFC4282 ] is still permitted by the ABNF, but it \u00a0  is NOT RECOMMMENDED because of the use of the ToAscii function to \u00a0  create an ASCII encoding from what is now a valid UTF-8 string. NEW \u00a0  One example given in [ RFC4282 ] is still permitted by the ABNF, but it \u00a0  is NOT RECOMMMENDED because of the use of the Punycode [ RFC3492 ] \u00a0  encoding form for what is now a valid UTF-8 string.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 10:17:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-12-03 19:43:27-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 19:43:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-12-03 22:14:14-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 22:14:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-12-03 03:53:49-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 03:53:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-12-04 06:07:16-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-26 04:03:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-02-09 06:46:09-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 06:07:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7542",
+  "evaluation_end": "2015-02-09 06:46:09-08:00",
+  "evaluation_start": "2014-11-26 04:03:19-08:00"
+}

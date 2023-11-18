@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-08-14 12:38:52-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 12:38:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-08-12 09:05:03-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-10-01 12:02:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-08-12 09:05:03-07:00",
+        "text": "I'm going to raise Spencer's comment to a DISCUSS: I find the version negotiation in Section 3.1 to be somewhat confusingly written.\u00a0 Possibly it will be implemented correctly because people generally know how to code version negotiation -- but I don't think the text here makes it clear. First, you seem to be using \"EAP peer\" and \"TEAP peer\" interchangably.\u00a0 Please make sure you're consistent in your usage, and if there really is a difference then make that clear and explain it.\u00a0 You similarly say \"EAP server\" and \"TEAP server\" -- again, are they the same, or different enities? Second, I'm confused by \"server\" and \"peer\".\u00a0 Peers talk with peers; when there's a server, there's a client.\u00a0 What does it mean to have a server and a peer (in the document in general, and in this negotiation in particular)? Now, I think you're trying to say this: 1. The server gives the highest version it supports. 2. The client does one of three things: 2a. Sends a response that echos the server's version. 2b. Sends a response that offers a lower version. 2c. Sends a Nak, and we're done here (perhaps we continue with something else). 3. For 2b, the server does one of two things: 3a. Accepts the client's version and continues. 3b. [Does something else; see Spencer's comment.] Now, I like this approach, in that both the client and server can refuse an earlier version (which perhaps has security flaws), so that's nice.\u00a0 But I think the wording of the negotiation process ought to be fixed to make it clearer, and that what happens in case 3b, especially, needs to be clearer. I also think that numbering the list(s) will help, though you don't have to use my numbering (and if you can make it clear without numbers, that's fine).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-01 12:02:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-08-13 12:31:43-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-13 12:31:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-08-10 07:22:40-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-10 07:22:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-08-08 12:23:51-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-09-30 00:47:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-08-08 12:23:51-07:00",
+        "text": "Two points about Section 3.7. \"Fragmentation\" - Both ends have to wait for either each fragment or fragment ack to arrive. However, the timers on how to long to wait before giving up waiting for fragments or acks are missing.  - how does the sending TEAP entity determine what the maximum transmission unit (MTU) of the path is?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-30 00:47:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-08-15 06:57:19-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-15 06:57:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-08-14 17:57:24-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 17:57:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-07-19 07:45:24-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-08-09 11:27:31-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-09 11:27:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-08-14 10:58:25-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-08-15 07:37:04-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-08-14 10:58:25-07:00",
+        "text": "These discuss points are more questions I'd really like answered than blocking points (depending on the answers I guess:-) but I expect should be easily resolved. (1) 3.4: when x.500 names or SubjectAltNames are \"exported\" is it clear how those are formatted? Maybe a pointer to where that's defined would be good in case implementers get it wrong. You might also want to warn here (or somewhere) about names that contain a null byte in case that attack is used e.g. with a TLS server cert subject name like \"CN= www.paypal.com \\ 0.badguy.com \" Even though that's really a PKI failure, not detecting it here would be bad too. (2) 5.2, at the end: this adds a dependency on the TLS-PRF.\u00a0 I don't suppose TLS1.3 will be a big enough change for that to be a problem, but what if it was? E.g. if someone convinced the TLS WG to use IKE instead? Do you really need the same PRF or could you pick one for TEAP and remove the dependency? Same question for the MAC in 5.3. (3) 7.3: you have a MAY for this separation but also define what would become a cleartext password set of TLVs on the link between the two boxes here. Could you not at least REQUIRE protection (e.g. using IPsec) of that link if the basic password method will be used?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-10-04 07:16:23-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-08-15 07:37:04-07:00",
+        "text": "These discuss points are more questions I'd really like answered than blocking points (depending on the answers I guess:-) but I expect should be easily resolved. (1) made this a comment (2) 5.2, at the end: this adds a dependency on the TLS-PRF.\u00a0 I don't suppose TLS1.3 will be a big enough change for that to be a problem, but what if it was? E.g. if someone convinced the TLS WG to use IKE instead? Do you really need the same PRF or could you pick one for TEAP and remove the dependency? Same question for the MAC in 5.3. (3) 7.3: you have a MAY for this separation but also define what would become a cleartext password set of TLVs on the link between the two boxes here. Could you not at least REQUIRE protection (e.g. using radius or diameter over TLS) of that link if the basic password method will be  used?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-08 17:25:57-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-10-04 07:16:23-07:00",
+        "text": "update for -09: still discussing These discuss points are more questions I'd really like answered than blocking points (depending on the answers I guess:-) but I expect should be easily resolved. (1) made this a comment (2) 5.2, at the end: this adds a dependency on the TLS-PRF.\u00a0 I don't suppose TLS1.3 will be a big enough change for that to be a problem, but what if it was? E.g. if someone convinced the TLS WG to use IKE instead? Do you really need the same PRF or could you pick one for TEAP and remove the dependency? Same question for the MAC in 5.3. (3) 7.3: you have a MAY for this separation but also define what would become a cleartext password set of TLVs on the link between the two boxes here. Could you not at least REQUIRE protection (e.g. using radius or diameter over TLS) of that link if the basic password method will be  used?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-08 17:25:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-08-14 21:10:15-07:00",
+        "end_reason": "new_position",
+        "start": "2013-07-19 07:45:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-01-14 09:25:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 21:10:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7170",
+  "evaluation_end": "2014-01-14 09:25:07-08:00",
+  "evaluation_start": "2013-07-19 07:45:24-07:00"
+}

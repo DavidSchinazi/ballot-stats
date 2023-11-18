@@ -1,0 +1,317 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-11-27 06:04:54-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-27 06:04:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-10-31 11:06:20-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-10-31 12:17:14-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-10-31 11:06:20-07:00",
+        "text": "I've reviewed through the end of Section 3 and am starting Section 4 now.\u00a0 I'll update these comments as I go, but I wanted to get the DISCUSS position recorded sooner, rather than later. ============================================ This is a long DISCUSS item because it contains a suggested resolution, but it should be quite simple to resolve.\u00a0 So to be clear up front: the suggested resolution below is just a suggestion -- the actual DISCUSS point is that there is conflicting normative language in different places, and that has to get resolved. -- Sections 2.7 and 2.8.3 --  In Section 2.7: \u00a0  An FSN record also contains a cache time-to-live attribute.\u00a0 The \u00a0  FsnUuid and NsdbName values never change during an FSN's lifetime. \u00a0  However, an FSN's FSL information can change over time, and is \u00a0  typically cached on fileservers for performance.\u00a0 More detail is \u00a0  provided in Section 2.8.3.  And in Section 2.8.3: \u00a0  An FSL's parent FSN contains a TTL field which contains a count in \u00a0  seconds of the time interval the FSL MAY be cached.\u00a0 This is an upper \u00a0  bound for the lifetime of the cached information, and thus can act as \u00a0  a lower bound for the lifetime of redirecting junctions. \u00a0  For example, suppose this field contains the value 3600 seconds (one \u00a0  hour).\u00a0 In such a case, administrators SHOULD keep the redirection in \u00a0  place for at least one hour after a fileset migration has taken \u00a0  place, and FSL data MUST NOT be cached by a referring fileserver for \u00a0  more than one hour without a refresh. First, is the text in 2.7 meant to refer to the \"FsnTTL\" item that was just defined?\u00a0 Why aren't the normative requirements for its use defined there? In Section 2.8.3, the MAY in the first paragraph looked inappropriate, but I wasn't positive until I read the MUST NOT in the second.\u00a0 There's also a SHOULD NOT in the second paragraph of the section that conflicts with that MUST NOT.\u00a0 You're saying the same stuff too often, in too many places, inconsistently.\u00a0 This information needs to be clearly specified normatively in one place, and cited from elsewhere without extra 2119 language that will confuse things.\u00a0 I suggest putting the 2119 language Section 2.7.\u00a0 How about this?: Section 2.7: << \u00a0  An FSN consists of: ... (skip a bit) ... \u00a0 \u00a0 \u00a0 FsnTTL:\u00a0 the time-to-live of the FSN's FSL information, \u00a0 \u00a0 \u00a0 \u00a0  in seconds.\u00a0 FSL information MAY be cached, but MUST \u00a0 \u00a0 \u00a0 \u00a0  NOT be cached for longer than the FsnTTL value.\u00a0 This \u00a0 \u00a0 \u00a0 \u00a0  means that if this value is zero, no caching is allowed. ... (skip a bit) ... \u00a0  The FsnUuid and NsdbName values never change during an FSN's \u00a0  lifetime.\u00a0 However, an FSN's FSL information can change over \u00a0  time, and is typically cached on fileservers for performance. \u00a0  More detail on caching is provided in Section 2.8.3. >> Then clean up 2.8.3 to avoid repeating the 2119 words, and just go through the narrative and examples. Second paragraph: << \u00a0  The parent FSN's FsnTTL attribute (see Section 2.7) specifies the \u00a0  maximum period of time during which these FSL records may be cached. \u00a0  In addition to that, a fileserver SHOULD check back with the NSDB \u00a0  node after the FSN TTL has expired to discover if any new FSL records \u00a0  have been added for this FSN. >> Later, tweaking the two paragraphs I quoted above: << \u00a0  The FsnTTL field in the FSL's parent FSN (see Section 2.7) specifies \u00a0  an upper bound for the lifetime of cached FSL information, and thus \u00a0  can act as a lower bound for the lifetime of redirecting junctions. \u00a0  For example, suppose the FsnTTL field contains the value 3600 seconds \u00a0  (one hour).\u00a0 In such a case, administrators SHOULD keep the redirection \u00a0  in place for at least one hour after a fileset migration has taken \u00a0  place, because a referring fileserver might cache the FSL data during \u00a0  that time before refreshing it. >> Does that make sense?\u00a0 Now you'll have the definition of FsnTTL in one place in Section 2.7, and won't be in danger of confusing things with conflicting MUSTs and SHOULDs.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-10-31 12:51:25-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-10-31 12:17:14-07:00",
+        "text": "I've reviewed through the end of Section 4 and am starting Section 5 now.\u00a0 I'll update these comments as I go, but I wanted to get the DISCUSS position recorded sooner, rather than later. ============================================ This is a long DISCUSS item because it contains a suggested resolution, but it should be quite simple to resolve.\u00a0 So to be clear up front: the suggested resolution below is just a suggestion -- the actual DISCUSS point is that there is conflicting normative language in different places, and that has to get resolved. -- Sections 2.7 and 2.8.3 --  In Section 2.7: \u00a0  An FSN record also contains a cache time-to-live attribute.\u00a0 The \u00a0  FsnUuid and NsdbName values never change during an FSN's lifetime. \u00a0  However, an FSN's FSL information can change over time, and is \u00a0  typically cached on fileservers for performance.\u00a0 More detail is \u00a0  provided in Section 2.8.3.  And in Section 2.8.3: \u00a0  An FSL's parent FSN contains a TTL field which contains a count in \u00a0  seconds of the time interval the FSL MAY be cached.\u00a0 This is an upper \u00a0  bound for the lifetime of the cached information, and thus can act as \u00a0  a lower bound for the lifetime of redirecting junctions. \u00a0  For example, suppose this field contains the value 3600 seconds (one \u00a0  hour).\u00a0 In such a case, administrators SHOULD keep the redirection in \u00a0  place for at least one hour after a fileset migration has taken \u00a0  place, and FSL data MUST NOT be cached by a referring fileserver for \u00a0  more than one hour without a refresh. First, is the text in 2.7 meant to refer to the \"FsnTTL\" item that was just defined?\u00a0 Why aren't the normative requirements for its use defined there? In Section 2.8.3, the MAY in the first paragraph looked inappropriate, but I wasn't positive until I read the MUST NOT in the second.\u00a0 There's also a SHOULD NOT in the second paragraph of the section that conflicts with that MUST NOT.\u00a0 You're saying the same stuff too often, in too many places, inconsistently.\u00a0 This information needs to be clearly specified normatively in one place, and cited from elsewhere without extra 2119 language that will confuse things.\u00a0 I suggest putting the 2119 language Section 2.7.\u00a0 How about this?: Section 2.7: << \u00a0  An FSN consists of: ... (skip a bit) ... \u00a0 \u00a0 \u00a0 FsnTTL:\u00a0 the time-to-live of the FSN's FSL information, \u00a0 \u00a0 \u00a0 \u00a0  in seconds.\u00a0 FSL information MAY be cached, but MUST \u00a0 \u00a0 \u00a0 \u00a0  NOT be cached for longer than the FsnTTL value.\u00a0 This \u00a0 \u00a0 \u00a0 \u00a0  means that if this value is zero, no caching is allowed. ... (skip a bit) ... \u00a0  The FsnUuid and NsdbName values never change during an FSN's \u00a0  lifetime.\u00a0 However, an FSN's FSL information can change over \u00a0  time, and is typically cached on fileservers for performance. \u00a0  More detail on caching is provided in Section 2.8.3. >> Then clean up 2.8.3 to avoid repeating the 2119 words, and just go through the narrative and examples. Second paragraph: << \u00a0  The parent FSN's FsnTTL attribute (see Section 2.7) specifies the \u00a0  maximum period of time during which these FSL records may be cached. \u00a0  In addition to that, a fileserver SHOULD check back with the NSDB \u00a0  node after the FSN TTL has expired to discover if any new FSL records \u00a0  have been added for this FSN. >> Later, tweaking the two paragraphs I quoted above: << \u00a0  The FsnTTL field in the FSL's parent FSN (see Section 2.7) specifies \u00a0  an upper bound for the lifetime of cached FSL information, and thus \u00a0  can act as a lower bound for the lifetime of redirecting junctions. \u00a0  For example, suppose the FsnTTL field contains the value 3600 seconds \u00a0  (one hour).\u00a0 In such a case, administrators SHOULD keep the redirection \u00a0  in place for at least one hour after a fileset migration has taken \u00a0  place, because a referring fileserver might cache the FSL data during \u00a0  that time before refreshing it. >> Does that make sense?\u00a0 Now you'll have the definition of FsnTTL in one place in Section 2.7, and won't be in danger of confusing things with conflicting MUSTs and SHOULDs. -- Section 4.2.1.3 -- \u00a0  A fedfsFsnTTL is the amount of time in seconds an FSN's TTL and its \u00a0  children FSL records SHOULD be cached by a fileserver.\u00a0 A fedfsFsnTTL \u00a0  MUST be encoded as an Integer syntax value [ RFC4517 ]. This is related to the stuff above: You've previously said that caching MAY be done, and now you're saying SHOULD.\u00a0 You've previously specified FsnTTL as the *maximum* cache time, and now you're describing it as the *only* cache time.\u00a0 I suggest that you take the 2119 language out of this and use a citation to Section 2.7 here, making sure that 2.7 says what you want.\u00a0 Something like this: NEW \u00a0  A fedfsFsnTTL is the time-to-live in seconds of an FSN and its \u00a0  child FSL records.\u00a0 It corresponds to FsnTTL as defined in \u00a0  Section 2.7.\u00a0 See that section and Section 2.8.3 for information \u00a0  about caching FSLs.\u00a0 A fedfsFsnTTL MUST be encoded as an Integer \u00a0  syntax value [ RFC4517 ]. -- Section 4.2.1.24 -- \u00a0  A fedfsNfsVarSub stores the value of an FSL's NFSv4.1 FSLI4F_VAR_SUB \u00a0  bit [ RFC5661 ]. This should be \"FSLI4IF_VAR_SUB\" (it's missing an \"I\").",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-11-10 18:38:21-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-10-31 12:51:25-07:00",
+        "text": "Done reviewing, so this is the last pass on the comments.\u00a0 Thanks, Chuck, for the initial responses.\u00a0 I'll watch for a revised I-D and re-check. ============================================ This is a long DISCUSS item because it contains a suggested resolution, but it should be quite simple to resolve.\u00a0 So to be clear up front: the suggested resolution below is just a suggestion -- the actual DISCUSS point is that there is conflicting normative language in different places, and that has to get resolved. -- Sections 2.7 and 2.8.3 --  In Section 2.7: \u00a0  An FSN record also contains a cache time-to-live attribute.\u00a0 The \u00a0  FsnUuid and NsdbName values never change during an FSN's lifetime. \u00a0  However, an FSN's FSL information can change over time, and is \u00a0  typically cached on fileservers for performance.\u00a0 More detail is \u00a0  provided in Section 2.8.3.  And in Section 2.8.3: \u00a0  An FSL's parent FSN contains a TTL field which contains a count in \u00a0  seconds of the time interval the FSL MAY be cached.\u00a0 This is an upper \u00a0  bound for the lifetime of the cached information, and thus can act as \u00a0  a lower bound for the lifetime of redirecting junctions. \u00a0  For example, suppose this field contains the value 3600 seconds (one \u00a0  hour).\u00a0 In such a case, administrators SHOULD keep the redirection in \u00a0  place for at least one hour after a fileset migration has taken \u00a0  place, and FSL data MUST NOT be cached by a referring fileserver for \u00a0  more than one hour without a refresh. First, is the text in 2.7 meant to refer to the \"FsnTTL\" item that was just defined?\u00a0 Why aren't the normative requirements for its use defined there? In Section 2.8.3, the MAY in the first paragraph looked inappropriate, but I wasn't positive until I read the MUST NOT in the second.\u00a0 There's also a SHOULD NOT in the second paragraph of the section that conflicts with that MUST NOT.\u00a0 You're saying the same stuff too often, in too many places, inconsistently.\u00a0 This information needs to be clearly specified normatively in one place, and cited from elsewhere without extra 2119 language that will confuse things.\u00a0 I suggest putting the 2119 language Section 2.7.\u00a0 How about this?: Section 2.7: << \u00a0  An FSN consists of: ... (skip a bit) ... \u00a0 \u00a0 \u00a0 FsnTTL:\u00a0 the time-to-live of the FSN's FSL information, \u00a0 \u00a0 \u00a0 \u00a0  in seconds.\u00a0 FSL information MAY be cached, but MUST \u00a0 \u00a0 \u00a0 \u00a0  NOT be cached for longer than the FsnTTL value.\u00a0 This \u00a0 \u00a0 \u00a0 \u00a0  means that if this value is zero, no caching is allowed. ... (skip a bit) ... \u00a0  The FsnUuid and NsdbName values never change during an FSN's \u00a0  lifetime.\u00a0 However, an FSN's FSL information can change over \u00a0  time, and is typically cached on fileservers for performance. \u00a0  More detail on caching is provided in Section 2.8.3. >> Then clean up 2.8.3 to avoid repeating the 2119 words, and just go through the narrative and examples. Second paragraph: << \u00a0  The parent FSN's FsnTTL attribute (see Section 2.7) specifies the \u00a0  maximum period of time during which these FSL records may be cached. \u00a0  In addition to that, a fileserver SHOULD check back with the NSDB \u00a0  node after the FSN TTL has expired to discover if any new FSL records \u00a0  have been added for this FSN. >> Later, tweaking the two paragraphs I quoted above: << \u00a0  The FsnTTL field in the FSL's parent FSN (see Section 2.7) specifies \u00a0  an upper bound for the lifetime of cached FSL information, and thus \u00a0  can act as a lower bound for the lifetime of redirecting junctions. \u00a0  For example, suppose the FsnTTL field contains the value 3600 seconds \u00a0  (one hour).\u00a0 In such a case, administrators SHOULD keep the redirection \u00a0  in place for at least one hour after a fileset migration has taken \u00a0  place, because a referring fileserver might cache the FSL data during \u00a0  that time before refreshing it. >> Does that make sense?\u00a0 Now you'll have the definition of FsnTTL in one place in Section 2.7, and won't be in danger of confusing things with conflicting MUSTs and SHOULDs. -- Section 4.2.1.3 -- \u00a0  A fedfsFsnTTL is the amount of time in seconds an FSN's TTL and its \u00a0  children FSL records SHOULD be cached by a fileserver.\u00a0 A fedfsFsnTTL \u00a0  MUST be encoded as an Integer syntax value [ RFC4517 ]. This is related to the stuff above: You've previously said that caching MAY be done, and now you're saying SHOULD.\u00a0 You've previously specified FsnTTL as the *maximum* cache time, and now you're describing it as the *only* cache time.\u00a0 I suggest that you take the 2119 language out of this and use a citation to Section 2.7 here, making sure that 2.7 says what you want.\u00a0 Something like this: NEW \u00a0  A fedfsFsnTTL is the time-to-live in seconds of an FSN and its \u00a0  child FSL records.\u00a0 It corresponds to FsnTTL as defined in \u00a0  Section 2.7.\u00a0 See that section and Section 2.8.3 for information \u00a0  about caching FSLs.\u00a0 A fedfsFsnTTL MUST be encoded as an Integer \u00a0  syntax value [ RFC4517 ]. -- Section 4.2.1.24 -- \u00a0  A fedfsNfsVarSub stores the value of an FSL's NFSv4.1 FSLI4F_VAR_SUB \u00a0  bit [ RFC5661 ]. This should be \"FSLI4IF_VAR_SUB\" (it's missing an \"I\").",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-11-29 06:56:12-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-11-10 18:38:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-12-18 05:59:32-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-11-29 06:56:12-08:00",
+        "text": "I'm terribly sorry for the late DISCUSS.\u00a0 I missed this earlier, and only got to it through Benoit's comments. -- Section 7.2 -- \u00a0  Future allocations from the 1.3.6.1.4.1.31103.1.x range are to be \u00a0  assigned by IANA using the \"RFC Required\" policy defined in \u00a0  [ RFC5226 ]. First, I'd like to know what the justification is for RFC Required. There's no shortage of code points.\u00a0 What harm would there be in allowing more registrations? But second (or maybe this should be first), why is this registry even created at all, when the OIDs are registered *again* in Section 7.3, in the Object Identifier Descriptors registry under LDAP Parameters? Why do we need two different registries for the same things?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-12-18 05:59:32-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2012-11-29 06:19:00-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2012-11-29 08:50:49-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-11-29 06:19:00-08:00",
+        "text": "This is a DISCUSS-DISCUSS. Hopefully a little bit of LDAP education will quickly resolve this one. I'm looking at section 7.2  http://tools.ietf.org/html/draft-ietf-nfsv4-federated-fs-protocol-14#section-7.2 , which speaks about OID.  So my OPS AD level of attention suddenly increased.  \u00a0  ... one of the authors was \u00a0  assigned the Internet Private Enterprise Numbers range \u00a0  1.3.6.1.4.1.31103.x.\u00a0 Within this range, the subrange \u00a0  1.3.6.1.4.1.31103.1.x is permanently dedicated for use by the \u00a0  federated file system protocols. From  http://www.iana.org/assignments/enterprise-numbers , I see 31103 \u00a0 Daniel Ellard \u00a0 \u00a0 Daniel Ellard \u00a0 \u00a0 \u00a0 ellard& gmail.com Then I thought: Ok, maybe, even if I read \"permanently\", this enterprise specific number requested by a specific person was a temporary solution. However, reading further, yes, there is a new \"FedFS Object Identifiers\" registry, but it will still use the 1.3.6.1.4.1.31103.1.x range.   Then I looked at existing practice:  http://tools.ietf.org/html/rfc4517 And I see, for example: \u00a0  The LDAP definition for the Other Mailbox syntax is: \u00a0 \u00a0 \u00a0 ( 1.3.6.1.4.1.1466.115.121.1.39 DESC 'Other Mailbox' ) From  http://www.iana.org/assignments/enterprise-numbers: 1466 \u00a0 Mark Wahl \u00a0 \u00a0 Mark Wahl \u00a0 \u00a0 \u00a0 M.Wahl& isode.com Is it normal that Standards Track documents register OIDs under enterprise specific numbers (on top of that, representing individuals)? Is it normal that OIDs are registered this way in LDAP? Note: I know of one PEN used within a standards track document, but this one was distinctly labeled. 29305 \u00a0 IPFIX Reverse Information Element Private Enterprise \u00a0 \u00a0  RFC5103  Authors \u00a0 \u00a0 \u00a0 ipfix-biflow& cert.org Disclaimer 1: My lack of LDAP is probably the cause of this DISCUSS-DISCUSS. So please shed some light.  Disclaimer 2: I spoke with Martin Stiemerling before posting this. So I'm really after a reply (from the APPS ADs, I guess) such as: \"don't worry, there are no problems with this.\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-29 08:50:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-11-26 05:25:26-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-26 05:25:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2012-11-26 02:41:48-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-26 02:41:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-10-23 04:53:48-07:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-23 04:53:48-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-11-28 21:02:09-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-28 21:02:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2012-11-26 13:21:18-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-26 13:21:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-11-26 09:21:41-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-26 09:21:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2012-11-26 12:53:14-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-26 12:53:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2012-11-29 07:45:25-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-29 07:45:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-11-28 01:49:11-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-28 01:49:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-11-24 13:55:38-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-24 13:55:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-11-27 09:45:02-08:00",
+        "end_reason": "new_position",
+        "start": "2012-10-23 04:53:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-12-21 09:22:24-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-11-27 09:45:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7532",
+  "evaluation_end": "2012-12-21 09:22:24-08:00",
+  "evaluation_start": "2012-10-23 04:53:47-07:00"
+}

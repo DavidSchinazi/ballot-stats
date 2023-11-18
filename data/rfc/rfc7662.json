@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-06-10 14:06:02-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 14:06:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-06-08 09:40:38-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-08-05 09:51:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-06-08 09:40:38-07:00",
+        "text": "= Section 2.1 = \"The endpoint MAY allow other parameters to provide further context to \u00a0  the query.\u00a0 For instance, an authorization service may need to know \u00a0  the IP address of the client accessing the protected resource in \u00a0  order to determine the appropriateness of the token being presented.\" How does the protected resource know whether it needs to include such additional parameters or not? What is meant by the \"appropriateness\" of the token?  In general if we're talking about a piece of data that could be sensitive like client IP address, it would be better for there to be specific guidelines to direct protected resources as to when this information needs to be sent. I note that Section 5 basically says such considerations are out of scope, but if this specific example is to be provided here then they seem in scope to me. = Section 5 = \"One way to limit disclosure is to require \u00a0  authorization to call the introspection endpoint and to limit calls \u00a0  to only registered and trusted protected resource servers.\" I thought Section 2.1 made authorization to call the introspection endpoint mandatory. This makes it sound like it's optional. Which is it?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-05 09:51:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-06-08 08:24:47-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-08 08:24:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-06-08 05:35:03-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-06-09 17:34:34-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-06-08 05:35:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-06-22 14:52:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-06-09 17:34:34-07:00",
+        "text": "After initial discussion, I'm moving this to a DISCUSS point: -- Section 2.1 -- The server MUST support POST, and MAY support GET.\u00a0 What's the value in that?\u00a0 I don't see any way for a client (I mean HTTP client, not Oauth client, here) to know, so all clients will have to send POST to be sure it will work.\u00a0 Are you really expecting to have clients that want to ask this, but that can't send POST?\u00a0 Given that you call out privacy concerns with GET, I don't see why it's there at all. In initial discussion Justin says that GET is \"a deployment optimization that some servers will offer\", and \"The OAuth client might know through configuration (assuming a tighter coupling than defined by the interoperable protocol),\" to which I responded thus: 1. Why is GET an optimization?\u00a0 It has privacy disadvantages, and I don't see any advantages. 2. This \"tight coupling\" thing is something that I think weakens the interoperability of the OAuth protocol in general, and I've never liked it.\u00a0 In this case, in particular, I don't see any advantage to it, and I don't understand why it's useful to have an option that only works if you have inside knowledge, for no benefit. Why is it ever good to have clients that only work with certain servers, when it's just as easy to make sure that all clients work with all servers?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-22 14:52:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-06-09 17:24:10-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-09 17:24:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-06-11 05:49:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-11 05:49:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-06-10 07:12:34-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 07:12:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-06-10 11:22:15-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 11:22:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-06-11 03:01:44-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-11 03:01:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-06-04 06:59:39-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-06-10 13:55:09-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 13:55:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-06-10 22:58:35-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:59:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-08-05 12:32:47-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 22:58:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7662",
+  "evaluation_end": "2015-08-05 12:32:47-07:00",
+  "evaluation_start": "2015-06-04 06:59:39-07:00"
+}

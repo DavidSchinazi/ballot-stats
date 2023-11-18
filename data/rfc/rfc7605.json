@@ -1,0 +1,341 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-02-28 13:04:20-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-03-05 06:39:09-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-02-28 13:04:20-08:00",
+        "text": "Thanks for this work. I think it is helpful for authors and protocol designers to understand the way that the port experts approach this issue. But I have some concerns that I hope we can work out quite  simply. --- I understand that the current situation with the number of free ports is in some respects due to the \"policing\" by the port experts. But I disagree that the situation is such a severe state that fierce rules  are needed. And \"compliance statements\" are fierce rules not recommendations or guidance. Furthermore, this document brings to the fore the thin line between the opinions of the port experts and the opinions of the IETF community. If, for example, the community chooses (with appropriate discussion and consideration) to request IANA to allocate a port via an IETF consensus standards track document, I believe that request should be honored.  Obviously the port experts should express their opinions as firmly as they hold them, and the TSV ADs may support their opinions, but I do not think that the port experts should ultimately be able to override the community consensus. I would appreciate it if this document made it clearer that the \"rules\" it defines are guidance only, and that exceptions may be made when there is community consensus to make such exceptions. --- I think that the \"guiding principle\" in 6.1 that says... \u00a0 \u00a0 \u00a0 o\u00a0 Copies of an existing service can be differentiated by using \u00a0 \u00a0 \u00a0 \u00a0  different IP addresses, either on different hosts or as \u00a0 \u00a0 \u00a0 \u00a0  different real or virtual interfaces (or even operating \u00a0 \u00a0 \u00a0 \u00a0  systems) on the same host. ... describes an option, but it is wrong to suggest it as a solution. The main thrust of the document says that it is wrong to include a  demultiplex reference at the transport layer when what is being multiplexed is really at the application layer (or at last at the level of the payload of the transport protocol). Yet this suggested remedy actually pushes the demultiplex identifier to the network layer. That really is not a good thing to recommend. --- Section 7.6 has \u00a0  >> Services SHOULD NOT use UDP as a performance enhancement over \u00a0  TCP, i.e., to circumnavigate TCP's congestion control. Is this a port use issue, or guidance about how to use transport  protocols in a harmonious Internet? I think it is the latter and has no place in this document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-03-19 10:29:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-03-05 06:39:09-08:00",
+        "text": "[Updated to remove the middle of three points to the Comments section] Thanks for this work. I think it is helpful for authors and protocol designers to understand the way that the port experts approach this issue. But I have some concerns that I hope we can work out quite  simply. --- I understand that the current situation with the number of free ports is in some respects due to the \"policing\" by the port experts. But I disagree that the situation is such a severe state that fierce rules  are needed. And \"compliance statements\" are fierce rules not recommendations or guidance.   Furthermore, this document brings to the fore the thin line between the opinions of the port experts and the opinions of the IETF community. If, for example, the community chooses (with appropriate discussion and consideration) to request IANA to allocate a port via an IETF consensus standards track document, I believe that request should be honored.  Obviously the port experts should express their opinions as firmly as they hold them, and the TSV ADs may support their opinions, but I do not think that the port experts should ultimately be able to override the community consensus. I would appreciate it if this document made it clearer that the \"rules\" it defines are guidance only, and that exceptions may be made when there is community consensus to make such exceptions. --- Section 7.6 has \u00a0  >> Services SHOULD NOT use UDP as a performance enhancement over \u00a0  TCP, i.e., to circumnavigate TCP's congestion control. Is this a port use issue, or guidance about how to use transport  protocols in a harmonious Internet? I think it is the latter and has no place in this document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-03-19 10:29:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-03-04 14:15:44-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-05-04 07:47:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-03-04 14:15:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-02-17 15:33:31-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-04-24 15:14:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-02-17 15:33:31-08:00",
+        "text": "Thanks for writing this. Overall I agree with its conclusions. But the way that it reaches those conclusions seems lacking or misguided in a couple of respects, so I'd like to discuss those. The document argues that port numbers should be conserved and gives basically three reasons why (my summary): 1. Port numbers are designed for a specific purpose and conservation helps maintain that specificity. 2. The port number space is smaller than other number spaces. 3. Because of firewall and NAT interactions. Reason (1) seems unobjectionable. Reason (2) is true, but it doesn't really offer a compelling argument in light of the pace of assignments to date. The document indicates that about 11% of the port number space has been allocated over several decades. Does that really create cause to worry about running out of space? Are we suddenly being flooded with port number requests? If the rate of assignments doubled or tripled, would we worry about running out of port numbers? Again, I'm not saying this isn't worth pointing out, but in terms of making a compelling argument to developers about the need to conserve port numbers, I don't think this works. That leaves reason (3), and in this case it seems like the document is making contradictory statements at times. On the one hand, many of the recommendations seem motivated by the fact that firewalls make judgments on the basis of port numbers, and therefore conservation makes firewall configuration easier and reduces application fragility that can arise from having some ports blocked. On the other hand, the document notes that port numbers should only be considered meaningful to endpoints and details some of the complications that arise when firewalls instead associate meaning to them. The message comes across as contradictory -- intermediaries are interpreting port numbers in all kinds of ways that they shouldn't, but we should take a conservative attitude towards port number assignment so that they can keep doing it. I think it's totally fine to represent the state of affairs when it comes to how firewalls treat ports. But if that treatment is in some ways a perversion of the motivation for having port numbers in the first place (and if it wreaks some havoc on application development/deployment, which it does), I don't think it's appropriate for us to publish a BCP that predicates its recommendations on that perversion.  The upshot of these comments would result in some editing of sections 5 and 6, but I wanted to have the discussion before suggesting edits.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-05-04 07:47:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-04-24 15:14:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-02-17 07:11:14-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-02-17 09:31:52-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-02-17 07:11:14-08:00",
+        "text": "I have four things I'd like to discuss, three of which have to do with the fact that this document does not update 6335, and, therefore, needs to stay in line with what 6335 says.\u00a0 I don't think it'll be a big deal: let's talk, please. POINT 1: -- Section 5 -- \u00a0  IANA aims to assign only one port number per service, including \u00a0  variants [ RFC6335 ] The \"including variants\" part is not correct; from 6335, Section 7.2: \u00a0 \u00a0 \u00a0 Note: At the time of writing of this document, there is no IETF \u00a0 \u00a0 \u00a0 consensus on when it is appropriate to use a second port for an \u00a0 \u00a0 \u00a0 insecure version of a protocol. What is correct is what 6335 states: NEW \u00a0  IANA aims to assign only one port number per service or \u00a0  application. END POINT 2: -- Section 7.1 -- \u00a0 \u00a0 \u00a0 o\u00a0 Separate port numbers are not intended for insecure versions \u00a0 \u00a0 \u00a0 \u00a0  of existing (or new) secure services. A service that already \u00a0 \u00a0 \u00a0 \u00a0  requires security would be made more vulnerable by having the \u00a0 \u00a0 \u00a0 \u00a0  same capability accessible without security. I understand that this is meant only in the secure -> insecure direction, and in that direction it's probably mostly right.\u00a0 And, yet, it does seem to go against the statement that I quoted above from 6335, Section 7.2, which also goes in the same secure -> insecure direction: \u00a0 \u00a0 \u00a0 Note: At the time of writing of this document, there is no IETF \u00a0 \u00a0 \u00a0 consensus on when it is appropriate to use a second port for an \u00a0 \u00a0 \u00a0 insecure version of a protocol. I'm not sure we can say this as strongly in a document that claims, multiple times, not to be changing 6335.\u00a0 Perhaps this is a reasonable way to make this point?: NEW \u00a0 \u00a0 \u00a0 o\u00a0 Separate port numbers should not normally be used for \u00a0 \u00a0 \u00a0 \u00a0  insecure versions of existing (or new) secure services. A \u00a0 \u00a0 \u00a0 \u00a0  service that already requires security would be made more \u00a0 \u00a0 \u00a0 \u00a0  vulnerable by having the same capability accessible without \u00a0 \u00a0 \u00a0 \u00a0  security. END POINT 3: -- Section 7.4 -- \u00a0  >> New services SHOULD support security, either directly or via a \u00a0  secure transport such as TLS [ RFC5246 ]. In this context, \"security\" is too vague a term: what, exactly, does \"SHOULD support security\" mean?\u00a0 Are you talking about authentication?\u00a0 Access/authorization controls?\u00a0 Confidentiality?\u00a0 Specifically, encrypted communication?\u00a0 I think you mean the last. It would be good to replace \"security\" in this and much of the subsequent paragraphs with some clearer specification of what you're addressing. POINT 4: -- Section 7.4 -- \u00a0  >> When simultaneously requesting both a secure and an insecure \u00a0  port, strong justification MUST be provided for the insecure port. \u00a0  Precedent (citing other protocols that use an insecure port) is not \u00a0  strong justification by itself.\u00a0 A strong case for utility of the \u00a0  insecure service is REQUIRED for approval of the insecure port. This seems significantly stronger thaan what  RFC 6335  said, and this point was hotly debated in the development of that document.\u00a0  RFC 6335 , Section 9, says this: \u00a0  Services are expected to include support for security, either as \u00a0  default or dynamically negotiated in-band.\u00a0 The use of separate \u00a0  service name or port number assignments for secure and insecure \u00a0  variants of the same service is to be avoided in order to discourage \u00a0  the deployment of insecure services. As this document does not update 6335, I don't see how the MUST and the REQUIRED are appropriate.\u00a0 But perhaps I can be convinced by some discussion.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-05-04 07:47:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-17 09:31:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-05-04 07:47:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-03-05 06:31:10-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-05-04 07:47:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-03-05 06:31:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-03-05 02:56:20-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-05-04 07:47:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-03-05 02:56:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-02-16 09:31:26-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-05-04 07:47:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-16 09:31:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-03-03 18:32:02-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-03-15 06:04:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-03-03 18:32:02-08:00",
+        "text": "You may already have the few sentences queued up as a result of your response to the SecDir review: https://www.ietf.org/mail-archive/web/secdir/current/msg05422.html Essentially adding mention of DTLS and IPsec as options to secure sessions in addition to TLS. I do think the point Dan raised was good and appreciated your response, but this draft version is prior to that discussion.\u00a0 This is a placeholder to check for that text.\u00a0 If you have a version to look at, let me know and I'll peek at that one.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-03-19 13:29:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-03-15 06:04:38-07:00",
+        "text": "Reason for abstain: This draft is making a point claiming consensus on the security of one port versus two and I do not agree that the IETF has such a statement on consensus.\u00a0 We showed this on the SecDir list and Ted Lemon provided a pointer to text in a newer RFC than the 15 year old one that Joe is referencing which states there is no consensus on this point.\u00a0 The editor doesn't seem to be budging or checking with the WG and scoping that advice to the WG only (as it is not IETF advice), even though 5 ADs disagree with him. Prior Discuss points, still should be checked in new version: You may already have the few sentences queued up as a result of your response to the SecDir review: https://www.ietf.org/mail-archive/web/secdir/current/msg05422.html Essentially adding mention of DTLS and IPsec as options to secure sessions in addition to TLS. I do think the point Dan raised was good and appreciated your response, but this draft version is prior to that discussion.\u00a0 This is a placeholder to check for that text.\u00a0 If you have a version to look at, let me know and I'll peek at that one. Comments: Thanks for your work on this draft.\u00a0 I do have some comments I'd like to chat about, but others already had discuss items on a few of these, so I am either weighing in or providing suggestions to help resolve. For what it's worth, I read 6.2 as informational background and think the text is helpful.\u00a0 Alissa has a discuss on this, so if the text is changed, I'd be interested to see what the suggested changes would be so that the draft still conveys the helpful information (which she was not opposed to in the discuss).\u00a0 I've configured hundreds of firewalls and what is described is what folks need to know when configuring such devices.\u00a0 Alternate port use can be used to get around rules you put in place and services like FTP in the old days would have used an FTP proxy and today that type of analysis on traffic to open the correct ports is called DPI. The following \"much debated\" text was raised on the SAAG list by Stephen & I and so far there's no consensus for multiple ports.\u00a0 I'll update if there is, but I suspect there won't be.\u00a0 I do think that some changes to the text could be helpful and I'm not sure where to look for changes that happened from Barry's review...\u00a0 I am fine with the text Barry suggested to replace the first of the following two paragraphs and I don't think the second one is needed, perhaps deleting it as Barry's new text covers that enough.\u00a0 I just wasn't sure if that was already part of the updates in the works. \u00a0 \u00a0 o\u00a0 Separate port numbers are not intended for insecure versions \u00a0 \u00a0 \u00a0 \u00a0  of existing (or new) secure services. A service that already \u00a0 \u00a0 \u00a0 \u00a0  requires security would be made more vulnerable by having the \u00a0 \u00a0 \u00a0 \u00a0  same capability accessible without security. \u00a0 \u00a0 \u00a0 \u00a0  Note that the converse is different, i.e., it can be useful to \u00a0 \u00a0 \u00a0 \u00a0  create a new, secure service that replicates an existing \u00a0 \u00a0 \u00a0 \u00a0  insecure service on a new port number assignment. This can be \u00a0 \u00a0 \u00a0 \u00a0  necessary when the existing service is not backward-compatible \u00a0 \u00a0 \u00a0 \u00a0  with security enhancements, such as the use of TLS [ RFC5246 ]. 7.4 - I'm fine with the text in this section discouraging the use of a second port for an insecure version of the protocol as we are pushing back on creating insecure versions anyway.\u00a0 Typically, this is all over one port with options to upgrade to increased security (encryption & authentication).\u00a0 I don't think this draft is the right place to go further than you already have, so I'm good with most of it. I think it was Alissa that raised a point on this sentence in the paragraph following the compliance bullets and I agree with it, so I suggest a change from: \u00a0  Either approach is currently permitted, although \u00a0  use of a single port number is consistent with port number \u00a0  conservation. To: \u00a0  Either approach is currently permitted. The second sentence of the paragraph after that should be deleted, leaving the argument just between performance and security. Delete:\u00a0 As discussed earlier, port numbers are a critical \u00a0  resource and it is inappropriate to consume assignments to increase \u00a0  performance.  Thanks!",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-03-30 17:40:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-03-19 13:29:38-07:00",
+        "text": "I'd like to see this worked out, so I'm changing back to discuss to see what happens with this conversation. This draft is making a point claiming consensus on the security of one port versus two and I do not agree that the IETF has such agreement on consensus and do not agree that the referenced draft provides that.\u00a0 We showed a lack of consensus on the SecDir list and Ted Lemon provided a pointer to text in a newer RFC than the 15 year old one that Joe is referencing which states there is no consensus on this point.\u00a0 I'd like to see what results from discussions with the WG and would like to see the language changed. You may already have the few sentences queued up as a result of your response to the SecDir review: https://www.ietf.org/mail-archive/web/secdir/current/msg05422.html Essentially adding mention of DTLS and IPsec as options to secure sessions in addition to TLS. I do think the point Dan raised was good and appreciated your response, but this draft version is prior to that discussion.\u00a0 This is a placeholder to check for that text.\u00a0 If you have a version to look at, let me know and I'll peek at that one.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-05-04 07:47:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-03-30 17:40:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-02-17 12:11:01-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-05-04 07:47:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-17 12:11:01-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-02-17 19:44:42-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-02-17 19:44:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-03-04 18:00:20-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-03-19 12:43:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-03-04 18:00:20-08:00",
+        "text": "Some of the \">>\" compliance points here are only marginally related to the subject matter, e.g.: \">> New services SHOULD support security, either directly or via a secure transport such as TLS [ RFC5246 ].\" \">> UDP over IPv4 multi-host services SHOULD use multicast rather than broadcast.\" \">> Services SHOULD NOT use UDP as a performance enhancement over TCP, i.e., to circumnavigate TCP's congestion control.\" While these may be good things to say, they don't belong in this document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-03-19 12:43:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-01-27 05:35:38-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-05-04 07:47:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-03-04 06:12:02-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-05-04 07:47:52-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-03-04 06:12:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-02-28 08:18:59-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-27 05:35:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-03-23 12:17:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-02-28 08:18:59-08:00",
+        "text": "The -07 version of the document encourages the use of a single port for both secure and non-secure communication.\u00a0  I am concerned that the outcome will be to encourage the use of mechanisms analogous to STARTTLS in future protocol specifications.\u00a0  A two-port secure/non-secure model is preferable to any mechanism that supports a downgrade attack: the port number signals that the connection must be secure, or is not expected to be secure.  Barry raised a DISCUSS on this text, but unfortunately it looks like the conversation that followed did not fix the issue, and indeed may have made it worse.\u00a0  I am concerned that the document as written and with the proposed changes will lead protocol designers to rely on a single port for secure and non-secure communications in situations where this unavoidably exposes the communication to a man-in-the-middle downgrade attack.\u00a0  I would expect that pretty much any dual-use port would be subject to this risk: dependably preventing it is possible, but hard, and only possible if the thing that signals the initiator to connect to that port can securely indicate whether to use the secure or non-secure mode. I would therefore like to see the text emphasize this concern, rather than emphasizing the concern that if two ports are used, administrators will default to using the non-secure mode.\u00a0  I agree that this latter issue is a concern, but it is a concern for any protocol that allows a non-secure mode, whether it uses the port number to signal that or the signaling is done out of band.\u00a0  The only sense in which using a single port mitigates this concern is if the single port _only_ support secure, authenticated communication. An alternative would be to simply not take a position either way, but the text currently makes some good points about the tradeoffs, which would have to be lost in order to avoid taking a position, so I don't really want to encourage that solution.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-03-23 12:17:51-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7605",
+  "evaluation_end": "2015-05-04 07:47:52-07:00",
+  "evaluation_start": "2015-01-27 05:35:38-08:00"
+}

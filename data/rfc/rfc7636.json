@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-06-10 13:55:41-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 13:55:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-06-10 12:23:05-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 12:23:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-06-08 14:52:50-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-08 14:52:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-06-08 12:42:41-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-06-11 11:49:45-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-06-08 12:42:41-07:00",
+        "text": "How does \"plain\" do anything at all to mitigate this attack?\u00a0 Wouldn't anyone who could snag the grant also be able to snag the code verifier as well?\u00a0 Why is \"plain\" even here?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-07-06 19:48:53-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-06-11 11:49:45-07:00",
+        "text": "After getting John's explanation of the background and details of the attack (and the different communications paths involved, I still would prefer that we build this protocol as a more robust one (with only S256 and not \"plain\"), but I understand the reasons to have it this way, and I think it will be acceptable with some changes to the text to make the situation clearer. To that end, I suggest this: In the introduction, I think the explanation of Figure 1 (the fourth paragraph) should be changed to make it clear what communication paths are used in each step, and where the vulnerable piece is.\u00a0 Something like this: OLD \u00a0  In step (1) the native app \u00a0  running on the end device, such as a smart phone, issues an \u00a0  authorization request via the browser/operating system, which then \u00a0  gets forwarded to the OAuth 2.0 authorization server in step (2). \u00a0  The authorization server returns the authorization code in step (3). \u00a0  The malicious app is able to observe the authorization code in step \u00a0  (4) since it is registered to the custom URI scheme used by the \u00a0  legitimate app.\u00a0 This allows the attacker to reguest and obtain an \u00a0  access token in step (5) and step (6), respectively. NEW \u00a0  In step (1) the native app \u00a0  running on the end device, such as a smart phone, issues an \u00a0  authorization request via the browser/operating system.\u00a0 The \u00a0  request includes a URI by which the response will be returned, \u00a0  and that uses a custom URI scheme.\u00a0 Step (1) happens through a \u00a0  secure API that cannot be intercepted.\u00a0 The request then gets \u00a0  forwarded to the OAuth 2.0 authorization server in step (2). \u00a0  Because OAuth requires the use of TLS, this communication is \u00a0  protected by TLS, and also cannot be intercepted. The \u00a0  authorization server returns the authorization code over the \u00a0  same TLS connection in step (3). In step (4), the Authorization \u00a0  Code is returned to the requester via the URI that was provided \u00a0  in step (1). \u00a0   \u00a0  A malicious app that has been designed to attack this native \u00a0  app has previously registered itself as a handler for the custom \u00a0  URI scheme, and is now able to observe the Authorization Code in \u00a0  step (4).\u00a0 This allows the attacker to request and obtain an \u00a0  access token in steps (5) and (6). END That (or something like it) makes it clear that only one step is vulnerable, and explicitly tells us that the other communication paths are already protected. In the list of pre-conditions, I suggest changing (1) to make \"another application\" be \"a legitimate application that uses OAuth\". *** IMPORTANT *** I am still puzzled by this, in pre-condition (4), which seems to contradict what John said and what I proposed above: \u00a0  4) The attacker (via the installed app) is able to observe responses \u00a0 \u00a0 \u00a0 from the authorization endpoint.\u00a0 As a more sophisticated attack \u00a0 \u00a0 \u00a0 scenario the attacker is also able to observe requests (in \u00a0 \u00a0 \u00a0 addition to responses) to the authorization endpoint. Can you please explain the \"more sophisticated attack\", and how the attacker can observe the request?\u00a0 Because \"plain\" will NOT work in such a situation. I suggest changing the last paragraph in the Introduction like this: OLD \u00a0  To mitigate this attack, this extension utilizes a dynamically \u00a0  created cryptographically random key called 'code verifier'.\u00a0 A \u00a0  unique code verifier is created for every authorization request and \u00a0  its transformed value, called 'code challenge', is sent to the \u00a0  authorization server to obtain the authorization code. NEW \u00a0  To mitigate this attack, this extension utilizes a dynamically \u00a0  created cryptographically random key called 'code verifier'.\u00a0 A \u00a0  unique code verifier is created for every authorization request and \u00a0  its transformed value, called 'code challenge', is sent to the \u00a0  authorization server to obtain the authorization code.\u00a0 This \u00a0  transmission is sent through a secure API, and cannot be \u00a0  intercepted. END I know it repeats what was said in the explanation above, but it's an important enough point to merit repetition. I suggest changing Section 4.4.1 like this (because of a misuse of \"MAY\" that I missed before): OLD \u00a0  If the client is capable of using \"S256\", it MUST use \"S256\", as \u00a0  \"S256\" is Mandatory To Implement (MTI) on the server.\u00a0 Clients MAY \u00a0  use \"plain\" only if they cannot support \"S256\" for some technical \u00a0  reason and knows that the server supports \"plain\". NEW \u00a0  If the client is capable of using \"S256\", it MUST use \"S256\", as \u00a0  \"S256\" is Mandatory To Implement (MTI) on the server.\u00a0 Clients are \u00a0  permitted to use \"plain\" only if they cannot support \"S256\" for \u00a0  some technical reason and know that the server supports \"plain\". END Finally, I suggest changing this in Section 7.2: OLD \u00a0  \"S256\" method protects against eavesdroppers observing or \u00a0  intercepting the \"code_challenge\".\u00a0 If the \"plain\" method is used, \u00a0  there is a chance that it will be observed by the attacker on the \u00a0  device.\u00a0 The use of \"S256\" protects against it. NEW \u00a0  The \"S256\" method protects against eavesdroppers observing or \u00a0  intercepting the \"code_challenge\", because the challenge cannot \u00a0  be used without the verifier.\u00a0 With the \"plain\" method, the \u00a0  challenge can be directly used during the verification step, \u00a0  so \"plain\" does not protect against interception of the initial \u00a0  request. \u00a0   \u00a0  Because of this, \"plain\" SHOULD NOT be used, and exists only for \u00a0  compatibility with deployed implementations where the request \u00a0  path is already protected.\u00a0 The \"plain\" method MUST NOT be used \u00a0  in new implementations. END With that set of changes, or something like them (feel free to re-write, and certainly correct anything I got wrong!), I will clear this DISCUSS and we can move ahead. If you find anything fundamentally messed up in any of that, please do discuss it with me, and let's sort it out.\u00a0 And, again, thanks for the explanation that made this all clear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-06 19:48:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-06-09 14:31:00-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-09 14:31:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-06-10 15:44:48-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 15:44:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-06-10 06:53:39-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 06:53:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-06-10 11:20:49-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 11:20:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-06-11 03:00:13-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-11 03:00:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-06-09 19:39:54-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-09 19:39:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-06-04 06:52:07-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-04 06:52:07-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-06-10 13:52:09-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 13:52:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-06-10 22:58:19-07:00",
+        "end_reason": "new_position",
+        "start": "2015-06-04 06:52:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-07-10 15:01:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-06-10 22:58:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7636",
+  "evaluation_end": "2015-07-10 15:01:22-07:00",
+  "evaluation_start": "2015-06-04 06:52:06-07:00"
+}

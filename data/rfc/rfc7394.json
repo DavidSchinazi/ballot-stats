@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-08-04 09:41:10-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-08-04 13:52:22-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-08-19 16:22:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-04 13:52:22-07:00",
+        "text": "I find Section 3.2 sufficiently confusingly worded and unclear that I think we need to have a discussion about re-wording it.\u00a0 I offer suggested re-wording below, but please bear with my thought process on the way there: \u00a0  This TLV SHALL be included in the MPLS Echo Request by the originator \u00a0  of request. The use of this TLV is optional. That \"SHALL\" conflicts with the second sentence.\u00a0 My sense is that it's not really a MUST.\u00a0 Perhaps you mean \"MAY be included\"?\u00a0 In which case, you don't need the second sentence at all, because that's what \"MAY\" says. \u00a0  (Type value of \u00a0  TLV is assumed to be in the range of optional TLV's which SHOULD be \u00a0  ignored if an implementation does not support or understand them) \"Assumed to be\"?\u00a0 Shouldn't this simply be \"is\"? \u00a0  If a receiver understands the TTL TLV, and the TTL TLV is present in \u00a0  the MPLS Echo Request, the receiver MUST use the TTL value specified \u00a0  in TLV in the MPLS header of the MPLS Echo Reply. In other words, if \u00a0  the value of the TTL provided by this TLV does not match the TTL \u00a0  determined by other means, such as Switching Point TLV in MS-PW, then \u00a0  TTL TLV MUST be used. This will aid the originator of the LSP-Ping \u00a0  echo request in analyzing the return path. I find this to be impossibly confusing in its wording, and I had to read it several times before I thought I understood what you're trying to say.\u00a0 Whenever you need to put in \"in other words,\" you should consider that a clue that re-wording would help. As I find the whole section to be awkward, and as the section isn't long, may I presume to suggest re-wording for the section?\u00a0 Of course, please correct any inaccuracies I might have introduced here... but please do consider a re-wording such as this. NEW 3.2. Usage \u00a0  The TTL TLV MAY be included in the MPLS Echo Request by the \u00a0  originator of the request. \u00a0   \u00a0  If the TTL TLV is present and the receiver does not understand TTL \u00a0  TLVs, it will simply ignore the TLV, as is the case for all optional \u00a0  TLVs.\u00a0 If the TTL TLV is not present or is not processed by the \u00a0  receiver, any determination of the TTL value used in the MPLS label \u00a0  on the LSP-Ping echo reply is beyond the scope of this document. \u00a0  If the TTL TLV is present and the receiver understands TTL TLVs, one \u00a0  of the following two conditions apply: \u00a0   \u00a0  o\u00a0 If the TTL TLV value field is zero, the LSP-Ping echo request \u00a0 \u00a0 \u00a0 packet SHOULD be dropped. \u00a0  o\u00a0 Otherwise, the receiver MUST use the TTL value specified in the \u00a0 \u00a0 \u00a0 TTL TLV when it creates the MPLS header of the MPLS Echo Reply. \u00a0 \u00a0 \u00a0 The TTL value in the TTL TLV takes precedence over any TTL value \u00a0 \u00a0 \u00a0 determined by other means, such as from the Switching Point TLV \u00a0 \u00a0 \u00a0 in the MS-PW.\u00a0 This precedence will aid the originator of the \u00a0 \u00a0 \u00a0 LSP-Ping echo request in analyzing the return path. END",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-19 16:22:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-08-06 07:13:41-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 07:13:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-08-06 19:36:01-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 19:36:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-08-07 07:36:06-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-07 07:36:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-08-07 07:35:51-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-09-25 09:09:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-07 07:35:51-07:00",
+        "text": "Since a traceroute method is described, you are able to map the path, enabling a new network reconnaissance method for MPLS.\u00a0 This should be mentioned as a security consideration as you can map paths to destinations that could be used in DoS or other attacks (you know the nodes to attack to impact availability).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-25 09:09:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-08-06 19:37:30-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 19:37:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-08-06 12:53:08-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 12:53:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-08-06 21:38:34-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 21:38:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-08-07 04:30:53-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-07 04:30:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-08-06 14:54:44-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-04 09:41:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-09-25 09:03:28-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-06 14:54:44-07:00",
+        "text": "I'm probably missing something here, so please help me out.\u00a0  The text in 4.2 says: \u00a0  It is possible that the MPLS Echo Request packet was intercepted \u00a0  before the intended destination for reason other than label TTL \u00a0  expiry. This could be due network faults, misconfiguration or other \u00a0  reasons. In such cases, if the return TTL is set to the value \u00a0  specified in the TTL TLV then the echo response packet will continue \u00a0  beyond the originating node. This becomes a security issue. \u00a0  To prevent this, the label TTL value used in the MPLS Echo Reply \u00a0  packet MUST be modified by deducting the incoming label TTL on the \u00a0  received packet from TTL TLV value. If the MPLS Echo Request packet \u00a0  is punted to the CPU before the incoming label TTL is deducted, then \u00a0  another 1 MUST be deducted. In other words: \u00a0  Return TTL Value on the MPLS Echo Reply packet = (TTL TLV Value)- \u00a0  (Incoming Label TTL) + 1 The second paragraph concludes by saying \"another 1 must be deducted,\" but the math in the third paragraph appears to be adding one, possibly because not enough parentheses were used.\u00a0  What was intended here?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-06 06:49:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-25 09:03:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7394",
+  "evaluation_end": "2014-10-06 06:49:51-07:00",
+  "evaluation_start": "2014-08-04 09:41:10-07:00"
+}

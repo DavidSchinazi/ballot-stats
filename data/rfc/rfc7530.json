@@ -1,0 +1,539 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-05-30 10:16:17-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-30 10:16:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-12-04 03:34:10-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 03:34:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-12-04 08:00:07-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 08:00:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-12-03 14:44:51-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 14:44:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-05-30 07:29:45-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-30 07:29:45-07:00",
+        "text": "I fully support Pete's DISCUSS points, and I have a couple of my own to add.\u00a0 I'll say up front that given the state of the I18N situation in NFSv4, what came up in the discussion thread of Joel's DISCUSS seems like the best answer: make Section 12 a truly minimal thing, and write up a proper \"Internationalization for NFSv4\" document that takes the time and has the expertise to get it right.\u00a0 (And, I'll add, that loops in the precis work.) A couple of specific points to add, particularly if Section 12 stays as plump as it is: - I don't think that punting *all* this (normalization, compatibility, confusability, and any other such issues) to the file system is acceptable.\u00a0 I agree that we have to push canonicalization there.\u00a0 It's true that if NFS uses different normalization or applies different confusability rules than the file system does (say, a file system allows ZERO-WIDTH-SPACE and NFS does not), then some files will not be accessible through NFS.\u00a0 It's also true that if the file system doesn't handle these issues either (or doesn't cover a particular case), you'll have the same result.\u00a0 Defining consistent behaviour does at least give consistent results, and I'm seriously worried about interoperability if it's done this way.\u00a0 Also, ignoring some of these issues can open the system up to attacks that that target known weaknesses in file systems.\u00a0 Consider a situation where lack of filtering of zero-width characters, for example, doesn't matter when the files are accessed locally, but making it accessible to NFS allows remote attacks that hadn't been possible before. - I'm uncomfortable with a new document having no reference to the stringprep update work that's being done in the precis WG, even though that work is still in progress.\u00a0 For example, you say that one problem with stringprep is that it locks you into Unicode 3.2... but moving us away from that lock-in is exactly the motivation for the precis work.\u00a0 Also, as Pete mentions, the lack of communication with precis leaves a visible gap in I18N expertise.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-11-07 19:37:44-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-11-12 16:27:33-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-11-07 19:37:44-08:00",
+        "text": "I have a few points I'd like to discuss before the document moves ahead.\u00a0 I don't think any of them are big deals, so it should all be easy discussion. -- Section 4.2.1 -- \u00a0 \u00a0If two filehandles \u00a0 \u00a0from the same server are equal, they MUST refer to the same file \u00a0 \u00a0system object.\u00a0 Servers SHOULD try to maintain a one-to-one \u00a0 \u00a0correspondence between filehandles and file system objects but this \u00a0 \u00a0is not required.\u00a0 Clients MUST use filehandle comparisons only to \u00a0 \u00a0improve performance, not for correct behavior.\u00a0 All clients need to \u00a0 \u00a0be prepared for situations in which it cannot be determined whether \u00a0 \u00a0two filehandles denote the same object and in such cases, avoid \u00a0 \u00a0making invalid assumptions which might cause incorrect behavior. I'm very confused by this, as parts of it appear to contradict other parts.\u00a0 If equal filehandles MUST refer to the same object, how can there be situations in which that cannot be determined?\u00a0 What invalid assumptions might a client make?\u00a0 And if a client uses the fact that two filehandles are equal in order to improve performance, how is it not expecting correct behaviour out if that?\u00a0 I don't understand. (Note that I DO understand that two accesses to the same object might have different filehandles, but the thrust of the question relates to behaviour when the filehandles ARE equal.) -- Section 6.2.1.2 -- \u00a0 \u00a0Support for any of the ACL attributes is optional (albeit, \u00a0 \u00a0RECOMMENDED). Noooooooooo! RECOMMENDED does not mean optional!\u00a0 RECOMMENDED means that you'd better support them unless you have a good reason not to and you fully understand the ramifications of what you're doing. If they're truly OPTIONAL, then say that.\u00a0 If they're truly RECOMMENDED, then please figure out a way to reword this to say what you really mean to say, or just remove it. -- Section 6.3.1.2 -- \u00a0 \u00a0Clients must be aware of situations in which an object's ACL will \u00a0 \u00a0define a certain access even though the server will not enforce it. \u00a0 \u00a0In general, but especially in these situations, the client needs to \u00a0 \u00a0do its part in the enforcement of access as defined by the ACL.\u00a0 To \u00a0 \u00a0do this, the client MAY send the appropriate ACCESS operation prior \u00a0 \u00a0to servicing the request of the user or application in order to \u00a0 \u00a0determine whether the user or application should be granted the \u00a0 \u00a0access requested. I absolutely don't understand this.\u00a0 I presume that this is saying that a server might respond to an ACCESS operation by telling you that access is not allowed, but an OPEN would actually allow it. 1. If the client does its part without sending an ACCESS operation (MAY makes that optional), then isn't it in contradiction with the previous paragraph, which says \"Clients SHOULD NOT do their own access checks based on their interpretation the ACL, but rather use the OPEN and ACCESS operations to do access checks.\" ? 2. How is it in any way secure to rely on a client to refuse access, if the server won't enforce the access controls?\u00a0 I can't see how it's a good thing to make the client part of the access control model. 3. You refer to 6.3.1.1 for examples, but all of those are examples of the server purposefully altering the effective access controls.\u00a0 None are actually cases where the server *fails* to enforce access controls.\u00a0 Do those cases actually exist? -- Section 9.1.1 -- \u00a0 \u00a0 \u00a0 * \u00a0The client machine's serial number (for privacy reasons, it is \u00a0 \u00a0 \u00a0 \u00a0 \u00a0best to perform some one way function on the serial number). \u00a0 \u00a0 \u00a0 * \u00a0A MAC address. The MAC address is at least as much a privacy issue as the serial number is, and should have the same warning. -- Section 11 -- \u00a0 \u00a0The following items represent the basic rules for the development of \u00a0 \u00a0minor versions.\u00a0 Note that a future minor version may decide to \u00a0 \u00a0modify or add to the following rules as part of the minor version \u00a0 \u00a0definition. That seems, at best, unwise.\u00a0 V4.0 implementations are going to assume that they can interoperate with v4.1 and v4.2 implementations to the extent that minor versioning adheres to these precepts.\u00a0 The whole point of distinguishing minor versions from major ones is to allow that -- some limited level of assured backward compatibility.\u00a0 But if you allow v4.1 to change the rules, all assumptions that v4.0 implementations made are off, and you might as well not have had these rules at all. Perhaps the working group debated this at length, and this represents clear and informed consensus.\u00a0 If so, let me know, and I'll accept that.\u00a0 Otherwise, it seems to me that the rules for what changes are and are not allowed between minor versions should only be changeable in a new major version. -- Section 18.1 -- \u00a0 \u00a0All assignments to the registry are made on a First Come First Served \u00a0 \u00a0basis, per section 4.1 of [ RFC5226 ].\u00a0 The policy for each assignment \u00a0 \u00a0is Specification Required, per section 4.1 of [ RFC5226 ]. This is an incorrect policy specification, and now is a good time to fix it, by changing the specification and alerting IANA to the change.\u00a0 FCFS and Specification Required are different policies, and it doesn't make sense to combine them like this.\u00a0 I think that what you want here is just Specification Required, and then you should provide some brief guidance to the designated expert as to what she should be considering in her review.\u00a0 If you think it's important to tell the expert that she should consider requests in the order that they were made, and that if requests conflict, the earlier one should take precedence, then say that.\u00a0 You should also say something about when it might be appropriate -- and when not -- to deny a request or to send it back to re-work.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-12 16:27:33-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-05-28 14:54:56-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-28 14:54:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-12-03 08:25:42-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 08:25:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-05-29 05:54:52-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-29 05:54:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-12-02 07:18:31-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-02 07:18:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-05-30 07:03:27-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-05-30 07:03:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-05-30 05:34:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-05-30 06:24:51-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-05-30 05:34:52-07:00",
+        "text": "Thank you for writing this detailed specification. I cannot say that reading it is easy, but it is an important and necessary specification. It is particularly important to revise specifications based on experience. So thank you for doing this hard work. I do have a couple of issues that I would like to discuss before recommending the document be approved, however. First, there seems to be advice in S6.3.1.2 that I don't know how I could implement. The advice seems even contradictory: \u00a0 \u00a0 Clients SHOULD NOT do their own access checks based on their\t \u00a0 \u00a0 interpretation the ACL, but rather use the OPEN and ACCESS operations\t \u00a0 \u00a0 to do access checks.\u00a0 This allows the client to act on the results of\t \u00a0 \u00a0 having the server determine whether or not access should be granted\t \u00a0 \u00a0 based on its interpretation of the ACL.\t   \u00a0 \u00a0 Clients must be aware of situations in which an object's ACL will\t \u00a0 \u00a0 define a certain access even though the server will not enforce it.\t \u00a0 \u00a0 In general, but especially in these situations, the client needs to\t \u00a0 \u00a0 do its part in the enforcement of access as defined by the ACL.\u00a0 To\t \u00a0 \u00a0 do this, the client MAY send the appropriate ACCESS operation prior\t \u00a0 \u00a0 to servicing the request of the user or application in order to\t \u00a0 \u00a0 determine whether the user or application should be granted the\t \u00a0 \u00a0 access requested.\u00a0 For examples in which the ACL may define accesses\t \u00a0 \u00a0 that the server doesn't enforce see Section 6.3.1.1. Secondly, Martin Thomson raised an issue that relates to the above, in his Gen-ART review. He said: General: The document uses lowercase \"must\" and \"may\" a lot.\u00a0 It's not clear whether these are intended to be interpreted as normative statements or not.\u00a0 To my eyes, most of these are.\u00a0 On the other hand, there are places where 2119 language is used to effectively specify implementation details that aren't observable at a protocol level. If the document weren't so large, I'd suggest that the editors go through and make sure that every 2119 keyword is in uppercase and then to check each and every instance. I agree with this, and would like to ask the authors if they have gone over the specification and ensured that keywords are used where they are needed. I'm asking in part because the first issue that I raised above depends a bit on the interpretation of the \"must\" in the second paragraph. To be exact, I am not pointing to other cases in the document that would be faulty, or even claiming that this one is. But I am asking a question if the authors feel a keyword check pass would be useful.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-30 06:24:51-07:00",
+        "text": "Thank you for writing this detailed specification. I cannot say that reading it is easy, but it is an important and necessary specification. It is particularly important to revise specifications based on experience. So thank you for doing this hard work. I do have a couple of issues that I would like to discuss before recommending the document be approved, however. First, there seems to be advice in S6.3.1.2 that I don't know how I could implement. The advice seems even contradictory: \u00a0 \u00a0 Clients SHOULD NOT do their own access checks based on their\t \u00a0 \u00a0 interpretation the ACL, but rather use the OPEN and ACCESS operations\t \u00a0 \u00a0 to do access checks.\u00a0 This allows the client to act on the results of\t \u00a0 \u00a0 having the server determine whether or not access should be granted\t \u00a0 \u00a0 based on its interpretation of the ACL.\t   \u00a0 \u00a0 Clients must be aware of situations in which an object's ACL will\t \u00a0 \u00a0 define a certain access even though the server will not enforce it.\t \u00a0 \u00a0 In general, but especially in these situations, the client needs to\t \u00a0 \u00a0 do its part in the enforcement of access as defined by the ACL.\u00a0 To\t \u00a0 \u00a0 do this, the client MAY send the appropriate ACCESS operation prior\t \u00a0 \u00a0 to servicing the request of the user or application in order to\t \u00a0 \u00a0 determine whether the user or application should be granted the\t \u00a0 \u00a0 access requested.\u00a0 For examples in which the ACL may define accesses\t \u00a0 \u00a0 that the server doesn't enforce see Section 6.3.1.1. Secondly, Martin Thomson raised a general issue that relates to the above, in his Gen-ART review. He said: The document uses lowercase \"must\" and \"may\" a lot.\u00a0 It's not clear whether these are intended to be interpreted as normative statements or not.\u00a0 To my eyes, most of these are.\u00a0 On the other hand, there are places where 2119 language is used to effectively specify implementation details that aren't observable at a protocol level. If the document weren't so large, I'd suggest that the editors go through and make sure that every 2119 keyword is in uppercase and then to check each and every instance. I agree with this, and would like to ask the authors if they have gone over the specification and ensured that keywords are used where they are needed. I'm asking in part because the first issue that I raised above depends a bit on the interpretation of the \"must\" in the second paragraph. To be exact, I am not pointing to other cases in the document that would be faulty, or even claiming that this one is. But I am asking a question if the authors feel a keyword check pass would be useful. Third, I cannot find a response to Martin's review from the WG or the authors. I would like to ensure that you have seen the review and have either planned to take it into account, have already taken it into account, or after analysis, decided that no changes are needed. Please confirm. Fourth, is there a response for Elwyn's review? See above. Fifth, I would like the concept of inheritance explained at the conceptual level and up front. Elwyn made some comments on this, and I tried to understand the document from that perspective, but failed to find a full description. The WG probably has a model in mind, but for the rest of us this should be written up explicitly (and it may not need more than a paragraph). Elwyn wrote: The intended functionality of inheritance is not explicitly documented.\u00a0 To come to any sort of understanding of how inheritance is supposed to work you have to read through to the next to the last section (s6.4.3).\u00a0 I have now read through the section two or three times and I have a model in my mind, but there is no text that would allow me to verify my understanding.\u00a0 I *think* i have understood that (1) inheritance only applies when you initially create an object rather than being fed through to all 'inferior' objects in the tree if a superior object has a heritable ACE added; (2) inheritance only applies if you don't explicitly give any ACEs when the object is created, and (3) if you give a mode but no ACL then some complex combination of inherited ACL and mode is applied.\u00a0 An upfront explanation of what is trying to be achieved would have helped a lot.\u00a0 However, none of this explains what happens with either hard or symbolic links.\u00a0 It is unclear to me whether inheritance of ACLs is applied when creating a hard or symbolic link to an existing object. Sixth, are there inconsistencies in error codes? Elwyn reported these: s13.1.4.2: Value of NFS4ERR_DQUOT is 19 here but 69 in table 8 (seems ok in -26) s13,1.4.11: Value of NFS4ERR_NXIO is 5 here but 6 in table 8 (and value 5 is already used for NFS4ERR_IO). s13.1.5.2: Value of NFS4ERR_BAD_STATEID is 10026 here but 10025 in table 8 (and value 10026 is already used for NFS4ERR_BAD_SEQID). Seventh, in general the number of issues seems to indicate that maybe another checking pass through the document, for consistency and other reasons would be preferable. Even if it is painful for such a big document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-12-04 02:56:39-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 02:56:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-05-27 10:37:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-27 10:37:42-07:00",
+        "text": "This is a discuss:discuss, I can probably clear without major objections. First off I'd like to thank Elwin Davies alot for the second genart review against draft 25.  http://www.ietf.org/mail-archive/web/gen-art/current/msg08538.html I'd like to see the authors response to those points. if they have already that's great, just point me to it. In particular: s12:\u00a0 It seems the client has to play '20 questions' with the server to find out how it treats internationalized component names.\u00a0 Some of it seems little better than guesswork.\u00a0 I was wondering why some of the server choices are not described using attributes so that the client doesn't have to thrash around in the dark.\u00a0 Also there doesn't seem to be any requirement for a filesystem to be treated identically after migration. As far as I can see the client can't really rely on the internationalisation treatment not changing after migration. the update to section 18 in (26) I think is good. likewise I think I've made my peace with 3.2.1",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-12-03 23:22:45-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 23:22:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-12-03 20:02:43-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 20:02:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-04-18 06:38:16-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-20 13:13:12-07:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-20 13:13:12-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-05-29 23:57:38-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-29 23:57:38-07:00",
+        "text": "My localized comments about section 12 below notwithstanding, I think section 12 has some serious problems. I've tried to go through and pick out individual problems, but at base it's hard for me to imagine how this could possibly be interoperable: There are strings (USHOULD and UVSHOULD) defined by the spec essentially as 'could be UTF-8, but might not be'. That's not a good start. I'm also not convinced that this section got sufficient review. The draft did not get noticed by the PRECIS WG list, and the only person on the PRECIS list who reports having reviewed this section in detail is David Black. The apps-discuss list review was \"less than thorough\" (and I apologize for that). I think this section should be passed by the PRECIS list for further review. Our experience, post IDNA2003, is that the kinds of normalizations done for stringprep in IDNA was generally a mistake and we are working on ways for other protocols to avoid those mistakes. Even though  RFC 2277  says that we should go with UTF-8, if there is legacy of this sort, I would argue it is better to stick with the legacy and label it (just as we do with email) instead of \"half\" switching to UTF-8 and making implementers hope it all works. My understanding of the recent discussion on the mailing list is that neither the 3530 internationalization nor this one have actually been implemented properly. That's further indication, in my book, that this proposal is simply not going to be interoperable as it stands. Some specific worries: 12.3: \u00a0  Where a UTF-8 string is used as a file name component, the file \u00a0  system implementation MUST NOT return NFS4ERR_BADNAME, simply due to \u00a0  a normalization mismatch.\u00a0 In such cases the implementation SHOULD \u00a0  convert the string to its own preferred normalization mode before \u00a0  performing the operation.\u00a0 As a result, a client cannot assume that a \u00a0  file created with a name it specifies will have that name when the \u00a0  directory is read.\u00a0 It may have instead, the name converted to the \u00a0  file system's preferred normalization form. A call silently succeeding without signal back to the client that the name has been changed seems destined for non-interoperability. 12.7.1.2: \u00a0  o\u00a0 One alternate character repertoire is to represent file name \u00a0 \u00a0 \u00a0 components as strings of bytes with no protocol-defined encoding \u00a0 \u00a0 \u00a0 of multi-byte characters. Unlabeled multi-byte characters are by their nature non-interoperable because of the lack of label. A client supporting UTF-8 names has no way to pass something to the application that can be reasonably manipulated by a user. 12.7.1.5.1: \u00a0  o\u00a0 Implement normalization-sensitive handling without enforcing a \u00a0 \u00a0 \u00a0 normalization form constraint on file names.\u00a0 This exposes the \u00a0 \u00a0 \u00a0 client to the possibility that two files can be created in the \u00a0 \u00a0 \u00a0 same directory which have different names which map to the same \u00a0 \u00a0 \u00a0 name when normalized.\u00a0 This may be a significant issue when \u00a0 \u00a0 \u00a0 clients which use different normalization forms are used on the \u00a0 \u00a0 \u00a0 same file system, but this issue needs to be set against the \u00a0 \u00a0 \u00a0 difficulty of providing other sorts of normalization handling for \u00a0 \u00a0 \u00a0 some existing file systems. Allowing servers to normalize at all worries me, but this option being available to the server is pretty scary from a client perspective. 12.7.1.5.2 pretty much expresses this problem. I think we should discuss the best way forward.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-12-03 11:02:22-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-12-04 11:44:01-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-03 11:02:22-08:00",
+        "text": "As Barry said, the rewrite of section 12 is generally excellent work. Thanks for that. My only concern is 12.6. I've spent some time trying to fix this section, and I think any problems can be easily addressed, but I'm not sure what the intention is, so I've not been able to come up with the right text. So, let me ask some questions. Do you mean to reject strings that have characters that are not IDNA-valid according to IDNA2008? That is, do you want to allow or disallow strings that are valid UTF-8 but aren't valid U-labels? Similarly, do you want to reject invalid ASCII LDH-labels or invalid A-labels? Remember, U-labels and A-labels only contain IDNA-valid characters. Or, conversely, do you want to use the old NAMEPREP routine from  RFC3491  and map invalid stuff into valid stuff? The text as written doesn't make that clear, and it doesn't do either of those two things correctly, so let me know what you want to happen, and I'll try to help you make it happen.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 11:44:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-05-29 13:28:01-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-29 13:28:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-05-30 06:25:41-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-05-30 06:25:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-05-27 16:40:37-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-27 16:40:37-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-12-03 13:35:55-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-03 13:35:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-05-28 09:07:28-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-05-28 09:07:28-07:00",
+        "text": "(The diff with 3530 wasn't very useful, so I just read as much of the draft as I could and commented as if this was new text describing a widely deployed protocol. Please feel free to argue that anything that is in 3530 that doesn't really need to change.) (1) 3.2.1.1.1:  RFC6649  is a BCP. I think you need to say that implementations MUST follow its guidance, and not just that 6649 offers guidance.\u00a0  (2) 10.4.1, last para: \"making private copies\" of credentials sounds odd.\u00a0 I assume you mean kerberos tickets but I'm not sure how that can work. I'd also guess its security mechanism specific.\u00a0 Doesn't that need either some more text or to just say that it doesn't work? Or am I confused? (Quite possible;-) (3) 15.33.5, 2nd last para: this says that if the server says AUTH_NONE then the client can try any mechanism it likes, but that then the client \"SHOULD always be prepared\" to fall back to AUTH_NONE.\u00a0 That seems broken. If the client wanted AUTH_foo for some foo then why would AUTH_NONE be ok? Perhaps this ought say that the client \"MUST be able to handle a failure and SHOULD NOT fall back to AUTH_NONE\" instead?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-12-01 06:08:47-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-12-04 13:33:21-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-12-01 06:08:47-08:00",
+        "text": "(1) 3.2.1.1: Do you really still need to say that clients do not need to support rpc_gss_svc_privacy? That seems inconsistent with e.g.  RFC7258  and the recent IAB statement on confidentiality. Neither of those strictly require protocols to support confidentiality of course, they mostly encourage it, so I'm not DISCUSSing on the basis that our processes require confidentiality. It just seems to me like it's probably not really a problem today to say that client MUST support that GSS service as well. Am I wrong? I'm perfectly willing to be convinced that I'm wrong here btw e.g. if there are a whole slew of implementations that can't support this but I suspect that might no longer be the case. (I can well imagine it used be the case a decade ago.) And if I am wrong then I'm happy to clear the DISCUSS, on the basis that you're not really changing the protocol here so it'd not be reasonable to insist on you adding confidentiality part of this work. (2) 3.2.1.1: The reference to Kerberos via 4121 (and updates) presumably makes AES the MTI crypto alg now? If not, that I think would need to be called out but I think it is the case. I just wanted to check that we're not allowing for something mad like single-DES still be nominally consistent with this spec. (I saw from Tom Haynes August 2013 response to my DISCUSS on -26 that there are such implementations, but I hope they are not considered compliant in that respect.) So this is just checking.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 13:33:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-05-30 04:29:22-07:00",
+        "end_reason": "new_position",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-05-30 04:29:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-09-24 06:11:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-04-18 06:38:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-12-04 05:41:12-08:00",
+        "end_reason": "new_position",
+        "start": "2014-09-24 06:11:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-12-22 09:19:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-04 05:41:12-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7530",
+  "evaluation_end": "2014-12-22 09:19:03-08:00",
+  "evaluation_start": "2014-09-24 06:11:24-07:00"
+}

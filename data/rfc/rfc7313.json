@@ -1,0 +1,317 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-06-07 05:03:18-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-06-09 10:15:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-07 05:03:18-07:00",
+        "text": "Just to be clear: it is your intention that this document updates 2918 such that the function defined here is part of the core BGP-4  specification, and new implementations of BGP-4 are expected to  include support for this function as standard. If this is your intention I would like you to note this fact in the  Introduction to clarify the \"Updates\" tag.  If this is not your intention, I think you will need to remove the  \"Updates\" tag.  In either case, once this and my other issues are resolved, I will be happy to move to a \"Yes\" ballot. --- In Section 3.1 you have \u00a0  The \"Enhanced Route Refresh Capability\" is a new BGP capability \u00a0  [ RFC5492 ].\u00a0 IANA has assigned a Capability Code of 70 for this \u00a0  capability.  In section 6 you have  \u00a0  This document defines the Enhanced Route Refresh Capability for BGP. \u00a0  The Capability Code 70 has been assigned by the IANA. I think that Section 6 needs to give IANA an explicit instruction to  update the registry (which registry?) to point to this document when it is published as an RFC. --- In Section 6 you mark the range 3-255 as Reserved. I think you need to reflect in the table the same information that you have in the text. Thus... \u00a0  Value\u00a0  Code\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Reference \u00a0  0\u00a0 \u00a0 \u00a0  Route-Refresh\u00a0 \u00a0 \u00a0  [ RFC2918 ], [ RFC5291 ] \u00a0  1\u00a0 \u00a0 \u00a0  BoRR\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 [draft-ietf-idr-bgp-enhanced-refresh-06.txt] \u00a0  2\u00a0 \u00a0 \u00a0  EoRR\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 [draft-ietf-idr-bgp-enhanced-refresh-06.txt] \u00a0  3-127\u00a0  Unassigned \u00a0  128-254 Unassigned \u00a0  255\u00a0 \u00a0  Reserved\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 [draft-ietf-idr-bgp-enhanced-refresh-06.txt] Similarly \u00a0  Value\u00a0  Code\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Reference \u00a0  0\u00a0 \u00a0 \u00a0  Reserved \u00a0  1\u00a0 \u00a0 \u00a0  Invalid Message Length\u00a0  [draft-ietf-idr-bgp-enhanced-refresh-06.txt] \u00a0  2-127\u00a0  Unassigned \u00a0  128-255 Unassigned",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-09 10:15:48-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-06-06 12:39:09-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-06-12 08:42:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-06-12 11:34:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-12 08:42:26-07:00",
+        "text": "olding for IANA question",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-12 11:34:29-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-06-09 11:48:16-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-09 11:48:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-06-06 16:50:24-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-06 16:50:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-06-12 03:00:59-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-12 03:00:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-06-09 08:30:18-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-09 08:30:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-06-10 00:15:19-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-10 00:15:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-06-11 23:35:17-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-11 23:35:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-06-07 08:56:33-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-06-12 18:08:45-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-07 08:56:33-07:00",
+        "text": "This should be very easy to resolve, could you add in a reference to the appropriate Security Considerations section of an existing RFC that covers the list of known security considerations?\u00a0 It would be good to know exactly where to look as opposed to just saying no more are added.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-12 18:08:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-06-09 12:35:24-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-09 12:35:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-06-11 19:34:17-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-11 19:34:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-06-11 22:49:20-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-11 22:49:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-06-09 19:13:44-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-09 19:13:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-06-10 01:56:36-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-06-12 05:24:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-10 01:56:36-07:00",
+        "text": "I have a quick question to discuss, and will clear if you tell me I've read the draft wrong, or that this isn't new or that this is just too boring to even think about:-) Is the following not a new security consideration even with authenticated BGP? If an attacker can see the BoRR go by, and can then force the TCP connection down before the EoRR is seen (and stop new TCP connections coming up for as long as the purge timer), the receiver marking the routes as stale with a timeout before purging could cause the receiver to purge all the sender's routes.\u00a0 I guess receivers could maybe detect this (because they're no longer hearing from the sending peer and have only marked the routes as stale because of the BoRR) and not purge the routes in that specific case, but I'm not sure if it'd be worth noting that. Or perhaps this is not a new threat?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-12 05:24:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-06-11 08:46:30-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-06 12:39:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-06-13 13:18:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-11 08:46:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7313",
+  "evaluation_end": "2014-06-13 13:18:03-07:00",
+  "evaluation_start": "2014-06-06 12:39:09-07:00"
+}

@@ -1,0 +1,357 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-07-08 15:47:06-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-08 15:47:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-07-09 15:02:46-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-09 15:02:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-07-09 11:20:43-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-07-28 06:22:09-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-07-09 11:20:43-07:00",
+        "text": "I need to add a DISCUSS to Ted's on IANA registry issues. 1. It seems to me that this document needs to change all the registration entries that cite 5201, making them point to this document instead. 2. This document doesn't create the registries that it says it creates, and it shouldn't say that it does.\u00a0 But this document changes the registration policies of some of the registries, so it needs to make those changes clear.\u00a0 Perhaps (1) and (2) are already in the plan, in response to IANA's questions. 3. The last paragraph describing the Parameter Type registry says that \"all other values\" (it would be better to list them: 1024 through 32767 and 49152 through 61439) are assigned through \"Fist Come First Served, with Specification Required.\"\u00a0 I realize the policy specification is unchanged from 5201, but it's not a valid policy combination.\u00a0 What is it intended to mean?\u00a0 FCFS and Specification Required are contradictory policies.\u00a0 Perhaps what you want is FCFS, with a documentation reference recorded in the registry.\u00a0 You can then say a few words about what registrants should make sure the reference document contains, but realize that it will not be validated by anyone for completeness or sensibility. 4. 5201 specified that the experimentation range ended at 49141; this changes it to 49151.\u00a0 I just want to make sure that was intentional, and not a typo.\u00a0 Will you confirm that? 5. In the table at the end of Section 5.2, the reserved range that follows the experimental one seems to have a typo in it: it says \"41952\", and should say \"49152\".\u00a0 There's also a discrepancy between the \"61440 - 64443\" range and the following \"62464 - 63487\" range.\u00a0 I have no idea which one has the typo there. 6. The comment in (3) about FCFS also applies to the Notify Message Type registry.\u00a0 Also, in the ranges given, the value 16384 doesn't fall in any range.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-07-28 13:40:54-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-07-28 06:22:09-07:00",
+        "text": "Thanks for posting -15, which resolves most of my comments about the IANA Considerations.\u00a0 I'm updating this with the things that remain -- most are now non-blocking comments, below. 1. In the table at the end of Section 5.2, the reserved range that follows the experimental one seems to have a typo in it: it says \"41952\", and should say \"49152\".\u00a0 There's also a discrepancy between the \"61440 - 64443\" range and the following \"62464 - 63487\" range. 2. \u00a0  IANA has reserved protocol number 139 for the Host Identity Protocol \u00a0  and included it in the \"IPv6 Extension Header Types\" registry \u00a0  [ RFC7045 ].\u00a0 No new action regarding this value is required by this \u00a0  specification. Do you really still want that reference to point to 5201, and not to this?\u00a0 Why?\u00a0 Isn't this the definitive reference for HIP once it's published?\u00a0 (The way you're handling the HIP Version reference seems correct though.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-08-12 07:25:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-07-28 13:40:54-07:00",
+        "text": "Thanks for posting -15, which resolves most of my comments about the IANA Considerations.\u00a0 I'm updating this with the things that remain -- most are now non-blocking comments, below. 1. In the table at the end of Section 5.2, the reserved range that follows the experimental one seems to have a typo in it: it says \"41952\", and should say \"49152\".\u00a0 There's also a discrepancy between the \"61440 - 64443\" range and the following \"62464 - 63487\" range. 2. \u00a0  IANA has reserved protocol number 139 for the Host Identity Protocol \u00a0  and included it in the \"IPv6 Extension Header Types\" registry \u00a0  [ RFC7045 ].\u00a0 No new action regarding this value is required by this \u00a0  specification. There are actually two registries with the 139 value: \"IPv6 Extension Header Types\" http://www.iana.org/assignments/ipv6-parameters#extension-header \"Assigned Internet Protocol Numbers\" http://www.iana.org/assignments/protocol-numbers#protocol-numbers-1 In both of those registries, HIP is assigned the value 139, with a reference document of [ RFC5201 ].\u00a0 Both entries should have the reference document changed to this RFC.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-12 07:25:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-06-26 02:28:18-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-26 02:28:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-06-23 08:52:17-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-09-15 06:08:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-23 08:52:17-07:00",
+        "text": "I have no objection to the publication of this document, but I do have two small points to discuss in section 5.2.3. 1. The R1_COUNTER parameter was labeled as optional in  RFC 5201 , but made mandatory in this revision.\u00a0 However, the text says it SHOULD be included in R1.\u00a0 If it is not included in R1 (violates the SHOULD), where will it be included given it is mandatory? 2. The Type value of R1_COUNTER was 128 in 5201 and is now 129.\u00a0 Is that correct?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-15 06:08:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-06-24 03:15:00-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-09-15 05:32:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-24 03:15:00-07:00",
+        "text": "The Gen-ART review from Tom Taylor raised a couple of issues that in my mind require at least clarification. The authors have acknowledged the review, but I think we still need to see you answer if changes are necessary. Otherwise I am very happy with this document, and will be happy to recommend \"Yes\" for it once the above is clear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-09-15 05:33:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-09-15 05:32:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-15 05:33:08-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-06-25 21:25:14-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-25 21:25:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-06-26 06:06:11-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-26 06:06:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-06-24 06:28:20-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-24 06:28:20-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-07-10 07:00:25-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-10 07:00:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-07-09 08:36:52-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-09 08:36:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-06-25 12:09:33-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-25 12:09:33-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-06-26 06:32:39-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-08-23 12:37:31-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-06-26 06:32:39-07:00",
+        "text": "This review is based on the diff from 5201 [1] \u00a0  [1]  https://tools.ietf.org/rfcdiff?url1=rfc5201&url2=draft-ietf-hip-rfc5201-bis-14.txt Work started on this in 2009 it appears and the backwards incompatible changes made to the BEX are roughly what I'd expect to have seen for good work done around that time. However, some things have changed since, that I don't see reflected in the changes made to the BEX, so I'd like to chat about those for a bit, in case they're still malleable. If it is really the case that the boat has sailed for such changes, then that's life, but I wonder has it? (I really don't know for HIP.) I think the features in the changes to the BEX that one would consider noteworthy were that work done today are: (1) Mandating some form of variability of, and confidentiality for, the (non-routable?) HIT to enhance privacy or at least mitigate trival passive tracking of activity across time and different connections. (Or maybe the \"anonymous HI\" mechanism achieves this, I wasn't sure? If it does, then why have any other?) (2) There is no support for newer elliptic curves or representations like 25519. (3) Continuing to support the 1536 MODP DHE group but not supporting the 2048 equivalent seems a bit odd, as does not having a code point for the 4096 but group. Similarly, making the 1536 bit group the MTI (in 5.2.7) is odd as is the assertion that \"web surfing\" can use a lower security level. (4) (5.2.8) Did the WG discuss deprecating the NULL encryption option? (Haven't you finished testing yet:-) Also - there are no counter modes, is that wise? Finally, HIPv1's encryption codepoint 1 was for a 3DES option, but here you have 1 == NULL, yet you deprecate codepoint 3, which is confusing. Why is that? (5) Requiring HMAC-SHA-1 in 6.4.1 seems a bit odd. If HMAC-SHA-256 is supported, then why not just use that? Is there are real benefit in the sha1 variant?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-08-23 16:11:58-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-08-23 12:37:31-07:00",
+        "text": "Sent a mail Aug 23rd. No response seen except to the NULL issue dealt with in 5205bis, -16 doesn't address. --- original discuss below This review is based on the diff from 5201 [1] \u00a0  [1]  https://tools.ietf.org/rfcdiff?url1=rfc5201&url2=draft-ietf-hip-rfc5201-bis-14.txt Work started on this in 2009 it appears and the backwards incompatible changes made to the BEX are roughly what I'd expect to have seen for good work done around that time. However, some things have changed since, that I don't see reflected in the changes made to the BEX, so I'd like to chat about those for a bit, in case they're still malleable. If it is really the case that the boat has sailed for such changes, then that's life, but I wonder has it? (I really don't know for HIP.) I think the features in the changes to the BEX that one would consider noteworthy were that work done today are: (1) Mandating some form of variability of, and confidentiality for, the (non-routable?) HIT to enhance privacy or at least mitigate trival passive tracking of activity across time and different connections. (Or maybe the \"anonymous HI\" mechanism achieves this, I wasn't sure? If it does, then why have any other?) (2) There is no support for newer elliptic curves or representations like 25519. (3) Continuing to support the 1536 MODP DHE group but not supporting the 2048 equivalent seems a bit odd, as does not having a code point for the 4096 but group. Similarly, making the 1536 bit group the MTI (in 5.2.7) is odd as is the assertion that \"web surfing\" can use a lower security level. (4) (5.2.8) Did the WG discuss deprecating the NULL encryption option? (Haven't you finished testing yet:-) Also - there are no counter modes, is that wise? Finally, HIPv1's encryption codepoint 1 was for a 3DES option, but here you have 1 == NULL, yet you deprecate codepoint 3, which is confusing. Why is that? (5) Requiring HMAC-SHA-1 in 6.4.1 seems a bit odd. If HMAC-SHA-256 is supported, then why not just use that? Is there are real benefit in the sha1 variant?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-09-04 00:47:00-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-23 16:11:58-07:00",
+        "text": "The original DISCUSS and COMMENT points are below. I  think only this one remains to be discussed: (3) Continuing to support the 1536 MODP DHE group but not supporting the 2048 equivalent seems a bit odd, as does not having a code point for the 4096 but group. Similarly, making the 1536 bit group the MTI (in 5.2.7) is odd as is the assertion that \"web surfing\" can use a lower security level. (In other words ignore text below here.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-04 00:47:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-06-08 15:50:02-07:00",
+        "end_reason": "new_position",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-06-26 08:42:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-08 15:50:02-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-09-24 13:14:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-26 08:42:33-07:00",
+        "text": "his has outstanding IANA questions that need to be addressed, please.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-09-24 13:29:19-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-24 13:14:14-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7401",
+  "evaluation_end": "2014-09-24 13:29:19-07:00",
+  "evaluation_start": "2014-06-08 15:50:02-07:00"
+}

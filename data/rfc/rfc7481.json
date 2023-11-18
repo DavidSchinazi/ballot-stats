@@ -1,0 +1,515 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-08-13 10:02:54-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-13 10:02:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-26 21:35:10-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-26 21:35:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-10-27 09:34:26-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-27 09:34:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-10-28 16:15:43-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-12-22 17:01:30-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-28 16:15:43-07:00",
+        "text": "= General comment = I'm not exactly sure which document this remark is directed at, but I'm putting it in a DISCUSS here and we can figure that out later. I feel like the RDAP document suite is missing an overall explanation of the privacy threat model associated with registration data, the policy choices that are left up to registry providers, and the mechanisms included in RDAP to help protect registrant\u00a0 and client/user privacy and facilitate those policy choices. There are mentions of some of this here and there, but even those are not necessarily consistent with each other (see my DISCUSS on  draft-ietf-weirds-using-http ). So I think it would be beneficial to capture this in one place and articulate it explicitly, rather than implicitly across the documents. Some of the salient points for starters: * WHOIS data has historically included personal information about registrants, has been made public, and has not had the benefit of authentication or access control mechanisms to gate access to it. In part as a result of this, proxy and privacy services have arisen to shield the identities of registrants. * The standardization of RDAP does not change or impact the data that registries may require to be collected from registrants. However, RDAP data structures allow servers to indicate when data returned to clients has been made private, redacted, obscured, or shielded by a proxy. * RDAP uses the jCard standard format for entity representation, but many of the jCard fields are irrelevant for registry operation purposes and their use should be minimized. * RDAP includes mechanisms that can be used to authenticate clients, allowing servers to support tiered access based on local policy. This means that all registration data need no longer be public, and personal data or data that may be considered more sensitive can have its access restricted to specifically privileged clients. * [Something about confidentiality of requests and responses ... see my other DISCUSS point below.] * etc. = Section 3.4 = \"If the policy of the server operator \u00a0  requires encryption to protect client-server data exchanges (such as \u00a0  to protect non-public data that can not be accessed without client \u00a0  identification and authentication), HTTP Over TLS MUST be used to \u00a0  protect those exchanges.\" It is unclear to me that a server policy that allows unencrypted access should be allowed, particularly in the cases of entity-related requests, but perhaps also in the case of other requests. The fact that the registry data may be public is orthogonal to the question of whether a particular query for that data should have confidentiality protection. I'd like to understand why RDAP does not require HTTP over TLS to be used in all cases and instead allows unsuspecting client users to send their queries in the clear in cases where server policy does not mandate use of TLS. I'm especially curious about this since clients are required to support HTTPS anyway.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-12-22 17:01:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-08-12 12:11:54-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-12 12:11:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-28 23:38:22-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-28 23:38:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-10-29 06:00:02-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 06:00:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-08-12 06:08:18-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-12 06:08:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-28 11:50:46-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-28 11:50:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-08-12 10:48:52-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-12 10:48:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-30 06:33:16-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 06:33:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-08-10 06:46:27-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-10 06:46:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-10-26 21:12:52-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-26 21:12:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-10-29 18:00:39-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-11-25 12:05:17-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-29 18:00:39-07:00",
+        "text": "Thanks for your work on this draft and improving security for the whois function in weirds.\u00a0 There are a lot of options now and the work is appreciated.\u00a0 I have a lot of comments and suggestions that should be pretty easy to resolve.\u00a0 You may find a discuss and comment on the same section, so I've tried to label the start of each item with the draft section numbers. Section 3.1 Could you also include a reference to  RFC5280 ?\u00a0 If the use of PKI and CAs is listed, a pointer to the security considerations would be very helpful to the reader.\u00a0 The pointer should be to the full draft, not just the security consideration section as it covers important things like the need for path validation.\u00a0 Path validation includes checking the certificate validity, the path/chain (root is trusted), etc.\u00a0 I'm not looking for you to add much text, just to punt off to the existing documents if people are interested in the security behind these recommendations for federation, authentication, authorization, etc. Section 3.2 Could you expand on the details here a bit?\u00a0 Between this draft and the response draft, I don't see enough information or guidance on how one might leverage value settings on objects and what are the right actions to take based on those values.\u00a0  My discuss on the response draft is specific to that draft, but the same concept applies here.\u00a0 If the guidance belongs in the response draft, then recommended actions or a list of options if it varies from administrator to administrator would be helpful at the start of the sections that provide the lists of values that can be set on objects. This section of the sec draft should then reference the response draft letting the reader know where to look for authorization and access control options and guidelines. Section 3.4 Since the protocol allows for the use of values to mark objects as private, obscured, redacted, this should be mentioned in this section with a pointer to the response draft section 10.2.2 and the recommended actions in the (hopefully) updated Privacy Considerations section of that draft.\u00a0 For confidentially, leaving out the data with the \"redacted\" value set if possible will do a lot more than trying to protect it with TLS, so I think it's important to note that in this section.\u00a0 The \"private\" value should limit access (I'd like to see some mention of how that is accomplished, but probably in the Response draft).\u00a0 The \"obscured\" value is interesting, but since it is only obscured, it may to be the best option for confidentially protection. Possible new section for Access Controls -  Since user based access is possible, I'd like to see a section added to cover that as well.\u00a0 Is access tied to the roles designated in 10.2.4 of the Response draft?\u00a0 Should it be?\u00a0 Having the combination of user roles and data object values gives a lot of flexibility, but that is talked about enough in the drafts (IMO). Security consideration section: It's good that you are recommending against use of the Null cipher, but could you add a reference to the UTA TLS best practices draft here as well?\u00a0 That will cover quite a few bases with out having to repeat stuff here.  https://datatracker.ietf.org/doc/draft-ietf-uta-tls-bcp/",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-25 12:05:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-29 13:44:54-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-29 13:44:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-08-09 14:32:53-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-09 14:32:53-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-28 10:13:28-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-28 10:13:28-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-08-14 18:16:00-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 18:16:00-07:00",
+        "text": "(1) The Authentication section should be Client Authentication, since that's all it covers.\u00a0 Shouldn't there be some discussion of Server Authentication as well? (2) I don't see anything here or in  draft-ietf-weirds-using-http  that says that RDAP clients MUST support TLS.\u00a0 Shouldn't that be the case, since HTTPS is the standard security mechanism?\u00a0 You should probably also consider how this would impact requirements around URIs for RDAP services.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-30 00:31:10-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 00:31:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-08-14 17:35:15-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-08-14 17:35:15-07:00",
+        "text": "s3.1 contains the following:  To that end, RDAP clients and \u00a0  servers MUST implement the authentication framework specified in \u00a0  \"HTTP Authentication: Basic and Digest Access Authentication\" \u00a0  [ RFC2617 ]. Does that mean the client and server need to support both basic and digest? s3.1: I think the gist here that should maybe be made clearer is that servers need MUST implement TLS with server side certificates - no?\u00a0 What I'm curious about here is whether there should be a SRV-ID or URI-ID is needed for RDAP and isn't some kind of reference to  RFC 6125  warranted here?",
+        "type": "Discuss"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-08-10 14:48:31-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-10 14:48:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-10-30 07:37:41-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 07:37:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-08-14 05:18:06-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 05:18:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-30 06:52:45-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 06:52:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-08-14 20:19:29-07:00",
+        "end_reason": "new_position",
+        "start": "2013-08-09 14:32:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-10 15:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-14 20:19:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-29 18:58:59-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-10 15:27:16-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-30 09:07:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-29 18:58:59-07:00",
+        "text": "As far as I can tell, this specification effectively relies on HTTP authentication as its sole MTI mechanism, and leaves things like OAuth as sort of \"you could do this, but we aren't saying how.\"\u00a0  I am deeply uncomfortable with this, because HTTP authentication really sucks when you are trying to make it work in a context where authentication is optional. I think if you want to rely on this mechanism, you need to give the reader more guidance on how to make this work.\u00a0  What I mean is that in order to trigger the client to send authentication, you have to send back a 401 Unauthorized HTTP response.\u00a0  But that assumes that authentication _is_ required, and it's not.\u00a0  So how does the server know to send back the HTTP unauthorized response?\u00a0  The answer is that it does not, and so you need to somehow signal to the client that it should send more authentication info if it wants better information, while still returning information in case the client has no credentials to offer. This is probably doable, but simply relying on  RFC 7235  without explaining how to make it work isn't sufficient.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-01-01 15:19:43-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-30 09:07:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7481",
+  "evaluation_end": "2015-01-01 15:19:43-08:00",
+  "evaluation_start": "2014-10-10 15:27:16-07:00"
+}

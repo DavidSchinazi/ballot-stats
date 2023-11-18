@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-14 03:04:28-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-15 09:14:28-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-04 02:34:02-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-15 09:14:28-08:00",
+        "text": "olding a Discuss for IANA.Will move to Yes ballot when IANA is/are happy.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-04 02:34:02-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-02-17 19:41:31-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-02-24 14:39:27-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-17 19:41:31-08:00",
+        "text": "-- Section 5.1 -- The descriptions of Tables 4 and 5 have some similar wording, which I can't make sense out of: \u00a0  For all \u00a0  future allocations, the Expert Review MUST ensure that allocated bits \u00a0  MUST use the unset bit (0) to indicates no information, so that the \u00a0  case Value = 0 will always indicate that no information about this \u00a0  network address is provided. Can you explain what this means, and perhaps come up with clearer wording?\u00a0 I honestly have no idea what you're trying to say, and as it's a \"MUST\", that seems important.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-24 14:39:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-02-19 01:56:10-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-02-24 14:47:05-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-19 01:56:10-08:00",
+        "text": "Very easy-to-fix DISCUSS: - section 4.1 \u00a0  An implementation MUST NOT reject a message because it contains \u00a0  such a TLV.  \"such a TLV\" is described in the intro text of section 4.1 This sentence is key: this is THE specification, as it contains a MUST, and therefore must be self-contained.  Please make clear. For example: \u00a0  An implementation MUST NOT reject a message because it contains \u00a0  a unrecognized TLV value.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-24 14:47:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-19 09:38:31-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-25 05:21:59-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-02-19 09:38:31-08:00",
+        "text": "I have no objection to the publication of this document, but I have two points that need discussing.\u00a0 These should be easily addressed. 1. Section 4 has the following text: \"This specification describes how NHDP [ RFC6130 ] and OLSRv2 [OLSRv2] SHOULD handle TLVs with other TLV Value fields.\" I am not sure why there is a \"SHOULD\" here.\u00a0 *If* there was a need for a 2119 keyword, I believe a \"MUST\" is in order.\u00a0 However, I don't think a 2119 keyword is needed at all.\u00a0 I suggest replacing that sentence with: \"This specification describes how NHDP [ RFC6130 ] and OLSRv2 [OLSRv2] handle TLVs with other TLV Value fields.\" 2. In Section 4.3.1, the text talks about creating an IANA registries to manage the allowed values in the various TLVs.\u00a0 The second paragraph then says \"An implementation of [ RFC6130 ], receiving a TLV with any TLV Value other than those values used in that specification, MUST ignore that TLV Value and any corresponding attribute association to the address.\" Shouldn't the guidance be that values not in the *registry* are ignored?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-25 05:21:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-02-20 07:04:33-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 07:04:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-02-20 08:07:05-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 08:07:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-02-20 08:10:11-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 08:10:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-02-19 01:35:54-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 01:35:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-02-19 19:43:29-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 19:43:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2014-02-20 09:04:17-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-20 09:04:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-02-19 13:36:30-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 13:36:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-02-18 15:21:25-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-18 15:21:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-19 03:15:27-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 03:15:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-02-19 14:11:21-08:00",
+        "end_reason": "new_position",
+        "start": "2014-02-14 03:04:28-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-03-04 02:47:37-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-19 14:11:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7188",
+  "evaluation_end": "2014-03-04 02:47:37-08:00",
+  "evaluation_start": "2014-02-14 03:04:28-08:00"
+}

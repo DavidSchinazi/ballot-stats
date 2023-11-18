@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-08-06 10:11:03-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-08-07 06:47:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-06 10:11:03-07:00",
+        "text": "I have a number of small comments on this document, but only this one merits a Discuss. I would point out that the volume of minor editorial, but technically substantive Comments should be cause for concern about this document. --- I read the description of the Capabilities and Header Flags Supported field in section 2.2.4 of  RFC 7176  and found... \u00a0 \u00a0 \u00a0 Bits 3 through 13 \u00a0 \u00a0 \u00a0 indicate that the corresponding TRILL Header hop-by-hop extended \u00a0 \u00a0 \u00a0 flags [ RFC7179 ] are supported.\u00a0 Bits 0 through 2 and 14 to 31 are \u00a0 \u00a0 \u00a0 reserved to indicate support of optional capabilities. Now, it looks to me that you are defining the O-flag at bit 2 and the B-flag at bit 3 (with A and F at 0 and 1). Am I right to be confused about this?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-07 06:47:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-08-06 19:56:43-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 19:56:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-08-06 19:06:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 19:06:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-08-07 07:48:07-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-07 07:48:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-08-06 14:33:27-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-08-12 06:08:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-06 14:33:27-07:00",
+        "text": "I may have missed it, but didn't see any mention in the security considerations section of network reconnaissance activity using the path trace, CCM, and other techniques described to map networks (path and endpoint/RBridges) to be used later in exploits.\u00a0 I may have missed this, but did also check the referenced RFCs (7174 & 6325), please let me know if I missed something.\u00a0 Reconnaissance could be active by an attacker using the described techniques to discover the network or could be a passive observer collecting data from valid uses of the described techniques.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-12 06:08:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-08-05 04:40:59-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-05 04:40:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-08-06 22:04:11-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-01 13:38:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-06 22:04:11-07:00",
+        "text": "Piling on with Adrian: 8.4.3: Length is 9, not 6. Also, it would be useful to indicate the first \"Reserved\" field is 3 octets, and the second is 12 bits. 8.4.10: Like 8.4.5, you never define Reserved.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-01 13:38:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-08-06 13:04:36-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-06 13:04:36-07:00",
+        "text": "My ABSTAIN here is because Donald Eastlake is both chair of the WG and editor of many of its documents.\u00a0 This undermines the consensus process in TRILL to the degree that I cannot support the publication of documents on which he is editor.",
+        "type": "Abstain"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-08-07 07:45:01-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-07 07:45:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-08-07 07:04:16-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-09 06:33:44-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-08-07 07:04:16-07:00",
+        "text": "- 8.4.13 - can you explain why automated key management (see BCP107 ) is not needed here? I don't see how the symmetric keys required would get to all the relevant boxes, or at least I don't see that specified here or a reference that I can access.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-17 07:38:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-09 06:33:44-07:00",
+        "text": "Mail on -09 sent. Discussion continues. - 8.4.13 - can you explain why automated key management (see BCP107 ) is not needed here? I don't see how the symmetric keys required would get to all the relevant boxes, or at least I don't see that specified here or a reference that I can access.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-17 07:38:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-07-21 06:15:47-07:00",
+        "end_reason": "new_position",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-27 08:32:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-07-21 06:15:47-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7455",
+  "evaluation_end": "2014-10-27 08:32:20-07:00",
+  "evaluation_start": "2014-07-21 06:15:47-07:00"
+}

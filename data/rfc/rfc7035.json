@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-06-26 15:18:29-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-26 15:18:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-06-24 09:23:01-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-06-28 12:03:18-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-06-24 09:23:01-07:00",
+        "text": "Two points here: 1. As already discussed with Martin, the IANA Considerations section needs to register \"geopriv\" in the \"IETF URN Sub-namespace for Registered Protocol Parameter Identifiers\" registry (and we need to make sure that IANA is aware of the additional action). 2. This is a \"DISCUSS-DISCUSS\" point, with no action needed by the authors: I want to make doubly sure that IANA is OK with tying the allowable codepoints in the new \"Relative Location Parameters\" registry with the \"Civic Address Types\" registry.\u00a0 The IANA review does acknowledge this relationship, and the fact that the CAtypes registry is closed to new registrations makes this easier, but I want to talk with Michelle on the telechat and make sure they're able to handle this without any difficulties.\u00a0 I'll also note that because the registration policy for the new registry is \"IETF Review\", it will be up to the IESG to check new registrations against this linkage, so we need to make sure it's clearly documented in the header of the registry itself.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-07-15 16:29:58-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-06-28 12:03:18-07:00",
+        "text": "Three points here: 1. The IANA Considerations section needs to register \"geopriv\" in the \"IETF URN Sub-namespace for Registered Protocol Parameter Identifiers\" registry. 2. I wanted to make sure that IANA is OK with tying the allowable codepoints in the new \"Relative Location Parameters\" registry with the \"Civic Address Types\" registry.\u00a0 The IANA review does acknowledge this relationship, and the fact that the CAtypes registry is closed to new registrations makes this easier, but I spoke with Michelle on the telechat to make sure they're able to handle this without any difficulties.\u00a0 Michelle suggested that a good way to avoid overlap between the two registries is to put the entries from the latter into the former as \"reserved\" entries.\u00a0 Then if there *is* a reason to reassign one, the reservation can be removed and the new entry can be created... but no one will make a mistake because they didn't go look in the other registry.\u00a0 This also addresses my concern about whether the IESG might forget to check this relationship when evaluating a future RFC that makes a registration here. So, in Section 8.1, add to the paragraph before the table thus: NEW \u00a0  Values requested to be assigned into this registry MUST NOT conflict \u00a0  with values assigned in the CAtypes registry or vice versa, unless \u00a0  the IANA considerations section for the new value explicitly \u00a0  overrides this prohibition and the document defining the value \u00a0  describes how conflicting TLV codes will be interpreted by \u00a0  implementations.\u00a0 To ensure this, the CAtypes entries are \u00a0  explicitly reserved in the initial values table below.\u00a0 Those \u00a0  reserved entries can be changed, but only with caution as \u00a0  explained here. And then add entries to the table like this: \u00a0  +--------+----------------------------------------+-----------+ \u00a0  | RLtype | description\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | Reference | \u00a0  +--------+----------------------------------------+-----------+ \u00a0  | 0 - 40 | RESERVED by CAtypes registry\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | this RFC\u00a0 | \u00a0  +--------+----------------------------------------+-----------+ \u00a0  | 111\u00a0 \u00a0 | relative location reference\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | this RFC\u00a0 | \u00a0  ...etc... I note that values 7 to 15 are unassigned in the CAtypes registry, so you might want to make it this way instead: \u00a0  +--------+----------------------------------------+-----------+ \u00a0  | RLtype | description\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | Reference | \u00a0  +--------+----------------------------------------+-----------+ \u00a0  | 0 - 6\u00a0 | RESERVED by CAtypes registry\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | this RFC\u00a0 | \u00a0  | 7 - 15 | unassigned\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0  |16 - 40 | RESERVED by CAtypes registry\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | this RFC\u00a0 | \u00a0  +--------+----------------------------------------+-----------+ \u00a0  | 111\u00a0 \u00a0 | relative location reference\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | this RFC\u00a0 | \u00a0  ...etc... You'll know which the right answer to that is, of course. 3. In writing this up, I note that you already do have a collision: the value 128 is assigned in the CAtypes registry, with a reference to  RFC 4776 ... and this document also uses that value for \"relative location map coordinates\".\u00a0 Please confirm whether this is OK (and how it relates to the warning in the paragraph above).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-07-15 16:29:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-06-27 05:00:05-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-27 05:00:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-06-27 04:09:52-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-27 04:09:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-06-22 14:51:59-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-22 14:51:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-06-24 07:56:54-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-24 07:56:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-06-25 20:16:07-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-25 20:16:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-06-12 14:52:49-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-08-16 13:04:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-06-12 14:52:49-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-08-23 15:26:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-08-16 13:04:52-07:00",
+        "text": "olding for IANA review.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-23 15:26:17-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-06-26 15:11:29-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-26 15:11:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-06-20 22:45:46-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-20 22:45:46-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-06-24 10:02:36-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-08-16 13:07:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-06-24 10:02:36-07:00",
+        "text": "An IPR/process-nit DISCUSS-DISCUSS: The IETF last call seems to have gone out saying there are no IPR declarations.\u00a0 The shepherd write-up also says there's no IPR.\u00a0 There is one [1] for draft-thomson-geopriv-relative-location-01  from 2010, and its RAND with possible fee.\u00a0 Is that because the \"replaced-by\" information wasn't updated (it looks like it was) or perhaps the IPR holder didn't think that the WG draft was really covered or is it some tooling bug? If the IPR declaration does apply then another IETF LC is needed I guess. \u00a0  [1]  https://datatracker.ietf.org/ipr/1348/",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-08-16 13:07:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-06-24 15:12:14-07:00",
+        "end_reason": "new_position",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-24 15:12:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-06-26 18:11:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-06-12 14:52:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-08-26 08:09:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-06-26 18:11:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7035",
+  "evaluation_end": "2013-08-26 08:09:38-07:00",
+  "evaluation_start": "2013-06-12 14:52:46-07:00"
+}

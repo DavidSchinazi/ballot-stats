@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-02-01 11:40:34-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-02-01 11:44:13-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-02-01 11:40:34-08:00",
+        "text": "I almost didn't place a Discuss on this document, but as my list of  larger comments grew to four, I decided that together they merit some discussion and resolution. ==== Does this document really update 5340? There is no mention of what this update is or why it is considered a part of the standard implementation of OSPFv3 to include the features described in this document. I suggest either dropping the update or clarifying how it works. --- \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0   I think that the effect of sections 4 and 8 is that auto-config as  specified in this document is not suitable for deployment in service provider networks. Did I miss something, or are you saying that the best you offer is a single, network-wide password to cover all  adjacencies? If this is fine for the home network environment, you should be able to point at a homenet document that says so. If you agree that this is not fine for a service provider (and probably for most enterprises) you need to call this out more strongly and recommend limits on the applicability of this spec. --- Isn't the duplicate Router ID detection an attack vector? If I can inject an LSA purporting to be from the same Router ID but with a numerically larger router hardware fingerprint, I can cause some other  router in the network to reset all of its adjacencies.  In theory I can do this over and over, and I can do it automatically on receipt of an OSPFv3 Router Auto-Configuration LSA. I think you should at least call that out as a specific risk. Ideally,  you would find a way to mitigate it. --- Section 7.4. is titled: Change to  RFC 2328  Section 13.4, 'Receiving Self-Originated LSAs' Are you really changing 2328? Or are you trying to say that an  implementation of this spec will do something different from 2328?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-02-09 13:18:41-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-02-01 11:44:13-08:00",
+        "text": "I almost didn't place a Discuss on this document, but as my list of  larger comments grew to four, I decided that together they merit some discussion and resolution. ==== Does this document really update 5340? There is no mention of what this update is or why it is considered a part of the standard implementation of OSPFv3 to include the features described in this document. I suggest either dropping the update or clarifying how it works. (Note that idnits should have flagged this to you, but the shepherd write-up says that this document doesn't change the status of any existing RFCs.) --- \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0   I think that the effect of sections 4 and 8 is that auto-config as  specified in this document is not suitable for deployment in service provider networks. Did I miss something, or are you saying that the best you offer is a single, network-wide password to cover all  adjacencies? If this is fine for the home network environment, you should be able to point at a homenet document that says so. If you agree that this is not fine for a service provider (and probably for most enterprises) you need to call this out more strongly and recommend limits on the applicability of this spec. --- Isn't the duplicate Router ID detection an attack vector? If I can inject an LSA purporting to be from the same Router ID but with a numerically larger router hardware fingerprint, I can cause some other  router in the network to reset all of its adjacencies.  In theory I can do this over and over, and I can do it automatically on receipt of an OSPFv3 Router Auto-Configuration LSA. I think you should at least call that out as a specific risk. Ideally,  you would find a way to mitigate it. --- Section 7.4. is titled: Change to  RFC 2328  Section 13.4, 'Receiving Self-Originated LSAs' Are you really changing 2328? Or are you trying to say that an  implementation of this spec will do something different from 2328?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-02-11 05:18:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-02-09 13:18:41-08:00",
+        "text": "I've trimmed by Discuss to remove the pieces you have handled. Many thanks for that. ==== > Does this document really update 5340? > There is no mention of what this update is or why it is considered a > part of the standard implementation of OSPFv3 to include the features > described in this document. > > I suggest either dropping the update or clarifying how it works. > > (Note that idnits should have flagged this to you, but the shepherd > write-up says that this document doesn't change the status of any > existing RFCs.) We discussed this a little, and I got the impression that the conclusion was that \"update\" really was intended. In this case you need to (as also discussed): - make this clear in the Abstract (as indicated by idnits) - spend some time in the document (probably the Introduction) explaining how the update works (which is, I believe you are saying, that all new implementations of OSPFv3 are expected to include support for this feature). I do see that you have added to the Introduction: \u00a0  This document describes \u00a0  extensions to OSPFv3 to enable it to operate in these environments. But that is ambiguous. Are the \"MUST\"s in this document mandatory behaviour for an implementation of OSPFv3 or for an implementation of this document which is an option for OSPFv3 implementations? I don't think this is hard to write down, but I don't know what you are trying to achieve.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-11 05:18:29-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-01-20 14:06:16-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-02-04 13:36:09-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 13:36:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-26 03:39:39-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-26 03:39:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-02-05 05:31:41-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-02-09 13:03:32-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-02-05 05:31:41-08:00",
+        "text": "\u00a0  4.\u00a0 OSPFv3 interfaces MAY use an arbitrary HelloInterval and \u00a0 \u00a0 \u00a0  RouterDeadInterval as specified in Section 3.\u00a0  Hopefully, an easy DISCUSS. From a management point of view, we must be able to determine if a router or interfaces within a router are OSPF-autoconfigured. If I'm not mistaken, you miss, in the management considerations section, something like this: The OSPFv3 routers MUST flag the interfaces supporting this specification.  Background: I recall one particular tool in the past that would check the different router configs and flag the HelloInterval and RouterDeadInterval  mismatched values for adjacent routers. This would be equivalent to the following debug: OSPF: Rcv hello from 192.168.0.2 area 0 from FastEthernet0/0 192.168.0.2 OSPF: Mismatched hello parameters from 192.168.0.2 OSPF: Dead R 40 C 60, Hello R 10 C 15\u00a0 Mask R 255.255.255.252 C 255.255.255.252 In case of OSPF auto-config, this check doesn't make any sense.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-09 13:03:32-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-02-04 06:37:21-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 06:37:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-26 03:48:53-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-01-26 03:48:53-08:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-02-05 07:57:14-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-05 07:57:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-02-03 18:32:53-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-03 18:32:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-02-05 05:00:09-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-05 05:00:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-02-04 18:54:29-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 18:54:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-02-04 16:52:31-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-04 16:52:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-02-02 08:32:53-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-02 08:32:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-02-03 06:36:48-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-03 06:36:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-02-03 06:20:05-08:00",
+        "end_reason": "new_position",
+        "start": "2015-01-20 14:06:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-02-13 08:23:58-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-03 06:20:05-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7503",
+  "evaluation_end": "2015-02-13 08:23:58-08:00",
+  "evaluation_start": "2015-01-20 14:06:16-08:00"
+}

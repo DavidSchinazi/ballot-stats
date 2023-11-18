@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-08-25 06:44:07-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-25 06:44:07-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-08-28 21:19:12-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-09-02 07:10:47-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-28 21:19:12-07:00",
+        "text": "This is hopefully straightforward. In 1) of Sec 4.1 it says \"If the L bit is set and the local node \u00a0 \u00a0 \u00a0  is not part of the abstract node described by the first ER Hop, \u00a0 \u00a0 \u00a0  the node selects a next hop that is along the path to the \u00a0 \u00a0 \u00a0  abstract node described by the first ER Hop.\"  but then in 6) it is stated \"Finally, the node replaces the first ER Hop with any ER Hop that \u00a0 \u00a0 \u00a0  denotes an abstract node containing the next hop.\u00a0 This is \u00a0 \u00a0 \u00a0  necessary so that when the explicit route is received by the next \u00a0 \u00a0 \u00a0  hop, it will be accepted.\" The behavior in 1) seems to contradict the concern in 6).\u00a0 Basically, I don't see a reason  for (6) to happen and would like clearer reasoning.  I'm also concerned that (6) might cause a narrowing of the specified abstract node so that the second ER Hop TLV's abstract node can't be reached.\u00a0 For instance, say the ER TLV is (10.0/16 , 10.2/16) and say that node 10.0.1.1 receives for 10.0/16  and then selects the route of 10.0.1.200 followed by 10.0.2.12, which has a neighbor of of 10.2.3.13. Couldn't 10.0.1.1 send on (10.0.1/24, 10.2/16) which would then cause 10.0.2.12 to need to either send an error if 10.0.1/24 was strict? In Sec 4.2, it says \"\u00a0  Otherwise, if the node is a member of the abstract node for the first \u00a0  ER-Hop, then a series of ER Hops may be inserted before the First ER \u00a0  Hop or may replace the first ER Hop. Each ER Hop in this series must \u00a0  denote an abstract node that is a subset of the current abstract \u00a0  node.\" Is this before or after the first ER Hop TLV is deleted as per 4) in Sec 4.1 ?\u00a0  Is the idea that the path should stay inside the first abstract node until the second abstract node is topologically adjacent?\u00a0  Unlike RSVP-TE, it seems like reaching a node in the first ER Hop TLV's abstract node isn't enough to remove the ER Hop TLV? It would really help with clarity if the desired functionality were described clearly as well as the specific steps to take.\u00a0 The specific steps given are pretty unclear as to what conditions are break; and which are continue;",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-02 07:10:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-09-01 00:11:23-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-01 00:11:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-09-02 05:07:59-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-02 05:07:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-09-03 06:56:14-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-03 06:56:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-09-02 07:24:46-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-02 07:24:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-09-04 03:47:35-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-04 03:47:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-09-03 20:42:11-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-03 20:42:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-08-29 13:40:49-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-29 13:40:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-09-03 12:19:15-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-03 12:19:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-09-02 07:46:19-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-02 07:46:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-09-03 17:11:26-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-03 17:11:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-09-04 07:42:33-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-25 06:44:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-09-11 14:21:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-04 07:42:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7392",
+  "evaluation_end": "2014-09-11 14:21:37-07:00",
+  "evaluation_start": "2014-08-25 06:44:06-07:00"
+}

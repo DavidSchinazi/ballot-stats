@@ -1,0 +1,389 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-09-25 14:08:34-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-23 11:29:10-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-09-25 14:08:34-07:00",
+        "text": "I am glad that this work is being done by the IETF, and I think it is very important to the future of the Internet. However I have a number of comments some of which are at the level of Discusses. --- Section 3.1.1 \u00a0  It is desirable to reuse existing protocols where possible, but at \u00a0  the same time to avoid consciously precluding the introduction of new \u00a0  or emerging protocols. I am pretty sure this says \"Use a protocol.\" If you are not precluding a new protocol when an existing one can be reused, then are you actually going to satisfy your desire? It is desirable to have cake. At the same time, we should not preclude eating it. However, I would also note that the homenet charter has something to say on this topic, and I don't believe this document should be at variance with what the charter says. I think the resolution of this issue is to remove this discussion from  the document. It really has nothing to do with the architecture. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0   --- Section 3.1.1 and 3.5 I am concerned by the drive towards \"available\" code and the requirement (you use \"should\") for open source implementations. Are we moving from being a standards body to a political one? While the existence of running code is a great way to demonstrate that a protocol is stable and works and has support (I did write 6972), I do not believe that having  available code is part of the IETF philosophy. Probably a WG has the right to decide that this is a rule they wish to employ, although maybe it should be the subject of a more overt  consensus call with careful discussion. Can the chairs assure me that this has been debated properly in the WG? [BTW, I am assuming that \"available\" is intended to imply open source or similar, and not \"commercially available\".] I think that the resolution of this issue is to remove this discussion from this document. it really has nothing to do with the architecture. --- BCP 38  is an important tool in the ISP's armoury. However, it is a real cause of loss of function and capability in the home network.  RFC 6724 does nothing to ease this because, although it may give advice about selecting a source address, it doesn't handle the case where a device wishes to change its source address. A multi-homed home needs to be flexible and resilient. It also needs to support mobility within the home as well as from outside the home into the home. Such resilience and mobility need to be achieved without service disruption and at the network layer. SA-based routing is only a sticking plaster since, while it gets the packets to the right CER based on their SA, it doesn't help when the SA needs to be changed. The home should become part of the Internet, not a wart on the side, and IP packets should be dynamically routable without the need to ask the  sender to change the source address. Otherwise, all the excitement about end-to-end communication is rather diluted. This debate could be quite wide and deep, and should surely involve the routing and operations communities. I think this issue could be resolved for this document by more clarity in the document about the required parameters of the homenet (e.g. is  BCP\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0   38  required at the ISP-CER boundary?), and less discussion about how  solutions might be formed. The discussion of solutions will, of course, be needed - just not in this document. ---- And, following from the previous... I am disappointed by the discussion of routing requirements and  solutions in this document. It would be better if the document was  clearer about the solution model that needs to be applied (section 2.3) is pretty much clear enough, and if it left all resolution of the  problem out of scope of this document. If routing changes are needed, perhaps these could be determined within the Routing Area. If operational changes are acceptable, perhaps the Ops Area could make a determination. In short, this document is too open to the passing opinions of how things might be done, and once that has been made into an RFC it will be really hard to do something different. This issue (of the document making suggested solutions) may be more  general (for example, the end of 3.3.1, or the end of 3.4.3), I just feel it more around routing. I think this issue could be resolved by careful grooming of the text so that it describes the requirements (if they exist) such as a host must be able to choose between different addresses and  BCP 38  must be assumed to be in use. But the text should not suggest how routing will achieve that (or even if it is a routing issue since tunnelling solves it  without any modification to routing :-) --- When 3.3.3 says... \u00a0  Therefore protocols that avoid being 'chatty', do not require \u00a0  flooding, and enable isolation of traffic between subnets are \u00a0  preferable to those which burn scarce resources. ... it is being too simplistic. Different protocols have different plusses and minuses. What is best for one network type is not best for another. And then 3.5 goes on to say... \u00a0  As per prefix delegation, it is assumed that a single routing \u00a0  solution is in use in the homenet architecture.\u00a0 If there is an \u00a0  identified need to support multiple solutions, these must be \u00a0  interoperable. ...which is internally inconsistent (either there is one solution or not) and in conflict with the discussion of LLNs within the home. But I find some disconnect about whether an LLN is part of the homenet or not. 3.5 says: \u00a0  In general, LLN or other networks should be able to attach and \u00a0  participate the same way as the main homenet, or alternatively map/be \u00a0  gatewayed to the main homenet.\u00a0 Current home deployments use largely \u00a0  different mechanisms in sensor and basic Internet connectivity \u00a0  networks.\u00a0 IPv6 VM solutions may also add additional routing \u00a0  requirements. Noting that 3.7.6 is pretty sure that an LLN can be part of the homenet. Furthermore: what does \"interoperable\" mean?! --- 3.5 says some odd things \u00a0  It is desirable, but not absolutely \u00a0  required, that the routing protocol be able to give a complete view \u00a0  of the network, and that it be able to pass around more than just \u00a0  routing information. I should think it highly undesirable that the routing protocol be  able to give a complete view of the network. That is neither something that is the job of a routing protocol, nor something that is good to do to low-capacity devices be they routers or hosts. We can also have a philosophical discussion if you like about whether a routing protocol should be employed to pass around non-routing  information. Such a use, either by flooding or by more direct means, is likely to make the routing aspects of the routing protocol slower to  converge and more expensive to run. This seems to be in conflict with 3.3.3's preference to avoid flooding and burning of scarce resources. This issue might be resolved by separating out the requirements/desires in terms of functions (we want to be able to get information between nodes in a p2p, p2mp, or broadcast way) from how it is achieved (through routing). --- 3.8.2 is an ambitious punt. While there is clearly no need for active configuration management, diagnostics will be required. It is very naive to assume that the self-configured network will never have a  problem requiring someone (user or engineer) to inspect and rectify problems. I think 3.8.2 needs to be promoted beyond something that \"this text is neutral towards\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-13 13:59:44-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-02-23 11:29:10-08:00",
+        "text": "Updated for revision -12. I am glad that this work is being done by the IETF, and I think it is very important to the future of the Internet. However I still have a number of comments some of which are at the level of Discusses. ======= | Section 3.1.1 | | It is desirable to reuse existing protocols where possible, but at | the same time to avoid consciously precluding the introduction of new | or emerging protocols. | | I am pretty sure this says \"Use a protocol.\" | | If you are not precluding a new protocol when an existing one can be | reused, then are you actually going to satisfy your desire? | | It is desirable to have cake. At the same time, we should not preclude | eating it. | | However, I would also note that the homenet charter has something to say | on this topic, and I don't believe this document should be at variance | with what the charter says. | | I think the resolution of this issue is to remove this discussion from  | the document. It really has nothing to do with the architecture. You originally said: > - have left 3.1.1 in, marked as an open issue (one to be raised in the >\u00a0 \u00a0 session this week).\u00a0 This principle has had consensus in the WG >\u00a0 \u00a0 from the outset. Mark said: > I agree that the current text could use improvement, perhaps borrowing > more from what is in the charter already. We can talk about that in our > homenet meeting. You have now said: > I understand what you're saying here, but this text has been in the > document pretty much as-is since its first version, for 2+ years, when > it was agreed in the Philadelphia interim meeting, and has not drawn > any comments to remove it previously.\u00a0 So we assume consensus > remains on it being there. That bugs me :-) Me: The text is unclear You: Yes, but we have consensus on it I have to say, having consensus does not make it magically any clearer! Let me restate my point (which I don't think is a large point, but one that will guide how the WG operates as it works on this topic). If the text intended to say: - If there is an existing protocol that can be used, prefer to use it. - If there is no such existing protocol, use a new or emerging one. - Make no design decisions that make it impossible to use a new or \u00a0 emerging protocol. ...then simple rewording can make the difference. But charter says:  The group will apply existing protocols to handle the five   requirements above. For prefix configuration, existing protocols are   likely sufficient, and at worst may need some small enhancements, such   as new options. For automatic routing, it is expected that existing   routing protocols can be used as is, however, a new mechanism may be   needed in order to turn a selected protocol on by default ...and you can't rewrite your charter in an RFC! So, how about... OLD \u00a0  It is desirable to reuse existing protocols where possible, but at \u00a0  the same time to avoid consciously precluding the introduction of new \u00a0  or emerging protocols. NEW \u00a0  Existing protocols will be used to meet the requirements of home \u00a0  networks. Where necessary, extensions will be made to those \u00a0  protocols. When no existing protocol is found to be suitable, a \u00a0  new or emerging protocol may be used. Therefore, it is important \u00a0  that no design or architectural decisions are made that would \u00a0  preclude the use of new or emerging protocols. END Now, I could live with that despite my philosophical debate with Mark about whether the discussion of which protocols to use belongs in the architecture document, because at least my proposed text brings the topic back to the architecture. (Personally, I think architectures are abstract and functional so they don't mention more than the existence and purpose of protocols.) ============= | 3.5 says... | | As per prefix delegation, it is assumed that a single routing | solution is in use in the homenet architecture.\u00a0 If there is an | identified need to support multiple solutions, these must be | interoperable. | | ...which is internally inconsistent (either there is one solution or | not) and in conflict with the discussion of LLNs within the home. You suggested later that  > - the LLN interoperability would presumably come from a gateway > between the 'regular' homenet and the LLN. ...and maybe that is what you mean by \"interoperable\" in this context. If so... s/these must be interoperable/it must be possible to achieve interworking through the use of a gateway function/ (We normally say that two implementations are interoperable when they can speak to each other on the wire.) But let's unpick this a bit. You say \"a single routing solution is in use in the homenet architecture.\" You do not say \"a single routing solution is in use in any given homenet.\" There is a big implication here that, for example, there will not be support by the Homenet WG for both OSPF and ISIS solutions. How will the WG choose? ============== | 3.5 says some odd things | |\u00a0 It is desirable, but not absolutely |\u00a0 required, that the routing protocol be able to give a complete view |\u00a0 of the network, and that it be able to pass around more than just |\u00a0 routing information. | | I should think it highly undesirable that the routing protocol be  | able to give a complete view of the network. That is neither something | that is the job of a routing protocol, nor something that is good to do | to low-capacity devices be they routers or hosts. | | We can also have a philosophical discussion if you like about whether a | routing protocol should be employed to pass around non-routing  | information. Such a use, either by flooding or by more direct means, is | likely to make the routing aspects of the routing protocol slower to  | converge and more expensive to run. | | This seems to be in conflict with 3.3.3's preference to avoid flooding | and burning of scarce resources. | | This issue might be resolved by separating out the requirements/desires | in terms of functions (we want to be able to get information between | nodes in a p2p, p2mp, or broadcast way) from how it is achieved (through | routing). You said: > - the \"complete view' part has been extensively (as in probably 100+ emails) > discussed; I'd be wary of reawakening that if we changed it... I have no fear. \"Complete view\" is clearly not what is intended. You do not want to know the shoe size of the stand-in network operator's third child by his first marriage. So this could be qualified, and easily. For example: \"Using information distributed through the routing protocol, each node in the homenet should be able to build a graph of the topology of the whole homenet including links, nodes, connectivity, and link metrics.\" Then you added: > This currently says: > >\"It is desirable, but not absolutely required, that the routing protocol be > able to give a complete view of the network, and that it be able to > pass around more than just routing information.\" > > That still leaves room for a separate configuration protocol; there has > been list discussion about this. I am not worried that you would preclude a separate configuration protocol. I am not worried that you would preclude a separate management protocol. I *am* worried that you will overload your routing protocol using it for the distribution of other *arbitrary* information not related to routing. As I say, this is contrary to your desire not to burn scarce resources (especially since the use of a flooding protocol seems to be in vogue for the solutioneers). It is also something that the Routing Area has come to see as risky. Routing protocol implementations are built with assumptions of network size and network information. We have learned that, as these parameters change, implementations and even protocols become unstable. It would really help if the architecture, instead of saying \"we could shuffle this information (although we're not quite sure what it is) using the routing protocol\" said \"we have identified the following types of information that need to be moved around the network from these nodes to those nodes.\" It could then go on to give advice about which are the appropriate types of mechanism for each type of information",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-06-08 14:51:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-03-13 13:59:44-07:00",
+        "text": "Updated further\u00a0 for revision -13. Thanks for continuing to chip away at my Discuss on this important document. ======= I had a Discuss point about the statement in 3.5 that said |\u00a0 It is desirable, but not absolutely |\u00a0 required, that the routing protocol be able to give a complete view |\u00a0 of the network, and that it be able to pass around more than just |\u00a0 routing information. This now reads > Using > information distributed through the routing protocol, each node in  > the homenet should be able to build a graph of the topology of the > whole homenet including links, nodes, connectivity, and (if the > routing protocol supports them) link metrics. I still feel that this is a rather limited view of the way routing can work and I don't see anything in the document on which to build this \"requirement\". Your objectives are may be more easily stated in terms of what you want the routing protocol to achieve in terms of routing packets, not through statements of how the routing protocol will distribute information in support of those ends.  But this text is converging. Thanks for taking out the mention of \"non-routing information\". That was my major concern.  I'm going to hold on to this Discuss for one more iteration in the hope that we can replace the \"how to implement it\" type of requirement with a \"what we want to achieve\" type of requirement. I think you want to be able to make next hop decisions to achieve packet forwarding that follows CSPF for a number of potential constraints including link and node status, hop count, and link metric. (Note that this issue is converging on one of my Comments that says \"what paradigm do you want routing to arrive at?\")",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-06-09 14:38:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-06-08 14:51:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-09 14:38:36-07:00",
+        "text": "I am tired of the discussion of this document. I am alarmed that a paragraph that was inserted to address my Discuss and on the basis of which I cleared my Discuss at version 14 was removed from version 15 with the change log comment \"removed spurious paragraph\". This leaves me with the option of reasserting my Discuss or Abstaining. I choose to Abstain because I no longer have confidence that this work will be produced with the relevant level of care or integrity.",
+        "type": "Abstain"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-09-11 16:32:41-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-09-12 09:09:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-11 16:32:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-09-25 07:21:31-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-12 09:09:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-25 07:21:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-09-25 16:01:54-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-03-10 03:44:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-25 16:01:54-07:00",
+        "text": "DISCUSS The numerous comments from the IESG/directorates simply reflect the fact that you worked on an important piece of work. Thanks - zeroconf, which is mentioned throughout the document. It should be expanded in the \"operations and management\" section 3.8.2 Also, on that zeroconf topic, I agree with Brian Point 6 \u00a0  It is not practical to expect home users to configure their networks. \u00a0  Thus the assumption of this document is that the homenet is as far as \u00a0  possible self-organising and self-configuring, i.e. it should \u00a0  function without pro-active management by the residential user. - Regarding 3.8.2.\u00a0 Operations and Management, here is Jouni's feedback (part of OPS-DIR) \u00a0 JiK: I would like to see here also the other operational considerations \u00a0 spread out in the document like: subscribers config names for services, \u00a0 SSIDs, WPA2 keys, defining which nodes are \"servers\" etc.. \u00a0 Frankly compared to the high quality of the rest of the document, this \u00a0 section needs some considerable face lifting. Specifically, homenet \u00a0 envisioned by this architecture document can be a nightmare for the \u00a0 average Joe, if and when something breaks or malfunctions. I fully agree with Jouni. When I read .. \u00a0  It is not practical to expect home users to configure their networks. \u00a0  Thus the assumption of this document is that the homenet is as far as \u00a0  possible self-organising and self-configuring, i.e. it should \u00a0  function without pro-active management by the residential user. ... I expect a lot more from the \"Operations and Management\" section - \u00a0  The homenet should be self-organising and configuring as far as \u00a0  possible, and thus not be pro-actively managed by the home user. It seems to me that it conflicts with the notion of border, which will have to be configured , in all non trivial homenet deployments - \u00a0  Also, with the introduction of new 'dotless' top level domains, there \u00a0  is also potential for ambiguity between, for example, a local host \u00a0  called 'computer' and (if it is registered) a .computer gTLD.\u00a0 Thus \u00a0  qualified names should always be used, whether these are exposed to \u00a0  the user or not. http://www.icann.org/en/news/announcements/announcement-30aug13-en.htm",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-10 03:44:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-09-11 10:22:38-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-09-26 06:21:42-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-09-11 10:22:38-07:00",
+        "text": "There are several items within this document that I think need discussing... 1. Even though this document is labeled an architecture, I am concerned when I see seemingly random requirements documented in various parts of the document.\u00a0 Are there a concrete set of requirements that can be documented in a standalone section (ideally with some justifications)? 2. Section 1.1 (and other parts of the draft) talks about borders & realms and their impact on forwarding unicast and multicast traffic.\u00a0 I am concerned that these two terms need to be scoped properly to bring them in line with the  RFC 4007 , specifically the definition of scopes & zones (section 5 of 4007).\u00a0 Of note, this draft says those types of boundaries need to be automagically created, yet 4007 specifically states that boundaries between zones must be configured by an administrator. 3. The introduction states that this draft is focused on the internals of the homenet \"and thus specific features on the WAN side of the CER are out of scope\".\u00a0 However, section 2.6 discusses transition scenarios that are already defined in  RFC 6204  (6204bis).\u00a0 What is the purpose of having transition text in *this* draft? 4. While I fully support open-source software and recognize its benefit to the IETF, I do not find it appropriate to espouse (borderline require) its use in an architecture document.\u00a0 The text in section 3 and 3.5 is rather inappropriate in this context. 5. Does the discussion of walled gardens in section 3.2.4 (next-to-last paragraph) need an explicit reference to section 4.2.1 of  RFC 3002 ?\u00a0 The guidance provided in 3002 is very explicit and I would not want homenet to go against that consensus. 6. This is more of a general concern, but I am seeing a lot of zero-config magic being wished for in this document.\u00a0 While it is a noble goal, I don't see how it dovetails with other aspects such as home vs. guest subnets, device enrollments vs. unmodified hosts, and the need for policies in some scenarios.\u00a0 There are some aspects of a complex network that require some level of human intervention to get right.\u00a0 How would a router know that an attached subnet should be treated as the guest subnet?\u00a0 How does a router know that a particular upstream link is to a corporate VPN? 7. I think it is inappropriate to discuss IPv6 address allocation policies in section 3.4.1.\u00a0 The fourth paragraph in that section is on dangerous grounds trying to mandate what an ISP allocates to a customer. 8. Section 3.6.5 seems rather odd to me.\u00a0 Trusting a packet's source address to be correct and use it to affect security settings seems questionable.\u00a0 Especially if it is based on an assumption that border filters are in place and operational.\u00a0 What is the genesis/basis for this text?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-14 11:18:35-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-26 06:21:42-07:00",
+        "text": "There are several items within this document that I think need discussing... 1. Even though this document is labeled an architecture, I am concerned when I see seemingly random requirements documented in various parts of the document.\u00a0 Are there a concrete set of requirements that can be documented in a standalone section (ideally with some justifications)? 2. Section 1.1 (and other parts of the draft) talks about borders & realms and their impact on forwarding unicast and multicast traffic.\u00a0 I am concerned that these two terms need to be scoped properly to bring them in line with the  RFC 4007 , specifically the definition of scopes & zones (section 5 of 4007).\u00a0 Of note, this draft says those types of boundaries need to be automagically created, yet 4007 specifically states that boundaries between zones must be configured by an administrator. 3. The introduction states that this draft is focused on the internals of the homenet \"and thus specific features on the WAN side of the CER are out of scope\".\u00a0 However, section 2.6 discusses transition scenarios that are already defined in  RFC 6204  (6204bis).\u00a0 What is the purpose of having transition text in *this* draft? 5. Does the discussion of walled gardens in section 3.2.4 (next-to-last paragraph) need an explicit reference to section 4.2.1 of  RFC 3002 ?\u00a0 The guidance provided in 3002 is very explicit and I would not want homenet to go against that consensus. 6. This is more of a general concern, but I am seeing a lot of zero-config magic being wished for in this document.\u00a0 While it is a noble goal, I don't see how it dovetails with other aspects such as home vs. guest subnets, device enrollments vs. unmodified hosts, and the need for policies in some scenarios.\u00a0 There are some aspects of a complex network that require some level of human intervention to get right.\u00a0 How would a router know that an attached subnet should be treated as the guest subnet?\u00a0 How does a router know that a particular upstream link is to a corporate VPN? 7. I think it is inappropriate to discuss IPv6 address allocation policies in section 3.4.1.\u00a0 The fourth paragraph in that section is on dangerous grounds trying to mandate what an ISP allocates to a customer. 8. Section 3.6.5 seems rather odd to me.\u00a0 Trusting a packet's source address to be correct and use it to affect security settings seems questionable.\u00a0 Especially if it is based on an assumption that border filters are in place and operational.\u00a0 What is the genesis/basis for this text?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-14 11:18:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-09-26 07:43:41-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-09-26 07:43:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-09-26 05:40:48-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-26 05:40:48-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-09-10 22:31:13-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-02-14 10:47:30-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-10 22:31:13-07:00",
+        "text": "The secdir review revists the question of default allow/deny policy and the documents non-position, position, on that. I am actually aware of the discussion in the working group and the nuance of the respective arguments having been a contributor to the discussion. I personally would rather see: The document declare a lack of consensus with respect to which is more appropriate. Describe the policy as situationaly appropriate (e.g. there are consensus cases where one model is appropriate or the other model is appropriate). this is not strongly held but it's worth discussing.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-14 10:47:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-09-11 04:14:34-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-11 04:14:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-09-24 17:36:24-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-24 17:36:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-09-11 20:51:57-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-11-04 13:28:00-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-11 20:51:57-07:00",
+        "text": "This is a \"DISCUSS-discuss\", mainly a question I would like to have an answer to because service discovery is an important feature of homenets for applications. One challenge that we've run into, e.g., in GEOPRIV, ECRIT, and ALTO, is that it is sometimes necessary (or at least helpful) for the homenet DHCP server to pass along information that it gets from its upstream DHCP server.\u00a0 For example, DNS resolver addresses, or the options for LoST and HELD/ALTO [ RFC5223 ][ RFC5986 ] -- mostly service discovery sorts of things.\u00a0  Would this document be an appropriate place to discuss this sort of behavior?\u00a0 It would be good to get the above recommendation in writing somewhere, but it's not immediately clear what the recommendation would be for homenets -- do you pass on all options, some subset?\u00a0 I guess you could make recommendations in individual option definitions, but that seems laborious and error-prone.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-11-04 13:28:00-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-09-26 07:22:44-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-09-26 09:56:43-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-26 07:22:44-07:00",
+        "text": "Thanks for slogging through the process to get here.\u00a0 Hopefully you won't find these too annoying and I too think this is a valuable effort.\u00a0 Can't wait to tweak my security settings at home to irk my wife when this all arrives in the wild :) 0) (sorry a hobby horse but I gotta ask) How come there's no recommendation on whether or not DHCPv6 authentication should be used in the home or between the home and the ISP? 1) This is something that I suspect will get cleared up on the call: How much of this is being driven by the belief that homenets will be multi-homed?\u00a0 I guess I'm asking whether we're designing a bunch of stuff for the power user or whether most folks can get along just fine without multiple subnets, multi-homing, etc.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-09-26 09:56:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-09-07 11:58:47-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-07 11:58:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-09-25 18:50:03-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-10-30 06:12:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-25 18:50:03-07:00",
+        "text": "I'll end up as a Yes for this, since I think homenet is important and potentially a real win. So sorry to pile on in the meantime. (1) general - its hard to have any confidence that all this zero-conf stuff can ever be secure. Can you tell me why I should be confident that security won't be constantly sacrificed at the altar of zeroconf in later work?  (2) 3.3.4: this says that the default mode internally should be to share everything. I think that underestimates the problems that may occur when a user buys a nice new device which on first boot up and thereafter periodically scans the internal network and then sends all that nice marketing information back to the equipment vendor or application service provider. I'm not sure what this architecture can do about that but I do think it needs to be recognised, e.g. there's just as little reason to trust a new bit of h/w as a new Andoid or IOS app that a user has installed. (3) 3.4.5 - I'm not convinced that addressing is the only privacy issue here, and even if it were I don't understand why you cannot make some kind of recommendations about address privacy.\u00a0 For an example of another privacy issue if a globally unique name is chosen, couldn't that be very privacy unfriendly? Why are there no privacy requirements posed? (4) 3.7.4: Why is DNSSEC only \"desirable\"? I think it would have been better to say that if DNS is used then DNSSEC MUST NOT be broken by a homenet router or naming service.  (5) Would it be reasonable to add a requirement that homenet devices MUST have good random number generation and that homenet specs MUST make it clear where good (P)RNGs are needed? There have been many failures in this respect in recent times so I think it'd be a fine addition to this document. But, if you tell me the WG thought about that and decided against then I'll make this a comment.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-30 06:12:06-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-09-25 08:49:38-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-18 05:27:12-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-09-25 08:49:38-07:00",
+        "text": "\"The homenet unicast routing protocol should be based on a previously deployed protocol that has been shown to be reliable, robust, to allow lightweight implementations, and of which open source implementations are available.\u00a0 \" To require an open standard is entirely within the ethos of the IETF and I would support it, but I am concerned that requiring open source is more of a political statement for which there is no IETF mandate. I am concerned about this statement and I would like to discuss it with the authors: \"A routing protocol that can make routing decisions based on source and destination addresses is thus desirable, to avoid upstream ISP  BCP38  ingress filtering problems.\" I agree with and support the need to steer the packet to the correct egress router, but for Figure 2 surely a default g/w mechanism would work, and for figure 3 a simple change to the forwarding code would work. For more complex networks (none of which you show)\u00a0  surely something less than a full routing protocol would suffice? Indeed I am wondering whether all that is needed is a simple change to the forwarder.  My concern is that we may needlessly trigger the development of a whole new routing protocol unless this requirement is specified with greater clarity.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2014-02-18 05:27:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2013-09-05 07:14:56-07:00",
+        "end_reason": "new_position",
+        "start": "2013-09-05 07:14:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-07-24 10:18:59-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-09-05 07:14:56-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7368",
+  "evaluation_end": "2014-07-24 10:18:59-07:00",
+  "evaluation_start": "2013-09-05 07:14:55-07:00"
+}

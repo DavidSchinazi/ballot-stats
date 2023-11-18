@@ -1,0 +1,541 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-01-25 02:43:54-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-06 08:50:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-25 02:43:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-16 04:46:19-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-16 04:46:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-10-15 08:53:34-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-15 08:53:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-02-02 22:33:30-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-06 08:50:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-02 22:33:30-08:00",
+        "text": "I very much approve of the assertions set going ahead.\u00a0 I have a number of things I'd like to DISCUSS on this first: Point 1: -- Section 1.1 -- \u00a0  However, even when profiled for specific assertion types, additional \u00a0  profiling for specific use cases will be required to achieve full \u00a0  interoperability. In other words, even the SAML and JWT profiles aren't sufficient?\u00a0 Or do those documents do this sort of use-case profiling, resulting in something that can actually work?\u00a0 Or is Section 6 sufficient?\u00a0 If they do, or it is, then saying that here will help.\u00a0 (As a side note, I would really have preferred seeing at least the SAML draft in for IESG Eval at the same time as this doc.)  If they don't, then I'm dismayed.\u00a0 OAuth already requires out-of-band agreement on what sort of token one is going to get.\u00a0 This framework additionally requires out-of-band agreement on assertion type.\u00a0 If even those assertion types that are defined *further* require o-o-b agreement on the semantics of the fields they use, it seems that we're adding to the mess and not building broad interoperability.\u00a0  Point 2: Related to point 1, would it not be good to explicitly define an \"assertion type unsupported\" error response (or two: \"grant type unsupported\" and \"client assertion type unsupported\"), so a server can be explicit in saying that that is why this request can't be processed?\u00a0 If not, why not?\u00a0  Point 3: Might it be a good idea, concomitant with the suggested URNs in Sections 4.1 an 4.2, to reserve the namespaces \"urn:ietf:params:oauth:grant-type:\" and \"urn:ietf:params:oauth:client-assertion-type:\" here, so they won't be used for anything else?\u00a0 If not, why not?\u00a0  Point 4: -- Section 5.2 -- I'm looking at the \"SHOULD be the client_id\"s in the first two bullets, and remembering the definition of \"SHOULD\" in  RFC 2119  -- it says that not following a SHOULD requires full understanding of the implications and careful weighing.\u00a0 I see nothing here that gives me a clue how to evaluate the implications.\u00a0 *Why* SHOULD these be the client_id, and what will happen if they're not?\u00a0 (This also applies to some of the bullets in Sections 6.x.)  Point 5: -- Section 5.2 -- \u00a0  o\u00a0 The assertion MAY contain an Assertion ID.\u00a0 An Authorization \u00a0 \u00a0 \u00a0 Server MAY dictate that Assertion ID is mandatory. How can a client know that an Authorization Server so dictates? Point 6: -- Section 6.1 -- \u00a0  When a client uses an assertion for authentication, it SHOULD do so \u00a0  according to Section 4.2. I'm confused: I thought 4.2 normatively described the protocol.\u00a0 What's that SHOULD here?\u00a0 (Same question applies to the intros to the other Sections 6.x.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-10-14 21:33:34-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-14 21:33:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-02-06 16:33:31-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-10-06 08:50:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-06 16:33:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-10-13 13:56:02-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-13 13:56:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-02-04 16:38:31-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-06 08:50:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-04 16:38:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-13 05:55:42-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-13 05:55:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-02-06 14:26:42-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-02-06 14:26:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-15 17:11:51-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-15 17:11:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-10-14 21:58:05-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-14 21:58:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-10-09 21:44:27-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-09 21:44:27-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-02-04 06:03:34-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-06 08:50:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-04 06:03:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-13 13:56:16-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-13 13:56:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-02-06 14:07:30-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-06 08:50:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-02-06 14:07:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-14 13:42:08-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-14 13:42:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-02-07 07:49:41-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-02-07 07:49:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-15 20:47:17-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-11-11 17:01:55-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-15 20:47:17-07:00",
+        "text": "\"The assertion MUST contain an Audience that identifies the Authorization Server as the intended audience.\u00a0 Assertions that do not identify the Authorization Server as an intended audience MUST be rejected.\" Could you please identify the threat model within which this \"MUST\" is required?\u00a0 This requirement doesn't follow from any of the threats elaborated in Section 8. The Audience is only necessary if the Issuer wishes to constrain the set of Authorization Servers with which an assertion may be used.\u00a0 So ISTM that this should be \"MAY contain...\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-11 17:01:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-02-05 12:25:56-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-02-05 12:25:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-02-03 13:17:35-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-02-03 13:17:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2013-02-04 11:05:14-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-02-04 11:05:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2013-02-07 05:39:40-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-02-07 05:39:40-08:00",
+        "text": "1)  RFC6749  includes an incomplete list of components that are partially or fully undefined in its \"Interoperability\" section.\u00a0 A similar section should be added to this document and I hope it can be a bit more specific.\u00a0 This section would gather all the out of scope or defined in the next specification items.\u00a0 The purpose being to aid implementers in following the bread crumbs leading towards interop. 2) Another point on verification: The only way for the RP to verify the \"signature\" is it to have the \"signers\" key.\u00a0 Since, this is mostly about keyed MACs you can't just send that key with the \"signed\" assertion.\u00a0 My point is, the key distribution is one more thing that's out of scope.",
+        "type": "Discuss"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-01-08 07:59:29-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-06 08:50:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-16 04:22:08-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-21 14:33:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-16 04:22:08-07:00",
+        "text": "Putting one discuss here rather than one on each of the other docs. We can fix that as appropriate after we chat.\u00a0 Where are the MTI signature and mac algs for these specified? If those can be tracked back via the SAML and jose docs that's fine, but I'm not sure if they are.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-21 14:33:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-01-29 15:10:48-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-03-07 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-01-29 15:10:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-16 06:07:50-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-06 08:50:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-10-16 07:40:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-16 06:07:50-07:00",
+        "text": "This has probably already been considered and addressed by the working group, but coming into this as a neophyte it seems like a glaring omission that the security considerations of bearer assertions are not discussed here.\u00a0  Isn't it the case that the use of bearer assertions requires a trust relationship between the client and relying party such that the client can be assured that the relying party will not misuse the assertion to authenticate with some other entity?\u00a0  I realize that this sort of assertion will likely only be used in cases where the assertion only works to authenticate to a specific relying party, but I think this bears mentioning in the security considerations.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-01-12 16:15:14-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-16 07:40:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-02-06 18:39:44-08:00",
+        "end_reason": "new_position",
+        "start": "2013-01-08 07:59:29-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-03-15 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2013-02-06 18:39:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7521",
+  "evaluation_end": "2015-01-12 16:15:14-08:00",
+  "evaluation_start": "2014-10-06 08:50:06-07:00"
+}

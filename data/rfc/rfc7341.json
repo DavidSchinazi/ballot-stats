@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-05-28 06:55:04-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-28 06:55:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-05-28 08:38:29-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-28 08:38:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-05-26 12:59:39-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-26 12:59:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-05-27 09:07:53-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-06-19 07:24:13-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-05-27 09:07:53-07:00",
+        "text": "This DISCUSS is specifically to have a brief discussion -- I do not expect nor want any document changes at this point.\u00a0 I want to make sure I correctly understand the flow that the document is proposing. Here's how I understand the protocol flow from what I read in the document: - If the client can use DHCPv4 directly, it does, and also uses DHCPv6.\u00a0 The protocol described here is not involved. - If the client can not use DHCPv4 directly, it uses DHCPv6.\u00a0 It includes the 4o6 Server Address option in its request. - If the server does not respond with the 4o6 Server Address option, we just have plain DHCPv6, and the protocol described here is not involved any further. - If the server does respond with the 4o6 Server Address option, the client uses the protocol described here, sending a DHCPv4-query and getting a DHCPv4-response. Is this correct?\u00a0 If not, what is the correct flow description? Does it make sense to include something like this in the document (this text, or a correct version)?\u00a0 A flow diagram?\u00a0 Both?\u00a0 Neither? Thanks in advance for taking a short time to sort this out with me.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-19 07:24:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-05-27 10:17:15-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-06-19 07:57:20-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-05-27 10:17:15-07:00",
+        "text": "I have no objection to the publication of this document, but I have an issue I would like the authors to respond to... Section 8 starts with: \u00a0  The DHCPv4-over-DHCPv6 function MUST be disabled by default.\u00a0 The \u00a0  client MUST obtain the necessary IPv6 configuration (stateless or \u00a0  stateful) before using DHCPv4 over DHCPv6.\u00a0 The client intending to \u00a0  use DHCPv4 over DHCPv6 MUST request the 4o6 Server Address option \u00a0  using Option Request option (ORO) in every Solicit, Request, Renew, \u00a0  Rebind and Information-request message. I have two questions about this text. 1. It seems illogical to say the 4o6 function must be disabled, yet the client must request the 4o6 server address option.\u00a0 That certainly sounds like the functionality is enabled.\u00a0 What is really meant by that first sentence? 2. How does the client know to include the 4o6 server address option?\u00a0 Is it triggered by the failure of DHCPv4 to receive configuration data?\u00a0 In other words, what bootstraps the insertion of this option?\u00a0 If it is a failure to receive a DHCPv4 response, shouldn't that be pointed out?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-06-19 07:57:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-05-28 11:51:39-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-28 11:51:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-05-29 06:29:33-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-29 06:29:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-05-27 14:55:55-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-27 14:55:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-05-27 11:02:40-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-27 11:02:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-05-28 19:32:20-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-28 19:32:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-05-27 10:24:27-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-27 10:24:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-05-27 03:19:30-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-05-27 16:23:38-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-05-27 03:19:30-07:00",
+        "text": "I have two hopefully simple enough questions... (1) I think you need to note any cases where this mechanism could lead to new leakage of the mapping from an old IP address/lease to a new one, when a client moves network. Shouldn't there be some case where the client ought not try renew such a lease, e.g. if the DHCPv6 server is known to be different from the one used to get the DHCPv4 lease? Or is that too hard? (2) What if the client gets conflicting results from DHCPv4 and DHCPv6, e.g. for a DNS server?\u00a0 Don't you need to say what to do or is it ok that different clients do different things?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-05-27 17:11:37-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-05-27 16:23:38-07:00",
+        "text": "I have one remaining simple enough question:-) (1) cleared (2) What if the client gets conflicting results from DHCPv4 and DHCPv6, e.g. for a DNS server?\u00a0 Don't you need to say what to do or is it ok that different clients do different things?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-27 17:11:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-05-22 18:39:29-07:00",
+        "end_reason": "new_position",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-06-19 10:57:05-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-05-22 18:39:29-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7341",
+  "evaluation_end": "2014-06-19 10:57:05-07:00",
+  "evaluation_start": "2014-05-22 18:39:29-07:00"
+}

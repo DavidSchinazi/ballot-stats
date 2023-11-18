@@ -1,0 +1,333 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2012-08-11 09:27:35-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-08-11 09:27:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-08-15 11:25:46-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-08-15 13:37:40-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-08-15 11:25:46-07:00",
+        "text": "It's not clear to me why this needs to \"Update\" 3261 and 4235.\u00a0 It seems to add new optional function, but not make any required changes that would constitute an \"Update\".\u00a0 Anyone who didn't need this function could implement 3261 and 4235 without ever looking at this, and their implementation would be fine, right?\u00a0 Please explain why this should have an \"Updates\" relationship.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-08-16 09:08:39-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-08-15 13:37:40-07:00",
+        "text": "1. It's not clear to me why this needs to \"Update\" 3261 and 4235.\u00a0 It seems to add new optional function, but not make any required changes that would constitute an \"Update\".\u00a0 Anyone who didn't need this function could implement 3261 and 4235 without ever looking at this, and their implementation would be fine, right?\u00a0 Please explain why this should have an \"Updates\" relationship. 2. General issue in Section 5.3: I'm teetering between not commenting and objecting to the inclusion of 2119 language related to UA behaviour.\u00a0 It strikes me that lots of it might be very good advice, but not be at the level of 2119 MUST and SHOULD and SHOULD NOT. For instance, this one does appear to relate to proper operation of the protocol, and merits the MUST: \u00a0  A user may select an appearance number but then abandon placing a \u00a0  call (go back on hook).\u00a0 In this case, the UA MUST free up the \u00a0  appearance number by removing the event state with a PUBLISH as \u00a0  described in [ RFC3903 ]. There are others of that nature in here.\u00a0 On the other hand, with this (parenthesized bits removed to make the point more clear): \u00a0  The appearances number for each active and pending dialog SHOULD be \u00a0  explicitly or implicitly rendered to the user.\u00a0 The far end identity \u00a0  of each dialog MUST NOT be rendered in place of the appearance number. \u00a0  The state of each appearance SHOULD also be rendered. ...isn't that all just quality of implementation stuff?\u00a0 Could any entity on the other end tell whether your UA did or did not abide by this?\u00a0 How would it affect interoperability (as opposed to just user experience) if a UA paid no attention to this at all? I think you should be reserving 2119 language for things that really affect how the protocol works, and make advice that affects the user experience and usability be normal lower-case English.\u00a0 (And I like Section 8, which gives good UA advice with no 2119 language.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2012-12-21 12:55:30-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-08-16 09:08:39-07:00",
+        "text": "General issue in Section 5.3: I'm teetering between not commenting and objecting to the inclusion of 2119 language related to UA behaviour.\u00a0 It strikes me that lots of it might be very good advice, but not be at the level of 2119 MUST and SHOULD and SHOULD NOT. For instance, this one does appear to relate to proper operation of the protocol, and merits the MUST: \u00a0  A user may select an appearance number but then abandon placing a \u00a0  call (go back on hook).\u00a0 In this case, the UA MUST free up the \u00a0  appearance number by removing the event state with a PUBLISH as \u00a0  described in [ RFC3903 ]. There are others of that nature in here.\u00a0 On the other hand, with this (parenthesized bits removed to make the point more clear): \u00a0  The appearances number for each active and pending dialog SHOULD be \u00a0  explicitly or implicitly rendered to the user.\u00a0 The far end identity \u00a0  of each dialog MUST NOT be rendered in place of the appearance number. \u00a0  The state of each appearance SHOULD also be rendered. ...isn't that all just quality of implementation stuff?\u00a0 Could any entity on the other end tell whether your UA did or did not abide by this?\u00a0 How would it affect interoperability (as opposed to just user experience) if a UA paid no attention to this at all? I think you should be reserving 2119 language for things that really affect how the protocol works, and make advice that affects the user experience and usability be normal lower-case English.\u00a0 (And I like Section 8, which gives good UA advice with no 2119 language.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-12-21 12:55:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2012-08-13 11:39:40-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-01-02 08:24:36-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-08-13 11:39:40-07:00",
+        "text": "For the most part, I found this document well-written, but there are a few areas where it can be tightened up. 1. In section 5.4, is the \"should\" in \"... and an immediate NOTIFY should be sent to the UA...\" normative?\u00a0 If so, I would suggest consistency in the capitalization of 2119 keywords.\u00a0 If it is normative, in what situation(s) can the NOTIFY not be sent? There are similar situations in sections 7 and 8.1.1... In section 7, is \"...a normal ringtone should be indicated...\" a normative description? In section 8.1.1, is \"The UA should still send messages...\" normative? Also in 8.1.1, is \"...should be rejected with a 486...\" normative? 2. I would also like to understand what \"minimal amount of configuration\" means in REQ-4.\u00a0 Since this requirement seems to be addressed by the use of the State Agent, I am not sure how it is a requirement for this functionality.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-02 08:24:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2012-08-13 01:41:44-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-08-13 01:41:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2012-08-21 17:22:14-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-01-10 14:45:42-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-08-21 17:22:14-07:00",
+        "text": "I generally agree with Barry's DISCUSS item regarding 2119 language. The following are a couple of examples from section 5.3 that I find particularly egregious: \u00a0  When calls are placed on hold, the \u00a0  \"+sip.rendering=no\" feature tag MUST be included in dialog package \u00a0  notifications. This MUST seems completely bogus. What if I want to have a feature called \"Hold but keep private\" so that someone can be put on hold, but nobody else knows that I'm not listening to what the person says? You're saying that I MUST NOT do that? I don't buy it as an interoperability requirement. \u00a0  In the following cases, before sending the INVITE, A UA MUST send a \u00a0  dialog package PUBLISH request and wait for a 2xx response before \u00a0  proceeding: \u00a0  [...] \u00a0  An exception is an emergency call, when a UA MUST never wait for a \u00a0  confirmed seizure before sending an INVITE.\u00a0 Instead, the emergency \u00a0  call MUST proceed without waiting for the PUBLISH transaction. The first MUST is really a SHOULD; there are circumstances (or at least one circumstance: the emergency call) in which you do not need to send the PUBLISH and wait. The other two MUSTs seem all about usability, not interoperability or damage to the network. That is, the MUSTs are not protocol requirements; they are user requirements. The last paragraph should be rewritten. \u00a0  An exception is an emergency call, where the UA will certainly want \u00a0  to send the INVITE immediately and not bother waiting for the \u00a0  PUBLISH transaction. It is more important for the emergency call to \u00a0  go through than to confirm the seizure. 2119 text there is wrong. \u00a0  Appearance numbers are a shorthand label for active and pending \u00a0  dialogs related to an AOR.\u00a0 Many of the features and services built \u00a0  using this extension rely on the correct rendering of this \u00a0  information to the human user.\u00a0 [...] The 2119 language in this paragraph is simply bogus. As the paragraph says, these are about \"correct rendering\" along with \"value and usefulness\". They are not about interoperability and not about limiting potential for harm. Describing the intended semantics is fine, but trying to dictate particular user interface elements is not. As 2119 says, \"they must not be used to try to impose a particular method on implementors where the method is not required for interoperability.\" Below in the COMMENTs are additional 2119 uses that might be a problem, but I've got some questions about them. They might end up as part of the DISCUSSion if there are not good reasons to use them.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-01-16 15:00:25-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-01-10 14:45:42-08:00",
+        "text": "I still have some concerns with a few pieces of section 5.3: \u00a0  User Agents that support the Shared Appearance feature MUST support \u00a0  the dialog state package [ RFC4235 ] with the shared appearance \u00a0  extensions and the 'shared' Event header field parameter defined in \u00a0  Section 13. \u00a0  User Agents MUST support the dialog package extensions in Section 5.2 \u00a0  along with SUBSCRIBE and NOTIFY [ I-D.ietf-sipcore-rfc3265bis ] and \u00a0  PUBLISH [ RFC3903 ]. The MUSTs are wrong here. Instead: \"User Agents that support the Shared Appearance feature use the dialog state package...\" or even better: \"The Shared Appearance feature uses the dialog state package...\". There is no interoperability warning here; you're simply describing what the protocol does. Just as you don't ever say \"MUST support SIP\" (which would be silly), it is equally silly to say say that you \"MUST support the dialog package stuff\". If I could not sensibly choose to do otherwise, the MUST is not useful. \u00a0  When publishing or notifying dialog package information, a UA MUST \u00a0  include all dialog identification available at the time of \u00a0  publication, with the exception that a UA may omit information if it \u00a0  wishes to prevent other UAs from joining or picking up a call. Again, you're not saying something about timing (\"at the time of publication\") or other interoperability concern. You're saying, \"If you want to include dialog information, you MUST include dialog information.\" That's not a needed MUST. (Again, unless I'm missing something.)  \u00a0  If the call is an emergency call, a UA MUST never wait for a \u00a0  confirmed seizure before sending an INVITE.\u00a0 Instead, the emergency \u00a0  call MUST proceed without waiting for the PUBLISH transaction. \u00a0  Otherwise, in the following cases, before sending the INVITE, a UA \u00a0  MUST send a dialog package PUBLISH request and wait for a 2xx \u00a0  response before proceeding: I still don't really understand the MUST in the second paragraph. If you don't have to wait for the response to send the INVITE in the emergency case, what harm is there in not waiting in non-emergency cases?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-16 15:00:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ralph Droms": [
+      {
+        "ad": "Ralph Droms",
+        "end": "2012-08-15 12:50:26-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ralph Droms",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-08-15 12:50:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Sparks": [
+      {
+        "ad": "Robert Sparks",
+        "end": "2012-07-30 12:21:11-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Sparks",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ron Bonica": [
+      {
+        "ad": "Ron Bonica",
+        "end": "2012-08-10 07:29:51-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ron Bonica",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-08-10 07:29:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Russ Housley": [
+      {
+        "ad": "Russ Housley",
+        "end": "2012-08-12 14:43:32-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Russ Housley",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-08-12 14:43:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2012-08-15 11:07:56-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2012-08-16 09:01:24-07:00",
+        "end_reason": "position_updated",
+        "start": "2012-08-15 11:07:56-07:00",
+        "text": "1) Wanting to make sure we bake security in from the get-go: s4.2: In the steps where do the UAs register their certificate in case they wants to use S/MIME to provide confidentiality?\u00a0 Is 6702 supposed to be used? 2) s5.3: For emergency calls, can the UA prohibit others from joining?\u00a0 I can see where maybe that would be good: There's a hostage situation, I'm under the desk, bad guys don't know I'm there, I'd like to get a call through and maybe not have them listen in.\u00a0 Also bad though: the bad guys call for help, disallowing others to join, and just letting the phone hang off the hook.\u00a0 Was this kind of thing considered - or is addressed somewhere else in the SIP library ;)\u00a0  3) s12: Forgive me if this is covered in 3261, 4235, 3265bis, or 3903, but could an adversary also learn about the members of the AOR.\u00a0 Say I'm in the SSID (super secret investigations unit) with four other folks, all of which are supposed to be UC (undercover), if an adversary can see over time who answers the calls from the AOR they'd be able to piece together who was in the SSID.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Sean Turner",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-08-16 09:01:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-08-12 12:29:18-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2012-12-27 08:00:34-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2012-08-12 12:29:18-07:00",
+        "text": "4.1, REQ-3: what does \"in a secure way\" mean? I think that's very vague and it means its not possible to know if section 12 meets the requirement, since, just to take one example \"secure way\" might mean that the UA authorizes the appearance agent to be such a thing, or it might mean that UAs will believe whoever is first to claim to be the appearance agent. I think this needs a bit more elucidation, and depending on the outcome, some or no change might be needed, mainly in section 12 I would guess, but hard to say until the meaning of REQ-3 is clear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-01-09 10:11:09-08:00",
+        "end_reason": "position_updated",
+        "start": "2012-12-27 08:00:34-08:00",
+        "text": "-13 has some changes from discussion in August '12, but REQ-3 seems unchanged. Not sure if changes reflect all the rest of the email from August yet. Emailed authors on 2012-12-27. 4.1, REQ-3: what does \"in a secure way\" mean? I think that's very vague and it means its not possible to know if section 12 meets the requirement, since, just to take one example \"secure way\" might mean that the UA authorizes the appearance agent to be such a thing, or it might mean that UAs will believe whoever is first to claim to be the appearance agent. I think this needs a bit more elucidation, and depending on the outcome, some or no change might be needed, mainly in section 12 I would guess, but hard to say until the meaning of REQ-3 is clear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-01-09 10:11:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2012-08-10 12:22:59-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-08-10 12:22:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Wesley Eddy": [
+      {
+        "ad": "Wesley Eddy",
+        "end": "2012-08-13 20:42:41-07:00",
+        "end_reason": "new_position",
+        "start": "2012-07-30 12:21:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Wesley Eddy",
+        "end": "2013-01-16 15:40:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2012-08-13 20:42:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7463",
+  "evaluation_end": "2013-01-16 15:40:41-08:00",
+  "evaluation_start": "2012-07-30 12:21:11-07:00"
+}

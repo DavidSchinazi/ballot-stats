@@ -1,0 +1,517 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-09-15 10:13:18-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-15 10:13:18-07:00",
+        "text": "It is good and helpful, in my opinion, for the IETF to give an  explanation of Opportunistic Security and advocate its use. The data tracker currently shows \"Consensus: Unknown\" and I think that is actually a fair representation of the state of affairs. It is, however, not a state in which we can publish an IETF Stream RFC. Having read a lot of the email thread resulting from IETF last call and looked at the changes in the last few revisions I conclude that there is general support for the technical content of this document, but that there are a good number of unaddressed issues with the  development and presentation of that content. It may be true that addressing those points would not make a substantive difference to the technical ideas in the document, but that does not mean that the document would not be improved by attentive work. At the moment I am sufficiently unclear on the consensus for the\u00a0  publication of this document to be either able to place a Discuss on the absence of consensus or to be able to ballot No Objection. Hence this Abstain. I wish more work had been / would be done to build consensus or that the document was advanced either as \"published without consensus\" or on the Independent Stream. ========== I have spent too long hanging around with sales staff and this has made  me over-sensitive to the use of language that smells of marketing. I apologise for any over-reaction on my part, but I presume that the  purpose of publishing the document is to deliver a useful and clear statement, so I think that polishing might not be a waste of time. If I was entering this Comment as part of IETF last call I would expect a reasonable discussion of the cost/benefit of not changing the text to address my thoughts. But, obviously, I am not. Furthermore, I am not  raising these points as Discusses so you can work through them with your shepherding AD and ignore me if you think that I am wrong or that the  effort is not worth the results. - - - - Abstract... \u00a0  Protocol designs based on \u00a0  Opportunistic Security remove barriers to the widespread use of \u00a0  encryption on the Internet by using encryption even when \u00a0  authentication is not available So, this says \"remove barriers to X by using X\". I think there is probably something additional you need to say before this sentence. For example, \"Most approaches to the use of encryption on the Internet depend on the use authentication to foo.\u00a0 This makes encryption unattractive because bar.\" --- Introduction \u00a0  Broadly speaking, Opportunistic Security (OS) is a pragmatic risk \u00a0  management approach. \"pragmatic\" is redundant in the description of \"risk management\". \"...approach\" to what? --- Introduction \u00a0  With Opportunistic Security, one applies the \u00a0  tools at hand This implies to me that no changes or modifications to protocols are needed to achieve OS. I don't believe that is true. --- The definition presented in Section 1 is OK as far as it goes, but  isn't it missing also the existence of the capability in the protocol itself? Isn't a fundamental part of OS that the operation of encryption can be without manual keying and therefore without the configuration of  security adjacencies? I think that what is missing from this document, and possibly from this definition, is a description of why security (specifically encryption) is not widely used in the Internet today. It is also a little questionable to me what is \"opportunistic\" in this definition. You seem to be defining \"Best Effort Security\". Hey-ho. It's only a name, and just words. --- Introduction \u00a0  Since encryption alone mitigates only \u00a0  passive attacks, this risk is consistent with the expected level of \u00a0  protection. \"Since encryption alone...\" can be read two ways: 1. Only encryption can do this 2. Using only encryption with nothing else can only go so far I suggest you make some clarification to remove this ambiguity. \"this risk is consistent with the expected...\" I don't think so. I think the risk defines the level of protection that can be delivered.  Expectations need to be set and this document can do so by describing  the risks and the likelihoods. --- \u00a0  For authentication based on peer capabilities to protect \u00a0  against MiTM attacks, capability advertisements need to be over an \u00a0  out-of-band authenticated channel that is itself resistant to MiTM \u00a0  attack. I had a lot of trouble parsing the first clause in this sentence. Is it the peer capabilities that can protect against MiTM attacks? Or is it  the authentication that does the protection? I think you are saying... \u00a0  In order that authentication mechanisms can protect against active \u00a0  MiTM attacks on capability exchanges between peers, those capability \u00a0  exchanges need to be performed over... But why are you insistent on an out-of-band channel? Surely any  authenticated channel that is resistant to MiTM attacks will be good enough? --- \u00a0  OS protocols will attempt to establish encrypted communication \u00a0  whenever both parties are capable of such, and authenticated \u00a0  communication if that is also possible.\u00a0 This last outcome will \u00a0  occur if not all parties to a communication support encryption (or if \u00a0  an active attack makes it appear that this is the case). Is there any element of choice here? The text says not. --- \u00a0  For a particular protocol or application, if and when all but a \u00a0  negligible fraction of peers support encryption, the baseline \u00a0  security may be raised from cleartext to always require encryption. \u00a0  Similarly, once support for authentication is near-universal, the \u00a0  baseline may be raised to always require authentication. I don't know what this means! I think it says that at some moment in time the Internet Police will  ban the use of unencrypted use of a protocol or application. Or maybe it says that new implementations can require encryption and refuse to operate with legacy implementations. Or perhaps you mean that the default behaviour should be to try for encryption. Or perhaps you are just talking about what the user can expect. --- The abbreviation \"CA\" is used without expansion. --- Section 1.1 \u00a0  DNSSEC is not \u00a0  sufficiently widely deployed to allow DANE to satisfy the Internet- \u00a0  wide, any-to-any authentication requirement noted above. Did I miss the any-to-any requirement? I looked back but didn't find it. --- Section 1.1 makes a good case about encryption without authentication being of value. But this seems to be making a different (although  equally valid) case from the basis of the document that is about OS. This comes back to the \"opportunistic\" versus \"best effort\" thing. --- Section 1.1 \u00a0  The use of encryption defends against pervasive monitoring \u00a0  and other passive attacks (which are employed not only by nation \u00a0  states). The parenthesised text can probably be dropped. It is not a discussion  you need to have here. --- Section 1.1 \u00a0  For some applications or protocols the set of potential peers \u00a0  includes a long tail of implementations that support only cleartext. On third reading I got what the \"long tail\" refers to. How about... \u00a0  For some applications or protocols it is anticipated that the set of \u00a0  potential peers that only support cleartext will persist for a long \u00a0  time. --- Section 1.2 \u00a0  This document proposes a change of perspective. Why is it a proposal in what you plan to publish as an IETF Consensus RFC? I assume you don't really want this to be Experimental. --- I am fine with the concept of opportunistic security and like it. But I think I reject the hypothesis in Section 1.2 that the old world is \"expect full security and notify when not achieved\" and that the new world is \"expect no security and get the best you can.\" I think the new world is / should be \"configure the level of security that is acceptable to you, get at least that security and maybe better, or get notified if  it is not as good.\" This is more subtle than your proposal but involves  the user in a way that I think is important. That is, if a user desires  security, it is not enough to say \"the protocol is designed to get as much security as it can\" - the user actually wants to know if the security level is low, and may want no traffic if the security level is too low. This does not reject the idea of OS, but merely the choice presented in Section 1.2. In fact, Section 3 makes these trade-offs pretty clear, so I think that all that is needed is to moderate the language in this section. (Although Section 5 seems to favour some sort of autonomy within the  protocol or protocol implementation such that various fallbacks might \"just happen\".) --- Section 3 \u00a0  OS provides a near-term approach to counter passive attacks by \u00a0  removing barriers to the widespread use of encryption. This is probably true, and definitely a motivation, and not a Design Principle. Not appropriate in this section of the document. --- Section 3 I had to read \"Emphasize enabling communication\" and the following text a couple of time to extract the right meaning. What you have has two different meanings, and you mean \"enablement of\" (otherwise \"an  enabling communication\" is inferred). --- Section 5 has... \u00a0  The choice \u00a0  to implement or enable fallback should only be made in response to \u00a0  significant operational obstacles. ...but no mention of who makes the choice for enablement. I think you  need that such fallback is never a default action and always requires operator/user intervention since forcing such a fallback sounds like an effective attack. --- One point that I would possibly have entered as a Discuss were I not Abstaining is that I am surprised that there is no discussion of  mechanisms that can be used to detect MiTM attacks on unauthenticated encryption key exchanges. Detection is a useful tool since, while it  can't help with protection of data, it can at least warn the user to  stop relying on the security of the data channel.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-11-20 05:44:40-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-20 05:44:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-09-17 14:18:36-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-17 14:18:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-09-17 11:06:25-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-17 11:06:25-07:00",
+        "text": "Thanks to everyone who worked on this document. I think it is a helpful contribution. On process, prior to taking a deep dive into the LC mailing list traffic and talking with the AD, shepherd, and author, I was originally skeptical about whether this document had achieved rough consensus and whether IETF process had been followed effectively. After having taken those steps, I am convinced that both are true.  I also now understand why the term \"opportunistic security\" was chosen and believe there is rough consensus in support of using that term. However, for a document that is quite short and a concept that is fairly straightforward, I find this document really difficult to understand in places. I've listed the bits that are so ambiguous that I think readers will not understand them as DISCUSS points and other comments as COMMENT points. DISCUSS:  o Section 1: \"For a particular protocol or application, if and when all but a \u00a0  negligible fraction of peers support encryption, the baseline \u00a0  security may be raised from cleartext to always require encryption. \u00a0  Similarly, once support for authentication is near-universal, the \u00a0  baseline may be raised to always require authentication.\" I agree with Adrian that it is unclear what this means. And in fact it seems to contradict other language in the document by assuming that a protocol has one mode of operation for *all* peers. I thought one of the goals of OS was that within any single protocol interaction or within any single group of peers, the level of encryption used could be negotiated up to the lowest common denominator among the peers. Perhaps this would be clearer if it emphasized that the default mode for a particular protocol or application might be chosen to be cleartext, unauthenticated encryption, or authenticated encryption, with the ability for peers to negotiate up if they are capable. o Section 1: \"In essence, OS is employed when one might otherwise settle for cleartext \u00a0  (or the minimum protection possible if the protocol is always \u00a0  encrypted).\"  I don't understand the parenthetical, either in substance or grammar. o Section 1: \"For example, a policy might require authenticated, encrypted \u00a0  communication, in contrast to the default OS security policy.\" This sentence presents another reason why the previous paragraph does not make sense. The previous paragraph seems to say that in some cases, the default OS security policy could be to use authenticated encryption. In those cases, this sentence is not correct. o Section 1.2: I find the document's guidance about the extent to which OS protocols \"work behind the scenes\" to be confusing. There is this text in this section: \"OS protocols work \u00a0  transparently behind the scenes, without disrupting communication. \u00a0  When less than complete protection is negotiated, there is no need to \u00a0  prompt the user with \"your security may be degraded, please click OK\" \u00a0  dialogs.\u00a0 The negotiated protection is as good as can be expected. \u00a0  Even if not comprehensive, it is often better than the traditional \u00a0  outcome of either \"no protection\" or \"communications failure\".\" And then in Section 3 there is this: \"No misrepresentation of security:\u00a0 Unauthenticated, encrypted \u00a0 \u00a0 \u00a0 communication must not be misrepresented to users or in \u00a0 \u00a0 \u00a0 application logs of non-interactive applications as equivalent to \u00a0 \u00a0 \u00a0 authenticated, encrypted communication.\" The bit about working \"behind the scenes\" and not prompting the user seems to me to be distinct from the issue of misrepresenting security. That is, (1) whether the user is proactively informed of the extent to which his communications are protected, (2) whether the user is able to find out about that protection on his own, and (3) whether the information provided to the user about that protection is accurate are three separate questions. I find that Section 1.2 argues against (1), although this is not elevated to the level of a \"design principle\" as it is not included in Section 3. Section 3 argues in favor of (3) -- providing accurate information -- and includes that as a design principle. I believe the document is silent about (2). I get the sense that (1) is viewed by people who worked on this document as an important by-product of wider deployment of OS, so I would have expected support for it to be more explicit in the document, rather than somewhat latent as it is. If there were a fuller discussion of (1), I would also expect (2) to be addressed, as it is natural to ask just how \"behind the scenes\" OS protocols are expected to be (as Adrian pointed out). This seems like a fairly significant gap in the document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-11-24 14:59:28-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-24 14:59:28-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-09-16 17:16:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-11-05 15:27:40-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-09-16 17:16:48-07:00",
+        "text": "This DISCUSS is on process grounds; I think we have two serious process issues that prevent our claiming that we have rough consensus on the document. 1. The community reviewed and commented on version -03.\u00a0 The IESG is being asked to approve version -04, and is being told there is rough consensus on its content.\u00a0 And yet vesion -04 is essentially a complete rewrite of the document.\u00a0 I understand the assertion that the changes are \"just editorial\", but that doesn't help: the fact is that the community has *not* reviewed anything close to the version we're being asked to approve.\u00a0 It would be a terrible precedent to say that a document could be rewritten after last call and sent to the IESG for approval that way. I believe that, despite any concern about the usefulness of another last call, this document must get another last call in its current form.\u00a0 To do otherwise would be to trash our rough consensus process. 2. I think the way the document editing was done, and the way the comments were (and were not) responded to was poor, and calls into question what does and doesn't have rough consensus (certainly according to  RFC 7282 ).\u00a0 There were substantive comments that were made that were not explicitly discussed; those comments were then declared \"in the rough\".\u00a0 I don't believe such declaration can be made purely on the basis of lack of visible support, with no actual discussion or refutation.\u00a0 Dave Crocker and Stephen Kent have both brought up some such issues. I think that re-last-call needs to be accompanied by instructions for people to raise issues that they think they raised before that were not properly discussed, so that there is a chance for them to *be* discussed and, perhaps, for them to be properly declared in the rough once there's real discussion about them.\u00a0 I know some people will think this is a PitA at best, but it should have been done before.\u00a0 An issue tracker, carefully managed, would have been an appropriate tool for a document with this much discussion -- and this much diverse discussion.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-05 15:27:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-11-19 11:47:28-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-19 11:47:28-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-11-25 02:42:54-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-25 02:42:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-09-18 06:17:02-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-18 06:17:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-11-24 06:09:53-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-24 06:09:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-11-25 07:59:55-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-25 07:59:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-11-25 08:09:18-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-11-25 09:24:50-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-11-25 08:09:18-08:00",
+        "text": "hanging on Ted's point a bit. I might clear if he does. If the use of what are essentially transparent proxies makes downgrade attacks, or effectively the removal of OE signaling entirely trivial then certain people will do that routinetly in order to support all sorts of ugly business models (the prexy is already there). if you read about other cases that are effectively downgrades you can sort of imagine how insidious it is to think you reducing the visible surface area when in fact it's being stripped off again. http://www.theregister.co.uk/2014/11/20/gotcha_google_caught_stripping_ssl_search_from_bt_wifi_users_searches/",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-25 09:24:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-09-15 03:31:41-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-15 03:31:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-11-23 13:28:22-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-23 13:28:22-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-11-25 00:10:50-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-25 00:10:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-09-18 05:58:04-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-09-18 06:34:16-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-09-18 05:58:04-07:00",
+        "text": "I had a full-out rant prepared about \"tracking of issues\" and such, but a night's sleep is a good thing. I've decided things are much simpler than that: There were substantive non-editorial changes between -03 and -04, substantive changes that *I* think have damaged the document in a substantive way, and changes about which the community does not have consensus. I believe there are things that need fixing, and therefore discussing. (For those playing at home, I'm hanging my hat on the last bullet of  http://www.ietf.org/iesg/statement/discuss-criteria.html#stand-disc  for this.) Let's start with the Intro: \u00a0  Broadly speaking, Opportunistic Security (OS) is a pragmatic risk \u00a0  management approach.\u00a0 With Opportunistic Security, one applies the \u00a0  tools at hand to mitigate the risks that can reasonably be addressed, \u00a0  and accepts the rest. \u00a0   This is new text, not an editorial change. I find both of those sentences, and most of the other sentences in the Introduction, completely useless to the task of explaining what is important about OS, and unfortunately I think the Introduction as a whole now makes it *harder* for the reader to understand what OS is. I don't think there is community consensus that the new intro captures the intent. Most importantly: \u00a0  Thus, use of an OS protocol \u00a0  may yield communication that is authenticated and encrypted, \u00a0  unauthenticated but encrypted, or cleartext. \u00a0   I find completely insidious because it damages the message of 1.2: Instead of a build up from a base of cleartext, which I absolutely agree is the way we should be thinking about security and is the essential bit of the OS model, this sentence and the one that follows it reinforce the notion that we start from fully authenticated communication and work our way down, precisely the notion that this document is supposed to be moving us away from. The definition presented in this section also hides this important point. The two essential bits of intro are the first paragraph of section 1.1 (which was once the first paragraph of the document) and the first two paragraphs of section 1.2, and we don't get to read them for another 6 to 15 paragraphs. They\u00a0 need to be moved up and the rest of this new intro needs to be deleted. In section 3: \u00a0  Coexist with local policy:\u00a0 Local security policies preempt OS. \u00a0 \u00a0 \u00a0 Opportunistic security never displaces or preempts local policy. \u00a0 \u00a0 \u00a0 Many applications and types of data are too sensitive to use OS, \u00a0 \u00a0 \u00a0 and more traditional security designs are appropriate in such \u00a0 \u00a0 \u00a0 cases. The title of section 3 is \"Opportunistic Security Design Principles\". Coexisting with local policy is not part of the OS design principle; it's a caveat to that design principle for times when you should *not* use OS. Again, this undermines the discussion of OS, and I do not believe that the community has consensus that the above is part of the OS design principle. (One overarching point: Others have made comments with other serious problems that need fixing. That's fine. But if the result of addressing my comments or other folks's comments is to *add* more text, you've probably gotten it wrong. The main problem with -04 is the text that it added. Text needs to be deleted and simplified.) This is important work and really needs to be done. In retrospect, I would have preferred to see this work done as a BCP in UTA or as an IAB document instead of simply a definition document. But we are where we are. We need to come to consensus on the text in here. We're not there yet.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-18 06:34:16-07:00",
+        "text": "I had a full-out rant prepared about \"tracking of issues\" and such, but a night's sleep is a good thing. I've decided things are much simpler than that: There were substantive non-editorial changes between -03 and -04, substantive changes that *I* think have damaged the document in a substantive way, and changes about which the community does not have consensus. I believe there are things that need fixing, and therefore discussing. (For those playing at home, I'm hanging my hat on the last bullet of  http://www.ietf.org/iesg/statement/discuss-criteria.html#stand-disc  for this.) Let's start with the Intro: \u00a0  Broadly speaking, Opportunistic Security (OS) is a pragmatic risk \u00a0  management approach.\u00a0 With Opportunistic Security, one applies the \u00a0  tools at hand to mitigate the risks that can reasonably be addressed, \u00a0  and accepts the rest. \u00a0   This is new text, not an editorial change. I find both of those sentences, and most of the other sentences in the Introduction, completely useless to the task of explaining what is important about OS, and unfortunately I think the Introduction as a whole now makes it *harder* for the reader to understand what OS is. I don't think there is community consensus that the new intro captures the intent. Most importantly: \u00a0  Thus, use of an OS protocol \u00a0  may yield communication that is authenticated and encrypted, \u00a0  unauthenticated but encrypted, or cleartext. \u00a0   I find completely insidious because it damages the message of 1.2: Instead of a build up from a base of cleartext, which I absolutely agree is the way we should be thinking about security and is the essential bit of the OS model, this sentence and the one that follows it reinforce the notion that we start from fully authenticated communication and work our way down, precisely the notion that this document is supposed to be moving us away from. -03 made it clear to me that there was an order to things. It said that there was \"stepping up from\" cleartext. That text disappeared. In its place, there is the above text that apparently has the steps in the reverse order. The definition of the term in -04 doesn't even refer to the order. I do not remember seeing any discussion in which the participants came to consensus that this discussion of order should be removed. The definition presented in this section also hides this important point. The two essential bits of intro are the first paragraph of section 1.1 (which was once the first paragraph of the document) and the first two paragraphs of section 1.2, and we don't get to read them for another 6 to 15 paragraphs. They\u00a0 need to be moved up and the rest of this new intro needs to be deleted. In section 3: \u00a0  Coexist with local policy:\u00a0 Local security policies preempt OS. \u00a0 \u00a0 \u00a0 Opportunistic security never displaces or preempts local policy. \u00a0 \u00a0 \u00a0 Many applications and types of data are too sensitive to use OS, \u00a0 \u00a0 \u00a0 and more traditional security designs are appropriate in such \u00a0 \u00a0 \u00a0 cases. The title of section 3 is \"Opportunistic Security Design Principles\". Coexisting with local policy is not part of the OS design principle; it's a caveat to that design principle for times when you should *not* use OS. Again, this undermines the discussion of OS, and I do not believe that the community has consensus that the above is part of the OS design principle. (One overarching point: Others have made comments with other serious problems that need fixing. That's fine. But if the result of addressing my comments or other folks's comments is to *add* more text, you've probably gotten it wrong. The main problem with -04 is the text that it added. Text needs to be deleted and simplified.) This is important work and really needs to be done. In retrospect, I would have preferred to see this work done as a BCP in UTA or as an IAB document instead of simply a definition document. But we are where we are. We need to come to consensus on the text in here. We're not there yet.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-11-24 17:36:31-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-11-24 17:57:22-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-11-24 17:36:31-08:00",
+        "text": "Well, either Stephen or I get to hold the DISCUSS, so I guess it's going to be me. As soon as this discussion is addressed, I'll switch to \"Yes\". I disagree with the change to section 3 in the RFC Editor Note, as it does not represent IETF consensus. The current text as stated in the document is fine. I feel that any discussion of the \"transition\" from broken algorithms to good ones (not to mention the transition from cleartext to encrypted) is really orthogonal to this document: This document is saying that, if clear text is permitted, the protocol will work it's way up from clear text (if possible) to the best security it is able to achieve. That includes encryption using broken algorithms, which is still better than clear text to prevent a passive observer, who might not be willing to invest in saving the data and decrypting it later, from seeing the data. That we want to transition away from broken algorithms is as true as the fact that we want to transition away from clear text, but even the latter is not currently mentioned in the document, except by implication in the last paragraph of section 3. I think a reasonable compromise is to add some discussion of broken algorithms to the last paragraph of section 3: OLD \u00a0  Cleartext is supported for backwards compatibility with systems \u00a0  already deployed.\u00a0 Even when cleartext needs to be supported, \u00a0  protocol designs based on Opportunistic Security prefer to encrypt, \u00a0  employing cleartext only with peers that do not appear to be \u00a0  encryption capable. NEW \u00a0  The support of cleartext and the use of outdated algorithms, and \u00a0  especially broken algorithms, is for backwards compatibility with \u00a0  systems already deployed.\u00a0 Protocol designs based on Opportunistic \u00a0  Security prefer to encrypt, and prefer to use the best available \u00a0  encryption algorithms available. OS protocols employ cleartext or \u00a0  broken encryption algorithms only with peers that do not appear to be \u00a0  capable of doing otherwise. If Stephen or others insist that transition be mentioned, you could add a sentence to that paragraph, and I am likely willing to hold my nose: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 The eventual desire is to transition \u00a0  away from cleartext and broken algorithms, and particularly for \u00a0  broken algorithms, it is highly desirable to remove such \u00a0  functionality from implementations. But I really don't believe that such a sentence belongs in this document; if it does, it probably belongs in every Security Considerations section ever written that mentions the use of cleartext or encryption algorithms.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-24 17:57:22-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-09-17 19:47:34-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-17 19:47:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-11-24 18:50:22-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-24 18:50:22-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-09-16 09:11:02-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-16 09:11:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-11-24 20:44:07-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-24 20:44:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-08-26 02:59:23-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-11-09 15:06:03-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-09 15:06:03-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-09-18 03:29:30-07:00",
+        "end_reason": "new_position",
+        "start": "2014-08-26 02:59:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-11-05 15:33:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-09-18 03:29:30-07:00",
+        "text": "I think this document needs to state explicitly that opportunistic security is _not_ appropriate in the same set of applications as mandatory security.\u00a0  E.g., we never want \"opportunistic security\" when connecting to the bank, or doing a credit card transaction.\u00a0  We want mandatory security.\u00a0  I think that is so obvious to the security folks that nobody thought to mention it, but it must be stated in large friendly letters both in the introduction and in the security considerations section, because this document will be read by non-security-geeks.\u00a0  You should also advise that documents that describe implementations of opportunistic security should mention this in _their_ security considerations section.\u00a0  An opportunistically secure protocol that can be MiTM'd to look secure on the server end whilst being in cleartext on the client end would be disastrous in such contexts.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-11-24 20:41:28-08:00",
+        "end_reason": "new_position",
+        "start": "2014-11-05 15:33:12-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-11-25 08:33:01-08:00",
+        "end_reason": "position_updated",
+        "start": "2014-11-24 20:41:28-08:00",
+        "text": "I'm generally in favor of this document, but there is something I feel needs to be discussed. Section 4 describes the use of OE with SMTP, using STARTTLS.\u00a0  However, it turns out that recently it's been discovered that this convention is under attack by some ISPs:  https://www.eff.org/deeplinks/2014/11/starttls-downgrade-attacks It's pretty clear that this downgrade attack is inexpensive to do, and it does exactly what a passive attacker would want: it defeats OE.\u00a0  If OE is that easily subverted, what good is it?\u00a0  I don't see the current document touching on this issue: instead, it simply accepts that this is true, but ignores it as an issue, asserting that MITM attacks are expensive, so OE helps.\u00a0  I think the facts on the ground show that this is not so.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-12-01 07:22:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-11-25 08:33:01-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7435",
+  "evaluation_end": "2014-12-01 07:22:19-08:00",
+  "evaluation_start": "2014-11-05 15:33:12-08:00"
+}

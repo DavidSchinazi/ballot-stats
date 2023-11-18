@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-18 09:59:13-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-22 05:48:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-03-25 14:04:59-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2014-03-22 05:48:41-07:00",
+        "text": "Holding a Discuss for IANA's issues as below. > ACTION 1: > in the TLV Type Name Space subregistry in the Label Distribution  > Protocol (LDP) Parameters registry located at: >  >  http://www.iana.org/assignments/ldp-namespaces/ >  > a new TLV Type will be registered as follows: >  > Value: [ TBD-at-registration ] > Description: Multi-Topology Capability > Reference: [ RFC-to-be ] >  > QUESTION: Are the authors intended to have a value from the range  > 0x0001-0x07FF? >  > ACTION 2: > in the Status Code Name Space subregistry in the Label Distribution  > Protocol > (LDP) Parameters registry located at: >  >  http://www.iana.org/assignments/ldp-namespaces/ >  > a new Status Code will be registered as follows: >  > Range/Value: [ TBD-at-registration ] > E: (blank) > Description: Invalid Topology ID > Reference: [ RFC-to-be ] >  > QUESTIONs: > 1) Authors, please confirm if this new Status Code should be added to  > the range 0x00000000-0x1FFFFFFF (IETF Consensus). >  > 2) The authors have inconsistent terms, \"TBA1\" and \"TBA2\", in this  > section.\u00a0 The current text reads: >  > o\u00a0 New Status Code: \"Invalid Topology ID\" (requested code point: TBA2 >\u00a0 \u00a0 \u00a0  from LDP registry \"Status Code Name Space\"). >  >  >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Registry: >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Range/Value\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Description >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  --------------\u00a0 \u00a0 \u00a0  ------------------------------ >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  TBA1\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Invalid Topology ID >  > We are confused if TBA1 is a typo.\u00a0  The authors uses \"TBA1\" for > the New LDP Capability TLV.\u00a0 Another possibility: are the authors  > requesting the same value for both the New LDP Capability TLV and the  > New Status Code? >  >  > ACTION 3: > in the Address Family Numbers registry located at: >  >  http://www.iana.org/assignments/address-family-numbers/ >  > two, new address family numbers will be registered as follows: >  > Number: [ TBD-at-registration ] > Description: MT IP: Multi-Topology IP version 4 > Reference: [ RFC-to-be ] >  > IANA notes that the authors have requested codepoint 26 for this registration. >  > Number: [ TBD-at-registration ] > Description: MT IPv6: Multi-Topology IP version 6 > Reference: [ RFC-to-be ] >  > IANA notes that the authors have requested codepoint 27 for this registration. >  > ACTION 4: > a new registry called \"MPLS Multi-Topology Identifiers\" is to be  > created as defined by this document. >  > QUESTION: Is this a brand new top level registry with its own new URL,  > or a sub-registry of an exiting registry?\u00a0 Please see a list of  > existing registries at  iana.org/protocols . >  > IANA understands that there are initial registrations in this new  > registry as > follows: >  > Range/Value Purpose Reference > ----------- ------------------------------------- --------- > 0 Default/standard topology [ RFC-to-be ] > 1 IPv4 in-band management [ RFC-to-be ] > 2 IPv6 routing topology [ RFC-to-be ] > 3 IPv4 multicast topology [ RFC-to-be ] > 4 IPv6 multicast topology [ RFC-to-be ] > 5 IPv6 in-band management [ RFC-to-be ] > 6-3995\u00a0 \u00a0 \u00a0  Unassigned for future IGP topologies\u00a0  [This.I-D] >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Assigned by Standards Action\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  [This.I-D] > 3996-4095\u00a0 \u00a0 Experimental\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  [This.I-D] > 4096-65534\u00a0  Unassigned for MPLS topologies\u00a0 \u00a0 \u00a0 \u00a0  [This.I-D] >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Assigned by Standards Action > 65535\u00a0 \u00a0 \u00a0 \u00a0 Wildcard Topology\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 [This.I-D] >  >  > ACTION 5: > in the Sub-TLVs for TLV Types 1, 16, and 21 subregistry of the  > Multi-Protocol Label Switching (MPLS) Label Switched Paths (LSPs) Ping Parameters registry located at: >  >  http://www.iana.org/assignments/mpls-lsp-ping-parameters/ >  > two, new sub-TLV types will be registered as follows: >  > Sub-Type: [ TBD-at-registration ] > Sub-TLV Name: MT LDP IPv4 prefix > Reference: [ RFC-to-be ] >  > Sub-Type: [ TBD-at-registration ] > Sub-TLV Name: MT LDP IPv6 prefix > Reference: [ RFC-to-be ] >  > IANA should allocate the next available numbers in the Sub-TLVs for  > TLV Types 1, 16, and 21 sub-registry. >  > IANA understands that these are the only actions required to be  > completed upon approval of this document. >  > Note: The actions requested in this document will not be completed  > until the document has been approved for publication as an RFC. > This message is only to confirm what actions will be performed. >  > Thank you, >  > Pearl Liang",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-04-23 13:07:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-03-25 14:04:59-07:00",
+        "text": "Holding a Discuss for IANA's issues as below. > ACTION 1: > in the TLV Type Name Space subregistry in the Label Distribution  > Protocol (LDP) Parameters registry located at: >  >  http://www.iana.org/assignments/ldp-namespaces/ >  > a new TLV Type will be registered as follows: >  > Value: [ TBD-at-registration ] > Description: Multi-Topology Capability > Reference: [ RFC-to-be ] >  > QUESTION: Are the authors intended to have a value from the range  > 0x0001-0x07FF? >  > ACTION 2: > in the Status Code Name Space subregistry in the Label Distribution  > Protocol > (LDP) Parameters registry located at: >  >  http://www.iana.org/assignments/ldp-namespaces/ >  > a new Status Code will be registered as follows: >  > Range/Value: [ TBD-at-registration ] > E: (blank) > Description: Invalid Topology ID > Reference: [ RFC-to-be ] >  > QUESTIONs: > 1) Authors, please confirm if this new Status Code should be added to  > the range 0x00000000-0x1FFFFFFF (IETF Consensus). >  > 2) The authors have inconsistent terms, \"TBA1\" and \"TBA2\", in this  > section.\u00a0 The current text reads: >  > o\u00a0 New Status Code: \"Invalid Topology ID\" (requested code point: TBA2 >\u00a0 \u00a0 \u00a0  from LDP registry \"Status Code Name Space\"). >  >  >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Registry: >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Range/Value\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Description >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  --------------\u00a0 \u00a0 \u00a0  ------------------------------ >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  TBA1\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Invalid Topology ID >  > We are confused if TBA1 is a typo.\u00a0  The authors uses \"TBA1\" for > the New LDP Capability TLV.\u00a0 Another possibility: are the authors  > requesting the same value for both the New LDP Capability TLV and the  > New Status Code? >  >  > ACTION 3: > in the Address Family Numbers registry located at: >  >  http://www.iana.org/assignments/address-family-numbers/ >  > two, new address family numbers will be registered as follows: >  > Number: [ TBD-at-registration ] > Description: MT IP: Multi-Topology IP version 4 > Reference: [ RFC-to-be ] >  > IANA notes that the authors have requested codepoint 26 for this registration. >  > Number: [ TBD-at-registration ] > Description: MT IPv6: Multi-Topology IP version 6 > Reference: [ RFC-to-be ] >  > IANA notes that the authors have requested codepoint 27 for this registration. >  > ACTION 4: > a new registry called \"MPLS Multi-Topology Identifiers\" is to be  > created as defined by this document. >  > QUESTION: Is this a brand new top level registry with its own new URL,  > or a sub-registry of an exiting registry?\u00a0 Please see a list of  > existing registries at  iana.org/protocols . >  > IANA understands that there are initial registrations in this new  > registry as > follows: >  > Range/Value Purpose Reference > ----------- ------------------------------------- --------- > 0 Default/standard topology [ RFC-to-be ] > 1 IPv4 in-band management [ RFC-to-be ] > 2 IPv6 routing topology [ RFC-to-be ] > 3 IPv4 multicast topology [ RFC-to-be ] > 4 IPv6 multicast topology [ RFC-to-be ] > 5 IPv6 in-band management [ RFC-to-be ] > 6-3995\u00a0 \u00a0 \u00a0  Unassigned for future IGP topologies\u00a0  [This.I-D] >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Assigned by Standards Action\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  [This.I-D] > 3996-4095\u00a0 \u00a0 Experimental\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  [This.I-D] > 4096-65534\u00a0  Unassigned for MPLS topologies\u00a0 \u00a0 \u00a0 \u00a0  [This.I-D] >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Assigned by Standards Action > 65535\u00a0 \u00a0 \u00a0 \u00a0 Wildcard Topology\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 [This.I-D] >  >  > ACTION 5: > in the Sub-TLVs for TLV Types 1, 16, and 21 subregistry of the  > Multi-Protocol Label Switching (MPLS) Label Switched Paths (LSPs) Ping > Parameters registry located at: > >  http://www.iana.org/assignments/mpls-lsp-ping-parameters/ >  > two, new sub-TLV types will be registered as follows: >  > Sub-Type: [ TBD-at-registration ] > Sub-TLV Name: MT LDP IPv4 prefix > Reference: [ RFC-to-be ] >  > Sub-Type: [ TBD-at-registration ] > Sub-TLV Name: MT LDP IPv6 prefix > Reference: [ RFC-to-be ] >  > IANA should allocate the next available numbers in the Sub-TLVs for  > TLV Types 1, 16, and 21 sub-registry. >  > IANA understands that these are the only actions required to be  > completed upon approval of this document. >  > Note: The actions requested in this document will not be completed  > until the document has been approved for publication as an RFC. > This message is only to confirm what actions will be performed. >  > Thank you, >  > Pearl Liang",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-23 13:07:51-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-03-21 10:57:39-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-21 10:57:39-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-03-21 14:11:30-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-21 14:11:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-03-25 13:35:37-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-04-23 13:01:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-03-25 13:35:37-07:00",
+        "text": "Thanks for \"Operation Considerations\" section. However, it ONLY speaks about LSP ping, which is a little bit weak. I guess that all the existing MIB modules related to MPLS/TE/VRF ( RFC 3812 ,  RFC 3815 ,  RFC 6445 ,  RFC 3813 ,  RFC 3814 , ... if I get this right from a simple google search) won't be working because you miss an extra index: the MT ID.  If correct, that should be clearly mentioned: the existing MIB modules are useless with this extension.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-04-23 13:01:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-03-24 08:53:32-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-03-24 11:05:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-03-24 08:53:32-07:00",
+        "text": "I have no objection to the publication of this document, but I am confused by TLV description in section 3.5.1.\u00a0 The specification for the U and F bit says:\u00a0  \"MUST be 1 and 0, respectively, as per Section 3. \u00a0 \u00a0 \u00a0 (Signaling Extensions) of LDP Capabilities [ RFC5561 ].\" 1) I assume that the \".\" after Section 3 is extraneous. 2) Section 3 of  RFC 5561  says that F MUST be 0, but that U can be either 0 or 1 and its value will be described in the Capability document defining the TLV. So,  RFC 5561  is not stating that U MUST be 1, this document is.\u00a0 Is that correct?\u00a0 If so, that should be clarified in the description.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-24 11:05:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-03-25 22:44:28-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-25 22:44:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-03-27 00:07:09-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-27 00:07:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-03-24 07:54:58-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-24 07:54:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-03-25 08:11:01-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-25 08:11:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-03-26 13:39:00-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-26 13:39:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-03-27 06:03:28-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-27 06:03:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-03-23 15:31:42-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-23 15:31:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-03-25 18:15:55-07:00",
+        "end_reason": "new_position",
+        "start": "2014-03-18 09:59:13-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-04-23 15:02:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-03-25 18:15:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7307",
+  "evaluation_end": "2014-04-23 15:02:55-07:00",
+  "evaluation_start": "2014-03-18 09:59:13-07:00"
+}
