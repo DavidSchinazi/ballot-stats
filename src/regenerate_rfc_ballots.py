@@ -9,5 +9,5 @@ if __name__ == "__main__":
         rfc_num = int(argv[1])
         parse_ballot("rfc{r}".format(r=rfc_num))
     else:
-        for rfc_num in range(9600, 8500, -1):
+        for rfc_num in range(9600, 8900, -1):
             parse_ballot("rfc{r}".format(r=rfc_num))
