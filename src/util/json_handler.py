@@ -35,3 +35,15 @@ def save_ad_term_ends(ad_ends):
 
 def save_doc_ballots(doc_ballots, file_path):
     save_json(doc_ballots.as_dict(), file_path)
+
+
+def load_doc_ballots(file_path):
+    return DocBallot.from_dict(load_json(file_path))
+
+
+def save_ballot_list(ballot_list, file_path):
+    save_json([b.as_dict() for b in ballot_list], file_path)
+
+
+def save_discuss_ballots(discuss_ballots):
+    save_ballot_list(discuss_ballots, Files.discusses_file())

@@ -33,3 +33,7 @@ class Files:
     @classmethod
     def ad_term_ends_file(cls):
         return cls.metadata_dir("AD_term_ends.json")
+
+    @classmethod
+    def discusses_file(cls):
+        return cls.data_dir("discusses.json")
