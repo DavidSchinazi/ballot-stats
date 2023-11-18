@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 
 from util.files import Files
 from util.json_handler import load_ad_term_ends, load_iesgs, save_json
+from util.types import Ballot
 
 rfc_num = 9293
 
@@ -36,29 +37,6 @@ if (
 
 iesgs = load_iesgs()
 ad_ends = load_ad_term_ends()
-
-
-class Ballot:
-    ad = None
-    ballot_type = None
-    start_time = None
-    end_time = None
-    text = None
-    end_reason = None
-
-    def __init__(self, ad, ballot_type, start_time):
-        self.ad = ad
-        self.ballot_type = ballot_type
-        self.start_time = start_time
-
-    def __str__(self):
-        return "{t} {s} {e} {txt}".format(
-            t=self.ballot_type,
-            s=self.start_time,
-            e=self.end_time,
-            txt=self.text if False else "",
-        )
-
 
 ballots = {}
 ballot_start_time = None
