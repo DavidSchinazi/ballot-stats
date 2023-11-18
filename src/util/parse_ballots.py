@@ -97,10 +97,11 @@ def parse_ballot(doc_name):
                     ballot_type = action_details_split[1]
                     ballot_meta = unidecode(action_details_split[2])
                     ballot_meta_by = "by {a}".format(a=author)
-                    if ballot_meta.endswith(ballot_meta_by):
+                    ballot_meta_start = "has been recorded for "
+                    if ballot_meta.endswith(ballot_meta_by) and ballot_meta.startswith(
+                        ballot_meta_start
+                    ):
                         # Handle cases where ballot was entered by secretariat on behalf of the AD.
-                        ballot_meta_start = "has been recorded for "
-                        assert ballot_meta.startswith(ballot_meta_start)
                         author = normalize_ad_name(
                             ballot_meta[
                                 len(ballot_meta_start) : -(1 + len(ballot_meta_by))
@@ -133,11 +134,12 @@ def parse_ballot(doc_name):
                         else:
                             ballot_type = change_split[1].split(" by")[0]
                             ballot_meta = change_split[1]
-                        if unidecode(ballot_meta).endswith(ballot_meta_by):
-                            name_meta = change_split[0]
+                        name_meta = change_split[0]
+                        name_meta_start = "Position for "
+                        if unidecode(ballot_meta).endswith(
+                            ballot_meta_by
+                        ) and name_meta.startswith(name_meta_start):
                             # Handle cases where ballot was entered by secretariat on behalf of the AD.
-                            name_meta_start = "Position for "
-                            assert name_meta.startswith(name_meta_start)
                             author = normalize_ad_name(
                                 name_meta[len(name_meta_start) :]
                             )
