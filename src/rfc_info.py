@@ -8,14 +8,14 @@ from sys import argv, exit
 import requests
 from bs4 import BeautifulSoup
 
-rfcNum = 9293
+rfc_num = 9293
 
 if len(argv) > 1:
-    rfcNum = int(argv[1])
+    rfc_num = int(argv[1])
 
-resp = requests.get("http://localhost:8000/doc/rfc{}/history/".format(rfcNum))
+resp = requests.get("http://localhost:8000/doc/rfc{r}/history/".format(r=rfc_num))
 if resp.status_code == 404:
-    print("RFC {r} does not exist".format(r=rfcNum))
+    print("RFC {r} does not exist".format(r=rfc_num))
     exit(0)
 
 assert resp.ok
@@ -29,20 +29,20 @@ if (
     )
     == 0
 ):
-    print("RFC {r} was not evaluated by the IESG".format(r=rfcNum))
+    print("RFC {r} was not evaluated by the IESG".format(r=rfc_num))
     exit(0)
 
-metaDataDir = os.path.normpath(
+METADATA_DIR = os.path.normpath(
     os.path.join(os.path.dirname(__file__), "..", "data/meta")
 )
 
-adEndsFile = os.path.join(metaDataDir, "AD_term_ends.json")
-with open(adEndsFile, "r") as f:
-    adEnds = json.load(f)
+AD_ENDS_FILE = os.path.join(METADATA_DIR, "AD_term_ends.json")
+with open(AD_ENDS_FILE, "r") as f:
+    ad_ends = json.load(f)
 
-iesgsFile = os.path.join(metaDataDir, "IESGs.json")
-with open(iesgsFile, "r") as f:
-    iesgsJ = json.load(f)
+IESGS_FILE = os.path.join(METADATA_DIR, "IESGs.json")
+with open(IESGS_FILE, "r") as f:
+    iesgs_from_json = json.load(f)
 
 
 def date_from_json(s):
@@ -52,7 +52,7 @@ def date_from_json(s):
 
 
 iesgs = []
-for iesg in iesgsJ:
+for iesg in iesgs_from_json:
     iesgs.append(
         {
             "date_start": date_from_json(iesg["date_start"]),
@@ -61,163 +61,162 @@ for iesg in iesgsJ:
         }
     )
 
-for ad in adEnds:
-    adEnds[ad] = [date_from_json(e) for e in adEnds[ad]]
-    # print('{ad}: {s}'.format(ad=ad, s=adEnds[ad]))
+for ad in ad_ends:
+    ad_ends[ad] = [date_from_json(e) for e in ad_ends[ad]]
+    # print('{ad}: {s}'.format(ad=ad, s=ad_ends[ad]))
 
 # print(soup.prettify())
 
 
 class Ballot:
     ad = None
-    ballotType = None
-    startTime = None
-    endTime = None
+    ballot_type = None
+    start_time = None
+    end_time = None
     text = None
-    endReason = None
+    end_reason = None
 
-    def __init__(self, ad, ballotType, startTime):
+    def __init__(self, ad, ballot_type, start_time):
         self.ad = ad
-        self.ballotType = ballotType
-        self.startTime = startTime
+        self.ballot_type = ballot_type
+        self.start_time = start_time
 
     def __str__(self):
         return "{t} {s} {e} {txt}".format(
-            t=self.ballotType,
-            s=self.startTime,
-            e=self.endTime,
+            t=self.ballot_type,
+            s=self.start_time,
+            e=self.end_time,
             txt=self.text if False else "",
         )
 
 
 ballots = {}
-ballotStartTime = None
-ballotEndTime = None
+ballot_start_time = None
+ballot_end_time = None
 
 rows = soup.body.table.tbody.findAll("tr")
 for row in reversed(rows):
-    rowId = row["id"]
     cells = row.findAll("td")
-    timeStamp = datetime.strptime(cells[0].div["title"], "%Y-%m-%d %H:%M:%S %z")
+    timestamp = datetime.strptime(cells[0].div["title"], "%Y-%m-%d %H:%M:%S %z")
     revision = cells[1].text
     author = cells[2].text
-    fullActionDivs = cells[3].find_all(attrs={"class": "full"})
-    if len(fullActionDivs) > 0:
-        action = " ".join(fullActionDivs[0].strings)
+    full_action_divs = cells[3].find_all(attrs={"class": "full"})
+    if len(full_action_divs) > 0:
+        action = " ".join(full_action_divs[0].strings)
     else:
         action = cells[3].text
     if action == 'Created "Approve" ballot':
-        ballotStartTime = timeStamp
+        ballot_start_time = timestamp
         for iesg in iesgs:
-            if iesg["date_start"] > timeStamp:
+            if iesg["date_start"] > timestamp:
                 continue
-            if iesg["date_end"] is not None and iesg["date_end"] < timeStamp:
+            if iesg["date_end"] is not None and iesg["date_end"] < timestamp:
                 continue
             for ad in iesg["members"]:
-                ballotsForAd = ballots.get(ad, [])
-                ballotsForAd.append(Ballot(ad, "No Record", timeStamp))
-                ballots[ad] = ballotsForAd
-        # print('{t} - {a}'.format(t=timeStamp, a=action))
+                ballots_for_ad = ballots.get(ad, [])
+                ballots_for_ad.append(Ballot(ad, "No Record", timestamp))
+                ballots[ad] = ballots_for_ad
+        # print('{t} - {a}'.format(t=timestamp, a=action))
     elif action == 'Closed "Approve" ballot':
-        ballotEndTime = timeStamp
+        ballot_end_time = timestamp
         for a in ballots:
-            ballots[a][-1].endTime = timeStamp
-            ballots[a][-1].endReason = "evaluation_closed"
+            ballots[a][-1].end_time = timestamp
+            ballots[a][-1].end_reason = "evaluation_closed"
     elif action.startswith("["):
-        actionType = action[1 : action.find("]")]
-        if actionType == "Ballot Position Update":
-            actionDetails = action[action.find("]") + 2 :]
-            # print('{t} - {d}'.format(t=timeStamp, d=actionDetails))
-            if actionDetails.startswith("New position, "):
-                ballotType = actionDetails.split(", ")[1]
-                ballotsForAuthor = ballots.get(author, [])
-                if len(ballotsForAuthor) > 0:
-                    ballotsForAuthor[-1].endTime = timeStamp
-                    ballotsForAuthor[-1].endReason = "new_position"
-                ballotsForAuthor.append(Ballot(author, ballotType, timeStamp))
-                ballots[author] = ballotsForAuthor
+        action_type = action[1 : action.find("]")]
+        if action_type == "Ballot Position Update":
+            action_details = action[action.find("]") + 2 :]
+            # print('{t} - {d}'.format(t=timestamp, d=action_details))
+            if action_details.startswith("New position, "):
+                ballot_type = action_details.split(", ")[1]
+                ballots_for_author = ballots.get(author, [])
+                if len(ballots_for_author) > 0:
+                    ballots_for_author[-1].end_time = timestamp
+                    ballots_for_author[-1].end_reason = "new_position"
+                ballots_for_author.append(Ballot(author, ballot_type, timestamp))
+                ballots[author] = ballots_for_author
             else:
-                changeSplit = actionDetails.split(" has been changed to ")
-                if len(changeSplit) > 1:
-                    ballotType = changeSplit[1].split(" from ")[0]
-                    ballotsForAuthor = ballots.get(author, [])
-                    if len(ballotsForAuthor) > 0:
-                        ballotsForAuthor[-1].endTime = timeStamp
-                        ballotsForAuthor[-1].endReason = "position_updated"
-                    ballotsForAuthor.append(Ballot(author, ballotType, timeStamp))
-                    ballots[author] = ballotsForAuthor
-        elif actionType == "Ballot discuss":
-            actionDetails = action[action.find("]") + 2 :]
-            ballotsForAuthor = ballots.get(author, [])
-            if len(ballotsForAuthor) > 0:
+                change_split = action_details.split(" has been changed to ")
+                if len(change_split) > 1:
+                    ballot_type = change_split[1].split(" from ")[0]
+                    ballots_for_author = ballots.get(author, [])
+                    if len(ballots_for_author) > 0:
+                        ballots_for_author[-1].end_time = timestamp
+                        ballots_for_author[-1].end_reason = "position_updated"
+                    ballots_for_author.append(Ballot(author, ballot_type, timestamp))
+                    ballots[author] = ballots_for_author
+        elif action_type == "Ballot discuss":
+            action_details = action[action.find("]") + 2 :]
+            ballots_for_author = ballots.get(author, [])
+            if len(ballots_for_author) > 0:
                 if ballots[author][-1].text is None:
-                    ballots[author][-1].text = actionDetails
+                    ballots[author][-1].text = action_details
                 else:
-                    ballotsForAuthor[-1].endTime = timeStamp
-                    ballotsForAuthor[-1].endReason = "discuss_updated"
-                    newBallot = Ballot(
-                        author, ballots[author][-1].ballotType, timeStamp
+                    ballots_for_author[-1].end_time = timestamp
+                    ballots_for_author[-1].end_reason = "discuss_updated"
+                    new_ballot = Ballot(
+                        author, ballots[author][-1].ballot_type, timestamp
                     )
-                    newBallot.text = actionDetails
-                    ballotsForAuthor.append(newBallot)
-            ballots[author] = ballotsForAuthor
-        elif actionType == "Ballot comment":
-            actionDetails = action[action.find("]") + 2 :]
-            ballotsForAuthor = ballots.get(author, [])
+                    new_ballot.text = action_details
+                    ballots_for_author.append(new_ballot)
+            ballots[author] = ballots_for_author
+        elif action_type == "Ballot comment":
+            action_details = action[action.find("]") + 2 :]
+            ballots_for_author = ballots.get(author, [])
             if (
-                len(ballotsForAuthor) > 0
-                and ballots[author][-1].ballotType == "Abstain"
+                len(ballots_for_author) > 0
+                and ballots[author][-1].ballot_type == "Abstain"
             ):
                 if ballots[author][-1].text is None:
-                    ballots[author][-1].text = actionDetails
+                    ballots[author][-1].text = action_details
                 else:
-                    ballotsForAuthor[-1].endTime = timeStamp
-                    ballotsForAuthor[-1].endReason = "comment_updated"
-                    newBallot = Ballot(
-                        author, ballots[author][-1].ballotType, timeStamp
+                    ballots_for_author[-1].end_time = timestamp
+                    ballots_for_author[-1].end_reason = "comment_updated"
+                    new_ballot = Ballot(
+                        author, ballots[author][-1].ballot_type, timestamp
                     )
-                    newBallot.text = actionDetails
-                    ballotsForAuthor.append(newBallot)
-            ballots[author] = ballotsForAuthor
+                    new_ballot.text = action_details
+                    ballots_for_author.append(new_ballot)
+            ballots[author] = ballots_for_author
 
-# print('ballotStartTime={}'.format(ballotStartTime))
+# print('ballot_start_time={}'.format(ballot_start_time))
 
 res = {}
-res["rfc"] = rfcNum
-res["evaluation_start"] = ballotStartTime
-res["evaluation_end"] = ballotEndTime
+res["rfc"] = rfc_num
+res["evaluation_start"] = ballot_start_time
+res["evaluation_end"] = ballot_end_time
 
-resBallots = {}
+res_ballots = {}
 
 for a in ballots:
     # print(a)
-    resBallotsForAd = []
+    res_ballots_for_ad = []
     for b in ballots[a]:
-        for adEnd in adEnds[b.ad]:
-            if b.startTime < adEnd and (b.endTime is None or adEnd < b.endTime):
-                b.endTime = adEnd
-                b.endReason = "ad_term_ended"
-        resBallotsForAd.append(
+        for ad_end in ad_ends[b.ad]:
+            if b.start_time < ad_end and (b.end_time is None or ad_end < b.end_time):
+                b.end_time = ad_end
+                b.end_reason = "ad_term_ended"
+        res_ballots_for_ad.append(
             {
-                "type": b.ballotType,
-                "start": b.startTime,
-                "end": b.endTime,
-                "end_reason": b.endReason,
+                "type": b.ballot_type,
+                "start": b.start_time,
+                "end": b.end_time,
+                "end_reason": b.end_reason,
                 "text": b.text,
             }
         )
         # print('  {}'.format(b))
-    resBallots[a] = resBallotsForAd
+    res_ballots[a] = res_ballots_for_ad
 
-res["all_ballots"] = resBallots
+res["all_ballots"] = res_ballots
 
-rfcDir = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "data/rfc"))
-if not os.path.exists(rfcDir):
-    os.makedirs(rfcDir)
+RFC_DIR = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "data/rfc"))
+if not os.path.exists(RFC_DIR):
+    os.makedirs(RFC_DIR)
 
-rfcFile = os.path.join(rfcDir, "rfc{}.json".format(rfcNum))
-with open(rfcFile, "w") as f:
+rfc_file = os.path.join(RFC_DIR, "rfc{}.json".format(rfc_num))
+with open(rfc_file, "w") as f:
     json.dump(res, f, indent=2, sort_keys=True, default=str)
 
-print("RFC {r} analyzed succesfully".format(r=rfcNum))
+print("RFC {r} analyzed succesfully".format(r=rfc_num))
 exit(0)
