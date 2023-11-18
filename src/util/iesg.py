@@ -1,10 +1,10 @@
 import calendar
-import json
 from datetime import date
 
 from bs4 import BeautifulSoup
 
 from .files import Files
+from .json_handler import save_json
 
 
 def regenerate_iesg_metadata():
@@ -79,14 +79,6 @@ def regenerate_iesg_metadata():
 
     def is_block(css_class):
         return css_class == "block-heading" or css_class == "block-paragraph"
-
-    def get_ietf_date(ietf, dates, minusOne=False):
-        s = ietf.split(" (")[0]
-        assert s.startswith("IETF ")
-        ietf_num = int(s[5:])
-        if minusOne:
-            ietf_num -= 1
-        return dates[ietf_num]
 
     iesg_blocks = pastIesgSoup.body.main.find_all("div", class_=is_block)
 
@@ -174,13 +166,5 @@ def regenerate_iesg_metadata():
             ietf_end_dates[i] for i in ietfs if i + 1 not in ietfs and i != CURRENT_IETF
         ]
 
-    # for ad in ad_ends:
-    #   print('{ad}: {s}'.format(ad=ad, s=ad_ends[ad]))
-
-    # print(json.dumps(ad_ends, indent=2, sort_keys=True, default=str))
-
-    with open(Files.ad_term_ends_file(), "w") as f:
-        json.dump(ad_ends, f, indent=2, sort_keys=True, default=str)
-
-    with open(Files.iesgs_file(), "w") as f:
-        json.dump(iesgs, f, indent=2, sort_keys=True, default=str)
+    save_json(ad_ends, Files.ad_term_ends_file())
+    save_json(iesgs, Files.iesgs_file())
