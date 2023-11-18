@@ -35,6 +35,19 @@ def load_iesgs():
     return iesgs
 
 
+def save_iesgs(iesgs):
+    iesgs_to_json = []
+    for iesg in iesgs:
+        iesgs_to_json.append(
+            {
+                "date_start": iesg.date_start,
+                "date_end": iesg.date_end,
+                "members": iesg.members,
+            }
+        )
+    save_json(iesgs_to_json, Files.iesgs_file())
+
+
 def load_ad_term_ends():
     ad_ends = load_json(Files.ad_term_ends_file())
     for ad in ad_ends:

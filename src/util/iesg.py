@@ -4,7 +4,8 @@ from datetime import date
 from bs4 import BeautifulSoup
 
 from .files import Files
-from .json_handler import save_json
+from .json_handler import save_iesgs, save_json
+from .types import Iesg
 
 
 def regenerate_iesg_metadata():
@@ -111,11 +112,11 @@ def regenerate_iesg_metadata():
     ]
 
     iesgs.append(
-        {
-            "date_start": ietf_start_dates[CURRENT_IETF - 1],
-            "date_end": None,
-            "members": CURRENT_IESG,
-        }
+        Iesg(
+            date_start=ietf_start_dates[CURRENT_IETF - 1],
+            date_end=None,
+            members=CURRENT_IESG,
+        )
     )
 
     while i + 1 < num_iesg_blocks:
@@ -146,11 +147,11 @@ def regenerate_iesg_metadata():
             print('  {a}: "{n}"'.format(a=area, n=name))
         print(names)
         iesgs.append(
-            {
-                "date_start": start_date,
-                "date_end": end_date,
-                "members": names,
-            }
+            Iesg(
+                date_start=start_date,
+                date_end=end_date,
+                members=names,
+            )
         )
         i += 2
 
@@ -167,4 +168,4 @@ def regenerate_iesg_metadata():
         ]
 
     save_json(ad_ends, Files.ad_term_ends_file())
-    save_json(iesgs, Files.iesgs_file())
+    save_iesgs(iesgs)
