@@ -1,0 +1,245 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-11 15:44:36-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-19 12:31:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-10-11 15:44:36-07:00",
+        "text": "Section 5.3 indicates that \"Advertising Node Identifier\" and \"Receiving Node Identifier\" are \"4 or 6 octets.\" There are two issues that arise with the way this is currently specified, both of which can lead to a lack of interoperability: 1. While implementors might infer that \"Protocol=1\" results in a 4-byte value, and that \"Protocol=2\" results in a 6-byte value, it's a bit unclear what length is to be used here for \"Protocol=0.\" 2. The descriptions for both of these fields include: \"When Protocol is set to 1, then the 32 rightmost bits represent OSPF Router ID.\"\u00a0 This implies that the field is *wider* than 32 bits when Protocol=1, which leaves deep ambiguity about the circumstances under which the field is allowed to be 4 octets. I would strongly recommend that this section add clear language that unambiguously spells out how implementations are expected to select the field width for the four variable-width fields in this Sub-TLV (the two I cite above as well as the interface ID fields).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-19 12:31:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-10-12 06:05:53-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-12 06:05:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-10-11 08:52:04-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-11 08:52:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-10-11 19:38:26-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-11 19:38:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-10-07 05:29:50-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-10-10 16:01:24-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-10 16:01:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-10-10 13:48:09-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-10 13:48:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-10-09 06:36:28-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-09 06:36:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-10-10 19:05:26-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-10 19:05:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-10-11 21:11:12-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-11 21:11:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-10-20 06:06:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-07 05:29:50-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8287",
+  "evaluation_end": "2017-10-20 06:06:00-07:00",
+  "evaluation_start": "2017-10-07 05:29:50-07:00"
+}

@@ -1,0 +1,333 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-04-13 04:33:36-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-13 04:33:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-04-12 17:58:41-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-12 17:58:41-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-04-12 12:31:40-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-12 12:31:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-04-07 11:37:41-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-04-07 11:38:16-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-04-07 11:37:41-07:00",
+        "text": "First off, this DISCUSS is NOT about questioning the rough consensus calls that the responsible Chair and AD have made, or wanting to change them, but about clarifying to avoid misinterpretations. Given the ongoing discussion about Extension Headers and controlled domains (for example [1] and [2]), the text should be very specific on what is expected and where.\u00a0 Because it is not, I think that this document is teetering along the line of having a \"high degree of technical maturity\", and not being ready for Internet Standard [ rfc6410 ]. Without further clarifications and guidance, this document also brings on unanticipated second order effects [ rfc3439 ] that can impact the direction, or even the viability, of future work in the IETF.\u00a0 Specifically, a straight forward interpretation of the text in Section 4 is the absolute prohibition to process, insert or delete EHs -- but discussion on the 6man mailing list seems to point at an understanding that the conditions inside a controlled domain may be different, for example (from Brian Carpenter [3]): ===== I've tried to say this before but I'm not sure people are getting it:  RFC2460bis, if approved as is, draws a line in the sand *for interoperability across the whole Internet*. There are reasons for this - PMTUD in any form, any future replacement for the unsuccessful IPsec/AH, and all the problems of deploying extension headers that are understood by some nodes and not by others.  There is no reason why a subsequent standards-track document cannot allow header insertion (and removal) within finite domains where the above issues do not apply. In fact, an improved version of  draft-voyer-6man-extension-header-insertion-00  could become exactly that. ===== [N.B.: I'm not implying that Brian's opinion represents consensus, that is not my call to make.] I'm pointing at an opinion (which I agree with) that recognizes the need to differentiate between contexts -- but the current text in rfc2460bis doesn't do that.\u00a0 I believe that this issue is significant (as reflected by the ongoing discussions) that that it should be resolved (by clarifying the text) before proceeding with the publication of this document as an Internet Standard.  To summarize, the text in this document has the second order effect of not leaving a clear path forward for extensions to IPv6 so that they adhere to the protocol's architecture, specially when applied to a controlled domain.\u00a0 At a minimum, I would like to see a clear path forward, whether that is in the form of an update for use of extensions in controlled domains, or a statement that this document just applies to IPv6 traffic intended to cross the Internet (as suggested at the 6man meeting in Chicago [4])...\u00a0 My opinion is that this document should not be published as an Internet Standard until the remaining open discussions are explicitly resolved and this document reflects that resolution. [1]  https://mailarchive.ietf.org/arch/msg/ipv6/UI0PfqrWco4Hpbvm8keGR8FabRg/?qid=9a6ba8e9777114e24a1e964336ed78f1 [2]  https://mailarchive.ietf.org/arch/msg/ipv6/OrLYxKumiKWLHGkeNamhq9pxutQ/?qid=63c159fe41c18653d9dc0be609f9e97f [3]  https://mailarchive.ietf.org/arch/msg/ipv6/REez0-lbebpo-Xem-xX_sWV0pf4/?qid=5cdab6c6085795129802ab622bb4159f [4]  https://www.ietf.org/proceedings/98/minutes/minutes-98-6man-00 ========== Related to the above, I also want to point out the lack of clarity in the text in Section 4. (IPv6 Extension Headers), which leaves itself open to interpretation and should be cleaned up. (A)\u00a0 The main piece of text that has been discussed now reads: \u00a0  With one exception, extension headers are not examined, processed, \u00a0  inserted, or deleted by any node along a packet's delivery path, \u00a0  until the packet reaches the node (or each of the set of nodes, in \u00a0  the case of multicast) identified in the Destination Address field of \u00a0  the IPv6 header.\u00a0 Note: If an intermediate forwarding node examines \u00a0  an extension header for any reason, it must do so in accordance with \u00a0  the provisions of [ RFC7045 ]. \u00a0  ... \u00a0  The exception referred to in the preceding paragraph is the Hop-by- \u00a0  Hop Options header, which carries information that may be examined \u00a0  and processed by every node along a packet's delivery path, including \u00a0  the source and destination nodes.\u00a0 The Hop-by-Hop Options header, \u00a0  when present, must immediately follow the IPv6 header.\u00a0 Its presence \u00a0  is indicated by the value zero in the Next Header field of the IPv6 \u00a0  header. \u00a0  NOTE: While [ RFC2460 ] required that all nodes must examine and \u00a0  process the Hop-by-Hop Options header, it is now expected that nodes \u00a0  along a packet's delivery path only examine and process the Hop-by- \u00a0  Hop Options header if explicitly configured to do so. While the first sentence seems clear on what this document wants forwarding nodes to do (or not), there are two notes that define exceptions: any forwarding node can examine the headers \"for any reason\", and, the Hop-by-Hop Options header doesn't really have to be examined and processed by everyone. This text needs some more work to at least not contradict itself: there is more than one exception, and they are not absolute, anyone can examine the headers \"for any reason\"... (B) As it stands, the note about the changed expectations for the Hop-by-Hop options header opens a significant door to work around the \"limitations\" of other options.\u00a0 For example, it would be relatively straight forward to define a new Hop-by-Hop option to carry any type of information that could then be \"examined, processed, inserted, or deleted by any node along a packet's delivery path\".\u00a0 In the world of controllers and programmatic access to forwarding nodes, changing the explicit configuration on the fly to customize which nodes do what, is trivial. Is that the intent of this document, to provide a generic mechanism for cases that may need extension headers to be \"examined, processed, inserted, or deleted by any node along a packet's delivery path\"?\u00a0 Will the WG/IETF be in a position to charter, adopt and/or publish these types of documents?\u00a0 I ask this question not only in the context of my concerns expressed above, but also because the definition of the Hop-by-Hop Option would seem to be able to handle anything (\"used to carry optional information that may be examined and processed by every node along a packet's delivery path\" - I didn't see any constraints), even if (for example) the Routing Header \"is used by an IPv6 source to list one or more intermediate nodes to be \"visited\" on the way to a packet's destination\" -- so it makes me wonder whether using the Hop-by-Hop Options header to carry (for example) routing information so that it can be \"examined, processed, inserted, or deleted by any node along a packet's delivery path\" would pass the bar set in Section 4.8. (Defining New Extension Headers and Options): \u00a0  New hop-by-hop options are not recommended because nodes may be \u00a0  configured to ignore the Hop-by-Hop Option header, drop packets \u00a0  containing a hop-by-hop header, or assign packets containing a hop- \u00a0  by-hop header to a slow processing path.\u00a0 Designers considering \u00a0  defining new hop-by-hop options need to be aware of this likely \u00a0  behaviour.\u00a0 There has to be a very clear justification why any new \u00a0  hop-by-hop option is needed before it is standardized. In the context of a controlled domain, it should be relatively easy for the operator to account for those issues.\u00a0 So my interpretation of whether a Hop-by-Hop option is ok to carry (for example) routing information is a strong \"Yes!\".\u00a0 Whether my interpretation is what was intended or not, I believe the overall text could benefit from more clarity.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-04-07 11:38:56-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-04-07 11:38:16-07:00",
+        "text": "First off, this DISCUSS is NOT about questioning the rough consensus calls that the responsible Chair and AD have made, or wanting to change them, but about clarifying to avoid misinterpretations. Given the ongoing discussion about Extension Headers and controlled domains (for example [1] and [2]), the text should be very specific on what is expected and where.\u00a0 Because it is not, I think that this document is teetering along the line of having a \"high degree of technical maturity\", and not being ready for Internet Standard [ rfc6410 ]. Without further clarifications and guidance, this document also brings on unanticipated second order effects [ rfc3439 ] that can impact the direction, or even the viability, of future work in the IETF.\u00a0 Specifically, a straight forward interpretation of the text in Section 4 is the absolute prohibition to process, insert or delete EHs -- but discussion on the 6man mailing list seems to point at an understanding that the conditions inside a controlled domain may be different, for example (from Brian Carpenter [3]): ===== I've tried to say this before but I'm not sure people are getting it:  RFC2460bis, if approved as is, draws a line in the sand *for interoperability across the whole Internet*. There are reasons for this - PMTUD in any form, any future replacement for the unsuccessful IPsec/AH, and all the problems of deploying extension headers that are understood by some nodes and not by others.  There is no reason why a subsequent standards-track document cannot allow header insertion (and removal) within finite domains where the above issues do not apply. In fact, an improved version of  draft-voyer-6man-extension-header-insertion-00  could become exactly that. ===== [N.B.: I'm not implying that Brian's opinion represents consensus, that is not my call to make.] I'm pointing at an opinion (which I agree with) that recognizes the need to differentiate between contexts -- but the current text in rfc2460bis doesn't do that.\u00a0 I believe that this issue is significant (as reflected by the ongoing discussions) that that it should be resolved (by clarifying the text) before proceeding with the publication of this document as an Internet Standard.  To summarize, the text in this document has the second order effect of not leaving a clear path forward for extensions to IPv6 so that they adhere to the protocol's architecture, specially when applied to a controlled domain.\u00a0 At a minimum, I would like to see a clear path forward, whether that is in the form of an update for use of extensions in controlled domains, or a statement that this document just applies to IPv6 traffic intended to cross the Internet (as suggested at the 6man meeting in Chicago [4])...\u00a0 My opinion is that this document should not be published as an Internet Standard until the remaining open discussions are explicitly resolved and this document reflects that resolution. [1]  https://mailarchive.ietf.org/arch/msg/ipv6/UI0PfqrWco4Hpbvm8keGR8FabRg/?qid=9a6ba8e9777114e24a1e964336ed78f1 [2]  https://mailarchive.ietf.org/arch/msg/ipv6/OrLYxKumiKWLHGkeNamhq9pxutQ/?qid=63c159fe41c18653d9dc0be609f9e97f [3]  https://mailarchive.ietf.org/arch/msg/ipv6/REez0-lbebpo-Xem-xX_sWV0pf4/?qid=5cdab6c6085795129802ab622bb4159f [4]  https://www.ietf.org/proceedings/98/minutes/minutes-98-6man-00 ========== Related to the above, I also want to point out the lack of clarity in the text in Section 4. (IPv6 Extension Headers), which leaves itself open to interpretation and should be cleaned up. (A)\u00a0 The main piece of text that has been discussed now reads: \u00a0  With one exception, extension headers are not examined, processed, \u00a0  inserted, or deleted by any node along a packet's delivery path, \u00a0  until the packet reaches the node (or each of the set of nodes, in \u00a0  the case of multicast) identified in the Destination Address field of \u00a0  the IPv6 header.\u00a0 Note: If an intermediate forwarding node examines \u00a0  an extension header for any reason, it must do so in accordance with \u00a0  the provisions of [ RFC7045 ]. \u00a0  ... \u00a0  The exception referred to in the preceding paragraph is the Hop-by- \u00a0  Hop Options header, which carries information that may be examined \u00a0  and processed by every node along a packet's delivery path, including \u00a0  the source and destination nodes.\u00a0 The Hop-by-Hop Options header, \u00a0  when present, must immediately follow the IPv6 header.\u00a0 Its presence \u00a0  is indicated by the value zero in the Next Header field of the IPv6 \u00a0  header. \u00a0  NOTE: While [ RFC2460 ] required that all nodes must examine and \u00a0  process the Hop-by-Hop Options header, it is now expected that nodes \u00a0  along a packet's delivery path only examine and process the Hop-by- \u00a0  Hop Options header if explicitly configured to do so. While the first sentence seems clear on what this document wants forwarding nodes to do (or not), there are two notes that define exceptions: any forwarding node can examine the headers \"for any reason\", and, the Hop-by-Hop Options header doesn't really have to be examined and processed by everyone. This text needs some more work to at least not contradict itself: there is more than one exception, and they are not absolute, anyone can examine the headers \"for any reason\"... (B) As it stands, the note about the changed expectations for the Hop-by-Hop options header opens a significant door to work around the \"limitations\" of other options.\u00a0 For example, it would be relatively straight forward to define a new Hop-by-Hop option to carry any type of information that could then be \"examined, processed, inserted, or deleted by any node along a packet's delivery path\".\u00a0 In the world of controllers and programmatic access to forwarding nodes, changing the explicit configuration on the fly to customize which nodes do what, is trivial. Is that the intent of this document, to provide a generic mechanism for cases that may need extension headers to be \"examined, processed, inserted, or deleted by any node along a packet's delivery path\"?\u00a0 Will the WG/IETF be in a position to charter, adopt and/or publish these types of documents?\u00a0 I ask this question not only in the context of my concerns expressed above, but also because the definition of the Hop-by-Hop Option would seem to be able to handle anything (\"used to carry optional information that may be examined and processed by every node along a packet's delivery path\" - I didn't see any constraints), even if (for example) the Routing Header \"is used by an IPv6 source to list one or more intermediate nodes to be \"visited\" on the way to a packet's destination\" -- so it makes me wonder whether using the Hop-by-Hop Options header to carry (for example) routing information so that it can be \"examined, processed, inserted, or deleted by any node along a packet's delivery path\" would pass the bar set in Section 4.8. (Defining New Extension Headers and Options): \u00a0  New hop-by-hop options are not recommended because nodes may be \u00a0  configured to ignore the Hop-by-Hop Option header, drop packets \u00a0  containing a hop-by-hop header, or assign packets containing a hop- \u00a0  by-hop header to a slow processing path.\u00a0 Designers considering \u00a0  defining new hop-by-hop options need to be aware of this likely \u00a0  behaviour.\u00a0 There has to be a very clear justification why any new \u00a0  hop-by-hop option is needed before it is standardized. In the context of a controlled domain, it should be relatively easy for the operator to account for those issues.\u00a0 So my interpretation of whether a Hop-by-Hop option is ok to carry (for example) routing information is a strong \"Yes!\".\u00a0 Whether my interpretation is what was intended or not, I believe the overall text could benefit from more clarity.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-05-19 18:17:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-04-07 11:38:56-07:00",
+        "text": "First off, this DISCUSS is NOT about questioning the rough consensus calls that the responsible Chair and AD have made, or wanting to change them, but about clarifying to avoid misinterpretations. Given the ongoing discussion about Extension Headers and controlled domains (for example [1] and [2]), the text should be very specific on what is expected and where.\u00a0 Because it is not, I think that this document is teetering along the line of having a \"high degree of technical maturity\", and not being ready for Internet Standard [ rfc6410 ]. Without further clarifications and guidance, this document also brings on unanticipated second order effects [ rfc3439 ] that can impact the direction, or even the viability, of future work in the IETF.\u00a0 Specifically, a straight forward interpretation of the text in Section 4 is the absolute prohibition to process, insert or delete EHs -- but discussion on the 6man mailing list seems to point at an understanding that the conditions inside a controlled domain may be different, for example (from Brian Carpenter [3]): ===== I've tried to say this before but I'm not sure people are getting it:  RFC2460bis, if approved as is, draws a line in the sand *for interoperability across the whole Internet*. There are reasons for this - PMTUD in any form, any future replacement for the unsuccessful IPsec/AH, and all the problems of deploying extension headers that are understood by some nodes and not by others.  There is no reason why a subsequent standards-track document cannot allow header insertion (and removal) within finite domains where the above issues do not apply. In fact, an improved version of  draft-voyer-6man-extension-header-insertion-00  could become exactly that. ===== [N.B.: I'm not implying that Brian's opinion represents consensus, that is not my call to make.] I'm pointing at an opinion (which I agree with) that recognizes the need to differentiate between contexts -- but the current text in rfc2460bis doesn't do that.\u00a0 I believe that this issue is significant (as reflected by the ongoing discussions) that that it should be resolved (by clarifying the text) before proceeding with the publication of this document as an Internet Standard.  To summarize, the text in this document has the second order effect of not leaving a clear path forward for extensions to IPv6 so that they adhere to the protocol's architecture, specially when applied to a controlled domain.\u00a0 At a minimum, I would like to see a clear path forward, whether that is in the form of an update for use of extensions in controlled domains, or a statement that this document just applies to IPv6 traffic intended to cross the Internet (as suggested at the 6man meeting in Chicago [4])...\u00a0 My opinion is that this document should not be published as an Internet Standard until the remaining open discussions are explicitly resolved and this document reflects that resolution. [1]  https://mailarchive.ietf.org/arch/msg/ipv6/UI0PfqrWco4Hpbvm8keGR8FabRg/?qid=9a6ba8e9777114e24a1e964336ed78f1 [2]  https://mailarchive.ietf.org/arch/msg/ipv6/OrLYxKumiKWLHGkeNamhq9pxutQ/?qid=63c159fe41c18653d9dc0be609f9e97f [3]  https://mailarchive.ietf.org/arch/msg/ipv6/REez0-lbebpo-Xem-xX_sWV0pf4/?qid=5cdab6c6085795129802ab622bb4159f [4]  https://www.ietf.org/proceedings/98/minutes/minutes-98-6man-00 ========== Related to the above, I also want to point out the lack of clarity in the text in Section 4. (IPv6 Extension Headers), which leaves itself open to interpretation and should be cleaned up. (A)\u00a0 The main piece of text that has been discussed now reads: \u00a0  With one exception, extension headers are not examined, processed, \u00a0  inserted, or deleted by any node along a packet's delivery path, \u00a0  until the packet reaches the node (or each of the set of nodes, in \u00a0  the case of multicast) identified in the Destination Address field of \u00a0  the IPv6 header.\u00a0 Note: If an intermediate forwarding node examines \u00a0  an extension header for any reason, it must do so in accordance with \u00a0  the provisions of [ RFC7045 ]. \u00a0  ... \u00a0  The exception referred to in the preceding paragraph is the Hop-by- \u00a0  Hop Options header, which carries information that may be examined \u00a0  and processed by every node along a packet's delivery path, including \u00a0  the source and destination nodes.\u00a0 The Hop-by-Hop Options header, \u00a0  when present, must immediately follow the IPv6 header.\u00a0 Its presence \u00a0  is indicated by the value zero in the Next Header field of the IPv6 \u00a0  header. \u00a0  NOTE: While [ RFC2460 ] required that all nodes must examine and \u00a0  process the Hop-by-Hop Options header, it is now expected that nodes \u00a0  along a packet's delivery path only examine and process the Hop-by- \u00a0  Hop Options header if explicitly configured to do so. While the first sentence seems clear on what this document wants forwarding nodes to do (or not), there are two notes that define exceptions: any forwarding node can examine the headers \"for any reason\", and, the Hop-by-Hop Options header doesn't really have to be examined and processed by everyone. This text needs some more work to at least not contradict itself: there is more than one exception, and they are not absolute, anyone can examine the headers \"for any reason\"... (B) As it stands, the note about the changed expectations for the Hop-by-Hop options header opens a significant door to work around the \"limitations\" of other options.\u00a0 For example, it would be relatively straight forward to define a new Hop-by-Hop option to carry any type of information that could then be \"examined, processed, inserted, or deleted by any node along a packet's delivery path\".\u00a0 In the world of controllers and programmatic access to forwarding nodes, changing the explicit configuration on the fly to customize which nodes do what, is trivial. Is that the intent of this document, to provide a generic mechanism for cases that may need extension headers to be \"examined, processed, inserted, or deleted by any node along a packet's delivery path\"?\u00a0 Will the WG/IETF be in a position to charter, adopt and/or publish these types of documents?\u00a0 I ask this question not only in the context of my concerns expressed above, but also because the definition of the Hop-by-Hop Option would seem to be able to handle anything (\"used to carry optional information that may be examined and processed by every node along a packet's delivery path\" - I didn't see any constraints), even if (for example) the Routing Header \"is used by an IPv6 source to list one or more intermediate nodes to be \"visited\" on the way to a packet's destination\" -- so it makes me wonder whether using the Hop-by-Hop Options header to carry (for example) routing information so that it can be \"examined, processed, inserted, or deleted by any node along a packet's delivery path\" would pass the bar set in Section 4.8. (Defining New Extension Headers and Options): \u00a0  New hop-by-hop options are not recommended because nodes may be \u00a0  configured to ignore the Hop-by-Hop Option header, drop packets \u00a0  containing a hop-by-hop header, or assign packets containing a hop- \u00a0  by-hop header to a slow processing path.\u00a0 Designers considering \u00a0  defining new hop-by-hop options need to be aware of this likely \u00a0  behaviour.\u00a0 There has to be a very clear justification why any new \u00a0  hop-by-hop option is needed before it is standardized. In the context of a controlled domain, it should be relatively easy for the operator to account for those issues.\u00a0 So my interpretation of whether a Hop-by-Hop option is ok to carry (for example) routing information is a strong \"Yes!\".\u00a0 Whether my interpretation is what was intended or not, I believe the overall text could benefit from more clarity.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-19 18:17:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-04-12 13:34:55-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-12 13:34:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-04-12 14:33:41-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-12 14:33:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-04-08 06:36:52-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-04-08 09:53:56-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-04-08 06:36:52-07:00",
+        "text": "This security considerations section seems fairly unsatisfactory. First, you can't just point back to IPv4, which doesn't even have a security considerations section. Second, IPv6 actually has different security and privacy properties than IPv4 in a number of respects, so you actually need to document them. document needs to as well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-04-21 15:38:56-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-04-08 09:53:56-07:00",
+        "text": "This security considerations section seems fairly unsatisfactory. First, you can't just point back to IPv4, which doesn't even have a security considerations section. Second, IPv6 actually has different security and privacy properties than IPv4 in a number of respects, so you actually need to document them.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-21 15:38:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-04-13 06:28:26-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-04-22 07:30:47-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-04-13 06:28:26-07:00",
+        "text": "I would also like to see an updated security considerations section specific to IPv6 and have the opportunity to review that prior to publication of this draft.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-22 07:30:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-04-12 08:34:24-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-04-19 04:31:38-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-04-12 08:34:24-07:00",
+        "text": "My discuss is mainly on text in section 4.8 (also based on the tsv-art review -> Thanks Martin!): I find the recommendation to basically just not use hop-by-hop headers in section 4.8 extremely unsatisfying. Can we maybe do better? Wouldn't it be maybe time to just deprecate the current hop-by-hop number an assign a new one? I know that also has deployment problem but maybe it's worth a try. I guess the assignment could happen in a new document though, but the deprecation could be done here. This related to this comment from Martin's review, also proposing a potential way forward: \"- Section 4.8. \"Defining New Extension Headers and Options\": It says new hop-by-hop headers must never ever defined. This is problematic, as this closing the door forever, even if future instances of the IETF do would like to wish to define new hop-by-hop headers. A better way would have to say \"that new hop-by-hop headers must have IETF consensus\". - Section 4.8. \"Defining New Extension Headers and Options\": Also the \u201enot recommended\u201c to define new extension headers looks strange, especially with the phrase \"There has to be a very clear justification\". The term \"clear justification\" is not an exact engineering specification. Why not using \"technical protocol specification and real word use case required, plus IETF consensus\"?\" As a side note, there is at least one experimental RFC that defines a destination option to be inspected by a network device, given the know problems of hop-by-hop option which renders them unusable.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-04-22 04:48:49-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-04-19 04:31:38-07:00",
+        "text": "I'm changing this discuss because I believe changes regarding any text in section 4.8 would mostly be editorial at this point if any. I would still like to see more background information explaining the situation and risks, rather than just giving a general recommendation that might even out-date in cases routers get updated accordingly in future. However, I holding this discuss, because the ECN issue I originally only raised as a question in the comment section really needs to be addressed. Hope to wrap this up soon.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-05-08 05:06:57-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-04-22 04:48:49-07:00",
+        "text": "I'm changing this discuss because I believe changes regarding any text in section 4.8 would mostly be editorial at this point if any. I would still like to see more background information explaining the situation and risks, rather than just giving a general recommendation that might even out-date in cases routers get updated accordingly in future. However, I holding this discuss, because the ECN issue I originally only raised as a question in the comment section really needs to be addressed. Hope to wrap this up soon. It's about this text: Section 4.5: \"The number and content of the headers preceding the Fragment \u00a0 \u00a0 \u00a0 header of different fragments of the same original packet may \u00a0 \u00a0 \u00a0 differ.\u00a0 Whatever headers are present, preceding the Fragment \u00a0 \u00a0 \u00a0 header in each fragment packet, are processed when the packets \u00a0 \u00a0 \u00a0 arrive, prior to queueing the fragments for reassembly.\u00a0 Only \u00a0 \u00a0 \u00a0 those headers in the Offset zero fragment packet are retained in \u00a0 \u00a0 \u00a0 the reassembled packet.\" The ECN codepoint may differ in each fragment and  RFC3168  speficies handling for reassembly.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-05-19 12:35:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-05-08 05:06:57-07:00",
+        "text": "Thanks for addressing my discuss. Text on  rfc3168  is fine! I'm also okay with the text on extension headers, however, I have one remaining processing question: Now the text uses similar but not the same wording as  RFC6564 .  RFC6564  says \"new IPv6 extension headers MUST NOT be created or specified, ...\" and this draft says \"Defining new IPv6 extension headers is not recommended, ...\" in not normative language. Is that on purpose? Does this draft need to absolete  RFC6564  or refer or whatever?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-19 12:35:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-04-12 19:21:22-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-12 19:21:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-04-07 08:02:34-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-04-12 15:27:06-07:00",
+        "end_reason": "new_position",
+        "start": "2017-04-07 08:02:34-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-05-22 11:34:53-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-12 15:27:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8200",
+  "evaluation_end": "2017-05-22 11:34:53-07:00",
+  "evaluation_start": "2017-04-07 08:02:34-07:00"
+}

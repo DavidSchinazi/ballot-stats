@@ -1,0 +1,339 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-04-08 11:20:54-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-08 11:20:54-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-04-18 14:37:46-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-18 14:37:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-04-18 13:39:55-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-18 13:39:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-03-21 11:38:39-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-04-18 20:22:51-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-04-18 20:23:51-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-04-18 20:22:51-07:00",
+        "text": "This should be easy to clean up, and it's entirely possible I am misreading something. But Section 3.4, 2nd and 3rd paragraph seem to be inconsistent in SHOULD vs MUST for block size.\u00a0 I _think_ I'm reading the following: 1. If the client requests a specific block size, the server MUST use that size or a smaller one. 2. Any subsequent requests from the client MUST indicate the same size that the server used 3. But paragraph 3 then says all further requests SHOULD indicate the same size. But if they already MUST indicate the same size as in the initial response, then this SHOULD seems non-constraining at best, and at worst in conflict with 1. (ignoring the last-block size issue for the moment.) 4. Then paragraph 3 goes on to say the server SHOULD use the block size indicated in the request or smaller. This seems to conflict with the MUST in 1. 5.\u00a0 Then it again asserts that the client MUST indicate the same size in subsequent requests, conflicting with the SHOULD in 3., but agreeing with the MUST in 1.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-04-18 20:24:26-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-04-18 20:23:51-07:00",
+        "text": "This should be easy to clean up, and it's entirely possible I am misreading something. But Section 3.4, 2nd and 3rd paragraph seem to be inconsistent in SHOULD vs MUST for block size.\u00a0 I _think_ I'm reading the following: 1. If the client requests a specific block size, the server MUST use that size or a smaller one. 2. Any subsequent requests from the client MUST indicate the same size that the server used 3. But paragraph 3 then says all further requests SHOULD indicate the same size. But if they already MUST indicate the same size as in the initial response, then this\u00a0  SHOULD seems non-constraining at best, and at worst in conflict with 1. (ignoring the last-block size issue for the moment.) 4. Then paragraph 3 goes on to say the server SHOULD use the block size indicated in the request or smaller. This seems to conflict with the MUST in 1. 5.\u00a0 Then it again asserts that the client MUST indicate the same size in subsequent requests, conflicting with the SHOULD in 3., but agreeing with the MUST in 1.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-04-21 07:08:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-04-18 20:24:26-07:00",
+        "text": "This should be easy to clean up, and it's entirely possible I am misreading something. But Section 3.4, 2nd and 3rd paragraph seem to be inconsistent in SHOULD vs MUST for block size.\u00a0 I _think_ I'm reading the following: 1. If the client requests a specific block size, the server MUST use that size or a smaller one.  2. Any subsequent requests from the client MUST indicate the same size that the server used 3. But paragraph 3 then says all further requests SHOULD indicate the same size. But if they already MUST indicate the same size as in the initial response, then this\u00a0  SHOULD seems non-constraining at best, and at worst in conflict with 1. (ignoring the last-block size issue for the moment.) 4. Then paragraph 3 goes on to say the server SHOULD use the block size indicated in the request or smaller. This seems to conflict with the MUST in 1. 5.\u00a0 Then it again asserts that the client MUST indicate the same size in subsequent requests, conflicting with the SHOULD in 3., but agreeing with the MUST in 1.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-21 07:08:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-04-21 05:31:56-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-21 05:31:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-04-19 14:39:54-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-19 14:39:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-04-21 06:32:47-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-21 06:32:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-04-16 18:50:41-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-16 18:50:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-04-19 08:50:54-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-19 08:50:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-04-20 04:04:53-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-05-14 07:44:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-04-20 04:04:53-07:00",
+        "text": "This is only a minor point, requesting to spell out implicit assumptions explicitly. However, I think it's important to address this before publication. It is not clear in the main part of the doc that this extension to does not change the message transmission method as specified in  RFC7252  (Stop-and-wait retransmission). With my initial ready I assumed that this extension would allow the sending of back-to-back messages. Only by looking at the examples, it got clear to me that this is not the case.  Further, this document does not say anything about reliability. Do block message need to be transmitted reliable (as Confirmable)? If not, this extension could still lead to back-to-back sending and then further guidance on congestion control would be needed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-14 07:44:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-04-17 21:47:55-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-17 21:47:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-04-19 05:10:29-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-19 05:10:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-04-19 20:55:41-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-19 20:55:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-04-19 17:55:28-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-21 11:38:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-07-11 08:16:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-19 17:55:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7959",
+  "evaluation_end": "2016-07-11 08:16:36-07:00",
+  "evaluation_start": "2016-03-21 11:38:39-07:00"
+}

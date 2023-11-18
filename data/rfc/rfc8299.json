@@ -1,0 +1,349 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-25 19:04:54-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-25 19:04:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-10-25 08:31:23-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-25 08:31:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-10-25 13:05:07-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-25 13:05:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-10-25 17:39:36-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-25 17:39:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-10-25 10:23:16-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-10-25 10:23:54-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-10-25 10:23:16-07:00",
+        "text": "The Introduction says: \u00a0  The YANG module described in [ RFC8049 ] cannot be implemented because \u00a0  of issues around the use of XPATH.\u00a0 This document obsoletes [ RFC8049 ] \u00a0  by creating a new module with the same name that is not backward \u00a0  compatible (in the sense described in YANG 1.1 [ RFC7950 ]).\u00a0 The \u00a0  changes (listed in full in Section 1.4) are small in scope, but \u00a0  include fixes to the module to make it possible to implement. As the text above says, the model in this document is not compliant with what  rfc7950  (The YANG 1.1 Data Modeling Language) specifies in Section 11 (Updating a Module), which starts by saying: \u00a0  As experience is gained with a module, it may be desirable to revise \u00a0  that module.\u00a0 However, changes to published modules are not allowed \u00a0  if they have any potential to cause interoperability problems between \u00a0  a client using an original specification and a server using an \u00a0  updated specification. It seems clear to me that experience after the original module ( rfc8049 ) was published has lead to the conclusion that an implementation is impossible \u2014 as this fact was not discovered before publication.\u00a0 I believe that the possibility of implementation (or not) of the module in  rfc8049  is irrelevant as the specification in  rfc7950  talks about updates without any qualification.  The solution seems straight forward to me: follow  rfc7950 , either by changing the module name, or by keeping the name and following the specification on how to update a module. I am concerned that the discussions related to the RtgDir review [1] in the netmod [2][3] and ietf@ietf [4] lists have not resulted in an updated draft which complies with  rfc7950 .\u00a0 Even if any relevant WGs (this document is AD-sponsored) or the ietf@ietf list reached consensus on moving forward with the document as is, it would still not be following what a Standards Track document specifies ( rfc7950 , in this case).\u00a0 IOW, documents that don\u2019t conform to what is clearly specified in a Standards Track, community consensus RFC, should not be approved for publication (without the proper Updates to that RFC, of course). I am then Balloting DISCUSS for the authors to update the document according to the module update specification in  rfc7950 , or for the discussions on the lists to reach (a different) consensus [*] and then consider the next steps. [1]  https://datatracker.ietf.org/doc/review-wu-l3sm-rfc8049bis-07-rtgdir-lc-berger-2017-10-16/ [2]  https://mailarchive.ietf.org/arch/msg/netmod/-VC7QhHzTyY0P8sL1m4QRg20cv8/?qid=373bf84b373edd7be9e51621c294189a [3]  https://mailarchive.ietf.org/arch/msg/netmod/xDIT_6R0cw_UT97scDYPArTbCYU/?qid=373bf84b373edd7be9e51621c294189a [4]  https://mailarchive.ietf.org/arch/msg/ietf/f4xmJk651EYzIlGi2bgDxAWQkWU/?qid=9c0f779d3f35b9787d796586750fcf36 [*] I know that the conversation on versioning is still ongoing.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-10-25 10:25:03-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-10-25 10:23:54-07:00",
+        "text": "The Introduction says: \u00a0  The YANG module described in [ RFC8049 ] cannot be implemented because \u00a0  of issues around the use of XPATH.\u00a0 This document obsoletes [ RFC8049 ] \u00a0  by creating a new module with the same name that is not backward \u00a0  compatible (in the sense described in YANG 1.1 [ RFC7950 ]).\u00a0 The \u00a0  changes (listed in full in Section 1.4) are small in scope, but \u00a0  include fixes to the module to make it possible to implement. As the text above says, the model in this document is not compliant with what  rfc7950  (The YANG 1.1 Data Modeling Language) specifies in Section 11 (Updating a Module), which starts by saying: \u00a0  As experience is gained with a module, it may be desirable to revise \u00a0  that module.\u00a0 However, changes to published modules are not allowed \u00a0  if they have any potential to cause interoperability problems between \u00a0  a client using an original specification and a server using an \u00a0  updated specification. It seems clear that experience after the original module ( rfc8049 ) was published has lead to the conclusion that an implementation is impossible \u2014 as this fact was not discovered before publication.\u00a0 I believe that the possibility of implementation (or not) of the module in  rfc8049  is irrelevant as the specification in  rfc7950  talks about updates without any qualification.  The solution seems straight forward to me: follow  rfc7950 , either by changing the module name, or by keeping the name and following the specification on how to update a module. I am concerned that the discussions related to the RtgDir review [1] in the netmod [2][3] and ietf@ietf [4] lists have not resulted in an updated draft which complies with  rfc7950 .\u00a0 Even if any relevant WGs (this document is AD-sponsored) or the ietf@ietf list reached consensus on moving forward with the document as is, it would still not be following what a Standards Track document specifies ( rfc7950 , in this case).\u00a0 IOW, documents that don\u2019t conform to what is clearly specified in a Standards Track, community consensus RFC, should not be approved for publication (without the proper Updates to that RFC, of course). I am then Balloting DISCUSS for the authors to update the document according to the module update specification in  rfc7950 , or for the discussions on the lists to reach (a different) consensus [*] and then consider the next steps. [1]  https://datatracker.ietf.org/doc/review-wu-l3sm-rfc8049bis-07-rtgdir-lc-berger-2017-10-16/ [2]  https://mailarchive.ietf.org/arch/msg/netmod/-VC7QhHzTyY0P8sL1m4QRg20cv8/?qid=373bf84b373edd7be9e51621c294189a [3]  https://mailarchive.ietf.org/arch/msg/netmod/xDIT_6R0cw_UT97scDYPArTbCYU/?qid=373bf84b373edd7be9e51621c294189a [4]  https://mailarchive.ietf.org/arch/msg/ietf/f4xmJk651EYzIlGi2bgDxAWQkWU/?qid=9c0f779d3f35b9787d796586750fcf36 [*] I know that the conversation on versioning is still ongoing.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-10-25 10:26:24-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-10-25 10:25:03-07:00",
+        "text": "The Introduction says: \u00a0  The YANG module described in [ RFC8049 ] cannot be implemented because \u00a0  of issues around the use of XPATH.\u00a0 This document obsoletes [ RFC8049 ] \u00a0  by creating a new module with the same name that is not backward \u00a0  compatible (in the sense described in YANG 1.1 [ RFC7950 ]).\u00a0 The \u00a0  changes (listed in full in Section 1.4) are small in scope, but \u00a0  include fixes to the module to make it possible to implement. As the text above says, the model in this document is not compliant with what  rfc7950  (The YANG 1.1 Data Modeling Language) specifies in Section 11 (Updating a Module), which starts by saying: \u00a0  As experience is gained with a module, it may be desirable to revise \u00a0  that module.\u00a0 However, changes to published modules are not allowed \u00a0  if they have any potential to cause interoperability problems between \u00a0  a client using an original specification and a server using an \u00a0  updated specification. It seems clear that experience after the original module ( rfc8049 ) was published has lead to the conclusion that an implementation is impossible \u2014 as this fact was not discovered before publication.\u00a0 I believe that the possibility of implementation (or not) of the module in  rfc8049  is irrelevant as the specification in  rfc7950  talks about updates without any qualification.  The solution seems straight forward to me: follow  rfc7950 , either by changing the module name, or by keeping the name and following the specification on how to update a module. I am concerned that the discussions related to the RtgDir review [1] in the netmod [2][3] and ietf@ietf [4] lists have not yet resulted in an updated draft which complies with  rfc7950 .\u00a0 Even if any relevant WGs (this document is AD-sponsored) or the ietf@ietf list reached consensus on moving forward with the document as is, it would still not be following what a Standards Track document specifies ( rfc7950 , in this case).\u00a0 IOW, documents that don\u2019t conform to what is clearly specified in a Standards Track, community consensus RFC, should not be approved for publication (without the proper Updates to that RFC, of course). I am then Balloting DISCUSS for the authors to update the document according to the module update specification in  rfc7950 , or for the discussions on the lists to reach (a different) consensus [*] and then consider the next steps. [1]  https://datatracker.ietf.org/doc/review-wu-l3sm-rfc8049bis-07-rtgdir-lc-berger-2017-10-16/ [2]  https://mailarchive.ietf.org/arch/msg/netmod/-VC7QhHzTyY0P8sL1m4QRg20cv8/?qid=373bf84b373edd7be9e51621c294189a [3]  https://mailarchive.ietf.org/arch/msg/netmod/xDIT_6R0cw_UT97scDYPArTbCYU/?qid=373bf84b373edd7be9e51621c294189a [4]  https://mailarchive.ietf.org/arch/msg/ietf/f4xmJk651EYzIlGi2bgDxAWQkWU/?qid=9c0f779d3f35b9787d796586750fcf36 [*] I know that the conversation on versioning is still ongoing.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-11-29 11:25:39-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-10-25 10:26:24-07:00",
+        "text": "The Introduction says: \u00a0  The YANG module described in [ RFC8049 ] cannot be implemented because \u00a0  of issues around the use of XPATH.\u00a0 This document obsoletes [ RFC8049 ] \u00a0  by creating a new module with the same name that is not backward \u00a0  compatible (in the sense described in YANG 1.1 [ RFC7950 ]).\u00a0 The \u00a0  changes (listed in full in Section 1.4) are small in scope, but \u00a0  include fixes to the module to make it possible to implement. As the text above says, the model in this document is not compliant with what  rfc7950  (The YANG 1.1 Data Modeling Language) specifies in Section 11 (Updating a Module), which starts by saying: \u00a0  As experience is gained with a module, it may be desirable to revise \u00a0  that module.\u00a0 However, changes to published modules are not allowed \u00a0  if they have any potential to cause interoperability problems between \u00a0  a client using an original specification and a server using an \u00a0  updated specification. It seems clear that experience after the original module ( rfc8049 ) was published has lead to the conclusion that an implementation is impossible \u2014 as this fact was not discovered before publication.\u00a0 I believe that the possibility of implementation (or not) of the module in  rfc8049  is irrelevant as the specification in  rfc7950  talks about updates without any qualification.  The solution seems straight forward to me: follow  rfc7950 , either by changing the module name, or by keeping the name and following the specification on how to update a module. I am concerned that the discussions related to the RtgDir review [1] in the netmod [2][3] and ietf@ietf [4] lists have not yet resulted in an updated draft which complies with  rfc7950 .\u00a0 Even if any relevant WGs (this document is AD-sponsored) or the ietf@ietf list reached consensus on moving forward with the document as is, it would still not be following what a Standards Track document specifies ( rfc7950 , in this case).\u00a0 IOW, documents that don\u2019t conform to what is clearly specified in a Standards Track, community consensus RFC, should not be approved for publication (without the proper Updates to that RFC, of course). I am then Balloting DISCUSS for the authors to update the document according to the module update specification in  rfc7950 , or for the discussions on the lists to reach (a different) consensus [*] and then consider the next steps. [1]  https://datatracker.ietf.org/doc/review-wu-l3sm-rfc8049bis-07-rtgdir-lc-berger-2017-10-16/ [2]  https://mailarchive.ietf.org/arch/msg/netmod/-VC7QhHzTyY0P8sL1m4QRg20cv8/?qid=373bf84b373edd7be9e51621c294189a [3]  https://mailarchive.ietf.org/arch/msg/netmod/xDIT_6R0cw_UT97scDYPArTbCYU/?qid=373bf84b373edd7be9e51621c294189a [4]  https://mailarchive.ietf.org/arch/msg/ietf/f4xmJk651EYzIlGi2bgDxAWQkWU/?qid=9c0f779d3f35b9787d796586750fcf36 [*] I know that the conversation on versioning is still ongoing.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-11-29 11:26:24-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-11-29 11:25:39-08:00",
+        "text": "[Given that this document is returning to the IESG, I\u2019m updating my DISCUSS (after IETF 100 and to (hopefully) clarify.] The basis of this DISCUSS is that this document defines a non-backwards-compatible update to the module in  rfc8049 , which is not in compliance with the YANG module update process specified in  rfc7950  (YANG 1.1). My interpretation of the discussions in the netmod WG (on the list and during the in-person meeting at IETF 100) is that the WG recognizes that this document presents a case to change the process \u2014 but so far it has only agreed on there being a problem, and not on any path forward [A].\u00a0 There is at least one proposal [B] on the table, but no clear and formal intention from the WG on whether that is in fact the solution, part of it, or anything else. It would be enough for me to clear this DISCUSS if the netmod WG reached (at least initial) consensus on a path forward.\u00a0 Other solutions require following  rfc7950 : either by changing the module name, or by keeping the name and following the specification on how to update a module. [I realize that the latter may not be possible.] It seems to me that tooling and implementation/deployment considerations around having the same module name are the leading reasons towards looking for alternate solutions and not complying with  rfc7950  in this case.\u00a0 Given the very few dependents on this module (just one!) [C], I think it could be palatable to everyone to change the module name and move on with the updated process separately. I am also holding this DISCUSS because I don\u2019t think it is a good precedent for the IESG to approve a document that doesn\u2019t follow a standard procedure \u2014 regardless of the reasons.\u00a0 I believe that if the IESG approves this document (without a proper Update to the procedures in  rfc7950 , or at least a WG-agreed plan to do so) then it will have to consider breaking (or at least bending) the rules for any other module \u2014 and even for any other document that doesn\u2019t want to comply with what is standardized already\u2026. Note that I\u2019m not suggesting that the IESG will have to break/bend the rules for everyone, but that it will have to at least consider other requests. In summary\u2026 To be clear, I believe YANG is an important technology for the IETF and the Internet and the last thing I want to do is stand in the way of getting more modules our faster.\u00a0 However, the process is in place for a reason and breaking it (without a viable alternative) is not the right way forward.\u00a0 This DISCUSS is clearly for the IESG to consider, as the authors seem to just be caught in the middle.\u00a0 Instead of making an example of this document, I strongly suggest that the name be changed so the document can be published without compromising the standards process \u2014 the update to the  rfc7950  process can then be considered separately. [A]  https://mailarchive.ietf.org/arch/msg/netmod/IOMNpqPqhGKxR1MEUB7tQmv3KiA/?qid=185ce790ada5150129831ec488ebad81 [B]  https://tools.ietf.org/html/draft-clacla-netmod-yang-model-update   [C]  https://www.yangcatalog.org/yang-search/impact_analysis.php?modules[]=ietf-l3vpn-svc@2017-10-11.yang&recurse=0&rfcs=1&show_subm=1&show_dir=both",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-29 11:26:24-08:00",
+        "text": "[Given that this document is returning to the IESG, I\u2019m updating my DISCUSS (after IETF 100 and to (hopefully) clarify.] The basis of this DISCUSS is that this document defines a non-backwards-compatible update to the module in  rfc8049 , which is not in compliance with the YANG module update process specified in  rfc7950  (YANG 1.1). My interpretation of the discussions in the netmod WG (on the list and during the in-person meeting at IETF 100) is that the WG recognizes that this document presents a case to change the process \u2014 but so far it has only agreed on there being a problem, and not on any path forward [A].\u00a0 There is at least one proposal [B] on the table, but no clear and formal intention from the WG on whether that is in fact the solution, part of it, or anything else. It would be enough for me to clear this DISCUSS if the netmod WG reached (at least initial) consensus on a path forward.\u00a0 Other solutions require following  rfc7950 : either by changing the module name, or by keeping the name and following the specification on how to update a module. [I realize that the latter may not be possible.] It seems to me that tooling and implementation/deployment considerations around having the same module name are the leading reasons towards looking for alternate solutions and not complying with  rfc7950  in this case.\u00a0 Given the very few dependents on this module (just one!) [C], I think it could be palatable to everyone to change the module name and move on with the updated process separately. I am also holding this DISCUSS because I don\u2019t think it is a good precedent for the IESG to approve a document that doesn\u2019t follow a standard procedure \u2014 regardless of the reasons.\u00a0 I believe that if the IESG approves this document (without a proper Update to the procedures in  rfc7950 , or at least a WG-agreed plan to do so) then it will have to consider breaking (or at least bending) the rules for any other module \u2014 and even for any other document that doesn\u2019t want to comply with what is standardized already\u2026. Note that I\u2019m not suggesting that the IESG will have to break/bend the rules for everyone, but that it will have to at least consider other requests. In summary\u2026 To be clear, I believe YANG is an important technology for the IETF and the Internet and the last thing I want to do is stand in the way of getting more modules our faster.\u00a0 However, the process is in place for a reason and breaking it (without a viable alternative) is not the right way forward.\u00a0 This DISCUSS is clearly for the IESG to consider, as the authors seem to just be caught in the middle.\u00a0 Instead of making an example of this document, I strongly suggest that the name be changed so the document can be published without compromising the standards process \u2014 the update to the  rfc7950  process can then be considered separately. [A]  https://mailarchive.ietf.org/arch/msg/netmod/IOMNpqPqhGKxR1MEUB7tQmv3KiA/?qid=185ce790ada5150129831ec488ebad81 [B]  https://tools.ietf.org/html/draft-clacla-netmod-yang-model-update   [C]  https://www.yangcatalog.org/yang-search/impact_analysis.php?modules[]=ietf-l3vpn-svc@2017-10-11.yang&recurse=0&rfcs=1&show_subm=1&show_dir=both",
+        "type": "Discuss"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-10-25 18:37:49-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-25 18:37:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-10-19 05:18:22-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-11-29 16:59:07-08:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-12-05 06:51:09-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-11-29 16:59:07-08:00",
+        "text": "I agree with Alvaro's Discuss, I think it is a bad operational precedent for IETF to obsolete a published Yang RFC with a non-backward compatible update; reusing a module name and creating a new module (with the same name) that is not backward compatible. I don't think it is an acceptable guideline to rationalize that non-backward compatibility is ok as only a small interest group.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-05 06:51:09-08:00",
+        "text": "Thanks for addressing my discuss points on backward compatibility. I still remain concerned on the wisdom of retaining the same name for the module, hence my abstain ballot.",
+        "type": "Abstain"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-10-24 11:14:38-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-24 11:14:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-10-23 14:51:15-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-23 14:51:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-10-26 06:42:32-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-26 06:42:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-10-23 18:45:45-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-10-23 18:46:05-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-10-23 18:45:45-07:00",
+        "text": "* The usage of the term mask with reference to the \"mask\" leaf node in all the places in this document seems to be incorrect. There are two issues with this wrong usage. IPv4 subnet masks are 32 bits in length and cannot be represented with an uint8. IPv6 does not have the same concept of subnet masks as IPv4 at all. So, I think the easiest way to fix this would be to replace the instances of mask with \"prefix-length\" instead which can be represented with an uint8 and works for both IPv6 and IPv4 (CIDR). * There is an off-by-one error in the definition of the prefix lengths for IPv6 addresses. Currently this is defined as \u00a0 \u00a0  leaf mask { \u00a0 \u00a0 \u00a0 type uint8 { \u00a0 \u00a0 \u00a0 range \"0..127\"; \u00a0 \u00a0  } \u00a0  but prefix lengths of 128 bits are perfectly legal are common especially in DHCPv6 assigned addresses. So the range must be \"0..128\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-10-23 18:46:47-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-10-23 18:46:05-07:00",
+        "text": "* The usage of the term mask with reference to the \"mask\" leaf node in all the places in this document seems to be incorrect. There are two issues with this wrong usage. IPv4 subnet masks are 32 bits in length and cannot be represented with an uint8. IPv6 does not have the same concept of subnet masks as IPv4 at all. So, I think the easiest way to fix this would be to replace the instances of mask with \"prefix-length\" instead which can be represented with an uint8 and works for both IPv6 and IPv4 (CIDR). * There is an off-by-one error in the definition of the prefix lengths for IPv6 addresses. Currently this is defined as \u00a0 \u00a0  leaf mask { \u00a0 \u00a0 \u00a0 type uint8 { \u00a0 \u00a0 \u00a0 range \"0..127\"; \u00a0 \u00a0 \u00a0 } \u00a0  but prefix lengths of 128 bits are perfectly legal are common especially in DHCPv6 assigned addresses. So the range must be \"0..128\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-10-30 08:01:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-10-23 18:46:47-07:00",
+        "text": "* The usage of the term mask with reference to the \"mask\" leaf node in all the places in this document seems to be incorrect. There are two issues with this wrong usage. IPv4 subnet masks are 32 bits in length and cannot be represented with an uint8. IPv6 does not have the same concept of subnet masks as IPv4 at all. So, I think the easiest way to fix this would be to replace the instances of mask with \"prefix-length\" instead which can be represented with an uint8 and works for both IPv6 and IPv4 (CIDR). * There is an off-by-one error in the definition of the prefix lengths for IPv6 addresses. Currently this is defined as \u00a0 \u00a0  leaf mask { \u00a0 \u00a0 \u00a0 type uint8 { \u00a0 \u00a0 \u00a0 range \"0..127\"; \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 \u00a0 ... \u00a0  but prefix lengths of 128 bits are perfectly legal are common especially in DHCPv6 assigned addresses. So the range must be \"0..128\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-30 08:01:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-11-29 01:17:52-08:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-29 01:17:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-11-28 13:47:18-08:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:18:22-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-12-05 08:29:18-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-11-28 13:47:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-12-07 08:39:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-05 08:29:18-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc8299",
+  "evaluation_end": "2017-12-07 08:39:29-08:00",
+  "evaluation_start": "2017-10-19 05:18:22-07:00"
+}

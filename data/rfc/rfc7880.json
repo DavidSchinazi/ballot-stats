@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-05-02 00:24:41-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-02 00:24:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-05-02 14:24:09-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-05-02 15:14:40-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-05-02 14:24:09-07:00",
+        "text": "a) In Sec 7.2.3:\u00a0 \"If the SBFDReflector is generating a response S-BFD control packet for a local entity that is in \u00a0 \u00a0 \u00a0 service, then \"state\" in response BFD control packets MUST be set to UP.\" \u00a0 \u00a0 So far, it looked like the SBFDReflector only sends BFD control packets in response to receiving such packets \u00a0 \u00a0 from SBFDInitiators.\u00a0  This paragraph (not just copied) does not clearly describe the desired behavior.\u00a0 If the \u00a0  monitored local entity is \"temporarily out of service\", does the SBFDReflector respond back to the SBFDInitiator \u00a0  with 2 BFD control packets - one indicating UP (as a MUST) and then the next indicating ADMINDOWN?\u00a0 Is the \u00a0  SBFDReflector expected to store a list of active SBFDInitiators and proactively send BFD control packets indicating \u00a0  ADMINDOWN?\u00a0  Please clarify in non-trivial detail. b) Appendix A:\u00a0 The looping problem is nicely defined but the text still discusses three potential solutions; clearly the use of the D bit has been chosen.\u00a0  It would be much nicer to have the justification in line, but for this discuss - the unselected alternatives don't belong. c) Sec 7.2.1: \"\u00a0  S-BFD packet MUST be demultiplexed with lower layer information \u00a0  (e.g., dedicated destination UDP port, associated channel type).\" \u00a0 Where precisely is this defined or described?\u00a0 Is there an allocation for a dedicated UDP port for S-BFD?\u00a0 I don't see any normative reference to such.\u00a0 In particular, since the format for an S-BFD control packet is exactly the same as for BFD and since only this demultiplexing with lower layer information is used to tell the difference between S-BFD and BFD packets, this document requires more specifics.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-05-03 09:22:43-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-02 15:14:40-07:00",
+        "text": "a) In Sec 7.2.3:\u00a0 \"If the SBFDReflector is generating a response S-BFD control packet for a local entity that is in \u00a0 \u00a0 \u00a0 service, then \"state\" in response BFD control packets MUST be set to UP.\" \u00a0 \u00a0 So far, it looked like the SBFDReflector only sends BFD control packets in response to receiving such packets \u00a0 \u00a0 from SBFDInitiators.\u00a0  This paragraph (not just copied) does not clearly describe the desired behavior.\u00a0 If the \u00a0  monitored local entity is \"temporarily out of service\", does the SBFDReflector respond back to the SBFDInitiator \u00a0  with 2 BFD control packets - one indicating UP (as a MUST) and then the next indicating ADMINDOWN?\u00a0 Is the \u00a0  SBFDReflector expected to store a list of active SBFDInitiators and proactively send BFD control packets indicating \u00a0  ADMINDOWN?\u00a0  Please clarify in non-trivial detail. b) Appendix A:\u00a0 The looping problem is nicely defined but the text still discusses three potential solutions; clearly the use of the D bit has been chosen.\u00a0  It would be much nicer to have the justification in line, but for this discuss - the unselected alternatives don't belong. c) Sec 7.2.1: \"\u00a0  S-BFD packet MUST be demultiplexed with lower layer information \u00a0  (e.g., dedicated destination UDP port, associated channel type).\" \u00a0 Please add a clear reference to [ draft-ietf-bfd-seamless-ip ] here to show where to find the dedicated UDP port for S-BFD; I think this or some other mechanism needs to be a normative reference, because I don't see how one could implement S-BFD without this knowledge.\u00a0 \u00a0 In particular, since the format for an S-BFD control packet is exactly the same as for BFD and since only this demultiplexing with lower layer information is used to tell the difference between S-BFD and BFD packets, this document requires more specifics.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 09:22:43-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-05-03 13:19:48-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 13:19:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-04-13 07:26:57-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-03 13:27:24-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-03 18:23:38-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-03 13:27:24-07:00",
+        "text": "This should be easy to resolve, but given the usage in a \"MUST\" in the security considerations, I think it's important to fix: In section 11, it's not clear to me what is meant by \"look at\" in the 2nd and 3rd bullets. I assume you mean that the SBFDReflector MUST NOT/MAY use those respective values to make some decision? Otherwise, it's pretty hard to test whether something \"looks at\" a field.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 18:23:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-05-03 13:12:17-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 13:12:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-05-04 13:16:31-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 13:16:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-05-04 23:18:26-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 23:18:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-05-02 12:36:20-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-05-03 14:04:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-02 12:36:20-07:00",
+        "text": "This should be pretty easy to address.\u00a0 In the security consideration section, the following recommendation appears:  o\u00a0 SBFDReflector MUST NOT look at the crypto sequence number before \u00a0 \u00a0 \u00a0 accepting the packet. Could you please add text to say what happens (what attacks are possible) if this is looked at?\u00a0 There is nothing to stop the crypt sequence number from being looked at, right?\u00a0 Is there a way to actually prevent that?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 14:04:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-05-03 02:35:07-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-05-04 08:55:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-03 02:35:07-07:00",
+        "text": "As S-BFD has no initiation process anymore it is not guarenteed that the receiver/responder actually exists. That means that packets could float (uncontrolled) in the network or even outside of the adminstrative domain (e.g. due to configuration mistakes). From my point of view this document should recommend/require two things: 1) A maximum number of S-BFD packet that is allow to be send without getting a response (maybe leading to a local error report). 2) Egress filtering at the adminstrative border of the domain that uses S-BFD to make sure that no S-BFD packets leave the domain.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 08:55:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-05-03 19:25:27-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 19:25:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-03 04:14:32-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 04:14:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-05-04 19:05:03-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 19:05:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-03 16:48:34-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-13 07:26:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-11 12:18:55-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 16:48:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7880",
+  "evaluation_end": "2016-05-11 12:18:55-07:00",
+  "evaluation_start": "2016-04-13 07:26:57-07:00"
+}

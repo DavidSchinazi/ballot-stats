@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-09-24 11:59:47-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-10-13 07:20:25-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-10-19 05:41:24-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-10-13 07:20:25-07:00",
+        "text": "Section 3.2. (Elements of procedure) says that the \"interpretation of tag values is specific to the administrative domain of a particular network operator\", which makes them opaque and obviously locally significant.\u00a0 I then have an issue with the following text, which tries to (using  rfc2119  keywords) specify how to interpret the tags, which doesn't make sense to me given the text above: \u00a0  Each tag MUST be treated as an independent identifier that MAY be \u00a0  used in policy to perform a policy action.\u00a0 Tags carried by the \u00a0  administrative tag TLV SHOULD be used to indicate independent \u00a0  characteristics of a node.\u00a0 The administrative tag list within the \u00a0  TLV MUST be considered an unordered list.\u00a0 Whilst policies may be \u00a0  implemented based on the presence of multiple tags (e.g., if tag A \u00a0  AND tag B are present), they MUST NOT be reliant upon the order of \u00a0  the tags (i.e., all policies should be considered commutative \u00a0  operations, such that tag A preceding or following tag B does not \u00a0  change their outcome). \u00a0  To avoid incomplete or inconsistent interpretations of the per-node \u00a0  administrative tags the same tag value MUST NOT be advertised by a \u00a0  router in RI LSAs of different scopes.\u00a0 The same tag MAY be \u00a0  advertised in multiple RI LSAs of the same scope, for example, OSPF \u00a0  Area Border Router (ABR) may advertise the same tag in area-scope RI \u00a0  LSAs in multiple areas connected to the ABR. . . . \u00a0  Being part of the RI LSA, the per-node administrative tag TLV must be \u00a0  reasonably small and stable.\u00a0 In particular, but not limited to, \u00a0  implementations supporting the per-node administrative tags MUST NOT \u00a0  tie advertised tags to changes in the network topology (both within \u00a0  and outside the OSPF domain) or reachability of routes. . . . \u00a0  instances of the RI LSA.\u00a0 The node administrative tags associated \u00a0  with a node that originates tags for the purpose of any computation \u00a0  or processing at a receiving node SHOULD be a superset of node \u00a0  administrative tags from all the TLVs in all the received RI LSA \u00a0  instances originated by that node.When an RI LSA is received that \u00a0  changes the set of tags applicable to any originating node, a \u00a0  receiving node MUST repeat any computation or processing that is \u00a0  based on those administrative tags. If the tags are opaque, I don't think that anything can be mandated as to how they are interpreted or what they're used for.\u00a0 That is the point I want to talk about with this DISCUSS.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-19 05:41:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-10-14 08:50:09-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-14 08:50:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-10-14 13:50:10-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-14 13:50:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-10-12 06:31:40-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-12 06:31:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-10-15 05:02:42-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-15 05:02:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-10-14 13:56:46-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-14 13:56:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-10-15 03:34:52-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-15 03:34:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-10-12 20:52:32-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-12 20:52:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-10-13 19:41:31-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-13 19:41:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-10-14 13:26:52-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-14 13:26:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-10-14 10:05:49-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-14 10:05:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-10-15 05:39:22-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-15 05:39:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-10-15 00:05:20-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-24 11:59:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-12-03 06:27:41-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-15 00:05:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7777",
+  "evaluation_end": "2015-12-03 06:27:41-08:00",
+  "evaluation_start": "2015-09-24 11:59:47-07:00"
+}

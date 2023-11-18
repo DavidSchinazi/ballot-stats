@@ -1,0 +1,261 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-07-29 10:33:38-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-29 10:33:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-08-02 12:00:41-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-09-19 07:53:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-02 12:00:41-07:00",
+        "text": "1) In Sec 4.5.1: \"The downstream PLR can assign a bypass tunnel when \u00a0  processing the first Path message of the protected LSP, however, it \u00a0  can not update the forwarding plane until it receives the Resv \u00a0  message containing the downstream MP label.\" Please explain how the downstream PLR can assign a bypass tunnel if the LSP has a loose ERO - so the downstream PLR does not know the next-next-hop that would be the MP for a node-protecting LSP. 2) Sec 4.5.1: \"An upstream PLR (downstream MP) SHOULD check all BYPASS_ASSIGNMENT \u00a0  subobjects in the Path RRO in order to assign a reverse bypass \u00a0  tunnel.\u00a0 The upstream PLR that detects a BYPASS_ASSIGNMENT subobject, \u00a0  selects a reverse bypass tunnel that terminates locally with the \u00a0  destination address and tunnel-ID from the subobject, and has a \u00a0  source address matching the Node-ID address.\" This isn't very clear - particularly given that there will be many BYPASS_ASSIGNMENT subobjects in the path RRO.\u00a0 The case of BYPASS_ASSIGNMENT sub-objects being removed or changed is not addressed at all.\u00a0 In addition, I *assume* that the failure to treat the destination IP address in the BYPASS_ASSIGNMENT as the source IP address for the upstream Bypass tunnel is an oversight? I believe that what is meant\u00a0 is: \"An upstream PLR (downstream MP) SHOULD check all BYPASS_ASSIGNMENT sub-objects in the Path RRO to see if the destination IP address in the BYPASS_ASSIGNMENT matches an address of the upstream PLR.\u00a0 For each BYPASS_ASSIGNMENT sub-object that matches, the upstream PLR looks for a local bypass tunnel that has a destination matching the downstream PLR that inserted the BYPASS_ASSIGNMENT, as indicated by the Node-ID address, and the same tunnel-ID as indicated in the BYPASS_ASSIGNMENT.\" I recall that tunnel-ID is usually scoped by the address of the ingress LSR; this seems to assume that the same tunnel-ID is provided to both the downstream PLR and upstream PLR???\u00a0  Alternately, I am misunderstanding - and the information in the BYPASS_ASSIGNMENT is really intended to be bypass tunnel to be used by the upstream PLR, which the downstream PLR  somehow(??details, hints in the document please) knows . Then there needs to be text to handle the case where the previous PATH message contained a particular BYPASS_ASSIGNMENT sub-object and that sub-object has been removed or changed. 3) Sec 4.5.3: \"In both examples above, the upstream PLR SHOULD send a Notify message \u00a0  [ RFC3473 ] with Error-code - FRR Bypass Assignment Error (value: TBA1) \u00a0  and Sub-code - Bypass Assignment Cannot Be Used (value: TBA2) to the \u00a0  downstream PLR to indicate that it cannot use the bypass tunnel \u00a0  assignment in the reverse direction.\u00a0 Upon receiving this error, the downstream PLR  \u00a0  MAY remove the bypass tunnel assignment and select an alternate bypass tunnel if one available.\" This section is problematic because it creates the use of local policy when the ingress has a clear way to signal what type of protection is desired and because it provides an error message to where it will only cause pointless churn (the MP is the MP based on the type of protection desired - certainly for bypass) rather than to the ingress where it could at least be acted upon.\u00a0 The dynamics at time of failure also do not seem to be well considered; asymmetry is unfortunate, but worse is lack of protection. Consider the case in Example 1.\u00a0 If R5 suffers a node failure, then there is no protection for the upstream LSP from R6 if it prefers the link protection.\u00a0 It simply doesn't matter what bypass tunnel R4 picks! Sending a Notify message to R4 asking for a different tunnel is not productive.\u00a0 If the ingress has requested node-protection, then there is simply nothing that can be done for this topology by R5.\u00a0 It could be helpful to send a Notify to the ingress or have a flag set in the RESV RRO to indicate the issue, but that's about it. For the question about creating local policy, how are the SESSION_ATTRIBUTES used?\u00a0 Obviously, they are available in the PATH message that has the BYPASS_ASSIGNMENTs.\u00a0 Why would the \"Node Protection Desired\" flag not be relevant here? 4) Sec 5: \"\u00a0  o\u00a0 Upstream PLR reroutes traffic upon detecting the link failure or \u00a0 \u00a0 \u00a0 upon receiving RSVP Path message over the bidirectional bypass \u00a0 \u00a0 \u00a0 tunnel.\u00a0  \u00a0  o\u00a0 Upstream PLR also reroutes RSVP Resv signaling after receiving \u00a0 \u00a0 \u00a0 RSVP Path message over the bidirectional bypass tunnel. \" How does the upstream PLR detect that the message was received over the bypass tunnel?\u00a0 Is the assumption that the bypass LSP doesn't do penultimate hop popping? Is the assumption that the PLR can tell because RSVP indicates the downstream PLR as the previous hop in its signaling?\u00a0 Please clarify and describe how this detection is done - to ease interoperability. 5) In Sec 5.1.2:\u00a0 \"When upstream PLR R4 receives the protected LSP Path messages over \u00a0 \u00a0 \u00a0 the restored link, if not already done, it starts sending Resv \u00a0 \u00a0 \u00a0 messages and traffic flow of the protected LSP over the restored \u00a0 \u00a0 \u00a0 link and stops sending them over the bypass tunnel.\" Is there a reason that \"when the downstream PLR receives the protected LSP RESV messages over the restored link, if not already done, it starts sending Path messages and traffic flow of the protected LSP over the restored link and stops sending them over the bypass tunnel.\" doesn't also make sense to put in this section? If this is not a good idea, please explain clearly the issues that it causes. I am assuming that \"after the link is restored\" implies that bidirectional communication has been successfully tested - not merely that the physical layer is up but also that an IGP or BFD is successful across it. (But this is standard for RSVP-TE FRR). 6) Sec 5.2.2: The behavior of R4 is not described.\u00a0 When the link from R3-R4 fails, R4 will redirect traffic to R2. As written at the start of Sec 5, R4 does not start sending its Resv across the bypass tunnel and R2 is thus not triggered to use its bypass tunnel.\u00a0 Please clearly describe this and why.\u00a0 It is this asymmetry in behavior for the downstream PLR and upstream PLR that causes the downstream PLR's bypass tunnel to be prioritized. 7) Sec 5.2.2: The need for the PRR to look up the bypass tunnel and then reprogram the forwarding plane is quite concerning for having this operate at significant scale.\u00a0 What could be done if one assumes that the selected bypass tunnel - from the BYPASS_PROTECTION handling - is used?\u00a0 Is there a reason that decision has to be redone here? What is the issue that the solution is trying to work around?\u00a0  I can certainly imagine scenarios with BFD sessions so that the PRR can be rapidly failed over as the result of the BFD session going down.\u00a0 What scale of LSPs are you expecting this scenario to handle? 8) Sec 5.2.2: Given that the PRR will TEAR DOWN the LSP if it can't find a matching bypass tunnel, it would be quite useful for the ingress to have visibility as to the protection available.\u00a0 In  RFC 4090 , Sec 4.4 defines both \"local protection available\" and \"local protection in use\" flags in the IPv4/IPv6 sub-objects.\u00a0 Clearly, that isn't sufficient for the co-routed case because the ingress needs to know also that \"local upstream protection available\" and perhaps \"local upstream protection in use\".\u00a0  9) Sec 5.2.3: \"\u00a0  o\u00a0 The upstream PLR R4 starts sending the traffic flow of the \u00a0 \u00a0 \u00a0 protected LSP over the restored link towards downstream PLR R3 and \u00a0 \u00a0 \u00a0 forwarding the Path messages towards PRR R5 and stops sending the \u00a0 \u00a0 \u00a0 traffic over the bypass tunnel. \u00a0  o\u00a0 When upstream PLR R4 receives the protected LSP Path messages over \u00a0 \u00a0 \u00a0 the restored link, if not already done, it starts sending Resv \u00a0 \u00a0 \u00a0 messages and traffic flow over the restored link towards \u00a0 \u00a0 \u00a0 downstream PLR R3 and forwarding the Path messages towards PRR R5 \u00a0 \u00a0 \u00a0 and stops sending them over the bypass tunnel.\" In the referenced figures, R4 is NOT an upstream PLR; that is R5.\u00a0 R4 could have forgotten all state associated with the bi-directional LSP.\u00a0  Please fix the text to actually describe the behavior. 10) Sec 5.3: \"\u00a0  Unidirectional link failures can result in the traffic flowing on \u00a0  asymmetric paths in the forward and reverse directions.\u00a0 In addition, \u00a0  unidirectional link failures can cause RSVP soft-state timeout in the \u00a0  control-plane in some cases.\u00a0 As an example, if the unidirectional \u00a0  link failure is in the upstream direction (from R4 to R3 in Figures 1 \u00a0  and 2), the downstream PLR (node R3) can stop receiving the Resv \u00a0  messages of the protected LSP from the upstream PLR (node R4 in \u00a0  Figures 1 and 2) and this can cause RSVP soft-state timeout to occur \u00a0  on the downstream PLR (node R3).\" Is the assumption that there is no IGP or BFD running on the link? If not, then the IGP or BFD session will go down on the link first, making it unavailable to RSVP-TE and should trigger the fast-reroute. Also - given this issue, why does the upstream MP not start using the bypass tunnel when receiving Resv through a bypass tunnel? There is no explanation in the draft and there should be - to prevent incorrect \"optimizations\".\u00a0 Ideally, the draft would specify something like MUST NOT or SHOULD NOT with explanation - if that is the case. 11) Sec 7.1: The description for the BYPASS_ASSIGNMENT completely fails to be clear as to whether the contents are for the bypass tunnel used by the node inserting it into the RRO or whether the contents are a direction for the node that receives it - based on the  Node ID that is included.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-19 07:53:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-08-02 09:42:49-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-02 09:42:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-08-02 15:15:36-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-02 15:15:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-07-24 10:50:17-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-08-02 10:34:35-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-08-03 07:30:22-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-02 10:34:35-07:00",
+        "text": "What stops me from just providing a random IP address that I don't control in BYPASS_ASSIGNMENT and thus causing them to get spammed? I am assuming there are mechanisms to prevent them, but it's not immediately clear to me what those are, so they at minimum need to spelled out in security considerations. This section from  RFC 4090  is not encouraging: \u00a0  This document does not introduce new security issues.\u00a0 The security \u00a0  considerations pertaining to the original RSVP protocol [RSVP] remain \u00a0  relevant. \u00a0  Note that the facility backup method requires that a PLR and its \u00a0  selected merge point trust RSVP messages received from each other.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-03 07:30:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-08-02 08:45:59-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-02 08:45:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-07-31 07:07:21-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-31 07:07:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-08-01 18:31:55-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 18:31:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-08-02 11:50:26-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-02 11:50:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-08-01 16:17:37-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 16:17:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-09-20 13:41:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-24 10:50:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8271",
+  "evaluation_end": "2017-09-20 13:41:22-07:00",
+  "evaluation_start": "2017-07-24 10:50:17-07:00"
+}

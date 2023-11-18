@@ -1,0 +1,317 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-11-17 08:36:01-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 08:36:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-11-17 11:07:23-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-02-09 08:59:21-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-11-17 11:07:23-08:00",
+        "text": "I have a couple of questions and observations I'd like to discuss. (1) From Section 3: \"The scenarios serve as examples.\u00a0 This document does not restrict the \u00a0  applicability of the THIRD_PARTY_ID to certain scenarios.\u00a0 The \u00a0  THIRD_PARTY_ID can include any Layer-2 identifier like a MAC address \u00a0  or other subscriber identifiers as, for example, mentioned in section \u00a0  6 of [ I-D.boucadair-pcp-sfc-classifier-control ].\u00a0 The THIRD_PARTY_ID \u00a0  can also be used for the firewall control, including the case of a \u00a0  virtual CPE, see section 3 of [ I-D.lee-vhs-usecases ].\" I think the document makes a reasonable case for why carrying a tunnel ID in a THIRD_PARTY_ID option is useful. I don't think it makes a reasonable case for any other use of the option, though, given the potential security and privacy issues associated with sending a potentially unique and permanent subscriber identifier. The drafts mentioned above envision much broader uses for both the option and PCP than the use case in this document, and suggest some uses of the option that seem like a mismatch for what the identifiers embedded within it were originally intended for (e.g., using an IMSI for traffic classification/policing).  Conflating these cases also makes it difficult to understand how the THIRD_PARTY_ID relates back to NAT. Presumably, a PCP-controlled NAT needs traffic on the incoming side to always include the THIRD_PARTY_ID -- otherwise, the fact that the mapping table contains the additional ID is only useful in one direction. This seems workable when the THIRD_PARTY_ID is a tunnel ID, but not for any identifier that anyone might stick in there. Again coming back to the traffic policing scenario, it seems unlikely that every time I as the subscriber send traffic through the NAT, my IMSI will be included to differentiate my traffic from another subscriber who has the same internal address as I do. So by allowing this field to contain any identifier, it becomes less obvious why PCP should be used to communicate it in the first place. In short, I think this draft needs to either more narrowly specify a means to communicate a tunnel ID, or provide both a more thorough security and privacy analysis of the implications of sending any identifier and an explanation of the implications on the availability of those identifiers in traffic sent to a PCP-controlled NAT. (2) Section 5.2 seems underspecified.  RFC 6887  has a lot logic riding on the question of whether two requests are meant to identify the same host or not (in sec 11.3 and sec 12.3) based on the combination of internal address, protocol, and port, but this draft leaves unspecified what the comparison logic is supposed to be or the error conditions that result from adding another field to the determination of whether two hosts are the same or not. For example, is every instance of \"internal address, protocol, and port\" in those sections meant to be replaced with \"internal address, protocol, port, and THIRD_PARTY_ID\"? If a device that already has a mapping for a particular internal address, port, protocol and THIRD_PARTY_ID receives a new request for the same internal address, port, and protocol but has no THIRD_PARTY_ID, what steps is it supposed to follow? Saying that the THIRD_PARTY_ID should be \"used in addition when accessing a mapping table\" doesn't seem like enough detail to go implement this.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-09 08:59:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-11-18 12:08:24-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-18 12:08:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-11-17 07:56:51-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 07:56:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-11-17 14:53:02-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 14:53:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-11-19 02:52:55-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-19 02:52:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-11-09 07:41:56-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-11-17 09:44:34-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 09:44:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-11-19 02:45:40-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-02-23 08:52:26-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-11-19 02:45:40-08:00",
+        "text": "Suresh Krishnan raised an issue in his Gen-ART review about the lack of specification for the format of identifiers. And I agree that is an issue that should be fixed. Based on recent e-mail, the authors seem to agree as well, so hopefully we can fix this.  I would also like to add that the issue is not one of mere comparison. It is a basic issue of building equipment that can interoperate, involving clients and servers and so on from multiple vendors. I have no specific suggestion for a fix, but further standardisation of the formats for typical values while leaving some room for opaque identifiers would perhaps be one avenue.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-23 08:52:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-11-17 07:19:39-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-11-22 13:12:56-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-11-17 07:19:39-08:00",
+        "text": "I see the secdir reviewer has raised this issue as well, but from my vantage point the issue of is slightly different. the use of the mac address or alternatively a different third party identifier is underspecified. What's the purpose of using a stable identifier except to facilitate tracking? if that's the case then it should be a spelled out,\u00a0 a pcp interworking function could use basically anything to distinguish between two hosts when requesting a mapping, e.g. the mapping is bound to ip addresses. Extending the the option to applications outside of the L2 domain (as described in section 3) proposes to extended the use of this mac based identifier still further, which seems like an opportunity for information leakage outside the scope of the L2 domain, when ephemeral or session based identifiers might be more appropriate.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-22 13:12:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-11-17 14:24:03-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 14:24:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-11-17 13:13:25-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 13:13:25-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-11-16 10:20:26-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-16 10:20:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-11-18 16:58:11-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-01-22 09:33:15-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-11-18 16:58:11-08:00",
+        "text": "(1) The THIRD_PARTY stuff in PCP was always a bit concerning from a security point of view.  RFC 6887  says that you MUST NOT implement or use that except in some specific environments. At the time we would have liked to say that you MUST use PCP authentication when using that but  RFC 7652  wasn't done until some time later. My DISCUSS question though is: why can't you distinguish based on a Key ID used with PCP authentication? Wouldn't that help with the privacy concerns (one can manage Key IDs well if one wants) and also with the secrity concerns, and I would guess it should solve the tunnel issues that this is intended to address as well? (There may be good reasons why that doesn't work of course, but I'd like to understand them.) (2) Section 7: The \"must be fully trusted\" phrase is not a good one to use - iirc that was a compromise figured out to allow PCP to proceed ahead of the PCP auth spec.\u00a0 And of course, it's really a nonsense. I think you should properly characterise the issues or else delete the unfortunate phrase. I also think you should not encourage the use of this for carrying location or profile information.\u00a0 What \"Means\" exist that could be used to really protect this? And why do you want to \"protect unauthorized access\"? that's oddly phrased at best. All in all I think you need better text for section 7, and I'm happy to try help find that.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-01-27 02:47:33-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-01-22 09:33:15-08:00",
+        "text": "(Emailed authors on Jan 22nd, 2nd issue may be solved, not clear about 1st) (1) The THIRD_PARTY stuff in PCP was always a bit concerning from a security point of view.  RFC 6887  says that you MUST NOT implement or use that except in some specific environments. At the time we would have liked to say that you MUST use PCP authentication when using that but  RFC 7652  wasn't done until some time later. My DISCUSS question though is: why can't you distinguish based on a Key ID used with PCP authentication? Wouldn't that help with the privacy concerns (one can manage Key IDs well if one wants) and also with the secrity concerns, and I would guess it should solve the tunnel issues that this is intended to address as well? (There may be good reasons why that doesn't work of course, but I'd like to understand them.) (2) Section 7: The \"must be fully trusted\" phrase is not a good one to use - iirc that was a compromise figured out to allow PCP to proceed ahead of the PCP auth spec.\u00a0 And of course, it's really a nonsense. I think you should properly characterise the issues or else delete the unfortunate phrase. I also think you should not encourage the use of this for carrying location or profile information.\u00a0 What \"Means\" exist that could be used to really protect this? And why do you want to \"protect unauthorized access\"? that's oddly phrased at best. All in all I think you need better text for section 7, and I'm happy to try help find that.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-01-27 02:47:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-11-17 17:44:01-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-09 07:41:56-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-03-09 07:13:34-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 17:44:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7843",
+  "evaluation_end": "2016-03-09 07:13:34-08:00",
+  "evaluation_start": "2015-11-09 07:41:56-08:00"
+}

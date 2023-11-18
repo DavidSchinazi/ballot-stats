@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-24 21:02:11-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-11-15 17:13:08-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-10-24 21:02:11-07:00",
+        "text": "I agree with Ben, Martin, and Mark: the way this document uses /.well-known/ URIs is not consistent with  RFC5785 , section 1.1. It should be understood that /.well-known/ URLs are already a carve-out from overall REST principles regarding the agency of content publishers to assign URLs within their domain as they see fit; and, as such, need non-trivial justification for their use. If there were some fully-defined autodiscovery mechanism that were (non-artificially) constrained in such a way that only a host and port were available, then the use of /.well-known/ URIs would be more understandable. The only constraint hinted at in this document that might have these properties is the use of DNS SRV records. Given that ROLIE is defining a green-field protocol, the use of something as constrained as SRV seems ill-advised, given that the use of NAPTR records would trivially allow retrieval of a complete URL instead of just a host/port combination. The bottom line, however, is that we need to defer specification of a /.well-known/ URL until we completely define a discovery protocol that requires it. The corollary is that we should avoid defining a discovery protocol that requires it.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-15 17:13:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-10-26 04:36:27-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-10-28 04:33:17-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-10-26 04:36:27-07:00",
+        "text": "This is a useful document and I will be balloting \"Yes\" once the following small issues are resolved/discussed (some of these come from Martin's ARTART review): 1) 7.4.\u00a0 The \"rolie:property\" Extension Point \u00a0  urn:ietf:params:rolie:property:content-id\u00a0 The \"value\" attribute of \u00a0 \u00a0 \u00a0 this property is a text representation of an identifier pertaining \u00a0 \u00a0 \u00a0 to or extracted from the content referenced by the \"src\" attribute \u00a0 \u00a0 \u00a0 of the entry's atom:content element. Maybe it is just me, but I can't figure out what is the syntax of this field. Can you provide a reference or at least give an example? 2) From Martin's review: Section 5.5 prohibits the use of GET on \"/\".\u00a0 This prohibits use of the resource for other purposes.\u00a0 It seems reasonable to accept POST messages as defined in  RFC 6546 , but this requirement is overly strict (and further entrenches the violation of  RFC 7320 ).\u00a0 If, for instance, the server operator wishes to provide HTML in response to a GET request to \"/\", this would prohibit that.\u00a0 The requirement to return 404 if  RFC 6546  is not supported is worse; not supporting  RFC 6546  might be a choice that a deployment makes to avoid the need to reserve \"/\" for that protocol. Alexey: The text in -12 is an improvement, but I think it is still confusing. Maybe mention something along the lines of Martin's suggestion for the case when  RFC 6546  is not supported (or at least not followed as far as the \"/\" resource is concerned). 5.5.\u00a0 / (forward slash) Resource URL \u00a0  If the \"/\" resource is unsupported, then a request for this resource \u00a0  MAY be handled as deemed appropriate by the server. Nit: You haven't expressed any requirement on implementations here, so use of MAY does not seem appropriate. What are you actually suggesting here? 3) I think some of the text in 6.1.2 is misleading (or I might be wrong): \u00a0  Based on  RFC5005  section 3 [ RFC5005 ], link \u00a0  elements SHOULD be included in all Feeds to support paging using the \u00a0  following link relation types: \u00a0  o\u00a0 \"first\" - Indicates that the href attribute value of the link \u00a0 \u00a0 \u00a0 identifies a resource URI for the furthest preceding page of the \u00a0 \u00a0 \u00a0 Feed. \u00a0  o\u00a0 \"last\" - Indicates that the href attribute value of the link \u00a0 \u00a0 \u00a0 identifies a resource URI for the furthest following page of the \u00a0 \u00a0 \u00a0 Feed. \u00a0  o\u00a0 \"previous\" - Indicates that the href attribute value of the link \u00a0 \u00a0 \u00a0 identifies a resource URI for the immediately preceding page of \u00a0 \u00a0 \u00a0 the Feed. \u00a0  o\u00a0 \"next\" - Indicates that the href attribute value of the link \u00a0 \u00a0 \u00a0 identifies a resource URI for the immediately following page of \u00a0 \u00a0 \u00a0 the Feed. Original definitions of these link relations don't include the word \"page\". I should double check with Mark Nottigham, but I think they reference the next/previous, first/last entry, not page. (And a page may contain several entries.) If I am correct, I don't think it is Ok to redefine meaning of existing link relations the way you do. 4) In Section 8.3: \u00a0  Registration in the ROLIE URN Parameters registry is via the \u00a0  Specification Required policy [ RFC8126 ].\u00a0 Designated Expert reviews \u00a0  should be routed through the MILE WG mailing list.\u00a0 Failing this, the \u00a0  Designated Expert will be assigned by the IESG. As other people already pointed out, the last 2 sentences are confusing. Are you trying to say that registration requests must be sent to the MILE mailing list or that they must be reviewed there? This is actually significant for IANA workflow. One possibility is that all requests are sent to the MILE mailing list and then the designated expert forwards approved requests to IANA. In this case if a Designated Expert misses a request, IANA wouldn't even know that the requester is waiting for the Designated Expert. Another possibility is for all requests to be submitted to IANA directly, then IANA can track them. IANA might either forward requests to the MILE mailing list or require that all request being submitted to the MILE mailing list first before being sent to IANA. So please clarify.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-11-16 04:22:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-10-28 04:33:17-07:00",
+        "text": "This is a useful document and I will be balloting \"Yes\" once the following small issues are resolved/discussed (some of these come from Martin's ARTART review): 1) [Addressed in the latest revision] 2) [Addressed in the latest revision] 3) I think some of the text in 6.1.2 is misleading (or I might be wrong): \u00a0  Based on  RFC5005  section 3 [ RFC5005 ], link \u00a0  elements SHOULD be included in all Feeds to support paging using the \u00a0  following link relation types: \u00a0  o\u00a0 \"first\" - Indicates that the href attribute value of the link \u00a0 \u00a0 \u00a0 identifies a resource URI for the furthest preceding page of the \u00a0 \u00a0 \u00a0 Feed. \u00a0  o\u00a0 \"last\" - Indicates that the href attribute value of the link \u00a0 \u00a0 \u00a0 identifies a resource URI for the furthest following page of the \u00a0 \u00a0 \u00a0 Feed. \u00a0  o\u00a0 \"previous\" - Indicates that the href attribute value of the link \u00a0 \u00a0 \u00a0 identifies a resource URI for the immediately preceding page of \u00a0 \u00a0 \u00a0 the Feed. \u00a0  o\u00a0 \"next\" - Indicates that the href attribute value of the link \u00a0 \u00a0 \u00a0 identifies a resource URI for the immediately following page of \u00a0 \u00a0 \u00a0 the Feed. Original definitions of these link relations don't include the word \"page\". I should double check with Mark Nottigham, but I think they reference the next/previous, first/last entry, not page. (And a page may contain several entries.) If I am correct, I don't think it is Ok to redefine meaning of existing link relations the way you do. 4) [Addressed in the latest revision]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-16 04:22:29-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-10-25 11:26:57-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-25 11:26:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-10-25 07:41:11-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-25 07:41:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-10-24 14:38:28-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-24 14:38:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-10-24 19:10:39-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-11-15 17:13:27-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-10-24 19:10:39-07:00",
+        "text": "-5.1.3: I don't think Martin's\u00a0 ART-ART review concern (and Mark's support) about the\u00a0 .well-known URL registration has been fully resolved. While version 11 removed some of the well-known registrations, it still leaves the one.\u00a0 Mark pointed out that  RFC 5785  offers explicit guidance that .well-known URLs are intended to offer site-wide policy or metadata, and are not intended for general information retrieval, or to establish a namespace.\u00a0 This usage seems to me to be exactly the sort of thing that the RFC advises against. I recognize that security information is important, but I don't understand why it's discovery needs to be fundamentally different than for other stuff on using ATOM. I'm willing to be convinced, but if there's been a convincing argument so far I've missed it. I'm not sure what to make of the second paragraph. It says DNS SRV can be used to determine the host and port. Is the expectation that people can just do that without further specification, or that someone could specify it in the future? The former is generally not true. If the intent is the latter, please clarify that in the text.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-15 17:13:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-10-20 13:29:20-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-20 13:29:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-10-13 13:54:52-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-13 13:54:52-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-10-16 09:07:49-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-16 09:07:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-10-26 06:21:17-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-26 06:21:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-10-24 20:54:47-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-24 20:54:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-12-15 13:42:23-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-13 13:54:51-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8322",
+  "evaluation_end": "2017-12-15 13:42:23-08:00",
+  "evaluation_start": "2017-10-13 13:54:51-07:00"
+}

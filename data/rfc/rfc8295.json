@@ -1,0 +1,341 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-08-08 16:45:17-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-08-08 16:47:05-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-08-08 16:45:17-07:00",
+        "text": "The way JSON is defined in this document is ambiguous and/or incomplete to such a degree that I doubt interoperability can be achieved. There are two major issues. The first issue is that the \"info\" field is described as containing one of four variations (dn, ski, iasn, and url), but there's no instruction about how to indicate which variation is being used; and, for DistinguishedName, it's not clear how one encodes the issuer and serial elements. There are a handful of ways you could address this. I think the one that makes the most sense is to specify your JSON such that the objects relate to each other in the same way as they do in XML. This means that the \"info\" value would be an object containing one key (selected from \"dn\", \"ski\", \"iasn\", and \"uri\"), and the value of this key would be a string (for dn, ski, and uri) or an object containing an issuer and a serial key (for iasn). An example JSON PAL under this scheme would look like: [ \u00a0 { \u00a0 \u00a0 \"Type\": 3, \u00a0 \u00a0 \"Date\": \"2016-12-29T09:28:00Z\", \u00a0 \u00a0 \"Size\": 1234, \u00a0 \u00a0 \"Info\": { \u00a0 \u00a0 \u00a0 \"url\": \" https://www.example.com/.well-known/est/eecerts/1234 \" \u00a0 \u00a0 } \u00a0 }, \u00a0 { \u00a0 \u00a0 \"Type\": 3, \u00a0 \u00a0 \"Date\": \"2016-12-29T09:28:00Z\", \u00a0 \u00a0 \"Size\": 1234, \u00a0 \u00a0 \"Info\": { \u00a0 \u00a0 \u00a0 \"iasn\": { \u00a0 \u00a0 \u00a0 \u00a0 \"issuer\": \"CN = TrustID Server CA A52, OU = TrustID Server, O = IdenTrust, C = US\", \u00a0 \u00a0 \u00a0 \u00a0 \"serial\": 1 \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 } \u00a0 } ] The second issue with JSON handling is that the implied syntax is in violation of  RFC 7159 , section 6 (\"Leading zeros are not allowed.\"). For example, if you take the example given in the document and run it through a JSON parser, you get: { \"Type\": 0003, \"Date\": \"2016-12-29T09:28:00Z\", \"Size\": 1234, \"Info\": \" https://www.example.com/.well-known/est/eecerts/1234 \" } \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^ SyntaxError: Unexpected number in JSON at position 11 So, if you keep the fixed-width, zero-padded format for PAL identifiers (and I don't see why you should -- see my comments below), you'll need to encode them as strings rather than integers in JSON.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-12 15:18:16-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-08-08 16:47:05-07:00",
+        "text": "[NOTE -- While I did not have time to review this document prior to last week's telechat, the author reached out to me to specifically request that I review it and enter a ballot] The way JSON is defined in this document is ambiguous and/or incomplete to such a degree that I doubt interoperability can be achieved. There are two major issues. The first issue is that the \"info\" field is described as containing one of four variations (dn, ski, iasn, and url), but there's no instruction about how to indicate which variation is being used; and, for DistinguishedName, it's not clear how one encodes the issuer and serial elements. There are a handful of ways you could address this. I think the one that makes the most sense is to specify your JSON such that the objects relate to each other in the same way as they do in XML. This means that the \"info\" value would be an object containing one key (selected from \"dn\", \"ski\", \"iasn\", and \"uri\"), and the value of this key would be a string (for dn, ski, and uri) or an object containing an issuer and a serial key (for iasn). An example JSON PAL under this scheme would look like: [ \u00a0 { \u00a0 \u00a0 \"Type\": 3, \u00a0 \u00a0 \"Date\": \"2016-12-29T09:28:00Z\", \u00a0 \u00a0 \"Size\": 1234, \u00a0 \u00a0 \"Info\": { \u00a0 \u00a0 \u00a0 \"url\": \" https://www.example.com/.well-known/est/eecerts/1234 \" \u00a0 \u00a0 } \u00a0 }, \u00a0 { \u00a0 \u00a0 \"Type\": 3, \u00a0 \u00a0 \"Date\": \"2016-12-29T09:28:00Z\", \u00a0 \u00a0 \"Size\": 1234, \u00a0 \u00a0 \"Info\": { \u00a0 \u00a0 \u00a0 \"iasn\": { \u00a0 \u00a0 \u00a0 \u00a0 \"issuer\": \"CN = TrustID Server CA A52, OU = TrustID Server, O = IdenTrust, C = US\", \u00a0 \u00a0 \u00a0 \u00a0 \"serial\": 1 \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 } \u00a0 } ] The second issue with JSON handling is that the implied syntax is in violation of  RFC 7159 , section 6 (\"Leading zeros are not allowed.\"). For example, if you take the example given in the document and run it through a JSON parser, you get: { \"Type\": 0003, \"Date\": \"2016-12-29T09:28:00Z\", \"Size\": 1234, \"Info\": \" https://www.example.com/.well-known/est/eecerts/1234 \" } \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^ SyntaxError: Unexpected number in JSON at position 11 So, if you keep the fixed-width, zero-padded format for PAL identifiers (and I don't see why you should -- see my comments below), you'll need to encode them as strings rather than integers in JSON.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-13 09:10:27-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-10-12 15:18:16-07:00",
+        "text": "Thanks for addressing my previous DISCUSS and comments. Unfortunately, the new text contains a mismatch between specification and example, which is a common source of incompatibilities -- this leads to a different blocking issue. The specification says: \u00a0 \u00a0 \u00a0  [ | 'iasn'] includes both [ | 'issuer'] \u00a0 \u00a0 \u00a0  and [ | 'serial'] as a complexType in XML and an object \u00a0 \u00a0 \u00a0  in JSON.\u00a0 [ | 'issuer'] is a DN encoded as a string with \u00a0 \u00a0 \u00a0  the format defined in [ RFC4514 ];\u00a0 is a positiveInteger \u00a0 \u00a0 \u00a0  and 'serial' is a number. An excerpt from the relevant example: \u00a0 \u00a0 \u00a0  \"info\": \u00a0 \u00a0 \u00a0 \u00a0 { \u00a0 \u00a0 \u00a0 \u00a0  \"iasn\": \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"issuer\": \"CN=Sean Turner,O=sn3rd,C=US\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"sn\": 0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 \u00a0 \u00a0 } Note the difference between \"serial\" (spec) and \"sn\" (example).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-13 09:10:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-08-01 11:14:59-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-08-01 11:15:45-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-08-01 11:14:59-07:00",
+        "text": "I am planning to refine my DISCUSS/comments, but for now the two major points: 1)\u00a0 Every time you say in the document \"HTTP 200 response code with no content\" you should reference HTTP 204 response code  2) Content-Transfer-Encoding header field is not used in HTTP. base64 encoding is not defined, so you can't use it. 3) In the IANA considerations: \u00a0  Package types MUST be paired with a media type. How? Does the list in Section 2.1.1 provide MIME types (it doesn't seem to)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-08-01 11:36:27-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-08-01 11:15:45-07:00",
+        "text": "I am planning to refine my DISCUSS/comments, but for now the following major points (they should be easy to address though): 1)\u00a0 Every time you say in the document \"HTTP 200 response code with no content\" you should reference HTTP 204 response code  2) Content-Transfer-Encoding header field is not used in HTTP. base64 encoding is not defined, so you can't use it. 3) In the IANA considerations: \u00a0  Package types MUST be paired with a media type. How? Does the list in Section 2.1.1 provide MIME types (it doesn't seem to)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-08-03 02:07:40-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-08-01 11:36:27-07:00",
+        "text": "I am planning to refine my DISCUSS/comments, but for now the following major points (they should be easy to address though): 1)\u00a0 Every time you say in the document \"HTTP 200 response code with no content\" you should reference HTTP 204 response code , as it means no content. 2) As far as I know Content-Transfer-Encoding header field is not used in HTTP. You can use transfer coding or content coding instead (See ). But either way \"base64\" encoding is not defined in HTTP, so you can't use it. 3) In the IANA considerations: \u00a0  Package types MUST be paired with a media type. How? Does the list in Section 2.1.1 provide MIME types (it doesn't seem to)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-10-01 10:24:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-03 02:07:40-07:00",
+        "text": "I am generally fine with publishing this document, but there are several issues (mostly related to HTTP use) which need to be addressed before the document goes forward: 1)\u00a0 Every time you say in the document \"HTTP 200 response code with no content\" you should reference HTTP 204 response code , as it means no content. (We discussed this and proposed text work for me.) 2) As far as I know Content-Transfer-Encoding header field is not used in HTTP. You can use transfer coding or content coding instead (See ). But either way \"base64\" encoding is not defined in HTTP, so you can't use it. Mark Nottingham wrote about this: ------- CTE escapes into HTTP sometimes because of gateways to other protocols, or because of wrong-headed developers, but it has *NO* HTTP semantics. They can send the header all they want (after all, new headers can be introduced by anyone), but it's not interoperable. This was widely known enough that we took advice about it out of HTTPbis; see: \u00a0  https://tools.ietf.org/html/rfc2616#section-19.4.5 Looks like 7030 needs an errata, at a minimum. They don't want content-encoding (it's not terribly useful to introduce a base64 encoding on a binary-clean transport; they probably want to be using a content-type that dictates base64 encoding. Or just send the binary. ------- 3) In the IANA considerations: \u00a0  Package types MUST be paired with a media type. How? Does the list in Section 2.1.1 provide MIME types (it doesn't seem to)? (We discussed this and proposed text work for me.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-01 10:24:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-08-02 14:54:15-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-02 14:54:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-08-02 16:16:43-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-02 16:16:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-08-02 08:58:17-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-02 08:58:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-08-01 17:16:38-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-10-12 17:09:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-01 17:16:38-07:00",
+        "text": "1. The following requirement doesn't seem to do much on its own \u00a0  If a symmetric key package (which might be signed) or an encrypted \u00a0  key package (which might be signed before and after encryption) is \u00a0  digitally signed, the client MUST reject it if the digital signature \u00a0  does not validate back to an authorized TA. [S 5.1] The reason is that an attacker might just strip the signature and then it would be acceptable. So, I think it needs to somehow be paired with a way of knowing when things ought to be signed. There is another instance of this under asymmetric keys. 2. S 1.1. \u00a0  Package: An object that contains one or more content types.\u00a0 There \u00a0  are numerous types of packages: Asymmetric Keys, Symmetric Keys, \u00a0  Encrypted Keys, CRLs, Public Key Certificate Management, Firmware, \u00a0  Public Key Certificates, and TAMP packages.\u00a0 All of these packages \u00a0  are digitally signed and encapsulated in a CMS signed data \u00a0  [ RFC5652 ][ RFC6268 ] (except the public key certificates and CRLs that \u00a0  are already digitally signed); Signed using what key? 3. The reasoning for why some things need client auth and others do not is opaque to me. Like, why does firmware need client auth?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-12 17:09:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-07-26 13:40:06-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-07-26 13:41:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-08-02 12:25:19-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-07-26 13:41:10-07:00",
+        "text": "olding a discuss pending a final answer on an XML schema resolution underway.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-02 12:25:19-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-08-01 09:06:18-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 09:06:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-08-02 09:53:18-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-02 09:53:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-08-01 21:02:29-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 21:02:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-08-01 16:19:58-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 16:19:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-08-01 15:27:24-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:40:06-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-08-02 07:26:53-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-01 15:27:24-07:00",
+        "text": "The XML doesn't seem to validate, and seems to have multiple errors (but it's possible I missed something): The\u00a0 tag on line 17 doesn't seem to be terminated (there is a closing tag on line 66, but it is out of place), there is an extra , etc etc. I finally made it lint clean by doing the following: diff -Naur orig-schema.xml schema.xml --- orig-schema.xml\t2017-08-01 18:17:34.000000000 -0400 +++ schema.xml\t2017-08-01 18:21:09.000000000 -0400 @@ -20,10 +20,10 @@ \u00a0 \u00a0  Subject Key Identifier, Issuer and Serial Number tuple, \u00a0 \u00a0  or URI. \u00a0   -   \u00a0   \u00a0   + \u00a0   \u00a0 \u00a0   \u00a0 \u00a0 \u00a0  This type defines the Package Availability List (PAL). @@ -60,10 +60,10 @@ \u00a0       -\u00a0  +\u00a0  \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  -\u00a0 \u00a0 \u00a0   + \u00a0 \u00a0 \u00a0  \u00a0 \u00a0 \u00a0  \u00a0 \u00a0 \u00a0 \u00a0  NOTE: I have NO idea if this still means the same thing, all I know is it satisfied the linter :-P",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-10-13 14:27:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-02 07:26:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8295",
+  "evaluation_end": "2017-10-13 14:27:10-07:00",
+  "evaluation_start": "2017-07-26 13:40:06-07:00"
+}

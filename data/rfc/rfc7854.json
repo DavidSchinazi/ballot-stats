@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-10-14 12:46:20-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-14 12:46:20-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-10-13 07:34:45-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-13 07:34:45-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-10-13 21:47:42-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-13 21:47:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-10-14 13:01:05-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-14 13:01:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-10-15 03:02:03-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-12-02 03:57:01-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-10-15 03:02:03-07:00",
+        "text": "This DISCUSS is in line with Mahesh's OPS DIR review. If BMP (which I consider like a span port feature btw) troubleshooting shows that the BGP configuration is required, then the standard way to configure BGP will be  https://tools.ietf.org/html/draft-ietf-idr-bgp-model-00 . I'm wondering about the link between BMP and the following  draft-ietf-idr-bgp-model-00.txt  YANG models: \tbgp-types.yang \tbgp-policy.yang \tbgp-multiprotocol.yang \tbgp.yang \tbgp-operational.yang Specifically: are we able to map the Per-Peer Header (section 4.2) and Information TLV (section 4.4) to draft-ietf-idr-bgp-model-00.txt.\u00a0 Either because the field information come from the same reference (ex: both this draft and the idr one have the same reference for the Peer Distinguisher), or because specific references to the YANG key information is provided. I believe that the  draft-ietf-grow-bmp  and  draft-ietf-idr-bgp-model  authors should sit down and go through the exercise of mapping the BMP data model into the YANG data model, for a couple of troubleshooting scenarios. The OPS world suffers from too many different data models (MIB, IPFIX, YANG, etc.). With this DISCUSS, I want to make sure that we won't fall into the trap of defining a new one without at least providing the necessary mappings. Note: I see that sysName and sysDescr make the link with the MIB world, that's a step in the right direction. Below is Mahesh's OPS DIR review: Summary: This document defines a protocol, BMP, that can be used to monitor BGP sessions.\u00a0 BMP is intended to provide a convenient interface for obtaining route views.\u00a0 Prior to introduction of BMP, screen-scraping was the most commonly-used approach to obtaining such views.\u00a0 The design goals are to keep BMP simple, useful, easily implemented, and minimally service-affecting.\u00a0 BMP is not suitable for use as a routing protocol. The document is on standards track and defines another monitoring method specifically for BGP. The original draft is dated 2005, long before NETCONF or YANG were defined, and when there was probably no way to view routes. With the advent of NETCONF and specifically the BGP YANG model, which is currently a WG document, it would be helpful to know how BMP stands apart. The NETCONF notification structure allows for notifications described in this draft and the ability to collect stats reports and route monitoring. It would be helpful to know how BMP compliments that capability.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-02 03:57:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-10-13 09:48:18-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-13 09:48:18-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-10-14 13:50:54-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-14 13:50:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-10-14 16:34:20-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-14 16:34:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-09-27 12:54:49-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-10-13 19:06:10-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-02-10 08:12:18-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-10-13 19:06:10-07:00",
+        "text": "The statements on authenticated access and confidentiality are helpful, but this is a new protocol and should not start out with the security property levels of the current BGP deployments.\u00a0 Efforts have been made to publish RFCs to fix BGP security and the vulnerabilities have been published - even in the Washington Post.\u00a0 I'd like to see more security required for the properties mentioned to prevent active and passive attacks getting dumps of the BGP data, which was not previously available.\u00a0 If this is not possible per the suggestions below, please explain why.\u00a0 If there is a good reason, it would be helpful to remove the text that says its okay to leave security out because BGP isn't secure and just include the security considerations. Now for specifics: 1. In the Security considerations, it is not only a passive attacker, but also an active one that could gain access to the session if it is not encrypted (protected for confidentiality).\u00a0 An active attacker might change routes causing network disruption.\u00a0 A passive attacker might better understand the possible paths to an AS, assisting with a more effective DDoS attack.\u00a0 The latter point is important to consider in the first paragraph of this section that currently says, \u00a0 \"although it's hard to consider the content of BGP routes in the \u00a0  public Internet to be confidential,\"  I think this is a bit of an overstatement as the exact routes and paths are not published for each router and could be used for DoS attacks - for example taking out one or more paths to a network AS. What I am suggesting for #1 is a simple text change to address the fuller set of security considerations. Change from: \u00a0  Unless a transport that provides confidentiality is used, \u00a0  a passive attacker could gain access to BMP data in flight.  To: \u00a0  Unless a transport that provides confidentiality is used, \u00a0  a passive or active attacker could gain access to or tamper the BMP data in flight.  2. The last paragraph would be the right place to require session encryption and authentication for sessions (unless there is a good explanation as to why this is not needed).\u00a0 If the transport may vary, then it's okay to leave IPsec as a suggestion.\u00a0 It would be nice if there was an MTI for transport, so the security protections could be consistent and interoperability would be easier between implementations.\u00a0 This also came up in the SecDir review. https://www.ietf.org/mail-archive/web/secdir/current/msg06011.html In any case, it would be good to discuss this and see if there are good reasons to leave it as-is or to change the text to improve security, preventing a few attack types.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-10 08:12:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-10-14 13:13:20-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-14 13:13:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-10-14 09:02:53-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-14 09:02:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-10-14 09:42:08-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-12-04 09:00:07-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-10-14 09:42:08-07:00",
+        "text": "Apologies in advance for the rant, but this is a new protocol and not something deployed for decades that can't be fixed. (At least so says the write-up.) The state of security here is just sad. It reminds me of the 1980's. And introducing new protocols without improving that goes against very long held IETF consensus that protocols need to have some actually usable strong security mechanism defined.\u00a0 It seems the wg here get that but are choosing to do nothing about it - I mean in their day-jobs, not that writing RFC text is \"doing something.\" The responses to the secdir review seem to make it clear that the claim that IPsec can be used is mythical, so this discuss to ask that the security considerations properly document the utter absence of any modern way to secure this protocol and not pretend that there are ways that can be used to secure this in the real world. I would suggest text that simply says that:  \"This is an inherently insecure protocol for no particularly good reason and mostly due to the lack of implementation of basic security mechanisms (SSH, TLS) but also due to a lack of customer/operator pressure to ensure those are present, usable and interoperate, despite evidence that attacks on the links over which this data will be sent are ongoing.\" I'd not be surprised if you preferred some other text:-)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-01-22 09:37:30-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-12-04 09:00:07-08:00",
+        "text": "Hi, this is an update of my discuss. After some discussion the authors changed from: OLD: \u00a0  Where the security considerations outlined above are a concern, users \u00a0  of this protocol should consider using some type of transport that \u00a0  provides mutual authentication, data integrity and transport \u00a0  protection, such as IPsec [ RFC4303 ] or TCP-AO [ RFC5925 ].\u00a0 If \u00a0  confidentiality is considered a concern, a transport providing that \u00a0  as well could be selected. NEW: \u00a0  This document does not specify any security mechanism for BMP. I do not believe that it is ok to merely state that one is not paying attention to IETF BCPs ( BCP61  specifically) but one needs to explain why. Hence my original suggestion which was: \"This is an inherently insecure protocol for no particularly good reason and mostly due to the lack of implementation of basic security mechanisms (SSH, TLS) but also due to a lack of customer/operator pressure to ensure those are present, usable and interoperate, despite evidence that attacks on the links over which this data will be sent are ongoing.\" I would like to talk about the right text to add here. My  belief (having chatted with a few folks but not everyone)  was that some people would be ok with saying you ought implement IPsec, others would be ok with you ought do TLS so backing right back down to \"it's ok and not sad to do nothing\" seems wrong to me.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-01-22 09:37:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-10-15 00:03:38-07:00",
+        "end_reason": "new_position",
+        "start": "2015-09-27 12:54:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-04-01 10:36:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-15 00:03:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7854",
+  "evaluation_end": "2016-04-01 10:36:29-07:00",
+  "evaluation_start": "2015-09-27 12:54:49-07:00"
+}

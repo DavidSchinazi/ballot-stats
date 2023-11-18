@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-05-16 11:44:56-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-05-19 05:52:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-16 11:44:56-07:00",
+        "text": "This is a generally a well written document and I don't object to its publication. However I have several minor but important points which should be easy to address: In Section 2.1: \u00a0 Reference to the certificate corresponding to the private key used to sign this object (field \"c\"). The value of this field MUST be a URL of type \"rsync\" or \"http(s)\" You need to have Normative references for the corresponding URI RFCs:  RFC 5781  for rsync URIs and  RFC 7230  for http/https URIs. \u00a0 that points to a specific resource certificate in an RPKI repository [ RFC6481 ]. Any non URL-safe characters (including semicolon \";\" and plus \"+\") must be URL encoded. This really need a Normative reference to  RFC 3986 . \u00a0 The signature itself (field \"b\"). This MUST be the last field in the list. The signature is the output of the signature algorithm using the appropriate private key and the calculated hash value of the object as inputs. The value of this field is the digital signature in base64 encoding [ RFC4648 ]. As  RFC 4648  specifies 2 base64 alphabets, you need to include section number. I think you meant Section 4 (and not Section 5).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-19 05:52:01-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-05-18 17:49:53-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-18 17:49:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-05-17 15:29:19-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-17 15:29:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-05-09 06:45:09-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-18 15:45:07-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-18 15:45:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-05-17 09:43:26-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-17 09:43:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-05-18 08:29:46-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-18 08:29:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-05-18 22:58:33-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-18 22:58:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-05-16 13:02:42-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-16 13:02:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-05-17 09:17:48-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-17 09:17:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-18 08:50:55-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-19 05:33:40-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-18 08:50:55-07:00",
+        "text": "I'd like to check one thing - this may be needed for strict compliance with RPKI thing but it seems kinda weird to also impose that here, but anyway... Is 3.2 step 1 needed?\u00a0 That seems like useless complexity here.\u00a0 If it is needed, how does the verifier check that it's really a single-use? I don't see the point TBH.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-19 05:33:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-05-17 19:19:21-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-17 19:19:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-17 20:37:41-07:00",
+        "end_reason": "new_position",
+        "start": "2016-05-09 06:45:09-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-18 21:08:30-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-17 20:37:41-07:00",
+        "text": "Thank you for putting substantial effort into this document. I have a few discusses. I hope they can be resolved quickly. In Section 2.1. The reference to the aligned certificate\u00a0 which has the same private key that signed the RPSL object is mandatory, and defined by a RSYNC URL or a HTTP(S) URL. My question surrounds the \"or\". The architecture of RPKI (IIRC) is centered around RSYNC, and thus SIA/AIA values MUST have a RSYNC URL, and MAY have other types. By this are you leaving it to the issuing party to control the RPKI Distribution mechanisms of the Replying Party? I am quite comfortable with \"or\" personally, however this facet of fetching the RPSL Certificate to validate the private key usage is seemingly orthogonal to the RPKI architecture of RSYNC preferred and should be called out if 'or' is the clear intention. Or, has the consensus of the WG moved on from being wedded to RSYNC? If it is truely \"or\", my observation is that the use of the RPKI repository is one of\u00a0 convenience, and that should be called out, in fact it does appear that any valid certificate bearing  RFC3779  extensions could be used to validate the digital signature associated with the RPSL object provided the relying party has trust anchor material that leads to the corresponding EE certificate and therefore private key. Is this observation correct? The Signature expiration time field (\"x\") currently has no time constraints, and I'm very surprised that it is optional with the text in s2.5, given that the expiration time, by my reading, could not be beyond the 'not after' time of the corresponding certificate. Can you please instruct me as to what the consensus position on this was? A criticism of many IRRs is that data becomes stale. have the signature expiration time field could aide in data freshness models and reduce load on automated import and validation of these RPSL signatures. And lastly, IRRs tend to run over the (legacy?) whois port 43 that doesn't provide channel layer security. This means that while signature provide a means of detecting modification it may not stop a a MiTM event where the entire object is omitted. Do you agree? if so that might be appropriate for the Security Considerations section.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-23 09:15:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-18 21:08:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7909",
+  "evaluation_end": "2016-05-23 09:15:40-07:00",
+  "evaluation_start": "2016-05-09 06:45:09-07:00"
+}

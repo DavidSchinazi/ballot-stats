@@ -1,0 +1,323 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-04-13 05:15:35-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-04-15 05:52:42-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-04-13 05:15:35-07:00",
+        "text": "Despite many objections to publishing this specification I believe we should run the experiment. I will vote \"Yes\" once DISCUSS-points are addressed. I would rather see this experiment being done and fail (or better - succeed), than to block publication of this document because it is not perfect. As per Sean Leonard/Ned Freed: There's also - as noted by Sean Leonard - a technical glitch in the current specification: The local-part is not the correct input to the hash function. A canonicalization step is needed because all of these addresses are equivalent: (1)  first.last@example.com (2) first . last @example.com (3) \"first.last\"@example.com (4) \"\\f\\i\\r\\s\\t.last\"@example.com (2) is equivalent to (1) because CWS has no semantics, (3) is equivalent to (1) because the enclosing quotes are not properly part of the address, and (4) is equivalent to (1) because quoted-pairs are semantically equivalent to just the quoted character.   I believe this is the entire list, so the obvious canonicalization to use on the local-part portion of an address prior to hashing is:   (a) If the local-part is unquoted remove any whitespace (CFWS) around \".\"s. (b) Remove any enclosing double quotes. (c) Remove any literal quoting.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-04-19 10:42:05-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-04-15 05:52:42-07:00",
+        "text": "NOTE to editors: I am in the process of editing this text. There might be a couple of extra DISCUSS points that I will add. I will send the updated version once done. And thank you for addressing my earlier comments in -09. Despite many objections to publishing this specification I believe we should run the experiment. I will vote \"Yes\" once DISCUSS-points are addressed. I would rather see this experiment being done and fail (or better - succeed), than to block publication of this document because it is not perfect. As per Sean Leonard/Ned Freed: There's also - as noted by Sean Leonard - a technical glitch in the current specification: The local-part is not the correct input to the hash function. A canonicalization step is needed because all of these addresses are equivalent: (1)  first.last@example.com (2) first . last @example.com (3) \"first.last\"@example.com (4) \"\\f\\i\\r\\s\\t.last\"@example.com (2) is equivalent to (1) because CWS has no semantics, (3) is equivalent to (1) because the enclosing quotes are not properly part of the address, and (4) is equivalent to (1) because quoted-pairs are semantically equivalent to just the quoted character.   I believe this is the entire list, so the obvious canonicalization to use on the local-part portion of an address prior to hashing is:   (a) If the local-part is unquoted remove any whitespace (CFWS) around \".\"s. (b) Remove any enclosing double quotes. (c) Remove any literal quoting.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-04-23 08:19:49-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-04-19 10:42:05-07:00",
+        "text": "NOTE to editors: Thank you for addressing my earlier comments in -09. If you need any more specific suggestions about text being added/deleted/updated, please let me know. Despite many objections to publishing this specification I believe we should run the experiment. I will vote \"Yes\" once DISCUSS-points are addressed. I would rather see this experiment being done and fail (or better - succeed), than to block publication of this document because it is not perfect. 1). As per Sean Leonard/Ned Freed: There's also - as noted by Sean Leonard - a technical glitch in the current specification: The local-part is not the correct input to the hash function. A canonicalization step is needed because all of these addresses are equivalent: (1)  first.last@example.com (2) first . last @example.com (3) \"first.last\"@example.com (4) \"\\f\\i\\r\\s\\t.last\"@example.com (2) is equivalent to (1) because CWS has no semantics, (3) is equivalent to (1) because the enclosing quotes are not properly part of the address, and (4) is equivalent to (1) because quoted-pairs are semantically equivalent to just the quoted character.   I believe this is the entire list, so the obvious canonicalization to use on the local-part portion of an address prior to hashing is:   (a) If the local-part is unquoted remove any whitespace (CFWS) around \".\"s. (b) Remove any enclosing double quotes. (c) Remove any literal quoting. 2). Ned Freed wrote: > First, there's no way to define a mapping of local-parts to a new set of > identifiers *without* effectively interpreting the local-part! If you define > the mapping as the draft currently does, implicit in that definition is that > local-parts are case-sensitive. And similarly, if you convert the local-part to > lower (or upper) case, you're now assuming the local-part is case-insensitive. > > And in the case of EAI, without some sort of normalization you're assuming that > different UTF-8 representations of the same string of characters correspond to > different recipients. (Which, as Harald Alvestrand and I both pointed out on > the IETF list, is technically untenable and needs to be addressed. My > suggestion was and is to specify that the same case-folding and normalization > algorithm used for IDNs also be employed here.) RFC 6532  and Section 10.1 of  RFC 6530  recommend using NFC Unicode Normalization Form. (This is similar to what IDN recommends, although there is no standard mapping there.) I think it would be reasonable for this document to say SHOULD apply NFC before hashing.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-04-27 06:42:05-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-04-23 08:19:49-07:00",
+        "text": "NOTE to editors: Thank you for addressing my earlier comments in -09 and -10. Despite many objections to publishing this specification I believe we should run the experiment. I will vote \"Yes\" once DISCUSS-points are addressed. I would rather see this experiment being done and fail (or better - succeed), than to block publication of this document because it is not perfect. Ned Freed wrote: > So when a domain owner publishes such records in the DNS, a reasonable way to > look at it is that they are effectively saying, \"Everyone is allowed to > interpret the local-parts of our addresses as specified in this document in > this one narrow context.\" I'm pretty confident there's nothing in any standard > that forbids such a delegation of authority. > > And once you realize this is what is going on, not only does it become clear > that this draft is *not* violating the longstanding rules about local-part > interpretation, it casts the decision not to normalize the local-parts to lower > (or upper) case in an entirely different light. By choosing not to normalize > this specification is effectively restricting its own applicability to domains > with case-sensitive local parts. That is, IMO, a highly suboptimal choice - the > overwhelming majority of domains treat the local part in a case-insensitive > fashion, and so should the mechanism specified in this draft. > > Or, to put this another way, the inherent limitations of using the DNS to > provide the mapping from address to PGP key restricts the domain of > applicability of this specification to domains with particular local-part > policies, and the way in which the local-part to DNS mapping is specified > determines which policies the specification supports. And while it seems > logical to support a policy that's known to be in wide use, the specification > also needs to be very clear that domains that employ case-sensitive local-parts > MUST NOT avail themselves of this mechanism. I don't think I agree on \"MUST NOT\" here, because I think an email owner can publish the preferred form (which can be lowercased) or even multiple common forms of the email address. E.g. I can publish DNS records for  alexey.melnikov@isode.com ,  Alexey.Melnikov@isode.com  and  ALEXEY.MELNIKOV@isode.com , but not others. > What needs to happen here is that the specification be revised to make it clear > that this is what is going on: That by publishing such records a domain is > granting a limited right to interpret the local parts of its addresses. I agree with this. A sentence or two on this would suffice.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-05-03 00:47:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-04-27 06:42:05-07:00",
+        "text": "NOTE to editors: Thank you for addressing my earlier comments in -09 and -10. Despite many objections to publishing this specification I believe we should run the experiment. I will vote \"Yes\" once DISCUSS-points are addressed. I would rather see this experiment being done and fail (or better - succeed), than to block publication of this document because it is not perfect. Ned Freed wrote: > So when a domain owner publishes such records in the DNS, a reasonable way to > look at it is that they are effectively saying, \"Everyone is allowed to > interpret the local-parts of our addresses as specified in this document in > this one narrow context.\" I'm pretty confident there's nothing in any standard > that forbids such a delegation of authority. > > And once you realize this is what is going on, not only does it become clear > that this draft is *not* violating the longstanding rules about local-part > interpretation, it casts the decision not to normalize the local-parts to lower > (or upper) case in an entirely different light. By choosing not to normalize > this specification is effectively restricting its own applicability to domains > with case-sensitive local parts. That is, IMO, a highly suboptimal choice - the > overwhelming majority of domains treat the local part in a case-insensitive > fashion, and so should the mechanism specified in this draft. > > Or, to put this another way, the inherent limitations of using the DNS to > provide the mapping from address to PGP key restricts the domain of > applicability of this specification to domains with particular local-part > policies, and the way in which the local-part to DNS mapping is specified > determines which policies the specification supports. And while it seems > logical to support a policy that's known to be in wide use, the specification > also needs to be very clear that domains that employ case-sensitive local-parts > MUST NOT avail themselves of this mechanism. I don't think I agree on \"MUST NOT\" here, because I think an email owner can publish the preferred form (which can be lowercased) or even multiple common forms of the email address. E.g. I can publish DNS records for  alexey.melnikov@isode.com ,  Alexey.Melnikov@isode.com  and  ALEXEY.MELNIKOV@isode.com , but not others. > What needs to happen here is that the specification be revised to make it clear > that this is what is going on: That by publishing such records a domain is > granting a limited right to interpret the local parts of its addresses. On a second thought, there is no obvious place to put this text. Besides, the document disallows mangling of local-parts, so \"granting a limited right to interpret\" doesn't mean much other than \"this email address might exist\". I agree with this. A sentence or two on this would suffice.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 00:47:08-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-04-20 14:45:41-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-20 14:45:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-04-20 03:18:05-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-20 03:18:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-04-20 12:29:18-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-20 12:29:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-04-20 09:55:47-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-20 09:55:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-04-21 03:14:51-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-21 03:14:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-04-20 17:45:12-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-20 17:45:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-04-13 06:32:13-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-13 06:32:13-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-04-20 09:37:57-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-20 09:37:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-03-19 05:16:24-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-04-20 20:55:26-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-20 20:55:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-04-19 18:00:11-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-19 05:16:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-09 10:34:29-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-19 18:00:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7929",
+  "evaluation_end": "2016-05-09 10:34:29-07:00",
+  "evaluation_start": "2016-03-19 05:16:24-07:00"
+}

@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2013-12-02 15:41:08-08:00",
+        "end_reason": "new_position",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-02 15:41:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-11-19 15:22:09-08:00",
+        "end_reason": "new_position",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-11-21 12:47:17-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-11-19 15:22:09-08:00",
+        "text": "I have not finished reviewing yet: I'm just about to start Section 10 as I post this, so I have well over 250 pages yet to read, and I'm sure I'll have many more comments.\u00a0 But I want to get some of this out here now, so the authors aren't entirely blindsided at the last minute.\u00a0 I also might ask that we defer this one telechat, though I'm holding off on that for now. What I have so far follows, in both the DISCUSS and COMMENT sections. ----------------------------------------------------------- 1. This first point is for some discussion with the responsible AD, and I'll clear it after we have that discussion: The grammar, punctuation, and English usage in Section 2 and its subsections is at times very hard to sort through. \u00a0I'm going to call out in the comments some bits that I found particularly troublesome, and will try to suggest alternatives. \u00a0I also suggest that the responsible AD put in an RFC Editor note asking the editors to pay particular attention here and to give it some heavy editing for language clarity. \u00a0This is a complex document, and a good overview in clear English will really help. 2. This point falls into the \"URI/IRI follies\" category: -- Section 3.2 -- \u00a0 \u00a0IRI: \u00a0Internationalized Resource Identifier, is the same as a URI, \u00a0 \u00a0 \u00a0 with the exception that it allows characters from the whole Oh, my; please don't say that it's \"the same as a URI\". \u00a0It'd be reasonable to say \"is similar to a URI, but allows characters [etc].\" -- Section 4.2 -- \u00a0 \u00a0The RTSP URI and IRI are case sensitive, with the exception of those \u00a0 \u00a0parts that [ RFC3986 ] and [ RFC3987 ] define as case-insensitive; for \u00a0 \u00a0example, the scheme and host part. Clumping URIs and IRIs together in such a vague way with respect to case mapping is a dangerous thing.\u00a0 And unless there's a particular reason to say otherwise, it's easy to avoid that by specifically saying that the scheme and host parts are the *only* case-sensitive bits (which is true of generic URIs and IRIs anyway).\u00a0 Is there really a reason not to be clearer, this way?: NEW \u00a0  The \"scheme\" and \"host\" parts of all URIs [ RFC3986 ] and IRIs [ RFC3987 ] \u00a0  are case-insensitive.\u00a0 All other parts of RTSP URIs and IRIs are case- \u00a0  sensitive, and SHOULD NOT be case-mapped. END 3. The paragraph in Section 4.4.2 that explains npt-hhmmss notation and npt-sec notation has some internal inconsistencies that have to be fixed.\u00a0 See my suggestions in the comments section below, which goes beyond the blocking point (the inconsistency) and tries to make the paragraph more readable as well. 4. I'm disturbed by this combination in Section 9.2: it appears that Content-Encoding is optional (the first paragraph doesn't say it MUST be included, and the second paragraph uses lower-case-\"may\" to describe its inclusion), but the second paragraph says that there is no default encoding.\u00a0 So what does it mean to have a message body with no Content-Encoding header?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-11-21 13:02:25-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-11-21 12:47:17-08:00",
+        "text": "I have not finished reviewing yet: I'm just about to start Section 10 as I post this, so I have well over 250 pages yet to read, and I'm sure I'll have many more comments.\u00a0 But I want to get some of this out here now, so the authors aren't entirely blindsided at the last minute.\u00a0 I also might ask that we defer this one telechat, though I'm holding off on that for now. What I have so far follows, in both the DISCUSS and COMMENT sections. ----------------------------------------------------------- 1. This point falls into the \"URI/IRI follies\" category: -- Section 3.2 -- \u00a0 \u00a0IRI: \u00a0Internationalized Resource Identifier, is the same as a URI, \u00a0 \u00a0 \u00a0 with the exception that it allows characters from the whole Oh, my; please don't say that it's \"the same as a URI\". \u00a0It'd be reasonable to say \"is similar to a URI, but allows characters [etc].\" -- Section 4.2 -- \u00a0 \u00a0The RTSP URI and IRI are case sensitive, with the exception of those \u00a0 \u00a0parts that [ RFC3986 ] and [ RFC3987 ] define as case-insensitive; for \u00a0 \u00a0example, the scheme and host part. Clumping URIs and IRIs together in such a vague way with respect to case mapping is a dangerous thing.\u00a0 And unless there's a particular reason to say otherwise, it's easy to avoid that by specifically saying that the scheme and host parts are the *only* case-sensitive bits (which is true of generic URIs and IRIs anyway).\u00a0 Is there really a reason not to be clearer, this way?: NEW \u00a0  The \"scheme\" and \"host\" parts of all URIs [ RFC3986 ] and IRIs [ RFC3987 ] \u00a0  are case-insensitive.\u00a0 All other parts of RTSP URIs and IRIs are case- \u00a0  sensitive, and SHOULD NOT be case-mapped. END 2. The paragraph in Section 4.4.2 that explains npt-hhmmss notation and npt-sec notation has some internal inconsistencies that have to be fixed.\u00a0 See my suggestions in the comments section below, which goes beyond the blocking point (the inconsistency) and tries to make the paragraph more readable as well. 3. I'm disturbed by this combination in Section 9.2: it appears that Content-Encoding is optional (the first paragraph doesn't say it MUST be included, and the second paragraph uses lower-case-\"may\" to describe its inclusion), but the second paragraph says that there is no default encoding.\u00a0 So what does it mean to have a message body with no Content-Encoding header?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-11-30 15:16:47-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-11-21 13:02:25-08:00",
+        "text": "I have not finished reviewing yet: I'm just about to start Section 10 as I post this, so I have well over 250 pages yet to read, and I'm sure I'll have many more comments.\u00a0 But I want to get some of this out here now, so the authors aren't entirely blindsided at the last minute.\u00a0 I also might ask that we defer this one telechat, though I'm holding off on that for now. What I have so far follows, in both the DISCUSS and COMMENT sections. ----------------------------------------------------------- 1. This point falls into the \"URI/IRI follies\" category: -- Section 3.2 -- \u00a0 \u00a0IRI: \u00a0Internationalized Resource Identifier, is the same as a URI, \u00a0 \u00a0 \u00a0 with the exception that it allows characters from the whole Oh, my; please don't say that it's \"the same as a URI\". \u00a0It'd be reasonable to say \"is similar to a URI, but allows characters [etc].\" -- Section 4.2 -- \u00a0 \u00a0The RTSP URI and IRI are case sensitive, with the exception of those \u00a0 \u00a0parts that [ RFC3986 ] and [ RFC3987 ] define as case-insensitive; for \u00a0 \u00a0example, the scheme and host part. Clumping URIs and IRIs together in such a vague way with respect to case mapping is a dangerous thing.\u00a0 And unless there's a particular reason to say otherwise, it's easy to avoid that by specifically saying that the scheme and host parts are the *only* case-sensitive bits (which is true of generic URIs and IRIs anyway).\u00a0 Is there really a reason not to be clearer, this way?: NEW \u00a0  The \"scheme\" and \"host\" parts of all URIs [ RFC3986 ] and IRIs [ RFC3987 ] \u00a0  are case-insensitive.\u00a0 All other parts of RTSP URIs and IRIs are case- \u00a0  sensitive, and SHOULD NOT be case-mapped. END 2. The paragraph in Section 4.4.2 that explains npt-hhmmss notation and npt-sec notation has some internal inconsistencies that have to be fixed.\u00a0 See my suggestions in the comments section below, which goes beyond the blocking point (the inconsistency) and tries to make the paragraph more readable as well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-11-30 15:17:55-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-11-30 15:16:47-08:00",
+        "text": "I have not finished reviewing yet: I'm just about to start Section 10 as I post this, so I have well over 250 pages yet to read, and I'm sure I'll have many more comments.\u00a0 But I want to get some of this out here now, so the authors aren't entirely blindsided at the last minute.\u00a0 I also might ask that we defer this one telechat, though I'm holding off on that for now. UPDATED: I have finished Section 10, and am starting Section 11.\u00a0 I'm adding the comments from Section 10 here, which include a couple of new DISCUSS points. What I have so far follows, in both the DISCUSS and COMMENT sections. ----------------------------------------------------------- 1. This point falls into the \"URI/IRI follies\" category: -- Section 3.2 -- \u00a0 \u00a0IRI: \u00a0Internationalized Resource Identifier, is the same as a URI, \u00a0 \u00a0 \u00a0 with the exception that it allows characters from the whole Oh, my; please don't say that it's \"the same as a URI\". \u00a0It'd be reasonable to say \"is similar to a URI, but allows characters [etc].\" -- Section 4.2 -- \u00a0 \u00a0The RTSP URI and IRI are case sensitive, with the exception of those \u00a0 \u00a0parts that [ RFC3986 ] and [ RFC3987 ] define as case-insensitive; for \u00a0 \u00a0example, the scheme and host part. Clumping URIs and IRIs together in such a vague way with respect to case mapping is a dangerous thing.\u00a0 And unless there's a particular reason to say otherwise, it's easy to avoid that by specifically saying that the scheme and host parts are the *only* case-sensitive bits (which is true of generic URIs and IRIs anyway).\u00a0 Is there really a reason not to be clearer, this way?: NEW \u00a0  The \"scheme\" and \"host\" parts of all URIs [ RFC3986 ] and IRIs [ RFC3987 ] \u00a0  are case-insensitive.\u00a0 All other parts of RTSP URIs and IRIs are case- \u00a0  sensitive, and SHOULD NOT be case-mapped. END 2. The paragraph in Section 4.4.2 that explains npt-hhmmss notation and npt-sec notation has some internal inconsistencies that have to be fixed.\u00a0 See my suggestions in the comments section below, which goes beyond the blocking point (the inconsistency) and tries to make the paragraph more readable as well. -- Section 10.5 -- \u00a0  The mechanisms for showing liveness of the client is, any RTSP \u00a0  request with a Session header, if RTP & RTCP is used an RTCP message, \u00a0  or through any other used media protocol capable of indicating \u00a0  liveness of the RTSP client. The grammar and punctuation in that sentence is so fractured that I haven't the first idea what it means.\u00a0 It needs to be re-worded, and I can't help. \u00a0  SET_PARAMETER:\u00a0 When using SET_PARAMETER for keep-alive, a body \u00a0 \u00a0 \u00a0 \u00a0  SHOULD NOT be included.\u00a0 This method is the RECOMMENDED RTSP \u00a0 \u00a0 \u00a0 \u00a0  method to use for a request intended only to perform keep- \u00a0 \u00a0 \u00a0 \u00a0  alive. But a short bit above, in Section 10.4, you say this: \u00a0  The keep-alive request will normally \u00a0  be a GET_PARAMETER with a session header to inform the server that \u00a0  this agent cares about this RTSP session. If SET_PARAMETER is what's RECOMMENDED, then why do you say that it \"will normally be\" GET_PARAMETER?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2013-12-01 14:35:02-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2013-11-30 15:17:55-08:00",
+        "text": "I have not finished reviewing yet: I'm just about to start Section 10 as I post this, so I have well over 250 pages yet to read, and I'm sure I'll have many more comments.\u00a0 But I want to get some of this out here now, so the authors aren't entirely blindsided at the last minute.\u00a0 I also might ask that we defer this one telechat, though I'm holding off on that for now. UPDATED: I have finished Section 10, and am starting Section 11.\u00a0 I'm adding the comments from Section 10 here, which include a couple of new DISCUSS points. What I have so far follows, in both the DISCUSS and COMMENT sections. ----------------------------------------------------------- 1. This point falls into the \"URI/IRI follies\" category: -- Section 3.2 -- \u00a0 \u00a0IRI: \u00a0Internationalized Resource Identifier, is the same as a URI, \u00a0 \u00a0 \u00a0 with the exception that it allows characters from the whole Oh, my; please don't say that it's \"the same as a URI\". \u00a0It'd be reasonable to say \"is similar to a URI, but allows characters [etc].\" -- Section 4.2 -- \u00a0 \u00a0The RTSP URI and IRI are case sensitive, with the exception of those \u00a0 \u00a0parts that [ RFC3986 ] and [ RFC3987 ] define as case-insensitive; for \u00a0 \u00a0example, the scheme and host part. Clumping URIs and IRIs together in such a vague way with respect to case mapping is a dangerous thing.\u00a0 And unless there's a particular reason to say otherwise, it's easy to avoid that by specifically saying that the scheme and host parts are the *only* case-sensitive bits (which is true of generic URIs and IRIs anyway).\u00a0 Is there really a reason not to be clearer, this way?: NEW \u00a0  The \"scheme\" and \"host\" parts of all URIs [ RFC3986 ] and IRIs [ RFC3987 ] \u00a0  are case-insensitive.\u00a0 All other parts of RTSP URIs and IRIs are case- \u00a0  sensitive, and SHOULD NOT be case-mapped. END 2. The paragraph in Section 4.4.2 that explains npt-hhmmss notation and npt-sec notation has some internal inconsistencies that have to be fixed.\u00a0 See my suggestions in the comments section below, which goes beyond the blocking point (the inconsistency) and tries to make the paragraph more readable as well. 3. Two bits in Section 10.5: \u00a0  The mechanisms for showing liveness of the client is, any RTSP \u00a0  request with a Session header, if RTP & RTCP is used an RTCP message, \u00a0  or through any other used media protocol capable of indicating \u00a0  liveness of the RTSP client. The grammar and punctuation in that sentence is so fractured that I haven't the first idea what it means.\u00a0 It needs to be re-worded, and I can't help. \u00a0  SET_PARAMETER:\u00a0 When using SET_PARAMETER for keep-alive, a body \u00a0 \u00a0 \u00a0 \u00a0  SHOULD NOT be included.\u00a0 This method is the RECOMMENDED RTSP \u00a0 \u00a0 \u00a0 \u00a0  method to use for a request intended only to perform keep- \u00a0 \u00a0 \u00a0 \u00a0  alive. But a short bit above, in Section 10.4, you say this: \u00a0  The keep-alive request will normally \u00a0  be a GET_PARAMETER with a session header to inform the server that \u00a0  this agent cares about this RTSP session. If SET_PARAMETER is what's RECOMMENDED, then why do you say that it \"will normally be\" GET_PARAMETER?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-01-22 03:07:54-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-12-01 14:35:02-08:00",
+        "text": "UPDATED: I have not finished reviewing yet: I'm just about to start Section 14 as I post this. I'm sure I'll have many more comments, but I want to get some of this out here now, so the authors aren't entirely blindsided at the last minute. What I have so far follows, in both the DISCUSS and COMMENT sections. ----------------------------------------------------------- 1. This point falls into the \"URI/IRI follies\" category: -- Section 3.2 -- \u00a0 \u00a0IRI: \u00a0Internationalized Resource Identifier, is the same as a URI, \u00a0 \u00a0 \u00a0 with the exception that it allows characters from the whole Oh, my; please don't say that it's \"the same as a URI\". \u00a0It'd be reasonable to say \"is similar to a URI, but allows characters [etc].\" -- Section 4.2 -- \u00a0 \u00a0The RTSP URI and IRI are case sensitive, with the exception of those \u00a0 \u00a0parts that [ RFC3986 ] and [ RFC3987 ] define as case-insensitive; for \u00a0 \u00a0example, the scheme and host part. Clumping URIs and IRIs together in such a vague way with respect to case mapping is a dangerous thing.\u00a0 And unless there's a particular reason to say otherwise, it's easy to avoid that by specifically saying that the scheme and host parts are the *only* case-sensitive bits (which is true of generic URIs and IRIs anyway).\u00a0 Is there really a reason not to be clearer, this way?: NEW \u00a0  The \"scheme\" and \"host\" parts of all URIs [ RFC3986 ] and IRIs [ RFC3987 ] \u00a0  are case-insensitive.\u00a0 All other parts of RTSP URIs and IRIs are case- \u00a0  sensitive, and SHOULD NOT be case-mapped. END 2. The paragraph in Section 4.4.2 that explains npt-hhmmss notation and npt-sec notation has some internal inconsistencies that have to be fixed.\u00a0 See my suggestions in the comments section below, which goes beyond the blocking point (the inconsistency) and tries to make the paragraph more readable as well. 3. Two bits in Section 10.5: \u00a0  The mechanisms for showing liveness of the client is, any RTSP \u00a0  request with a Session header, if RTP & RTCP is used an RTCP message, \u00a0  or through any other used media protocol capable of indicating \u00a0  liveness of the RTSP client. The grammar and punctuation in that sentence is so fractured that I haven't the first idea what it means.\u00a0 It needs to be re-worded, and I can't help. \u00a0  SET_PARAMETER:\u00a0 When using SET_PARAMETER for keep-alive, a body \u00a0 \u00a0 \u00a0 \u00a0  SHOULD NOT be included.\u00a0 This method is the RECOMMENDED RTSP \u00a0 \u00a0 \u00a0 \u00a0  method to use for a request intended only to perform keep- \u00a0 \u00a0 \u00a0 \u00a0  alive. But a short bit above, in Section 10.4, you say this: \u00a0  The keep-alive request will normally \u00a0  be a GET_PARAMETER with a session header to inform the server that \u00a0  this agent cares about this RTSP session. If SET_PARAMETER is what's RECOMMENDED, then why do you say that it \"will normally be\" GET_PARAMETER? 4. In Section 11.1: \u00a0  Thus following all normative parts in the main sections (the \u00a0  ones with numbers), but omitting the appendices (starting with \u00a0  letters), unless explicitly specified in a main section as being a \u00a0  required appendix. This is not a complete sentence, so I can't figure it out.\u00a0 What do you mean to say here?\u00a0 You appear to be making some statement about the applicability of the document as a whole, yet that statement is buried down in Section 11.1.\u00a0 After turning this into a proper sentence, you might (depending upon what it really is that you're saying) need to promote it to someplace where it's earlier on and more obvious. On the section as a whole, and the meaning of the play.basic feature-tag: Am I to understand that this feature-tag is basically used to say, \"I support the basic spec for RTSP 2.0.\" ?\u00a0 If so, that can (and should) be said a lot more clearly, directly, and succinctly.\u00a0 If that's not right, then this section probably needs to be clearer anyway, because it means I'm not getting it. 5. In Section 13.3: \u00a0  There is also a third possible \u00a0  usage for the SETUP method which is not specified in this memo: \u00a0  adding a media to a session.\u00a0 Using SETUP to add media to an existing \u00a0  session, when the session is in Play state, is unspecified. I don't understand what this is trying to say.\u00a0 If there's a third legitimate use, why does this document mention it, but \"not specify\" it?\u00a0 What does it mean for it to be \"unspecified\"?\u00a0 Is using SETUP to add media to an existing session that's in Ready state specified?\u00a0 Where? There are other places where you say that something \"is unspecified\" (later in 13.3, for example, \"The SETUP of media streams in an aggregate which has not been given an aggregated control URI is unspecified.\"): in general, what does that mean?\u00a0 Does it mean it's not permitted?\u00a0 Does it mean that it *is* permitted, but you don't specify how it works?\u00a0 Or what?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-22 03:07:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-03 05:51:15-08:00",
+        "end_reason": "new_position",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-02-03 05:51:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Gonzalo Camarillo": [
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2013-10-30 01:31:11-07:00",
+        "end_reason": "new_position",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Gonzalo Camarillo",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2013-11-20 10:23:35-08:00",
+        "end_reason": "new_position",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-11-20 10:23:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2013-12-02 22:15:47-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-02 22:15:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2013-11-18 01:00:52-08:00",
+        "end_reason": "new_position",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-11-18 01:00:52-08:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2013-12-04 20:40:41-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-04 20:40:41-08:00",
+        "text": "I have reviewed as much as I reasonably could. This first comment is more for the IESG than the authors; I don't think the authors can really do anything about this now: I have a really hard time believing that a document of this size could possibly be independently implementable. There is simply no way that this document got the kind of review by enough eyeballs to be able to claim it is \"generally stable, has resolved known design choices, is believed to be well-understood, has received significant community review, and appears to enjoy enough community interest to be considered valuable.\" And the fact that there is only one implementation of this does not give me confidence. Robert's GenArt review makes it clear that, due to the length and structure of the document, he has concerns about interoperable implementation. Elwyn did\u00a0 a yeoman's job in his GenArt review, and though he is satisfied that his concerns were addressed, there are still many significant issues: Barry also did a detailed review and has found several problems, and I've got more below. We know that secdir did not do a comprehensive review of this document. I have done a review of this spec at high speed, and therefore at a completely cursory level, and I know that other ADs are in the same boat. I feel that spending the time that would really be needed for a full review would be unfair to other important documents. I don't know how this thing was left to continue for 11 years, to go from an already hefty 90 page document at -00 to this 320 page monstrosity, without it being stopped earlier and at least broken into pieces.\u00a0 Even the document writeup indicates that later versions have not seen WG participation, that the authors have really been the only ones tracking it recently, and that the only thing that can be claimed is \"no indication of lack of consensus\"; that's not exactly a ringing endorsement. I don't know how, in good conscience, the IESG can move this document forward as representing the consensus of the WG, let alone the consensus of the IETF as a whole. It seems to me that the process failed long ago for this document. And I don't know what, if anything, we can do about it at this point. Substantive comments: Section 1: Strike, \", similar to the remote control for a DVD player\" and \", as known from DVD players remote control or media players\". They're anachronistic. In the discussion of changes from 1.0, I would mention that greenfield implementations should use 2.0 since 1.0 is incomplete. Section 2.6: \"however, it is recommended to release the session context\". The client or the server? I hope \"it is recommended that the client release the session context\". I hate when servers tear down sessions even when I am sending a keep-alive. The server may certainly tear it down if it needs the resources, but the document shouldn't recommend that it be torn down. Section 10.2: \u00a0  The RTSP agent SHALL NOT use more than one \u00a0  connection per RTSP session at any given point. The explanation given later does not justify the SHALL NOT. It certainly is useful for the server to only use a single connection, but I see no justification for the REQUIREment. \u00a0  A server that attempts to send a \u00a0  request to a client that has no connection currently to the server \u00a0  SHALL discard the request directly. I don't know what the word \"directly\" means here. Can you simply strike it, or is it meaningful? Sections 14-16: These seem more like appendices or a separate document rather than part of the main protocol. Section 16: This section uses the \"we\" convention from academic papers. This is distracting and a strange affectation. Please change to \"This document\", or in some cases simply rewrite the sentence. Section 17.1: Title should be \"Continue\", not \"Success\". Section 17.3: '3rr' is used to distinguish it from HTTP usage of '3xx'? If so, you should say that. Don't all 3rr responses require a Location? If so, put that instruction here, not in 17.3.3. Also, the generic instruction to use 302 for unknown 3rr is probably better here rather than in 17.3.1. Section 18.20: \"The initial sequence number MAY be any number, however, it is RECOMMENDED to start at 0.\" That MAY is wrong. Change to \"can\". Section 18.21: You say that you are using \"a full date as specified by Section 3.3 of [ RFC5322 ]\". I presume that you are *not* including the obsolete syntax. You should probably say that explicitly. However, the 5322 3.3 syntax without the obsolete forms does not allow for the alphabetic time zones like \"GMT\". It only permits the numeric time zones. If you really want to do that, you should change the examples in throughout the document to \"+0000\". Otherwise, you could explicitly allow obs-zone, but not the rest. Also, be aware that 5322 3.3 syntax is allowed to end with CFWS. Are you OK with that? (Note again: I did not scrub the ABNF. These are only the things I found from a quick review.) Section 20.1: Is there a reason for not just importing the 5234 core rules? \u00a0  UTF8-NONASCII\u00a0 \u00a0 = UTF8-1 / UTF8-2 / UTF8-3 / UTF8-4 \u00a0  UTF8-1\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  =  That's wrong. You want to strike UTF8-1 and just say: \"UTF8-NONASCII = UTF8-2 / UTF8-3 / UTF8-4\" UTF8-CONT is unnecessary. You should use UTF8-tail, which is defined in 3629. The only two places it appears are in header-value (more on that below) and in Appendix F, which should be using the UTF8-NONASCII syntax from here, not re-creating it. Section 20.2.1: Do you really want header-value to have UTF8-CONT freely distributed? That seems wrong. I think UTF8-CONT probably should be struck. (If you want to allow any octet, not part of a UTF-8 sequence, and not ASCII controls, use TEXT instead.) Section 22: I find 2119 in IANA Considerations sections problematic. There shouldn't be 2119 requirements on IANA, and they are silly uses of the words when applied to registrants or expert reviewers; in all cases, they simply allow this document to avoid saying who is responsible for enforcing the rule. Please get rid of them throughout this section and its subsections, and make it clear whether \"IANA needs to collect the following information\" or \"Section XYZ of this document requires that the entry is of such and so format\" or \"Registrants are asked to do blah blah blah\" or \"Expert Reviewers should confirm that the following information is in the registration\", etc. Specific changes in the main Section 22: OLD \u00a0  it MUST follow the procedure NEW \u00a0  registrants need to follow the procedure OLD \u00a0  A registration request to IANA MUST contain the following \u00a0  information: NEW \u00a0  IANA needs to obtain the following information for any \u00a0  registration request: (This one is especially silly because some of the items are not actually required.) Section 22.1.2: - Capitalize \"first come, first served\", and perhaps cite 5226. - You cannot have a SHOULD on the length of the name on a FCFS registry. IANA has no way to decide exceptions to such a rule. Either make a maximum length, or don't. - The reference to \"first part\" of the feature-tag doesn't make sense as syntactically feature-tags don't have parts. I suggest something like this as a rewrite for the second paragraph: \u00a0  The registry entry for a feature-tag has the following information: \u00a0   \u00a0 \u00a0 \u00a0 - The name of the feature-tag \u00a0 \u00a0 \u00a0 \u00a0  - If the registrant indicates that the feature is proprietary, \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  IANA should request a vendor \"prefix\" portion of the name. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  The name will then be the vendor prefix followed by a \".\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  followed by the rest of the provided feature name. \u00a0 \u00a0 \u00a0 \u00a0  - If the feature is not proprietary, then IANA need not \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  collect a prefix for the name. \u00a0 \u00a0 \u00a0 - A one paragraph description of what the feature-tag represents \u00a0 \u00a0 \u00a0 - The applicability (server, client, proxy, or some combination) \u00a0 \u00a0 \u00a0 - A reference to a specification, if applicable \u00a0   \u00a0  Feature-tag names (including the vendor prefix) may contain any \u00a0  non-space and non-control characters. There is no length limit \u00a0  on feature-tags, though registrants may want to limit their \u00a0  length to twenty characters because...? [Etc.] Section 22.2.2: Strike the MUSTs and the SHOULD. The first sentence should simply be \"The registration policy for new RTSP methods is Standards Action [ RFC5226 ].\" Please have a go of fixing these kinds of issues throughout Section 22. Appendix F: OLD \u00a0  TEXT-UTF8char\u00a0 \u00a0 =\u00a0 %x21-7E / UTF8-NONASCII \u00a0  UTF8-NONASCII\u00a0 \u00a0 =\u00a0 %xC0-DF 1UTF8-CONT \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 /\u00a0 %xE0-EF 2UTF8-CONT \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 /\u00a0 %xF0-F7 3UTF8-CONT \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 /\u00a0 %xF8-FB 4UTF8-CONT \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 /\u00a0 %xFC-FD 5UTF8-CONT \u00a0  UTF8-CONT\u00a0 \u00a0 \u00a0 \u00a0 =\u00a0 %x80-BF NEW \u00a0  TEXT-UTF8char\u00a0 \u00a0 =\u00a0 ",
+        "type": "Abstain"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2013-12-04 19:54:57-08:00",
+        "end_reason": "new_position",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-04 19:54:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Sean Turner": [
+      {
+        "ad": "Sean Turner",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2013-12-04 10:29:49-08:00",
+        "end_reason": "new_position",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-12-04 10:29:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2013-12-05 03:53:44-08:00",
+        "end_reason": "new_position",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-01-28 17:30:08-08:00",
+        "end_reason": "position_updated",
+        "start": "2013-12-05 03:53:44-08:00",
+        "text": "I didn't look back at 2326 since the diff wasn't really useful so feel free to ignore any comment that would equally apply to the earlier RFC.  The security considerations section for the bis draft is very thorough thanks! But I still have a few things I'd like to discuss (sorry;-). Discuss point #1 is the main thing though, if we resolve that, then the others should be easy to clear up. (1) 21.1 - \"transfer of sensitive information\" - I think you need to say here that RTSP *is* less sensitive than HTTP and that's why its ok to have the hop-by-hop scheme. HTTP is more sensitive because users commonly input or read much more sensitive information in HTTP exchanges, e.g.\u00a0 HTTP requests often contain passwords, cookies, cardholder data and responses often contain bank account details, healthcare data, none of which is transported via RTSP. If that is true, then the hop-by-hop scheme is much more reasonable and saying so is important and should help clear my discuss much more easliy. If that is not true (i.e. if really sensitive user information is commonly sent via RTSP) then we need to talk more. (2) 15 - \"This proxy can also limit the client's access to certain types of content.\" That's not a security function but really a censorship function, at least as stated. I suggest deleting the sentence, or changing it to one that's suitable. (3) 18.8 - is this saying that a 2nd request for the same thing won't need to be authenticated even if that was required for the first request? If not, that's not clear to me. (4) 19 - Why is there no equivalent of HTTP CONNECT for TLS?\u00a0 It seems like the choices are to either connect directly over TLS to the origin server or else to have to use a proxy that sees all the plaintext and headers. (5) 19.2 - 2nd last para: Why don't you use SNI here? Just wondering, but it'd fix a problem if it worked. (6) 19.3 - I think you need to say here (or somewhere) that all TLS \"hops\" MUST have commensurate security. (7) 19.3.2 - how is a user supposed to practically \"approve\" a proxy with just e.g. an IP address?\u00a0 That seems meaningless. (8) 21.1 - Location headers and spoofing - I don't get how the \"if\" that preceeds the MUST here can be implemented.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-01-28 17:30:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stewart Bryant": [
+      {
+        "ad": "Stewart Bryant",
+        "end": "2013-11-20 09:36:28-08:00",
+        "end_reason": "new_position",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stewart Bryant",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-11-20 09:36:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-02-11 07:58:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2013-10-30 01:31:11-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc7826",
+  "evaluation_end": "2014-02-11 07:58:07-08:00",
+  "evaluation_start": "2013-10-30 01:31:11-07:00"
+}

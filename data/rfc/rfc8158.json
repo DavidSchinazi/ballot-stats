@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-11-24 22:41:01-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-24 22:41:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-11-30 09:22:18-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-01-17 04:59:23-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-11-30 09:22:18-08:00",
+        "text": "This should be a quick issue to handle, but given that there is no language describing what a low threshold event is, I think it needs to be a Discuss. Sec 5.5 & Table 4:\u00a0 I see that only the address pool has a low threshold event.\u00a0 There is no text describing what this means\u00a0 or how to handle it.\u00a0 Also, why does only the address pool need the low threshold event and not the other resources?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-17 04:59:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-11-30 09:58:33-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-30 09:58:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-11-29 11:34:19-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-29 11:34:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-11-29 20:59:28-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-29 20:59:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-12-01 06:01:15-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-12-13 13:44:45-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-12-01 06:01:15-08:00",
+        "text": "\u00a0  Prior to logging any events, the NAT device MUST send the template of \u00a0  the record to the collector to advertise the format of the data \u00a0  record that it is using to send the events.\u00a0 The templates can be \u00a0  exchanged as frequently as required given the reliability of the \u00a0  connection.\u00a0 There SHOULD be a configurable timer for controlling the \u00a0  template refresh.\u00a0 The IPFIX template management is described in \u00a0  detail in Section 8 of [ RFC7011 ].\u00a0  Not sure what these sentence add (except maybe the last one), as it's part of the IPFIX specs. It's even confusing: what if the IPFIX specs in this document are not inline with the  RFC7011  specs (we could debate: he templates can be exchanged as frequently as required given the reliability of the connection) ? Do you need more that: MUST follow the IPFIX specs? Btw, I have not seen this sentence. The closest one is:  \u00a0  This document assumes that the NAT device will use the existing IPFIX \u00a0  framework to send the log events to the collector.  However, even if not clearly mentioned, I believe your goal is to specify information elements and related encoding, and no specific \"export protocol\" (IPFIX or syslog). Is that right? If yes, then you probably want: \u00a0  if the export protocol is IPFIX, this draft MUST follow the IPFIX specs [ RFC7011 ] Kind of obvious I admit. However, right now, your draft is not clear: a little bit of rewritten IPFIX specs, but not all and no clear link to  RFC7011 What does the following SHOULD want to say: \u00a0  However, the information that is logged \u00a0  SHOULD be the same irrespective of what kind of encoding scheme is \u00a0  used.  - I agree with Jari's DISCUSS. You have some semantic for these \"events\". What if some of the fields are not present. What is the consequence on the implied semantic. For an example, look at  RFC 5476 :  https://tools.ietf.org/html/rfc5476#section-6.5",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-12-13 13:44:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-11-30 13:10:47-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-30 13:10:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-12-01 01:37:44-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-02-22 13:16:26-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-12-01 01:37:44-08:00",
+        "text": "Thanks for this document. I will recommend its publication as an RFC shortly, after we complete the following discussion: Paul's Gen-ART review comments should be looked at and responded to. I'm going to raise one particular issue that in my view needs fixing. The language at the beginning of Section 5.6 gives some room for flexibility in what IEs to include in specific implementations, but it isn't clear how that relates to the mandatory/optional information provided in later tables. Can you clarify?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-22 13:16:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-11-30 11:13:31-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-30 11:13:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-11-22 09:14:54-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-22 09:14:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-10-10 19:28:10-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-12-01 04:45:46-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-12-20 04:41:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-12-01 04:45:46-08:00",
+        "text": "(1) This document has been on the go for 6 years and was a WG document for a while before behave closed. In all that time did anybody consider whether or not we ought define different modes of logging, with different privacy implications, as suggested e.g. in Kathleen's comments - one could have a normal/default mode that's typically used and more privacy friendly, and an \"I might be under attack\" mode that's more intrusive but useful in such situations? If not, why was that not considered given that CGN logging can be very intrusive and is open to some forms of abuse? (Note that I'm not asserting that such modes absolutely need to be visible in the RFC, I'm asking was that considered.) (2) In an overall system that uses this kind of logging, how would one control the duration for which events are stored? Would or should that need to be visible in this e.g. in a template? I figure the answer is probably no, but just wanted to check in case we ought be defining an IE for \"max. retention duration\" here or something similar that might be needed e.g. if different cross-border requirements applied to CGN boxes in different jurisdictions using one log service. (This is only a discuss because if it were missing, it might be hard to introduce later.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-12-20 04:41:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-11-29 19:32:26-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-12-14 20:04:07-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-11-29 19:32:26-08:00",
+        "text": "* Section 5.6.7.5 The rationale for making the sourceIPv6 address mandatory and\u00a0 sourceIPv4 address not mandatory for NAT64s is not clear to me. I am assuming the translator is reassembling packets to meet the REQ-14 \"Received Fragment Out of Order\" behavior of  RFC4787 . In this case the fragmented packets could be received from either direction, right? A fragmented return packet from the IPv4 domain can cause this issue and in this case the source IPv4 address would be useful to have.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-12-14 20:04:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-11-30 09:26:04-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-10 19:28:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-02-22 15:34:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-30 09:26:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8158",
+  "evaluation_end": "2017-02-22 15:34:29-08:00",
+  "evaluation_start": "2016-10-10 19:28:10-07:00"
+}

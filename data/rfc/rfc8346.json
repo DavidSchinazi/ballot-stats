@@ -1,0 +1,319 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-01-17 08:35:50-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-17 08:35:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-01-16 17:01:36-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-01-18 08:01:29-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-18 08:01:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-01-18 13:52:08-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-18 13:52:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-12-13 19:12:24-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 19:12:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-01-19 03:22:42-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-09-27 07:39:55-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-01-19 03:22:42-08:00",
+        "text": "1. The examples. In the AUTH48 for the RESTCONF RFC, the example YANG module discussion came up (again).\u00a0 And the examples in  draft-ietf-i2rs-yang-l3-topology  were also discussed. Here is the feedback from one YANG doctor, from a couple of days ago. Look at this: \u00a0  module example-ietf-ospf-topology { \u00a0 \u00a0  ... \u00a0 \u00a0  namespace \u00a0 \u00a0 \u00a0  \"urn:ietf:params:xml:ns:yang:example-ietf-ospf-topology\"; \u00a0 \u00a0  ... \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0  \"This module defines a model for OSPF network topologies. \u00a0 \u00a0 \u00a0 \u00a0 Copyright (c) 2017 IETF Trust and the persons identified as \u00a0 \u00a0 \u00a0 \u00a0 authors of the code.  They are using the IANA-controlled namespace w/o registering it. This module *really* looks like a proper normative module, rather than an example.\u00a0 They went to far in trying to mimic a real module. It is clear that we need more guidelines in 6087 for how to write example modules. I was going to ask if this module passed YANG doctor review - then I checked and saw that version -02 was reviewed, which didn't include this example.\u00a0 How should we (the YANG doctors) handle such a case? In this case they should: \u00a0 1.\u00a0 change the name to example-ospf-topology \u00a0 2.\u00a0 change the namespace to urn:example:ospf-topology \u00a0 3.\u00a0 remove the top-level statements: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 organization, contact, revision \u00a0 4.\u00a0 change the top-level description to what the text in the draft \u00a0 \u00a0 \u00a0 says: \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \"This module is intended as an example for how the \u00a0 \u00a0 \u00a0 \u00a0  Layer 3 Unicast topology model can be extended to cover \u00a0 \u00a0 \u00a0 \u00a0  OSFP topologies.\"; (same for the other example module) As I mentioned to the authors, respective chairs and AD already, we should follow the decision in this NETMOD email thread https://www.ietf.org/mail-archive/web/netmod/current/msg17428.html This will hopefully resolve fast. Once settled, the examples should be updated. 2. The security considerations should be better aligned with  https://trac.ietf.org/trac/ops/wiki/yang-security-guidelines , as mentioned by others. 3. Carl Moberg, as YANG doctor, reviewed v1 of the draft. https://www.ietf.org/mail-archive/web/yang-doctors/current/msg00031.html I'm waiting for final blessing on v8 any time soon. Hence this late DISCUSS. 4. \u00a0 \u00a0 \u00a0  leaf-list router-id { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type inet:ip-address; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Router-id for the node\"; \u00a0 \u00a0 \u00a0 \u00a0  } We don't want to wait for  https://tools.ietf.org/html/draft-ietf-rtgwg-routing-types-00  (btw, we should expedite this publication), but any good reason why this is aligned with its definition? \u00a0 \u00a0 typedef router-id { \u00a0 \u00a0 \u00a0  type yang:dotted-quad; \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0  \"A 32-bit number in the dotted quad format assigned to each \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 router. This number uniquely identifies the router within an \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Autonomous System.\"; \u00a0 \u00a0  }",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-12-13 00:58:03-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-09-27 07:39:55-07:00",
+        "text": "Preliminary note: I hope I'm doing the right thing by updating this DISCUSS point as\u00a0 I understand that the document is back to the WG. However, since I reviewed the version 11, since some of my ballot points have been addressed (thank you), and since I wanted to share my feedback publicly, here is my feedback. 1. The examples. In the AUTH48 for the RESTCONF RFC, the example YANG module discussion came up (again).\u00a0 And the examples in  draft-ietf-i2rs-yang-l3-topology  were also discussed. Here is the feedback from one YANG doctor, from a couple of days ago. Look at this: \u00a0  module example-ietf-ospf-topology { \u00a0 \u00a0  ... \u00a0 \u00a0  namespace \u00a0 \u00a0 \u00a0  \"urn:ietf:params:xml:ns:yang:example-ietf-ospf-topology\"; \u00a0 \u00a0  ... \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0  \"This module defines a model for OSPF network topologies. \u00a0 \u00a0 \u00a0 \u00a0 Copyright (c) 2017 IETF Trust and the persons identified as \u00a0 \u00a0 \u00a0 \u00a0 authors of the code.  They are using the IANA-controlled namespace w/o registering it. This module *really* looks like a proper normative module, rather than an example.\u00a0 They went to far in trying to mimic a real module. It is clear that we need more guidelines in 6087 for how to write example modules. I was going to ask if this module passed YANG doctor review - then I checked and saw that version -02 was reviewed, which didn't include this example.\u00a0 How should we (the YANG doctors) handle such a case? In this case they should: \u00a0 1.\u00a0 change the name to example-ospf-topology \u00a0 2.\u00a0 change the namespace to urn:example:ospf-topology \u00a0 3.\u00a0 remove the top-level statements: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 organization, contact, revision \u00a0 4.\u00a0 change the top-level description to what the text in the draft \u00a0 \u00a0 \u00a0 says: \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \"This module is intended as an example for how the \u00a0 \u00a0 \u00a0 \u00a0  Layer 3 Unicast topology model can be extended to cover \u00a0 \u00a0 \u00a0 \u00a0  OSFP topologies.\"; (same for the other example module) As I mentioned to the authors, respective chairs and AD already, we should follow the decision in this NETMOD email thread https://www.ietf.org/mail-archive/web/netmod/current/msg17428.html This will hopefully resolve fast. Once settled, the examples should be updated. 4. \u00a0 \u00a0 \u00a0  leaf-list router-id { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type inet:ip-address; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Router-id for the node\"; \u00a0 \u00a0 \u00a0 \u00a0  } My initial DISCUSS was: We don't want to wait for  https://tools.ietf.org/html/draft-ietf-rtgwg-routing-types-00  (btw, we should expedite this publication), but any good reason why this is aligned with its definition? \u00a0 \u00a0 typedef router-id { \u00a0 \u00a0 \u00a0  type yang:dotted-quad; \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0  \"A 32-bit number in the dotted quad format assigned to each \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 router. This number uniquely identifies the router within an \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Autonomous System.\"; \u00a0 \u00a0  } My NEW DISCUSS: since is in IETF LC and on the telechat on Oct 12th, it makes sense to import its router-id",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-12-14 03:33:04-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-12-13 00:58:03-08:00",
+        "text": "Here is another validation issue, on the latest v13, that must be corrected. Actually multiple mistakes, all with the same root cause. Note that those warnings were reported in the datatracker: \u00a0  - Yang catalog entry for ietf-l3-unicast-topology-state@2017-11-15.yang \u00a0  - Yang catalog entry for ietf-l3-unicast-topology@2017-11-15.yang Thanks to Michal, here is the detailed explanation. Hi Benoit,  firstly, you see the output only with -V because it changes verbosity to 'warnings' instead of the default one 'errors'. So, the warnings are valid and the when conditions are wrong. In short, in these cases the local module is not ietf-l3-unicast-topology, but ietf-network (despite being defined in ietf-l3-unicast-topology) - \"ietf-network:network-types/l3-unicast-topology\" should be \"ietf-network:network-types/ietf-l3-unicast-topology:l3-unicast-topology\" or even \"network-types/ietf-l3-unicast-topology:l3-unicast-topology\". To explain, here is the (long) justification. I will use the first warning as an example, all the other warnings are caused by the same mistake. We are dealing with a when condition \"nw:network-types/l3-unicast-topology\" in an augment \"/nw:networks/nw:network\" in the module ietf-l3-unicast-topology. As per [1], the context node of the XPath expression (when condition) is the augment target node \"/nw:networks/nw:network\". If you notice, the warning warns about not finding the node \"l3-unicast-topology\", not \"nw:network-types\". So, what node is actually referenced by \"l3-unicast-topology\"? Looking at [2], second bullet point, the namespace (prefix) should that of the \"current node\". Sadly, there is no (I have found none) formal definition of \"current node\" but I dared to assume it to be the node returned by the \"current()\" [3] function. As was said at the beginning, the \"initial context node\" is \"/nw:networks/nw:network\". Finally, we can now decide that \"l3-unicast-topology\" actually takes the prefix of the module \"ietf-network\" and there is no such node, this node is defined in the module \"ietf-l3-unicast-topology\". I hope it is clear now. Kind regards, Michal [1]  https://tools.ietf.org/html/rfc7950#page-137 [2]  https://tools.ietf.org/html/rfc7950#section-6.4.1 [3]  https://tools.ietf.org/html/rfc7950#section-10.1.1 On Tuesday, December 12, 2017 16:49 CET, Benoit Claise\u00a0 wrote:    > Hi Radek, > > I'm looking at warnings for  > ietf-l3-unicast-topology-state@2017-11-15.yang and  > ietf-l3-unicast-topology-state@2017-11-15.yang > See  http://www.claise.be/IETFYANGPageCompilation.html > > Here is something interesting: the warnings only appear with the -V option. > > bclaise@bclaise-VirtualBox:~/ietf/YANG-all$ yanglint  > ietf-l3-unicast-topology@2017-11-15.yang > bclaise@bclaise-VirtualBox:~/ietf/YANG-all$ yanglint -i  > ietf-l3-unicast-topology@2017-11-15.yang > bclaise@bclaise-VirtualBox:~/ietf/YANG-all$ yanglint -i -V  > ietf-l3-unicast-topology@2017-11-15.yang > warn: Schema node \"l3-unicast-topology\" not found  > (ietf-network:network-types/l3-unicast-topology) with context node  > \"/ietf-network:networks/network\". > warn: Schema node \"l3-unicast-topology\" not found  > (../ietf-network:network-types/l3-unicast-topology) with context node  > \"/ietf-network:networks/network/node\". > warn: Schema node \"l3-unicast-topology\" not found  > (../ietf-network:network-types/l3-unicast-topology) with context node  > \"/ietf-network:networks/ietf-network:network/link\". > warn: Schema node \"l3-unicast-topology\" not found  > (../../ietf-network:network-types/l3-unicast-topology) with context node  > \"/ietf-network:networks/ietf-network:network/ietf-network:node/termination-point\". > bclaise@bclaise-VirtualBox:~/ietf/YANG-all$ yanglint -v > yanglint 0.13.79 > bclaise@bclaise-VirtualBox:~/ietf/YANG-all$ > > bclaise@bclaise-VirtualBox:~/ietf/YANG-all$ yanglint  > ietf-l3-unicast-topology-state@2017-11-15.yang > bclaise@bclaise-VirtualBox:~/ietf/YANG-all$ yanglint -i  > ietf-l3-unicast-topology-state@2017-11-15.yang > bclaise@bclaise-VirtualBox:~/ietf/YANG-all$ yanglint -i -V  > ietf-l3-unicast-topology-state@2017-11-15.yang > warn: Schema node \"l3-unicast-topology\" not found  > (ietf-network:network-types/l3-unicast-topology) with context node  > \"/ietf-network:networks/network\". > warn: Schema node \"l3-unicast-topology\" not found  > (../ietf-network:network-types/l3-unicast-topology) with context node  > \"/ietf-network:networks/network/node\". > warn: Schema node \"l3-unicast-topology\" not found  > (../ietf-network:network-types/l3-unicast-topology) with context node  > \"/ietf-network:networks/ietf-network:network/link\". > warn: Schema node \"l3-unicast-topology\" not found  > (../../ietf-network:network-types/l3-unicast-topology) with context node  > \"/ietf-network:networks/ietf-network:network/ietf-network:node/termination-point\". > warn: Schema node \"l3-unicast-topology\" not found  > (ietf-network-state:network-types/l3-unicast-topology) with context node  > \"/ietf-network-state:networks/network\". > warn: Schema node \"l3-unicast-topology\" not found  > (../ietf-network-state:network-types/l3-unicast-topology) with context  > node \"/ietf-network-state:networks/network/node\". > warn: Schema node \"l3-unicast-topology\" not found  > (../ietf-network-state:network-types/l3-unicast-topology) with context  > node \"/ietf-network-state:networks/ietf-network-state:network/link\". > warn: Schema node \"l3-unicast-topology\" not found  > (../../ietf-network-state:network-types/l3-unicast-topology) with  > context node  > \"/ietf-network-state:networks/ietf-network-state:network/ietf-network-state:node/termination-point\". > bclaise@bclaise-VirtualBox:~/ietf/YANG-all$ > > Should we pay attention to those? > > Regards, Benoit ==================================================== Preliminary note: I hope I'm doing the right thing by updating this DISCUSS point as\u00a0 I understand that the document is back to the WG. However, since I reviewed the version 11, since some of my ballot points have been addressed (thank you), and since I wanted to share my feedback publicly, here is my feedback. 1. The examples. In the AUTH48 for the RESTCONF RFC, the example YANG module discussion came up (again).\u00a0 And the examples in  draft-ietf-i2rs-yang-l3-topology  were also discussed. Here is the feedback from one YANG doctor, from a couple of days ago. Look at this: \u00a0  module example-ietf-ospf-topology { \u00a0 \u00a0  ... \u00a0 \u00a0  namespace \u00a0 \u00a0 \u00a0  \"urn:ietf:params:xml:ns:yang:example-ietf-ospf-topology\"; \u00a0 \u00a0  ... \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0  \"This module defines a model for OSPF network topologies. \u00a0 \u00a0 \u00a0 \u00a0 Copyright (c) 2017 IETF Trust and the persons identified as \u00a0 \u00a0 \u00a0 \u00a0 authors of the code.  They are using the IANA-controlled namespace w/o registering it. This module *really* looks like a proper normative module, rather than an example.\u00a0 They went to far in trying to mimic a real module. It is clear that we need more guidelines in 6087 for how to write example modules. I was going to ask if this module passed YANG doctor review - then I checked and saw that version -02 was reviewed, which didn't include this example.\u00a0 How should we (the YANG doctors) handle such a case? In this case they should: \u00a0 1.\u00a0 change the name to example-ospf-topology \u00a0 2.\u00a0 change the namespace to urn:example:ospf-topology \u00a0 3.\u00a0 remove the top-level statements: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 organization, contact, revision \u00a0 4.\u00a0 change the top-level description to what the text in the draft \u00a0 \u00a0 \u00a0 says: \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \"This module is intended as an example for how the \u00a0 \u00a0 \u00a0 \u00a0  Layer 3 Unicast topology model can be extended to cover \u00a0 \u00a0 \u00a0 \u00a0  OSFP topologies.\"; (same for the other example module) As I mentioned to the authors, respective chairs and AD already, we should follow the decision in this NETMOD email thread https://www.ietf.org/mail-archive/web/netmod/current/msg17428.html This will hopefully resolve fast. Once settled, the examples should be updated. 4. \u00a0 \u00a0 \u00a0  leaf-list router-id { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type inet:ip-address; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Router-id for the node\"; \u00a0 \u00a0 \u00a0 \u00a0  } My initial DISCUSS was: We don't want to wait for  https://tools.ietf.org/html/draft-ietf-rtgwg-routing-types-00  (btw, we should expedite this publication), but any good reason why this is aligned with its definition? \u00a0 \u00a0 typedef router-id { \u00a0 \u00a0 \u00a0  type yang:dotted-quad; \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0  \"A 32-bit number in the dotted quad format assigned to each \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 router. This number uniquely identifies the router within an \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Autonomous System.\"; \u00a0 \u00a0  } My NEW DISCUSS: since is in IETF LC and on the telechat on Oct 12th, it makes sense to import its router-id",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-12-17 06:44:24-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-12-14 03:33:04-08:00",
+        "text": "We're making progress. Thanks. >> >> 4. >> >>\u00a0 \u00a0 \u00a0 \u00a0  leaf-list router-id { >>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type inet:ip-address; >>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  description >>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Router-id for the node\"; >>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  } >> >> My initial DISCUSS was: We don't want to wait for >>  https://tools.ietf.org/html/draft-ietf-rtgwg-routing-types-00  (btw, we  >> should expedite this publication), but any good reason why this is  >> aligned with its definition? >>\u00a0 \u00a0 \u00a0 typedef router-id { >>\u00a0 \u00a0 \u00a0 \u00a0  type yang:dotted-quad; >>\u00a0 \u00a0 \u00a0 \u00a0  description >>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"A 32-bit number in the dotted quad format assigned to each >>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 router. This number uniquely identifies the router within an >>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Autonomous System.\"; >>\u00a0 \u00a0 \u00a0  } >> >> My NEW DISCUSS: since is in IETF LC and on the telechat on Oct 12th,  >> it makes sense to import its router-id > >\u00a0 This is only used in the example.\u00a0 The point of the example is to > show how the model can be extended, not to define something normative, hence > I don't think there is a need to introduce a dependency here which would > only be distracting. >  Can you help me understand how this is an example? Section 5 \u00a0  module: ietf-l3-unicast-topology \u00a0 \u00a0  augment /nw:networks/nw:network/nw:network-types: \u00a0 \u00a0 \u00a0  +--rw l3-unicast-topology! \u00a0 \u00a0  augment /nw:networks/nw:network: \u00a0 \u00a0 \u00a0  +--rw l3-topology-attributes \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 +--rw name?\u00a0  string \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 +--rw flag*\u00a0  l3-flag-type \u00a0 \u00a0  augment /nw:networks/nw:network/nw:node: \u00a0 \u00a0 \u00a0  +--rw l3-node-attributes \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 +--rw name?\u00a0 \u00a0 \u00a0 \u00a0 inet:domain-name \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 +--rw flag*\u00a0 \u00a0 \u00a0 \u00a0 node-flag-type \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 +--rw router-id*\u00a0  inet:ip-address \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 +--rw prefix* [prefix] \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  +--rw prefix\u00a0 \u00a0 inet:ip-prefix \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  +--rw metric?\u00a0  uint32 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  +--rw flag*\u00a0 \u00a0  prefix-flag-type And section 6: \u00a0 \u00a0  grouping l3-node-attributes { \u00a0 \u00a0 \u00a0  description \"L3 node scope attributes\"; \u00a0 \u00a0 \u00a0  container l3-node-attributes { \u00a0 \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Containing node attributes\"; \u00a0 \u00a0 \u00a0 \u00a0  leaf name { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type inet:domain-name; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Node name\"; \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 \u00a0 \u00a0  leaf-list flag { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type node-flag-type; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Node flags\"; \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 \u00a0 \u00a0  leaf-list router-id { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type inet:ip-address; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"Router-id for the node\"; \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 \u00a0 \u00a0  list prefix { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  key \"prefix\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"A list of prefixes along with their attributes\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  uses l3-prefix-attributes; \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0  } A different view at  https://www.yangcatalog.org/yang-search/yang_tree.php?module=ietf-l3-unicast-topology#",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-17 06:44:24-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-01-18 11:41:56-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-18 11:41:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-01-19 00:04:31-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-01-19 00:04:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-01-19 06:53:54-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-01-19 06:53:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-01-18 18:43:34-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-18 18:43:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-01-17 05:27:24-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-17 05:27:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-01-16 18:05:21-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-16 18:05:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-01-18 19:16:06-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-18 19:16:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-01-17 21:05:50-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-16 17:01:36-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-17 21:05:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-12-13 12:56:35-08:00",
+        "end_reason": "new_position",
+        "start": "2017-03-26 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-12-18 12:34:22-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 12:56:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8346",
+  "evaluation_end": "2017-12-18 12:34:22-08:00",
+  "evaluation_start": "2017-01-16 17:01:36-08:00"
+}

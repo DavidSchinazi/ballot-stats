@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-05-04 03:42:36-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 03:42:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-04-29 14:39:21-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-05-04 12:44:16-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 12:44:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-05-03 19:32:19-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 19:32:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-04 11:48:49-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-16 08:09:47-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-04 11:48:49-07:00",
+        "text": "I have a couple of points I would like to discuss. Hopefully they can be resolved easily: Are there really no requirements for privacy or integrity protection? Is there an expectation that this mechanism would ever carry privacy sensitive or otherwise sensitive information? - 4.2.5, 2nd to last paragraph: I am surprised to find that, when the receiver is not the subscriber, that the receiver is expected to opt-out. It seems like some form of opt-in or affirmative consent would be needed here.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-16 08:09:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-05-03 01:52:29-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-05-18 05:43:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-03 01:52:29-07:00",
+        "text": "Three DISCUSS points, which could be easily resolved IMO. 1. As mentioned on the NETMOD mailing list by Tom Petch, don't redefine the YANG datastore term: > I see that the definition of 'datastores' has cropped up in this AD > Review, as in the e-mail below. > > Meanwhile,  draft-ietf-i2rs-pub-sub-requirements-05.txt  is in IETF Last > Call and redefines, or recreates, the term for us > >\u00a0 \u00a0  A YANG datastore is a conceptual datastore that contains hierarchical >\u00a0 \u00a0  data defined in YANG data models.\u00a0 It is what is referred in existing >\u00a0 \u00a0  RFCs as \"NETCONF datastore\".\u00a0 However, as the same datastore is no >\u00a0 \u00a0  longer tied to NETCONF as a specific transport, the term \"YANG >\u00a0 \u00a0  datastore\" is deemed more appropriate. > > I think that the concept of datastore has been troublesome to those > coming to YANG lately, such as openconfig and I2RS, and that this will > just muddy the waters more, especially as it is tucked away in an > Informational document.\u00a0 If I2RS want to define such terminology, then > it should be in the I2RS Architecture or some such; but IMHO they should > not be defining YANG datastores at all.  2. Maybe I read too much into this (at the time of specifying the operational state in NETMOD) ... \u00a0  A Subscription Service MUST be able support a Subtree Filter so that \u00a0  subscribed updates under a target node might publish only operational \u00a0  data, only configuration data, or both. Proposal: s/Subtree Filter/Filter 3. In the security considerations section \u00a0  Versioning MUST be supported. Versioning of what? Yang push protocol, subscription, transport session, state of of subscription, something else?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-18 05:43:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-05-03 13:49:33-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 13:49:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-05-05 03:08:19-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-05 03:08:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-05-05 06:32:50-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-05 06:32:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-05-04 13:08:49-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 13:08:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-05-04 02:08:08-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 02:08:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-05-04 11:57:27-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 11:57:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-03 17:23:01-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-16 06:04:43-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-05-03 17:23:01-07:00",
+        "text": "I have what I hope are two very easily sorted things that I'd like to chat about: (1) 4.2.5, para2: Hang on - this is 2016 isn't it? :-) Why would we ever have a pub/sub service whose subscribers can pretend to be the service? (2) Don't you need a statement somewhere that commensurate security needs to be provided for pushed notifications as was used for the original subscription? That might be a little hard to phrase correctly but I hope we agree that the notifications ought not be significantly less secure than the subscription.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-17 12:31:07-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-16 06:04:43-07:00",
+        "text": "(Checked this vs. -08 of the draft and we still need to chat about it I think.) I have what I hope are two very easily sorted things that I'd like to chat about: (1) 4.2.5, para2: Hang on - this is 2016 isn't it? :-) Why would we ever have a pub/sub service whose subscribers can pretend to be the service? (2) Don't you need a statement somewhere that commensurate security needs to be provided for pushed notifications as was used for the original subscription? That might be a little hard to phrase correctly but I hope we agree that the notifications ought not be significantly less secure than the subscription.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-17 12:31:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-05-04 20:41:28-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 20:41:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-03 17:12:43-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-29 14:39:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-18 15:44:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 17:12:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7923",
+  "evaluation_end": "2016-05-18 15:44:14-07:00",
+  "evaluation_start": "2016-04-29 14:39:21-07:00"
+}

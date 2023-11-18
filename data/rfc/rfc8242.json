@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-10-19 08:55:40-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-10-26 07:09:05-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-26 07:09:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-10-25 06:41:35-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-11-15 03:25:22-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-10-25 06:41:35-07:00",
+        "text": "Section 2 (Review of Requirements from I2RS architecture document) presents a list of \u201crequirements distilled from [ RFC7921 ]\u201d, which I initially assumed to mean that this list may have been a summary of the requirements in  RFC7921 .\u00a0 However, I can\u2019t find them in  RFC7921 ; for example: \u00a0  1.\u00a0 The I2RS protocol SHOULD support a high bandwidth, asynchronous \u00a0 \u00a0 \u00a0  interface, with real-time guarantees on getting data from an I2RS \u00a0 \u00a0 \u00a0  agent by an I2RS client. \u2026\u201dhigh bandwidth\u201d and \u201creal-time\u201d don\u2019t even appear in  RFC7921 !\u00a0 While I understand that distilling is not the same as copying, the use of  rfc2119  language in this document makes me uncomfortable because it seems to be defining requirements that may or may not conflict with  RFC7921 . If the requirements in Section 2 do come from  RFC7921 , please put the appropriate pointers in (and even better, use the same language to avoid confusion).\u00a0 If by distilling the authors may have taken the liberty to interpret the requirements from  RFC7921 , please don\u2019t use  rfc2119  language.\u00a0 If there are new or different requirements, please point them out.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-15 03:25:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-10-25 12:52:49-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-25 12:52:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-10-27 05:02:45-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-10-27 07:41:53-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-10-27 05:02:45-07:00",
+        "text": "-  \u00a0  The I2RS Working Group has chosen to use the YANG data modeling \u00a0  language [ RFC6020 ] as the basis to implement its mechanisms. I guess you mean  RFC 7950 . RFC7950  should be a normative reference. -\u00a0  I read the abstract and title: clearly this is about ephemeral state. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 I2RS Ephemeral State Requirements \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0   draft-ietf-i2rs-ephemeral-state-19.txt Abstract \u00a0  The I2RS (interface to the routing system) Architecture document \u00a0  ( RFC7921 ) abstractly describes a number of requirements for ephemeral \u00a0  state (in terms of capabilities and behaviors) which any protocol \u00a0  suite attempting to meet the needs of I2RS has to provide.\u00a0 This \u00a0  document describes, in detail, requirements for ephemeral state for \u00a0  those implementing the I2RS protocol. And in section 2, I see requirements \"distilled\" (btw, I agree with Alvaro's DISCUSS) from  RFC7921  about the I2RS protocol, I2RS agent, I2RS client. Why (re-hashing) requirements not related to ephemeral?  What the goal of this section 2?  It seems more like adding confusing that being helpful. Too many requirements from different documents in I2RS: \"distilling\" them between documents is looking for troubles. note: section 9 title \" Pub/Sub Requirements Expanded for Ephemeral State\" and content area clear - I read REQ3 and 4 multiple times. Isn't REQ 3 a subset of REQ4? \u00a0 \u00a0 Ephemeral-REQ-03: Ephemeral state MUST be able to have constraints \u00a0 \u00a0 \u00a0  that refer to operational state, this includes potentially fast \u00a0 \u00a0 \u00a0  changing or short lived operational state nodes, \u00a0  Ephemeral-REQ-04: Ephemeral state MUST be able to refer to non- \u00a0  ephemeral state as a constraint.\u00a0 Non-ephemeral state can be \u00a0  configuration state or operational state. I should be missing something. Examples would help me. - Clarification:  Ephemeral-REQ-12: When a collision occurs as two clients are trying \u00a0  to write the same data node I2RS clients with the I2RS protocol, or NETCONF/RESTCONF clients? Note: multiple instances of \"clients\" (as opposed to I2RS clients) in the doc.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-12-02 06:35:45-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-10-27 07:41:53-07:00",
+        "text": "-\u00a0  I read the abstract and title: clearly this is about ephemeral state. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 I2RS Ephemeral State Requirements \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0   draft-ietf-i2rs-ephemeral-state-19.txt Abstract \u00a0  The I2RS (interface to the routing system) Architecture document \u00a0  ( RFC7921 ) abstractly describes a number of requirements for ephemeral \u00a0  state (in terms of capabilities and behaviors) which any protocol \u00a0  suite attempting to meet the needs of I2RS has to provide.\u00a0 This \u00a0  document describes, in detail, requirements for ephemeral state for \u00a0  those implementing the I2RS protocol. And in section 2, I see requirements \"distilled\" (btw, I agree with Alvaro's DISCUSS) from  RFC7921  about the I2RS protocol, I2RS agent, I2RS client. Why (re-hashing) requirements not related to ephemeral?  What the goal of this section 2?  It seems more like adding confusing that being helpful. Too many requirements from different documents in I2RS: \"distilling\" them between documents is looking for troubles. note: section 9 title \" Pub/Sub Requirements Expanded for Ephemeral State\" and content area clear - I read REQ3 and 4 multiple times. Isn't REQ 3 a subset of REQ4? \u00a0 \u00a0 Ephemeral-REQ-03: Ephemeral state MUST be able to have constraints \u00a0 \u00a0 \u00a0  that refer to operational state, this includes potentially fast \u00a0 \u00a0 \u00a0  changing or short lived operational state nodes, \u00a0  Ephemeral-REQ-04: Ephemeral state MUST be able to refer to non- \u00a0  ephemeral state as a constraint.\u00a0 Non-ephemeral state can be \u00a0  configuration state or operational state. I should be missing something. Examples would help me.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-12-02 06:35:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-10-25 14:45:08-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-25 14:45:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-10-26 22:32:51-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-26 22:32:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-10-24 13:49:27-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-24 13:49:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-10-24 03:32:04-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-24 03:32:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-10-24 13:21:38-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-24 13:21:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-10-26 00:02:57-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-26 00:02:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-12-07 08:14:47-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-19 08:55:40-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8242",
+  "evaluation_end": "2016-12-07 08:14:47-08:00",
+  "evaluation_start": "2016-10-19 08:55:40-07:00"
+}

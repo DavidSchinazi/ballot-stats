@@ -1,0 +1,349 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-07-01 06:03:25-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-07-07 04:43:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-07-01 06:03:25-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-07-09 08:29:22-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-07-07 04:43:02-07:00",
+        "text": "I will need to re-Last Call the document due to 2 DownRefs: RFC 5861  (HTTP Cache-Control Extensions for Stale Content). RFC6707  (terminology). In regards to Spencer's comment: \u00a0  A server implementation of the \u00a0  CDNI metadata interface MUST reject all methods other than GET and \u00a0  HEAD. I think this text needs to be deleted, because it puts extra requirements on generic HTTP servers that might be used to serve CDNI Metadata, which I think is a wrong thing to do.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-08-03 06:18:59-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-07-09 08:29:22-07:00",
+        "text": "IANA Auth type registry no longer created? Has this been moved to another draft? RFC 3490  is an obsoleted RFC, need to reference the latest IDNA RFC. Some outstanding issues in 6.8 (Versionning) Check remaining AD review comments reported earlier. In regards to Spencer's comment: \u00a0  A server implementation of the \u00a0  CDNI metadata interface MUST reject all methods other than GET and \u00a0  HEAD. I think this text needs to be deleted, because it puts extra requirements on generic HTTP servers that might be used to serve CDNI Metadata, which I think is a wrong thing to do.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-08-28 10:21:25-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-08-03 06:18:59-07:00",
+        "text": "RFC 3490  is an obsoleted RFC, need to reference the latest IDNA RFC. -- You updated description in the document to read (in 2 places): Internationalized Domain Names (IDN) must first be\t transformed to the IDNA encoding as per [ RFC5891 ]. However this is not clear enough, because you are not saying whether you want to use A-labels or U-labels. I think the former. IANA Auth type registry no longer created? Has this been moved to another draft? Issues from my earlier review (these might be already fixed): In 4.1.2: hostname need to have defined syntax (at least by reference). You also need to say whether IDN domain names are allowed here. In 8.3: \u00a0 An implementation of the CDNI metadata interface MUST use strong \u00a0 encryption and mutual authentication to prevent undetectable Encryption doesn't necessarily provide integrity of data, so I would change \"strong encryption\" to TLS. \u00a0 modification of metadata (see Section 8.5).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-08-28 10:27:04-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-08-28 10:21:25-07:00",
+        "text": "RFC 3490  is an obsoleted RFC, need to reference the latest IDNA RFC. -- You updated description in the document to read (in 2 places): Internationalized Domain Names (IDN) must first be\t transformed to the IDNA encoding as per [ RFC5891 ]. However this is not clear enough, because you are not saying whether you want to use A-labels or U-labels. I think the former. IANA Auth type registry no longer created? Has this been moved to another draft? Issues from my earlier review (these might be already fixed): In 8.3: \u00a0 An implementation of the CDNI metadata interface MUST use strong \u00a0 encryption and mutual authentication to prevent undetectable Encryption doesn't necessarily provide integrity of data, so I would change \"strong encryption\" to TLS. \u00a0 modification of metadata (see Section 8.5).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-08-29 03:09:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-08-28 10:27:04-07:00",
+        "text": "RFC 3490  is an obsoleted RFC, need to reference the latest IDNA RFC. -- You updated description in the document to read (in 2 places): Internationalized Domain Names (IDN) must first be\t transformed to the IDNA encoding as per [ RFC5891 ]. However this is not clear enough, because you are not saying whether you want to use A-labels or U-labels. I suggest: in 4.1.2, change: \u00a0 \u00a0 \u00a0 \u00a0  Internationalized Domain \u00a0 \u00a0 \u00a0 \u00a0  Names (IDN) must first be transformed to the IDNA encoding as \u00a0 \u00a0 \u00a0 \u00a0  per [ RFC5891 ]. to: \u00a0 \u00a0 \u00a0 \u00a0  Internationalized Domain \u00a0 \u00a0 \u00a0 \u00a0  Names (IDN) must first be transformed to the A-label form as \u00a0 \u00a0 \u00a0 \u00a0  per [ RFC5891 ]. You can also add \"[ RFC5890 ]\" to the end of the sentence (and add it to Normative References), as it defines A-labels. Similarly, in 4.3.3, change: \u00a0  Internationalized Domain Names (IDN) must first be \u00a0  transformed to the IDNA encoding as per [ RFC5891 ]. to: \u00a0  Internationalized Domain Names (IDN) must first be \u00a0  transformed to the A-label form as per [ RFC5891 ].",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-29 03:09:17-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-07-06 09:12:19-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-06 09:12:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-07-06 14:52:41-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-06 14:52:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-07-07 03:37:27-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-07 03:37:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-07-05 16:23:09-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-07-06 11:07:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-07-05 16:23:09-07:00",
+        "text": "I have two concerns that I would like to see discussed prior to publication: 1) Section 6.2 cites a normative reference to  RFC 5861 . That's an ISE stream informational RFC. The text as written seems to normatively require implementation of that RFC to enable the \"caching\" feature. Did the working group discuss the implications of that? (I also note that this doesn't appear to have been called out at IETF last call. While there has been some discussion about relaxing that requirement, I'm not sure this is an appropriate place to do so.) 2) Section 8.5 contains the \"In an environment where any such protection is required\" language that has been discussed for several CDNI drafts. But in this particular case, the implication that there may be environments where such protection is _not_ required seems to conflict with the multiple occurrences of \"MUST use strong encryption/mutual authentication\" in sections 8.1-8.4.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-06 11:07:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-07-06 07:00:55-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-06 07:00:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-07-05 13:09:43-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-05 13:09:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-07-07 03:46:25-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-07 03:46:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-07-06 20:38:45-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-06 20:38:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-07-05 13:00:30-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-05 13:00:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-07-05 11:30:50-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-05 11:30:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-07-05 18:51:08-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-05 18:51:08-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-07-06 05:10:23-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-07-07 06:52:02-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-07-06 05:10:23-07:00",
+        "text": "(1) I don't get the model for telling a dCDN that the user agent has to have authenticated or that some authorization is needed before content is to be delivered. Can you explain?\u00a0 For example, neither 4.2.5 nor 4.2.7 tell me how to do anything but allow open-access, and the relevant IANA registry (section 7.4) is empty, so I'm puzzled.  (2) 6.5: I think you're missing a MUST in the list here. I'd suggest something like: \"5. Describe the security and privacy (for the person/user-agent, not only xCDN) consequences of the extension.\" I'm assuming that we agree that it'd be a bad idea if e.g. some extension were defined that allowed a uCDN tell a dCDN to try to track and report on all of a user's activities. (Or at least, that'd need to be documented/justified.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-07-09 06:45:24-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-07-07 06:52:02-07:00",
+        "text": "(1) cleared, was just a document split issue (2) 6.5: I think you're missing a MUST in the list here. I'd suggest something like: \"5. Describe the security and privacy (for the person/user-agent, not only xCDN) consequences of the extension.\" I'm assuming that we agree that it'd be a bad idea if e.g. some extension were defined that allowed a uCDN tell a dCDN to try to track and report on all of a user's activities. (Or at least, that'd need to be documented/justified.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-09 06:45:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-07-05 20:45:15-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-05 20:45:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-07-05 19:20:45-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 06:03:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-08-29 06:56:58-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-05 19:20:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8006",
+  "evaluation_end": "2016-08-29 06:56:58-07:00",
+  "evaluation_start": "2016-07-01 06:03:24-07:00"
+}

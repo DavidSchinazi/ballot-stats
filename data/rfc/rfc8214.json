@@ -1,0 +1,305 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-05-10 22:17:11-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-26 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-05-10 22:19:13-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-05-10 22:17:11-07:00",
+        "text": "Looking at the Shepherd write up and the Ballot, I see no mention of the normative reference to  RFC 7348 , which is informational and part of the Independent Submission stream. As I mention in my comments below, I don't fully follow the technical contents of this document, but this seems like a red flag to me and -- as far as I can tell -- it hasn't been discussed yet. It's possible that the reference just ended up in the wrong section (and should actually be informative), but it's not immediately obvious on a casual examination whether that's true.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-05-11 06:47:19-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-05-10 22:19:13-07:00",
+        "text": "Looking at the Shepherd write up and the Ballot, I see no mention of the normative reference to  RFC 7348 , which is informational and part of the Independent Submission stream. As I mention in my comments below, I can't fully follow the technical contents of this document, but this seems like a red flag to me and -- as far as I can tell -- it hasn't been discussed yet. It's possible that the reference just ended up in the wrong section (and should actually be informative), but it's not immediately obvious on a casual examination whether that's true.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-11 06:47:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-04-12 04:06:33-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-12 04:06:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-04-11 16:43:32-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-05-05 13:40:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-04-11 16:43:32-07:00",
+        "text": "First, thank you for a clearly written document that contained enough context to trigger my hazy memory of some of the technical details. My concern is around this paragraph in the Introduction: \"The MPLS label value in the Ethernet A-D route can be set to the \u00a0  VXLAN Network Identifier (VNI) for VXLAN encap, and this VNI may have \u00a0  a global scope or local scope per PE and may also be equal to the \u00a0  VPWS service instance identifier set in the Ethernet A-D route. \" First, I recognize that folks have implemented and deployed EVPN with VXLAN. That's fine.\u00a0 There is an ISE  RFC 7348  that describes VXLAN.\u00a0  Depending on what you (authors, shepherd, AD, WG) decide to do about the rest of my concern, it is likely that this should be normative references - which would be a downref. Second, the paragraph here isn't really adequate to describe how to implement the functionality.\u00a0  I don't see how: \u00a0 \u00a0 a) The ingress PE decides which VNIs it can send based upon the VNI=MPLS_label \u00a0 \u00a0 \u00a0 \u00a0 from the egress.\u00a0  Is there an assumption that VXLAN allows sending all VNIs across \u00a0 \u00a0 \u00a0 \u00a0 the particular VPWS, whether port-based, VLAN-based, etc? \u00a0 \u00a0 b) Is there an assumption that the egress PE-advertised MPLS label also indicates the \u00a0 \u00a0 \u00a0 \u00a0  VNI to be used?\u00a0 That seems like another mode, like the VLAN-based service, except \u00a0 \u00a0 \u00a0 \u00a0  it is perhaps VNI + VLAN-based service? Please don't take this Discuss as a reason to remove the paragraph and the implied functionality. If it's implemented and deployed (and I think it is) - then what I really want is to just have it adequately written down so that others can interoperably implement.\u00a0 The downref to VXLAN should just be a matter of process nuisance (i.e. another IETF Last Call and handling any concerns).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-05 13:40:29-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-04-11 11:57:24-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-11 11:57:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-03-13 05:52:21-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-05-10 14:48:57-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-10 14:48:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-05-08 09:58:05-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-08 09:58:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-04-11 13:25:40-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-11 13:25:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-04-11 09:28:17-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-11 09:28:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-04-07 14:46:38-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-07 14:46:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-04-11 18:20:30-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-11 18:20:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-05-09 17:44:30-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-13 05:52:21-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-09 17:44:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-04-08 12:41:33-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-26 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-06-13 07:52:57-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-04-08 12:41:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8214",
+  "evaluation_end": "2017-06-13 07:52:57-07:00",
+  "evaluation_start": "2017-03-13 05:52:21-07:00"
+}

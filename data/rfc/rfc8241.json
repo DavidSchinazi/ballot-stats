@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-08-15 10:37:55-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-08-17 07:54:34-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-09-26 12:07:25-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-08-17 07:54:34-07:00",
+        "text": "== Section 3.2 == \"A non-secure transport can be can be used for publishing telemetry \u00a0  data or other operational state that was specifically indicated to \u00a0  non-confidential in the data model in the Yang syntax.\" What kind of telemetry data is it that is of no potential interest to any eavesdropper? This is not my area of expertise so I'm having a hard time conceiving of what that could be. I'm also wondering, since I2RS agents and clients will have to support secure transports anyway (and RESTCONF can only be used over a secure transport), why can't they be used for all transfers, instead of allowing this loophole in the name of telemetry, which undoubtedly will end up being used or exploited for other data transfers? If the argument was that this loophole is needed for backwards compatibility with insecure deployments of NETCONF or something like that I think it would make more sense, but my impression from the text is that those will have to be updated anyway to conform to the requirements in this document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-09-27 06:37:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-09-26 12:07:25-07:00",
+        "text": "Thanks for resolving my previous DISCUSS point. I have just one further point that hopefully will be easy to fix: Section 3.2 trails off in mid-sentence.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-09-27 06:37:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-08-17 18:52:34-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-17 18:52:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-08-17 14:11:08-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-08-17 19:45:00-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-08-17 14:11:08-07:00",
+        "text": "In section 3.4, the text says that the requirements that the integrity protection mechanisms can actually provide integrity protection are SHOULD because some communication may occur over non-secure channels. That does not follow, since the rationale is about use, while the actual requirement is about capability.\u00a0 As currently written, it leaves it possible for people to select a protocol that cannot provide integrity protection at all. I think the SHOULDs in 14 and 15 need to be MUSTS. In the third paragaph of 3.2, Isn't the point to say that ephemeral data MUST be sent over a secure transport unless the data model explicitly labels it as safe for insecure transports? As written, it seems to leave room to send data that is not labeled as safe to also be sent over insecure transports.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-17 19:45:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-08-16 13:44:23-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-16 13:44:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-08-18 05:31:50-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-18 05:31:50-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-08-18 06:29:12-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-18 06:29:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-08-17 14:35:36-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-09-16 10:35:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-08-17 14:35:36-07:00",
+        "text": "Thanks for your work on this draft.\u00a0 There may be some overlap in points, I tried to minimize them... ---- Section 3.1: I don't see any actual requirements for mutual authentication in this section, just requirements for identifiers.\u00a0 Did I miss something? Are all mutual auth schemes in scope?\u00a0 Are there any considerations for mutual authentication (passwords, keys, etc.)? ---- I share the same concern as others for secure transport, but since there are already discusses on that, I have one comment to add to the existing discusses below.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-09-16 10:35:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-08-17 01:37:22-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-17 01:37:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-08-16 19:10:29-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-16 19:10:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-08-21 05:36:54-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-09-28 14:31:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-08-21 05:36:54-07:00",
+        "text": "First, apologies for not getting my review done for this when it was scheduled due to my vacation and thanks for being willing to defer the document. Second, having now properly reviewed this, I am balloting abstain as I think it's unlikely that this document can be fixed in a way that results in something useful happening. I think that the likely outcome is that this document will be used later when people are arguing and will not much help in resolving those arguments, or else this will be ignored and arguments will be held afresh, as needed. That latter outcome is what I'd guess is most likely and therefore it seems that spending all of our cycles on DISCUSS ballot processing for this would not be wise. That said, I am willing to change to a DISCUSS ballot if the responsible AD prefers that, but I suspect I'll end up with an abstain in any case, after some discussion. The only plan I can think of that'd lead to me ending up with a yes or no-objection ballot would be if this was returned to the WG for fixing and possibly major surgery, which is what I actually think would be the best plan. (I realise this has had a somewhat tortured history, so folks may not be willing to take it back to the WG, but honestly, I think the failings visible in this document do indicate that this is not ready for approval and ought be returned to the WG.) Third, I think the overall set of requirements posed here might (with some unknown probability) lead to later specifications that are considered too hard to deploy, with the result that non-secure variants of I2RS become the norm. That seems like it would be a really bad outcome. I would suggest that might be partly mitigated if a requirement were added to the effect that deployment issues and specifically ease of deployment MUST be considered as a first order requirement when developing I2RS protocol solutions.  Fourth, the (19!) comments below that are preceded by \"(discuss\" would have been DISCUSS ballot points had I not decided to abstain. I am happy to chat about any of my comments below, but if the authors/WG do want to chat, it might be more efficient to concentrate on those that would otherwise have been DISCUSS points. (But that's your call, I don't mind.) I think the 19 would-have-been-discuss points is another clue that this ought really be sent back to the WG. And with that, and with apologies for this being such an overall negative review, here're my detailed comments: - general: The writing here is generally poor, for example the opener is \"This presents...\" whereas it ought be \"This document presents...\" (or s/document/whatever you prefer/). Such issues are repeatedly seen and all that makes this a much harder read than ought be the case. I'd strongly recommend an editorial pass from someone who hasn't been down in the weeds with this text for a while (which could be one of the authors, if one of them has been less active recently.) Note that this is not only (but is primarily) an editorial issue - there are some cases (hopefully called out below) where the writing does create real ambiguity that might lead to re-opening old arguments later. - abstract: \"mutual authentication, transport protocols, data transfer and transactions\" don't seem to me to be commensurate things, so the abstract, as written is very uninformative for me. - intro 3rd para: I'm really not sure what you're telling me about [ I-D.ietf-i2rs-ephemeral-state ].\u00a0 \"The draft [ RFC7922 ]\" is odd, that being no longer a draft. I'd have expected such nits would have been fixed by now TBH. Same for the last sentence.\u00a0 That para makes the intro pretty unclear for me. - 2.2: The definition of higher level protocol seems like an odd place to introduce the fact that i2rs == netconf + restconf.\u00a0 That'd be more usefully said in the abstract/intro if that's solidly agreed by the WG. - 2.2: This is wrong: \"While it is possible to have an I2RS operation which is contained in multiple I2RS (E.g.\u00a0 write in multiple messages), this is not supported in order to simplify the first version of I2RS.\" The reason this is wrong, is that it is here that you are defining that it is not possible to have an operation in multiple messages. s/it is/it could have been/ would work maybe. - 2.2: \" *\u00a0 The I2RS client issues a read request to a I2RS agent, and the I2RS Agent responding to the read request\" Shouldn't that use respond and not responding? Given that you seem to be trying to define the scope of what is and is not a transaction, I think being precise with the language is something well worth doing.\u00a0 The 2nd bullet could also do with a re-write. (discuss1) 2.2: you sort-of define messages, operations, transactions and actions. None of the definitions are that precise, e.g. are those the only operations or examples? And transaction and action aren't really defined at all. I'm not sure if that's likely to be a problem or not. I suspect it will later, e.g. when you get to figuring out the scope within which replay needs to be detectable. - 2.2: s/transation/transaction/ (discuss2) - 2.2: \"defines a secondary identity as the entity of some non-I2RS entity \" That could be abused for tracking of various kinds I would guess, e.g. if an IMEI were used. I think you need to note that and should impose some requirements that such secondary identifiers are not used thusly for tracking.\u00a0 Also, should the first occurrence of entity there be identity? - 3, 1st para: s/The security for the/The/ - there isn't a thing called the security for the i2rs protocol. (discuss3) - section 3 says \"the I2RS protocol requires mutually authenticated I2RS clients and I2RS agents communicating over a secure transport.\" To me that implies that something like TLS or SSH is MTU which seems to contradict recent emails. - section 3 says: \"The I2RS protocol MUST be able to provide atomicity of an I2RS transaction, but it is not required to have multi-message atomicity and roll-back mechanism transactions.\u00a0 Multiple messages transactions may be impacted by the interdependency of data.\"\u00a0 I don't believe that that's easily enough understood to be useful. Also, wouldn't s/Multiple messages transactions/Multiple-message transactions/ be much clearer if that's what's meant? And finally, I think the MUST embedded in the above is not that great an idea - it's clearer IMO to separate the 2119 language from introductory text in documents like this. - 3: \"There are dependencies in some of the requirements below\" would be better as \"There are inter-dependencies between some of the requirements below\" unless you mean dependencies on some external things, which is not clear from the text as-is. (discuss4) \" For confidentiality (section 3.3) and integrity (section 3.4) to be achieved, the client-agent must have mutual authentication (section 3.1) and secure transport (section 3.2).\u00a0 \" This is incorrect. One can have confidentiality without authentication (see  RFC7435 ) so the text is not accurate. - capitalisation needs fixing in various places, e.g. around the end of p5, we get \"secure Transport\" and then \"I2RS client\" and \"I2RS Agent\" in the title of 3.1 Is any of that capitalisation supposed to be significant? Either way, fixing it now would be good as you'll need to get the RFC editor to do it later if you don't (which takes longer). (discuss5) SEC-REQ-01: what is the scope of uniqueness required here? I see no reason why two different data centres cannot re-use a client or agent identifier, if they so wish. I'd be fine if you say that's for later decision, but being silent on the matter could lead to trouble later if different folks decide differently. (discuss6) SEC-REQ-02: the \"MUST utilize\" there means MTU, which wasn't what you wanted I think (discuss7) - SEC-REQ-03: how is \"upon receiving... MUST confirm\" a good choice? As stated that'd be hugely onerous, implying e.g.\u00a0 OCSP checks for each packet received. Same point applies to SEC-REQ-04. (discuss8) - SEC-REQ-05: this either means nothing at all (being a tautology) or else something I don't get. I think it's the former, but am not sure. - 3.1: s/One mechanism such mechanism/One such mechanism/ I guess. And it's not at all clear to me \"AAA protocols\" is the right idea there, and nor is it clear what's meant, with the text as-is. - SEC-REQ-06: where is a \"priority\" defined? - SEC-REQ-07: here you say read/write is a transaction, but earlier you said it was an operation, which is it? (discuss9) 3.2: As with others, I don't think the idea of annotating parts of yang modules with \"can be insecure\" is a good one. There's a separate thread discussing that though, so maybe better to not fork that.  (discuss10) - SEC-REQ-O9: I hate to do this to ya, but BCP107  is IMO a fairly clear failure when it comes to routing. And yet again the exceptions clauses here are so broad as to be meaningless (e.g. considered low value by whom?). What is the real goal here? (other than an attempt to keep the sec ADs from being annoying and trying to insist on  BCP107 ? ;-)  (discuss11) - SEC-REQ-09: Separately, to my other would-be-discuss point on this requirement, \"can guarantee\" is well beyond the state of the art in key management. I'd just drop that sentence maybe, but can't make a concrete suggestion until I understand where you want to be wrt  BCP107 . - SEC-REQ-10: the last sentence here is also involved in the \"may do stuff insecurely\" thing, and so will likely need fixing when that is fully resolved. - How is SEC-REQ-11 useful? What protocol artefacts do you have in mind here? Perhaps a requirement that DDoS attacks be specifically considered in I2RS would be more useful. - SEC-REQ-12: This seems to me to have too many words, e.g. the current text could be read to imply that outside of critical infrastructure there is less or no need for confidentiality, so those added words (presumably there to motivate) might be counter-productive.  (discuss12) SEC-REQ-12: I don't get the meaning of the SHOULD here - combined with \"certain data\" that SHOULD seems to end up meaning MAY, as in, it seems to mean the same as \"Read/write operations MAY have to be protected using a confidentiality service.\" - 3.4, bullet (2) here means that we're not talking about data integrity but data origin authentication as well. (discuss13) 3.4, (3): Within what scope must replay be detected? The text implies for ever, which can be very onerous. SEC-REQ-14 doesn't quite go so far, but is ambiguous on this aspect. I'd say best is to note that the scope within which replay needs to be detectable is for future study.  (discuss14) SEC-REQ-15: Sorry, I don't understand what's required here (having read this >1 time). Can you explain?\u00a0 I'm not sure if any substantive change is needed, but there are certainly editorial changes needed for sure as there are multiple wording problems with the text as-is. - 3.5, 1st para: the text here is not as good as  the actual definition of \"role\" in  RFC7921 , and in fact I found the text here confusing. Better to just delete that and say that 7921 defines roles.  (discuss15) SEC-REQ-16: I don't see any content in this text as it seems to just say \"some role based access control and some level of transport protection need to be provided\" which is always true, as you are allowing \"no transport security\" and (I assume) \"fully public access\" so any protocol/system will always meet this requirement. - SEC-REQ-16: \"privacy requirements\" here is wrong, you mean confidentiality I think. (discuss16) SEC-REQ-17: \"MUST work\" is far too vague. That could for example hide a major debate about push v. pull of role information. If the WG haven't considered that, I think you could ack that again by saying that more work is needed to define how RBAC is consistent across multiple transport layer connections. (discuss17) SEC-REQ-18: again this seems to have no content, other than perhaps imposing an odd requirement on implementations - I don't see a protocol requirement here at all. It is reasonable to note that libraries for clients ought not assume a single client identity but even that's very specific to library implementations and since it's just a MAY that's entirely obvious, I'd leave it out. (discuss18) SEC-REQ-19: I fully agree with the motivation here but I think the stated requirement is broken.\u00a0 For example, I don't know how a piece of s/w will determine whether or not it is correlated with a person. I also don't think a SHOULD works here, as again something would need to be stated about the situations when the feature is not needed, and I can't figure out a sensible statement for that. The last sentence also seems likely not useful. All in all, I think this is likely to be ignored or even worse treated like a piece of fig-leaf specification text to pretend that we're caring about privacy. (discuss19) - 3.6: I have no idea whether this other draft is supposed to be considered as setting requirements or not. I assume that the answer is \"not\" as you've made it an informative reference, but in that case you really should say that.\u00a0 The alternative would be that 3.6 is essentially specifying an applicability statement for the environments in which it is, and is not, ok to run i2rs. If the latter were intended, then you'd need to say it and make the draft a normative reference.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-09-29 05:09:00-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-09-28 14:31:42-07:00",
+        "text": "Thanks for the major revision, this is a lot better.\u00a0 I have one discuss point and a bunch of comments. The discuss is: I think it's an error to mix the secure and insecure transports in one set of protocol requirements. And I would definitely put a DISCUSS on any protocol solution that aims to weaken the security of e.g. port 443 or equivalent. In other words, I think you need to rule out any protocol solutions that weaken the secure transports that you are re-using. I therefore suggest adding a new requirement along these lines: \"SEC-REQ-NN: While I2RS might need to make use of both secure and insecure transports, this MUST NOT be done in any way that weakens the secure transport protocol, either as used in I2RS, or especially not as used in other contexts that do not have this requirement for mixing secure and insecure modes of operation and that depend on security being as good as we can provide.\" So I'd like to discuss adding the above or similar.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-09-29 05:09:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-08-17 19:57:24-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-17 19:57:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-08-17 18:13:08-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-15 10:37:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-10-03 10:15:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-17 18:13:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8241",
+  "evaluation_end": "2016-10-03 10:15:35-07:00",
+  "evaluation_start": "2016-08-15 10:37:55-07:00"
+}

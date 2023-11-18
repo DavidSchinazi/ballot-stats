@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-01-22 18:41:48-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-01-23 18:27:24-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-01-22 18:41:48-08:00",
+        "text": "Thanks to everyone who worked on this specification. I think it's well-written, clear, and useful. I fully endorse publication, and intend to ballot \"yes\" once we come to an agreement on the issue I describe below. The problem I'm running into is the URL synthesis rules described in section 3.1 for multi-tenancy engage in exactly the kind of behavior that  RFC 5785  was designed to head off: it creates URLs all over the path space of the authority, rather than coralling all synthesized URLs to live under only one top-level directory. One of the key aspects of the principles of the web architecture is URI opacity , which generally precludes clients from synthesizing URLs.  RFC 5785  was intended as a very limited carve-out to the principle of URI opacity, and was carefully limited to a single top-level path element. This specification oversteps that carve-out by exploding the location that \"Well-Known\" synthesized URLs can appear: it literally increases it from one location (the root) to infinite locations (at the end of any arbitrary path). Fortunately, this defect is trivial to fix. Rather than placing .well-known path components *after* the path identified by an issuer identifier, you place them *before* it, which amends this document's usage to be within the spirit intended by  RFC 5785 . For example, the example in section 3.1: \u00a0 \u00a0  GET /issuer1/.well-known/oauth-authorization-server HTTP/1.1 \u00a0 \u00a0  Host:  example.com Would instead become: \u00a0 \u00a0  GET /.well-known/oauth-authorization-server/issuer1 HTTP/1.1 \u00a0 \u00a0  Host:  example.com",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-03-01 12:32:10-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-01-23 18:27:24-08:00",
+        "text": "Thanks to everyone who worked on this specification. I think it's well-written, clear, and useful. I fully endorse publication, and intend to ballot \"yes\" once we come to an agreement on the issue I describe below. The problem I'm running into is the URL synthesis rules described in section 3.1 for multi-tenancy engage in exactly the kind of behavior that  RFC 5785  was designed to head off: it creates URLs all over the path space of the authority, rather than coralling all synthesized URLs to live under only one top-level directory. One of the key aspects of the principles of the web architecture is URI opacity , which generally precludes clients from synthesizing URLs.  RFC 5785  was intended as a very limited carve-out to the principle of URI opacity, and was carefully limited to a single top-level path element. This specification oversteps that carve-out by exploding the location that \"Well-Known\" synthesized URLs can appear: it literally increases it from one location (the root) to infinite locations (at the end of any arbitrary path). Fortunately, this defect is trivial to fix. Rather than placing .well-known path components *after* the path identified by an issuer identifier, you place them *before* it, which amends this document's usage to be within the spirit intended by  RFC 5785 . For example, the example in section 3.1: \u00a0 \u00a0  GET /issuer1/.well-known/oauth-authorization-server HTTP/1.1 \u00a0 \u00a0  Host:  example.com Would instead become: \u00a0 \u00a0  GET /.well-known/oauth-authorization-server/issuer1 HTTP/1.1 \u00a0 \u00a0  Host:  example.com _______ UPDATE Author's response:  https://www.ietf.org/mail-archive/web/oauth/current/msg17747.html My response:  https://www.ietf.org/mail-archive/web/oauth/current/msg17748.html",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-01 12:32:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-01-24 00:05:46-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-02-28 06:43:36-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-01-24 00:05:46-08:00",
+        "text": "Thank you for the well written IANA Considerations section. I have one comment on it which should be easy to resolve: The document doesn't seem to say anything about allowed characters in Metadata names. When the document talks about \"case-insensitive matching\", it is not clear how to implement the matching, because it is not clear whether or not Metadata names are ASCII only. If they are not, then you need to better define what \"case insensitive\" means.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-03-05 09:17:44-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-02-28 06:43:36-08:00",
+        "text": "Thank you for the well written IANA Considerations section. I have one comment on it which should be easy to resolve: The document doesn't seem to say anything about allowed characters in Metadata names. When the document talks about \"case-insensitive matching\", it is not clear how to implement the matching, because it is not clear whether or not Metadata names are ASCII only. If they are not, then you need to better define what \"case insensitive\" means. You've made a change in section 7.1, which looks good. However there is still the following text in 7.1.1: \u00a0  Metadata Name: \u00a0 \u00a0 \u00a0 The name requested (e.g., \"issuer\").\u00a0 This name is case-sensitive. \u00a0 \u00a0 \u00a0 Names may not match other registered names in a case-insensitive I suggest replacing \"in a case-insensitive manner\" with something like \"if when applying Unicode toLowerCase() to both, they compare equal\". Or maybe keep \"case-insensitive\" and just add a sentence explaining what it is. I think you should use toLowerCase(), as it is already recommended in other IETF specs, like  RFC 8265 . \u00a0 \u00a0 \u00a0 manner unless the Designated Experts state that there is a \u00a0 \u00a0 \u00a0 compelling reason to allow an exception.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-05 09:17:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-01-23 16:07:42-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-23 16:07:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-01-24 07:09:59-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-24 07:09:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-01-24 16:21:06-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-24 16:21:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-01-23 18:20:33-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-23 18:20:33-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-01-23 01:53:15-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-23 01:53:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-01-22 12:30:28-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-22 12:30:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-01-18 09:55:10-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-18 09:55:10-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-01-23 12:54:21-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-23 12:54:21-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-01-23 05:33:47-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-23 05:33:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-01-19 02:40:42-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-19 02:40:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-01-24 06:56:11-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-24 06:56:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-01-24 15:53:25-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-24 15:53:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-01-24 16:14:04-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-18 09:55:03-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-03-21 07:36:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-24 16:14:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8414",
+  "evaluation_end": "2018-03-21 07:36:38-07:00",
+  "evaluation_start": "2018-01-18 09:55:03-08:00"
+}

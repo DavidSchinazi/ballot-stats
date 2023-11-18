@@ -1,0 +1,253 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-08-15 19:22:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-19 21:53:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-15 19:22:54-07:00",
+        "text": "The grouping semantics here are problematic. Section 4.1 talks about LS to associate ANC streams with other streams. LS is strictly a synchronization construct, not used to otherwise state relationships between streams. More importantly, there's nothing that prevents it being used to synchronize an arbitrary number of video streams with each other. The problem that arises is best illustrated by this example, where I'm going to transmit two video streams, each with their own ANC data, but need them to be synchronized (e.g., perhaps I'm going to have two border-less screens physically right next to each other for a double-wide image, and synchronization is important to avoid tearing): \u00a0 \u00a0 \u00a0 \u00a0 v=0 \u00a0 \u00a0 \u00a0 \u00a0 o=Al 123456 11 IN IP4  host.example.com \u00a0 \u00a0 \u00a0 \u00a0 s=Professional Networked Media Test \u00a0 \u00a0 \u00a0 \u00a0 i=A test of synchronized video and ANC data \u00a0 \u00a0 \u00a0 \u00a0 t=0 0 \u00a0 \u00a0 \u00a0 \u00a0 a=group:LS V1 V2 M1 M2 \u00a0 \u00a0 \u00a0 \u00a0 m=video 50000 RTP/AVP 96 \u00a0 \u00a0 \u00a0 \u00a0 c=IN IP4 233.252.0.1/255 \u00a0 \u00a0 \u00a0 \u00a0 a=rtpmap:96 raw/90000 \u00a0 \u00a0 \u00a0 \u00a0 a=fmtp:96 sampling=YCbCr-4:2:2; width=1280; height=720; depth=10 \u00a0 \u00a0 \u00a0 \u00a0 a=mid:V1 \u00a0 \u00a0 \u00a0 \u00a0 m=video 50002 RTP/AVP 96 \u00a0 \u00a0 \u00a0 \u00a0 c=IN IP4 233.252.0.1/255 \u00a0 \u00a0 \u00a0 \u00a0 a=rtpmap:96 raw/90000 \u00a0 \u00a0 \u00a0 \u00a0 a=fmtp:96 sampling=YCbCr-4:2:2; width=1280; height=720; depth=10 \u00a0 \u00a0 \u00a0 \u00a0 a=mid:V2 \u00a0 \u00a0 \u00a0 \u00a0 m=video 50010 RTP/AVP 97 \u00a0 \u00a0 \u00a0 \u00a0 c=IN IP4 233.252.0.2/255 \u00a0 \u00a0 \u00a0 \u00a0 a=rtpmap:97 smpte291/90000 \u00a0 \u00a0 \u00a0 \u00a0 a=fmtp:97 DID_SDID={0x61,0x02};DID_SDID={0x41,0x05} \u00a0 \u00a0 \u00a0 \u00a0 a=mid:M1 \u00a0 \u00a0 \u00a0 \u00a0 m=video 50012 RTP/AVP 97 \u00a0 \u00a0 \u00a0 \u00a0 c=IN IP4 233.252.0.2/255 \u00a0 \u00a0 \u00a0 \u00a0 a=rtpmap:97 smpte291/90000 \u00a0 \u00a0 \u00a0 \u00a0 a=fmtp:97 DID_SDID={0x61,0x02};DID_SDID={0x41,0x05} \u00a0 \u00a0 \u00a0 \u00a0 a=mid:M2 If the recipient of these mutually synchronized streams needs to reintegrate the ANC data into the video for offloading to an HDMI connection, how does it know which ANC stream to insert into which video stream? There needs to be some additional association mechanism here. You can either add an attribute to the smpte291 media sections that clearly indicates which video stream they correspond to, or you can include the smpte291 packets in the same stream as the corresponding video, like so: \u00a0 \u00a0 \u00a0 \u00a0 v=0 \u00a0 \u00a0 \u00a0 \u00a0 o=Al 123456 11 IN IP4  host.example.com \u00a0 \u00a0 \u00a0 \u00a0 s=Professional Networked Media Test \u00a0 \u00a0 \u00a0 \u00a0 i=A test of synchronized video and ANC data \u00a0 \u00a0 \u00a0 \u00a0 t=0 0 \u00a0 \u00a0 \u00a0 \u00a0 m=video 50000 RTP/AVP 96 97 \u00a0 \u00a0 \u00a0 \u00a0 c=IN IP4 233.252.0.1/255 \u00a0 \u00a0 \u00a0 \u00a0 a=rtpmap:96 raw/90000 \u00a0 \u00a0 \u00a0 \u00a0 a=rtpmap:97 smpte291/90000 \u00a0 \u00a0 \u00a0 \u00a0 a=fmtp:96 sampling=YCbCr-4:2:2; width=1280; height=720; depth=10 \u00a0 \u00a0 \u00a0 \u00a0 a=fmtp:97 DID_SDID={0x61,0x02};DID_SDID={0x41,0x05} \u00a0 \u00a0 \u00a0 \u00a0 m=video 50002 RTP/AVP 96 97 \u00a0 \u00a0 \u00a0 \u00a0 c=IN IP4 233.252.0.1/255 \u00a0 \u00a0 \u00a0 \u00a0 a=rtpmap:96 raw/90000 \u00a0 \u00a0 \u00a0 \u00a0 a=rtpmap:97 smpte291/90000 \u00a0 \u00a0 \u00a0 \u00a0 a=fmtp:96 sampling=YCbCr-4:2:2; width=1280; height=720; depth=10 \u00a0 \u00a0 \u00a0 \u00a0 a=fmtp:97 DID_SDID={0x61,0x02};DID_SDID={0x41,0x05} (See  RFC4733  for an example of a payload that performs stream association in this fashion)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-19 21:53:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-08-13 03:44:18-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-13 03:44:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-08-11 14:32:46-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-11 14:32:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-07-26 13:34:07-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-08-14 13:06:31-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-14 13:06:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-08-15 16:11:16-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-15 16:11:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-08-15 10:20:50-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-15 10:20:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-08-15 01:58:39-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-15 01:58:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-08-15 09:55:05-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-15 09:55:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-08-16 16:02:33-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-16 16:02:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-08-08 06:34:28-07:00",
+        "end_reason": "new_position",
+        "start": "2017-07-26 13:34:07-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-10-20 14:29:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-08 06:34:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8331",
+  "evaluation_end": "2017-10-20 14:29:18-07:00",
+  "evaluation_start": "2017-07-26 13:34:07-07:00"
+}

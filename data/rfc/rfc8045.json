@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-08-16 08:29:15-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-16 08:29:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-08-16 10:49:23-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-16 10:49:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-08-16 12:01:57-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-11-01 08:17:22-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-08-16 12:01:57-07:00",
+        "text": "(1) I find the absence of any definition of error handling behavior in this document to be a problem. I realize that the attributes specified in this document are meant to be transmitted between components that are all operated by the same administrative entity, but implementors can still make mistakes, and for those cases it seems like error handling should be defined. For example: - What happens if the AAA server sends an IP-Port-Limit-Info attribute with a larger limit than the CGN is able to allocate to that particular user? What is the CGN supposed to do and how is that communicated back to the AAA server? - What happens if the CGN sends an IP-Port-Range attribute that encompasses a larger range than a previously sent IP-Port-Limit-Info? What is the AAA server supposed to do? - What happens if the AAA server sends an IP-Port-Forwarding-Map attribute to map a port that is not within the requesting host's allocated range? Is the CGN expected to change the mapping and send a CoA with a different IP-Port-Forwarding-Map, or communicate some sort of error, or something else? There are surely other error cases. I think it's worth going through the uses of each attribute and specifying all the error handling behavior. This seems especially important since part of the motivation for these attributes is for identification and the consequences of erroneous identification could be severe for the user. Discussion of those consequences is also missing from Section 6. (2) Section 3.1.2 says: \"For port allocation, both IP-Port-Range-Start TLV and IP- \u00a0  Port-Range-End TLV must be included; for port deallocation, the \u00a0  inclusion of these two TLVs is optional and if not included, it \u00a0  implies that all ports that are previously allocated are now \u00a0  deallocated.\" How does an AAA server distinguish between port allocation and deallocation requests if a deallocation request includes a range start and range end? Is the server supposed to assume that whatever range is specified by the most recently received IP-Port-Range attribute represents the only range of allocated ports for the host? What is the meaning of sending an IP-Port-Range request with only a start value or an end value but not both (as seems to be allowable by the above)? (3) The specification of IP-Port-Local-Id seems to allow for unnecessary exposure of potentially sensitive information. There is no explanation given for why the combination of the other identifiers included in IP-Port-Range and IP-Port-Forwarding attributes is insufficient to identify the host in DS-Extra-Lite and Lightweight 4over6 cases. As defined, it sounds like implementations could put basically any user, device, or interface identifier in there. If this TLV is actually necessary to communicate what these attributes are trying to accomplish, the justification for it should be provided and the limitations on when this field may be used and what kind of identifiers can appear here should be stated. (4) The shepherd write-up discusses two different approaches to defining the sub-TLV types and then says: \"Both approaches were considered as valid and the WG has decided to let IANA decide what the approach is preferred when allocating the TLV-Type for the sub-TLVs defined in this document.\" This is not appropriate. The document needs to explicitly define how the types should be allocated and should not leave the decision to IANA. I see that IANA has already noted that Section 7.3 is ambiguous about this; the WG needs to make a choice.   (5) Section 6 seems to be missing a discussion of the consequences of communicating erroneous port range and port mapping information. Since part of the motivation for these attributes is identification of the host, this needs to be discussed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-01 08:17:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-08-17 20:01:28-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-17 20:01:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-08-16 18:01:24-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-16 18:01:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-09-15 05:26:00-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-11-03 04:54:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-09-15 05:26:00-07:00",
+        "text": "I'm late for my review here. If some points in my DISCUSS/COMMENT have been discussed already let me know. I'll flag this as a DISCUSS to follow up on the IPFIX issues. First of, I applause the attempt to reuse/map/combine data models (IPFIX information element and RADIUS attribute). Now, there are a couple of issues. The first set of issues has been sent via the IPFIX experts, copied here for tracking purposes. \u00a0 \u00a0 Dear Authors, \u00a0 \u00a0 The experts for the IPFIX IE registry have returned the following \u00a0 \u00a0 review: \u00a0 \u00a0 In general, the Information Elements in draft-ietf-radext-ip-port- \u00a0 \u00a0 radius-ext are so underspecified as to be unimplementable. They should \u00a0 \u00a0 not be added to the registry in their present form. The authors are \u00a0 \u00a0 advised to read  RFC 7013 , especially Section 4, which provides useful \u00a0 \u00a0 information on defining Information Elements. Specifically: \u00a0 \u00a0 The Information Element transportType is underspecified: (a) I presume \u00a0 \u00a0 this is in reference to sourceTransportPort and \u00a0 \u00a0 destinationTransportPort, but the description must say this if it is \u00a0 \u00a0 the case; (b) It's not clear at all from the description in what \u00a0 \u00a0 context this distinction is useful; (c) What's an ICMP identifier? \u00a0 \u00a0 In addition, the description of transportType appears to create a \u00a0 \u00a0 table which should probably be handled as a subregistry. See See \u00a0 \u00a0  RFC7013  section 4.7. for advice on the creation of tables without \u00a0 \u00a0 subregistries (in short, \"don't\".) \u00a0 \u00a0 The Information Element natTransportLimit has an inappropriate name; \u00a0 \u00a0 it does not describe that which it (presumably) is supposed to \u00a0 \u00a0 represent (see  RFC 7013  section 4.1). In addition, it is \u00a0 \u00a0 underspecified. It is impossible to implement from the description. Is \u00a0 \u00a0 the field IPv4 specific, or is IPv6 supported as well? (If not, why \u00a0 \u00a0 not?) \u00a0 \u00a0 The Information Element localID has an inappropriate name; it is far \u00a0 \u00a0 too general (see  RFC 7013  section 4.1). It uses an inappropriate \u00a0 \u00a0 abstract data type (addresses should never be represented as UTF-8 \u00a0 \u00a0 strings in IPFIX, see  RFC 7013  section 4.2). It is underspecified as \u00a0 \u00a0 well as poorly designed. Without the ability to disambiguate the type \u00a0 \u00a0 of information in the field, this is not a useful Information Element. \u00a0 \u00a0 Without a complete enumeration of possible types (n.b. 'etc.' in the \u00a0 \u00a0 description), it is not a useful Information Element. Its purpose is \u00a0 \u00a0 unclear from its description; further, it appears to violate the \u00a0 \u00a0 following guidance in  RFC 7013  section 4: \"The Information Element \u00a0 \u00a0 must be unique within the registry, and its description must represent \u00a0 \u00a0 a substantially different meaning from that of any existing \u00a0 \u00a0 Information Element. An existing Information Element that can be \u00a0 \u00a0 reused for a given purpose should be reused.\" I have some more issues I would like to discuss: - section 3.2.5, as an example, contains a list of sourceIPv6Address. In IPFIX, we would export those as a list [ RFC 6313 ] Does this RADIUS document want to only reuse the semantic of individual IPFIX information element? And also the semantic of multiple information elements [ RFC 6313 ]? And also the IPFIX encoding? For example, some IPFIX fields are \"right justified\" (sourceTransportPort), while some others are not (localID) The document should be clear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-03 04:54:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-08-16 13:38:30-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-16 13:38:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-08-17 13:22:04-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-17 13:22:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-09-13 09:15:49-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-09-13 09:15:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-08-12 14:05:43-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-08-17 07:04:01-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-10-13 07:22:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-08-17 07:04:01-07:00",
+        "text": "I fully support Alissa's discussion points and have two more to add: 1) IP-Port-Type TLV only covers UDP, TCP and ICMP. This is not very future-proof: there are other transport protocols that have ports or identifiers that may want to be supported in future. Also it is not clear to me from the document why this information is needed at all in the described use cases. Therefore I see two possible ways forward: Either remove the IP-Port-Type TLV or extend it to also cover other cases. Related to this point I would like to mention that  RFC6887  is not restricted to UDP/TCP and therefore the following sentence in section 2 is not correct: \"Note that the definitions of [...] \"internal port\", [...] \"external port\" [...] are the same as defined in Port Control Protocol (PCP) [ RFC6887 ]\" 2) The IE doctors have provide feedback to IANA that the Information Elements in this doc are underspecified (not confirm with rules in  RFC 7013 ) and should therefore be not registered.\u00a0 Addressing this feedback could lead to a mayor rewrite of this doc, especially in the relation to the use and definition of transportType and receptively IP-Port-Type TLV, and should therefore be done before a final IESG decision.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-13 07:22:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-08-15 05:42:32-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-15 05:42:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-09-14 15:56:00-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-10-16 23:39:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-09-14 15:56:00-07:00",
+        "text": "Sorry for not spotting this in other documents, but do we understand the privacy characteristics of this ICMP identifier? It may well be that the resolution of this discuss requires some other document to exist (in which case I'll get out of the way of this one) but I think we ought be quite cautious in how we introduce\u00a0 new functions for identifiers that may be personally identifying, so I'd like to chat about this a bit. Did the WG discuss the privacy issues associated with this identifier?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-16 23:39:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-08-17 20:53:46-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-17 20:53:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-08-17 18:09:21-07:00",
+        "end_reason": "new_position",
+        "start": "2016-08-12 14:05:43-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-11-07 10:39:05-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-17 18:09:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8045",
+  "evaluation_end": "2016-11-07 10:39:05-08:00",
+  "evaluation_start": "2016-08-12 14:05:43-07:00"
+}

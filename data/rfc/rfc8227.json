@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-05-22 08:15:36-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-22 08:15:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-05-24 11:29:46-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-24 11:29:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-05-24 08:35:59-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-24 08:35:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-05-24 06:31:24-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-24 06:31:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-05-23 12:41:59-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-23 12:41:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-05-18 06:34:42-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-05-23 23:21:29-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-07-05 16:20:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-05-23 23:21:29-07:00",
+        "text": "The security considerations of this document seem unacceptably incomplete, as they basically just point to other documents. \u00a0  The RPS protocol defined in this document is carried in the G-ACh \u00a0  [ RFC5586 ], which is a generalization of the Associated Channel \u00a0  defined in [ RFC4385 ].\u00a0 The security considerations specified in these \u00a0  documents apply to the proposed RPS mechanism. The security considerations of those documents don't seem that great either. However, I believe that they miss a new security issue raised by the mechanism in this draft, which is that a member of the ring appears to be able to forge reports of errors at other parts of the ring. Specifically, S 5.1.3.3 says: \u00a0  When a node is in a pass-through state, it MUST transfer the received \u00a0  RPS Request in the same direction. \u00a0  When a node is in a pass-through state, it MUST enable the traffic \u00a0  flow on protection ring tunnels in both directions. This seems not to involve any filtering, which suggests that node B can send a forged SF from C->D and from D->C, which at least potentially temporarily breaks the link there, causing traffic diversion. More generally, this system assumes that every node trusts every other node completely. That must at least be stated. Incidentally, the text above appears to contain a bug in that it doesn't talk about processing incoming RPS requests intended for the receiving node, but I may just have missed the section where it says that.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-05 16:20:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-05-23 10:12:33-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-23 10:12:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-05-24 06:19:03-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-24 06:19:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-05-24 13:07:32-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-06-20 14:14:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-05-24 13:07:32-07:00",
+        "text": "I want to thank the authors for a very readable draft. It was a pleasure to review, and that's a high bar for the subject. I have loads of questions, but my first set of questions is an expansion of Alvaro's comment that I think rises to the level of a Discuss. Please note that I'm asking questions, not proposing text changes, so I really do want to discuss it. ---------- my first set of questions In this text, \u00a0  Three typical ring protection mechanisms are described in this \u00a0  section: wrapping, short wrapping and steering.\u00a0 All nodes on the \u00a0  same ring MUST use the same protection mechanism. I would like to understand what happens if they aren't - and I'm asking, mostly as a way of encouraging guidance for operators in debugging cases where they're not all using the same mechanism. I'm not asking for a full mesh of possible misconfigurations, only for a sentence or two (\"If they aren't all using the same protection mechanism, the following things may happen\"). More broadly, I'd like to understand why wrapping and short wrapping are both defined. It seems like the only functional difference is that short wrapping doesn't give you as much latency. Is that right?  24 pages in, I see this: \u00a0  o\u00a0 In rings utilizing the wrapping protection, each node detects the \u00a0 \u00a0 \u00a0 failure or receives the RPS request as the destination node MUST \u00a0 \u00a0 \u00a0 perform the switch from/to the working ring tunnels to/from the \u00a0 \u00a0 \u00a0 protection ring tunnels if it has no higher priority active RPS \u00a0 \u00a0 \u00a0 request. \u00a0  o\u00a0 In rings utilizing the short wrapping protection, each node \u00a0 \u00a0 \u00a0 detects the failure or receives the RPS request as the destination \u00a0 \u00a0 \u00a0 node MUST perform the switch only from the working ring tunnels to \u00a0 \u00a0 \u00a0 the protection ring tunnels. so I'm pretty sure there are differences beyond what I was seeing, earlier in the document. And, of course, I'm not sure what the effect of choosing steering over wrapping/short wrapping would be, for my users, but that can wait until we talk about wrapping and short wrapping ... At a minimum, I'd like to see guidance for operators in choosing among the three protection mechanisms. Why would they choose any one of the three? I also note that this MUST seems to be repeated using different words in section 5.1, as \u00a0  All nodes in the same ring MUST use the same protection mechanism, \u00a0  Wrapping, steering or short-wrapping. If that's saying the same thing, one MUST is all you need.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-20 14:14:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-05-23 23:07:42-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-23 23:07:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-05-24 18:10:56-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-24 18:10:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-05-22 08:02:01-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-18 06:34:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-07-10 11:36:14-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-22 08:02:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8227",
+  "evaluation_end": "2017-07-10 11:36:14-07:00",
+  "evaluation_start": "2017-05-18 06:34:42-07:00"
+}

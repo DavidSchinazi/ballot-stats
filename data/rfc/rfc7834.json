@@ -1,0 +1,245 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-10-21 13:41:30-07:00",
+        "end_reason": "new_position",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-21 13:41:30-07:00",
+        "text": "The opening of this draft  \"The Locator/Identifier Separation Protocol (LISP) relies on three \u00a0  principles to improve the scalability properties of Internet routing: \u00a0  address role separation, encapsulation, and mapping.\u00a0 The main goal \u00a0  of LISP is to make the routing infrastructure more scalable by \u00a0  reducing the number of prefixes announced in the Default Free Zone \u00a0  (DFZ).\" is targeted at solving the Internet scalability issue for Internet routing. While the document goes into some details about rather large unknowns and issues observed, it does not have any indications or caveats up front that this is still experimental work - certainly as far as solving this Internet-scale problem. At a minimum, I think there need to be clear caveats on the experimental nature, on the aspects still to be understood, and on the complexity and concerns around the operational and security aspects. While LISP is a really neat idea and it's good to see how far work and research on it has progressed, this document reads much more like marketing than something discussing the engineering and operational trade-offs. 1) There is no discussion of what the \"mapping system\" is and I think that some of the discussion is assuming the use of BGP, but it's a bit hard to tell.\u00a0 At a minimum, it'd be good to clarify whether an Internet-scale deployment must use the same mapping system and what the trade-offs there are. 2) In Sec 4.1, \"When there are several RLOCs, the ITR selects the one with \u00a0  the highest priority and sends the encapsulated packet to this RLOC. \u00a0  If several such RLOCs exist, then the traffic is balanced \u00a0  proportionally to their weight among the RLOCs with the lowest \u00a0  priority value.\" It is unclear whether the \"highest priority\" means the lowest priority value. Please clarify because it incorrectly sounds like the highest priority RLOC is picked - unless there are multiple in which case load-balancing among the lowest priority value RLOCs is done. 3) Sec 5.1 \"Proxies cause what is referred to as path stretch and make \u00a0  troubleshooting harder.\"\u00a0 This doesn't actually describe what path stretch is in any way.\u00a0 I can guess from the name, but that's not sufficient. 4) In Sec 5.2: \"Deployment in the beta network has shown that LISP+ALT \u00a0 \u00a0 \u00a0 \u00a0  ([ RFC6836 ], [CCR13]) was not easy to maintain and control, \u00a0 \u00a0 \u00a0 \u00a0  which explains the migration to LISP-DDT [ I-D.ietf-lisp-ddt ]\" Can you give a reference or indicate what the benefits of DDT are as compared to ALT in this context?",
+        "type": "Abstain"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-10-20 07:05:08-07:00",
+        "end_reason": "new_position",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-20 07:05:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-10-20 13:10:16-07:00",
+        "end_reason": "new_position",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-20 13:10:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-10-20 19:14:54-07:00",
+        "end_reason": "new_position",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-20 19:14:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-10-15 14:54:33-07:00",
+        "end_reason": "new_position",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-10-22 06:13:47-07:00",
+        "end_reason": "new_position",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-22 06:13:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-10-21 23:42:32-07:00",
+        "end_reason": "new_position",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-21 23:42:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-10-21 09:52:26-07:00",
+        "end_reason": "new_position",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-21 09:52:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-10-21 09:42:28-07:00",
+        "end_reason": "new_position",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-21 09:42:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-10-22 05:46:22-07:00",
+        "end_reason": "new_position",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-22 05:46:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-10-20 01:47:18-07:00",
+        "end_reason": "new_position",
+        "start": "2015-10-15 14:54:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-12-01 15:06:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-20 01:47:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7834",
+  "evaluation_end": "2015-12-01 15:06:07-08:00",
+  "evaluation_start": "2015-10-15 14:54:33-07:00"
+}

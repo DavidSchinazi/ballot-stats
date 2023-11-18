@@ -1,0 +1,335 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-01-05 06:51:07-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-05 06:51:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-12-20 12:48:18-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-01-05 06:13:03-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-05 06:13:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-01-03 12:10:33-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-03 12:10:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-01-04 14:18:51-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-04 14:18:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-01-05 03:49:46-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-01-24 14:10:55-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-01-05 03:49:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-09-11 03:40:07-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-01-24 14:10:55-08:00",
+        "text": "To make sure both  draft-ietf-i2rs-yang-network-topo  and  draft-ietf-i2rs-yang-l3-topology  are treated the same way, here is my DISCUSS. As background, email sent to I2RS/IESG on Jan 24th 2017 Let me repeat what I mentioned already on the I2RS mailing list: \u00a0 \u00a0 This document contains a YANG model, a generic YANG model that could be accessed by NETCONF, RESTCONF, or the future I2RS protocol. \u00a0 \u00a0 This document doesn't say (and that would be a mistake IMO if it would) that this YANG model can only be accessed by the I2RS protocol. \u00a0 \u00a0 Hence I'm advocating that the security considerations diligently follow  https://trac.ietf.org/trac/ops/wiki/yang-security-guidelines , and that they don't go in the I2RS protocol specific details. This comment was made for  draft-ietf-i2rs-yang-network-topo , but is equally applicable to this  draft-ietf-i2rs-yang-l3-topology  draft. I still maintain this point of view: it would be a mistake to limit a data model usage to a particular protocol. These topology documents are not I2RS YANG models, these are YANG models, which can be used in different contexts. I'm very concerned if we start having per-WG or per context data models in the IETF. Btw, I haven't seen a RFC specifying what the I2RS protocol is, only the requirements. We can't modify the current generic YANG security considerations for an I2RS control plane and a new datastore that are not yet specified. If you want to describe how I2RS will be using those topology YANG models (and any YANG models btw), then it's suitable to include this part of the I2RS protocol spec or part of an I2RS applicability statement. This is typically where you would describe some protocol specific information such as \"write contention for two clients writing a node using I2RS priority (linked to I2RS User-ID)\". Let me make my point differently. Let's assume for a moment that I2RS needs to use the IETF interface YANG model, does it mean that you will require RFC 7223bis with an updated security considerations? This can't be. I still think the generic YANG security guidelines is suitable, as it relates to IETF specified protocols NETCONF and RESTCONF. Addition of some generic information about the data model (not I2RS protocol) might be useful though. For example, text around \"there is a risk that a write to a topology may create a looping topology or overload a particular node\". Note that I don't think the the security considerations is the best section for this though. Regards, Benoit",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-09-27 02:52:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-09-11 03:40:07-07:00",
+        "text": "Preliminary note: I hope I'm doing the right thing by updating this DISCUSS point as\u00a0 I understand that the document is back to the WG. However, since I reviewed the version 15, since some of my ballot points have been addressed (thank you), and since I wanted to share my feedback publicly, here is my feedback. Please follow the YANG security guidelines template at  https://trac.ietf.org/trac/ops/wiki/yang-security-guidelines \u00a0 \u00a0 \u00a0 \u00a0 There are a number of data nodes defined in this YANG module that are writable/creatable/deletable (i.e., config true, which is the default). These data nodes may be considered sensitive or vulnerable in some network environments. Write operations (e.g., edit-config) to these data nodes without proper protection can have a negative effect on network operations. These are the subtrees and data nodes and their sensitivity/vulnerability: \u00a0 \u00a0 \u00a0 \u00a0  \u00a0 \u00a0 \u00a0 \u00a0 -- for all YANG modules you must evaluate whether any readable data -- nodes (those are all the \"config false\" nodes, but also all other -- nodes, because they can also be read via operations like get or -- get-config) are sensitive or vulnerable (for instance, if they -- might reveal customer information or violate personal privacy -- laws such as those of the European Union if exposed to -- unauthorized parties) \u00a0 \u00a0 \u00a0 \u00a0 Some of the readable data nodes in this YANG module may be considered sensitive or vulnerable in some network environments. It is thus important to control read access (e.g., via get, get-config, or notification) to these data nodes. These are the subtrees and data nodes and their sensitivity/vulnerability: \u00a0 \u00a0 \u00a0 \u00a0  \u00a0 \u00a0 \u00a0 \u00a0 -- if your YANG module has defined any rpc operations -- describe their specific sensitivity or vulnerability. \u00a0 \u00a0 \u00a0 \u00a0 Some of the RPC operations in this YANG module may be considered sensitive or vulnerable in some network environments. It is thus important to control access to these operations. These are the operations and their sensitivity/vulnerability: \u00a0 \u00a0 \u00a0 \u00a0  I don't understand why the security considerations section of a YANG module document speaks about this: \u00a0 \u00a0 Rules expressed in NACM can be applied analogously also to other \u00a0 \u00a0 \u00a0  protocols that attempt access to YANG-defined data.\u00a0 In fact, it \u00a0 \u00a0 \u00a0  needs to be applied in the same way and should, like YANG, thus be \u00a0 \u00a0 \u00a0  considered independent of any particular protocol that is used to \u00a0 \u00a0 \u00a0  access YANG-defined data.\u00a0 Otherwise, access control rules defined by \u00a0 \u00a0 \u00a0  NACM could be very easily circumvented simply by using another access \u00a0 \u00a0 \u00a0  mechanism which does not enforce NACM.\u00a0 The alternative of mandating \u00a0 \u00a0 \u00a0  the introduction of mechanisms parallel to NACM that specify the same \u00a0 \u00a0 \u00a0  access control rules for other transports is clearly undesirable, as \u00a0 \u00a0 \u00a0  this would not only inhibit ease-of-use of systems that implement \u00a0 \u00a0 \u00a0  multiple protocols to access YANG data, but also open the specter of \u00a0 \u00a0 \u00a0  security holes due to inconsistencies in articulation and enforcement \u00a0 \u00a0 \u00a0  of rules across mechanisms that are essentially redundant. This is even confusing to speak about other protocols before/without specifying those protocols. You should remove this. OLD DISCUSS, FOR INFORMATION ONLY: To make sure both  draft-ietf-i2rs-yang-network-topo  and  draft-ietf-i2rs-yang-l3-topology  are treated the same way, here is my DISCUSS. As background, email sent to I2RS/IESG on Jan 24th 2017 Let me repeat what I mentioned already on the I2RS mailing list: \u00a0 \u00a0 This document contains a YANG model, a generic YANG model that could be accessed by NETCONF, RESTCONF, or the future I2RS protocol. \u00a0 \u00a0 This document doesn't say (and that would be a mistake IMO if it would) that this YANG model can only be accessed by the I2RS protocol. \u00a0 \u00a0 Hence I'm advocating that the security considerations diligently follow  https://trac.ietf.org/trac/ops/wiki/yang-security-guidelines , and that they don't go in the I2RS protocol specific details. This comment was made for  draft-ietf-i2rs-yang-network-topo , but is equally applicable to this  draft-ietf-i2rs-yang-l3-topology  draft. I still maintain this point of view: it would be a mistake to limit a data model usage to a particular protocol. These topology documents are not I2RS YANG models, these are YANG models, which can be used in different contexts. I'm very concerned if we start having per-WG or per context data models in the IETF. Btw, I haven't seen a RFC specifying what the I2RS protocol is, only the requirements. We can't modify the current generic YANG security considerations for an I2RS control plane and a new datastore that are not yet specified. If you want to describe how I2RS will be using those topology YANG models (and any YANG models btw), then it's suitable to include this part of the I2RS protocol spec or part of an I2RS applicability statement. This is typically where you would describe some protocol specific information such as \"write contention for two clients writing a node using I2RS priority (linked to I2RS User-ID)\". Let me make my point differently. Let's assume for a moment that I2RS needs to use the IETF interface YANG model, does it mean that you will require RFC 7223bis with an updated security considerations? This can't be. I still think the generic YANG security guidelines is suitable, as it relates to IETF specified protocols NETCONF and RESTCONF. Addition of some generic information about the data model (not I2RS protocol) might be useful though. For example, text around \"there is a risk that a write to a topology may create a looping topology or overload a particular node\". Note that I don't think the the security considerations is the best section for this though. Regards, Benoit",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-12-14 03:26:42-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-09-27 02:52:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-14 03:26:42-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-01-03 11:55:52-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-03 11:55:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-01-05 03:56:46-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-01-05 03:56:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-01-01 18:44:29-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-01-01 18:44:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-01-04 13:33:41-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-12-20 06:27:16-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-01-04 13:33:41-08:00",
+        "text": "Thanks for your work on this draft. I have a couple of things I'd like to discuss that may require some additional text, but should be easy to resolve. 1. Privacy considerations - I don't see any listed and the YANG module include a few identifiers as well as ways to group devices.\u00a0 I think privacy considerations need to be added for use of this module. 2. Security - the network topology and inventory created by this module reveals information about systems and services.\u00a0 This could be very helpful information to an attacker and should also be called out as a security consideration. The access and transport of this information is covered though in the considerations, just listing this threat would be helpful. Thank you.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-20 06:27:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-01-04 08:23:54-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-04 08:23:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-01-04 12:06:38-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-04 12:06:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-01-05 04:52:15-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-01-05 04:52:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-01-04 19:10:29-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-04 19:10:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-01-03 19:23:20-08:00",
+        "end_reason": "new_position",
+        "start": "2016-12-20 12:48:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-03 19:23:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-12-13 13:58:58-08:00",
+        "end_reason": "new_position",
+        "start": "2017-03-26 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-12-20 07:22:30-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 13:58:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8345",
+  "evaluation_end": "2017-12-20 07:22:30-08:00",
+  "evaluation_start": "2016-12-20 12:48:18-08:00"
+}

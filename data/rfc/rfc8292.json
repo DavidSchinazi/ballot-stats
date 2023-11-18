@@ -1,0 +1,261 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-08-01 10:17:49-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-08-01 12:55:17-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-08-15 10:12:31-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-01 12:55:17-07:00",
+        "text": "The following is a nit, but I think it is important that it gets fixed: In Section 4.1: \u00a0  The example in Figure 3 shows a restriction to the key used in \u00a0  Figure 1.\u00a0 Extra whitespace is added to meet formatting constraints. \u00a0  POST /subscribe/ HTTP/1.1 \u00a0  Host:  push.example.net \u00a0  Content-Type: application/webpush-optjons+json;charset=utf-8 Firstly, \"optjons\" above should be \"options\". Secondly, the MIME type registration of application/webpush-options+json says that the MIME type has no parameters, yet you use charset above. So which is it? \u00a0  Content-Length: 104 \u00a0  { \"vapid\": \"BA1Hxzyi1RUM1b5wjxsn7nGxAszw2u61m164i3MrAIxH \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  F6YK5h4SDYic-dRuU_RCPCfA5aq9ojSwk5Y2EmClBPs\" }",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-15 10:12:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-08-15 19:21:24-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-08-16 18:05:59-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-15 19:21:24-07:00",
+        "text": "In section 2: \"A push service MAY reject a request with a 403 (Forbidden) status code [ RFC7235 ] if the JWT signature or its claims are invalid.\"  This seems to leave the possibility of simply ignoring an invalid VAPID token or signature. Assuming we are talking about push servers that support VAPID in the first place, that seems dangerous. Wouldn't it be safer in the general case to treat a request with an invalid VAPID token as at least a bit fishy? I don't mean to say that ignoring the token is never the right thing to do. But the MAY seems week without some guidance on what other actions might be reasonable under what circumstances.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-16 18:05:59-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-08-14 13:15:36-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-14 13:15:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-08-15 16:42:27-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-10-11 09:51:18-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-08-15 16:42:27-07:00",
+        "text": "This design seems to have the unfortunate security property that the JWT is really just a bearer token. The only reason it has to involve public key cryptography at all is to allow the push cient to refer to the public key when it makes a subscription. However, as the Security Considerations acknowledge, this allows a cut-and-paste attack (more than just replay) by an attacker who acquires any JWT, because it does not include the message itself. The primary motivation for this appears to be to minimize CPU cost on the push service. However, there are designs which do this without allowing replay. For instance: - Have the push service have a static public key K_svc which \u00a0 is published to application servers (e.g., via well-known). - In order to form the JWT, have the application server generate \u00a0 a fresh DH key K_app, which is embedded in the JWT. - The message which the app server sends to the push service \u00a0 is then MACed with the DH shared secret Z. This removes the cut-and-paste attack (though of course replay attacks are still possible) unless the push service keeps a replay cache. The replay service can trivially amortize the DH computation (it has to amortize the signature verification in any case to get any computational benefit) but it's soft state, so it can just forget it at any time. Ultimately, this is a WG decision, but given that there are designs with much better security properties, I'd like to know that the WG considered and rejected this kind of design alternative before we advance the weaker design.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-11 09:51:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-08-15 11:50:20-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-15 11:50:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-08-15 04:39:19-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-15 04:39:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-08-15 08:05:34-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-15 08:05:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-08-15 20:59:16-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-15 20:59:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-08-15 10:20:19-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-01 10:17:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-10-19 15:24:51-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-15 10:20:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8292",
+  "evaluation_end": "2017-10-19 15:24:51-07:00",
+  "evaluation_start": "2017-08-01 10:17:49-07:00"
+}

@@ -1,0 +1,515 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-03-03 05:22:14-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-03-03 05:22:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-05-18 06:40:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-05-29 04:42:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-18 06:40:25-07:00",
+        "text": "I know this document has long history and I want to get it done as well. Below is a list of small issues that I think need to be addressed: Is version directive value case-insensitive? The IANA registration is in lowercase, but all examples show uppercase. On page 28: SHA-3, AES-GCM and base64 all need normative references. (Use \"Section 4 of [ RFC4648 ]\" for base64, as  RFC 4648  defines 2 base54 encodings). On page 33: where does the \"missing field value is denoted by -\" specified in ABNF? If this is not defined in ABNF, it would be good to have an example record with a field missing.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-29 04:42:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-03-04 14:23:57-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-03-04 14:23:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-03-25 11:27:15-07:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-03-31 10:20:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-03-25 11:27:15-07:00",
+        "text": "I appreciate all the work that has gone into this document. It was originally up for IESG review when I was on leave, so I was not able to review it at that time. The document needs one more ballot to progress, so I told Spencer I would review it. I realize it's probably frustrating to see another DISCUSS at this point but these should be straightforward to resolve I think. (1) I am wondering about a potential inconsistency that I see in Section 3.4.1. I see with the definition of the c-groupid field that there is inherent support for reporting about clients as aggregates, which is great, and even when reporting is done about individual clients there are a bunch of normative recommendations to try to reduce the chances that a logging field will be tied back to an individual user or host. Excellent. But then with the definition of the cs(insert_HTTP_header_name_here) field and discussion about it, there is no equivalent normative guidance given about not including headers that could potentially be used to identify an individual user or host. There is discussion about cookies but none of it is normative, and cookies are not the only headers that could be identifying. In fact, one of the examples given -- User-Agent -- is known to be identifying in some cases. Given the extent to which the specification of c-groupid goes to support masking the identity of the host, I would expect normative guidance about the use of the header field. That is, if an implementation is using c-groupid to represent an aggregate, it would make sense to me that it MUST NOT include header fields that could be uniquely identifying. I also wonder if the recommendations about cookies in 3.4.1 could be made normative. I will say that based on the use cases for these logs listed in 2.2.5 it's hard to understand what a uCDN needs headers like cookies for on a consistent basis; if they're needed for an occasional troubleshoot, logging them consistently seems like overkill. (2) Section 7.1 says: \"In an environment where any such protection is required, mutually \u00a0  authenticated encrypted transport MUST be used to ensure \u00a0  confidentiality of the logging information.\u00a0 To that end, TLS MUST be \u00a0  used (including authentication of the remote end) by the server-side \u00a0  and the client-side of the CDNI Logging feed, as well as the server- \u00a0  side and the client-side of the CDNI Logging File pull mechanism.\" I know this text has been the subject of much discussion and careful editing, and that I raised an issue on this on the redirection draft. What I don't understand from reading this is whether the expectation is that all servers and clients implementing this specification will use TLS. The first sentence seems to indicate that there will be cases when that is not true. The second sentence says MUST use, which means use in every case. Which is it?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-04-04 12:28:37-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-03-31 10:20:17-07:00",
+        "text": "I think we could resolve my DISCUSS points to the satisfaction of all parties given more time, but I think the issues have narrowed through the list discussion and time is running out to get this approved, so moving to abstain to not delay it further.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-04 12:28:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-05-18 11:59:25-07:00",
+        "end_reason": "new_position",
+        "start": "2015-03-22 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-18 11:59:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-03-25 07:19:05-07:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-04-20 11:03:56-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-03-25 07:19:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-03-18 09:21:28-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-04-20 11:03:56-07:00",
+        "text": "Pete has the ABNF issues in hand, and I'm happy to let him take care of that... but I'm picking up the DISCUSS now that he's retired from the IESG.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-18 09:21:28-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-18 15:31:04-07:00",
+        "end_reason": "new_position",
+        "start": "2015-03-22 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-06-08 12:39:13-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-18 15:31:04-07:00",
+        "text": "While the security and privacy bits are much improved from earlier versions, I think I have found some holes. I assume these are not intentional, and it's entirely possible I have misread some things. But I would like to make sure they are considered prior to progressing. - 3.4.1, c-groupid: The privacy-related guidance about c-groupids indentifying individual clients (in the several bullet list entries with \"-\" bullets) seems contingent on the MAY in the parent (with the \"+\" bullet.) The parent says that you MAY structure the field so that parts identify the aggregate and one part aggregates the individual, with the sub-bullets following an \"In this case...\" clause. I assume the guidance is intended to apply even when an implementation doesn't structure c-groupid that way (or at all.)  - 7.1: This section seems to effectively say that various protections are required when they are required. But it doesn't give advice on when they may be required. (For example, when c-groupid can be mapped to individual client addresses.) - 7.3: \"Making detailed CDNI logging \u00a0  information known to the uCDN does not represent a particular privacy \u00a0  concern because the uCDN is already exposed at request redirection \u00a0  time to most of the information that shows up as CDNI logging \u00a0  information (e.g., enduser IP@, URL, HTTP headers - at least when \u00a0  HTTP redirection is used between uCDN and dCDN).\" I agree this is mostly true for HTTP redirection. But as you mention, the assertion seems to fall down for DNS redirection, where the uCDN may have considerably less information. I think some different guidance for that case may be needed. -- \"Transporting \u00a0  detailed CDNI logging information over the HTTP based CDNI Logging \u00a0  Interface does not represent a particular privacy concern because it \u00a0  is protected by usual IETF privacy-protection mechanism (e.g.,TLS).\" I don't find normative text that says privacy-sensitive information MUST be protected. Just that information that needs to be protected MUST be protected. The reader is left to infer that privacy-sensitive information is covered by that. (See previous comment about 7.1). Without something explicit there, I think it highly likely that some people will rationalize that their deployments don't need protection for one reason or another.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-08 12:39:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-03-03 06:45:08-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-03-03 06:45:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-05-16 13:05:54-07:00",
+        "end_reason": "new_position",
+        "start": "2015-03-22 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-16 13:05:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-03-05 03:13:35-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-03-05 07:32:08-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-03-05 03:13:35-08:00",
+        "text": "Thanks for working on this very useful specification. I think it is soon ready to move forward, but there are a couple of things that we should try to address before the final approval. Martin raised a number of comments in the Gen-ART review, and I'd like to see the resolution of those. For me, I think the following issues at least deserve a document change: I'm not sure the definition of\u00a0 is correct. I would simply do \u00a0  CDNI-LOG-FILE = 1*(DIRGROUP / RECGROUP) For the reasons that Martin outlined. Also, Section 3.4.1 needs an update, given that HTTP 2 specifications have been approved. I suspect you could simply say that the work applies to both HTTP 1 and 2, and that any new information derived from HTTP 2 specifically is outside the scope of this spec. Security considerations should rather refer to existing mandates in TLS specifications (such as the UTA document that was recently approved) rather than make their own specific crypto requirements.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-03-05 07:32:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-03-25 07:16:47-07:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-03-25 07:16:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-03-03 17:25:18-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-04-20 09:50:51-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-03-03 17:25:18-08:00",
+        "text": "Thanks for your work on this draft.\u00a0 I'd like to discuss a few points rom the security considerations section that we should be able to clear up quickly. In order for the following statements to be true, a little more text is needed, so I'll provide a suggestion.\u00a0 I see that you've recommended one of the cipher suites recommended in the new TLS BCP (in the RFC editor queue), so it appears a reference to that would be good to help with the strong statement already offered about TLS protections (true, if configured with best practice recommendations). Old: \u00a0  The use of TLS for transport of the CDNI Logging feed and CDNI \u00a0  Logging File pull allows: \u00a0  o\u00a0 the dCDN and uCDN to authenticate each other (to ensure they are \u00a0 \u00a0 \u00a0 transmitting/receiving CDNI Logging File from an authenticated \u00a0 \u00a0 \u00a0 CDN) \u00a0  o\u00a0 the CDNI Logging information to be transmitted with \u00a0 \u00a0 \u00a0 confidentiality \u00a0  o\u00a0 the integrity of the CDNI Logging information to be protected \u00a0 \u00a0 \u00a0 during the exchange New: The use of mutually authenticated TLS for transport, configured according to best practices [ draft-ietf-uta-tls-bcp ] of the CDNI Logging feed and CDNI \u00a0  Logging File pull allows: \u00a0  o\u00a0 the dCDN and uCDN to authenticate each other (to ensure they are \u00a0 \u00a0 \u00a0 transmitting/receiving CDNI Logging File from an authenticated \u00a0 \u00a0 \u00a0 CDN) \u00a0  o\u00a0 the CDNI Logging information to be transmitted with \u00a0 \u00a0 \u00a0 confidentiality \u00a0  o\u00a0 the integrity of the CDNI Logging information to be protected \u00a0 \u00a0 \u00a0 during the exchange I found the next paragraph a little difficult to read, so I'll offer a suggestion for that text as well. Old: \u00a0  In an environment where any such protection is required, TLS SHOULD \u00a0  be used (including authentication of the remote end) by the server- \u00a0  side and the client-side of the CDNI Logging feed and the CDNI \u00a0  Logging File pull mechanism unless alternate methods are used for \u00a0  ensuring the confidentiality of the information in the logging files \u00a0  (such as setting up an IPsec tunnel between the two CDNs or using a \u00a0  physically secured internal network between two CDNs that are owned \u00a0  by the same corporate entity). New: \u00a0  In an environment where any such protection is required, the use of a  \u00a0  mutually authenticated encrypted transport MUST be used to ensure \u00a0  confidentiality of the log information.\u00a0 TLS SHOULD \u00a0  be used (including authentication of the remote end) by the server- \u00a0  side and the client-side of the CDNI Logging feed as well as by the CDNI \u00a0  Logging File pull mechanism unless alternate methods are used. Alternate \u00a0  methods could include establishing an IPsec tunnel between the two CDNs \u00a0  or using a physically secured internal network between two CDNs that are \u00a0  owned by the same corporate entity). Thanks for also putting thought into the privacy considerations and including anonymization options as that is one of the better options.\u00a0 I'd like to make a suggestion for the second paragraph as TLS is just protecting data in transit. Old: \u00a0 The use of TLS for transport of the CDNI Logging feed and CDNI \u00a0  Logging pull as discussed in Section 7.1 protects the confidentiality \u00a0  of logged information by preventing any other party than the \u00a0  authorised uCDN to gain access to the logging information. New: \u00a0  The use of mutually authenticated TLS to establish a secure session for the transport of the CDNI Logging feed and CDNI Logging pull as discussed in Section 7.1 protects access to the logged information. This provides confidentiality while the logs are in transit and prevents any other party than the authorised uCDN to gain access to the logging information.  Thanks to the SecDir review which raised some of these issues. https://www.ietf.org/mail-archive/web/secdir/current/msg05452.html",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-04-20 11:08:40-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-04-20 09:50:51-07:00",
+        "text": "Thanks for your work on this draft.\u00a0 I'll clear on my prior discusses, for the first one, I would have preferred my suggested text over what you wound up with from the SecDir review after I had provided the suggestion just because I think it covers the points a bit more cleanly. I'm just leaving a discuss here to make sure Pete's points get covered, but I am not an ABNF expert.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-04-20 11:08:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-03-02 08:34:13-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-03-02 08:34:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-05-17 06:53:54-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-17 06:53:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-03-04 19:06:53-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-03-04 19:06:53-08:00",
+        "text": "I am very concerned about the syntax specification here. I'm not convinced it's complete and correct. I am certainly willing to be talked out of my concern, but I think this could use a massive edit by someone who knows ABNF, as well as a discussion about intended contents. Details: 3.1: I always prefer to import the rules you are using simply by reference rather than of copying them. Prevents silly errors. On these, let's see if you really mean what you say you mean: \u00a0 \u00a0 \u00a0 NAMEFORMAT = ALPHANUM *(ALPHANUM / \"_\" / \"-\") \u00a0 \u00a0 \u00a0  So, are you really OK with a NAMEFORMAT of \"1---___---\"? Often what people really want is: \u00a0 \u00a0 \u00a0 NAMEFORMAT = ALPHANUM *([\"_\" / \"-\"] ALPHANUM) \u00a0 \u00a0 \u00a0  Is that what you want? On the next bit: \u00a0 \u00a0 \u00a0 QSTRING = DQUOTE *NDQUOTE DQUOTE ; where \u00a0 \u00a0 \u00a0 \u00a0  NDQUOTE =\u00a0 / 2DQUOTE ; whereby a \u00a0 \u00a0 \u00a0 \u00a0  DQUOTE is conveyed inside a QSTRING unambiguously by repeating \u00a0 \u00a0 \u00a0 \u00a0  it. \u00a0 \u00a0 \u00a0 NHTABSTRING = *NHTAB ; where \u00a0 \u00a0 \u00a0 \u00a0  NHTAB =  (By way of formatting, outdent NDQUOTE and NHTAB, and get rid of \"; where\".) When you say , is that what you really mean? You want to allow control characters? Seems to me that that is going to introduce a whole new set of security considerations. Also, the fact that you call these things xSTRING sends up a flag for me that you maybe want them to be textual. Are you allowing for things outside of US-ASCII? Section 3.2 seems to say only US-ASCII. Finally, do you really want NDQUOTE to allow for CR, LF, and HTAB? That means that parsers have to be a bit smarter, and the line in 3.2 that says, \"Each line ... MUST contain either a directive of a CDNI Logging Record\", and the line in 3.4 that says, \"CDNI Logging Fields MUST be separated by the HTAB character\", both seem bogus. So, assuming you want only US-ASCII and that you don't want CR LF or HTAB in any of these, these should be: \u00a0 \u00a0 \u00a0 QSTRING = DQUOTE *NDQUOTE DQUOTE \u00a0 \u00a0 \u00a0 NDQUOTE = SP / %x21 / %x23-7E / (DQUOTE DQUOTE) \u00a0 \u00a0 \u00a0  ; DQUOTE is conveyed inside a QSTRING unambiguously by repeating \u00a0 \u00a0 \u00a0  ; it. \u00a0 \u00a0 \u00a0 NHTABSTRING = *NHTAB \u00a0 \u00a0 \u00a0 NHTAB = SP / VCHAR or if you like, simply: \u00a0 \u00a0 \u00a0 NHTABSTRING = *( SP / VCHAR ) If you want non-US-ASCII, I'd include UTF-8 and call that out. I can tell you how to do that, but I hope you're not doing that. If you want CR and LF in both QSTRING and NHTABSTRING, and HTAB in QSTRING, you need to fix the lines in 3.2 and 3.4. If don't want them, you're going to have to describe how to unfold and de-tab the HTTP header field values somewhere. 3.2: \u00a0 \u00a0 \u00a0 RECLINE =\u00a0 CRLF \u00a0 \u00a0 \u00a0 RECGROUP = *RECLINE \u00a0 \u00a0 \u00a0  = 1* \u00a0 \u00a0  These seem kind of a cop-out. Seems like you could easily define RECLINE as: \u00a0 \u00a0 \u00a0  RECLINE\u00a0 \u00a0 = date HTAB time HTAB time-taken HTAB ... \u00a0 \u00a0 \u00a0  date\u00a0 \u00a0 \u00a0  = DATE \u00a0 \u00a0 \u00a0  time\u00a0 \u00a0 \u00a0  = TIME \u00a0 \u00a0 \u00a0  time-taken = DEC \u00a0 \u00a0 \u00a0  [...] The last line is nowhere near legitimate ABNF. How about just defining a proper LOGFILE as: \u00a0 \u00a0 \u00a0  LOGFILE\u00a0 \u00a0 = 1*(DIRGROUP RECGROUP) \u00a0 \u00a0  If you're going to bother with ABNF, use ABNF. The explanations can still appear in 3.3 and 3.4.1. 3.3: The top-level ABNF for DIRNAME and DIRVAL give the implementer no help with regard to what is legitimate syntax. You mention the syntax for DIRNAME in 6.1, but that's not where it belongs. At least you should put in: \u00a0 \u00a0 \u00a0  DIRNAME = NAMEFORMAT For DIRVAL, you should probably have at least the most general format of: \u00a0 \u00a0 \u00a0  DIRVAL = NHTABSTRING / QSTRING and then give specifics below. But you could also change 3.2 and say something like: \u00a0 \u00a0 \u00a0 \u00a0 DIRGROUP = version \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  uuid \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  [claimed-orig] \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  [established-orig] \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  1*record-type \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  1*fields \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  [integrity-hash] \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  *new-dir Then in 3.3, you could define: \u00a0 \u00a0 \u00a0 \u00a0 version\u00a0  = \"Version:\" HTAB \"CDNI\" \"/\" 1*DIGIT \".\" 1*DIGIT \u00a0 \u00a0 \u00a0 \u00a0 uuid\u00a0 \u00a0 \u00a0 = \"UUID:\" HTAB NHTABSTRING \u00a0 \u00a0 \u00a0 \u00a0 ... \u00a0 \u00a0 \u00a0 \u00a0 new-dir\u00a0  =  and indicate that unknown directives must be ignored, or something like that. This is wrong: \u00a0  o\u00a0 Fields: \u00a0 \u00a0 \u00a0 *\u00a0 format: FIENAME * Angle brackets don't appear like that in ABNF. 3.4: Again, incorrect ABNF, if that's what it's meant to be.",
+        "type": "Discuss"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-03-04 19:32:49-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-03-04 19:32:49-08:00",
+        "text": "I'm concerned that the information model of this log format encourages the sharing of far more granular information than is justified by the use cases.\u00a0 All of the use cases in Section 2 are focused on statistical information, in which case collecting things like individual IP addresses and ports is unnecessary.",
+        "type": "Discuss"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-02-18 08:14:34-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-03-05 06:07:21-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-04-14 09:47:47-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-03-05 06:07:21-08:00",
+        "text": "Let me preface the specific discuss points with an overall point - I do not think our job here is to force CDNs to behave well in relation to privacy. However, it is our job to provide an API that encourages and effectively supports behaving well in relation to privacy. So, that said... (1) 2.2.5.5: there's no interoperability need for this section, and even if there are data retention requirements to be met, I don't see how the logging API is relevant to that. For example, a dCDN would not have it's data retention requirements met by a uCDN I think. I think just deleting this is the right action. (2) 3.3: MD5 is no longer good enough for data integrity and 128 bits in 32 ascii-hex is too short for SHA-256, which ought be the MUST alg here. (Some variable length is needed or else put the algorithm name in the field name.) (3) c-ip-anonymizing: guidance is needed that IPv4 and IPv6 aren't the same here. Why isn't the same idea done for c-port and other fields?\u00a0 Has there been any analysis of the effectiveness of this scheme in not allowing identification or re-identification? If not, isn't that really needed if we are serious about defining an API that can protect privacy? If that was discussed on the list, please send some pointers so I can get familiar with the work during the discussion.\u00a0  (4) Why is c-ip MTI but the (hopefully) privacy friendly variant is not? (5) I'm not clear why you need to be able to send HTTP header values or session IDs via this i/f. Why is that needed? (And it seems very dangerous, e.g. \"cs(COOKIE)\" could be a doosy.) (6) Just checking - given relevations of snooping, why not say \"MUST use TLS with mutual-auth\"? In particular if we don't end up with a usefully privacy-friendly version of this, where is the safe-but-cleartext use-case described that justifies the current SHOULD?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-04-14 15:07:40-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-04-14 09:47:47-07:00",
+        "text": "DISCUSS points updated for -18, thanks for the changes so far.\u00a0 I suspect for the next step we'll want to chat some. Let me preface the specific discuss points with an overall point - I do not think our job here is to force CDNs to behave well in relation to privacy. However, it is our job to provide an API that encourages and effectively supports behaving well in relation to privacy. So, that said... (1) cleared (2) 3.3: Thanks for changing from MD5->SHA256 but I  think you need the format for the SHA256-Hash thing to be 64HEXDIG don't you? (3) c-ip-anonymizing: guidance is needed that IPv4 and IPv6 aren't the same here. Why isn't the same idea done for c-port and other fields?\u00a0 Has there been any analysis of the effectiveness of this scheme in not allowing identification or re-identification? If not, isn't that really needed if we are serious about defining an API that can protect privacy? If that was discussed on the list, please send some pointers so I can get familiar with the work during the discussion.\u00a0  (4) cleared (take as part of point (3) if need be) but I  think you fixed it (5) I'm not clear why you need to be able to send HTTP header values or session IDs via this i/f. Why is that needed? (And it seems very dangerous, e.g. \"cs(COOKIE)\" could be a doosy.) (6) cleared (7) This is kind of new, but I'd like to adopt Richard's  DISCUSS so that doesn't get lost and it's very related to my point (3) too and I previously noted that I supported him. So that was: \"I'm concerned that the information model of this log format encourages the sharing of far more granular information than is justified by the use cases.  All of the use cases in Section 2 are focused on statistical information, in which case collecting things like individual IP addresses and ports is unnecessary.\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-07-13 17:33:25-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-04-14 15:07:40-07:00",
+        "text": "  DISCUSS points updated for -18, thanks for the changes so far.\u00a0 I suspect for the next step we'll want to chat some. Let me preface the specific discuss points with an overall point - I do not think our job here is to force CDNs to behave well in relation to privacy. However, it is our job to provide an API that encourages and effectively supports behaving well in relation to privacy. So, that said... (1) cleared (2) 3.3: Thanks for changing from MD5->SHA256 but I  think you need the format for the SHA256-Hash thing to be 64HEXDIG don't you? (3) c-ip-anonymizing: guidance is needed that IPv4 and IPv6 aren't the same here. Why isn't the same idea done for c-port and other fields?\u00a0 Has there been any analysis of the effectiveness of this scheme in not allowing identification or re-identification? If not, isn't that really needed if we are serious about defining an API that can protect privacy? If that was discussed on the list, please send some pointers so I can get familiar with the work during the discussion.\u00a0  (4) cleared (take as part of point (3) if need be) but I  think you fixed it (5) I'm not clear why you need to be able to send HTTP header values or session IDs via this i/f. Why is that needed? (And it seems very dangerous, e.g. \"cs(COOKIE)\" could be a doosy.) (6) cleared (7) This is kind of new, but I'd like to adopt Richard's  DISCUSS so that doesn't get lost and it's very related to my point (3) too and I previously noted that I supported him. So that was: \"I'm concerned that the information model of this log format encourages the sharing of far more granular information than is justified by the use cases.  All of the use cases in Section 2 are focused on statistical information, in which case collecting things like individual IP addresses and ports is unnecessary.\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-11-09 07:47:58-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-07-13 17:33:25-07:00",
+        "text": "  DISCUSS points updated for -19, I'm not seeing changes that respond to my discuss points, nor do I recall email on the topic. (Apologies if I missed some.) I'd be happy to chat whenever folks are ready. Let me preface the specific discuss points with an overall point - I do not think our job here is to force CDNs to behave well in relation to privacy. However, it is our job to provide an API that encourages and effectively supports behaving well in relation to privacy. So, that said... (1) cleared (2) 3.3: Thanks for changing from MD5->SHA256 but I  think you need the format for the SHA256-Hash thing to be 64HEXDIG don't you? (3) c-ip-anonymizing: guidance is needed that IPv4 and IPv6 aren't the same here. Why isn't the same idea done for c-port and other fields?\u00a0 Has there been any analysis of the effectiveness of this scheme in not allowing identification or re-identification? If not, isn't that really needed if we are serious about defining an API that can protect privacy? If that was discussed on the list, please send some pointers so I can get familiar with the work during the discussion.\u00a0  (4) cleared (take as part of point (3) if need be) but I  think you fixed it (5) I'm not clear why you need to be able to send HTTP header values or session IDs via this i/f. Why is that needed? (And it seems very dangerous, e.g. \"cs(COOKIE)\" could be a doosy.) (6) cleared (7) This is kind of new, but I'd like to adopt Richard's  DISCUSS so that doesn't get lost and it's very related to my point (3) too and I previously noted that I supported him. So that was: \"I'm concerned that the information model of this log format encourages the sharing of far more granular information than is justified by the use cases.  All of the use cases in Section 2 are focused on statistical information, in which case collecting things like individual IP addresses and ports is unnecessary.\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-11-09 08:51:00-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-11-09 07:47:58-08:00",
+        "text": "  DISCUSS points updated for -21, thanks for the great improvement in the privacy related stuff. I do however have one remaining thing to ask but with a concrete suggested change below. (1) cleared (2) cleated (3) cleared (thanks!) (4) cleared (take as part of point (3) if need be) but I  think you fixed it (5) I'm not clear why you need to be able to send HTTP header values or session IDs via this i/f. Why is that needed? (And it seems very dangerous, e.g. \"cs(COOKIE)\" could be a doosy.) (6) cleared (7) cleared",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-03-02 06:18:41-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-11-09 08:51:00-08:00",
+        "text": "  DISCUSS points updated for -21, thanks for the great improvement in the privacy related stuff. I do however have one remaining (security related) thing to ask  about but with a concrete suggested change below. (1) cleared (2) cleared (3) cleared (thanks!) (4) cleared (take as part of point (3) if need be) but I  think you fixed it (5) I'm not clear why you need to be able to send HTTP header values or session IDs via this i/f. Why is that needed? And it seems very dangerous, e.g. \"cs(COOKIE)\" could be a doosy. I would suggest adding new text in section 3.4 to cover all  of the log content basically saying that you really need to  know what you're doing or you can break security very easily.  Some suggested text that could be added to the end of 3.4  just before the start of 3.4.1: \"Logging fields from HTTP requests and responses can be very dangerous. For example, cookies will often contain (months) long lived bearer token values that can be used to login to a service as the relevant user. Similar values  may be included in other header fields or within URLs or elsewhere in HTTP requests and responses. Centralising such values in a log can therefore represent a significant increase in risk both for the user and the web service provider, but also for the CDNs involved. Implementations  ought therefore attempt to lower the probability of such  bad outcomes e.g. by only allowing a configured set of  headers to be added to logs, or by not supporting wildcard  selection of HTTP request/response fields to add. Such  mechanisms can reduce the probability that security (or  privacy) sensitive values are centralised in logs.\" I'm sure that can be improved on, and have no problem with any specific better words.  (6) cleared (7) cleared",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-02 06:18:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-05-17 19:34:20-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-17 19:34:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-03-05 06:34:54-08:00",
+        "end_reason": "new_position",
+        "start": "2015-02-18 08:14:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ted Lemon",
+        "end": "2015-03-27 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2015-03-05 06:34:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-17 19:27:56-07:00",
+        "end_reason": "new_position",
+        "start": "2015-03-22 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-06-09 07:52:33-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-17 19:27:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7937",
+  "evaluation_end": "2016-06-09 07:52:33-07:00",
+  "evaluation_start": "2015-02-18 08:14:34-08:00"
+}

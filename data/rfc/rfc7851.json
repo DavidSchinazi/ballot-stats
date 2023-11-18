@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-12-16 13:30:47-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-16 13:30:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-12-14 07:58:05-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-12-16 14:04:58-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-02-25 08:13:51-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-12-16 14:04:58-08:00",
+        "text": "I am balloting a DISCUSS because I am concerned that this document doesn't actually do what it set out to achieve.\u00a0 I would love it if during the discussion I was pointed to the places where RELOAD already solves the issues, but for now I wasn't able to find them. According to the text, both extensions are intended to collect information \"along the path\", and the Figures clearly depict what is intended to happen.\u00a0 However, I don't think that as specified (or at least as explained) the behavior is guaranteed.\u00a0 Specific points: 1.  RFC6940  says (in Section 6.2. (Symmetric Recursive Routing)) that an \"overlay MAY be configured to use alternative routing algorithms\u2026[or]\u2026MAY be selected on a per-message basis\". How is the symmetry enforced if other routing algorithms are used?\u00a0 Enforcing that the ping/trace messages use symmetric routing when other algorithms are in use won't necessarily help because the paths may be different. 2.  RFC6940  also (in 6.2.2. (Response Origination)) reads: \"the response traverses the same peers as the request traversed, except in reverse order (symmetric routing) and possibly with extra nodes (loose routing).\" In other words, even if symmetric routing is used, there is no guarantee that the same path will be followed by the response, unless the originator builds the Via List with strict details of all the nodes in the path -- maybe this is what is intended, but no explicit mention occurs in the document. 3. In 4.3, what does \"directly or via symmetric routing\" mean? Is it directly connected? If so, then (for the text in 4.3) that would mean that C is adjacent to A, and even though it is the next hop after B, the path taken to reach C with the PathTrack request doesn't include B \u2014 the result is that the diagnostic information received from C may not be relevant relative to destination D.   Are there implementations available?\u00a0 What has been the experience? The Shepherd's write-up didn't mention any, and the TBD codes make me think that maybe Experimental might be a better status for this document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-25 08:13:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-12-15 20:18:21-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-01-29 12:39:42-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-12-15 20:18:21-08:00",
+        "text": "For Sections 9.1 and 9.2, I would like to see some evidence of discussion that resulted in the decision to make the registry policies Standards Action.\u00a0 Did the working group actually discuss this and make a decision that Standards Action is right?\u00a0 What's the reasoning for not using some softer policy, such as \"IETF Review\" (which might allow for registrations from Experimental documents) or Specification Required (which would allow review by a designated expert of a non-RFC specification)?\u00a0 Why is Standards Action the right thing? Important note on the previous comment: Please don't just change this: talk with me.\u00a0 I'm actually asking a question, and it might well be that Standards Action is right.\u00a0 I want to hear the answer and have a discussion about it.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-01-29 12:39:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-12-15 17:38:08-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-15 17:38:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-12-16 12:06:26-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-16 12:06:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-12-16 06:31:15-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-16 06:31:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-12-16 14:32:44-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-16 14:32:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-12-16 23:19:11-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-03-19 15:27:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-12-16 23:19:11-08:00",
+        "text": "Per Alexey's Gen-ART review and my own read, Section 9.1 is inconsistent with Section 5.3. The document says earlier that first and last bits are reserved. This is not shown in the table at all. What's perhaps causing the confusion is that there are special values (all 0s and all 1s) that convey nothing is requested and that everything is requested. This does not appear to be the same as having two reserved bits. You may want one or the other or both, but as it stands 9.1 or 5.3 do not seem to be saying the same thing. Also, Section 5.3 uses \"delimited\" when it probably should have said \"terminated\", unless there's more substructure in the SOFTWARE_VERSION string than is identified by the text.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-19 15:27:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-12-15 23:34:59-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-15 23:34:59-08:00",
+        "text": "Mhement Ersue did the opsdir review, While I would not prevent this document on a technical basis I would hope very strongly that in addressing the discusses that further refinement can improve the proposed standard... where that done I'd be happy to ballot no objection. -----------  reviewed the document \"P2P Overlay Diagnostics\" ( draft-ietf-p2psip-diagnostics-19.txt ) as part of the Operational directorate's ongoing effort to review all IETF documents being processed by the IESG.\u00a0 These comments were written primarily for the benefit of the operational area directors.\u00a0 Document editors and WG chairs should treat these comments just like any other last call comments.   Intended status: Standards Track Updates: 6940 (if approved) Current IESG state: In Last Call (ends 2015-12-14) IANA Review State: IANA - Not OK (see for IANA comments at:  https://datatracker.ietf.org/doc/draft-ietf-p2psip-diagnostics/history/ )   Summary: The document describes mechanisms for P2P overlay diagnostics.\u00a0 It defines extensions to the RELOAD P2PSIP base protocol to collect diagnostic information, and details the protocol specifications for these extensions.\u00a0    Comments: - The document is not easy to read and the clarity could be improved. - It is common practice and rule to mention in the document abstract the RFC which is going to be updated. - There are many occurrences of the word \u201cshould\u201d. Are these meant to be normative language and \u201cSHOULD\u201d?   - There are different terms used in the first few sections, which are not introduced properly. One substantial term the reader is surprised with is \"diagnostic kind type\". - I believe the basic terms used in the document should be defined in a Terminology section if not defined in  RFC 6940 . The Terminology section should mention that the terminology from  RFC 6940  is used. - The term \"Kind\" has been defined in  RFC 6940 . If the term \"kind\" is to be used as defined in  RFC 6940  it should be used with a capital \"K\". - There are different very long sentences and a few 5-to-6-part-substantives which don't contribute to readability (e.g.: \u201csingle, general P2PSIP overlay diagnostic framework\u201d). - Concerning: \"The second is a new method and response, PathTrack,\" I would like to suggest to delete \"and response\" or call it \"a new request/response method\".   The idnits tool returns one error and numerous warnings which need to be fixed (13 warnings, 2 comment and 1 error). See  http://tools.ietf.org/idnits?url=https://tools.ietf.org/id/draft-ietf-p2psip-diagnostics-19.txt",
+        "type": "Abstain"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-12-15 13:09:38-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-15 13:09:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-12-15 18:15:57-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-15 18:15:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-12-17 04:15:22-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-17 04:15:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-12-15 18:31:34-08:00",
+        "end_reason": "new_position",
+        "start": "2015-12-14 07:58:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-03-25 12:22:46-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-15 18:31:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7851",
+  "evaluation_end": "2016-03-25 12:22:46-07:00",
+  "evaluation_start": "2015-12-14 07:58:05-08:00"
+}

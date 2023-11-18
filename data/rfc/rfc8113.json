@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-02-02 00:17:02-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-02 00:17:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-01-30 14:50:10-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-30 14:50:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-02-01 10:28:26-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-01 10:28:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-01-30 13:44:04-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-01-30 13:45:10-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-01-30 13:44:04-08:00",
+        "text": "I have a couple of points I think we should DISCUSS before moving this document forward: the intended status and the definition of the registry.\u00a0 Both points are intertwined. (1) Intended Status: The Datatracker indicates that the Intended RFC status for this document is Proposed Standard (as does the Shepherd WriteUp and the IETF LC), but the header on the document says Experimental.\u00a0 I note that the document header was changed after a discussion on the WG list resulting from the RTG Directorate review [1], but that happened after the WGLC.\u00a0 Which is the right status?   (2) LISP Packet Types Registry Definition: It seems very odd to me that the LISP Packet Types Registry uses Standard Action as the registration policy given that the LISP work is currently Experimental -- and that the other references in it would in fact be from an Experimental RFC ( rfc6380 ).\u00a0 I know there's work on rfc6830bis (in the Standards Track), but I think it would be better to have this registry defined in the base specification (rfc6833bis, in this case)...or to wait for the publication of that document to progress this one. I think there's nothing procedurally wrong with having an Experimental RFC define a Standard Action Registry and populate part of it with references to Experimental RFC.\u00a0 However, the solution just doesn't seem clean to me -- so I would like to hear the justification for the rush (and not waiting for rfc6380bis/rfc6388bis). I have no issue with a document making use of the Code Point to describe the new LISP Shared Extension Message Type (without creating the Registry).\u00a0 But given that the base LISP specification is still Experimental, then this document should be too.\u00a0 There shouldn't be an issue with changing the Status of this document (in-place) once rfc6380bis/rfc6388bis progress. There's also the issue that  RFC6830  (and rfc6833bis) contain the following text: \"This section will be the authoritative source for allocating LISP Type values...\"\u00a0  Which means that (if the registry is to be defined here), this document should at least Update  RFC6830 ... In summary, I think that the correct Status for this document is Experimental.\u00a0 I also think that it would be better to wait for rfc6833bis to define the Registry. \u00a0  [1]  https://mailarchive.ietf.org/arch/msg/lisp/m1EicCexdX1GI183pba-mcHJM7g/?qid=ada479dce3c434bfaf948b0ee8240996",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-02-01 01:48:20-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-01-30 13:45:10-08:00",
+        "text": "I have a couple of points I think we should DISCUSS before moving this document forward: the intended status and the definition of the registry. (1) Intended Status: The Datatracker indicates that the Intended RFC status for this document is Proposed Standard (as does the Shepherd WriteUp and the IETF LC), but the header on the document says Experimental.\u00a0 I note that the document header was changed after a discussion on the WG list resulting from the RTG Directorate review [1], but that happened after the WGLC.\u00a0 Which is the right status?   (2) LISP Packet Types Registry Definition: It seems very odd to me that the LISP Packet Types Registry uses Standard Action as the registration policy given that the LISP work is currently Experimental -- and that the other references in it would in fact be from an Experimental RFC ( rfc6380 ).\u00a0 I know there's work on rfc6830bis (in the Standards Track), but I think it would be better to have this registry defined in the base specification (rfc6833bis, in this case)...or to wait for the publication of that document to progress this one. I think there's nothing procedurally wrong with having an Experimental RFC define a Standard Action Registry and populate part of it with references to Experimental RFC.\u00a0 However, the solution just doesn't seem clean to me -- so I would like to hear the justification for the rush (and not waiting for rfc6380bis/rfc6388bis). I have no issue with a document making use of the Code Point to describe the new LISP Shared Extension Message Type (without creating the Registry).\u00a0 But given that the base LISP specification is still Experimental, then this document should be too.\u00a0 There shouldn't be an issue with changing the Status of this document (in-place) once rfc6380bis/rfc6388bis progress. There's also the issue that  RFC6830  (and rfc6833bis) contain the following text: \"This section will be the authoritative source for allocating LISP Type values...\"\u00a0  Which means that (if the registry is to be defined here), this document should at least Update  RFC6830 ... In summary, I think that the correct Status for this document is Experimental.\u00a0 I also think that it would be better to wait for rfc6833bis to define the Registry. \u00a0  [1]  https://mailarchive.ietf.org/arch/msg/lisp/m1EicCexdX1GI183pba-mcHJM7g/?qid=ada479dce3c434bfaf948b0ee8240996",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-01 01:48:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-01-31 15:06:20-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-31 15:06:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-01-25 10:29:18-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-02-01 15:22:08-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-01 15:22:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-02-02 00:41:56-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-02 00:41:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-01-30 13:18:27-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-30 13:18:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-01-30 10:40:44-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-30 10:40:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-01-31 10:20:07-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-31 10:20:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-01-31 03:26:55-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-31 03:26:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-02-01 13:30:15-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-02-02 00:24:45-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-02-01 13:30:15-08:00",
+        "text": "* Section 4.1 \"The value 15 is reserved for Experimental Use [ RFC5226 ]\" I don't think this document should be reserving value 15 for Experimental use based on its stated intentions \"a LISP shared message type for defining future extensions and conducting experiments\". RFC3692  defines the experimental values as  \"\u00a0 Mutually consenting devices could use \u00a0  these numbers for whatever purposes they desire, but under the \u00a0  understanding that they are reserved for generic testing purposes, \u00a0  and other implementations may use the same numbers for different \u00a0  experimental uses.\" which means that devices may use any of the sub-types under 15 for experimentation and potentially collide with the \"extension\" uses. I would propose that a sub range of the sub-types (e.g. 2048-4095) under type 15 be reserved for experimentation and the rest of the range (0-2047) for extensions be specified using some other IANA policy (e.g. FCFS as specified in the document).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-02 00:24:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-01-31 17:25:03-08:00",
+        "end_reason": "new_position",
+        "start": "2017-01-25 10:29:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-02-06 11:04:46-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-01-31 17:25:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8113",
+  "evaluation_end": "2017-02-06 11:04:46-08:00",
+  "evaluation_start": "2017-01-25 10:29:18-08:00"
+}

@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-09-16 11:04:22-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-16 11:04:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-09-14 14:10:12-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-02-02 15:31:36-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-09-14 14:10:12-07:00",
+        "text": "I have some questions about this draft. They derive from the position that some of the values in the options specified can reveal sensitive information about the mobile user. I would put access network name (especially when it's SSID, since people put identifying information in SSIDs), access point name, and BSSID in that category at a minimum. The draft specifies DHCP options for downstream use in PMIPv6 scenarios, but makes no mention about actually limiting the use of these options to those scenarios. It's not clear to me whether those limits could be achieved in any case, since an AP won't know a priori whether it is being deployed in a service-provider-WiFi or cellular context or not. So what is the authors' expectation about the breadth of deployment of these options? Every DHCP stack? Something less than that? Furthermore, are any of the individual fields required or optional?  RFC 6757  indicates that within PMIPv6 only the ATT is required. Given the drawbacks discussed in Section 9, why was DHCP the protocol chosen for this? Is there no other protocol that APs speak to MAGs that has confidentiality, integrity protection, and authentication support? If DHCP is the only choice, why are none of the security fixes normatively required (\"confidentiality and integrity protection should be employed,\" \"DHCP server administrators are strongly advised to configure DHCP servers ... using IPsec,\" \"administrators have to consider disabling the capability specified\")? Why would an LMA need the MAC address of the AP? Are there examples of policies that mobile networks have in place that apply differently to two devices connected to the same SSID but different APs, for example? I looked for this in  RFC 6757  too but did not see it. Given the potential sensitivity of this field it seems like a justification for sharing it in an eavesdroppable way needs to be provided.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-02 15:31:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-09-16 10:25:43-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-16 10:25:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-09-02 12:35:51-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-02 12:35:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-09-15 15:11:15-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-02-02 12:59:38-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-09-15 15:11:15-07:00",
+        "text": "-- 4.3.2 The name of an 802.11 access point can imply the users location with a fair bit of precision, making it effectively count as location data. The draft needs\u00a0 more discussion of the privacy implications of that.  -- 6:  This section seems underspecified. There seems to be a missing discussion about interdependencies among options. For example, For example, network name is meaningless without the technology type. What is the minimum needed to be coherent?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-02 12:59:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-09-17 03:44:36-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-01-15 17:33:10-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-09-17 03:44:36-07:00",
+        "text": "I would like to discuss the following point. You define the \"Vendor ID\" and then the Operator Enterprise ID. Why don't you reuse the  RFC 6757  Operator-Identifier? Operator-Identifier \u00a0 \u00a0 \u00a0 The Operator-Identifier is the Structure of Management Information \u00a0 \u00a0 \u00a0 (SMI) Network Management Private Enterprise Code of the IANA- \u00a0 \u00a0 \u00a0 maintained \"Private Enterprise Numbers\" registry [SMI].\u00a0 It \u00a0 \u00a0 \u00a0 identifies the operator running the network attached to a specific \u00a0 \u00a0 \u00a0 interface of the mobile access gateway.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-02-02 01:24:02-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-01-15 17:33:10-08:00",
+        "text": "MY PREVIOUS DISCUSS: I would like to discuss the following point. You define the \"Vendor ID\" and then the Operator Enterprise ID. Why don't you reuse the  RFC 6757  Operator-Identifier? Operator-Identifier \u00a0 \u00a0 \u00a0 The Operator-Identifier is the Structure of Management Information \u00a0 \u00a0 \u00a0 (SMI) Network Management Private Enterprise Code of the IANA- \u00a0 \u00a0 \u00a0 maintained \"Private Enterprise Numbers\" registry [SMI].\u00a0 It \u00a0 \u00a0 \u00a0 identifies the operator running the network attached to a specific \u00a0 \u00a0 \u00a0 interface of the mobile access gateway. MY NEW DISCUSS: I see that you have now used the Operator-Identier. Good. However, it's not fully inline with the  RFC 6757  definition. Why? Why not refer to the  RFC 6757  definition, and include it here for the convenience of the readers. Also, what is the Enterprise ID\u00a0 (two instances of this)? \u00a0 Operator Enterprise ID \u00a0 \u00a0 \u00a0 The operator's Enterprise ID (as described in Section 3) is \u00a0 \u00a0 \u00a0 Private Enterprise Number (PEN)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-02 01:24:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-08-31 05:07:15-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-09-16 17:44:09-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-16 17:44:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-09-17 06:28:03-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-17 06:28:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-09-16 23:13:37-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-16 23:13:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-09-14 11:08:16-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-14 11:08:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-09-15 17:27:06-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-15 17:27:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-09-15 09:14:16-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-01-10 13:57:39-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-09-15 09:14:16-07:00",
+        "text": "(1) Did the DHC working group consider how this information, when sent without adequate protection between relay and dhcp server, could help in pervasive monitoring? If so, what was the conclusion reached? We have seen http header field information sent between infrastructure nodes being intercepted for that purpose, so this has to be similarly at risk.\u00a0 If the answer is that this is only to be used within a single network operator's setup (or a roaming arrangement) then that needs to be justified (as practical) and, if it can be justified (I'm not sure tbh), also made explicit.  (2) I had a DISCUSS on the draft that became  rfc 6757  about protection of this kind of data. In that context I think I was assured that everything (in PMIPv6) was IPsec protected so it was fine.\u00a0 Why, in what we now know is a more threated environment, is it ok to now have weaker protection when I was assured then that IPsec was in fact quite usable in PMIPv6? I think you maybe need to put in a MUST use IPsec requirement for this to be as safe.  (3) section 7: MAY store - this is possibly sensitive information so you ought say that it SHOULD NOT be stored unless needed, and if stored, SHOULD be deleted as soon as possible. Storing sensitive information when not needed just shouldn't be considered acceptable anymore I think - is that reasonable?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-02-08 04:11:33-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-01-10 13:57:39-08:00",
+        "text": "(Sent mail 2016-01-10, checking on change vs. discuss) (1) Did the DHC working group consider how this information, when sent without adequate protection between relay and dhcp server, could help in pervasive monitoring? If so, what was the conclusion reached? We have seen http header field information sent between infrastructure nodes being intercepted for that purpose, so this has to be similarly at risk.\u00a0 If the answer is that this is only to be used within a single network operator's setup (or a roaming arrangement) then that needs to be justified (as practical) and, if it can be justified (I'm not sure tbh), also made explicit.  (2) I had a DISCUSS on the draft that became  rfc 6757  about protection of this kind of data. In that context I think I was assured that everything (in PMIPv6) was IPsec protected so it was fine.\u00a0 Why, in what we now know is a more threated environment, is it ok to now have weaker protection when I was assured then that IPsec was in fact quite usable in PMIPv6? I think you maybe need to put in a MUST use IPsec requirement for this to be as safe.  (3) section 7: MAY store - this is possibly sensitive information so you ought say that it SHOULD NOT be stored unless needed, and if stored, SHOULD be deleted as soon as possible. Storing sensitive information when not needed just shouldn't be considered acceptable anymore I think - is that reasonable?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-02-08 14:41:53-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-02-08 04:11:33-08:00",
+        "text": "Thanks for the changes made in response to my and, in particular, Alissa's discuss ballots. Having looked back at the email thread I don't believe I got any  answer to the question \"Did the DHC working group consider how  this information, when sent without adequate protection between  relay and dhcp server, could help in pervasive monitoring?\" I think the focus of the discussion has been on the applicability of  this being limited to \"typically\" one operator's network, which  does of course mean that the traffic is less at risk than had it  transited many networks. However, we have seen (Belgacom) that  the PM threat also applies within a single operator's network. So I am still interested in the answer to the above question. The DHC WG might consider this threat and still conclude that a SHOULD statement about IPsec is the best we can do in practice,  but that isn't clear to me at present, so I'd still like to chat about  the PM threat. (Note: it's the WG's consideration of the threat  I'd like to chat about, not only about the potential of IPsec to  mitigate that threat.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-08 14:41:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-09-14 22:48:14-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-31 05:07:15-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-02-09 06:59:20-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-14 22:48:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7839",
+  "evaluation_end": "2016-02-09 06:59:20-08:00",
+  "evaluation_start": "2015-08-31 05:07:15-07:00"
+}

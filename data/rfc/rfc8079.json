@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-11-20 10:56:17-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-20 10:56:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-11-29 14:24:53-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-29 14:24:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-11-29 11:58:08-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-12-19 06:36:21-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-11-29 11:58:08-08:00",
+        "text": "= Section 3.1 = I think there is a lack of clarity in the recommendations here, because \"such attributes\" aren't listed out anywhere and then later it's not clear what the \"mentioned attributes\" are referring to. I've proposed some edits below to try to clarify what I think the recommendations are saying -- does this capture the intent?  OLD However, certain SDP attributes may \u00a0  lead to call failures when forwarded by a media relay.\u00a0 Such \u00a0  attributes SHOULD NOT be forwarded.\u00a0 One notable example is the \u00a0  'rtcp' [ RFC3605 ] attribute, that UAC may make use of to explicitly \u00a0  state the port they're willing to use for RTCP.\u00a0 Considering the \u00a0  B2BUA would relay RTCP messages, the port as seen by the other UAC \u00a0  involved in the communication would differ from the one negotiated \u00a0  originally, and it MUST be rewritten accordingly.\u00a0 Apart from the \u00a0  mentioned attributes, B2BUAs SHOULD forward all other SDP attributes \u00a0  they don't have a reason not to forward, in order to avoid breaking \u00a0  additional functionality endpoints may be relying on. NEW However, certain SDP attributes may \u00a0  lead to call failures when forwarded by a media relay. One notable example is the \u00a0  'rtcp' [ RFC3605 ] attribute, that UAC may make use of to explicitly \u00a0  state the port it is willing to use for RTCP. Assuming that the \u00a0  B2BUA would relay RTCP messages, the port as seen by the other UAC \u00a0  involved in the communication would differ from the one negotiated \u00a0  originally. The 'rtcp' attribute MUST be rewritten accordingly, rather than being forwarded.\u00a0 Any other attributes known to the B2BUA to cause call failures when forwarded SHOULD NOT be forwarded. B2BUAs SHOULD forward all other SDP attributes in order to avoid breaking additional functionality endpoints may be relying on. = Section 3.2 = (1) \"It is worthwile to point out that such a B2BUA may not necessarily \u00a0  forward all the packets it receives, though.\u00a0 Selective Forwarding \u00a0  Units (SFU) [ RFC7667 ], for instance, may aggregate or drop incoming \u00a0  RTCP messages, while at the same time originating new ones on their \u00a0  own.\u00a0 For the messages that are forwarded and/or aggregated, though, \u00a0  it's important to make sure the information is coherent.\" I don't see much beyond this text that discusses the implications of dropping and aggregating RTCP messages. Is this written down in another document? If not, I'm wondering about what happens with RTCP information aside from identifiers, SSRCs, and sequence numbers in these cases. E.g., if a B2BUA drops one RTCP message containing an  RFC 7002  block but forwards the next one containing such a block, won't the interval and the discard count reported to the receiver be wrong? I assume there are a lot of cases involving XR blocks where this could be a problem, but this document doesn't address those cases. (2) \"SR:\u00a0 [ RFC3550 ] \u00a0 \u00a0 \u00a0 If the B2BUA has changed the SSRC of the sender RTP stream a \u00a0 \u00a0 \u00a0 Sender Report refers to, it MUST update the SSRC in the SR packet \u00a0 \u00a0 \u00a0 header as well.\u00a0 If the B2BUA has changed the SSRCs of other RTP \u00a0 \u00a0 \u00a0 streams too, and any of these streams are addressed in any of the \u00a0 \u00a0 \u00a0 SR report blocks, it MUST update the related values in the SR \u00a0 \u00a0 \u00a0 report blocks as well.\u00a0 If the B2BUA has also changed the base RTP \u00a0 \u00a0 \u00a0 sequence number when forwarding RTP packets, then this change \u00a0 \u00a0 \u00a0 needs to be properly addressed in the 'extended highest sequence \u00a0 \u00a0 \u00a0 number received' field in the Report Blocks.\" Why is the recommendation about the extended highest sequence number received not also a MUST?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-12-19 06:36:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-11-29 11:24:28-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-29 11:24:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-10-31 17:20:44-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-12-01 03:06:24-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-12-01 03:06:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-11-30 12:54:06-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-30 12:54:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-12-01 00:31:40-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-12-01 00:31:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-11-30 23:10:47-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-30 23:10:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-11-29 10:55:14-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-29 10:55:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-11-22 10:56:20-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-22 10:56:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-11-30 22:30:02-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-30 22:30:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-11-29 05:14:39-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-12-20 04:23:52-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-11-29 05:14:39-08:00",
+        "text": "intro: Including the LI example in section 1 seems wrong given  RFC2804 . And I don't see why you need it if there are other justifications that are not controversial in the IETF. Why not just delete that? (The problem with including that justification in a standards track document is that doing so goes entirely against  RFC2804 .) But this should be an easy fix, via a revised ID or RFC editor note.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-12-20 04:23:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-11-29 19:43:51-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-29 19:43:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-11-30 09:11:20-08:00",
+        "end_reason": "new_position",
+        "start": "2016-10-31 17:20:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-12-22 09:26:32-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-30 09:11:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8079",
+  "evaluation_end": "2016-12-22 09:26:32-08:00",
+  "evaluation_start": "2016-10-31 17:20:44-07:00"
+}

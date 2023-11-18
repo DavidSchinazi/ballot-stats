@@ -1,0 +1,305 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-05-04 10:14:23-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 10:14:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-05-02 14:22:10-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-06-13 13:49:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-02 14:22:10-07:00",
+        "text": "Many thanks for this work. I expect to ballot YES once we discuss and resolve the issue below. In Section 4.5, I understand the need to base the re-start of the media flow on a human user intervention, but I find it puzzling that this is framed in terms of \"restarting the call\" rather than \"restarting the flow.\" The recommendation in Section 8 is that senders MUST treat each session independently, but ending/restarting \"the call\" seems to assume that multiple flows will be treated together. One situation I'm thinking of is one where my audio and video traffic are in separate RTP flows and are routed along different paths for whatever reason. Some network problem is encountered in the video path, triggering a circuit breaker. The \"call\" doesn't necessarily need to be terminated and re-started, because my audio can continue just fine. This is another case where the application may not want to rely on a human user re-start (if you leave it up to me whether to re-start my video, I'll certainly try to re-start it right away). I think the text in this section needs to be re-phrased to separate the case where a circuit breaker triggering on a single 3-tuple causes a whole call to end (either because the call consisted of a single flow or because all of the flows were encountering congestion and it takes just one circuit breaker to trigger the end of it) from cases where it causes only that flow to be suspended, and reference Section 8 to make it clear that the unit of operation for \"ceasing\" and \"re-starting\" is a single flow unless the sender chooses to group flows. Furthermore (and this is not a DISCUSS point but I leave it here since it follows from the points above), the normative recommendation in the first paragraph here doesn't really follow from the discussion of restarting the call. The recommendation is not to automatically re-start until indications are received that congestion has improved, which is different from waiting until a human user re-starts. I think this would be clearer if the normative recommendation came first and the human user case was discussed afterward.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-13 13:49:11-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-05-04 14:42:53-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 14:42:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-03-29 13:34:19-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-05-03 13:37:02-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 13:37:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-05-04 14:08:35-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 14:08:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-05-04 23:33:45-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 23:33:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-05-03 18:56:36-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 18:56:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-05-03 05:03:13-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-06-13 15:10:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-05-03 05:03:13-07:00",
+        "text": "This is about one point in section 7 (ECN) that I think is wrong but I would like to get some feedback from the authors: \"then ECN-CE marked packets SHOULD \u00a0  be treated as if they were lost when calculating if the congestion- \u00a0  based RTP circuit breaker\" (also section 5: \"The count of ECN-CE marked packets \u00a0  contained in those ECN feedback reports is counted towards the number \u00a0  of lost packets reported\") We are currently discussion mechanisms where the AQM in the congested network node sends\u00a0 much more CE markings than one would see loss (when using TCP) for the same level of congestion. When treating ECN-CE similar to loss, such a different behavior could trigger the circuit breaker unnecessarily. Potentially ECN-CE might not need to be considered here at all, because as long as there are (only) ECN-CE marks (and no loss) all data is transmitted correctly to the receiver and therefore there is no need to trigger a circuit breaker. Further also in section 7: \"ECN-CE marked packets SHOULD be treated as if they were lost for the \u00a0  purposes of congestion control\" This document should not impose any SHOULDs for congestion control as this doc is only about circuit breaker sand therefore the sentence above should be removed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-13 15:10:41-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-04-19 18:19:50-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-04-26 15:09:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-04-19 18:19:50-07:00",
+        "text": "I really like this specification, and have two questions I'd like to understand before balloting YES ... I'm looking at this text: 4.5.\u00a0 Ceasing Transmission \u00a0  What it means to cease transmission depends on the application.\u00a0 The \u00a0  intention is that the application will stop sending RTP data packets \u00a0  to a particular destination 3-tuple (transport protocol, destination \u00a0  port, IP address), until the user makes an explicit attempt to \u00a0  restart the call.\u00a0 It is important that a human user is involved in \u00a0  the decision to try to restart the call, since that user will \u00a0  eventually give up if the calls repeatedly trigger the circuit \u00a0  breaker.\u00a0 This will help avoid problems with automatic redial systems \u00a0  from congesting the network.\u00a0 Accordingly, RTP flows halted by the \u00a0  circuit breaker SHOULD NOT be restarted automatically unless the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ^^^^^^^^^^ \u00a0  sender has received information that the congestion has dissipated, \u00a0  or can reasonably be expected to have dissipated.  \u00a0   and trying to understand why this is not MUST NOT. I'm trying to reconcile this with the  RFC 2119  definition of SHOULD NOT, which is 4. SHOULD NOT\u00a0  This phrase, or the phrase \"NOT RECOMMENDED\" mean that \u00a0  there may exist valid reasons in particular circumstances when the \u00a0  particular behavior is acceptable or even useful, but the full \u00a0  implications should be understood and the case carefully weighed \u00a0  before implementing any behavior described with this label. \u00a0   Could you help me understand when automatic restarts might be \"acceptable or even useful\"? Reading on, I'm wondering if this text is anticipating  \u00a0  It is recognised that the RTP implementation in some systems might \u00a0  not be able to determine if a call set-up request was initiated by a \u00a0  human user, or automatically by some scripted higher-level component \u00a0  of the system. \u00a0   but definitely want to understand what you're thinking here. I have a similar question about this text  \u00a0  ECN-CE marked packets SHOULD be treated as if it were lost for the \u00a0  purposes of congestion control, when determining the optimal media \u00a0  sending rate for an RTP flow.\u00a0 If an RTP sender has negotiated ECN \u00a0  support for an RTP session, and has successfully initiated ECN use on \u00a0  the path to the receiver [ RFC6679 ], then ECN-CE marked packets SHOULD \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ^^^^^^ \u00a0  be treated as if they were lost when calculating if the congestion- \u00a0  based RTP circuit breaker (Section 4.3) has been met.\u00a0  Could you help me understand why an implementation wouldn't do this?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-26 15:09:09-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-03 15:26:39-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 15:26:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-05-04 20:51:34-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-04 20:51:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-03 16:52:09-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-29 13:34:19-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-08-18 15:48:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-05-03 16:52:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8083",
+  "evaluation_end": "2016-08-18 15:48:27-07:00",
+  "evaluation_start": "2016-03-29 13:34:19-07:00"
+}

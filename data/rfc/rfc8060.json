@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-10-13 02:22:20-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-11-16 19:15:31-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-10-13 02:22:20-07:00",
+        "text": "To IESG: Is this just me or do other people find it to be quite confusing why information such as URIs and JSON blobs can be included in LISP mapping database? I admit that this might be just my ignorance of LISP, but the document Introduction (or Abstract) doesn't explain the need.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-11-16 19:15:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-10-13 05:57:18-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-13 05:57:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-10-12 17:06:52-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-12 17:06:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-10-12 05:51:35-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-12 05:51:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-10-03 09:30:57-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-10-13 01:48:17-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-10-14 12:07:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-10-13 01:48:17-07:00",
+        "text": "Thanks for writing this doc. I plan to recommend its approval, but there were a couple of things that I think should be fixed for clarity before issuing the RFC. First, I agree with Peter Yee who did a Gen-ART review on this document: > Page 6, Rsvd2 definition: the definition both says \"reserved for future use\" > and then says some types actually use it.\u00a0 That sounds like present use. > And to generically say that it should be sent as zero and ignored, but then > to give uses (such as Type 2)\u00a0 for it\u00a0 is confusing.\u00a0 I suggest rethinking > the wording here. The type that seems to differ from the \"ignore\" advice in Section 3 is Type 14. Perhaps you can reword somehow, or name the Rsvd2 field to Flags, and let the Subsections define that as \"set to 0 and ignore on receipt\". Or something along those lines? I also agree with this comment and believe the text should be corrected: > Page 6, Length definition: there's mention of a \"Reserved\" field that's > included in the minimum length of 8 bytes that are not part of the length > value.\u00a0 Since there are actually Rsvd1 and Rsvd2 fields in the generic > version of the LCAF and sometimes even Rsvd3 and Rsvd4 fields when using > specific Types, it might be better to spell out which reserved fields (Rsvd1 > and Rsvd2) are meant here rather than giving the field a summary name that > doesn't actually appear in the format.\u00a0 This is also important because any > Rsvd3 and Rsvd4 fields are included in the Length field, so using a generic > \"Reserved\" description is ambiguous at best. And this seems like a bug as well: > Page 13, RTR RLOC Address definition, 4th sentence: The ability to determine > the number of RTRs encoded by looking at the value of the LCAF length > doesn't seem feasible.\u00a0 3 IPv4 RTR RLOCs will produce the same LCAF Length > as 1 IPv6 RTR RLOC.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-14 12:07:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-10-12 23:35:26-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-12 23:35:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-10-13 06:18:09-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-13 06:18:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-10-13 06:56:22-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-13 06:56:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-10-12 13:48:54-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-12 13:48:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-10-13 06:05:07-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-11-07 16:35:52-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2016-10-13 06:05:07-07:00",
+        "text": "I basically support Alexey's discuss position and Ben's comment but with a bit more detail below. - section 3: I don't see how you can produce a canonical order of the LCAF encodings if two can contain e.g. the same values other than different URLs, since there is no canonical way to order URLs (or JSON structures etc.) without a lot more specification. - 4.3: I agree with Ben's comment. You ought include some text here to the effect that this information can be privacy senseitive and to recommend not sending or storing it in such cases. - 4.4: there are also potential privacy issues here if this could be used to identify traffic that is from one specific host behind a NAT. A similar privacy warning should be included. - 4.7: Sorry, when is key material sent in a message? How is that protected? (Key ids are fine, but not key values) - 4.10.2: The same privacy issues apply here as for 4.3 and 4.4, if the MAC address maps to e.g.\u00a0 a portable device carried by a person. - 4.10.3 and all of section 5: What are these for?\u00a0 I don't see the sense in defining these if there is no well defined way to use them. Any of these might have undesirable security and/or privacy characteristics. - Section 6: There are security considerations.\u00a0 See above.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-12-01 13:54:38-08:00",
+        "end_reason": "position_updated",
+        "start": "2016-11-07 16:35:52-08:00",
+        "text": "(More mail sent for -20, basically discussion continues) I basically support Alexey's discuss position and Ben's comment but with a bit more detail below. - section 3: I don't see how you can produce a canonical order of the LCAF encodings if two can contain e.g. the same values other than different URLs, since there is no canonical way to order URLs (or JSON structures etc.) without a lot more specification. - 4.3: I agree with Ben's comment. You ought include some text here to the effect that this information can be privacy senseitive and to recommend not sending or storing it in such cases. - 4.4: there are also potential privacy issues here if this could be used to identify traffic that is from one specific host behind a NAT. A similar privacy warning should be included. - 4.7: Sorry, when is key material sent in a message? How is that protected? (Key ids are fine, but not key values) - 4.10.2: The same privacy issues apply here as for 4.3 and 4.4, if the MAC address maps to e.g.\u00a0 a portable device carried by a person. - 4.10.3 and all of section 5: What are these for?\u00a0 I don't see the sense in defining these if there is no well defined way to use them. Any of these might have undesirable security and/or privacy characteristics. - Section 6: There are security considerations.\u00a0 See above.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-12-01 13:54:38-08:00",
+        "text": "hanks for resolving most of my discuss points. I remain unconvincedabout the wisdom of including section 5, hence my abstain ballot.",
+        "type": "Abstain"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-10-11 18:19:13-07:00",
+        "end_reason": "new_position",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-10-13 07:04:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-10-11 18:19:13-07:00",
+        "text": "The way that the length field is specified in this document is inconsistent, extremely confusing and sometimes wrong.  e.g. In Section ASCII Names in the Mapping Database  Length value n:\u00a0 length in bytes AFI=17 field and the null-terminated ASCII string (the last byte of 0 is included). but the field mentions 2+n. Only one of these can be correct Similarly in Section 4.9.\u00a0 Replication List Entries for Multicast Forwarding \u00a0  Length value n:\u00a0 length in bytes of fields that follow. but the field mentions 4+n. Again one of these can be correct. Similar error in Section 5.2 (Generic Database Mapping Lookups) * Section 4.10.4.\u00a0 Using Recursive LISP Canonical Address Encodings The \"IP TOS, IPv6 QQS or Flow Label\" field is underspecified and cannot be implemented in an interoperable manner. There are multiple ways to encode the 8 bit values (the IP TOS and the IPv6 Traffic Class) into the 24 bit field. Similarly, there are at least two obvious ways to encode the 20 bit flow label into this field. Also the \"IPv6 QoS\" needs to be renamed to \"IPv6 Traffic Class\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-13 07:04:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-12-02 10:00:12-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-10-03 09:30:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8060",
+  "evaluation_end": "2016-12-02 10:00:12-08:00",
+  "evaluation_start": "2016-10-03 09:30:57-07:00"
+}

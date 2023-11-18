@@ -1,0 +1,245 @@
+{
+  "all_ballots": {
+    "Adrian Farrel": [
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-16 03:30:09-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-10-28 14:58:45-07:00",
+        "end_reason": "position_updated",
+        "start": "2014-10-16 03:30:09-07:00",
+        "text": "I welcome this document and think it is a useful addition to the canon. However, John Scudder did a Routing Directorate review during the IETF  last call period and emailed his comments to the authors and to the  GROW mailing list. I have seen no response to this directly or on the GROW list. Therefore, from a process point of view, I adopt all of John's comments as a Discuss even though many of the points are small and would normally be just Comments. - Throughout the document, various terms are used to describe what  RFC  \u00a0 4271  calls a \"route\". The definition given in  RFC 4271  is: \u00a0  Route \u00a0 \u00a0 \u00a0 A unit of information that pairs a set of destinations with the \u00a0 \u00a0 \u00a0 attributes of a path to those destinations.\u00a0 The set of \u00a0 \u00a0 \u00a0 destinations are systems whose IP addresses are contained in one \u00a0 \u00a0 \u00a0 IP address prefix carried in the Network Layer Reachability \u00a0 \u00a0 \u00a0 Information (NLRI) field of an UPDATE message.\u00a0 The path is the \u00a0 \u00a0 \u00a0 information reported in the path attributes field of the same \u00a0 \u00a0 \u00a0 UPDATE message. \u00a0 That is, one NLRI plus its path attributes, as carried in an UPDATE, \u00a0 is a \"route\". I would suggest adopting this term, or \"BGP route\" if  \u00a0 you prefer, instead of terms such as \"NLRI UPDATE message\", \"NLRI  \u00a0 message\", \"prefix UPDATE message\", and even just plain \"NLRI\" and  \u00a0 \"message\". Also some, but not all, of the uses of \"prefix\". I think \u00a0 doing so will make the document clearer, more readable, and more  \u00a0 technically accurate. A simple search for the terms I've called out \u00a0 should show most of them so I won't enumerate them here unless you  \u00a0 ask me to (feel free, if you want).  - Reference [RS-ARCH] is a dead link. I found a live copy at \u00a0  http://www.cs.usc.edu/assets/003/83191.pdf . It might be worth  \u00a0 checking with the authors of RS-ARCH to ask what a good archival \u00a0 reference is. - S. 4.2 talks about scaling. I'm trying to make sense of the analysis: \u00a0  Regardless of any Loc-RIB optimization technique is implemented, the \u00a0  route server's control plane bandwidth requirements will scale \u00a0  according to O(P * N), where P is the total number of unique paths \u00a0  received by the route server and N is the total number of route \u00a0  server clients.\u00a0  \u00a0 So far so good. (Except nit: there seems to be a word missing, such \u00a0 as \"whether\" as in \"Regardless of whether any Loc-RIB...\") \u00a0  In the case where P_avg (the arithmetic mean number \u00a0  of unique paths received per route server client) remains roughly \u00a0  constant even as the number of connected clients increases, this \u00a0  relationship can be rewritten as O((P_avg * N) * N) or O(N^2).\u00a0  \u00a0 I don't see where the second factor of N comes from. You're basically \u00a0 expanding the P in the first expression as P_avg * N -- but why? I \u00a0 think this would only apply if add-path all-paths was chosen as the \u00a0 path hiding mitigation strategy -- but this is not touched on in \u00a0 route-server-operations, only in ix-bgp-route-server, and besides that \u00a0 the beginning of the paragraph implies you're analyzing the multiple  \u00a0 Loc-RIB strategy, so I don't guess all-path is what you were thinking \u00a0 of. If you're not doing all-path, the O(N^2) analysis is wrong AFAICT. \u00a0 To see this, consider that the inbound routes require O(P_avg * N) \u00a0 which is just O(N), but the number of routes you're going to advertise \u00a0 is bounded by the size of the Internet routing table, which is a  \u00a0 constant for purposes of this analysis, so also O(N). In and out are \u00a0 summed, not multiplied, so the whole thing works out to be O(N), not \u00a0 O(N^2). \u00a0 So I think this needs to either be corrected, or the assumptions need \u00a0 to be better explained. Moving on: \u00a0  This \u00a0  quadratic upper bound on the network traffic requirements indicates \u00a0  that the route server model will not scale to arbitrarily large \u00a0  sizes. \u00a0 If you continue to think this sentence is warranted, I think it should \u00a0 be better quantified. Of course nothing can scale to *arbitrarily* \u00a0 large sizes, but that still leaves a lot to the imagination. I would \u00a0 think it would be beneficial for an IX operator reading this document \u00a0 to be able to have some idea of how practical the limitation is. Since \u00a0 the analysis in question is looking at control traffic bandwidth \u00a0 consumption, it wouldn't be too onerous to throw some simple \u00a0 assumptions up against it -- for example, \"if we suppose a RS receives \u00a0 on average 100,000 routes from each client with a rate of change of 10 \u00a0 routes/second, sends on average 1,000,000 routes to each client with a \u00a0 rate of change of 100 routes/second, and that each route consumes on \u00a0 average 50 bytes in a BGP UPDATE message, simple arithmetic shows that \u00a0 a GigE connection to that RS will be fully saturated by the time the \u00a0 number of clients reaches 25,000.\" (Which does not seem like a very  \u00a0 practical limitation, the RS will hit a CPU or memory bottleneck \u00a0 first.) \u00a0 Anyway, maybe you will decide on reconsideration of the big-O analysis \u00a0 that this bit is not needed at all, which would be OK with me. - S 4.2.2.1,  \u00a0  If the route server \u00a0  operator has prior knowledge of interconnection relationships between \u00a0  route server clients, then the operator may configure separate Loc- \u00a0  RIBs only for route server clients with unique outbound routing \u00a0  policies. \u00a0 It wasn't obvious to me what \"outbound\" applies to -- the client? The \u00a0 RS? -- and for that matter why an inbound policy (on the RS) might not \u00a0 apply. Possibly this could be remedied by simply dropping the  \u00a0 adjective \"outbound\". - S. 4.2.1.2, \u00a0  destination splitting would require significant co-ordination \u00a0  between the route server operator and each route server client \u00a0 It's not clear to me why it would \"require significant co-ordination\", \u00a0 depending on what resource you're trying to conserve. Two examples of  \u00a0 how you could avoid coordination while still getting benefit: You \u00a0 could have clients send all their routes to all the RSes, but have \u00a0 RSes filter out the prefixes they don't care about. This gives the RS \u00a0 most of the CPU benefit it would have gotten had the client done the  \u00a0 filtering (prefix filtering is cheap), almost all the memory benefit  \u00a0 (the filtered routes need not be retained in the Adj-RIB-In), and  \u00a0 around half the control traffic bandwidth benefit. The client incurs \u00a0 cost to send duplicate routes that are going to be discarded by the  \u00a0 RS, but the client is presumably not the bottleneck resource. Or \u00a0 better still, the RS could use ORF towards the clients to control \u00a0 what routes the clients will send. - S. 4.6.1, \u00a0 OLD: \u00a0  Prefixes sent to the route server are tagged with specific [ RFC1997 ] \u00a0  or [ RFC4360 ] BGP community attributes \u00a0 I don't think the naked references scan well as adjectives in this  \u00a0 context. I suggest \u00a0 NEW: \u00a0  Prefixes sent to the route server are tagged with specific standard \u00a0  [ RFC1997 ] or extended [ RFC4360 ] BGP community attributes - Also in S. 4.6.1, \u00a0 OLD: \u00a0  As both standard and extended BGP communities values are restricted \u00a0  to 6 octets \u00a0 Actually standard communities are restricted to less than that. \u00a0 Perhaps reword as \u00a0 NEW: \u00a0  As both standard and extended BGP communities values are restricted \u00a0  to 6 octets or fewer - Also in S. 4.6.1, \u00a0  route server operator should take care to ensure \u00a0  that the predefined BGP community values mechanism used on their \u00a0  route server is compatible with [ RFC4893 ] 4-octet autonomous system \u00a0  numbers. \u00a0  \u00a0 I suspect an RS operator reading this might be left scratching his or \u00a0 her head and asking \"what does it mean for me to be compatible with  \u00a0  RFC4893  in this context\"? It would be kind to offer them some \u00a0 guidance, since after all this is a guidance document. - S. 4.7: Where you say \"non-commutative\" I think you mean \"non- \u00a0 transitive\". - S. 4.7: \u00a0  Problems of this form can be dealt with using [ RFC5881 ] bidirectional \u00a0  forwarding detection. \u00a0 It's not clear to me how certain non-transitive forwarding failures \u00a0 can be dealt with using BFD. To take an example, suppose clients A, B \u00a0 and C peer with RS. The IX fabric has a failure such that A and B can \u00a0 both reach RS, but not each other. C has connectivity to everyone.  \u00a0 Prefix X is advertised to RS by both B and C. For whatever reason, RS \u00a0 selects X via B to advertise to A. Even if A runs BFD towards B, at  \u00a0 best A can determine that the route from RS can't be used. A isn't  \u00a0 able to fail over to C's route as it would in the full-mesh case, \u00a0 since it's not aware of it. Depending on A's other connectivity, this \u00a0 may result in sub-optimal routing towards X, or complete loss of  \u00a0 connectivity to X. \u00a0 It's beyond the scope of the draft to solve this problem, but the text \u00a0 could be made more accurate. A minimal fix would be \u00a0  Problems of this form can be partially mitigated using [ RFC5881 ]  \u00a0  bidirectional forwarding detection. \u00a0 although you might want to go on a bit longer to explain what problems \u00a0 can't be mitigated. - S. 4.8: \u00a0  This problem is not specific to route servers and it can also be \u00a0  implemented using bilateral peering sessions.\u00a0 However, the potential \u00a0  damage is amplified by route servers because a single BGP session can \u00a0  be used to affect many networks simultaneously. \u00a0 This is true, but there is a more severe way RSes aggravate the \u00a0 problem: In a full mesh, a router can (and usually does) directly \u00a0 enforce a \"no third-party next hops\" policy against its peers. An RS \u00a0 peer by definition cannot enforce this policy against the RS, so the \u00a0 RS is the only place it can be enforced. - S. 4.8: \u00a0  Route server operators SHOULD check that the BGP NEXT_HOP attribute \u00a0  for NLRIs received from a route server client matches the interface \u00a0  address of the client.\u00a0 If the route server receives an NLRI where \u00a0  these addresses are different \u00a0 so far so good (modulo my first comment about the use of \"NLRI\", of \u00a0 course), but: \u00a0  and where the announcing route server \u00a0  client is in a different autonomous system to the route server client \u00a0  which uses the next hop address,  \u00a0 Is the RS sincerely expected to enforce the above? I suppose it could \u00a0 be implemented automatically although imperfectly, by noticing that  \u00a0 multiple clients are in the same neighbor AS and noticing when they  \u00a0 use each other as third-party next hops, but AFAIK people generally  \u00a0 don't try to figure this out, they just do what you've said in the  \u00a0 preceding sentence -- make sure the NH matches the interface address. \u00a0 If you really do propose that the RS should allow third-party next  \u00a0 hops but only from clients in a common AS, I think you should talk  \u00a0 about it specifically and in more detail. If you didn't really mean \u00a0 that, then I suggest you drop the clause.  - S. 5: \u00a0  On route server installations which do not employ path hiding \u00a0  mitigation techniques, the path hiding problem outlined in section \u00a0  Section 4.1 can be used in certain circumstances to proactively block \u00a0  third party prefix announcements from other route server clients. \u00a0 I don't understand what this means. Specifically, I don't know what it \u00a0 means to \"proactively block third party prefix announcements\" or for  \u00a0 that matter, even what you mean by \"third party prefix announcements\" \u00a0 in this context. (As a term of art, I normally understand \"third party \u00a0 announcement\" in a BGP context to mean announcing a third-party next  \u00a0 hop as you discuss in S. 4.8). I also don't know what the \"certain \u00a0 circumstances\" are, quite likely these should be given at least a  \u00a0 little color if not entirely spelled out. \u00a0 Also, a nit -- the xref expansion has put \"section section\" into your \u00a0 text. - S. 7: \u00a0  BIRD, OpenBGPD and Quagga, whose open source BGP implementations \u00a0  include route server capabilities  \u00a0 Great, cool, but: \u00a0  which are compliant with this \u00a0  document. \u00a0 I'm not sure what it actually means to be \"compliant\" with a document \u00a0 that \"describes operational considerations\". Perhaps just drop the  \u00a0 phrase?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adrian Farrel",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-28 14:58:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-10-15 20:07:29-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-15 20:07:29-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-10-14 07:38:29-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-14 07:38:29-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-10-15 20:41:27-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-15 20:41:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-10-05 07:59:01-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-05 07:59:01-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-10-13 15:43:19-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-13 15:43:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-10-13 13:56:37-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-13 13:56:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Pete Resnick": [
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-10-15 22:31:19-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Pete Resnick",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-15 22:31:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Richard Barnes": [
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-10-15 21:04:35-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Richard Barnes",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-15 21:04:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-10-14 06:15:30-07:00",
+        "end_reason": "new_position",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-14 06:15:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ted Lemon": [
+      {
+        "ad": "Ted Lemon",
+        "end": "2014-11-11 10:16:16-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2014-10-05 07:59:00-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc7948",
+  "evaluation_end": "2014-11-11 10:16:16-08:00",
+  "evaluation_start": "2014-10-05 07:59:00-07:00"
+}

@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-06-21 17:54:15-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-21 17:54:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-06-22 03:40:12-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-22 03:40:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-06-21 19:37:15-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-21 19:37:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-06-21 09:27:25-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-21 09:27:25-07:00",
+        "text": "I too don't see the particular value of having this published as an RFC, but understand that the WG may view it differently. I offer the comments below for what they're worth. I think the document sows confusion in its use of the terms \"transport protocol\" and \"transfer protocol.\" They appear to be used interchangeably (maybe? I'm not actually entirely sure), there seem to be claims that HTTP is a L4 transport protocol, and although the terms \"SACM transport protocol\" and \"SACM transfer protocol\" are used and vaguely defined in the draft, they are not defined in the terminology document. If this document goes forward it seems like an edit pass to clarify what is meant with these terms each time they are used, and their relationship to what we typically think of as a \"transport protocol,\" is warranted. I would have thought target location information would be specifically called out in Section 5.2. I have not seen a response to the Gen-ART review.",
+        "type": "Abstain"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-06-20 09:20:25-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-20 09:20:25-07:00",
+        "text": "I am ABSTAINing because I don't see publication value for this document given that the architecture and the information model are already done (or at least in an advanced state).\u00a0 I understand the interest of the WG to document the requirements as an RFC, so I won't stand in the way of publication. Having said that, if the original intent was for this document to be used as input for the development of the architecture, consider updating some of the text so that there's no mix of \"timing\": the text should probably read as if the architecture/information model don't exist yet; there are no references to them (which is good), but the text makes some mention of them... For example: Section 2 (Requirements) says that it \"describes the requirements used by SACM to assess and compare candidate data models, interfaces, and protocols, to suit the SACM architecture.\"\u00a0 I'm guessing that \"will be used\", and that \"by SACM\" refers to the WG (SACM by itself is used extensively throughout).\u00a0 Note that the end says \"to suit the architecture\", which sounds like the architecture is a foregone conclusion and the requirements are just for the rest. Also in Section 2: \"SACM defines an architecture and information model focused on addressing the needs for determining, sharing, and using posture information via Posture Information Providers and Posture Information Consumers mediated by a Controller.\"\u00a0 I didn't check, but this sounds like a quick description of the architecture and information model -- both of which would be developed based on this document.",
+        "type": "Abstain"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-06-21 11:27:57-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-06-26 08:37:15-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-06-21 11:27:57-07:00",
+        "text": "The SACM charter requires the group to \" whenever reasonable and possible, reuse existing protocols, mechanisms, information and data models. \" If that is reflected anywhere in the requirements, I missed it. (which is possible.) In particular, I think section 2.6 needs to include requirements to favor use of existing \"transfer protocols\".\u00a0 (As written, T-001 seems almost tailored to counter arguments to \"just use HTTP\".)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-08-01 07:54:58-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-06-26 08:37:15-07:00",
+        "text": "(Resending because I forgot to hit the \"send email\" button this first time. No other change.) The SACM charter requires the group to \" whenever reasonable and possible, reuse existing protocols, mechanisms, information and data models. \" If that is reflected anywhere in the requirements, I missed it. (which is possible.) In particular, I think section 2.6 needs to include requirements to favor use of existing \"transfer protocols\".\u00a0 (As written, T-001 seems almost tailored to counter arguments to \"just use HTTP\".)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-01 07:54:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-06-21 04:00:26-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-06-27 01:58:35-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-06-21 04:00:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-27 01:58:35-07:00",
+        "text": "Hi Nancy, > Hi Benoit, > Thanks for the review and feedback.\u00a0 Please see further comments below: > > On 6/21/17, 4:00 AM, \"Benoit Claise (bclaise)\"\u00a0 wrote:\u00a0 \u00a0  >\u00a0 \u00a0  ---------------------------------------------------------------------- >\u00a0 \u00a0  COMMENT: >\u00a0 \u00a0  ---------------------------------------------------------------------- >\u00a0 \u00a0   >\u00a0 \u00a0  -\u00a0 \u00a0  3.\u00a0 The information model MUST accommodate the interoperable >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  addition of new data types and/or schemas. >\u00a0 \u00a0   >\u00a0 \u00a0  I guess that you want to say: The data model MUST ... >\u00a0 \u00a0  See  RFC 3444 > [NCW] The group actually debated \u201cinformation model\u201d vs \u201cdata model\u201d extensively and > decided on this language. >\u00a0 \u00a0   >\u00a0 \u00a0  - >\u00a0 \u00a0  Reading G-003, G-004, G-012, it seems like you want to be able to select your >\u00a0 \u00a0  \"transport\", with your own requirements. > >\u00a0 \u00a0  However, I guess that, practically, you'll select a data model and the >\u00a0 \u00a0  transport will be obvious. MIB module => UDP IFPIX information elemeents => >\u00a0 \u00a0  UDP/DTLS. Yeah, the specs say SCTP/TCP, but in practice ... YANG module, either >\u00a0 \u00a0  NETCONF => TCP/SSH or RESTCONF => HTTPS Not sure I believe into a single >\u00a0 \u00a0  transport to rules them all, where \"them\" is all the different data model >\u00a0 \u00a0  source of information. This was already my feedback during your previous >\u00a0 \u00a0  interim meeting (where I presented  yangcatalog.org ): your information model >\u00a0 \u00a0  draft is basically of a mix of elements already specified in IPFIX, YANG >\u00a0 \u00a0  module, MIB module. How do you consolidate all this? > [NCW] There will be data models that are only suitable for specific transfer models > and specific transport layers (ROLIE for example as a discovery lends itself better at > an HTTP and not so much in MIB).\u00a0 The Information model is meant to be a \u201craw\u201d > definition of elements/attributes that can them be mapped into specific data models > (the group for instance is looking at SWID, others are looking at netconf) etc\u2026. >\u00a0 \u00a0   >\u00a0 \u00a0  Same remark with \"2.5 requirements for data model operations\". >\u00a0 \u00a0  You select your data model and the data model operations are given/specified >\u00a0 \u00a0  already Let's say: IPFIX. From there you have a push mechanism only (as opposed >\u00a0 \u00a0  to pull). Let's say: YANG module. From there you select NETCONF or NETCONF, and >\u00a0 \u00a0  the operations are already specified. > [NCW] In essence, that is correct. >\u00a0 \u00a0   >\u00a0 \u00a0  - >\u00a0 \u00a0 \u00a0 The SACM information model MUST include the >\u00a0 \u00a0 \u00a0 \u00a0  ability to discover and negotiate the use of a particular data model >\u00a0 \u00a0 \u00a0 \u00a0  or any data model. >\u00a0 \u00a0   >\u00a0 \u00a0  What does it mean \"negotiate\"? >\u00a0 \u00a0  Either an end point supports a data model or it doesn't, no? > >\u00a0 \u00a0  Same remark for: >\u00a0 \u00a0 \u00a0 \u00a0 DM-007\u00a0 Data Model Negotiation: The interfaces and actions in the >\u00a0 \u00a0 \u00a0 \u00a0  data model MUST include capability negotiation to enable discovery >\u00a0 \u00a0 \u00a0 \u00a0  of supported and available data types and schemas. > [NCW] In this context, \u201cNegotiate\u201d is the means by which two parties can agree on the data model to be used. > The \u201cmeans\u201d could be data model and/or transfer protocol specific\u2026.but the intent is to enable that thru > The abstraction to allow for that should be in the Information model definition. > > >\u00a0 \u00a0   >\u00a0 \u00a0  - Read the following one multiple times, and I still don't understand it: >\u00a0 \u00a0 \u00a0 \u00a0 IM-005\u00a0 Data Lifetime Management: The information model MUST provide >\u00a0 \u00a0 \u00a0 \u00a0  a means to allow data models to include data lifetime management. > [NCW] It is really meant to be a means by which the consumer of the information can know when that data may be obsoleted (updated, changed or removed). What about trying to make the text clear(er)? > >\u00a0 \u00a0   >\u00a0 \u00a0  - >\u00a0 \u00a0  The SACM information model represents an abstraction for \"what\" >\u00a0 \u00a0 \u00a0 \u00a0 information can be communicated and \"how\" it is to be represented and >\u00a0 \u00a0 \u00a0 \u00a0 shared. >\u00a0 \u00a0   >\u00a0 \u00a0  Not sure it's aligned with  RFC3444 : >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  IM\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 --> conceptual/abstract model >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 for designers and operators >\u00a0 \u00a0 \u00a0 \u00a0 +----------+---------+ >\u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0  | >\u00a0 \u00a0 \u00a0 \u00a0 DM\u00a0 \u00a0 \u00a0 \u00a0 DM\u00a0 \u00a0 \u00a0 \u00a0  DM\u00a0 \u00a0  --> concrete/detailed model >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 for implementors > > [NCW] We really have tried\u2026.if it isn\u2019t clear, I am open to making it more so but > the resulting draft and definitions come from much debate and final agreement from the WG. What I considered to be an easy COMMENT turned out more complicated that I thought. I guess that we'll agree to disagree. I don't feel that this data model/information model discussion will be resolved to my OPS-view satisfaction. I can't support this document publication and I don't want to spend energy to try to convince people for this COMMENT Since I don't want to be in the way, I'll ABSTAIN. Regards, Benoit",
+        "type": "Abstain"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-06-20 07:54:41-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-20 07:54:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-06-20 12:44:53-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-20 12:44:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-06-15 18:07:53-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-06-16 03:19:52-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-16 03:19:52-07:00",
+        "text": "I abstain because I don\u2019t think there is a achievable value in publishing this document in the RFC series (for consumption outside the wg). However, I also don\u2019t understand why there is a requirement to support multiple transport protocols, including potentially UDP. I don\u2019t think this is worth a discuss on this document but if SACM plans to invent a new transport (over UDP) instead of just using TCP which seems more than appropriate, it needs a real justification for that (which is at least in this document not at all given)!",
+        "type": "Abstain"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-06-19 11:45:40-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-19 11:45:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-06-21 10:55:25-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-21 10:55:25-07:00",
+        "text": "I do see the value of writing up the requirements to guide further work in the WG, but I do not see that value of publishing them in a standalone RFC. I would have much preferred the requirements to be included in the other WG deliverables (as Alvaro and Terry have noted). I do respect the WG's intent to publish and I am abstaining to move out of the way.",
+        "type": "Abstain"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-06-20 22:35:05-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-20 22:35:05-07:00",
+        "text": "I am balloting ABSTAIN on this document as I don't see strong value in a set of requirements as a standalone document added to the RFC series. I appreciate it's an extension of the use-cases document and a WG milestone but it reads like the architecture and info model is already done (and indeed WG revisions of that work look mature). In which case I STRONGLY urge that the 10 pages of requirements be placed (as required) in appendices of the milestone documents (information-model, data-model, protocol/Interface, architecture etc). This maintains the rationale for the designs in question and aids the reader in comprehension of the work. That said, with ABSTAIN positions, I am not blocking publication of this document and I shall leave it to the responsible AD to adjudicate.",
+        "type": "Abstain"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-06-21 09:32:45-07:00",
+        "end_reason": "new_position",
+        "start": "2017-06-15 18:07:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-08-07 12:31:37-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-21 09:32:45-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc8248",
+  "evaluation_end": "2017-08-07 12:31:37-07:00",
+  "evaluation_start": "2017-06-15 18:07:53-07:00"
+}

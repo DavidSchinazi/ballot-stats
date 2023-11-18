@@ -1,0 +1,333 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-09-16 15:18:09-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-10-19 09:18:42-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-09-16 15:18:09-07:00",
+        "text": "First,\u00a0 I have a number of specific comments.\u00a0  Some of these are hazards to technical interoperability; I've tried to include those in my discuss - but the general point is that it is very hard to tell a number of details because the structure is assumed.\u00a0  Having read this document, I do not think that I could properly implement DNCP from scratch. Obviously, I can guess at the answers - but that doesn't let everyone interoperate well.\u00a0  Examples include: a) What is a topology graph?\u00a0 When is it created, modified, or destroyed?\u00a0 Is it a conceptual artifact constructed from the various TLVs?\u00a0 I think a quick paragraph describing it would help. b) How are peer relationships discovered and established and destroyed?\u00a0 I really can't tell from the draft and even a quick scan of  RFC 6206  doesn't give any hints. c) It looks like the TLVs are sent one after another in a datagram or stream across a socket.\u00a0 The closest I see to any detail is \"TLVs are sent across the transport as is\".\u00a0  d) As far as I can tell, Trickle is used to decide basically how often to send information - but the details of this and the interactions aren't clear to me. I suspect that there are dependencies on the HNCP draft that would make this a lot easier to understand but since we want it to progress separately, the document does need to stand alone. Although not noted in the Shepherd's report, I did have a thorough Routing Directorate review done and the draft was improved from that. 8) In Sec 4.6 \"\u00a0  o\u00a0 The origination time (in milliseconds) of R's node data is greater \u00a0 \u00a0 \u00a0 than current time in - 2^32 + 2^15.\"\u00a0 Since origination time hasn't yet been introduced, I'm going on an assumption that it means when R's node data was originated from R.\u00a0 So - this requirement is saying that R's node data must have been generated in the future (but already known by the local node)??? 9) In Sec 4.6 \"They MAY be removed immediately after the topology graph traversal\"\u00a0 The DNCP nodes can be removed from what??\u00a0 The topology graph?\u00a0 From some type of received TLV??\u00a0 How would they be added back in later? 11) In sec 6.1: \"Trickle-driven status updates (Section 4.3) provide a mechanism for \u00a0  handling of new peer detection on an endpoint, as well as state \u00a0  change notifications.\"\u00a0  Nothing in Sec 4.3 talked about a mechanism for detecting new peers on an endpoint.\u00a0 It is entirely possible that Trickle does provide this (but what about the modes where Trickle isn't used/needed??) but there needs to be a description of how new peer detection is done - even if it's just a pointer to Trickle RFCs. 12) In Sec 6.1.4: \"\u00a0  On receipt of a Network State TLV (Section 7.2.2) which is consistent \u00a0  with the locally calculated network state hash, the Last contact \u00a0  timestamp for the peer MUST be updated.\"\u00a0  Could you add some rationale for why this is needed?\u00a0 I suspect that part of my confusion is that the \"locally calculated network state hash\" could mean two different things.\u00a0 Is it the hash computed by the local node on the data received in the Network State TLV to validate that the Network State TLV is not corrupted?\u00a0 Or is it the hash computed by the local node on its arbitrarily wide 1-hash tree that represents the local node's network state?\u00a0  Since the term is never defined, it's hard to guess here.\u00a0 The bottom of Sec 7.2.2 uses \"current locally calculated network state hash\" to refer to, I believe, the latter. 13) In Sec 6.2: \"normally form peer relationships with all peers.\"\u00a0 Where is forming a peer relationship defined?\u00a0 Is this tied solely to Trickle instances?\u00a0 What about with reliable unicast  where presumably Trickle isn't used between peers as the Overview states \"If used in pure unicast mode with unreliable transport, Trickle is also used between peers\"? 14) In Sec 7: \"\u00a0  For example, type=123 (0x7b) TLV with value 'x' (120 = 0x78) is \u00a0  encoded as: 007B 0001 7800 0000.\u00a0 If it were to have sub-TLV of \u00a0  type=124 (0x7c) with value 'y', it would be encoded as 007B 0009 7800 \u00a0  0000 007C 0001 7900 0000.\"\u00a0  In this case, the padding between the TLV's value and the sub-TLV is included but the padding after the sub-TLV is not.\u00a0 What would happen if there were multiple sub-TLVs??\u00a0 Would the padding between those sub-TLVs be included? Also related :\"In this case the length field includes the length of the original TLV, the  length of the padding that are inserted before the embedded TLVs and the length of the  added TLVs.\"\u00a0 Here, the phrase \"length of the TLV\" means different things.\u00a0 In the first case, \"length of the original TLV\" means the \"length of the value in the encapsulating TLV\".\u00a0 In the second case, \"length of the added TLVs\" appears to mean the length of the sub-TLVs  including the type/length header.\u00a0 As I mentioned above, I can't tell what happens to the  padding in between sub-TLVs.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-10-20 06:51:59-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-10-19 09:18:42-07:00",
+        "text": "Thank you very much for addressing my previous Discuss points and comments.\u00a0 On a fresh read of the updated draft, I have the following one minor point (but it matters for interoperability with DNCP profiles): 1) End of Sec 4.4, can you clarify what the behavior is for unrecognized TLV that is included in the Node Data field of a Node State TLV?\u00a0 I assume that its meaning is not processed, but it is included in the computation of the Node State Hash? I've also read this draft too many times at this point to be certain that I've picked up all the points of unclarity.\u00a0 I've requested another Routing Directorate review, from a new reviewer, so I may be modifying my ballot again before the telechat on Thursday.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-20 06:51:59-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-09-14 15:31:19-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-14 15:31:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-09-16 20:12:23-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-16 20:12:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-09-16 06:32:52-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-16 06:32:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-09-15 19:26:46-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-15 19:26:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-09-17 02:10:33-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-10-20 13:39:41-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-09-17 02:10:33-07:00",
+        "text": "Other ADs focused on the protocol specific points. So let me focus on something else. The applicability section doesn't answer my questions: when to (re-)use this protocol? Note that the write-up mentioned ANIMA. I see the protocol description: \u00a0  DNCP is designed to provide a way for each participating node to \u00a0  publish a set of TLV (Type-Length-Value) tuples, and to provide a \u00a0  shared and common view about the data published by every currently or \u00a0  recently bidirectionally reachable DNCP node in a network. I see, under the applicability section, under which conditions to use it. Basically, suitable to exchange any TLV tuples, infrequently.  However, this applicability section doesn't tell me when to re-use DNCP (or define a profile for it). What about the environment: home network versus LAN versus WAN? How big can the network be? Does the technology matter?  Regarding transport, it's basically any transport, unicast or multicast, right? (DNCP can be used in networks where only unicast transport is available.\u00a0 While DNCP uses the least amount of bandwidth when multicast is utilized) All devices in a DNCP network must be DNCP node? I have a DNCP network with profile 1, can I use the same DNCP network with profile 2? IANA and enterprise specific TLVs? UDP is fine as a transport? What if I know my topology already (I see later: \"may use multicast for Trickle-based shared state dissemination and topology discovery\")  etc.\u00a0  Just reading the intro and the applicability, I scratched my head: it's so generic, should I even consider it for ANIMA? A few paragraphs, somewhere in the document, would solve my DISCUSS: - this protocol should be used to exchange the following type of data ... - it's envisioned that this generic state synchronization protocol will be used in the following environments ... - potential DNCP-based protocols include ...",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-11-01 16:08:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-10-20 13:39:41-07:00",
+        "text": "Other ADs focused on the protocol specific points. So let me focus on something else. The applicability section doesn't answer my questions: when to (re-)use this protocol? Note that the write-up mentioned ANIMA. I see the protocol description: \u00a0  DNCP is designed to provide a way for each participating node to \u00a0  publish a set of TLV (Type-Length-Value) tuples, and to provide a \u00a0  shared and common view about the data published by every currently or \u00a0  recently bidirectionally reachable DNCP node in a network. However, this applicability section doesn't tell me when to re-use DNCP (or define a profile for it). I see an effort to address my discuss in the appendix B of draft version 11. Thanks  What would solve my DISCUSS is an applicability section that would contain  a high level set of criteria that would briefly explain whether DNCP is applicable for  the specifications I have in mind. The first 2 paragraphs of section 1.1 is a good start,  then it goes considerations about Trickle, the interval A_NC_I, etc ... and you lose the  readers.\u00a0  Something like: \u00a0  DNCP is designed to provide a way for each participating node to \u00a0  publish a set of TLV (Type-Length-Value) tuples, and to provide a \u00a0  shared and common view about the data published by every currently or \u00a0  recently bidirectionally reachable DNCP node in a network. \u00a0  [As an example of what I'm expected, see below.  \u00a0 \u00a0 Btw, I have no idea if this text is correct or complete, but that's besides the point]  \u00a0  DNCP works with profiles in which you have the flexibility to specify: \u00a0  - the appropriate transport: the available options are TCP and UDP (see  \u00a0  section appendix B for the tradeoffs) \u00a0  - the transport security: TLS or DTLS, see appendix B).  \u00a0  - If service discovery is required, an optional multicast service can be defined.\u00a0   \u00a0  - TO BE COMPLETED \u00a0  DNCP is applicable to LAN, WAN, or even the Internet.  \u00a0  DNCP can exchange enterprise specific TLV or an IANA registry could be specified \u00a0  DNCP specific extensions are possible. \u00a0  TO BE COMPLETED   \u00a0  DNCP limitations:\t \t- Data published limited to 64kB \t- Doesn't work for SCTP, DCCP  \u00a0 \u00a0 \u00a0 \u00a0 - All devices in the network must be DNCP node? \u00a0 \u00a0 \u00a0 \u00a0 - TO BE COMPLETED  To summarize, I need the 2 min elevator pitch of when (not) to use DNCP.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-01 16:08:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-09-15 07:02:16-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-09-30 05:39:43-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-09-15 07:02:16-07:00",
+        "text": "I have no objections to the publication of this document, but I do have a couple of points that I want to discuss... * The spec says that all TLVs are transmitted every time any value in the TLV set changes. Section 1 says that a delta synchronization scheme is not defined.\u00a0 What is the justification for not using a delta synchronization approach?\u00a0 The ordering of the TLVs needed to compute the hash can be done at the receiver and a delta approach would minimize bandwidth consumption.\u00a0 I think it would be useful to provide some justification in the spec for the design decision made to not use a delta synchronization approach. * Section 4.4 says that all responses are sent unicast, even for requests received via multicast over a multi-access medium. Was consideration given to use multicast responses and supporting message suppression on other nodes? Or, was the design decision made to ensure that all nodes responded with their TLV set to the requester?\u00a0 Either approach may be reasonable, but there is no justification given. * When responding to a multicast request over a multi-access medium, why is the randomization of the transmit time only a SHOULD?\u00a0 I would think that needs to be a MUST.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-30 05:39:43-07:00",
+        "text": "After spending a bunch of time reviewing the DISCUSS and COMMENT points made by all the IESG members and having several in-depth discussion with other IETF participants, I am abstaining on this document. I believe the concept of an \"abstract protocol specification\" does not align with the IETF's goal of generating clear and inter-operable protocol specifications. This approach requires an implementer to resolve differences between the abstract protocol specification and the profile rather than simply implementing a single protocol specification. Such an approach has a higher probability of error than the single specification approach. If the basic premise of a protocol is sound and applicable for other uses, a new protocol specification can be written that borrows the necessary part from the previous protocol and makes any requisite changes for the new use. Given this, I will not support the publication of this draft, but I will not stand in its way given the perceived rough consensus for it.",
+        "type": "Abstain"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-09-16 17:47:32-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-16 17:47:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-09-17 06:43:13-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-17 06:43:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-09-16 23:14:34-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-16 23:14:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-09-16 12:46:07-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-09-29 09:03:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-09-16 12:46:07-07:00",
+        "text": " I just have one thing I'd like to discuss that should be easy enough to resolve. Section 8 mentions that DTLS or TLS MAY be used and that it is up to the DNCP profile.\u00a0 I'd be interested to see the security considerations that would lead to a recommendation of using session transport for the DNCP profiles.\u00a0 If it is in another RFC, could you add a pointer?\u00a0 If it is not, could this be added to the security considerations section since it could be an important consideration?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-29 09:03:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-10-21 14:26:01-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-10-21 14:26:01-07:00",
+        "text": "I am abstaining, as this draft is not specifying a full protocol but just giving an abstract protocol (i.e., a hull only). I would ballot with no-objection if the designated status of this draft would be 'Informational', but given that it is 'Proposed Standard' I do not see that\u00a0  RFC 2026 , Section 3.1 and 3.2 are covered. It is neither a Technical Specification nor an Applicability Statement. However, I will not stand in the way of the publication of the document.",
+        "type": "Abstain"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-09-15 20:42:24-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-09-17 07:33:45-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-09-15 20:42:24-07:00",
+        "text": "This should be an easy Discuss to ... discuss ... I'm looking at this text: \u00a0  If keep-alives specified in Section 6.1 are NOT sent by the peer \u00a0  (either the DNCP profile does not specify the use of keep-alives or \u00a0  the particular peer chooses not to send keep-alives), some other \u00a0  existing local transport-specific means (such as Ethernet carrier- \u00a0  detection or TCP keep-alive) MUST be used to ensure its presence. \u00a0   and wondering if using TCP keep-alive for liveness detection is realistic in the use cases this specification is expecting to address.  Unless I missed something, the default TCP keep-alive interval is still two hours (that's been true since  RFC 1122 , and also true in the relatively recent version of Linux I'm using). If that's OK, I'll clear. If you're assuming a keep-alive interval that's shorter, lots of implementations allow you to tune this, but it seems like the specification should say something about that. Given that the other example of \"transport-specific means\" is Ethernet carrier-detection, which would be orders of magnitude faster, I thought I should ask.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-17 07:33:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-09-17 05:49:51-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-17 05:49:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-08-19 20:04:23-07:00",
+        "end_reason": "new_position",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-11-01 16:43:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-08-19 20:04:23-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7787",
+  "evaluation_end": "2015-11-01 16:43:33-08:00",
+  "evaluation_start": "2015-08-19 20:04:23-07:00"
+}

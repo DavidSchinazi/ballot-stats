@@ -1,0 +1,331 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-04-07 04:33:56-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-07 04:33:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-04-19 10:12:11-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-19 10:12:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-04-18 09:23:14-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-18 09:23:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-03-14 13:41:26-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-14 13:41:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-04-20 05:04:07-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-08-30 02:46:43-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-04-20 05:04:07-07:00",
+        "text": "As stressed by Dan Romascanu part of his MIB doctor review, clearly not ready to go This is the MIB Doctor Review for draft-ietf-tictoc-ptp-mib-08.txt.  Note that this document has a long history. A MIB Doctor review was performed already by Bert Wijnen back in 2011.  I do not believe that this document is ready for approval in its current form.  Here are my findings.    1.\u00a0 \u00a0 \u00a0  PARSING Using smilint: smistrip -d mibs docs/draft-ietf-tictoc-ptp-mib-08.txt timeout 10 smilint -s -e -l 5 mibs/PTPBASE-MIB 2>report.txt You can access any intermediately created files, the processing report (which might be empty if no errors or warnings have been found), and output files (in case of a conversion request) for reading and download from a temporary server directory for approx. 24 hours. While processing your request the following errors and/or warnings have been found: mibs/PTPBASE-MIB:426: [2] {bad-identifier-case} `XXX' should start with a lower case letter mibs/PTPBASE-MIB:426: [2] {object-identifier-not-prefix} Object identifier element `XXX' name only allowed as first element mibs/PTPBASE-MIB:26: [2] {module-identity-registration} illegal module identity registration Using smicng (thanks to Bert Wijnen): C:\\bw\\smicng\\work>smicng  ptpbase.inc Successful parsing   C:\\bw\\smicng\\work>   **** now setup for STRICT checking:   C:\\bw\\smicng\\work>smicstrict   C:\\bw\\smicng\\work>smicng  ptpbase.inc W: f( rfc2863 .mi2), (274,17) Item \"ifPhysAddress\" should have SIZE specified E: f( rfc2863 .mi2), (1092,23) Index item \"ifRcvAddressAddress\" must be defined with syntax that includes a SIZE W: f( rfc2863 .mi2), (1084,1) Row \"ifRcvAddressEntry\" has indexing that may create variables with more than 128 sub-ids W: f( rfc2863 .mi2), (1103,17) Item \"ifRcvAddressAddress\" should have SIZE specified W: f( rfc2863 .mi2), (1146,15) Variable \"ifIndex\" in notification \"linkDown\" is an index for a table W: f( rfc2863 .mi2), (1158,15) Variable \"ifIndex\" in notification \"linkUp\" is an index for a table W: f( rfc2863 .mi2), (1691,1) OBJECT-GROUP \"ifOldObjectsGroup\" is not used in a MODULE-COMPLIANCE in current module E: f(ptpbase.mi2), (413,19) Sub-Id for item \"ptpbaseMIB\" must be \"number\" or \"name(number)\" format   *** 2 errors and 6 warnings in parsing   C:\\bw\\smicng\\work>   As the two errors refer to the  RFC 2863  module rather than to the PTBASE-MIB: the compilation seems clean.  2.\u00a0 \u00a0 \u00a0  TEXTUAL CONVENTIONS are prefixed differently than the MIB objects. This is not forbidden, but it creates inconsistency. Also the prefix \u2018Clock\u2019 for the TCs hints to a more generic functionality, although the TCs seem to be PTP-related. I would suggest prefixing the TCs also with PTP or Ptp 3.\u00a0 \u00a0 \u00a0  The following TC ClockIdentity ::= TEXTUAL-CONVENTION \u00a0 \u00a0 STATUS\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 current \u00a0 \u00a0 DESCRIPTION \u00a0 \u00a0 \u00a0 \u00a0 \"The clock Identity is an 8-octet array... \u00a0 \u00a0 REFERENCE\u00a0 \u00a0 \u00a0  \"Section 7.5.2.2.1 from [IEEE \u00a0 \u00a0 SYNTAX\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 OCTET STRING (SIZE (1..255)) If this is 8-Octet why is the OCTET STRING size 255? 4.\u00a0 \u00a0 \u00a0  I see in the Abstract:  \u00a0  This memo specifies a MIB module in a manner that is both compliant \u00a0  to the SNMPv2 SMI, and semantically identical to the peer SNMPv1 \u00a0  definitions.   Do you actually mean SMIv2 rather than SNMPv2 SMI? I am not sure why this is important, but if this is important, please provide a reference to the document that includes the \u2018peer SNMPv1\u2019 definitions (probably SMIv1)   5.\u00a0 \u00a0 \u00a0  Most of the document speaks about PTP, but in the DESCRIPTION clause at page 7 it mentions:   \u00a0 \u00a0 \u00a0 \u00a0 [IEEE 1588-2008] defines a protocol enabling precise \u00a0 \u00a0 \u00a0 \u00a0 synchronization of clocks in measurement and control systems \u00a0 \u00a0 \u00a0 \u00a0 implemented with packet-based networks, the Precision Time \u00a0 \u00a0 \u00a0 \u00a0 Protocol Version 2 (PTPv2).\u00a0 This MIB does not address the \u00a0 \u00a0 \u00a0 \u00a0 earlier version IEEE Std. 1588(TM)-2002 (PTPv1).    So, when it says \u2018PTP\u2019 does it mean PTPv2 or any version of PTP? It would be good to clarify.   6.\u00a0 \u00a0 \u00a0 \u00a0 The document uses the improper terminology \u2018MIB\u2019 when it means MIB module. For example \u2018Relationship to other Profiles and MIBs\u2019 or \u2018This MIB is intended to be used \u2026\u2019 etc., etc., 7.\u00a0 \u00a0 \u00a0  Idnits complains about an obsolete reference to  RFC 1906 :  -- Obsolete informational reference (is this intentional?):  RFC 1906 \u00a0 \u00a0  (Obsoleted by  RFC 3417 ) 8.\u00a0 \u00a0 \u00a0  I do not believe that Section 3 includes any useful information.  9.\u00a0 \u00a0 \u00a0  The DESCRIPTION clause is unusually long and includes a lot of abbreviations, terminology, architectural details and other pieces of information which is not clear why they need to be hardcoded in the MIB module. Maybe the place for all these is in the currently empty-content section 3?  10.\u00a0  I do not understand how the ClockPortTransportTypeAddress TC works. If this TC defines an address type why is it not an enumeration? What is the string that for example indicates IPv6? Is it \u2018IPv6\u2019? who guarantees that a manager and an agent spell the same? Or is the intention to use the list of identifiers for \u2018Well Known transport types for PTP communication\u2019at page 64? If yes, how is this extended? Probably an IANA maintained enumerated TC would be a better solution.\u00a0  11.\u00a0  Why is not the SYNTAX of ClockQualityClassType an enumeration, when the DESCRIPTION indicates clearly that this is an enumeration.  12.\u00a0  I do not understand how ClockTimeInterval works. The example does not help either. It says \u2018For example, 2.5 ns is expressed as 0000 0000 0002 8000 in Base16.\u2019 and than the SYNTAX is SYNTAX\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 OCTET STRING (SIZE (1..255)) What is the STRING for the object in this example?  13.\u00a0  For objects like ptpDomainIndex there is no need to copy again the possible values in the DESCRIPTION clause, because these are already listed in the TC. 14.\u00a0  Why is ptpDomainClockPortsTotal of SYNTAX Gauge32? Does this value change all the time? Does it latch at a max value?  15.\u00a0  There is no indication of behavior for counter discontinuity, or object for counter discontinuity \u2013 see section 4.6.1.2 in  RFC 4181 16.\u00a0  Why is the SYNATX of ptpbaseClockTransDefaultDSNumOfPorts Counter32? This does not seem to be a counter, but an unsigned integer. 17.\u00a0  The DESCRIPTION clause of the ptpbaseClockPortDSPTPVersion objects reads: \"This object specifies the PTP version being used.\u201d However, the DESCRIPTION clause of the MIB module says that this module refers only to PTPv2. So what does this object stand for? And in any case, how is this coded? (1) for v1 and (2) for v2? Then why is it not an enumerated value? 18.\u00a0  How does ptpbaseClockPortAssociateAddressType work? What would be included under the AutonomousType SYNTAX to make possible interoperability? 19.\u00a0  The Security Considerations section does not follow the template defined at  http://trac.tools.ietf.org/area/ops/trac/wiki/mib-security .",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-08-30 02:46:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-03-08 06:32:31-08:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-04-19 15:24:13-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-19 15:24:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-04-20 22:05:50-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-03-19 23:36:28-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-04-20 22:05:50-07:00",
+        "text": "Thanks for the work, and happy to approve this document. But before doing so, I wanted to briefly discuss whether all points from Peter Yee's Gen-ART review have been answered, particularly the one about copying text.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-03-19 23:36:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-03-13 09:50:27-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-13 09:50:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-04-18 09:10:30-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-18 09:10:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-03-14 14:45:43-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-14 14:45:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-04-15 13:03:18-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-15 13:03:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-04-20 18:08:37-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-20 18:08:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-04-19 05:40:47-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-19 05:40:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-04-20 21:26:34-07:00",
+        "end_reason": "new_position",
+        "start": "2016-04-03 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-20 21:26:34-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-03-14 19:21:17-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-08 06:32:31-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-03-22 06:33:12-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-14 19:21:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8173",
+  "evaluation_end": "2017-03-22 06:33:12-07:00",
+  "evaluation_start": "2016-03-08 06:32:31-08:00"
+}

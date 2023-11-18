@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-02-12 11:18:41-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-12 11:18:41-08:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-02-17 14:09:48-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-17 14:09:48-08:00",
+        "text": "gree with Brian.",
+        "type": "Abstain"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-02-15 09:38:31-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-15 09:38:31-08:00",
+        "text": "I had a hard time deciding on the value of this document as a standalone RFC.\u00a0 I came to the conclusion that the valuable pieces (specifically Section 5) would serve a better purpose as part of the i2rs Architecture document ( draft-ietf-i2rs-architecture ).\u00a0 If this document is to be published I won't stand in the way, I'm ABSTAINing instead.\u00a0 I put more specific comments below. The document contains a mixture of what I think are broad and vague requirements (\"needs\" and \"key aspects\") for an I2RS Protocol, along with a general picture of what an i2rs can/should be (which seems to step into the WG's charter in some places). Maybe I can't see it, but the document expresses \"needs\" without explicit justification (e.g. \"the need\u2026real-time security threat responsiveness\u2026more dynamically manage and program routing systems\u2026support rapid control and analytics\u2026automate even the simplest operations\u2026support real-time, asynchronous interactions using efficient data models and encodings that are based on and extend those previously defined\u2026learn topology, network analytics, and existing state from the network as well as to create or modify routing information and network paths\u2026feedback loop\u2026data-model driven interface to the routing system\u2026precisely control routing and signaling state based upon policy or external measures\u2026dynamically configure policies and parameter values for the various routing and signaling protocols based upon application-level policy decisions\u2026detailed topological state that provides more information than the current functional status\u2026\") or details of what is expected, or a clear comparison to the current state (the Appendix is not referenced in the main text, nor is it comprehensive). It is unclear to me whether all those \"needs\" are requirements, or how they are translated into them.\u00a0 The last \"need\" mentioned above does present the current state of the art (BGP-LS) and it provides examples of missing information, but without indicating if anything is required.\u00a0 Other requirement-like statements not associated with \"needs\" are equally unclear: \"\u2026providing the ability for an application to dynamically request that measurements be taken and data delivered is important.\"\u00a0 I think everyone can agree that it is important, but is it a necessary characteristic of the I2RS protocol (or maybe something else?)? Section 5 seems to spell out requirements for an I2RS Protocol, but the aspects listed/discussed I think fall short of providing strict guidance. The term \"I2RS\" is sometimes used without a modifier (client, agent, protocol, etc.), not making it clear what the term is referring to.\u00a0 Some of the missing modifiers seem obvious, but others seem to be potentially referring to the WG itself and trying to define what the scope or charter should be \u2014 that is obviously better served in the charter itself.\u00a0 For example: * \"\u2026the I2RS scope\u2026\"\u00a0 Is that within the scope of the I2RS protocol, the WG, ??\u00a0  One piece of text mentions \"\u2026outside the I2RS scope for standardization.\"\u00a0  That makes me think that the answer is the i2rs WG, but then it makes me wonder why we need this document to clarify the WG's charter. Then there are also explicit references to what the WG should do; again, better served by the charter itself. * \"The I2RS Working Group must select the suitable protocol(s) to carry messages between the I2RS Clients and I2RS Agent.\"\u00a0 Even though it may be implicit, there's no explicit action in the i2rs WG charter to select a protocol, and of course no mention of clients/agents (as those are described in the Architecture). * \"The I2RS Working Group must identify or define a set of meaningful data-models for information in the routing system and in a topology database.\"\u00a0 I think this is already part of the charter. * \"One set of data-models that I2RS should focus on is for interacting with the RIB layer\u2026\"\u00a0  The charter mentions something similar. * \"At a minimum, within the I2RS scope\u2026\"\u00a0 The scope of the WG, or are you talking about something else that hasn't been defined? * \"I2RS will define needed information and data models\u2026\" Finally, it also worries me that other documents put too much stock in this one, relying on it to provide guidance in places where it falls short.\u00a0 For example:\u00a0  draft-ietf-i2rs-architecture  says in Section 3. (Key Architectural Properties) that \"some architecture properties such as performance and scaling are not described below because they are discussed in [ I-D.ietf-i2rs-problem-statement ]\".\u00a0  * The word \"performance\" doesn't exist in  draft-ietf-i2rs-problem-statement , but there are aspects (in Section 5) that resemble it: \"should be able to handle a considerable number of operations per second\", \"within a sub-second time-scale, it should be possible to complete simple operations\"\u2026\u00a0 I wouldn't call those Key Architectural Properties. * There is some sparse treatment of scaling: \"For example, for scaling, some exported data or events may be better sent directly from the forwarding plane\u2026\", or \"Scalable, Filterable Information Access:\u00a0 To extract information in a scalable fashion that is more easily used by applications, the ability to specify filtering constructs\u2026is very valuable.\"\u00a0 Again, not what I would call Key Architectural Properties.",
+        "type": "Abstain"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-02-17 10:12:31-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-02-17 10:12:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-02-17 15:02:42-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-17 15:02:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-02-18 02:06:23-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-18 02:06:23-08:00",
+        "text": "I basically agree with Alvaro's points. On top of that, a problem statement in 2016 when the charter was done in 2012 ... hmm ...  If (parts of) the content needs be published, it should be in the arch document. Figure 1 is architecture anyway, right? And ... a problem statement with a normative reference to an architecture. Really?",
+        "type": "Abstain"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-02-17 10:23:17-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-02-17 10:23:17-08:00",
+        "text": "My position on these types of documents should be pretty clear at this point. The parts that do have archival value should be published as a part of a protocol specification or architecture document.",
+        "type": "Abstain"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-02-10 07:06:26-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-10 07:06:26-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-02-18 05:35:24-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-18 05:35:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-02-17 23:13:54-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-17 23:13:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-02-17 01:47:07-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-02-17 01:47:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-02-15 20:32:20-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-15 20:32:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-02-15 11:37:41-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-15 11:37:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-02-17 17:22:01-08:00",
+        "end_reason": "new_position",
+        "start": "2016-02-10 07:06:25-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-11 12:34:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-02-17 17:22:01-08:00",
+        "text": "I'm not going to stand in the way of this document being published. I am taking an abstain position as it is my preference that the informative rationale which guides the i2rs solution space should be in the Architecture document and what remains can exist as a living WG document for participants to reflect upon - that in itself need not be published as an RFC.",
+        "type": "Abstain"
+      }
+    ]
+  },
+  "doc_name": "rfc7920",
+  "evaluation_end": "2016-05-11 12:34:30-07:00",
+  "evaluation_start": "2016-02-10 07:06:25-08:00"
+}

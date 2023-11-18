@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-05-27 13:50:00-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 13:50:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-05-24 12:22:57-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-05-27 20:11:02-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 20:11:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-05-27 13:10:13-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-09-28 09:52:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-05-27 13:10:13-07:00",
+        "text": "I have to raise one of Ben's comments to DISCUSS, after giving it a lot of thought.\u00a0 We talked about it before Ben posted his ballot, and I said that I thought the way the rs-metadata-request subtype is used is abusing media types: media types are meant to label containers for protocol elements, but are not meant to be protocol elements themselves.\u00a0 I said I didn't want to get too wound up with that, though, and I don't... ...except that it allows no room for extensibility.\u00a0 And the moment you need another, different request, we see why this mechanism is abusive.\u00a0 Now, you may say that you don't see any need for extensibility, but we've been proven wrong in those sorts of assumptions many times. So, the discussion is about how you will deal with that.\u00a0 Specifically, an alternative would be to have an rs-request subtype, with a content-type parameter such as \"req=metadata\" (or even use rs-metadata with \"req=snapshot\") and a rule that req= values that are not recognised be ignored.\u00a0 If this should ever need to be extended, other \"req=\" values could be defined.\u00a0 A registry could be created in future, if there turns out to be a need. There are other options, as well, but the main question is why are you sure that no such extensibility is needed? Also, what you're doing with content-disposition isn't in accord with what that field is for: it is for describing how the information in the message part should be presented -- not what it's meant to contain or be used for.\u00a0 This, too, could be better handled with a content-type parameter. The discussion on this point is whether thus was considered, and, if so, why it was rejected.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-28 09:52:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-05-26 16:11:03-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-07-02 15:17:02-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-05-26 16:11:03-07:00",
+        "text": "I am concerned that this draft allows the recording session to downgrade security from the communication session. It says \"SHOULD NOT\", but then explicitly allows for the downgrade when the SRC and SRS are in the same administrative domain. This seems to create a whole new \"last hop exception\" for media, similar to the one for SIPS that we took so many years to deprecate. (Except it's worse because the potentially insecure hop goes to an endpoint not necessarily expected to be a party to the media.) Section 6.1.2 includes a \"contract in place\" as a form of recording indication. The other mechanisms seem to say that a given call is being recorded. A contract cannot do that, except in the degenerate case of \"all calls are recorded.\" This doesn't seem to fit the spirit of the \"MUST provide recording indication\" language. Section 12, 2nd paragraph says the SRC and SRS \"MUST support SIP with TLS and MAY support SIPS with \u00a0  TLS as per [ RFC5630 ]\". That actually downgrades the requirement for SIPS support from that in 3261/5630. (3261 says you MUST support SIPS if you support TLS.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-07-02 15:17:58-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-07-02 15:17:02-07:00",
+        "text": "I am concerned that this draft allows the recording session to downgrade security from the communication session. It says \"SHOULD NOT\", but then explicitly allows for the downgrade when the SRC and SRS are in the same administrative domain. This seems to create a whole new \"last hop exception\" for media, similar to the one for SIPS that we took so many years to deprecate. (Except it's worse because the potentially insecure hop goes to an endpoint not necessarily expected to be a party to the media.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-07-10 15:28:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-07-02 15:17:58-07:00",
+        "text": "I am concerned that this draft allows the recording session to downgrade security from the communication session. It says \"SHOULD NOT\", but then explicitly allows for the downgrade when the SRC and SRS are in the same administrative domain. This seems to create a whole new \"last hop exception\" for media, similar to the one for SIPS that we took so many years to deprecate. (Except it's worse because the potentially insecure hop goes to an endpoint not necessarily expected to be a party to the media.) [2nd and 3rd points cleared]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-07-10 15:28:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-05-28 01:04:46-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-28 01:04:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-05-27 14:13:39-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 14:13:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-05-27 09:18:30-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 09:18:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-05-26 04:31:59-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-26 04:31:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-05-25 09:31:35-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-25 09:31:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-05-28 05:17:34-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-28 05:17:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-05-27 03:10:34-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-27 03:10:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-05-28 06:08:31-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-28 06:08:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-05-26 15:41:05-07:00",
+        "end_reason": "new_position",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-05-28 09:38:19-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-05-26 15:41:05-07:00",
+        "text": "(1) 5.3: How does a UA know if it's preference to not be recorded has been ignored?  (2) 12.2: Why is a 2011 ([ I-D.ietf-avt-srtp-ekt ]) expired I-D ok as the method for supporting DTLS-SRTP for the CS, esp when DTLS-SRTP is our currently favoured method for handing WebRTC security? When is that going to be finished? On what basis is that an informative and not normative reference? And is that reference ever likely to be standardised? (Given that it seems to be a form of TLS MitM - is that fair?) Perhaps it'd be better to just admit that re-encryption is needed and get over it? (3) I'll clear once you answer: but wouldn't it be easier all around to just mandate use of mutually authenticated TLS between SRC and SRS in all cases?\u00a0 (Even if some hop-by-hop stuff is needed when there are proxies between SRC and SRS.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-07-13 16:36:28-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-05-28 09:38:19-07:00",
+        "text": "(1) cleared (2) 12.2: Why is a 2011 ([ I-D.ietf-avt-srtp-ekt ]) expired I-D ok as the method for supporting DTLS-SRTP for the CS, esp when DTLS-SRTP is our currently favoured method for handing WebRTC security? When is that going to be finished? On what basis is that an informative and not normative reference? And is that reference ever likely to be standardised? (Given that it seems to be a form of TLS MitM - is that fair?) Perhaps it'd be better to just admit that re-encryption is needed and get over it? (3) I'll clear once you answer: but wouldn't it be easier all around to just mandate use of mutually authenticated TLS between SRC and SRS in all cases?\u00a0 (Even if some hop-by-hop stuff is needed when there are proxies between SRC and SRS.) Also - how is it ok to ever not re-encrypt the media in the RS since if you do not, anyone from the CS who has the right session key can send the SRS bogus packets that it'll accept.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-09-28 14:11:30-07:00",
+        "end_reason": "position_updated",
+        "start": "2015-07-13 16:36:28-07:00",
+        "text": "(1) cleared (2) 12.2: Thanks for fixing up the ekt reference. I still would like to know how, in a case where the recording is for audit/compliance purposes, one can ever allow  the RS to not be re-encrypted since that creates the potential for the CS peers to fake the traffic to the RS. (3) cleared",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-09-28 14:11:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-09-30 10:46:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-05-24 12:22:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc7866",
+  "evaluation_end": "2015-09-30 10:46:30-07:00",
+  "evaluation_start": "2015-05-24 12:22:57-07:00"
+}

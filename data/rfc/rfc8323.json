@@ -1,0 +1,341 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-05-08 21:50:46-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-05-10 13:16:33-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-05-08 21:50:46-07:00",
+        "text": "- Part of the document is outside the scope of the charter of the WG which requested its publication While I understand that this document requires a WebSockets mechanism for .well-known, and that such a mechanism doesn\u2019t yet exist, it seems pretty far out of scope for the CORE working group to take on defining this itself (unless I missed something in its charter, which is entirely possible: it\u2019s quite long). Specifically, I fear that this venue is unlikely to bring such a change to the attention of those people best positioned to comment on whether .well-known is appropriate for WebSockets. Even if this is in scope for CORE, it really needs to be its own document. If some future document comes along at a later point and wants to make use of its own .well-known path with WebSockets, it would be really quite strange to require it to reference this document in describing .well-known for WS.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-05-22 13:48:13-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-05-10 13:16:33-07:00",
+        "text": "ISSUE 1: WebSockets and .well-known - Part of the document is outside the scope of the charter of the WG which requested its publication While I understand that this document requires a WebSockets mechanism for .well-known, and that such a mechanism doesn\u2019t yet exist, it seems pretty far out of scope for the CORE working group to take on defining this itself (unless I missed something in its charter, which is entirely possible: it\u2019s quite long). Specifically, I fear that this venue is unlikely to bring such a change to the attention of those people best positioned to comment on whether .well-known is appropriate for WebSockets. Even if this is in scope for CORE, it really needs to be its own document. If some future document comes along at a later point and wants to make use of its own .well-known path with WebSockets, it would be really quite strange to require it to reference this document in describing .well-known for WS. ================================================== ISSUE 2: Assignment of port 443 as default - Widespread deployment would be damaging to the Internet or an enterprise network for reasons of congestion control, scalability, or the like.  I'd like to thank the authors for helping me to understand the intention with the use of port 443 more clearly. Based on their clarifications, I need to move my issue about assigning a default of port 443 to coaps+tcp from my Comment into the Discuss, as it does have implications for the Internet at large that will have long-term damaging effects. The rationale being offered for the using the already-assigned port 443 as a default is that it tends to go through firewalls that other ports may not, and that doing so is fine because ALPN makes it possible. These arguments, if we accept them, are manifestly true for all future TLS-using protocols. Allowing CoAP to re-use an assigned port on this basis established precedent for pretty much all future protocols to do so, effectively moving the protocol demux point for future protocols from port numbers to ALPN IDs (all over port 443). It is hard to imagine an outcome *other* *than* firewall manufacturers starting to whitelist desired ALPN IDs, which effectively ossifies the available set of IDs to whatever is defined at that moment, destroying the future utility of the mechanism. There are other issues having to do with software architecture, protocol demultiplexing in user space rather than kernel space, and operational considerations that come into play as well, but they don't technically fall under discuss criteria.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-22 13:48:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-05-05 06:53:32-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-05-10 07:20:35-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-10 07:20:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-05-10 11:52:36-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-10 11:52:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-05-10 09:41:02-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-10 09:41:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-05-09 19:25:48-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-05-09 19:26:50-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-05-09 19:25:48-07:00",
+        "text": "1) This draft removes the reliability and ordering features COAP when used over reliable transports, under the assumption that the transport will provide. But the draft also includes the assumption that COAP proxies exist. This has the potential for creating a problem, since the transport can only provide guaranty reliable delivery and ordering to the next hop. Once you have a proxy in play, you loose that guaranty end to end. This is further complicated because this draft contemplates cross-transport proxies, where one side may be over WebSocket (and I assume might be over TCP) and the other side over UDP. If the client sends via TCP but a proxy changes it to UDP, the client has no way to specify the reliability properties to be used on the UDP connection. If one imagines a client that uses UDP to a forward proxy, which speaks TCP to a reverse-proxy, which then switches back to UDP, any reliability properties specified by the client will get lost. Also, a proxy can potentially reorder messages, even if it uses TCP on both sides. If one leaves ordering to the transport, then one needs to add rules about proxies maintaining that order. 2) It seems problematic to encode the transport choice in the URI scheme. Since the draft specifies that each scheme. Section 7 says \"They are hosted in distinct namespaces because each URI scheme implies a distinct origin server.\" IIUC, this means any given resource can only be reached over a specific transport. That seems to break the idea of cross-transport proxies as discussed in section 7. It also does not seem to fit with a primary motivation for this draft. That is, one might want to use TCP because of local NAT/FW issues. But if there is a resource with a \"coap\" scheme, I cannot switch to TCP when I'm behind a problematic middlebox, and have an expectation of reaching the same resource.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-05-11 08:14:24-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-05-09 19:26:50-07:00",
+        "text": "1) This draft removes the reliability and ordering features COAP when used over reliable transports, under the assumption that the transport will provide. But the draft also includes the assumption that COAP proxies exist. This has the potential for creating a problem, since the transport can only provide guaranty reliable delivery and ordering to the next hop. Once you have a proxy in play, you loose that guaranty end to end. This is further complicated because this draft contemplates cross-transport proxies, where one side may be over WebSocket (and I assume might be over TCP) and the other side over UDP. If the client sends via TCP but a proxy changes it to UDP, the client has no way to specify the reliability properties to be used on the UDP connection. If one imagines a client that uses UDP to a forward proxy, which speaks TCP to a reverse-proxy, which then switches back to UDP, any reliability properties specified by the client will get lost. Also, a proxy can potentially reorder messages, even if it uses TCP on both sides. If one leaves ordering to the transport, then one needs to add rules about proxies maintaining that order. 2) It seems problematic to encode the transport choice in the URI scheme.  Section 7 says \"They are hosted in distinct namespaces because each URI scheme implies a distinct origin server.\" IIUC, this means any given resource can only be reached over a specific transport. That seems to break the idea of cross-transport proxies as discussed in section 7. It also does not seem to fit with a primary motivation for this draft. That is, one might want to use TCP because of local NAT/FW issues. But if there is a resource with a \"coap\" scheme, I cannot switch to TCP when I'm behind a problematic middlebox, and have an expectation of reaching the same resource.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-05-22 13:09:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-05-11 08:14:24-07:00",
+        "text": "1) [removed, please see update in comments] 2) It seems problematic to encode the transport choice in the URI scheme.  Section 7 says \"They are hosted in distinct namespaces because each URI scheme implies a distinct origin server.\" IIUC, this means any given resource can only be reached over a specific transport. That seems to break the idea of cross-transport proxies as discussed in section 7. It also does not seem to fit with a primary motivation for this draft. That is, one might want to use TCP because of local NAT/FW issues. But if there is a resource with a \"coap\" scheme, I cannot switch to TCP when I'm behind a problematic middlebox, and have an expectation of reaching the same resource.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-22 13:09:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-05-11 02:11:37-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-11 02:11:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-05-08 09:24:05-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-08 09:24:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-05-06 12:56:55-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-05-06 15:59:13-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-05-06 12:56:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-06-09 08:24:19-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-05-06 15:59:13-07:00",
+        "text": "fter reading Mark Nottingham's review, I'm persuaded we should at least discuss the relationship of this work to the parallel work in HTTP.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-06-09 08:24:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-05-09 08:57:32-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-09 08:57:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-05-10 06:40:26-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-12-18 09:32:34-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-05-10 06:40:26-07:00",
+        "text": "1) My general concern is that, while I don't necessarily want to block the proposed format, I would like to understand further before publication why this approach was chosen. Similar to Ben's discuss, I don't understand why the format was chosen so differently. You could just use the format (plus a new length option) as defined for UPD and just never have any retransmission or reordering but be more flexible on the lower layer transport to use. However, if you actually prefer a new format (to save space), than that sounds like a new version for me, while the draft says: \"CoAP is defined in [ RFC7252 ] with a version number of 1.\u00a0 At this time, there is no known reason to support version numbers different from 1.\" However, in this case it could even have made sense to define a new format/version that could be used for both underlying protocols and either have a length option or a message type and IP option. Further I also don't understand why on the other hand the TCP COAP framing is re-used for websockets because websockets already provides message framing and a length field. Also inline with Ben's discuss, the use of the Block option for CAOP/TCP is not very clear to me. The draft says: \"a UDP-to-TCP gateway may simply not have the context to convert a \u00a0 \u00a0 \u00a0 message with a Block Option into the equivalent exchange without \u00a0 \u00a0 \u00a0 any use of a Block Option (it would need to convert the entire \u00a0 \u00a0 \u00a0 blockwise exchange from start to end into a single exchange)\" However, given that the COAP/TCP and COAP/UDP format are so different, it's anyway a more complex conversion than just sticking another transport underneath. The argument for HOL blocking due to e.g. upgrades is also not clear to me because you should probably better just use a different TCP connection for that as it really seems to be a different use case. For me this draft looks like you are defining basically a new protocol version and not just COAP over TCP. Again, I don't necessarily want to block this but I would like to understand why the proposed approach was chosen. 2) Comments from the tsv-art review needs to be addressed as well (Thanks to Yoshi Nishida for the review!). Here is the review text for your connivence: \"Summary: This document is well-written. It is almost ready to be published as a PS draft once the following points are addressed. 1: It is not clear how the protocol reacts the errors from transport layers (e.g. connection failure). \u00a0  The protocol will just inform apps of the events and the app will decide what to do or the protocol itself will do something? 2: There will be situations where the app layer is freezing while the transport layer is still working. Since transport layers cannot detect this type of failures, there should be some mechanisms for it somewhere in the protocol or in the app layer.\u00a0 The doc needs to address this point. For example, what will happen when a PONG message is not returned for a certain amount of time? 3: Since this draft defines new SZX value, I think the doc needs to update RFC7959 . This point should be clarified more in the doc.\u201c 3) And inline with Yoshi's comment, I don't think this part in section 3.3 is well specified; especially I don't understand how these two thing fit together: \"To avoid unnecessary latency, a Connection Initiator MAY send \u00a0  additional messages without waiting to receive the Connection \u00a0  Acceptor's CSM; ...\" and \u00a0  \"Endpoints MUST treat a missing or invalid CSM as a connection error \u00a0  and abort the connection (see Section 5.6).\" Also how long should I wait until I abort the connection?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-18 09:32:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-05-10 07:47:55-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-10 07:47:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-05-10 17:30:35-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-10 17:30:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-05-09 17:42:16-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-09 17:42:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-05-10 07:27:58-07:00",
+        "end_reason": "new_position",
+        "start": "2017-05-05 06:53:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-12-18 13:04:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-05-10 07:27:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8323",
+  "evaluation_end": "2017-12-18 13:04:18-08:00",
+  "evaluation_start": "2017-05-05 06:53:32-07:00"
+}

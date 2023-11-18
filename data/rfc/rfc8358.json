@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-01-09 14:29:40-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-01-09 14:46:55-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-01-09 14:29:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-09 14:46:55-08:00",
+        "text": "I have the same top-level concerns about the signatures on i-ds over-promising on the guarantees they're providing as I did with potential RFC signatures. I would have preferred to see the i-d signature system deprecated or fixed rather than spending the time to patch a fundamentally broken system to work with the new formats. [A high-level summary: if any signing key (expired or not) is ever compromised, we have no path to recovery. Signatures forged with a compromised key will validate, and we will have no recourse other than a publicity campaign to inform interested parties that no signature can be trusted from that point forward.] I cannot condone additional work on this signing system until it has some sensible means of dealing with key compromise, and am therefore balloting \"ABSTAIN\". The foregoing concerns have already been expressed to the document author in the context of RFC signing, so I do not expect this to be surprising. That said, if we're publishing this anyway, I have a number of comments (as the contents of this document may have bearing on any fixed system we define in the future). _______ (1) Consider registering id-ct-epub If we're registering new formats based on  RFC 7990  (which seems to be the impetus for this document), it would seem to be far easier to add epub ( RFC 7990 , section 7.4.1) at this time rather than requiring new epub format work to take care of it when that work is begun. ______ (2) Register HTML under \"SMI Security for S/MIME CMS Content Type\" or explain use of z39-50 OID This definition in section 3 sticks out as exceptionally odd: >\u00a0 \u00a0 \u00a0  id-ct-htmlWithCRLF OBJECT IDENTIFIER ::= { 1 2 840 10003 5 109 3 } Given that we don't use (e.g.) 1.2.840.10003.5.109.10 for XML or 1.2.840.10003.5.109.1 for PDF, the appearance of an OID from the 1.2.840.10003.5.109 namespace needs some kind of explanation. Alternately (and... probably preferably?), this document should probably register a value under 1.2.840.113549.1.9.16.1 instead. _____ (3) Handling of U+FEFF mid-document Section 4.1 says: \u00a0  A byte-order-mark (BOM) used at the beginning of a UTF8 file is not \u00a0  considered to be part of the file content.\u00a0 When present, a leading \u00a0  BOM MUST NOT be processed by the digital signature algorithm. For clarity, this should probably (a) clearly indicate that a zero-width-no-break-space appearing elsewhere in the document is not elided, and (b) indicate exactly what to do if multiple U+FEFF characters appear at the start of a document. _____ (4) W3C XML document should be normative Section 4.2 says: \u00a0  A robust signature generation process MAY perform canonicalization to \u00a0  ensure that the W3C guidance has been followed. The W3C guidance in question is the document currently cited as [R20060816]. This normative reference to its procedures means the underlying document should be in the \"Normative References\" section. _____ (5) Handling of BOMs in HTML HTML5 has explicit handling regarding BOMs (cf. ), so one might reasonably expect them to be added/removed/etc by HTTP servers and/or clients under certain circumstances. As a consequence, I believe that section 4.2 needs the same BOM considerations as section 4.1 (including the caveats I outline above). _____ (6) XML reference out of date In section 9: \u00a0  [R20060816] Bray, T., J. Paoli, C. M. Sperberg-McQueen, E. Maler, \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  and F. Yergeau, \"Extensible Markup Language (XML) 1.0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  (Fourth Edition)\", W3C Recommendation, 16 August 2006. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0   http://www.w3.org/TR/2006/REC-xml-20060816 . This URL brings up a prominent red-box warning that the document is out of date. I believe you want to reference the 20081126 version instead. Also, all W3C specs now appear at https URLs rather than http URLs.",
+        "type": "Abstain"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-01-08 07:59:25-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-08 07:59:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-01-10 14:43:50-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-10 14:43:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-01-03 06:20:20-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-03 06:20:20-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-01-04 19:04:59-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-04 19:04:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-01-10 15:58:49-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-10 15:58:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-01-08 02:32:03-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-08 02:32:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-01-10 14:31:28-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-10 14:31:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-01-08 04:21:37-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-08 04:21:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-01-10 19:05:05-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-10 19:05:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-01-04 08:34:41-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-04 08:34:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-01-03 09:26:36-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-03 09:26:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-01-10 18:30:37-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-10 18:30:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-01-08 12:38:07-08:00",
+        "end_reason": "new_position",
+        "start": "2018-01-03 06:20:19-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-01-22 10:07:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-01-08 12:38:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8358",
+  "evaluation_end": "2018-01-22 10:07:06-08:00",
+  "evaluation_start": "2018-01-03 06:20:19-08:00"
+}

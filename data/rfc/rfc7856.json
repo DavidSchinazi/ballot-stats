@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-12-02 08:20:21-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-02 08:20:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-12-01 12:20:13-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-01 12:20:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-11-30 11:23:03-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-30 11:23:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-12-02 19:57:32-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-02 19:57:32-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-12-01 15:04:57-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-01 15:04:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-12-01 02:52:49-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-12-01 02:53:50-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-12-01 02:52:49-08:00",
+        "text": "s advised by the MIB doctors,\u00a0 draft-ietf-softwire-mesh-mib-04 (and draft-ietf-softwire-dslite-mib too btw) should be moved under mib-2?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-12-17 01:47:59-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2015-12-01 02:53:50-08:00",
+        "text": "s advised by the MIB doctors,\u00a0 draft-ietf-softwire-mesh-mib-04 (and draft-ietf-softwire-dslite-mib too btw) must be moved under mib-2",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-12-19 14:02:19-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-12-17 01:47:59-08:00",
+        "text": "From the diff, I spotted that you imported smi-2. It should be mib-2 So basically, you haven't checked that your MIB module compiles :-( http://www.ibr.cs.tu-bs.de/bin/smitools.cgi Your request has been processed by the command timeout 10 smilint -s -e -l 6 mibs/SOFTWIRE-MESH-MIB 2>report.txt You can access any intermediately created files, the processing report (which might be empty if no errors or warnings have been found), and output files (in case of a conversion request) for reading and download from a temporary server directory for approx. 24 hours. While processing your request the following errors and/or warnings have been found: mibs/SOFTWIRE-MESH-MIB:4: [2] {import-failed} identifier `smi-2' cannot be imported from module `SNMPv2-SMI' mibs/SOFTWIRE-MESH-MIB:56: [2] {bad-identifier-case} `XXX' should start with a lower case letter mibs/SOFTWIRE-MESH-MIB:56: [2] {object-identifier-not-prefix} Object identifier element `XXX' name only allowed as first element mibs/SOFTWIRE-MESH-MIB:56: [1] {object-identifier-unknown} unknown object identifier label `mib-2' mibs/SOFTWIRE-MESH-MIB:19: [2] {module-identity-registration} illegal module identity registration mibs/SOFTWIRE-MESH-MIB:121: [5] {index-exceeds-too-large} warning: index of row `swmEncapsEntry' can exceed OID size limit by 136 subidentifier(s) mibs/SOFTWIRE-MESH-MIB:221: [5] {index-exceeds-too-large} warning: index of row `swmBGPNeighborEntry' can exceed OID size limit by 135 subidentifier(s)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-19 14:02:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-11-30 13:35:52-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-30 13:35:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-12-03 04:10:04-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-03 04:10:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-12-01 10:57:35-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-01 10:57:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-12-02 18:43:05-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-02 18:43:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-12-03 04:54:48-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-03 04:54:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-11-17 14:38:38-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-01-08 04:17:38-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 14:38:38-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7856",
+  "evaluation_end": "2016-01-08 04:17:38-08:00",
+  "evaluation_start": "2015-11-17 14:38:38-08:00"
+}

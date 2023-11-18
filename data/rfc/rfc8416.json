@@ -1,0 +1,323 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-04-04 12:22:38-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-05-09 09:30:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-04 12:22:38-07:00",
+        "text": "Thanks to everyone who worked on this document. The mechanism seems useful. I'm concerned that the document doesn't describe the file format itself; rather, it relies on examples to provide vital, nonsupplemental information such as the names of JSON object members, expected encodings (e.g., strings versus numbers), and distinction between arrays and objects. I'm making this a DISCUSS because I think the ambiguity here -- and, in particular the ambiguity about IP address prefix notation -- will lead to non-interoperable implementations. Using section \u00a73.2 as an example: >\u00a0  A SLURM file consists of: > >\u00a0  o\u00a0 A SLURM Version indication that MUST be 1 > >\u00a0  o\u00a0 A slurmTarget element (Section 3.3) consisting of: > >\u00a0 \u00a0 \u00a0 *\u00a0 Zero or more target elements.\u00a0 In this version of SLURM, there >\u00a0 \u00a0 \u00a0 \u00a0  are two types of values for the target: ASN or Fully Qualified >\u00a0 \u00a0 \u00a0 \u00a0  Domain Name(FQDN).\u00a0 If more than one target line is present, >\u00a0 \u00a0 \u00a0 \u00a0  all targets MUST be acceptable to the RP. > >\u00a0  o\u00a0 Validation Output Filters (Section 3.4), consisting of: > >\u00a0 \u00a0 \u00a0 *\u00a0 An array of zero or more Prefix Filters, described in >\u00a0 \u00a0 \u00a0 \u00a0  Section 3.4.1 > >\u00a0 \u00a0 \u00a0 *\u00a0 An array of zero or more BGPsec Filters, described in >\u00a0 \u00a0 \u00a0 \u00a0  Section 3.4.2 > >\u00a0  o\u00a0 Locally Added Assertions (Section 3.5), consisting of: > >\u00a0 \u00a0 \u00a0 *\u00a0 An array of zero or more Prefix Assertions, described in >\u00a0 \u00a0 \u00a0 \u00a0  Section 3.5.1 > >\u00a0 \u00a0 \u00a0 *\u00a0 An array of zero or more BGPsec Assertions, described in >\u00a0 \u00a0 \u00a0 \u00a0  Section 3.5.2 > As this is the normative description of the structure, I would have expected an indication that the file contains a JSON object (rather than, say, a JSON array), an indication that the version is to be encoded as a number (rather than a string), and clarification of what value members are expected to contain. For example, the following JSON object is in compliance with the preceding normative description (and, as far as I can tell, all other normative text in the document): [\"1\", \u00a0 [\"65536\", \" rpki.example.com \"], \u00a0 [ \u00a0 \u00a0 [\"192.0.2.0/255.255.255.0\", \"All VRPs encompassed by prefix\"], \u00a0 \u00a0 [\"64496\", \"All VPRs maching ASN\"], \u00a0 \u00a0 [\"198.51.100.0/255.255.255.0\", \"64497\", \"All VRPs encompassed by prefix, \u00a0 \u00a0 \u00a0 matching ASN\"] \u00a0 ], \u00a0 [ \u00a0 \u00a0 [\"64496\", \"All keys for ASN\"], \u00a0 \u00a0 [\"Zm9v\", \"Key matching Router SKI\"], \u00a0 \u00a0 [\"64497\", \"YmFy\", \"Key for ASN 64497 matching Router SKI\"], \u00a0 ], \u00a0 [ \u00a0 \u00a0 [\"64496\", \"198.51.100.0/255.255.255.0\", \"My other important route\"], \u00a0 \u00a0 [\"64496\", \"2001:DB8::/FFFF:FFFF::\", \"48\", \u00a0 \u00a0  \"My other important de-aggregated routes\"], \u00a0 ], \u00a0 [ \u00a0 \u00a0 [\"64496\", \"My known key for my important ASN\", \u00a0 \u00a0  \"\", \"\"] \u00a0 ] ] Fixing this should be pretty easy; the document simply needs text added that describes the JSON structure explicitly, with clear indications of how values are to be encoded. For example, the preceding text I quote becomes: \u00a0  A SLURM file consists of a single JSON object containing the following \u00a0  members: \u00a0  o\u00a0 A\u00a0 \"slurmVersion\" member that MUST be set to 1, encoded as a number \u00a0  o\u00a0 A \"slurmTarget\" member (Section 3.3) If more than one target line is \u00a0 \u00a0 \u00a0 present, all targets MUST be acceptable to the RP. The \"slurmTarget\" \u00a0 \u00a0 \u00a0 member is encoded as an array of zero or more objects. Each object in the \u00a0 \u00a0 \u00a0 array contains exactly one member.\u00a0 In this version of SLURM, the member \u00a0 \u00a0 \u00a0 may be named either: \u00a0 \u00a0 \u00a0 * \"asn\", in which case it contains an ASN, or \u00a0 \u00a0 \u00a0 * \"hostname\", in which case it contains a Fully Qualified Domain \u00a0 \u00a0 \u00a0 \u00a0  Name (FQDN). \u00a0  o\u00a0 A \"validationOutputFilters\" member (Section 3.4), whose value is an \u00a0 \u00a0 \u00a0 object. The object MUST contain exactly two members: \u00a0 \u00a0 \u00a0 *\u00a0 A \"prefixFilters\" member, whose value is described in \u00a0 \u00a0 \u00a0 \u00a0  Section 3.4.1 \u00a0 \u00a0 \u00a0 *\u00a0 A \"bgpsecFilters\" member, whose value is described in \u00a0 \u00a0 \u00a0 \u00a0  Section 3.4.2 \u00a0  o\u00a0 A \"locallyAddedAssertions\" member (Section 3.5), whose value is an \u00a0 \u00a0 \u00a0 object. The object MUST contain exactly two members: \u00a0 \u00a0 \u00a0 *\u00a0 A \"prefixAssertions\" member, whose value is described in \u00a0 \u00a0 \u00a0 \u00a0  Section 3.5.1 \u00a0 \u00a0 \u00a0 *\u00a0 A \"bgpsecAssertions\" member, whose value is described in \u00a0 \u00a0 \u00a0 \u00a0  Section 3.5.2 Gotchas to watch out for include:  - If you're using the word \"element\" to describe something in a JSON object, \u00a0  you probably need to find a more specific word. This document, for example, \u00a0  uses \"element\" instead of \"member\" in most places.  - Everywhere you use the word \"structure,\" replace it with either \"array\" or \u00a0  \"object,\" as appropriate.  - When values can be encoded as either a number or a string (e.g., as with \u00a0  \"slurmVersion\" above, or with AS numbers), indicate which encoding is \u00a0  expected.  - For IP prefixes, be clear about acceptable syntax. For example: is \u00a0  the  RFC 950  syntax (\"192.0.2.0/255.255.255.0\") acceptable? My suggestion is \u00a0  to cite  RFC 4632  \u00a73.1 for prefix-length notation (both for IPv4 and IPv6), \u00a0  and  RFC 5952  for the syntax of IPv6 addresses.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-05-09 09:30:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-04-02 03:47:22-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-02 03:47:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-04-04 11:00:39-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-04 11:00:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-02-21 04:10:17-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-04-03 12:43:20-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 12:43:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-03-30 10:54:18-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-17 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-30 10:54:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-04-03 12:04:24-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 12:04:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-04-02 09:56:04-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-02 09:56:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-03-27 20:47:28-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-17 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-27 20:47:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-04-03 13:22:05-07:00",
+        "end_reason": "new_position",
+        "start": "2018-03-17 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 13:22:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-03-29 06:45:34-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-29 06:45:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-04-02 08:34:28-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-02 08:34:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-04-03 20:11:07-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-03 20:11:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-04-04 04:12:43-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-04 04:12:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-04-01 14:02:19-07:00",
+        "end_reason": "new_position",
+        "start": "2018-02-21 04:10:17-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-04-30 10:08:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-04-01 14:02:19-07:00",
+        "text": "I don't understand the targeting as it related to domain/host names (and suspect that others will have the same issue). From section 3.3: \"\u00a0 If a \"slurmTarget\" element is \u00a0  present, an RP SHOULD verify that the target is an acceptable value, \u00a0  and reject this SLURM file if the \"slurmTarget\" element is not \u00a0  acceptable.... Accordingly, the SLURM file \u00a0  source needs to indicate which RP(s) should make use of the file by \u00a0  adding the domain name(s) of the RP(s) to the SLURM file target... \u00a0 Such a target value is a server name expressed in FQDN. \u00a0  \"slurmTarget\": [ \u00a0 \u00a0  { \u00a0 \u00a0 \u00a0  \"hostname\": \" rpki.example.com \", \u00a0 \u00a0 \u00a0  \"comment\": \"This file is intended for RP server  rpki.example.com \" \u00a0 \u00a0  } ]\u00a0  So, if I want to target multiple RPs ( rpki1.example.com ,  rpki2.example.com ) can I do: \u00a0  \"slurmTarget\": [ \u00a0 \u00a0  { \u00a0 \u00a0 \u00a0  \"hostname\": \" example.com \", \u00a0 \u00a0 \u00a0  \"comment\": \"This file is intended for RP server  rpki.example.com \" \u00a0 \u00a0  } ] ? The \"domain names(s)\" versus \"hostname\" vs \"server name expressed in FQDN\" text is handwavey. I'm assuming that I'd need to do: \u00a0  \"slurmTarget\": [ \u00a0 \u00a0  { \u00a0 \u00a0 \u00a0  \"hostname\": \" rpki1.example.com \", \u00a0 \u00a0 \u00a0  \"comment\": \"This file is intended for RP server  rpki1.example.com \" \u00a0 \u00a0  },  { \u00a0 \u00a0 \u00a0  \"hostname\": \" rpki2.example.com \", \u00a0 \u00a0 \u00a0  \"comment\": \"This file is intended for the RP server,  rpki2.example.com \" \u00a0 \u00a0  },  ]\" Can you please make this clearer, and hopefully add more targets to the examples? This seems like an easy fix / clarification, happy to clear once it is, er, clear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-05-14 14:48:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-04-30 10:08:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8416",
+  "evaluation_end": "2018-05-14 14:48:36-07:00",
+  "evaluation_start": "2018-02-21 04:10:17-08:00"
+}

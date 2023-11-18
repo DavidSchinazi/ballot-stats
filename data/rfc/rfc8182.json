@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-03-02 03:04:18-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-03-14 06:35:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-03-02 03:04:18-08:00",
+        "text": "I would be happy to ballot Yes on this document, as it is well written and is a useful piece of work. However I have one issue (and a few minor comments) that I would like to DISCUSS before doing so: In Section 5.3 the document says: \u00a0  It is RECOMMENDED that Relying Parties and Publication Servers follow \u00a0  the Best Current Practices outlined in [ RFC7525 ] on the use of HTTP \u00a0  over TLS (HTTPS) [ RFC2818 ]. RFC 7525  is referencing  RFC 6125  for server hostname validation. Unfortunately this is not detailed enough to perform hostname validation, because reference to  RFC 6125  requires specifying answers to every question in section 3 of  RFC 6125 . (And there is no generic RFC that specifies how this is done for protocols using HTTP.) One example of how this might look like is in Section 9.2 of . For your convenience the relevant text is pasted below: \u00a0  Routers MUST also verify the cache's TLS server certificate, using \u00a0  subjectAltName dNSName identities as described in [ RFC6125 ], to avoid \u00a0  man-in-the-middle attacks.\u00a0 The rules and guidelines defined in \u00a0  [ RFC6125 ] apply here, with the following considerations: \u00a0 \u00a0 \u00a0 Support for DNS-ID identifier type (that is, the dNSName identity \u00a0 \u00a0 \u00a0 in the subjectAltName extension) is REQUIRED in rpki-rtr server \u00a0 \u00a0 \u00a0 and client implementations which use TLS.\u00a0 Certification \u00a0 \u00a0 \u00a0 authorities which issue rpki-rtr server certificates MUST support \u00a0 \u00a0 \u00a0 the DNS-ID identifier type, and the DNS-ID identifier type MUST be \u00a0 \u00a0 \u00a0 present in rpki-rtr server certificates. \u00a0 \u00a0 \u00a0 DNS names in rpki-rtr server certificates SHOULD NOT contain the \u00a0 \u00a0 \u00a0 wildcard character \"*\". \u00a0 \u00a0 \u00a0 rpki-rtr implementations which use TLS MUST NOT use CN-ID \u00a0 \u00a0 \u00a0 identifiers; a CN field may be present in the server certificate's \u00a0 \u00a0 \u00a0 subject name, but MUST NOT be used for authentication within the \u00a0 \u00a0 \u00a0 rules described in [ RFC6125 ]. The only thing missing from the above is explicit mentioning that SRV-ID and URI-ID are not used. (I think the same should apply to your document.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-03-14 06:35:12-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-02-15 12:59:29-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-15 12:59:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-03-01 13:07:15-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-03-01 13:07:15-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-02-10 07:30:22-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-10 07:30:22-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-02-15 19:31:02-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-15 19:31:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-02-16 05:32:11-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-16 05:32:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-02-14 13:37:42-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-14 13:37:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-02-16 03:57:33-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-16 03:57:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-02-16 00:04:34-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-16 00:04:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-02-14 14:01:24-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-14 14:01:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-02-16 01:59:24-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-16 01:59:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-02-15 21:47:18-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-15 21:47:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-02-16 05:48:21-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-16 05:48:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-02-14 20:22:24-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-14 20:22:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-02-15 18:03:14-08:00",
+        "end_reason": "new_position",
+        "start": "2017-02-10 07:30:21-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-03-14 09:26:41-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-02-15 18:03:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8182",
+  "evaluation_end": "2017-03-14 09:26:41-07:00",
+  "evaluation_start": "2017-02-10 07:30:21-08:00"
+}

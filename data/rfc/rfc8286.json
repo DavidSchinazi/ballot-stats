@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-06-14 14:53:20-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-07-25 14:43:19-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-06-14 14:53:20-07:00",
+        "text": "I believe this is more\u00a0 a discussion for the IESG. First, this is way out of my area and I'm not particularly commenting on the details - but  I do agree with Mirja's discuss about \"- The following action does not seem to be appropriate for a specification of an end-to-end protocol: \"And if the splicer wishes to prevent the downstream receivers from detecting splicing, it MUST \u00a0  NOT forward the message.\"\" The full paragraph at the end of Sec 3.2 is: \"When the splicer intercepts the RTCP splicing notification message, \u00a0  it SHOULD NOT forward the message to the down-stream receivers in \u00a0  order to reduce RTCP bandwidth consumption. And if the splicer wishes \u00a0  to prevent the downstream receivers from detecting splicing, it MUST \u00a0  NOT forward the message.\" Even more specifically to me, superficially this seems to me to be a way to change what is in the stream that a receiver has requested or subscribed to without permission or notification.\u00a0  In that light, the idea that the splicer is able to prevent downstream receivers from detecting the splicing does not sound good. Similarly, the end of Sec 3.1 says \"After the splicer intercepts the RTP header extension and derives the \u00a0  Splicing Interval, it will generate its own stream and SHOULD NOT \u00a0  include the RTP header extension in outgoing packets to reduce header \u00a0  overhead.\" This looks like another example of making the choice to hide information from the receiver. I realize that there is probably an technical arms-race going on - of inserting advertisements and building receivers to block undesired advertisements.\u00a0 I am\u00a0 not seeing a balanced solution that considers the receivers as well as the senders. I am startled that there is no consideration of the impact of this extension on the receivers  in the security considerations. The only reference I see in the Security Considerations further assumes that it is appropriate to have an undetectable splicing. \" A malicious endpoint may also break an undetectable splicing. To \u00a0  mitigate this effect, the splicer SHOULD NOT forward the splicing \u00a0  time information RTP header extension defined in Section 4.1 to the \u00a0  receivers. And it MUST NOT forward this header extension when \u00a0  considering an undetectable splicing. \" At a minimum, I feel like there should be a very clear consideration of the pros and cons - including from the viewpoint of a receiver.  If we end up with this biased technology, then it should be clearly stated - not hidden in assumptions.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-25 14:43:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-06-14 12:24:08-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-14 12:24:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-06-14 18:44:46-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-14 18:44:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-06-08 13:32:27-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-06-15 13:04:01-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-15 13:04:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-06-15 15:03:08-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-15 15:03:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-06-14 08:53:41-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-14 08:53:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-06-15 11:37:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-15 11:37:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-06-13 05:55:21-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-06-16 06:20:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-06-13 05:55:21-07:00",
+        "text": "I have a few points which I would like to have answers for before moving the doc forward (which may not even results in text changes). I happy to clear my position when answered before the telechat: - The following action does not seem to be appropriate for a specification of an end-to-end protocol: \"And if the splicer wishes to prevent the downstream receivers from detecting splicing, it MUST \u00a0  NOT forward the message.\" I guess if a middlebox decides to drop the message, there is not much we can do. But I definitely would prefer to not see this specified in an RFC. - Why is just having the RTCP message not sufficient? Why are the RTP extensions needed as well? - And is the RTCP message send only once or multiple time? This is not specified. - There is some discussion about the implementation of the slicer in section 5 (where btw. the title \"Failure Cases\" seems inappropriate), while there is one sentence saying: \"If the splicer is implemented following [ RFC6828 ], it will have its \u00a0  own SSRC and will send its own RTCP reports, and will forward \u00a0  translated RTCP reports from the receivers.\" Why are alternatives discussed here, if there is already a recommendation given in  RFC6828 ? And how would proper congestion handling be ensure in the other setups not described in  RFC6828 ?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-16 06:20:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-06-14 16:43:32-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-14 16:43:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-06-16 04:10:42-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-07-09 06:54:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-06-16 04:10:42-07:00",
+        "text": "(1) Section 7, 3rd para: Saying that \"splicer works as a trusted entity\" seems wrong - you need to say who trusts whom for what I think. I also don't get what you mean by saying there'll be a security association between the splicer and the receiver, nor how that might ever be possible if the splicer wants to hide what it's doing.\u00a0 I think what you're after is some general statement that splicing breaks all security unless all the parties involved share the same security association. IIRC there is text like that in other RTP documents that might be copied but I forget the detail. (2) Section 7, 4th para: You say there is a case where header extension encryption SHOULD be used - how would that work? If there's a clear way to do it that'd get interop, then why is that not described? If there are ways in which might or might not work, or if some proprietary arrangements might be needed then how is it ok to have a SHOULD there? I suspect that the right thing here may be to not pretend that that can be done but to just stick with saying that splicing is inherently not going to work if you use any real security mechanisms, or something similar. (3) In discussion of  RFC6828  there was some concern about possible creation of loops. I forget the issues though, but wanted to check this in case it also applies here.\u00a0 (See 4.5 of 6828 maybe or the history for that RFC in the tracker.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-09 06:54:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-06-15 15:58:15-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-15 15:58:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-06-14 20:43:44-07:00",
+        "end_reason": "new_position",
+        "start": "2016-06-08 13:32:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-08-03 14:37:20-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-06-14 20:43:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8286",
+  "evaluation_end": "2016-08-03 14:37:20-07:00",
+  "evaluation_start": "2016-06-08 13:32:27-07:00"
+}

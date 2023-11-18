@@ -1,0 +1,319 @@
+{
+  "all_ballots": {
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-07-04 10:48:06-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-04 10:48:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-07-01 12:08:48-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-07-06 15:39:41-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-06 15:39:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-07-06 20:13:34-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-07-03 00:51:19-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-07-06 20:13:34-07:00",
+        "text": "I know this is an optional optimization, as described by the \u201cMAY\u201d in the Introduction.\u00a0 However, some of the other normative language is not as strong as it should be to clearly specify the required behavior (if the mechanisms are being used), cause confusion, or is simply out of place. 1. In 3.1 (Get Sender's IP/MAC Mapping Information for Non-zero IP) the text says that the \u201cRBridge MAY use different strategies to do so\u201d.\u00a0 That \u201cMAY\u201d contradicts the \u201cSHOULD\u201d used before it, which directs the RBridge to verify a duplicate address.\u00a0 s/MAY/may 2. Still in 3.1: \u201c\u2026the RBridge SHOULD verify if a duplicate IP address has already been in use\u2026\u201d\u00a0 What are the reasons where the RBridge would not verify this situation?\u00a0 IOW, why is this \u201cSHOULD\u201d not a \u201cMUST\u201d? 3. I\u2019m confused as to whether the APPsub-TLV is required or not.\u00a0 The source of my confusion comes from Section 3.3 (Determine How to Handle the ARP/ND Response) which says that \u201cR2 SHOULD initiate a link state update to inform all the other RBridges of the target's location\u2026The update message can be carried by an IA APPsub-TLV [IA-draft]\u2026\u201d\u00a0 This text seems to say that the APPsub-TLV SHOULD be used to carry the information \u2014 but text in Section 2 (IP/MAC Address Mappings) sounds to me as if the use of the APPsub-TLV is optional: \u201cIf the RBridge has extracted the sender's IP/MAC address pair from the received data packet (either ARP or ND), it MAY save the information and use the IA APPsub-TLV\u2026\u201d\u00a0 Also, 3.1 and 3.2 both say that an \u201cRBridge MAY use the IA APPsub-TLV\u201d.\u00a0 And finally the Security Considerations section seems to recommend using it\u2026\u00a0 Maybe it\u2019s just me, but please clarify.\u00a0 [BTW, if it is required, then I think that both the IA-draft and DirMech references should be Normative.] 4. In Section 2 (IP/MAC Address Mappings) the \u201cMAY\u201d in the following sentence is out of place since that is already the function of the confidence (as described in  draft-ietf-trill-ia-appsubtlv  and  RFC6325 ): \u201cA different confidence level MAY also be used to indicate the reliability of the mapping information.\u201d 5. In Section 3.2 (Determine How to Reply to ARP/ND), both options (?) a and b say that the \u201cRBridge MAY take one\u2026\u201d.\u00a0 If the RBridge selected that option, then I think the action is no longer optional.\u00a0 s/MAY/MUST",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-03 00:51:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-07-05 18:58:12-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-05 18:58:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-07-06 01:48:14-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-06 01:48:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-07-05 13:15:25-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-05 13:15:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-07-05 04:38:50-07:00",
+        "end_reason": "new_position",
+        "start": "2017-03-26 00:00:00+00:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-11-09 05:40:07-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-07-05 04:38:50-07:00",
+        "text": "It's not clear to me how the security properties of this mechanism compare to existing TRILL. The text says: \u00a0  Unless Secure ND (SEND [ RFC3971 ]) is used, ARP and ND messages can be \u00a0  easily forged. Therefore the learning of MAC/IP addresses by RBridges \u00a0  from ARP/ND should not be considered as reliable. See Section 4.1 for \u00a0  SEND Considerations. \"not considered as reliable\" seems suboptimal. You need to cover how this mechanism compares to the non-use of this mechanism. This document seems very sketchy on what you do when you get duplicate IPs. \u00a0  In the case where the former owner replies, a Duplicate Address has \u00a0  been detected. In this case the querying RBridge SHOULD log the \u00a0  duplicate so that the network administrator can take appropriate \u00a0  action. How does logging solve the problem? What do you reply to ARPs with and/or propagate to other nodes? Do you tell the originator of the advertisement you have a duplicate? \u00a0  When a newly connected end-station exchanges messages with a DHCP \u00a0  [ RFC2131 ] server an edge RBridge should snoop them (mainly the \u00a0  DHCPAck message) and store IP/MAC mapping information in its ARP/ND \u00a0  cache and should also send the information out through the TRILL \u00a0  control plane using ESADI. What happens if the attacker sets up a fake DHCP server and pretends to assign addresses to himself? It seems like maybe that's the same as fake ARPs but maybe not. In general, the security considerations need a complete threat analysis per 3552.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-09 05:40:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-07-07 06:33:09-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-07-07 06:33:09-07:00",
+        "text": "Section 3.2 discusses several options for obtaining an answer to a ND query. The section also mentions SEND, which prevents spoofing of results by the bridge itself. I believe it would be useful though to make a clearer recommendation on what to do with regards to the different options on obtaining an answer. Some of them are compatible with SEND, some of them are not. Also, how does one know SEND is being used? Perhaps the document could specify a configurable mode where SEND is assumed to be in use and then you could not use the options that make this problematic. Or, perhaps better, if a node has been observed as using send, then use the correct option for that node.",
+        "type": "Discuss"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-07-07 06:19:21-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-07-07 06:19:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-07-06 09:35:50-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-06 09:35:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2016-07-04 07:54:12-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-04 07:54:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-07-06 13:51:09-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-06 13:51:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-07-06 08:38:01-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2017-03-31 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-07-06 08:38:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2016-07-05 21:36:08-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-07-04 07:59:32-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-07-05 21:36:08-07:00",
+        "text": "* After the ingress RBridge learns the mapping between an IPv6 address and a MAC address how is the liveness being tested/maintained? i.e. If a \"learnt\" target IP goes off link and the Rbridge keeps responding to NS messages wouldn't it make troubleshooting a nightmare? * Section 3.2 case a): There is no guidance as to why or when an Rbridge would pick cases a1..a5. e.g. When a SEND NS is received only option a2 can work and all others will fail.\u00a0  * Section 3.2 case a.1): What should be the source IPv6 address of the NA generated by the ingress RBridge? Will this be an address of the target of the NS or one of the ingress Rbridge that responds? * Section 3.2: How is an ND message where the target IP is not known handled? This case seems to be left out.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-07-04 07:59:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-07-05 19:22:30-07:00",
+        "end_reason": "new_position",
+        "start": "2016-07-01 12:08:48-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-11-12 18:37:18-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-07-05 19:22:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8302",
+  "evaluation_end": "2017-11-12 18:37:18-08:00",
+  "evaluation_start": "2016-07-01 12:08:48-07:00"
+}

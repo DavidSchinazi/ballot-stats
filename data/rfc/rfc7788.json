@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-11-19 06:58:38-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-19 06:58:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-11-18 11:42:42-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-18 11:42:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-11-18 12:55:17-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-18 12:55:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-11-18 21:42:00-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-11-28 11:27:51-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-11-18 21:42:00-08:00",
+        "text": "I have two points that I'd like to discuss, both of which should be very easy to resolve: -- Section 10.1 -- For all the capability values you say something like this: \u00a0 \u00a0 \u00a0 It MUST be set to some value between 1 and 7 \u00a0 \u00a0 \u00a0 included (4 is the default) if the router is capable of proxying \u00a0 \u00a0 \u00a0 MDNS and 0 otherwise. First, the word you want is \"inclusive\", not \"included\". Second, \"4 is the default\" really means that you can set it to 0, and that's the same as setting it to 4.\u00a0 But it seems that 0 means that the router does not have the specified capability.\u00a0 Those seem to be in conflict.\u00a0 I strongly suggest you do NOT have a default, and allow the use of 0 *only* to designate lack of that capability. Please discuss this with me to make sure I'm not misunderstanding you here. -- Section 13 -- I have two concerns with how the HNCP TLV Types registry is specified: 1. Because the DNCP TLV Types registry specifically allocates 32-511 for profiles, it'd be better to simply limit the range of values in this registry to those values, rather than making it broader and duplicating the other values from the other registry. 2. I think it's a bad idea for HNCP to re-define DNCP's Private Use range in its registry.\u00a0 I would rather see this be text in the document (here in the IANA Considerations is a fine place for it) that says that HNCP uses the Private Use range for per-implementation experimentation, and not have that be in the HNCP registry. In other words, I'd make it more like this (and add a reference to  RFC 5226 ): NEW \u00a0  IANA should set up a registry for the (decimal values within range \u00a0  32-511, as allocated to profiles by DNCP) \"HNCP TLV Types\" under \u00a0  \"Distributed Node Consensus Protocol (DNCP)\", with the following \u00a0  initial contents: \u00a0 \u00a0 \u00a0 32: HNCP-Version \u00a0 \u00a0 \u00a0 33: External-Connection \u00a0 \u00a0 \u00a0 34: Delegated-Prefix \u00a0 \u00a0 \u00a0 35: Assigned-Prefix \u00a0 \u00a0 \u00a0 36: Node-Address \u00a0 \u00a0 \u00a0 37: DHCPv4-Data \u00a0 \u00a0 \u00a0 38: DHCPv6-Data \u00a0 \u00a0 \u00a0 39: DNS-Delegated-Zone \u00a0 \u00a0 \u00a0 40: Domain-Name \u00a0 \u00a0 \u00a0 41: Node-Name \u00a0 \u00a0 \u00a0 42: Managed-PSK \u00a0 \u00a0 \u00a0 43: Prefix-Policy \u00a0 \u00a0 \u00a0 44-511: Unassigned \u00a0 \u00a0 \u00a0  \u00a0  The policy \"RFC Required\" [ RFC5226 ] should be used for future \u00a0  assignments. \u00a0  The range reserved by DNCP for Private Use (768-1023) is used by \u00a0  HNCP for per-implementation experimentation.\u00a0 How collisions are \u00a0  avoided is out of scope of this document. END Does that make sense?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-28 11:27:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-11-17 19:39:40-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 19:39:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-11-18 06:19:47-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-11-26 10:33:55-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-11-18 06:19:47-08:00",
+        "text": "One issue to be discussed: the link with the future BCP  draft-ietf-v6ops-reducing-ra-energy-consumption-03 , on the same telechat.  draft-ietf-v6ops-reducing-ra-energy-consumption-03  mentions: \u00a0  \"On links with a large number of battery-powered devices, sending \u00a0  solicited Router Advertisements multicast can severely impact host \u00a0  power consumption.\" From this document: I see \"HNCP operates on multicast-capable interfaces only\" Do we expect battery-powered devices in homenet? I guess so: my phone for example. I discussed this topic with Mark Townsley, who is on it already.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-26 10:33:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-11-19 05:59:25-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-11-30 07:04:58-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-11-19 05:59:25-08:00",
+        "text": "* I see where HNCP describes how interfaces are classified as internal or external, but how does an interface get classified as leaf, guest, or ad-hoc?\u00a0 Is this some manual configuration step that needs to be described somewhere? * The definition of Leaf in 5.1 is unclear.\u00a0 It says \"Such an interface uses the Internal category with the exception that HNCP traffic MUST NOT be sent on the interface, and all such traffic received on the interface MUST be ignored.\" The \"all such traffic\" is ambiguous. Based on the definition of the Guest category, I think \"all such traffic\" is really \"all HNCP traffic\". * The text in section 5.3 seems incomplete. It gives a 4-step algorithm for border discovery, but says \"if the node does not implement auto-detection, only the first step is required.\" If auto detection is not supported and a fixed category is not configured, what happens? Does this mean that if auto detection is not supported manual configuration of the border is required? * Section 7 describes how to handle non-HNCP capable routers. However, I don't see any operational issues described that could arise from having a non-HNCP capable router connecting two clouds of HNCP within the same home network. It seems like that could cause problems with a bunch of the services provided by HNCP.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Brian Haberman",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-30 07:04:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-11-17 13:50:59-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 13:50:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-11-19 02:52:41-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-19 02:52:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-11-17 15:50:28-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-12-03 06:01:26-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-11-17 15:50:28-08:00",
+        "text": "I have a couple of pints to discuss that should be pretty easy to resolve as I wasn't clear on the first because of wording (should be very simple) and would like to chat about the second.\u00a0 Thanks. 1. I'm not clear on one of the bullets in section 3,  \u00a0 o\u00a0 HNCP nodes MUST use the leading 64 bits of MD5 [ RFC1321 ] as DNCP \u00a0 \u00a0 \u00a0 non-cryptographic hash function H(x). Is this meant to use a message digest ( RFC1321 ) or a cryptographic hash for authentication ( RFC2104 )?\u00a0 If it's the former, can you make this more clear in the bullet?\u00a0 If it's the latter, can you update the reference and the number of bits to use for truncation is 80 for the minimum.\u00a0 You do explicitly mention HMACs later on for PSKs using SHA256, so maybe the reference is correct and the wording should just be a bit more clear? 2. Can you explain why DTLS is a SHOULD and not a MUST?\u00a0 The bullet in section 3 reads as if this is for use, not implementation.\u00a0 Is there a MUST for implementation (I didn't see one, but maybe I missed that)?  Could you add a reference to  RFC7525  to help with configuration and cipher suite recommendations?\u00a0 This could be in section 12, security considerations.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-03 06:01:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-11-18 21:22:33-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-18 21:22:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-11-19 06:20:43-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-12-04 08:51:41-08:00",
+        "end_reason": "position_updated",
+        "start": "2015-11-19 06:20:43-08:00",
+        "text": "(Sorry for the N-th discuss, I quite like this protocol and I'm sure we'll get 'em all cleared soon, but... ;-)   I'd like to chat about whether or not the DTLS recommendations are correct here. To me, the consensus stuff (from section 8.3 of dncp) is not clearly baked (as I noted in iesg review of dncp). The PKI stuff is well known, even if it it is a PITA from many points of view. I don't think a SHOULD for the former and a MAY for the latter is appropriate now. If the consensus based stuff gets deployed and works, then it might be time to say what you're now saying, but I don't think we're there yet. (I'd be happy to look @ evidence that we are, and to change my opinion accordingly.) Please note that I think I like the consensus based scheme, I'm just concerned it may not be ready for prime time. I'm also not really convinced that all you need to do to get interop for that is mention it and refer to dncp. But again, I could be wrong and would appreciate being corrected if so. In summary, I think you should say \"when using DTLS with asymmetric keying, then you SHOULD support the PKI-based method and MAY support the consensus based method, which is still somewhat experimental.\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-12-04 08:51:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-11-17 13:24:55-08:00",
+        "end_reason": "new_position",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2015-12-08 06:09:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2015-11-17 13:24:55-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc7788",
+  "evaluation_end": "2015-12-08 06:09:51-08:00",
+  "evaluation_start": "2015-11-17 13:24:55-08:00"
+}

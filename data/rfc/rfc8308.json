@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-09-12 15:23:20-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-09-12 15:23:50-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-09-12 15:23:20-07:00",
+        "text": "I am concerned that the specification of \"delay-compression\" is not specified with enough detail to ensure compatible interoperation. I may have missed something in the protocols this document relies upon; but if I haven't, I think this needs additional specification. The current definition for \"delay-compression\" is: \u00a0 \u00a0 string\u00a0 \u00a0 \u00a0 \u00a0  \"delay-compression\" \u00a0 \u00a0 string: \u00a0 \u00a0 \u00a0 name-list\u00a0 \u00a0 compression_algorithms_client_to_server \u00a0 \u00a0 \u00a0 name-list\u00a0 \u00a0 compression_algorithms_server_to_client In reading through this document (and skimming  RFC4251 ), I don't see anything that indicates the on-the-wire encoding for \"string containing multiple name-lists.\" I suspect that the intention is something like [string-length][list-length]value[list-length]value; however, that requires making a number of unstated assumptions, and I doubt that all implementors will make the same assumptions. To be clear, what I mean by my formulation above would result in the value field of client_to_server=\"foo,bar\" and server_to_client=\"bar,baz\" being encoded as: 00 00 00 16 00 00 00 07 66 6f 6f 2c 62 61 72 00 00 00 07 62 61 72 2c 62 61 7a If this is the intention, please be explicit (and, ideally, provide an example).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-09-14 10:24:03-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-09-12 15:23:50-07:00",
+        "text": "I am concerned that the syntax of \"delay-compression\" is not specified with enough detail to ensure compatible interoperation. I may have missed something in the protocols this document relies upon; but if I haven't, I think this needs additional specification. The current definition for \"delay-compression\" is: \u00a0 \u00a0 string\u00a0 \u00a0 \u00a0 \u00a0  \"delay-compression\" \u00a0 \u00a0 string: \u00a0 \u00a0 \u00a0 name-list\u00a0 \u00a0 compression_algorithms_client_to_server \u00a0 \u00a0 \u00a0 name-list\u00a0 \u00a0 compression_algorithms_server_to_client In reading through this document (and skimming  RFC4251 ), I don't see anything that indicates the on-the-wire encoding for \"string containing multiple name-lists.\" I suspect that the intention is something like [string-length][list-length]value[list-length]value; however, that requires making a number of unstated assumptions, and I doubt that all implementors will make the same assumptions. To be clear, what I mean by my formulation above would result in the value field of client_to_server=\"foo,bar\" and server_to_client=\"bar,baz\" being encoded as: 00 00 00 16 00 00 00 07 66 6f 6f 2c 62 61 72 00 00 00 07 62 61 72 2c 62 61 7a If this is the intention, please be explicit (and, ideally, provide an example).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-14 10:24:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-09-13 05:00:17-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-09-14 06:26:37-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-09-13 05:00:17-07:00",
+        "text": "This is generally a good and useful document. I have some minor comments I would like to discuss: 3.2.\u00a0 \"delay-compression\" \u00a0 This extension MAY be sent by both parties as follows: \u00a0  \u00a0 \u00a0 string\u00a0 \u00a0 \u00a0 \u00a0  \"delay-compression\" \u00a0 \u00a0 string: \u00a0 \u00a0 \u00a0 name-list\u00a0 \u00a0 compression_algorithms_client_to_server \u00a0 \u00a0 \u00a0 name-list\u00a0 \u00a0 compression_algorithms_server_to_client It is not clear for me from the formatting whether the first name-list is sent by the client and the second by the server, or both lists are always included in the value. I suspect it is the former, but can you please clarify?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-14 06:26:37-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-09-12 13:00:14-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-12 13:00:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-09-13 11:59:39-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-13 11:59:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-09-13 12:30:14-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-09-13 21:24:37-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-09-13 12:30:14-07:00",
+        "text": "I plan to ballot \"yes\", but I want to discuss one point first. Alexey mentioned this in his comments, but I think it's discuss worthy. Hopefully it's an easy fix, and it may well be because I've missed something obvious. If people think it really, really needs to be this way, I will clear--but I want to discuss it first: - 2.5: The relative order in which extensions appear in an \u00a0 EXT_INFO message MUST be ignored by default; but an extension MAY \u00a0 specify that the order matters for that extension, in a specific way. I don't think allowing specific extensions to add ordering requirement works. It opens up the possibility of incompatible ordering requirements across extensions. As far as I can tell, the only control over this is the \"IETF Consensus\" requirement for adding new extensions. I'm open to arguments that this is good enough, but my knee-jerk response is that it puts an undue burden on the consensus process for little return.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-13 21:24:37-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-09-13 14:50:46-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-13 14:50:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-09-12 15:20:06-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-12 15:20:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-08-28 10:39:53-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-08-28 10:39:53-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-09-13 12:42:03-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-13 12:42:03-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-09-04 05:17:42-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-04 05:17:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-09-12 11:36:29-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-12 11:36:29-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-09-13 15:26:57-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-13 15:26:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-09-13 16:57:59-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-13 16:57:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-09-11 12:12:56-07:00",
+        "end_reason": "new_position",
+        "start": "2017-08-28 10:39:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-11-12 17:50:33-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-09-11 12:12:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8308",
+  "evaluation_end": "2017-11-12 17:50:33-08:00",
+  "evaluation_start": "2017-08-28 10:39:52-07:00"
+}

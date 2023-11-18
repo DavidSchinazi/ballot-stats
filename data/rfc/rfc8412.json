@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-02-21 22:41:06-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-21 22:41:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-02-22 03:20:43-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-02-28 07:12:56-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-02-22 03:20:43-08:00",
+        "text": "This is generally a well written document, despite certain repetition of text. It was a pleasure to read. I have a couple of issues that I would like to discuss. I believe they would be easy to resolve: 1) In Section 5.8, in the table (I believe this is repeated at least 3 more times elsewhere in the document):  Software Locator: \u00a0  A string containing the Software Locator value. \u00a0  This is expressed as a URI. This field value \u00a0  MUST be normalized to Network Unicode format as \u00a0  described in Section 3.4.4. At minimum this text is misleading (or can be misread) and at maximum it is wrong. I think what you are trying to say is that the location value is first normalized to Network Unicode format as described in Section 3.4.4, then it is converted in UTF-8 and then it is encoded as a URI. (As opposed to doing something else, e.g. convert to URI first and then trying to normalize it). If this is correct, I suggest: \u00a0  A string containing the Software Locator value. \u00a0  This is expressed as a URI [ RFC3986 ]. This field value \u00a0  MUST be first normalized to Network Unicode format as \u00a0  described in Section 3.4.4, then converted to UTF-8 [ RFC3629 ] \u00a0  (if not already in UTF-8), then encoded as a URI. 2) SWID registry is using \"http://invalid.unavailable\" Tag Creator RegID value. invalid.unavailable is not a valid domain name and \"unavailable\" is not registered in the special-use domain registry I am not entirely sure how big of a problem this is, but use of something which can be interpreted as a URI in a non existing non special-use domain seems like a bad idea.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-28 07:12:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-02-21 20:13:14-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-21 20:13:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-02-21 21:18:38-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-21 21:18:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-02-21 12:57:10-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-21 12:57:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-02-21 19:08:24-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-03-01 19:30:06-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-02-21 19:08:24-08:00",
+        "text": "(This is related to one of Ekr's comments, but I don't think it's quite the same.) In the first paragraph of \u00a77.2, the conclusions seem to be based on the following sentence: \"This is generally not considered to be problematic, as \u00a0  those with access to the endpoint can usually learn of everything \u00a0  disclosed by that endpoint\u2019s records simply by inspecting other parts \u00a0  of the endpoint.\" This doesn\u2019t seem like a reasonable assumption. Multiuser endpoints may well have access controls that prevent a given user from seeing all software packages installed on the system. This leads to the conclusion that the records on the endpoint are not sensitive. I do not think this document should draw that conclusion. Even if this were provably true for all existing systems, such an assumption could be problematic for future systems.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-01 19:30:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-02-21 13:45:05-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-21 13:45:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-02-19 08:54:49-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-19 08:54:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-02-19 08:28:32-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-02-22 06:31:43-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-22 06:31:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-02-21 11:58:11-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-21 11:58:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-02-21 07:34:52-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-21 07:34:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-02-21 16:56:44-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-21 16:56:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-02-21 12:31:19-08:00",
+        "end_reason": "new_position",
+        "start": "2018-02-19 08:28:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-03-09 14:23:01-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-02-21 12:31:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8412",
+  "evaluation_end": "2018-03-09 14:23:01-08:00",
+  "evaluation_start": "2018-02-19 08:28:32-08:00"
+}

@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-03-15 20:22:37-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-15 20:22:37-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-03-15 06:00:02-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-15 06:00:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-03-16 19:10:20-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-16 19:10:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-03-15 20:40:53-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-15 20:40:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-03-16 18:35:22-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-04-22 03:36:16-07:00",
+        "end_reason": "position_updated",
+        "start": "2016-03-16 18:35:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-04-22 03:37:54-07:00",
+        "end_reason": "comment_updated",
+        "start": "2016-04-22 03:36:16-07:00",
+        "text": "The discrepancy between the architecture document description in the charter and the draft previous abstract is now fixed. This is an improvement. However, I don't see how this document is actually useful. It's a mix of: \"we could use X, Y, Z\", but at the same time \"we MUST support very detailed notification\", and we must integrate the outcome of the various requirement documents. I don't see how the document could be salvaged. Anyway, I will not stand in the way of this publication, and will abstain. It's probably my fault: I should have paid more attention at the charter discussion time. =========================================================================== A couple of points, not all of them are minor (I've been wondering: COMMENT or DISCUSS. Let's go for a COMMENT) - \"Second is the access to structured information and state that is frequently not directly configurable\". I have a hard time reconciling the NETMOD state definition, for example from  https://tools.ietf.org/html/draft-ietf-netmod-opstate-reqs-04 It would be good if the terminology were aligned. -  \u00a0  This I2RS architecture assumes a data-model driven protocol where the \u00a0  data-models are defined in Yang 1.1 ([ RFC6020 ]), Yang 1.1 \u00a0  ([ I-D.ietf-netmod-rfc6020bis ]), and associated Yang based model \u00a0  drafts ([ RFC6991 ], [ RFC7223 ], [ RFC7224 ], [ RFC7277 ], [ RFC7317 ]). \" RFC 6020  is YANG 1.0, not YANG 1.1 I2RS is YANG 1.0 or YANG 1.1? I hope YANG 1.1 btw, this \"YANG\" not \"Yang\" - Are the two sentences redundant? \u00a0  As can be seen in Figure 1, an I2RS client can communicate with \u00a0  multiple I2RS agents.\u00a0 An I2RS client may connect to one or more I2RS \u00a0  agents based upon its needs. -\u00a0  \u00a0  There are several key benefits for I2RS in using model-driven \u00a0  architecture and protocol(s).\u00a0 First, it allows for transferring \u00a0  data-models whose content is not explicitly implemented or understood.  Reading that second sentence multiple times, I still fail to understand. Model-driven on one side, but you want data-models whose content is not explicitly implemented or understood. Really confused. - \u00a0  Two of the existing protocols which the \u00a0  which may be re-used are NETCONF [ RFC6241 ] and RESTCONF \u00a0  [ I-D.ietf-netconf-restconf ]. \"may be reused\". What does it mean? I was hoping that an architecture documents would at least tell me which protocols are used. On my side this architecture is flexible (NETCONF or RESTCONF), on the other side unclear (YANG 1.0 or YANG1.1), and in some cases, a complete specification (for example the notification) \u00a0 \u00a0 To handle I2RS Agent failure, the I2RS Agent must \u00a0 \u00a0 \u00a0  use two different notifications. \u00a0 \u00a0 \u00a0  NOTIFICATION_I2RS_AGENT_STARTING:\u00a0  This notification signals to the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 I2RS Client(s) that the associated I2RS Agent has started.\u00a0 It \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 includes an agent-boot-count that indicates how many times the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 I2RS Agent has restarted since the associated routing element \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 restarted.\u00a0 The agent-boot-count allows an I2RS Client to \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 determine if the I2RS Agent has restarted.\u00a0 (Note: This \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 notification will be only transmitted to I2RS clients which are \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 know in some way after a reboot.) - editorial: \u00a0  Optionally, a routing element may permit a priority to be to be - \u00a0  For the case when the I2RS ephemeral state always wins for a data \u00a0  model, if there is an I2RS ephemeral state value it is installed \u00a0  instead of the local configuration state.  Again, I read that sentence multiple times, and could not understand it - figure 2. \"The initial services included in the I2RS architecture are as follows.\" Are these really the initial services for I2RS. I2RS is really dealing with all these: interfaces, policy, QoS, ... Maybe I should review the I2RS charter?  -\u00a0 \u00a0   \u00a0  The I2RS \u00a0  protocol may need to use several underlying transports (TCP, SCTP \u00a0  (stream control transport protocol), DCCP (Datagram Congestion \u00a0  Control Protocol)), with suitable authentication and integrity \u00a0  protection mechanisms Do you really want to have define transports? And below is Fred Baker's OPS DIR review: The first nit is a statement in section 1.1: \u00a0  Such an interface also facilitates the injection of ephemeral state \u00a0  into the routing system.\u00a0 Ephemeral state on a router is the state \u00a0  which does not survive a the reboot of a routing device or the reboot \u00a0  of the software handling the I2RS software on a routing device. Ephemeral state is state that is \"ephemeral\", which my dictionary tells me means that it is \"short-lived, transitory, lasting a short time\". This comes to mind because of a paper I discovered I was a co-author on (story in the presence of adult beverages) last year, which suggested that congested links in a network could be offloaded by directing a subset of the routes, or a subset of the traffic using those routes, using them to other links that a routing protocol might contend were below par but which provided a non-looping path and had available capacity. The issue was that when routing changed for any reason, these SDN changes had to be undone and redone, a process that could take (in the network of interest) on the order of 40 minutes. My suggestion to my \"co-authors\" was that they simply change the FIB (which is by definition ephemeral), so that should routing change the FIB would became predictably correct (e.g., with no such optimizations added to it) after having re-converged, and they could now re-optimize the FIB as they saw fit without incurring a potential outage. I would suggest that the above reference to a reboot be changed to \"Ephemeral state on a router is state that changes from time to time\". A reboot is only one of those times. At the top of page 6, the first paragraph reads: \u00a0  The I2RS agent provides read and write access to selected data on the \u00a0  routing element that are organized into I2RS Services. Section 4 \u00a0  describes how access is mediated by authentication and access control \u00a0  mechanisms.\u00a0 Figure 1 shows I2RS agents being able to write ephemeral \u00a0  static state (e.g.\u00a0 RIB entries), and to read from dynamic static \u00a0  (e.g.\u00a0 MPLS LSP-ID or number of active BGP peers).\u00a0 In addition, the I have a hunch the authors intended to complete the final sentence. In section 3.1, which comments on \"simplicity\", I am very much in favor of simplicity in the sense described by  RFC 3439 . That said, I think the paper misses the mark by a few millimeters. It says \u00a0  Thus, one of the key aims for I2RS is the keep the protocol and \u00a0  modeling architecture simple.\u00a0 So for each architectural component or \u00a0  aspect, we ask ourselves \"do we need this complexity, or is the \u00a0  behavior merely nice to have?\" Often, simplicity is not about whether a feature is itself complex, but about whether what is externalized is complex. Theorists dealing with complexity use a swimming duck as an example: viewed from above the water line, the duck is a picture of placidity in motion, while when viewed from below its paddle feet are madly beating the water. A communication example is in TCP; heaven only knows what is really happening in the network, but TCP narrows the entire discussion into two signal classes - in this RTT, it has received a congestion signal, or it has not, and it has either received acknowledgements indicating forward progress in the session, or it has not. From the application's perspective, there is sufficient forward progress to merit continuing the session at whatever rate it is able to proceed, or progress is inadequate. Within TCP, there is actually a fair bit of complexity. However, what it externalizes to a client application is dead simple. So I would go beyond \"do I need this complexity\" to \"do I need for this complexity to be externalized, do I need it at all, and if I need it, is there a way to meet the need with a simpler external API?\" In section 4 and 4.2, I'm concerned about the issues of authorization \"for classes of statements\", which are mentioned obliquely but not really gone into. My personal bugaboo in this context is the router I use at my home, which is functionally equivalent to two separate routers coexisting in a single chassis. One router connects my home office to my employer using a VPN, and the other is a very typical residential CPE. We have similar issues whenever a router has multiple routing tables or contains multiple virtual routers. When I read \u00a0  An I2RS Client is not automatically trustworthy.\u00a0 Each I2RS Client is \u00a0  associated with identity with a set of scope limitations. I read \"scope limitations\" as a reference to \"authorization\", but I think this concept needs to be fleshed out more. An I2RS client (or the server it serves), perhaps on an interface, has a set of information, which may be complete, null, or anywhere in between, for which it is trustworthy, and it is not trustworthy for anything else. In a network like my home, I could imagine a route controller operated by my employer's IT organization and another operated by me or by my ISP on my behalf. If a single system contains multiple clients or serves multiple servers, that difference of authorization can be important. We understand that in some detail in BGP; it needs to be handled in I2RS as well.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-04-22 03:37:54-07:00",
+        "text": "The discrepancy between the architecture document description in the charter and the draft previous abstract is now fixed. This is an improvement. However, I don't see how this document is actually useful. It's a mix of: \"we could use X, Y, Z\", but at the same time \"we MUST support very detailed notifications\" and we must integrate the outcome of the various requirement documents. I don't see how the document could be salvaged. Anyway, I will not stand in the way of this publication, and will abstain. It's probably my fault: I should have paid more attention at the charter discussion time. =========================================================================== A couple of points, not all of them are minor (I've been wondering: COMMENT or DISCUSS. Let's go for a COMMENT) - \"Second is the access to structured information and state that is frequently not directly configurable\". I have a hard time reconciling the NETMOD state definition, for example from  https://tools.ietf.org/html/draft-ietf-netmod-opstate-reqs-04 It would be good if the terminology were aligned. -  \u00a0  This I2RS architecture assumes a data-model driven protocol where the \u00a0  data-models are defined in Yang 1.1 ([ RFC6020 ]), Yang 1.1 \u00a0  ([ I-D.ietf-netmod-rfc6020bis ]), and associated Yang based model \u00a0  drafts ([ RFC6991 ], [ RFC7223 ], [ RFC7224 ], [ RFC7277 ], [ RFC7317 ]). \" RFC 6020  is YANG 1.0, not YANG 1.1 I2RS is YANG 1.0 or YANG 1.1? I hope YANG 1.1 btw, this \"YANG\" not \"Yang\" - Are the two sentences redundant? \u00a0  As can be seen in Figure 1, an I2RS client can communicate with \u00a0  multiple I2RS agents.\u00a0 An I2RS client may connect to one or more I2RS \u00a0  agents based upon its needs. -\u00a0  \u00a0  There are several key benefits for I2RS in using model-driven \u00a0  architecture and protocol(s).\u00a0 First, it allows for transferring \u00a0  data-models whose content is not explicitly implemented or understood.  Reading that second sentence multiple times, I still fail to understand. Model-driven on one side, but you want data-models whose content is not explicitly implemented or understood. Really confused. - \u00a0  Two of the existing protocols which the \u00a0  which may be re-used are NETCONF [ RFC6241 ] and RESTCONF \u00a0  [ I-D.ietf-netconf-restconf ]. \"may be reused\". What does it mean? I was hoping that an architecture documents would at least tell me which protocols are used. On my side this architecture is flexible (NETCONF or RESTCONF), on the other side unclear (YANG 1.0 or YANG1.1), and in some cases, a complete specification (for example the notification) \u00a0 \u00a0 To handle I2RS Agent failure, the I2RS Agent must \u00a0 \u00a0 \u00a0  use two different notifications. \u00a0 \u00a0 \u00a0  NOTIFICATION_I2RS_AGENT_STARTING:\u00a0  This notification signals to the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 I2RS Client(s) that the associated I2RS Agent has started.\u00a0 It \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 includes an agent-boot-count that indicates how many times the \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 I2RS Agent has restarted since the associated routing element \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 restarted.\u00a0 The agent-boot-count allows an I2RS Client to \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 determine if the I2RS Agent has restarted.\u00a0 (Note: This \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 notification will be only transmitted to I2RS clients which are \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 know in some way after a reboot.) - editorial: \u00a0  Optionally, a routing element may permit a priority to be to be - \u00a0  For the case when the I2RS ephemeral state always wins for a data \u00a0  model, if there is an I2RS ephemeral state value it is installed \u00a0  instead of the local configuration state.  Again, I read that sentence multiple times, and could not understand it - figure 2. \"The initial services included in the I2RS architecture are as follows.\" Are these really the initial services for I2RS. I2RS is really dealing with all these: interfaces, policy, QoS, ... Maybe I should review the I2RS charter?  -\u00a0 \u00a0   \u00a0  The I2RS \u00a0  protocol may need to use several underlying transports (TCP, SCTP \u00a0  (stream control transport protocol), DCCP (Datagram Congestion \u00a0  Control Protocol)), with suitable authentication and integrity \u00a0  protection mechanisms Do you really want to have define transports? And below is Fred Baker's OPS DIR review: The first nit is a statement in section 1.1: \u00a0  Such an interface also facilitates the injection of ephemeral state \u00a0  into the routing system.\u00a0 Ephemeral state on a router is the state \u00a0  which does not survive a the reboot of a routing device or the reboot \u00a0  of the software handling the I2RS software on a routing device. Ephemeral state is state that is \"ephemeral\", which my dictionary tells me means that it is \"short-lived, transitory, lasting a short time\". This comes to mind because of a paper I discovered I was a co-author on (story in the presence of adult beverages) last year, which suggested that congested links in a network could be offloaded by directing a subset of the routes, or a subset of the traffic using those routes, using them to other links that a routing protocol might contend were below par but which provided a non-looping path and had available capacity. The issue was that when routing changed for any reason, these SDN changes had to be undone and redone, a process that could take (in the network of interest) on the order of 40 minutes. My suggestion to my \"co-authors\" was that they simply change the FIB (which is by definition ephemeral), so that should routing change the FIB would became predictably correct (e.g., with no such optimizations added to it) after having re-converged, and they could now re-optimize the FIB as they saw fit without incurring a potential outage. I would suggest that the above reference to a reboot be changed to \"Ephemeral state on a router is state that changes from time to time\". A reboot is only one of those times. At the top of page 6, the first paragraph reads: \u00a0  The I2RS agent provides read and write access to selected data on the \u00a0  routing element that are organized into I2RS Services. Section 4 \u00a0  describes how access is mediated by authentication and access control \u00a0  mechanisms.\u00a0 Figure 1 shows I2RS agents being able to write ephemeral \u00a0  static state (e.g.\u00a0 RIB entries), and to read from dynamic static \u00a0  (e.g.\u00a0 MPLS LSP-ID or number of active BGP peers).\u00a0 In addition, the I have a hunch the authors intended to complete the final sentence. In section 3.1, which comments on \"simplicity\", I am very much in favor of simplicity in the sense described by  RFC 3439 . That said, I think the paper misses the mark by a few millimeters. It says \u00a0  Thus, one of the key aims for I2RS is the keep the protocol and \u00a0  modeling architecture simple.\u00a0 So for each architectural component or \u00a0  aspect, we ask ourselves \"do we need this complexity, or is the \u00a0  behavior merely nice to have?\" Often, simplicity is not about whether a feature is itself complex, but about whether what is externalized is complex. Theorists dealing with complexity use a swimming duck as an example: viewed from above the water line, the duck is a picture of placidity in motion, while when viewed from below its paddle feet are madly beating the water. A communication example is in TCP; heaven only knows what is really happening in the network, but TCP narrows the entire discussion into two signal classes - in this RTT, it has received a congestion signal, or it has not, and it has either received acknowledgements indicating forward progress in the session, or it has not. From the application's perspective, there is sufficient forward progress to merit continuing the session at whatever rate it is able to proceed, or progress is inadequate. Within TCP, there is actually a fair bit of complexity. However, what it externalizes to a client application is dead simple. So I would go beyond \"do I need this complexity\" to \"do I need for this complexity to be externalized, do I need it at all, and if I need it, is there a way to meet the need with a simpler external API?\" In section 4 and 4.2, I'm concerned about the issues of authorization \"for classes of statements\", which are mentioned obliquely but not really gone into. My personal bugaboo in this context is the router I use at my home, which is functionally equivalent to two separate routers coexisting in a single chassis. One router connects my home office to my employer using a VPN, and the other is a very typical residential CPE. We have similar issues whenever a router has multiple routing tables or contains multiple virtual routers. When I read \u00a0  An I2RS Client is not automatically trustworthy.\u00a0 Each I2RS Client is \u00a0  associated with identity with a set of scope limitations. I read \"scope limitations\" as a reference to \"authorization\", but I think this concept needs to be fleshed out more. An I2RS client (or the server it serves), perhaps on an interface, has a set of information, which may be complete, null, or anywhere in between, for which it is trustworthy, and it is not trustworthy for anything else. In a network like my home, I could imagine a route controller operated by my employer's IT organization and another operated by me or by my ISP on my behalf. If a single system contains multiple clients or serves multiple servers, that difference of authorization can be important. We understand that in some detail in BGP; it needs to be handled in I2RS as well.",
+        "type": "Abstain"
+      }
+    ],
+    "Brian Haberman": [
+      {
+        "ad": "Brian Haberman",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-03-10 14:38:05-08:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Jari Arkko": [
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-03-17 02:00:30-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jari Arkko",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-17 02:00:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Joel Jaeggli": [
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-03-17 00:04:57-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Joel Jaeggli",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-17 00:04:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Stiemerling": [
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-03-15 15:37:25-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Stiemerling",
+        "end": "2016-04-08 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2016-03-15 15:37:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-03-16 22:07:18-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-16 22:07:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Stephen Farrell": [
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-03-17 05:21:16-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Stephen Farrell",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-17 05:21:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-03-15 22:26:16-07:00",
+        "end_reason": "new_position",
+        "start": "2016-03-10 14:38:05-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2016-05-11 12:28:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2016-03-15 22:26:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc7921",
+  "evaluation_end": "2016-05-11 12:28:04-07:00",
+  "evaluation_start": "2016-03-10 14:38:05-08:00"
+}
