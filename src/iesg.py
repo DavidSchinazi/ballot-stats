@@ -7,22 +7,16 @@ from datetime import date
 
 from bs4 import BeautifulSoup
 
-METADATA_DIR = os.path.normpath(
-    os.path.join(os.path.dirname(__file__), "..", "data/meta")
-)
-if not os.path.exists(METADATA_DIR):
-    os.makedirs(METADATA_DIR)
+from util.files import Files
 
 # Using offline download pulled from this link:
 # https://www.ietf.org/how/meetings/past/
-PAST_IETFS_FILE = os.path.join(METADATA_DIR, "IETF_Past_Meetings.html")
-with open(PAST_IETFS_FILE) as fp:
+with open(Files.metadata_dir("IETF_Past_Meetings.html")) as fp:
     pastIetfsSoup = BeautifulSoup(fp, "lxml")
 
 # Using offline download pulled from this link:
 # https://www.ietf.org/about/groups/iesg/past-members/
-PAST_IESGS_FILE = os.path.join(METADATA_DIR, "IESG_Past_Members.html")
-with open(PAST_IESGS_FILE) as fp:
+with open(Files.metadata_dir("IESG_Past_Members.html")) as fp:
     pastIesgSoup = BeautifulSoup(fp, "lxml")
 
 ietf_start_dates = {}
@@ -187,11 +181,8 @@ for ad in ad_ietfs:
 
 # print(json.dumps(ad_ends, indent=2, sort_keys=True, default=str))
 
-AD_ENDS_FILE = os.path.join(METADATA_DIR, "AD_term_ends.json")
-with open(AD_ENDS_FILE, "w") as f:
+with open(Files.ad_term_ends_file(), "w") as f:
     json.dump(ad_ends, f, indent=2, sort_keys=True, default=str)
 
-
-IESGS_FILE = os.path.join(METADATA_DIR, "IESGs.json")
-with open(IESGS_FILE, "w") as f:
+with open(Files.iesgs_file(), "w") as f:
     json.dump(iesgs, f, indent=2, sort_keys=True, default=str)

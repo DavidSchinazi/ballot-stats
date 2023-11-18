@@ -8,6 +8,8 @@ from sys import argv, exit
 import requests
 from bs4 import BeautifulSoup
 
+from util.files import Files
+
 rfc_num = 9293
 
 if len(argv) > 1:
@@ -32,16 +34,11 @@ if (
     print("RFC {r} was not evaluated by the IESG".format(r=rfc_num))
     exit(0)
 
-METADATA_DIR = os.path.normpath(
-    os.path.join(os.path.dirname(__file__), "..", "data/meta")
-)
 
-AD_ENDS_FILE = os.path.join(METADATA_DIR, "AD_term_ends.json")
-with open(AD_ENDS_FILE, "r") as f:
+with open(Files.ad_term_ends_file(), "r") as f:
     ad_ends = json.load(f)
 
-IESGS_FILE = os.path.join(METADATA_DIR, "IESGs.json")
-with open(IESGS_FILE, "r") as f:
+with open(Files.iesgs_file(), "r") as f:
     iesgs_from_json = json.load(f)
 
 
@@ -210,12 +207,7 @@ for a in ballots:
 
 res["all_ballots"] = res_ballots
 
-RFC_DIR = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "data/rfc"))
-if not os.path.exists(RFC_DIR):
-    os.makedirs(RFC_DIR)
-
-rfc_file = os.path.join(RFC_DIR, "rfc{}.json".format(rfc_num))
-with open(rfc_file, "w") as f:
+with open(Files.rfc_dir("rfc{}.json".format(rfc_num)), "w") as f:
     json.dump(res, f, indent=2, sort_keys=True, default=str)
 
 print("RFC {r} analyzed succesfully".format(r=rfc_num))
