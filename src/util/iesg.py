@@ -106,7 +106,7 @@ def regenerate_iesg_metadata():
         "Francesca Palombini",
         "Zaheduzzaman Sarker",
         "John Scudder",
-        "Éric Vyncke",
+        "Eric Vyncke",
         "Robert Wilton",
         "Paul Wouters",
         "Jim Guichard",
