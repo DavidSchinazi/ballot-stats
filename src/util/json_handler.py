@@ -53,3 +53,7 @@ def load_ad_term_ends():
     for ad in ad_ends:
         ad_ends[ad] = [date_from_json(e) for e in ad_ends[ad]]
     return ad_ends
+
+
+def save_ad_term_ends(ad_ends):
+    save_json(ad_ends, Files.ad_term_ends_file())

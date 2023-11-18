@@ -4,7 +4,7 @@ from datetime import date
 from bs4 import BeautifulSoup
 
 from .files import Files
-from .json_handler import save_iesgs, save_json
+from .json_handler import save_ad_term_ends, save_iesgs
 from .types import Iesg
 
 
@@ -167,5 +167,5 @@ def regenerate_iesg_metadata():
             ietf_end_dates[i] for i in ietfs if i + 1 not in ietfs and i != CURRENT_IETF
         ]
 
-    save_json(ad_ends, Files.ad_term_ends_file())
+    save_ad_term_ends(ad_ends)
     save_iesgs(iesgs)
