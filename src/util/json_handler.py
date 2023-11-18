@@ -22,6 +22,17 @@ def save_iesgs(iesgs):
     save_json([iesg.as_dict() for iesg in iesgs], Files.iesgs_file())
 
 
+def load_ad_term_starts():
+    ad_starts = load_json(Files.ad_term_starts_file())
+    for ad in ad_starts:
+        ad_starts[ad] = [date_from_str(e) for e in ad_starts[ad]]
+    return ad_starts
+
+
+def save_ad_term_starts(ad_starts):
+    save_json(ad_starts, Files.ad_term_starts_file())
+
+
 def load_ad_term_ends():
     ad_ends = load_json(Files.ad_term_ends_file())
     for ad in ad_ends:

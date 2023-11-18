@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from unidecode import unidecode
 
 from .files import Files
-from .json_handler import save_ad_term_ends, save_iesgs
+from .json_handler import save_ad_term_ends, save_ad_term_starts, save_iesgs
 from .types import Iesg
 
 
@@ -136,6 +136,8 @@ def regenerate_iesg_metadata():
         )
     )
 
+    min_ietf_num = CURRENT_IETF
+
     while i + 1 < num_iesg_blocks:
         timeframe_block = iesg_blocks[i]
         assert "block-heading" in timeframe_block["class"]
@@ -145,7 +147,9 @@ def regenerate_iesg_metadata():
         for ietf_str in timeframe_block.text.split(", "):
             ietf_str = ietf_str[: ietf_str.find(" (")]
             assert ietf_str.startswith("IETF ")
-            ietfs.add(int(ietf_str[5:]))
+            ietf_num = int(ietf_str[5:])
+            min_ietf_num = min(min_ietf_num, ietf_num)
+            ietfs.add(ietf_num)
         print(timeframe_block.text)
         start_date = ietf_start_dates[min(ietfs) - 1]
         end_date = ietf_end_dates[max(ietfs)]
@@ -176,6 +180,18 @@ def regenerate_iesg_metadata():
         ad_set.add(CURRENT_IETF)
         ad_ietfs[name] = ad_set
 
+    ad_starts = {}
+    for ad in ad_ietfs:
+        ietfs = ad_ietfs[ad]
+        starts = []
+        for i in ietfs:
+            if i > min_ietf_num:
+                if i - 1 not in ietfs:
+                    starts.append(ietf_start_dates[i - 1])
+            else:
+                starts.append(ietf_start_dates[i])
+        ad_starts[ad] = starts
+
     ad_ends = {}
     for ad in ad_ietfs:
         ietfs = ad_ietfs[ad]
@@ -183,5 +199,6 @@ def regenerate_iesg_metadata():
             ietf_end_dates[i] for i in ietfs if i + 1 not in ietfs and i != CURRENT_IETF
         ]
 
+    save_ad_term_starts(ad_starts)
     save_ad_term_ends(ad_ends)
     save_iesgs(iesgs)

@@ -31,6 +31,10 @@ class Files:
         return cls.metadata_dir("IESGs.json")
 
     @classmethod
+    def ad_term_starts_file(cls):
+        return cls.metadata_dir("AD_term_starts.json")
+
+    @classmethod
     def ad_term_ends_file(cls):
         return cls.metadata_dir("AD_term_ends.json")
 
