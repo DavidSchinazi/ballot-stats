@@ -2,6 +2,7 @@ from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
+from unidecode import unidecode
 
 from .files import Files
 from .json_handler import load_ad_term_ends, load_iesgs, save_doc_ballots
@@ -41,6 +42,7 @@ def parse_ballot(doc_name):
         timestamp = datetime.strptime(cells[0].div["title"], "%Y-%m-%d %H:%M:%S %z")
         revision = cells[1].text
         author = cells[2].text
+        author = unidecode(author)
         full_action_divs = cells[3].find_all(attrs={"class": "full"})
         if len(full_action_divs) > 0:
             action = " ".join(full_action_divs[0].strings)

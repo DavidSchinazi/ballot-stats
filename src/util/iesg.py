@@ -2,6 +2,7 @@ import calendar
 from datetime import date
 
 from bs4 import BeautifulSoup
+from unidecode import unidecode
 
 from .files import Files
 from .json_handler import save_ad_term_ends, save_iesgs
@@ -139,6 +140,7 @@ def regenerate_iesg_metadata():
             assert len(member_details) == 2
             name = member_details[0]
             name = name.replace("\u00A0", "")
+            name = unidecode(name)
             names.append(name)
             ad_set = ad_ietfs.get(name, set())
             ad_set |= ietfs
