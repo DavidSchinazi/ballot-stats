@@ -71,7 +71,17 @@ def parse_ballot(doc_name):
                 action_details = action[action.find("]") + 2 :]
                 # print('{t} - {d}'.format(t=timestamp, d=action_details))
                 if action_details.startswith("New position, "):
-                    ballot_type = action_details.split(", ")[1]
+                    action_details_split = action_details.split(", ")
+                    ballot_type = action_details_split[1]
+                    ballot_meta = unidecode(action_details_split[2])
+                    ballot_meta_by = "by {a}".format(a=author)
+                    if ballot_meta.endswith(ballot_meta_by):
+                        # Handle cases where ballot was entered by secretariat on behalf of the AD.
+                        ballot_meta_start = "has been recorded for "
+                        assert ballot_meta.startswith(ballot_meta_start)
+                        author = ballot_meta[
+                            len(ballot_meta_start) : -(1 + len(ballot_meta_by))
+                        ]
                     ballots_for_author = ballots.get(author, [])
                     if len(ballots_for_author) > 0:
                         ballots_for_author[-1].end_time = timestamp
