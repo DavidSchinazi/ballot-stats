@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-09-04 17:38:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 17:38:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-23 02:35:40-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-05 04:25:09-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-23 02:35:40-07:00",
+        "text": null,
+        "type": "Yes"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-05 04:28:18-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-09-05 04:25:09-07:00",
+        "text": "ell spotted by Mirja: [RFC8259] should be a Normative reference.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-02-10 02:52:06-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-05 04:28:18-07:00",
+        "text": "Well spotted by Mirja/Adam: [ RFC8259 ] should be a Normative reference. Also please change the reference to [ RFC7159 ] to point to [ RFC8259 ].",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-10 02:52:06-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-09-04 11:14:12-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 11:14:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-09-04 14:50:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 14:50:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-04 19:28:45-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 19:28:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-09-04 16:08:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-15 10:09:25-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-09-04 16:08:33-07:00",
+        "text": "We use a subset of the JSON \"number\" type to represent integers, which inherits JSON's range limits on numbers.\u00a0 My understanding is that such limits are not present in IODEF XML (e.g., we do not specify a totalDigits value), so this is a new limitation of the JSON format that needs to be documented (and, technically, drops us out of full parity with the XML form). The JSON \"examples\" seem to be using a \"//\" notation for comments, that is not valid JSON nor described by  draft-zyp-json-schema , thus appearing to make the examples malformed (absent some other disclaimer of the commenting convention). How does STRUCTUREDINFO relate to EXTENSION?\u00a0 What makes one vs the other appropriate for a given piece of information?\u00a0 Since the former is only in\u00a0  RFC 7203  and not 7970, we do not have an easy reference for their interplay, given 7970's minimal discussion of the use of 7203. (It sounds like STRUCTUREDINFO is for structures from other published specifications and EXTENSION is for more local/custom things, but I'm not entirely sure if that's exactly the intended split.) Can the shepherd please report on what level of validation has occurred on the CDDL syntax, the mappings between  RFC 7970 's content and this document's content, and the consistency between the formal syntax and the body text (e.g., listings of enum values, member fields of each type, etc.)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-26 12:59:25-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-15 10:09:25-08:00",
+        "text": "We use a subset of the JSON \"number\" type to represent integers, which inherits JSON's range limits on numbers.\u00a0 My understanding is that such limits are not present in IODEF XML (e.g., we do not specify a totalDigits value), so this is a new limitation of the JSON format that needs to be documented (and, technically, drops us out of full parity with the XML form). Can the shepherd please report on what level of validation has occurred on the CDDL syntax, the mappings between  RFC 7970 's content and this document's content, and the consistency between the formal syntax and the body text (e.g., listings of enum values, member fields of each type, etc.)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-26 12:59:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-09-03 14:28:34-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-03 14:28:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-09-05 04:41:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-05 04:41:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-30 07:05:53-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-30 07:05:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-27 06:19:48-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-27 06:19:48-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-09-03 12:42:56-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-11-18 22:10:08-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-03 12:42:56-07:00",
+        "text": "* Section 5 (CDDL) and Appendix B (JSON schema) I am trying to understand how \"ipv6-net-mask\" will be used since there is no such thing, and \"ipv6-net\" already covers the only possible way of denoting prefixes. Can you please clarify why and how you intend to use this? I remember reading and balloting on  RFC7970  and it did not (IMHO rightly) have a category for this.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-18 22:10:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-09-04 15:30:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-23 02:35:39-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-10 09:02:39-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 15:30:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8727",
+  "evaluation_end": "2020-03-10 09:02:39-07:00",
+  "evaluation_start": "2019-08-23 02:35:39-07:00"
+}

@@ -1,0 +1,245 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-12-04 13:49:13-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-04 13:49:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-12-05 07:23:52-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-12 01:31:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-12-05 07:23:52-08:00",
+        "text": "I am balloting DISCUSS because I think that there are some technical and clarity issues that makes understanding, and potentially implementing this document hard.\u00a0 I also want to discuss the \"backwards compatibility\" and the use of TLVs as sub-TLVs in PCEP as introduced in this document. (1) MSD Definition.\u00a0 The MSD may be learned from a variety of sources, including the SR-PCE-CAPABILITY sub-TLV defined in this document.\u00a0 It is important then for the MSD to be defined consistently everywhere.\u00a0 Please use the BMI-MSD definition from  rfc8491 . (2) Ability to signal the MSD per link, not just per node.\u00a0 Clearly the calculation of paths through specific links (using an Adjacency SID, for example) would require that information (if different/lower from what the node may support). Note that \u00a76.1 seems to assume that the MSD will normally be advertised through different mechanisms, and it uses that to work around the fact that there's no link-specific information: \"Furthermore, whenever a PCE learns the MSD for a link via different means, it MUST use that value for that link regardless of the MSD value exchanged in the SR-PCE-CAPABILITY sub-TLV.\"\u00a0 However, the text doesn't mandate the IGP/BGP-LS information to be available to the PCE.\u00a0 IOW, as written, the specification can't guarantee the proper calculation of paths that require the PCE to consider link MSDs. (3) Extensibility to advertise other MSD-Types. [This point is not DISCUSS-worthy, but I'm including it here since I'm already talking about the MSD.] rfc8491  (aka  I-D.ietf-isis-segment-routing-msd ) and  I-D.ietf-ospf-segment-routing-msd  encode the MSD advertisement as a pair: MSD-Type and MSD-Value, with the expectation that \"new MSD-Types will be defined to signal additional capabilities, e.g., entropy labels, SIDs that can be imposed through recirculation, or SIDs associated with another data plane such as IPv6.\"\u00a0 IOW, the encoding is reusable with other dataplanes.\u00a0 I peeked into  draft-negi-pce-segment-routing-ipv6  [*] and i don't see anything in there that couldn't be signaled using the SR-PCE-CAPABILITY sub-TLV defined here (+ the MSD_Value).\u00a0 I think this is important for consistency. [*] I realize that  draft-negi-pce-segment-routing-ipv6  is not even a WG document, but it is the only potential reference I found to what a different dataplane might look line. (4) \u00a76.2.2 (Interpreting the SR-ERO): \u00a0 o\u00a0 If the subobjects contain NAI only, then the PCC first converts \u00a0 \u00a0  each NAI into a SID index value by looking it up in its local \u00a0 \u00a0  database, and then proceeds as above. I believe that this step in the interpretation of the SR-ERO is not properly specified. Which \"local database\" are you referring to?\u00a0 \u00a76.2.2.1 mentions the SR-DB (when talking about errors)...but the specification should be clear about which database and what the specific procedure is. For example, what is the specific process that the PCC needs to follow to convert a Node ID/IP address to the SID/MPLS label?\u00a0 What if the SR-DB doesn't contain an SID associated to the specific Node ID/IP address?\u00a0 How should the router react to that?\u00a0 This case is not covered in the Error Handling section (6.2.2.1) either. A pointer to the SR-DB (as defined in  I-D.ietf-spring-segment-routing-policy ) is not enough because it is composed of optional information (according to the description in \u00a73 (Segment Routing Database)).\u00a0 This document should be specific about what information must be contained in the SR-DB for the conversion to be successful. The requirement of the information to be contained in the SR-DB makes  I-D.ietf-spring-segment-routing-policy  a Normative reference. (5) \u00a77 (Backward Compatibility)\u00a0 \"Some implementations, which are compliant with an earlier version of this specification...\"  I understand that there may be implementations that are non-compliant with this specification out in the field.\u00a0 However, why is this document making accommodations for them?\u00a0 Not only are these implementations not compliant with this document, but are also non compliant with  rfc8408 , which implies the use of a new sub-TLV per PST. I didn't find a discussion on the mailing list related to this issue.\u00a0 Specifying alternate behavior to accommodate non-compliant implementations is not the best way to define new functionality.\u00a0 If the support for those old implementations was an imperative then the new functionality should have been fully specified to seamlessly interoperate with what is already deployed.\u00a0 The current result is two ways to do the same thing... While I would prefer for this \"backwards compatibility\" not to be built into the specification, I am looking for discussion in the WG and a better justification that the current one (which can be reduced to \"non-compliant implementations exist, so we need to fit them in here somehow\"). (6) sub-TLV Space for the PATH-SETUP-TYPE-CAPABILITY TLV rfc8408  failed to set up a sub-TLV registry for the PATH-SETUP-TYPE-CAPABILITY TLV.\u00a0 The bigger issue is that it also doesn't say that other PCE TLVs can be used as sub-TLVs (nor does it prohibit that).\u00a0 The Type for the SR-PCE-CAPABILITY sub-TLV is allocated from the PCEP TLV Type Indicators registry, making it a TLV.\u00a0 I also couldn't find any mention of sub-TLVs in  rfc5440 , or the potential intent to have a single space from which both TLVs and sub-TLVs could come. The question is: are all TLVs (defined in the PCEP TLV Type Indicators registry) able to be used as sub-TLVs?\u00a0 This question is general, but also specific to the PATH-SETUP-TYPE-CAPABILITY TLV.\u00a0 At a minimum, it should be made clear which can be used with the PATH-SETUP-TYPE-CAPABILITY TLV -- because this is the first document to define a new PST and sub-TLV, it seems appropriate to Update  rfc8408  here...but  rfc5440  may also need an Update.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-12 01:31:36-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-11-30 15:26:53-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-30 15:26:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-11-27 12:21:18-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-12-06 06:59:45-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-06 06:59:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-12-04 04:36:10-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-04 04:36:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-12-03 08:27:17-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-03 08:27:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-12-05 20:37:55-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 20:37:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-12-05 07:41:28-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 07:41:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-12-07 08:40:34-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-27 12:21:18-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-03-12 08:58:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-07 08:40:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8664",
+  "evaluation_end": "2019-03-12 08:58:06-07:00",
+  "evaluation_start": "2018-11-27 12:21:18-08:00"
+}

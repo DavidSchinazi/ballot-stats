@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-08-13 19:06:30-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-08-14 06:45:49-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-08-13 19:06:30-07:00",
+        "text": "I'd like to thank the author and all other involved parties for the work that has gone into making CoA transactions work across multiple domains. I have a couple of DISCUSS points that I think need to be cleared up. --------------------------------------------------------------------------- This is a concern with the general mechanism, and might be due to a misunderstanding on my part (which I hope you can clear up); but if I'm not wrong, then I'm concerned that the mechanism as described can introduce RADIUS message routing loops in some very common deployment scenarios. Consider a setup involving three networks: a Visited network (with its NAS and a Radius server), a Clearinghouse network (with one or more proxies), and a Home network (with a border proxy and a Home Server). Both the Home and Visited network also have federated networks that they communicate directly with without traversing the Clearinghouse network. The Clearinghouse determines the destination of any request message by looking at the realm portion of the NAI present in the \"User-Name\" attribute, which I believe is pretty common routing logic in these kinds of cases. Now, consider what happens when the Home network updates to use this mechanism (in order to better work with their federated partners), and the Visited network also updates to use this mechanism (for the same reason), but the Clearinghouse is not yet updated. I'll try to step through section 5 with this scenario: 1) The NAS in the Visited network sends an Access-Request packet to the \u00a0  Visited Radius server. The visited RADIUS server will see that the \u00a0  user is roaming, and will add an Operator-Name attribute, with value \u00a0  \"1\" followed by it's own realm name.\u00a0 e.g. \" 1example.com \". 2) The visited RADIUS server will then proxy the authentication request \u00a0  to the Clearinghouse network, which uses the NAI in the User-Name to forward \u00a0  it to the Home network. 3) The Home Server records the Operator-Name along with other information \u00a0  about the users session 4) When the Home Server determines that a user should be disconnected, \u00a0  it looks up the Operator-Name, along with other user session identifiers as \u00a0  described in [ RFC5176 ]. 5) The Home Server sends the Disconnect-Request to the Home domain's border \u00a0  proxy. 6) The Home domain's border proxy looks up the Operator-Name in the \u00a0  Disconnect-Request message, determines that it is an operator that it is \u00a0  not federated with, and consequently sends the Disconnect-Request to the \u00a0  Clearinghouse. 7) The Clearinghouse receives the Disconnect-Request message. Since it has not \u00a0  yet been updated to handle the Operator-Name attribute as described in this \u00a0  document, it follows its normal logic of routing according to the NAI in the \u00a0  User-Name attribute. 8) Go to 6 --------------------------------------------------------------------------- \u00a74.2: >\u00a0 The value SHOULD be cryptographically strong, and SHOULD be >\u00a0 verifiable by the Visited Network, without requiring it to track in a >\u00a0 database every individual value of Operator-NAS-identifier which was >\u00a0 issued. I don't think this is really phrased in a way that means what you want to say. If I had to guess, you mean to say that the value must be encrypted, and that it must be integrity-protected. If integrity protection is important, then you also need to consider techniques to avoid replay of previously-seen tokens (e.g., the integrity protection needs to be over not just the Operator-NAS-Identifier, but also over some portion of the session that prevents its replay). Most notably, this desire for encryption and integrity protection is almost certainly at odds with the assertion (in \u00a73.3) that \"A twenty octet string is more than sufficient to individually address all of the NASes on the planet.\" For example, the na\u00efve approach of appending a SHA-256 hash to the end of an encrypted, salted index into a table of NAS devices would require over 32 bytes at its absolute minimum. So, if integrity protection is something that any operator might ever want, you need to revisit the 20-byte limit. >\u00a0 Exactly how this requirement is implemented is outside of the scope >\u00a0 of this document. That's fair, but I think you need a proof-of-concept example of how it could be done, so that you find any additional corner cases beyond the one I've identified above. I think these aspects of this attribute need a lot more treatment in Section 6.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-11-15 14:35:02-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-08-14 06:45:49-07:00",
+        "text": "Thanks for the quick response on the looping concern I thought might exist. The original text for my other concern appears below. \u00a74.2: >\u00a0 The value SHOULD be cryptographically strong, and SHOULD be >\u00a0 verifiable by the Visited Network, without requiring it to track in a >\u00a0 database every individual value of Operator-NAS-identifier which was >\u00a0 issued. I don't think this is really phrased in a way that means what you want to say. If I had to guess, you mean to say that the value must be encrypted, and that it must be integrity-protected. If integrity protection is important, then you also need to consider techniques to avoid replay of previously-seen tokens (e.g., the integrity protection needs to be over not just the Operator-NAS-Identifier, but also over some portion of the session that prevents its replay). Most notably, this desire for encryption and integrity protection is almost certainly at odds with the assertion (in \u00a73.3) that \"A twenty octet string is more than sufficient to individually address all of the NASes on the planet.\" For example, the na\u00efve approach of appending a SHA-256 hash to the end of an encrypted, salted index into a table of NAS devices would require over 32 bytes at its absolute minimum. So, if integrity protection is something that any operator might ever want, you need to revisit the 20-byte limit. >\u00a0 Exactly how this requirement is implemented is outside of the scope >\u00a0 of this document. That's fair, but I think you need a proof-of-concept example of how it could be done, so that you find any additional corner cases beyond the one I've identified above. I think these aspects of this attribute need a lot more treatment in Section 6.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-11-15 14:35:14-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-11-15 14:35:02-08:00",
+        "text": "hanks for addressing my DISCUSS points.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-15 14:35:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-08-15 11:33:35-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-15 11:33:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-08-13 11:24:44-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-13 11:24:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-08-14 20:18:12-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-08-16 07:24:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-08-14 20:18:12-07:00",
+        "text": "(This is a procedural DISCUSS. Hopefully it can be resolved easily, but I do think it needs to be resolved prior to publication..) This draft is standards track, yet it primarily serves to extend  RFC 5176 . That RFC is informational. The shepherd writeup argues that this is okay because it seems like 5176 should have been standards track. But the applicability statement  RFC 5176  explains why it was informational, and the reasons seem convincing. Therefore I do not think it is appropriate to publish this draft as Standards Track. I think it would be fine to progress it as Informational (or even Experimental) if it included an applicability statement explaining why in order to avoid the appearance of a standard masquerading as an Informational RFC.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-16 07:24:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-08-09 15:15:17-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-08-15 10:02:00-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-15 10:02:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-08-15 08:15:06-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-15 08:15:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-08-16 06:53:49-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-16 06:53:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-08-16 03:53:52-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-16 03:53:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-08-13 04:51:05-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-13 04:51:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-08-14 21:07:21-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-14 21:07:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-01-22 22:27:06-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-09 15:15:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8559",
+  "evaluation_end": "2019-01-22 22:27:06-08:00",
+  "evaluation_start": "2018-08-09 15:15:17-07:00"
+}

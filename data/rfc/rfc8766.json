@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-11-29 18:10:23-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-11-29 18:11:26-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-11-29 18:10:23-08:00",
+        "text": "First, I'd like to say thanks for your work on this document. I find this work exciting, and hope to see it widely deployed in the short term. I do have one major concern that I believe rises to the level of a DISCUSS, although I believe it should be trivial to fix. The reason I believe it to be a barrier to publication is that it makes a broad architectural statement that has implications for all application protocols; which, beyond being outside the remit of the working group per its charter, I seriously doubt received the level of cross-area review appropriate for its scope. The statement of concern is in section 5.5.5: \u00a0  As is the case with NAT ALGs, protocol designers are advised to avoid \u00a0  communicating names and addresses in nonstandard locations, because \u00a0  those \"hidden\" names and addresses are at risk of not being \u00a0  translated when necessary, resulting in operational failures. I would expect this statement, if evaluated by the IETF community at large, to be extremely controversial: it implies application-layer protocol designs that provide neither confidentiality nor even integrity protection for protocol parameters. Architecturally, it's important to distinguish between NAT ALGs, which are not a party to the security context of the protocols they carry, and DNS discovery proxies, which are. This makes the guidance in here appropriate in the context of DNS-SD records, while being problematic in the broader NAT ALG case cited. I would find no problem with a narrowly-scoped statement that pertains to DNS usage in particular, although I wonder whether designers of DNS TXT record usage in the future are likely to become aware of such guidance.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-03-22 02:51:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-11-29 18:11:26-08:00",
+        "text": "First, I'd like to say thanks for your work on this document. I find this work exciting, and hope to see it widely deployed in the short term. I do have one major concern that I believe rises to the level of a DISCUSS, although I believe it should be trivial to fix. The reason I believe it to be a barrier to publication is that it makes a broad architectural statement that has implications for all application protocols; which, beyond being outside the remit of the working group per its charter, I seriously doubt received the level of cross-area review appropriate for its scope. The statement of concern is in section 5.5.5: \u00a0  As is the case with NAT ALGs, protocol designers are advised to avoid \u00a0  communicating names and addresses in nonstandard locations, because \u00a0  those \"hidden\" names and addresses are at risk of not being \u00a0  translated when necessary, resulting in operational failures. I would expect this statement, if evaluated by the IETF community at large, to be extremely controversial: it implies application-layer protocol designs that provide neither confidentiality nor integrity protection for protocol parameters. Architecturally, it's important to distinguish between NAT ALGs, which are not a party to the security context of the protocols they carry, and DNS discovery proxies, which are. This makes the guidance in here appropriate in the context of DNS-SD records, while being problematic in the broader NAT ALG case cited. I would find no problem with a narrowly-scoped statement that pertains to DNS usage in particular, although I wonder whether designers of DNS TXT record usage in the future are likely to become aware of such guidance.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-03-22 02:51:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-11-29 09:58:19-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-29 09:58:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-11-29 10:40:33-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-11-29 10:40:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-11-29 13:27:57-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-29 13:27:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-11-28 06:04:45-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-28 06:04:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-11-29 15:29:06-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-29 15:29:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-11-29 15:42:41-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-29 15:42:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-11-27 12:49:32-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-27 12:49:32-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-11-30 06:40:13-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2018-03-23 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2017-11-30 06:40:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-11-30 05:45:02-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-30 05:45:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-11-29 20:21:43-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-29 20:21:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-11-12 17:14:00-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-11-27 12:46:02-08:00",
+        "end_reason": "new_position",
+        "start": "2017-11-12 17:14:00-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-11-27 12:47:46-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-11-27 12:46:02-08:00",
+        "text": "There are a number of places where the non-LDH names may be configured on a \"normal\" DNS server. An example of this is in Section 5.2.1.\u00a0 Domain Enumeration via Unicast Queries: \"db._dns-sd._udp.example.com.\u00a0  PTR\u00a0  Building  1.example.com .\" Putting this in a zonefile and trying to hand it to e.g BIND makes things sad: dns_rdata_fromtext:  example.com:18 : near ' 1.example.com .': extra input text zone  example.com/IN:  loading from master file  example.com  failed: extra input text zone  example.com/IN:  not loaded due to errors. Another example is in Section 5.3.\u00a0 Delegated Subdomain for LDH Host Names \"For example, a Discovery Proxy could have the two subdomains \"Building  1.example.com \" and \" bldg1.example.com \" delegated to it.\" I think that the document needs to do a better job of explaining that you cannot just include non-LDH in a zonefile without escaping -- Section 5.1. (Format) of  RFC1035  may be a good pointer.\u00a0 It may even be a good idea to repeat this (or at least mention the case) whenever there is an example\u00a0 - readers are likely to just cut and paste without reading the full document, leading to unexpected failures (and then gnashing of teeth on forums)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-11-27 17:48:26-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-11-27 12:47:46-08:00",
+        "text": "This is (IMO) easily addressed -- I like the document, this DISCUSS is simply to improve it and help prevent foot-shooting. I'd be a YES or NoObj once addressed. There are a number of places where the non-LDH names may be configured on a \"normal\" DNS server. An example of this is in Section 5.2.1.\u00a0 Domain Enumeration via Unicast Queries: \"db._dns-sd._udp.example.com.\u00a0  PTR\u00a0  Building  1.example.com .\" Putting this in a zonefile and trying to hand it to e.g BIND makes things sad: dns_rdata_fromtext:  example.com:18 : near ' 1.example.com .': extra input text zone  example.com/IN:  loading from master file  example.com  failed: extra input text zone  example.com/IN:  not loaded due to errors. Another example is in Section 5.3.\u00a0 Delegated Subdomain for LDH Host Names \"For example, a Discovery Proxy could have the two subdomains \"Building  1.example.com \" and \" bldg1.example.com \" delegated to it.\" I think that the document needs to do a better job of explaining that you cannot just include non-LDH in a zonefile without escaping -- Section 5.1. (Format) of  RFC1035  may be a good pointer.\u00a0 It may even be a good idea to repeat this (or at least mention the case) whenever there is an example\u00a0 - readers are likely to just cut and paste without reading the full document, leading to unexpected failures (and then gnashing of teeth on forums)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-07-19 07:23:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-11-27 17:48:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8766",
+  "evaluation_end": "2018-07-19 07:23:18-07:00",
+  "evaluation_start": "2017-11-12 17:14:00-08:00"
+}

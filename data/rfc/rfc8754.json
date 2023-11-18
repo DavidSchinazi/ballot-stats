@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-09-03 17:05:59-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-03 17:05:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-04 11:16:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 11:16:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-09-04 12:15:14-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 12:15:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-09-04 23:13:23-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-17 08:36:49-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-04 23:13:23-07:00",
+        "text": "The new \"Segment Routing Header TLVs\" registry (\u00a78.2) includes a range \"for TLVs that may change en route\".\u00a0 However, I couldn't find a specification for these types of TLVs.\u00a0 The only clues come from \u00a74.3.1 (FIB Entry Is Locally Instantiated SRv6 SID), where it says: \u00a0  Processing this SID modifies the Segments Left and, if configured to \u00a0  process TLVs, it may modify the \"variable length data\" of TLV types \u00a0  that change en route.\u00a0 Therefore Segments Left is mutable and TLVs \u00a0  that change en route are mutable.\u00a0 The remainder of the SRH (Flags, \u00a0  Tag, Segment List, and TLVs that do not change en route) are \u00a0  immutable while processing this SID. I am balloting DISCUSS because the description of \"TLVs that may change en route\" is not clear or specific enough.\u00a0 I would like to see a clear specification of what \"TLVs that may change en route\" are, *AND* corresponding instructions to the Designated Experts-to-be.\u00a0  \u00a0  Some related questions that come to mind include: Where can these TLVs be  \u00a0  processed/changed?\u00a0 If the data is modified, what about the alignment,  \u00a0  should the Padding TLVs be also changed?\u00a0 If no data is left, can the TLV be  \u00a0  removed?\u00a0 The instructions above (for the SRV6 SID) seem generic enough to  \u00a0  apply to other potential future SIDs, what type of variation is expected?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-17 08:36:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-04 14:09:12-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-10-10 13:35:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-04 14:09:12-07:00",
+        "text": "I find the new registries (not \"registers\", as in the titles of Sections 8.1 and 8.2) to be oddly defined, and would like to discuss that. In Section 8, you seem to be giving instructions to the designated expert to require an RFC.\u00a0 You also seem to be telling the DE to consult the 6man working group (or the residual mailing list, after the WG closes).\u00a0 So when you say \"Expert Review\", you're really saying at least \"Expert Review and RFC Required\", and possibly \"Expert Review and IETF Review\".\u00a0 I suggest that you instead go with \"IETF Review\" and eliminate the need for a designated expert.\u00a0 If you want to additionally require specific review on the 6man list, you can add that to the IETF Review, with something like \"IETF Review, with at least a two-week review on the 6man list,\" or some such.\u00a0 (You could also consider \"Standards Action\" if you want to require that the RFC be Standards Track and not, say, Experimental or Informational.)\u00a0 The point of having a DE is to handle cases when you are NOT necessarily using RFCs to do the registrations, and you don't have the consequent IETF review of things.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-10 13:35:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-09-03 19:52:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-18 10:39:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-03 19:52:30-07:00",
+        "text": "(1) Section 2.1.2.1 says: \u00a0  Local configuration determines when to check for an HMAC and \u00a0  potentially indicates what the HMAC protects, and a requirement on \u00a0  where the HMAC TLV must appear (e.g. first TLV), and whether or not \u00a0  to verify the destination address is equal to the current segment. I'm uncomfortable about leaving so much of the semantics of a security mechanism up to the local configuration. Specifically, the \"potentially indicates what the HMAC protects\" and \"whether or not to verify the destination address is equal to the current segment\", which leaves some of the key security properties of the system in the hands of someone that is potentially quite inexperinced in reasoning about the relevant security properties. I do think we can still specify something useful and interoperable that still allows flexibility about when to check and where the TLV can appear.\u00a0 (This may in practice also allow flexibility about what it protects, if the semantics are something like \"it protects everything prior to it\" and we allow for other TLVs to appear after it, but the actual *rules* for what it protects would be well-specified.) (2) I also think we should discuss what is protected by the HMAC.\u00a0 I note in the COMMENT that this seems to be more about protecting the SRH contents than the packet payload, but at present there is no binding at all to the containing packet or flow, which seems to in effect present the SRH as a self-contained, \"signed\", policy blob, which can be detached from packet data and transferred at will.\u00a0 It's probably also best practice to include a fixed \"contxt string\" like \"IPv6 SRH HMAC\" even though the risk of key reuse and cross-protocol attacks seems quite small here. It's also pretty tempting to pull in the representation of the \"immutable TLVs\", though there are probably some tricky details to describing how to do that, and that can present complexity challenges if/when nodes not trusted with HMAC keys are expected to apply varying TLVs at runtime.\u00a0 (The lack of defined TLVs other than HMAC and padding make it hard for an outsider to gague the intent for TLV usage.) (3) I'm concerned that this mechanism may not be consistent with  BCP 107 's guidance on automated vs. manual key management, with respect to directly using the long-term HMAC key to key the HMAC.\u00a0 Most modern designs will introduce an intermediate key-derivation step that mixes some message- or flow-specific data into the intermediate key that is then used to key the per-message MAC.\u00a0 Section 5.5 seems to suggest that the IPv6 flow label may be usable (i.e., fixed within the domain for a given flow) for this purpose, but I may be missing a subtlety about intra- vs. inter-domain traffic, and it may not be feasible to involve a central controller into flow identifier assignment. If the HMAC is solely intended to make self-contained \"authorized policy blobs\" that are infrequently changing, then the direct use of the long-term key may not be as problematic as it first seems. Additionally, if the SDN-oriented or \"trusted key distribution protocol such as [ RFC6407 ]\" cases are used, then this is somewhat less of a concern, though there may still be key usage lifetime considerations to worry about and potentially force somewhat-rapid key turnover (i.e., weeks or months). (4) I'm not sure that the scoping of key IDs per destination node is consistent with the use cases depcicted.\u00a0 I mention this in the COMMENT section in a few places, but the short version is roughly \"if the HMAC is fixed for the life of the packet, then we can either have the key ID namespaced by destination address but only have one verifier, or we can have multiple verifiers on the path but the key ID space is global\".\u00a0 We do currently have text that talks about verification being performed at multiple points on the path, so I'm not sure which scenario is intended. (5) I think we need to have some discussion about key revocation/rotation.\u00a0 The mode of operation for the HMAC TLV that appears to be envisioned by this document is that there is a central trusted service that computes \"blessed\" segment routes with an accompanying HMAC \"signature\" (not a real signature, but a sign of aproval in some sense), and that the resulting token of (SRH including HMAC TLV) is distributed by SDN configuration.\u00a0 These SRH tokens are treated by many nodes as opaque blobs, applied to outgoing traffic according to the procedure configured alongside the token.\u00a0 Some other (trusted) nodes in the network may look inside the SRH to verify the MAC, and check that the rout in question should be coming from that direction, but those nodes may be a minority of nodes.\u00a0 In this scenario, we need to consider the behavior when the central controller changes what routes are to be used, and effectively wants to \"revoke\" the old ones and ensure that the deprecated routes are not in use in the SR domain.\u00a0 The only mechanism for doing so seems to be to rotate the HMAC key in question so as to discard all HMACs generated by the key in question (since keeping something akin to a CRL of \"revoked\" HMAC values seems infeasible in general); I think we should have some discussion about needing to do a key rotation to effectuate such \"revocation\" (that is, cryptographically ensure that previously configured/\"blessed\" routes are no longer in use).\u00a0 It would also be pretty easy to tie this in to text about recovering from a compromised HMAC key.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-18 10:39:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-09-03 14:31:39-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-03 14:31:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-09-05 05:15:26-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-05 05:15:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-09-05 05:12:21-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-09-17 00:45:23-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-09-05 05:12:21-07:00",
+        "text": "I have several issues that appears to be serious enough that I really like some feedback on them prior to approving the document.    1. Section 2.1:    \t\u00a0  An implementation MAY limit the number and/or length of TLVs it \u00a0  processes based on local configuration.\u00a0 It MAY: \to\u00a0 Limit the number of consecutive Pad1 (Section 2.1.1.1) options to \u00a0 \u00a0 \u00a0 1, if padding of more than one byte is required then PadN \u00a0 \u00a0 \u00a0 (Section 2.1.1.2) should be used. \to\u00a0 Limit the length in PadN to 5. \to\u00a0 Limit the maximum number of non-Pad TLVs to be processed. \to\u00a0 Limit the maximum length of all TLVs to be processed. \tThe implementation MAY stop processing additional TLVs in the SRH \u00a0  when these configured limits are exceeded.   \tIsn't this repeating the same interoperability and extensibility issues we have for IPv6 extension headers in an IPv6 Routing header? Wouldn't it be better to tighten a bit the possibilities for the basic support of at least handling TLVs, and if anyone defines something larger they know this will be more uphill work to ensure that you get support for it. But it will making matching the constraints likely more easily to deploy as implementations haven't made different choices of what is required to support when it comes to handling TLVs and buffer them for example in their implementations.    2. Section 2.1.2.1 \u00a0  If HMAC verification fails, an ICMP error message (parameter problem, \u00a0  error code 0, pointing to the HMAC TLV) SHOULD be generated (but rate \u00a0  limited) and SHOULD be logged. Shouldn't it be made explicit that the packet should be discarded? Please clarify the text.  3. Section 5.3: 5.3.\u00a0 MTU Considerations \tAn SR Domain ingress edge node encapsulates packets traversing the SR \u00a0  Domain, and needs to consider the MTU of the SR Domain.\u00a0 Within the \u00a0  SR Domain, well known mitigation techniques are RECOMMENDED, such as \u00a0  deploying a greater MTU value within the SR Domain than at the \u00a0  ingress edges. I find this section very much lacking. Considering that the minimal usage of this RH is 24 bytes, and getting above 100 bytes of overhead is trivial. 3 segments plus the HMAC TLV is 96 bytes.  The text mentions well known techniques (Note plural) but suggests only one. Are the more that can be referenced?  The one mentioned requires one to calculate the worst case overhead for the SR domain for the this routing header. Then take the lowest available path MTU and subtract that worst case overhead to find the supported MTU. Then police that value at the ingresses to the SR domain to ensure consistent behavior that Path MTU discovery methods can work with.  What do you do if one of the path MTUs inside the SR domain is 1280?  This document do need to answer this question or I believe write an applicability statement restrict this to not work in such network where the 1280 minimal MTU can be ensured. As Joe Touch note in his TSV-ART review this is non trivial and I don't see punting on these MTU question will work in general:  https://mailarchive.ietf.org/arch/msg/tsv-art/cdMgmFS79lBr7oha9Z4S4qqqA8c",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-07 00:46:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-17 00:45:23-07:00",
+        "text": "Thanks for resolving some of my discusses.  3. Section 5.3: 5.3.\u00a0 MTU Considerations \tAn SR Domain ingress edge node encapsulates packets traversing the SR \u00a0  Domain, and needs to consider the MTU of the SR Domain.\u00a0 Within the \u00a0  SR Domain, well known mitigation techniques are RECOMMENDED, such as \u00a0  deploying a greater MTU value within the SR Domain than at the \u00a0  ingress edges. I find this section very much lacking. Considering that the minimal usage of this RH is 24 bytes, and getting above 100 bytes of overhead is trivial. 3 segments plus the HMAC TLV is 96 bytes.  The text mentions well known techniques (Note plural) but suggests only one. Are the more that can be referenced?  The one mentioned requires one to calculate the worst case overhead for the SR domain for the this routing header. Then take the lowest available path MTU and subtract that worst case overhead to find the supported MTU. Then police that value at the ingresses to the SR domain to ensure consistent behavior that Path MTU discovery methods can work with.  What do you do if one of the path MTUs inside the SR domain is 1280?  This document do need to answer this question or I believe write an applicability statement restrict this to not work in such network where the 1280 minimal MTU can be ensured. As Joe Touch note in his TSV-ART review this is non trivial and I don't see punting on these MTU question will work in general:  https://mailarchive.ietf.org/arch/msg/tsv-art/cdMgmFS79lBr7oha9Z4S4qqqA8c",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-07 00:46:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-09-05 05:25:51-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-05 05:25:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-29 09:18:38-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-29 09:18:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-09-04 11:50:07-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-15 14:33:47-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-04 11:50:07-07:00",
+        "text": "(1) Section 7.1.\u00a0 This section seems to be enumerating the attacks possible with source routing, and noting that the scope of these are limited to nodes inside the SR domain because of SRH requires ingress filtering.\u00a0 No issue with this position.\u00a0 This feedback is around the clarity of the attacks in question.\u00a0 The text currently says: (a) (from the CanSecWest reference in from  RFC5095 ) \u201cSuch attacks include bypassing filtering devices, reaching otherwise unreachable Internet systems, network topology discovery, bandwidth exhaustion, and defeating anycast\u201d (b) In addition, \u201cother known attacks on an IP network (e.g.\u00a0 DOS/DDOS, topology discovery, man-in-the-middle, traffic interception/siphoning)\u201d are also noted. -- Per (a), the issue is broader than \u201cbypassing filtering devices\u201d, it\u2019s also the \u201cbypassing of network management, auditing or security devices\u201d. -- Per (b), the enumeration of attacks using the parenthetical suggested that these attacks are generically possible on \u201cIP networks\u201d and not SRH specific.\u00a0 If that is the appropriate read, then somewhere in the earlier text it should be noted that SRH can also facilitate traffic steering for DDoS, eavesdropping and traffic manipulation through the manipulation (deletion, re-ordering) of the SRHs.\u00a0 If (b) is a complementary list to (a) on SRH specific list of attacks, then it needs to be reconciled for duplication with (a) (e.g., per \u201cbandwidth exhaustion\u201d of (a) and \u201cDOS/DDOS\u201d of (b), are they the same?).\u00a0 I think it is important to make clear what new attacks TTPs are possible with SRH even if the attack type is already possible through another TTPs on a generic IP network.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-15 14:33:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-27 05:29:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-27 05:29:30-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-24 06:46:25-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-27 05:29:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8754",
+  "evaluation_end": "2019-10-24 06:46:25-07:00",
+  "evaluation_start": "2019-08-27 05:29:28-07:00"
+}

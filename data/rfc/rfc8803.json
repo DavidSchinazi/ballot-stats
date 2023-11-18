@@ -1,0 +1,261 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-04 21:46:20-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-04 21:46:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-05 07:25:20-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-05 07:25:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-03 13:41:47-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-03 13:41:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-04 21:58:24-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-04 21:58:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-05 01:45:35-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-20 16:19:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-05 01:45:35-08:00",
+        "text": "I agree with Roman, and present a somewhat different take on some of the key aspects of the scoping discussion. I have pretty fundamental concerns about describing this protocol as a \"0-RTT\" service when it both requires strong mutual authentication/authorization of the communicating endpoints and relies on the (local) network to provide those properties.\u00a0 If IP in general provided the kind of mutual authentication assumed here, the internet would be a much more secure place!\u00a0 Unfortunately, it does not and I think this document does its readers a disservice by transparently assuming that it does (in the main body of text; the security considerations do touch on the requisite details).\u00a0 It would be better to discuss the proxy protocol separately from the deployment considerations that allow it to be used without additional set-up in specific deployment scenarios. And that's only when considering the client authenticating the server! Mutual authentication also requires the server to authenticate the client and be able to make authorization decisions based upon that authenticated identity.\u00a0 The deployment model presented here seems to imply a very tight coupling between the Transport Converter operator and the network service provider (in order to determine, based on client IP address, the authenticated client identity and access an authorization database); this seems to make it incompatible with the stated possibility of using a third-party Transport Converter. Additionally, it raises some questions along the lines of draft-arkko-iab-internet-consolidation  and draft-iab-for-the-users. The sketch of a solution for more open network environments in Section 9.2 is insecure (once a Cookie is generated and sent once, it can be freely replayed by an attacker during the Cookie lifetime, which defeats the authorization requirement of the convert protocol).\u00a0 Either fix it or remove it entirely. Please resolve the internal inconsistency in Section 6.2.4 which says that TCP option Kind 0 MUST NOT appear in the list but then goes on to say that the list is padded with zeros to a 32-bit boundary.\u00a0 (There is no listed requirement that the options are listed in any given order, which would be needed to assign a boundary between \"listed options\" and \"padding\".) Why do we need the Cookie TLV at all if the underlying local network supplies all the authentication and authorization that the protocol needs? Section 1.2 says that the Convert Protocol \"is an application-layer protocol which uses a dedicated TCP port number\", but the IANA request in Section 10.1 is for a service name without fixed port number.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-20 16:19:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-04 14:01:13-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-04 14:01:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-02 06:58:40-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-06 06:55:23-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-02 06:58:40-08:00",
+        "text": "Thank you for the work put into this document. It is indeed useful to be able to deploy easily new TCP features. Nevertheless, please find below two DISCUSSes and some non-blocking COMMENTs (and I would appreciate a response from the authors) and NITS. I hope that this helps to improve the document, Regards, -\u00e9ric == DISCUSS == -- Section 1.2 -- A trivial one: while the title and the abstract of this document appear as quite generic, the document focus is reduced later in section 1.2 to MPTCP:  \u00a0 \"this \u00a0  document specifies how the Convert Protocol applies for Multipath \u00a0  TCP.\u00a0 It is out of scope of this document to provide a comprehensive \u00a0  list of all potential conversion services. \" While I do not mind having a focus on MPTCP only, I would strongly suggest to reflect this focus in the title and in the abstract (the current filename is correct). -- Section 6.2.8 -- I appreciate that this is an experimental document, but, having only 2 occurrences of ICMP in the whole document and no real \"how to process\" TLV \"Destination Unreachable\"... and the payload of this TLV having only the code without the offending packet will probably make Path MTU discovery (and other mechanisms) impossible. While I am not a transport expert, I believe that this aspect needs to be described in this document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-06 06:55:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-27 07:14:08-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-04 20:55:05-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-21 17:43:32-07:00",
+        "end_reason": "position_updated",
+        "start": "2020-03-04 20:55:05-08:00",
+        "text": "** Deployed without constraints, there would be a number of concerning attacks given this protocol\u2019s design.\u00a0 Christian Huitema\u2019s SecDir review (thank you!) notes some of them.\u00a0 Helpfully, this draft presents various restrictive scoping to mitigate these attacks under certain circumstances: (a) Section 4.1. Transport Converters can be operated by network operators or third parties.\u00a0  Nevertheless, this document focuses on the single administrative deployment case where the entity offering the connectivity service to a client is also the entity which owns and operates the Transport Converter. (b) Section 9.1. Furthermore, ingress filtering policies MUST be enforced at the network boundaries [ RFC2827 ]. (c) Section 9.2. The Convert Protocol is intended to be used in managed networks where end hosts can be identified by their IP address. (d) Section 9.2.\u00a0 Stronger mutual authentication schemes MUST be defined to use the Convert Protocol in more open network environments. Unfortunately, the protocol mechanism to operate outside of these bounds is in scope because (a) and (c) include no normative language.\u00a0 For example, this document doesn\u2019t address converters operated by third parties but it explicitly allows for their possibility with no discussion of the impact. As this is an experimental document where implementation experience likely is needed for refinement, could a compromise be found with an applicability statement that shrinks the threat model and provide better normative guidance.\u00a0 For example (paraphrasing): Applicability statement: Transport Converters MUST only be deployed in a single administrative domain deployment model.\u00a0 The entity offering the connectivity service to a client MUST also be entity which owns and operates the Transport Converter, with no transit over a third-party network. For the Security Considerations: The Convert Protocol is RECOMMENDED to be used in a managed network where end hosts can be identified by their IP address.\u00a0 If such control is not exerted and there is a more open network environment, a strong mutual authentication scheme MUST be defined to use the Convert Protocol. ** Section 9.1.\u00a0 Per \u201cGiven its function and its location in the network, a Transport Converter has access to the payload of all the packets that it processes.\u201d, it\u2019s a per more than that.\u00a0 It is in a position to observe all packets, so that\u2019s payload, meta-data and the ability to profile and conduct traffic analysis.\u00a0 Perhaps something on the order of \u201cGiven its function and location in the network, a Transport Convert is in a position to observe all packets, to include payloads and meta-data; and has the ability to profile and conduct traffic analysis of user behavior\u201d. ** Section 9.1.\u00a0 Per \u201cAs such, it MUST be protected as a core IP router (e.g., [ RFC1812 ])\u201d, no disagreement on the need to protect this router.\u00a0 However, what exact practices are being suggested?\u00a0 Given the  RFC1812 , reference, what specific sections apply?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-21 17:43:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-05 03:56:42-08:00",
+        "end_reason": "new_position",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-05 03:56:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-24 06:52:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-27 07:14:08-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8803",
+  "evaluation_end": "2020-03-24 06:52:24-07:00",
+  "evaluation_start": "2020-02-27 07:14:08-08:00"
+}

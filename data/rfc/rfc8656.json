@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-07-09 22:50:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-09 22:50:13-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-07-08 10:32:52-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-08 10:32:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-07-10 08:28:21-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-10 08:28:21-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-07-10 21:21:39-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-10 21:21:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-10 22:39:44-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-22 21:18:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-10 22:39:44-07:00",
+        "text": "I support Roman's Discuss. I think I'm confused about whether REQUESTED-ADDRESS-FAMILY and ADDITIONAL-ADDRESS-FAMILY are mutually exclusive.\u00a0 Does sending just the \"additional\" one secretly mean that you want both v4 and v6? Section 5 I see that the secdir reviewer asked about why it is a \"SHOULD\" to send SOFTWARE, and only got a response that it is defined in stunbis, but not about why it is recommended.\u00a0 There remain some privacy/security considerations with it, and we should either point to the stunbis security considerations or not recommend using it.\u00a0 (FINGERPRINT is, IIRC, less interesting from a security perspective as it's just about confirming that given traffic is in fact STUN and not something else.) Section 12 Do we need to say anything about backwards compatibility with  RFC 5766 peers that use a wider range of channel IDs? Section 12.7 \u00a0  When the server receives an ICMP packet, the server processes it as \u00a0  described in Section 11.5.\u00a0 A Data indication MUST be sent regardless \u00a0  of whether there is a channel bound to the peer that was the \u00a0  destination of the UDP datagram that triggered the reception of the \u00a0  ICMP packet. This MUST seems potentially in conflict with the previous discussion about permissions checks in Section 11.5. Section 20 Looking at the new nonce in the example (\"obMatJos2AAABadl7W7PeDU4hKE72jda\"), and noting that it starts with the nonce cookie, help me decode the security feature bits.\u00a0 The magic prefix is \"obMatJos2\" so the capability bits are encoded as \"AAAB\", which decodes to (hex) 00 00 01.\u00a0 But stunbis says that the bits are ordered from 0 (MSB of first byte) to 23 (LSB of last byte), so this would have bit 23 set, which is in contrast to the registry marking bit 0 as the password-algorithms feature.\u00a0 Where am I messing this up? I'd prefer if the examples showed more usage of MESSAGE-INTEGRITY-SHA256 (especially, any from the server) and fewer MESSAGE-INTEGRITY.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-22 21:18:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-07-08 06:43:47-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-08 06:43:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-07-07 01:18:21-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-07 01:18:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-07-08 01:17:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-08 01:17:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-06-28 00:40:25-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-28 00:40:25-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-07-10 11:07:17-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-10 11:07:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-07-10 08:55:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-07-26 15:05:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-10 08:55:04-07:00",
+        "text": "One quick discussion which probably is only an oversight and therefore should be easy got fix: I'm bit confused about the requirement on using authentication. This draft says in section 5 (as  RFC5766  does): \"The server MUST demand that all requests \u00a0  from the client be authenticated using this mechanism, or that a \u00a0  equally strong or stronger mechanism for client authentication is \u00a0  used.\" However,  RFC 8155  which is even now cited in this draft, updates  RFC5766  and relaxes this requirement. Later in the section 7.2. this draft says: \"The server SHOULD require that the request be authenticated.\" I assume the requirement in section 5 is an oversight?  I also recommend to only specify this requirement normatively in one place.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-26 15:05:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-07-10 15:40:00-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-07-10 15:49:17-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-07-10 15:40:00-07:00",
+        "text": "(1) Section 12.1.6.\u00a0 (Per the back-and-forth on Chris Wood\u2019s SECDIR review \u2013 thank you Chris!) Per \u201cConfidentiality is only a secondary concern, as TURN control messages do not include information that is particularly sensitive\u201d, wouldn\u2019t the USERNAME and REALM potentially be privacy sensitive?\u00a0 If they aren\u2019t sensitive in all cases (e.g., usernames might be ephemeral), this should be noted and cited. (2) This draft relies on the  draft-ietf-tram-stunbis \u2019s STUN Password Algo Registry which (in Section 16.1.1) already discusses the limitation of SHA-256.\u00a0 Nevertheless, it is still better than MD5 which is still supported too.\u00a0 Is there a reason not to recommend that implementation \u201cSHOULD NOT use MD5\u201d?\u00a0 Also, it seems helpful to reference the caveats about SHA-256 for password hashing from  draft-ietf-tram-stunbis  here too.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-07-22 05:12:59-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-10 15:49:17-07:00",
+        "text": "(1) Section 12.1.6.\u00a0 (Per the back-and-forth on Chris Wood\u2019s SECDIR review \u2013 thank you Chris!) Per \u201cConfidentiality is only a secondary concern, as TURN control messages do not include information that is particularly sensitive\u201d, wouldn\u2019t the USERNAME and REALM potentially be privacy sensitive?\u00a0 If they aren\u2019t sensitive in all cases (e.g., usernames might be ephemeral), this should be noted and cited.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-22 05:12:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-07-10 07:03:45-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-10 07:03:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-07-10 09:50:20-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-28 00:40:24-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-07-29 07:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-10 09:50:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8656",
+  "evaluation_end": "2019-07-29 07:03:00-07:00",
+  "evaluation_start": "2019-06-28 00:40:24-07:00"
+}

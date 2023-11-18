@@ -1,0 +1,261 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-28 18:27:35-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-28 18:27:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-24 13:21:01-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-24 13:21:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-05-28 02:48:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-28 02:48:28-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-05-29 15:43:42-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-06-28 18:24:22-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-29 15:43:42-07:00",
+        "text": "After further reflection, I think we need to resurrect the discussion sparked by DKG's last-call review.\u00a0 Specifically, in Section 5 when we consider the case that there is not a directory service/repository available, we give guidance to \"the recipient\" and \"recipients\".\u00a0 But in at least some cases, there are two tiers of recipients/relying parties, that have different properties, as in the web PKI situation. Specifically, web server operators rely on root CAs to certify the certificates that they present to TLS clients.\u00a0 But we also consider the TLS clients themselves, which may not have a direct path to receiving the updated root CA self-signed certificate, and because of the different ways these different types of recipient rely on root CA information, the order in which they update can cause breakage.\u00a0 We do not necessarily need to present a clear solution that will always avoid this breakage, but I do think we need to at least discuss the possibility of such scenarios. To consider a concrete case, consider a system with a TLS client (\"A\"), a TLS server (\"B\"), and the root CA (\"C\").\u00a0 C issues (potentially via intermediates) an end-entity certificate for B, and we consider a case where A initiates TLS connections to B.\u00a0 Initially, C has the root CA/key at C1, and is initiating a transition to C2; before the transition both A and B have C1 in their trusted store.\u00a0 When A receives C2, it can perform the requisite validation and add C2 to its trust store for use potentially validating incoming certificate chains.\u00a0 When B receives C2, it can similarly perform the requisite validation and add C2 to its trust store, but B's trust store is used for validating *outgoing* certificate chains, not (just) incoming ones.\u00a0 If B were to keep C2 in its trust store and construct an outgoing certificate chain based on C2 (and omitting oldWithNew and newWithOld), before A has received C2, then the TLS handshake fails! If A had access to C2, or to oldWithnew/NewWithOld, then it would still be able to validate B's certificate chain, but this document (and  RFC 4210 ) do not give guidance that B should transmit newWithOld to A, leaving open this scenario for breakage. My current inclination is to add some text to this document acknowleding the potential for a chain of relying parties, and recommending that the \"intermediate parties\" in the scenario make newWithOld/oldWithNew available until the notAfter time from oldWithNew, but I am of course open to further discussion/suggestions. Separately, I just want to quickly check that the id-ce-hashOfRootKey OID has been properly allocated and recorded, as I couldn't find evidence to indicate that in a quick search.\u00a0 I assume this is the origin of the CTIA acknowledgment that Alissa mentions, but there's not quite enough there to connect the dots.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-28 18:24:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-05-29 10:28:50-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-29 10:28:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-05-27 08:23:56-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-27 08:23:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-05-21 08:45:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-21 08:45:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-05-28 02:13:38-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-28 02:13:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-22 10:35:17-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-22 10:35:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-05-20 08:15:42-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-05-29 20:42:20-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-29 20:42:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-05-29 13:42:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-20 08:15:42-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-07-11 14:38:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-29 13:42:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8649",
+  "evaluation_end": "2019-07-11 14:38:22-07:00",
+  "evaluation_start": "2019-05-20 08:15:42-07:00"
+}

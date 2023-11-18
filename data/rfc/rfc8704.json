@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-20 20:29:01-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 20:29:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-22 03:28:29-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-22 03:28:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-16 15:01:17-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-30 12:41:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-16 15:01:17-07:00",
+        "text": "I have significant concerns about the recommendation (in \u00a73.7) to use Algorithm A.\u00a0 I think that the considerations to select an Algorithm are not clear and potentially impossible to verify.\u00a0 Also, the selection of Algorithm A creates a vulnerability that could result in legitimate traffic dropped. \u00a73.7 (Summary of Recommendations) says that \"if the scenario does not involve complexity...(see Section 3.3, Figure 4), then...Algorithm A...SHOULD be applied on customer interfaces.\"\u00a0  From Figure 4, how does the operator of ISP4 know that it is not in a \"challenging scenario\" (\u00a73.3)?\u00a0 How can ISP4 tell the difference between ISP2 not propagating routes vs it not even being connected to AS1?\u00a0 By definition, each autonomous system can have its own set of policies, which may not be known by any of their upstreams.\u00a0 In short, I find the guidance provided in the document to select an algorithm not clear enough to really be actionable -- specially in a document tagged to be a BCP. Still looking at Figure 4, if the operator of ISP4 uses Algorithm A (because he/she thinks they may not be in a \"challenging scenario\"), then it opens the door to ISP2 changing its policy so that the uRPF check in ISP4 fails, as shown in Figure 4.\u00a0 IOW, an attacker in ISP2 could stop advertising reachability to some prefixes and cause ISP4 to fail the uRPF check and drop the traffic.\u00a0 The victim in this case could be AS1, whose traffic (through ISP2 to ISP4) was flowing fine and then it stopped. I am balloting DISCUSS because the guidance provided for the selection of an Algorithm is not clear enough to be certain that the selection is the correct one; and the election of Algorithm A creates a vulnerability (as explained in the text) that is not mentioned.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-30 12:41:55-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-21 14:23:48-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 14:23:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-21 15:45:34-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 15:45:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-20 13:34:55-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 13:34:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-21 07:24:31-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 07:24:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-22 01:06:44-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-22 01:06:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-08-21 03:12:55-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 03:12:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-15 08:49:40-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-15 08:49:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-20 12:12:00-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 12:12:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-21 16:44:16-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 16:44:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-01 11:15:45-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-01 11:15:44-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-09-03 13:57:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-01 11:15:45-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc8704",
+  "evaluation_end": "2019-09-03 13:57:30-07:00",
+  "evaluation_start": "2019-08-01 11:15:44-07:00"
+}

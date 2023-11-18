@@ -1,0 +1,349 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-02-20 22:03:08-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-02-20 22:03:41-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-02-20 22:03:08-08:00",
+        "text": "Thanks to the authors for a well-laid-out and easy-to-read document. Thanks also to everyone who contributed to the completion of this work. I have three DISCUSS-level items, and a handful of other suggestions that are largely editorial --------------------------------------------------------------------------- \u00a77.3: >\u00a0 The client may add a query parameter called \"types\", with the value ... >\u00a0 The client may add a query parameter called \"closeafter\" with value ... >\u00a0 The client may add a query parameter called \"ping\", with a positive This form of specification of URI parameters is not allowed -- it contravenes the basic thesis of  BCP 190 , section 2.4 of which stipulates: >\u00a0 Applications MUST NOT directly specify the syntax of queries, as this >\u00a0 can cause operational difficulties for deployments that do not >\u00a0 support a particular form of a query. ... >\u00a0 Extensions MUST NOT constrain the format or semantics of queries. Given that the base resource used to bootstrap the JMAP infrastructure already uses URI templates, it seems that they would be a good candidate for specifying a means of adding these parameters in a way that respects the basic principle that URI design ownership belongs to the domain administrator. --------------------------------------------------------------------------- \u00a78.3: >\u00a0 If this is not feasible, servers MUST ensure this path cannot be >\u00a0 controlled by an attacker, as again it may be used to steal >\u00a0 credentials. This seems problematic, as it would need to be honored by *all* web servers everywhere on the entire Internet to be effective. One cannot really presume that all website operators will be aware of JMAP. I think the only really sensible thing to do here is to forbid clients from using \"/.well-known/jmap\" on a server until they have received some external positive indication that the server supports JMAP (via SRV or some other mechanism). --------------------------------------------------------------------------- The reference for Server-Sent events normatively points to the WHATWG HTML spec, which changes on a continuing basis. I don't think we've really worked out the mechanics of citing this kind of reference normatively; and JMAP takes the especially dangerous step of citing a specific *section* of the document, which may well change at arbitrary and potentially frequent intervals. There is, in fact, no guarantee that the cited \"text/event-stream\" mechanism will continue to exist in future versions of the WHATWG document (cf. the  element). In this particular case, I think we want to reference https://www.w3.org/TR/eventsource/  instead.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-02-25 13:38:30-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-02-20 22:03:41-08:00",
+        "text": "Thanks to the authors for a well-laid-out and easy-to-read document. Thanks also to everyone who contributed to the completion of this work. I have three DISCUSS-level items, and a handful of other suggestions that are largely editorial --------------------------------------------------------------------------- \u00a77.3: >\u00a0 The client may add a query parameter called \"types\", with the value ... >\u00a0 The client may add a query parameter called \"closeafter\" with value ... >\u00a0 The client may add a query parameter called \"ping\", with a positive This form of specification of URI parameters is not allowed -- it contravenes the basic thesis of  BCP 190 ; section 2.4 of which stipulates: >\u00a0 Applications MUST NOT directly specify the syntax of queries, as this >\u00a0 can cause operational difficulties for deployments that do not >\u00a0 support a particular form of a query. ... >\u00a0 Extensions MUST NOT constrain the format or semantics of queries. Given that the base resource used to bootstrap the JMAP infrastructure already uses URI templates, it seems that they would be a good candidate for specifying a means of adding these parameters in a way that respects the basic principle that URI design ownership belongs to the domain administrator. --------------------------------------------------------------------------- \u00a78.3: >\u00a0 If this is not feasible, servers MUST ensure this path cannot be >\u00a0 controlled by an attacker, as again it may be used to steal >\u00a0 credentials. This seems problematic, as it would need to be honored by *all* web servers everywhere on the entire Internet to be effective. One cannot really presume that all website operators will be aware of JMAP. I think the only really sensible thing to do here is to forbid clients from using \"/.well-known/jmap\" on a server until they have received some external positive indication that the server supports JMAP (via SRV or some other mechanism). --------------------------------------------------------------------------- The reference for Server-Sent events normatively points to the WHATWG HTML spec, which changes on a continuing basis. I don't think we've really worked out the mechanics of citing this kind of reference normatively; and JMAP takes the especially dangerous step of citing a specific *section* of the document, which may well change at arbitrary and potentially frequent intervals. There is, in fact, no guarantee that the cited \"text/event-stream\" mechanism will continue to exist in future versions of the WHATWG document (cf. the  element). In this particular case, I think we want to reference https://www.w3.org/TR/eventsource/  instead.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-01 11:53:40-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-25 13:38:30-08:00",
+        "text": "[After consultation with a security AD, I have removed one of my three DISCUSS items, as I now believe it pertains more broadly to the use of .well-known and is not specific to this document] Thanks to the authors for a well-laid-out and easy-to-read document. Thanks also to everyone who contributed to the completion of this work. I have three DISCUSS-level items, and a handful of other suggestions that are largely editorial --------------------------------------------------------------------------- \u00a77.3: >\u00a0 The client may add a query parameter called \"types\", with the value ... >\u00a0 The client may add a query parameter called \"closeafter\" with value ... >\u00a0 The client may add a query parameter called \"ping\", with a positive This form of specification of URI parameters is not allowed -- it contravenes the basic thesis of  BCP 190 ; section 2.4 of which stipulates: >\u00a0 Applications MUST NOT directly specify the syntax of queries, as this >\u00a0 can cause operational difficulties for deployments that do not >\u00a0 support a particular form of a query. ... >\u00a0 Extensions MUST NOT constrain the format or semantics of queries. Given that the base resource used to bootstrap the JMAP infrastructure already uses URI templates, it seems that they would be a good candidate for specifying a means of adding these parameters in a way that respects the basic principle that URI design ownership belongs to the domain administrator. --------------------------------------------------------------------------- The reference for Server-Sent events normatively points to the WHATWG HTML spec, which changes on a continuing basis. I don't think we've really worked out the mechanics of citing this kind of reference normatively; and JMAP takes the especially dangerous step of citing a specific *section* of the document, which may well change at arbitrary and potentially frequent intervals. There is, in fact, no guarantee that the cited \"text/event-stream\" mechanism will continue to exist in future versions of the WHATWG document (cf. the  element). In this particular case, I think we want to reference https://www.w3.org/TR/eventsource/  instead.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-01 11:53:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-02-04 02:53:54-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-02-20 11:37:52-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-04 12:23:53-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-20 11:37:52-08:00",
+        "text": "= Section 7.2 = There is something I'm not understanding about this: *deviceClientId*: \"String\" (immutable) An id that uniquely \u00a0 \u00a0 \u00a0 identifies the client + device it is running on.\u00a0 The purpose of \u00a0 \u00a0 \u00a0 this is to allow clients to identify which PushSubscription \u00a0 \u00a0 \u00a0 objects they created even if they lose their local state, so they \u00a0 \u00a0 \u00a0 can revoke or update them.\u00a0 This string MUST be different on \u00a0 \u00a0 \u00a0 different devices, and be different from other vendors.\u00a0 It SHOULD \u00a0 \u00a0 \u00a0 be easy to re-generate, not depend on persisted state.\u00a0 A secure \u00a0 \u00a0 \u00a0 hash that includes both a device id and vendor id is one way this \u00a0 \u00a0 \u00a0 could be achieved. \u00a0 \u00a0  I don't understand why device ID needs to be incorporated in order to achieve uniqueness here. Really it seems like what is needed is a unique ID per client, full stop. Even if you have the unlikely scenario of two clients running on the same device from the same vendor (say, one for mail and one for calendar), you would still want to support the ability for each client independently to be able to recover its push subscriptions, right? Some JMAP servers may have device IDs for other reasons anyway, but setting this up this way seems like it opens the door for clients to unnecessarily share device IDs with JMAP servers in other cases. Related to this, I don't understand the \"SHOULD ... not depend on persisted state.\" Why? I presume it would be straightforward to produce a unique client ID that did not have the device ID embedded if this requirement were not there.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-04 12:23:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-02-20 10:45:48-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 10:45:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-02-20 19:18:46-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 19:18:46-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-02-20 21:27:43-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-01 12:26:23-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-02-20 21:27:43-08:00",
+        "text": "There's a lot here, and I was not reading in the best of environments, so it's quite possible that I am just confused or missed something while reading.\u00a0 On the whole, this document is well-written and gives me a good picture of how things work.\u00a0 That said, there are still some places where it looks like we may need to have some discussions... This document (twice) has a MUST requirement for HTTP over TLS, which seems to exclude any future usage of HTTP/3 over QUIC.\u00a0 (It's also probably not needed to repeat the normative requirement in two places; I noted both in the COMMENT section.) Section 1.6.2 asserts that \"all data belong to a single account\".\u00a0 And yet, we seem to have PushSubscription objects in Sections 7.2.1 and 7.2.2 that disclaim any relationship to an account, which seems internally inconsistent.\u00a0 It's also unclear to me from the text in the latter sections what mechanism is used to determine whether a given request is authorized to see a given PushSubscription object.\u00a0 Is it supposed to be based on the authentication credentials to the API service directly, or a user abstraction, or something else? Section 5.3 \u00a0  Some records may hold references to other records (foreign keys). \u00a0  That reference may be set (via create or update) in the same request \u00a0  as the referenced record is created.\u00a0 To do this, the client refers \u00a0  to the new record using its creation id prefixed with a \"#\".\u00a0 The \u00a0  order of the method calls in the request by the client MUST be such \u00a0  that the record being referenced is created in the same or an earlier \u00a0  call.\u00a0 The server thus never has to look ahead.\u00a0 Instead, while I think this means you need to specify what order the server does the create, update, and destroy lists in -- that is, that all creates are done before all updates, etc.. Section 5.5 The Unicode Collation Algorithm ( is not listed in the IANA collation registry for internet application protocols; since the session object limits the collationAlgorithms to those in the registry, at present, it is not permitted to use that collation algorithm.\u00a0 It would seem that this document should stimulate the registration of that collation algorithm in some fashion (whether by explicitly doing so in its IANA Considerations or otherwise). Section 7.1 \u00a0  o\u00a0 *changed*: \"Id[TypeState]\" A map of _account id_ to an object \u00a0 \u00a0 \u00a0 encoding the state of data types that have changed for that \u00a0 \u00a0 \u00a0 account since the last StateChange object was pushed, for each of I don't see how these semantics provide the properties stated in Section 7, \"[i]t doesn't matter if some push events are dropped before they reach the client; it will still get all changes next time it syncs.\"\u00a0 In particular, if the client misses a state change for the CalendarEvent type, and then no other changes that affect CalendarEvents occur, the client will remain unaware of the changes to CalendarEvents, even if other push notifications for other types come in.\u00a0 Am I misunderstanding one or more of the behavior or stated guarantees? Section 7.2 \u00a0  As a push subscription causes the JMAP server to make a number of \u00a0  requests to a previously unknown endpoint, it can be used as a vector \u00a0  for launching a denial of service attack.\u00a0 To prevent this, when a \u00a0  subscription is created the JMAP server immediately sends a \u00a0  PushVerification object to that URL (see section 7.2.2).\u00a0 The JMAP \u00a0  server MUST NOT make any further requests to the URL until the client \u00a0  receives the push and updates the subscription with the correct \u00a0  verification code. I think the JMAP server also needs to rate-limit even the initial PushVerification generation, per-user(?), in order to close the DoS and annoyance-vector risks. \u00a0  o\u00a0 *keys*: \"Object|null\" (immutable) Client-generated encryption \u00a0 \u00a0 \u00a0 keys.\u00a0 If supplied the server MUST use them as specified in \u00a0 \u00a0 \u00a0 [ RFC8291 ] to encrypt all data sent to the push subscription.\u00a0 The \u00a0 \u00a0 \u00a0 object MUST have the following properties: \u00a0 \u00a0 \u00a0 *\u00a0 *p256dh*: the P-256 ECDH Diffie-Hellman public key as described \u00a0 \u00a0 \u00a0 \u00a0  in [ RFC8291 ], encoded in URL-safe Base64 representation as What's the crypto agility story for these web push encryption keys? (See  BCP 201 .) Also, when these expirations fire (e.g., for Basic Authentication credentials), we need a normative requirement to actually destroy the private credentials; there's a lot going on here so maybe I missed it, but I don't think I saw one.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-08 11:44:14-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-01 12:26:23-08:00",
+        "text": "Trimming down for things fixed in the -15... Section 5.3 \u00a0  Some records may hold references to other records (foreign keys). \u00a0  That reference may be set (via create or update) in the same request \u00a0  as the referenced record is created.\u00a0 To do this, the client refers \u00a0  to the new record using its creation id prefixed with a \"#\".\u00a0 The \u00a0  order of the method calls in the request by the client MUST be such \u00a0  that the record being referenced is created in the same or an earlier \u00a0  call.\u00a0 The server thus never has to look ahead.\u00a0 Instead, while I think this means you need to specify what order the server does the create, update, and destroy lists in -- that is, that all creates are done before all updates, etc.. Section 7.1 \u00a0  o\u00a0 *changed*: \"Id[TypeState]\" A map of _account id_ to an object \u00a0 \u00a0 \u00a0 encoding the state of data types that have changed for that \u00a0 \u00a0 \u00a0 account since the last StateChange object was pushed, for each of I don't see how these semantics provide the properties stated in Section 7, \"[i]t doesn't matter if some push events are dropped before they reach the client; it will still get all changes next time it syncs.\"\u00a0 In particular, if the client misses a state change for the CalendarEvent type, and then no other changes that affect CalendarEvents occur, the client will remain unaware of the changes to CalendarEvents, even if other push notifications for other types come in.\u00a0 Am I misunderstanding one or more of the behavior or stated guarantees? Section 7.2 \u00a0  o\u00a0 *keys*: \"Object|null\" (immutable) Client-generated encryption \u00a0 \u00a0 \u00a0 keys.\u00a0 If supplied the server MUST use them as specified in \u00a0 \u00a0 \u00a0 [ RFC8291 ] to encrypt all data sent to the push subscription.\u00a0 The \u00a0 \u00a0 \u00a0 object MUST have the following properties: \u00a0 \u00a0 \u00a0 *\u00a0 *p256dh*: the P-256 ECDH Diffie-Hellman public key as described \u00a0 \u00a0 \u00a0 \u00a0  in [ RFC8291 ], encoded in URL-safe Base64 representation as What's the crypto agility story for these web push encryption keys? (See  BCP 201 .) Also, when these expirations fire (e.g., for Basic Authentication credentials), we need a normative requirement to actually destroy the private credentials; there's a lot going on here so maybe I missed it, but I don't think I saw one.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-08 11:44:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-02-20 15:45:25-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 15:45:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-02-16 16:17:32-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-06 20:43:20-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-16 16:17:32-08:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D4155 I believe I have found a security issue, noted below. In addition, I have noted a potential interop issue. DETAIL S 2. >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"urn:ietf:params:jmap:contacts\", while the second account would >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 just have the last of these.\u00a0 Attempts to use the methods >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 defined in a specification with one of the accounts that does >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 not contain those data types are rejected with an >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 _accountNotSupportedByMethod_ error (see section 3.5.2: method- >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 level errors). What happens if this changes after the user has logged in. So, for instance, I log in and am told that account X has contacts, but later calendars get added. Do requests have to fail? S 7.2.2. >\u00a0 \u00a0 \u00a0 o\u00a0 *pushSubscriptionId*: \"String\" The id of the push subscription >\u00a0 \u00a0 \u00a0 \u00a0  that was created. >\u00a0   >\u00a0 \u00a0 \u00a0 o\u00a0 *verificationCode*: \"String\" The verification code to add to the >\u00a0 \u00a0 \u00a0 \u00a0  push subscription.\u00a0 This MUST contain sufficient entropy to avoid >\u00a0 \u00a0 \u00a0 \u00a0  the client being able to brute force guess the code. This doesn't actually guarantee permission. Consider the case where the client provides a push URL for some sort of open server upload endpoint. The client could then read the verification code off that endpoint and confirm the push subscription. Off the top of my head, requiring the push endpoint to respond in-band with a function of the code would be better.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-06 20:59:11-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-06 20:43:20-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-06 20:59:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-03-07 02:11:14-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-07 02:11:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-03-07 01:09:30-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-07 01:09:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-02-21 05:07:50-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-02-21 05:24:37-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-21 05:07:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-03-23 09:07:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-21 05:24:37-08:00",
+        "text": "Sorry, I earlier forgot one point I would like to quickly discuss: The jmap service name registration only requests registration for tcp while H/3 could be used as well which will work over udp. Maybe it would be more future-proof to also add an entry for udp? Further, there is a note that says that this registration will change an existing entry. Please note that for removing the existing entry, IANA might still need to contact the original assignee to ask for approval. However, this is just a processing issue and shouldn't lead to a real problem. And finally a comment related to my above note about H/3, the document talks two times about \"keeping the TCP connection open\". To be future proof, I would maybe recommend to change the wording to \"keeping the transport connection open\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-23 09:07:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-02-18 20:34:33-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-18 20:34:33-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-02-19 19:45:58-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-19 19:45:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-02-20 09:23:31-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-04 02:53:54-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-03-23 10:02:30-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 09:23:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8620",
+  "evaluation_end": "2019-03-23 10:02:30-07:00",
+  "evaluation_start": "2019-02-04 02:53:54-08:00"
+}

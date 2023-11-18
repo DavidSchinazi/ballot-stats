@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-01 23:46:45-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 23:46:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-01 06:15:02-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-02 08:12:45-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-05-01 06:15:02-07:00",
+        "text": "Thank you for a well written document. It was a pleasure to read. I have a small set of issues that I would like to be fixed before recommending approval of this document. 1) In 3.1: \u00a0  DOTS data channel configuration information as well as state \u00a0  information can be retrieved with the GET method.\u00a0 An HTTP status- \u00a0  line header field is returned for each request to report success or I know this text is copied from  RFC 8040 , but \"status-line header field\" is not correct. It is either \"status-line\" or \"header field\". (A header field always has \":\" in it and HTTP status-line doesn't). I think you meant the former. If I misundestood and this is a part of payload itself, then your document should have an example. \u00a0  failure for RESTCONF operations (Section 5.4 of [ RFC8040 ]).\u00a0 The \u00a0  \"error-tag\" provides more information about encountered errors \u00a0  (Section 7 of [ RFC8040 ]). 2) 5.1.\u00a0 Registering DOTS Clients \u00a0  In order to make use of DOTS data channel, a DOTS client MUST \u00a0  register to its DOTS server(s) by creating a DOTS client ('dots- \u00a0  client') resource.\u00a0 To that aim, DOTS clients SHOULD send a POST \u00a0  request (shown in Figure 11). \u00a0 \u00a0 POST /restconf/data/ietf-dots-data-channel:dots-data HTTP/1.1 \u00a0 \u00a0 Host: {host}:{port} \u00a0 \u00a0 Content-Type: application/yang-data+json \u00a0 \u00a0 { \u00a0 \u00a0 \u00a0 \"ietf-dots-data-channel:dots-client\": [ \u00a0 \u00a0 \u00a0 \u00a0 { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"cuid\": \"string\" \u00a0 \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 \u00a0 ] \u00a0 \u00a0 } Your example is syntactically invalid, as you need an empty line after the Content-Type header field (before the payload). The same issue is pretty much in every example in your document. 3) In the same section 5.1: \u00a0  DOTS servers can identify the DOTS client domain using the 'cdid' \u00a0  parameter or using the client's DNS name specified in the Subject \u00a0  Alternative Name extension's dNSName type or SRV-ID in the client \u00a0  certificate. SRV-ID needs a Normative reference to  RFC 6125 . Also, can you give an example of how SRV-ID is going to be used?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-09 09:29:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-02 08:12:45-07:00",
+        "text": "Thank you for a well written document. It was a pleasure to read. I have a small set of issues that I would like to be fixed before recommending approval of this document. 1) resolved 2) 5.1.\u00a0 Registering DOTS Clients \u00a0  In order to make use of DOTS data channel, a DOTS client MUST \u00a0  register to its DOTS server(s) by creating a DOTS client ('dots- \u00a0  client') resource.\u00a0 To that aim, DOTS clients SHOULD send a POST \u00a0  request (shown in Figure 11). \u00a0 \u00a0 POST /restconf/data/ietf-dots-data-channel:dots-data HTTP/1.1 \u00a0 \u00a0 Host: {host}:{port} \u00a0 \u00a0 Content-Type: application/yang-data+json \u00a0 \u00a0 { \u00a0 \u00a0 \u00a0 \"ietf-dots-data-channel:dots-client\": [ \u00a0 \u00a0 \u00a0 \u00a0 { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"cuid\": \"string\" \u00a0 \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 \u00a0 ] \u00a0 \u00a0 } Your example is syntactically invalid, as you need an empty line after the Content-Type header field (before the payload). The same issue is pretty much in every example in your document. 3) resolved",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-09 09:29:41-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-02 05:29:24-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-02 05:29:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-01 17:17:36-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 17:17:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-05-01 11:37:04-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 11:37:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-04-02 14:58:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-02 14:58:30-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-04-29 10:45:52-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-29 10:45:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-05-02 06:44:37-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-02 06:44:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-02 04:24:39-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-07-22 05:10:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-02 04:24:39-07:00",
+        "text": "I support Suresh's discuss that the process of how it is indicated if a 1 or 2 byte mask is used is not clear. However, I would additionally like to discuss why this bit mask is needed at all. The TCP flags field in  RFC8519  is already defined as bits. Storing these bits in a signal 8 bit field and applying a matching operation is implementation specific only and doesn't require any changes to the YANG model. I would also quickly like to discuss the use of keep-alives as described in Section 3.1:  \"While the communication to the DOTS server is \u00a0  quiescent, the DOTS client MAY probe the server to ensure it has \u00a0  maintained cryptographic state.\u00a0 Such probes can also keep alive \u00a0  firewall and/or NAT bindings.\u00a0 A TLS heartbeat [ RFC6520 ] verifies \u00a0  that the DOTS server still has TLS state by returning a TLS message.\" I understood that multiple requests can and should be send in the same connection, however, I would expect that those requests are send basically right after each other, such as a look-up and then change of the config. I don't see a need to keep up the connection for a long time otherwise. Especially any action performed are (other than in the signal channel case) not time critical. Therefore I would rather recommend to close and reopen connections and not recommend to use keep-alives at all.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-22 05:10:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-04-30 11:32:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-05-01 17:44:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-30 11:32:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 17:44:39-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-05-01 13:34:34-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-05-21 20:38:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-01 13:34:34-07:00",
+        "text": "* Section 4.3 The processing requirements for the tcp flags bitmask is not at all clear. Specifically how should an implementation use the values in the flags, operator and the bitmask fields in the tcp subtree to figure out if a given packet matches. An example here could be very helpful. \"Bitmask values can be encoded as a 1- or 2-byte bitmask.\"  How? The bitmask field is a uint16. How would a client indicate a 1 byte bitmask?  [Also note that there are *nine* flags defined for TCP including the experimental NS bit that occurs as bit 7 of Octet 12 and a 1 byte bitmask will not catch them all]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-21 20:38:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-05-01 12:21:09-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:29-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-13 07:23:32-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 12:21:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8783",
+  "evaluation_end": "2019-08-13 07:23:32-07:00",
+  "evaluation_start": "2019-04-02 14:58:29-07:00"
+}

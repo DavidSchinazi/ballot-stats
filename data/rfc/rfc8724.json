@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-20 23:10:19-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 23:10:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-19 21:20:36-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 21:20:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-21 18:03:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 18:03:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-20 09:51:51-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 09:51:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-21 20:20:54-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 20:20:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-21 10:21:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-11-01 15:39:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-21 10:21:30-07:00",
+        "text": "I wavered a lot about whether to ballot Discuss or No Objection; there are a lot of important technical and clarity-of-writing points that remain in the Comment section, but only a few points seemed to merit elevating to the Discuss level.\u00a0 That said, this remains a generally clear and useful document, so I'm looking forward to seeing it further improved. (1) I'm concerned about Section 8.2.4's recommendation for the use of a sequential counter: \u00a0 \u00a0 \u00a0 A sequence counter that is incremented for each new fragmented \u00a0 \u00a0 \u00a0 SCHC Packet, counting from 0 to up to (2^T)-1 and wrapping back to \u00a0 \u00a0 \u00a0 0 is RECOMMENDED for maximum traceability and avoidance of \u00a0 \u00a0 \u00a0 ambiguity. It seems like there may be substantial privacy and security considerations, here --  draft-gont-numeric-ids-history  has some background about similar cases in the past and links to other documents with analysis and guidance for future protocols.\u00a0 Shall we discuss to what extent those concerns apply here? (2) In Section 8.3.1.2, does the use of the All-1 fragment to signify the end of the packet, combined with the lack of an explicit \"number of fragments\" field, imply that the RCS value is the only thing (at this protocol level) preventing an attacker from inserting, from off-path, additional fragments between the penultimate \"legitimate\" fragment and the final fragment?\u00a0 (I understand that the LPWAN radio technologies generally do have some physical-layer cryptographic mechanisms, though they sometimes involve shared symmetric keys.)\u00a0 If the RCS is to play this pivotal a role, we need to at least document that, and arguably give stronger guidance about how it should be computed. (3) There are several places (noted, for the most part, in the Comment section) where we say that some field is optional.\u00a0 I think this means \"optional at the profile level\" as opposed to \"optional at runtime\", but we should be clear in the document about that. (4) There's an internal inconsistency in Section 8.4.3: \u00a0  In ACK-on-Error mode, windows are used.\u00a0 All tiles MUST be of equal \u00a0  size, except for the last one, which MUST be of the same size or \u00a0  smaller than the regular ones.\u00a0 If allowed in a Profile, the \u00a0  penultimate tile MAY be exactly one L2 Word smaller than the regular \u00a0  tile size. We need to reword this, as the subsequent text contradicts the initial \"MUST\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-01 15:39:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-20 13:26:42-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 13:26:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-21 06:17:41-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-21 06:46:05-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-08-21 06:17:41-07:00",
+        "text": "Thank you for the hard work put into this extensive document. I have a couple of DISCUSSes and COMMENTs, all easy to be fixed except perhaps the DISCUSS around secrion 10.7.2. Regards, -\u00e9ric == DISCUSS == -- Section 3.2 -- What is the expected behavior when the \"link identifier data item\" does not match the length of this field? -- Section 10.3 -- I am not a transport expert but I wonder whether the text \"ECN functionality depends on both bits of the ECN field,...\" is at the right place? Section 10.2 would appear better to me but again I am not an transport/ECN expert.  -- Section 10.7.2 -- It is unclear to me how the gateway and the device can share the required 'shared secret' and especially the 'DAD counter' of  RFC 7217 ... This render the 2 paragraph confusing at best and possibly impossible to implement.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-22 14:47:27-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-21 06:46:05-07:00",
+        "text": "Thank you for the hard work put into this extensive document. I have a couple of DISCUSSes and COMMENTs, all easy to be fixed except perhaps the DISCUSS around secrion 10.7.2. Regards, -\u00e9ric == DISCUSS == -- Section 10.7.2 -- It is unclear to me how the gateway and the device can share the required 'shared secret' and especially the 'DAD counter' of  RFC 7217 ... This render the 2 paragraph confusing at best and possibly impossible to implement.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-22 14:47:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-21 09:38:03-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 09:38:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-20 10:52:24-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-11-11 07:33:31-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-20 10:52:24-07:00",
+        "text": "(1) Section 12.\u00a0 The introductory text needs a bit more precision. Specifically: -- Per \u201cWireless networks are subjects to various sorts of attacks , which are not specific to SCHC.\u201d, which other security considerations are being cited here?\u00a0 An alternative construct would be to state that \u201cSCHC Packets rely on the security mechanisms of \u2026 [insert relevant references]\u201d -- Section 12.\u00a0 \u201c[W]e\u2019ll assume that an attacker was able to break into the network\u201d, what is that precisely?\u00a0 Is this simply join the network? -- Section 12.\u00a0 Per \u201cOur analysis equally applies to legitimate nodes \u2018going crazy\u2019\u201d, what does that mean \u2013 compromised nodes? unexplained behavior?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-11 07:33:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-08 19:04:48-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-08 19:04:48-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-12-11 14:59:39-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-08 19:04:46-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8724",
+  "evaluation_end": "2019-12-11 14:59:39-08:00",
+  "evaluation_start": "2019-08-08 19:04:46-07:00"
+}

@@ -1,0 +1,261 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-09-18 22:43:23-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-18 22:43:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-16 04:04:20-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-16 04:04:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-09-18 10:47:00-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-18 10:47:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-09-17 18:54:38-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-17 18:54:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-14 14:53:06-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-14 14:53:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-09-17 16:44:31-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-09-26 17:51:34-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-17 16:44:31-07:00",
+        "text": "(1)  draft-ietf-pce-association-group  notes that \"PCEP extensions that define a new association type should clarify the relationship between the SVEC object and the association type, if any\".\u00a0 Where do we do so for the path protection association type? (2) Section 3.2 says: \u00a0 \u00a0 \u00a0 Protection Type (PT): 6 bits - This field is as defined in \u00a0 \u00a0 \u00a0 Section 14.1 of [ RFC4872 ] to indicate the LSP protection type in \u00a0 \u00a0 \u00a0 use. There doesn't seem to be a registry created by  RFC 4872  to track these PT values, so I assume that the way to allocate a new value is \"standards-track RFC that Updates:  RFC 4872 \".\u00a0 Is that also the way to allocate new PT values for PPAG usage?\u00a0 How would someone updating  RFC 4872  to allocate a new type know to consider/document whether it applies for PPAG usage? (3) In Section 4.3: \u00a0  A PCE can create/update working and protection LSPs independently. \u00a0  As specified in [ I-D.ietf-pce-association-group ], Association Groups \u00a0  can be created by both the PCE and the PCC.\u00a0 Further, a PCE can The requirement that source, destination, and tunnel ID of all LSPs within a PPAG MUST be the same is new to this document, so I think we need to specify error handling for when attempts to update LSPs independently would violate that invariant (presumably in Section 4.5). (4) In Section 6.3: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 IANA is requested to allocate new \u00a0  error values within the \"PCEP-ERROR Object Error Types and Values\" \u00a0  sub-registry of the PCEP Numbers registry, as follows: The following table only lists Error-values.\u00a0 What Error-type(s) should they be associated with? (5) We don't say which objects the PPAG TLV can appear in.\u00a0 (Section 3.2 says \"[t]he Path Protection Association TLV is an optional TLV for use with the Path Protection Association Type\", but it's hard to interpret that as meaning \"for use [only] with the ASSOCIATION object defined in draft-ietf-pce-association-group \", especially since there is a \"path protection association type\" already (and it's a codepoint in the \"ASSOCIATION Type Field\" registry). (6) I'm not sure if a change to the document is needed here, but perhaps some discussion is in order: we say that a given LSP can belong to more than one PPAG, but only allow one PPAG TLV per [some context that remains unclear; see (5)].\u00a0 I don't have a good handle for whether these two requirements are potentially in conflict: that is, whether a single PPAG TLV would have to specify the flags that apply for both PPAGs that a given LSP is a member of, or if the containing objects serve to scope the PPAG TLV flags' interpretation. (7) Do the Protection Type fields of the PPAG TLV in the various LSPs that are members of the same PPAG need to match, in the same way that the source/destination/tunnel-ID do?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-26 17:51:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-09-12 13:06:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-12 13:06:33-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-09-18 14:09:40-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-18 14:09:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-09-19 00:37:45-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-19 00:37:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-09-19 02:43:10-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-19 02:43:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-09-14 04:15:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-14 04:15:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-09-18 14:01:18-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-18 14:01:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-22 11:35:07-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-12 13:06:31-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8745",
+  "evaluation_end": "2019-10-22 11:35:07-07:00",
+  "evaluation_start": "2019-09-12 13:06:31-07:00"
+}

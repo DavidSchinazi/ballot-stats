@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-04-10 16:40:03-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 16:40:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-04-10 10:49:02-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 10:49:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-04-10 13:24:36-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-23 10:43:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-10 13:24:36-07:00",
+        "text": "(1) This first point is a cross-document DISCUSS.\u00a0 In short, the assumptions in this document about what an MCC is responsible for are not in line with the corresponding IGP drafts for OSPF [1][2] and IS-IS [3].\u00a0 This misalignment must be resolved before any of these documents are published. [Note: I'll start a thread with the corresponding WGS, Authors, Shepherds, Chairs and ADs.\u00a0 Let's please discuss this point there.] This document uses the following definition in \u00a72: \"We call \"MPLS Control Plane Client (MCC)\" any control plane entity installing forwarding entries in the MPLS data plane.\u00a0 IGPs with SR extensions...are examples of MCCs.\"\u00a0  The focus of the IGP drafts is on the transport of the SR information, and not on other functions (see below).\u00a0 Which component is responsible for what is the point that needs clarification -- either in this document, the IGP drafts, or both. These are some specific cases: (1.1) \u00a72.4 (Mapping a SID Index to an MPLS label): \"The following rules MUST be applied by the MCC when calculating the MPLS label value corresponding the SID index value \"I\".\"\u00a0 There's nothing in the IGP extension documents that point at this set of rules, and only a passing reference in the OSPF documents about outgoing labels.\u00a0  (1.2) \u00a72.5 (Incoming Label Collision) also assumes more functions from an MCC than what the IGP documents do.\u00a0 For example: \"Within an MCC, apply tie-breaking rules to select one FEC only and assign the label to it.\" (1.3) \u00a72.8 also expects work by the IGPs: \"the MCC is responsible for downloading the correct label value to FIB\"...in this case not just calculating the label, but installing it in the FIB. (1.4) \u00a72.10.1: \"The method by which the MCC on router \"R0\" determines that PUSH or CONTINUE operation must be applied using the SID \"Si\" is beyond the scope of this document. An example of a method to determine the SID \"Si\" for PUSH operation is the case where IS-IS [ I-D.ietf-isis-segment-routing-extensions ]...\" Note that the IS-IS draft (or the OSPF ones, for that matter) don't talk about how to determine the operation -- if that is out of scope of this document, then where is it specified? (1.5) From \u00a72: \u00a0  An implementation SHOULD check that an IGP node-SID is not associated \u00a0  with a prefix that is owned by more than one router within the same \u00a0  routing domain. If so, it SHOULD NOT use this Node-SID, MAY use \u00a0  another one if available, and SHOULD log an error. rfc8402  reads (\u00a73.2): \"An IGP Node-SID MUST NOT be associated with a prefix that is owned by more than one router within the same routing domain.\"\u00a0 The text above is not in line with that (MUST NOT vs SHOULD).\u00a0 Also, how can \"SHOULD check\" be Normatively enforced?\u00a0  Both sentences above seem to be trying to specify a behavior for the IGPs.\u00a0  [1]  https://tools.ietf.org/html/draft-ietf-ospf-segment-routing-extensions [2]  https://tools.ietf.org/html/draft-ietf-ospf-ospfv3-segment-routing-extensions [3]  https://tools.ietf.org/html/draft-ietf-isis-segment-routing-extensions \u00a0  (2) \u00a72.5.1: According to \u00a72.5, a \"tie-breaking rule MUST be deterministic\".\u00a0 However, the specification of the default rules are not: the first step uses the administrative distance, but the specification says that \"the FEC types are ordered using the default administrative distance ordering defined by the implementation\"...and later that the \"user SHOULD ensure that the same administrative distance preference is used on all routers\".\u00a0 The combination of different implementations and the lack of an absolute requirement to ensure consistency can easily be non-deterministic.\u00a0  This point is related to the text in \u00a72.6 which talks about how \"the ingress node MUST resolve\" collisions the same way.\u00a0 Because of the lack of an absolute requirement for consistency, this \"MUST\" doesn't guarantee the same result. Also related is this text in \u00a72.5.1: \"All routers in a routing domain SHOULD use the same tie-breaking rules to maximize forwarding consistency.\"\u00a0 When would all routers not use the same rules?\u00a0 It seems to me that forwarding consistency is very important and would want to be maximized all the time.\u00a0 IOW, why not use MUST? I'm making this point a DISCUSS item because it is directly related to the ability of multiple implementations to interoperate.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-23 10:43:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-04-09 11:57:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-09 11:57:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-04-10 15:03:47-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-04-22 21:33:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-10 15:03:47-07:00",
+        "text": "(pro forma) Six authors is more than five, which per  RFC 7322  may require discussion. I have a few questions about whether we need to have more stringent or more specific requirements listed. In Section 2: \u00a0  An implementation SHOULD check that an IGP node-SID is not associated \u00a0  with a prefix that is owned by more than one router within the same \u00a0  routing domain. If so, it SHOULD NOT use this Node-SID, MAY use \u00a0  another one if available, and SHOULD log an error. While it's not entirely clear to me that we need to mandate checking (the \"SHOULD check\"), I have a hard time understanding why we would allow a known-bad SID to be used (\"SHOULD NOT use this Node-SID\"). Shouldn't that be a \"MUST NOT\", since using it could break the SR abstraction? In Section 2.5: \u00a0  5. The remaining FECs with the default algorithm (see the \u00a0 \u00a0 \u00a0 specification of prefix-SID algorithm [ RFC8402 ]) are installed in \u00a0 \u00a0 \u00a0 the FIB natively, such as pure IP entries in case of Prefix FEC, \u00a0 \u00a0 \u00a0 without any incoming labels corresponding to their SIDs. The \u00a0 \u00a0 \u00a0 remaining FECs with a non-zero algorithm are not installed in the \u00a0 \u00a0 \u00a0 FIB. I didn't really find where in  RFC 8402  we assigned numerical values to the prefix-SID algorithms, such that \"non-zero algorithm\" was well-defined.\u00a0 Should I be looking somewhere else for this? In Section 2.5.1: I left several notes in the COMMENT section, but I think I can summarize the point to \"it seems like we are defining a mapping from attributes of a given FEC/description to a byte string and applying an ordering to that byte string.\u00a0 But we don't fully specify how all the bits are encoded in that byte string, and it looks like we can end up with byte strings of a different length, so the comparison rule is not necessarily clear in that case.\"\u00a0 This seems fairly related to Alvaro's point (2). In Appendix A.1 \u00a0 \u00a0 \u00a0  | Local IGP SID allocated dynamically by R2\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  for its \"north\" adjacency to R3: 9001 | \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  for its \"north\" adjacency to R3: 9003 | \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  for its \"south\" adjacency to R3: 9002 | \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  for its \"south\" adjacency to R3: 9003 | 9003 is duplicated for different adjacencies?\u00a0 Isn't that a strongly disrecommended scenario?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-22 21:33:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-04-09 14:07:35-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-04-10 12:35:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-09 14:07:35-07:00",
+        "text": "I didn't see a fix/response to one of Sasha's identified items in his RTG Dir review: - 1.\u00a0 \u00a0 The text in Section 1 states \u201cAn implementation MAY check that an IGP node-SID is not associated with a prefix that is owned by more than one router within the same routing domain, If so, it SHOULD NOT use this Node-SID, MAY use another one if available, and SHOULD log an error\u201d. Sasha suggested MAY/s/SHOULD or MUST,\u00a0 saying this aligns with Section 3.2/RFC8402, which uses the wording \"MUST NOT\" be used by another router. I agree with Sasha, to align, it would be a \"MUST\", so why the softer requirement? Also, how does an implementation \"check\"? Wouldn't it be simply \"An implementation MUST ensure that an..\"? Or the operator (NMS) needs to ensure (e.g.  RFC8402  says typically allocated by policy of the operator)?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 12:35:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-04-10 07:44:06-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 07:44:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-04-09 02:43:26-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-09 02:43:26-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-04-05 05:29:39-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-05 05:29:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-04-04 01:01:57-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-04 01:01:57-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-04-05 02:43:46-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-05 02:43:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-04-10 12:51:03-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 12:51:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-04-10 18:35:17-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 18:35:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-04-10 14:51:02-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 01:01:56-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-05-28 10:45:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 14:51:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8660",
+  "evaluation_end": "2019-05-28 10:45:13-07:00",
+  "evaluation_start": "2019-04-04 01:01:56-07:00"
+}

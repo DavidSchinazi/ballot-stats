@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-01-08 23:33:22-08:00",
+        "end_reason": "new_position",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-01-08 23:34:03-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-01-08 23:33:22-08:00",
+        "text": "Thanks to everyone who is put work into defining this mechanism. I think it will be very useful to have a solution for integrating push mechanisms into SIP networks. I've identified three issues that I think need to be addressed in the current document before it can move forward, and a fourth serious flaw that I call out in my comments below. --------------------------------------------------------------------------- It's nice that this document has considered the impact of inbound mid-dialog messages in long-lived dialogs. However, it appears to have a major hole in it: handing of outbound messages for the purpose of maintaining soft-state in those dialogs isn't handled correctly. In particular: networks that deploy this mechanism will cause SUBSCRIBE dialogs to time out and be destroyed while they are a still in use. Additionally, if  RFC 4028  (session timers) is negotiated, then INVITE dialogs will suffer the same fate. I can think of a couple of ways for these situations to be handled, but they need explicit text in the document. One approach would be to specify that the User Agent selects its requested \"Expires\" value in its registration to be the smallest value before its set of subscriptions and session timers needs to be refreshed. This would cause a push notification to happen to prevent registration timeout, and the client could refresh the other soft state at that time. Complications arise if the registrar responds with a 483 (Interval too Brief), and we'd need to find a solution for that. Another approach would be for the clients to refresh all soft state whenever they send a registration, and set the timeout for that soft state to be equal to or greater than the registration timeout. A complication could arise if the notifier or the peer in an invite dialog shortens the requested time, and we'd need to find a solution for that. A third approach would be getting the proxy involved in some way -- either by requiring it to observe subscription and session timer timeouts and requiring it to send push notifications prior to their expiration, or by an explicit communication between the UA and the proxy that indicates when the next push notification should be scheduled. If the latter approach is taken, I would suggest that it needs to be taken for REGISTER messages as well. I really don't think this mechanism is feasibly deployable without a solution to this problem. --------------------------------------------------------------------------- \u00a74.1: >\u00a0 For privacy and security reasons, the UA MUST NOT include the SIP URI >\u00a0 parameters defined in this document in non-REGISTER request, to >\u00a0 prevent the PNS information associated with the UA from reaching the >\u00a0 remote peer. This seems to ignore the availability of Contact URI parameters via  RFC 3680 subscriptions. This would seem to impose a requirement on Registrars to strip this information before making it available to any other party (which, in turn, requires that the system have explicit Registrar *and* Proxy support). As far as I can tell, the system so far has not required explicit proxy support (and there's certainly no mechanism built-in that ensures that a proxy has any special handling regarding this mechanism). If the PNS information is sensitive, and cannot be allowed to leak out to other users, then we need some way to ensure the registrar has provided positive confirmation that it will not do so before allowing it to come into possession of them. --------------------------------------------------------------------------- \u00a74.2: >\u00a0 The UA can do so by only including the pn-provider >\u00a0 SIP URI parameter in the SIP Contact header field URI of the REGISTER >\u00a0 request, but without including the pn-prid SIP URI parameter. Unless I'm mistaken, this is a barrier to interoperation. It's not 100% clear, but I suspect the intended implication is that the pn-provider parameter here will contain a single value? The syntax of the parameter certainly seems to imply that. This seems to be a pretty big problem, since it presupposes that the client will know which PNSes the Proxy supports.\u00a0 Consider, for example, an iOS client that can use any of  RFC 8030 , FCM, and APN (cf  https://firebase.google.com/docs/cloud-messaging/ios/client ). If the client doesn't know a priori what the proxy supports (and this entire section only makes sense if that's true), then it won't know which of those three services to indicate in its REGISTER request. If it guesses wrong, this mechanism simply fails. I think you need a different discovery mechanism here -- either have one that has the client offering multiple PNS protocols and the proxy responding with one, or have one in which the proxy indicates all of its supported services in a response, and the client chooses one to use in its next REGISTER message.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-01 09:15:06-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-01-08 23:34:03-08:00",
+        "text": "Thanks to everyone who is put work into defining this mechanism. I think it will be very useful to have a solution for integrating push mechanisms into SIP networks. I've identified three issues that I think need to be addressed in the current document before it can move forward, and a fourth serious flaw that I call out in my comments below. --------------------------------------------------------------------------- It's nice that this document has considered the impact of inbound mid-dialog messages in long-lived dialogs. However, it appears to have a major hole in it: handing of outbound messages for the purpose of maintaining soft-state in those dialogs isn't handled correctly. In particular: networks that deploy this mechanism will cause SUBSCRIBE dialogs to time out and be destroyed while they are still in use. Additionally, if  RFC 4028  (session timers) is negotiated, then INVITE dialogs will suffer the same fate. I can think of a couple of ways for these situations to be handled, but they need explicit text in the document. One approach would be to specify that the User Agent selects its requested \"Expires\" value in its registration to be the smallest value before its set of subscriptions and session timers needs to be refreshed. This would cause a push notification to happen to prevent registration timeout, and the client could refresh the other soft state at that time. Complications arise if the registrar responds with a 483 (Interval too Brief), and we'd need to find a solution for that. Another approach would be for the clients to refresh all soft state whenever they send a registration, and set the timeout for that soft state to be equal to or greater than the registration timeout. A complication could arise if the notifier or the peer in an invite dialog shortens the requested time, and we'd need to find a solution for that. A third approach would be getting the proxy involved in some way -- either by requiring it to observe subscription and session timer timeouts and requiring it to send push notifications prior to their expiration, or by an explicit communication between the UA and the proxy that indicates when the next push notification should be scheduled. If the latter approach is taken, I would suggest that it needs to be taken for REGISTER messages as well. I really don't think this mechanism is feasibly deployable without a solution to this problem. --------------------------------------------------------------------------- \u00a74.1: >\u00a0 For privacy and security reasons, the UA MUST NOT include the SIP URI >\u00a0 parameters defined in this document in non-REGISTER request, to >\u00a0 prevent the PNS information associated with the UA from reaching the >\u00a0 remote peer. This seems to ignore the availability of Contact URI parameters via  RFC 3680 subscriptions. This would seem to impose a requirement on Registrars to strip this information before making it available to any other party (which, in turn, requires that the system have explicit Registrar *and* Proxy support). As far as I can tell, the system so far has not required explicit proxy support (and there's certainly no mechanism built-in that ensures that a proxy has any special handling regarding this mechanism). If the PNS information is sensitive, and cannot be allowed to leak out to other users, then we need some way to ensure the registrar has provided positive confirmation that it will not do so before allowing it to come into possession of them. --------------------------------------------------------------------------- \u00a74.2: >\u00a0 The UA can do so by only including the pn-provider >\u00a0 SIP URI parameter in the SIP Contact header field URI of the REGISTER >\u00a0 request, but without including the pn-prid SIP URI parameter. Unless I'm mistaken, this is a barrier to interoperation. It's not 100% clear, but I suspect the intended implication is that the pn-provider parameter here will contain a single value? The syntax of the parameter certainly seems to imply that. This seems to be a pretty big problem, since it presupposes that the client will know which PNSes the Proxy supports.\u00a0 Consider, for example, an iOS client that can use any of  RFC 8030 , FCM, and APN (cf  https://firebase.google.com/docs/cloud-messaging/ios/client ). If the client doesn't know a priori what the proxy supports (and this entire section only makes sense if that's true), then it won't know which of those three services to indicate in its REGISTER request. If it guesses wrong, this mechanism simply fails. I think you need a different discovery mechanism here -- either have one that has the client offering multiple PNS protocols and the proxy responding with one, or have one in which the proxy indicates all of its supported services in a response, and the client chooses one to use in its next REGISTER message.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-01 09:15:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-01-09 04:00:05-08:00",
+        "end_reason": "new_position",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-01-10 09:45:53-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-01-09 04:00:05-08:00",
+        "text": "I am generally excited about addition of push notifications to SIP. I have a couple of comments (and a few less serious ones) that I would like to discuss before recommending approval of this document: 10.\u00a0 pn-provider, pn-param and pn-prid URI Parameters for Apple Push \u00a0 \u00a0  Notification service \u00a0  When the Apple Push Notification service (APNs) is used, the PNS- \u00a0  related SIP URI parameters are set as described below. \u00a0  The value of the pn-provider URI parameter is \"apns\". \u00a0  Example: pn-provider = apns Spaces are not allowed in URIs unencoded, so your example is misleading. I suggest you change it to \"pn-provider=apns\" (i.e. delete space before and after \"=\"). Similar comment about 2 other parameter examples defined in this section. 10.\u00a0 pn-provider, pn-param and pn-prid URI Parameters for Apple Push \u00a0 \u00a0  Notification service \u00a0  The value of the pn-param URI parameter is a string that is composed \u00a0  by two values, separated by a period (.): Team ID and Topic.\u00a0 The \u00a0  Team ID is provided by Apple and is unique to a development team. I assume it doesn't contain any periods? \u00a0  The Topic consists of the Bundle ID, which uniquelly identifies an \u00a0  appliciation, and a service value that identifies a service \u00a0  associated with the application, separated by a period (.).\u00a0 For VoIP \u00a0  applications the service value is \"voip\". How many periods are used in the value? If your example below is correct, can you clarify that Bundle ID itself contains periods? \u00a0  Example: pn-param = DEF123GHIJ.com.yourcompany.yourexampleapp.voip",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-10 09:45:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-01-09 07:26:12-08:00",
+        "end_reason": "new_position",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-09 07:26:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-01-09 07:48:35-08:00",
+        "end_reason": "new_position",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-09 07:48:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-12-21 15:44:38-08:00",
+        "end_reason": "new_position",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-01-09 13:19:57-08:00",
+        "end_reason": "new_position",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-09 13:19:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-01-06 15:28:56-08:00",
+        "end_reason": "new_position",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-26 01:42:24-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-01-06 15:28:56-08:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D5114 DETAIL S 5.3.2. >\u00a0 \u00a0 \u00a0 request) addressed towards a SIP UA, if the Request-URI of the >\u00a0 \u00a0 \u00a0 request contains a pn-provider, a pn-prid and a pn-param (if required >\u00a0 \u00a0 \u00a0 for the specific PNS provider) SIP URI parameter, the proxy requests >\u00a0 \u00a0 \u00a0 a push notification towards the UA, using the PRID included in the >\u00a0 \u00a0 \u00a0 pn-prid SIP URI parameter and the PNS identified by the pn-provider >\u00a0 \u00a0 \u00a0 SIP URI parameter. Maybe I'm missing something, but this seems like it leaves open the possibility for the PRID to not match the rest of the URI. E.g., suppose that  a@example.com  and  b@example.com  both register with the same proxy/registrar pair with PRIDa and PRIDb respectively. What stops the registrar from generating (or forwarding) a call to a@example.com , PRIDb? And what happens if that happens? S 5.3.2. >\u00a0 \u00a0 \u00a0 also present (and has not expired) in the REGISTER response, the >\u00a0 \u00a0 \u00a0 proxy can forward the SIP request towards the UA, using normal SIP >\u00a0 \u00a0 \u00a0 procedures.\u00a0 If the contact of the REGISTER request does not match >\u00a0 \u00a0 \u00a0 the Request-URI of the SIP request to be forwarded, or if the contact >\u00a0 \u00a0 \u00a0 was not present in the REGISTER response, the proxy MUST reject the >\u00a0 \u00a0 \u00a0 SIP request with a 404 (Not Found) response.\u00a0 This can happen if the How does this happen? I.e., how does the the REGISTER get correlated with the SIP request to be forwarded in order to execute this requirement? S 6.1. >\u00a0 \u00a0 \u00a0 and be able to find and retrieve that information when it receives a >\u00a0 \u00a0 \u00a0 mid-dialog request.\u00a0 This section defines such mechanism.\u00a0 The UA and >\u00a0 \u00a0 \u00a0 proxy procedures in this section are applied in addition to the >\u00a0 \u00a0 \u00a0 generic procedures defined in this specification. >\u00a0   >\u00a0  6.1.\u00a0 SIP UA Behavior This section needs some kind of diagram that explains what the mechanism is. I've read it a bunch of times, and I still don't understand it. S 6.2.1. >\u00a0 \u00a0 \u00a0 generated key as the value to the associated 2xx REGISTER response. >\u00a0   >\u00a0 \u00a0 \u00a0 The PURR value MUST be generated in such a way so that it cannot be >\u00a0 \u00a0 \u00a0 used to retrieve information about the user or associate it with >\u00a0 \u00a0 \u00a0 registrations.\u00a0 It can be generated e.g., by utilizing a >\u00a0 \u00a0 \u00a0 cryptographically secure random function. This seems to weak. I assume you also don't want it to be possible to determine that two PURRs correspond to the same user. Also who must be able to use it in this way. Presumably the proxy can? Why is this not a requirement for say PRID? S 13. >\u00a0 \u00a0 \u00a0 specification.\u00a0 Web push permits the sending of a push message >\u00a0 \u00a0 \u00a0 without a payload without encryption. >\u00a0   >\u00a0  13.\u00a0 Security Considerations >\u00a0   >\u00a0 \u00a0 \u00a0 Different mechanisms exist for authenticating and authorizing devices You need to discuss the security implications of knowledge of the push parameters (principally PRID). What happens if an attacker learns htem?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-26 01:42:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-01-10 05:00:26-08:00",
+        "end_reason": "new_position",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-10 05:00:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-01-08 21:03:56-08:00",
+        "end_reason": "new_position",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-08 21:03:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-01-09 10:18:40-08:00",
+        "end_reason": "new_position",
+        "start": "2018-12-21 15:44:38-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-03-26 02:33:18-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-09 10:18:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8599",
+  "evaluation_end": "2019-03-26 02:33:18-07:00",
+  "evaluation_start": "2018-12-21 15:44:38-08:00"
+}

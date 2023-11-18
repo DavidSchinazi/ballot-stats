@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-13 08:51:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-02-21 07:04:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-13 08:51:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-21 07:04:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-02-20 06:54:32-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-10 07:06:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-20 06:54:32-08:00",
+        "text": "= Section 6 = \"DetNet is provides a Quality of Service (QoS), and as such, does not \u00a0  directly raise any new privacy considerations.\" This seems like a false statement given the possibility that DetNet may require novel flow IDs and OAM tags that create additional identification and correlation risk beyond existing fields used to support QoS today.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-13 08:51:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-10 07:06:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-02-20 07:56:14-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-25 11:38:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-20 07:56:14-08:00",
+        "text": "I support Mirja's and Alissa's DISCUSSes...and have a related set of concerns about the coexistence with non-DetNet traffic and privacy: \u00a73.3.1 talks about what I think is a hard to achieve balance between coexisting with non-DetNet traffic and keeping that traffic from disrupting DetNet flows.\u00a0 Because of the constraints, the intent of prioritizing DetNet flows is clear (and that is ok), but that may result in starvation of non-DetNet traffic...even if the text does explicitly say that it \"must be avoided\". I would like to see the potential case of starving non-DetNet traffic called out somewhere.\u00a0 I'm looking for something similar to the first paragraph in \u00a75, but focused on the non-DetNet traffic. Related to the above is the fact that the identification of flows could be used to specifically *not* include some of them as DetNet flows.\u00a0 This is a variation of the concern outlined in \u00a76, but applied to non-DetNet flows, with the potential starvation mentioned above.\u00a0 Again, I would like to at least see some discussion of this risk.   The use case and problem statement documents outline specific applications that may not have non-DetNet traffic, and the Introduction supports that.\u00a0 However, the architecture described in this document may be used in more general networks to provide guarantees to specific traffic...\u00a0 IOW, even if the intention is there, there is no guarantee that DetNet will only be used in the expected use cases.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-13 08:51:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-25 11:38:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-02-20 10:11:18-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-20 10:11:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-02-19 19:43:54-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-25 15:05:21-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-19 19:43:54-08:00",
+        "text": "I note that the DETNET WG is explicitly chartered with a work item for the \"overall architecture: This work encompasses ... and security aspects\". It seems incomplete to specify an architecture for a topic such as deterministic networking without specifically considering what threats are and are not in scope to be protected against.\u00a0 Some easy questions should be whether the system is expected to be robust in the face of an attacker that generates non-DetNet traffic?\u00a0 Or an attacker that generates DetNet traffic in excess of reservations?\u00a0 It can even be a fine engineering goal to produce a solution that only protects against media corruption and hardware crashes and leaves active attacks out of scope, but the actual intended scope of the work needs to be clear.\u00a0 At the other end of the spectrum, protecting against as potent an attacker as a malicious traffic policer is probably a lost cause, especially if the policer is authorized to direct remote nodes to take action to terminate \"misbehaving\" flows. The referenced  draft-ietf-detnet-security  is not at a comparable maturity level to this document and also fails to present a clear threat model for the DetNet architecture.\u00a0 (The section entitled \"Threat Model\" reads as more of a taxonomy of threats than a model for what threats are and are not to be addressed.)\u00a0 It also presents the usage of cryptographic mechanisms as mitigation techniques without provisioning for the prerequisties of such mechanisms (e.g., using HMAC for message integrity protection without mention of infrastructure for distributing the keys for keying the HMAC).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-05-13 08:51:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-25 15:05:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-02-05 08:04:53-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-05-13 08:51:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-02-21 07:05:52-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-05-13 08:51:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-21 07:05:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-05-13 08:12:42-07:00",
+        "end_reason": "new_position",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-05-13 08:51:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-13 08:12:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-02-20 05:05:34-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-04-15 04:55:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-02-20 05:05:34-08:00",
+        "text": "Thanks for addressing the tsv-art review comments\u00a0 (and big thanks to Michael and David!) and all the work done so far! I think the document is in good shape and I only have one minor comment that I would like to see addressed/more explicitly spelled out. However, this should be done quickly with potentially 2-3 small changes in the draft. See below.   Given that DetNet traffic is often assumed to be not congestion controlled, it is important that there is also some network function that makes sure the source traffic stays within the requested bandwidth limit in-order to protect non-Detnet traffic. This is to some extended discussed in section 3.3.2 but I think it should be more clearly spelled out that this would require a rate limiting function at each DetNet source/relay (tunnel ingress). Currently sec 3.3.2 says: \"Filters and policers should be used in a DetNet network to \u00a0  detect if DetNet packets are received on the wrong interface, or at \u00a0  the wrong time, or in too great a volume.\" However, maybe this case of limiting non-congestion controlled traffic (in case the source in not keeping to the limits on purpose/in order to cheat, because it couldn't estimate the needed bandwidth requirement an better, or due to timely fluctuations) could be explained more clearing and the respective requirement to implement rate limiting could be state separately and more strongly...? One related comment on this sentence in Sec 3.1:  \"As DetNet provides allocated resources (including provisioned capacity) \u00a0  to DetNet flows the use of transport layer congestion control \u00a0  [ RFC2914 ] by App-flows is explicitly not required.\" I guess congestion control should still be a requirement if the App-flow also passes not-DetNet-aware segments of the path, e.g. maybe the first hop. Usually use of congestion control for application limited flows is also not a problem if sufficient bandwidth is available. Also note that, as I stated above, the important part for not requiring congestion control is actually not only that resources are allocated but also that rate limiting is in place to make sure resources usage cannot be exceeded above the reserved allocation. Maybe this sentence could also be further clarified in the draft...?  And then one more small comment that is also related. Sec 3.2.2.2 says:  \"If packet replication and elimination is used over paths with \u00a0  resource allocation (Section 3.2.1), ...\" My assumption was that all DetNet traffic is send over pre-allocated resources...? If that is not true that has implication on congestion control and needs some additional considerations. Can you please confirm that and maybe clarify in the draft! Thanks!",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-13 08:51:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-15 04:55:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-02-20 22:52:58-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-20 22:52:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-02-21 06:11:19-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-05-13 08:51:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-21 06:11:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-02-20 08:01:14-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-05 08:04:53-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-05-13 08:51:06-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 08:01:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8655",
+  "evaluation_end": "2019-05-13 08:51:06-07:00",
+  "evaluation_start": "2019-02-05 08:04:53-08:00"
+}

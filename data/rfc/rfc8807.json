@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-21 21:59:55-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-21 21:59:55-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-01-23 02:58:49-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-01-30 09:39:35-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-23 02:58:49-08:00",
+        "text": "Thank you for this document. I have several small comments similar to what was raised by Roman and Ben: 1) In 4.1: \u00a0  :\u00a0 OPTIONAL client user agent that identifies the \u00a0 \u00a0 \u00a0  client application software, technology, and operating system \u00a0 \u00a0 \u00a0  used by the server to identify functional or security \u00a0 \u00a0 \u00a0  constraints, current security issues, and potential future \u00a0 \u00a0 \u00a0  functional or security issues for the client.\u00a0 The \u00a0 \u00a0 \u00a0 \u00a0 element MUST contain at least one of the \u00a0 \u00a0 \u00a0  following child elements: \u00a0 \u00a0 \u00a0  :\u00a0 OPTIONAL name of the client application software \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  with version if available, such as the name of the client SDK \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"EPP SDK 1.0.0\". \u00a0 \u00a0 \u00a0  :\u00a0 OPTIONAL technology used for the client \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  software with version if available, such as \"Java 11.0.2\". \u00a0 \u00a0 \u00a0  :\u00a0 OPTIONAL client operating system used with \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  version if available, such as \"x86_64 Mac OS X 10.11.6\". Is there a registry of allowed values or at least some instructions how to construct these values? There are probably several existing IETF registries that can be reused. If these values are not supposed to be used by servers for anything other than logging (i.e. if they can't be used to work around bugs), then the document needs to say that. 2) In the same section: \u00a0  :\u00a0 OPTIONAL plain text password that is case sensitive, \u00a0 \u00a0 \u00a0  has a minimum length of 6 characters, and has a maximum length \u00a0 \u00a0 \u00a0  that is up to server policy.\u00a0 All leading and trailing whitespace \u00a0 \u00a0 \u00a0  is removed, and all internal contiguous whitespace that includes \u00a0 \u00a0 \u00a0  #x9 (tab), #xA (linefeed), #xD (carriage return), and #x20 \u00a0 \u00a0 \u00a0  (space) is replaced with a single #x20 (space).\u00a0 This element \u00a0 \u00a0 \u00a0  MUST only be used if the [ RFC5730 ]\u00a0 element is set to the \u00a0 \u00a0 \u00a0  \"[LOGIN-SECURITY]\" value. What is the definition of \"whitespace\"? Does this only include characters listed above or does it also include other Unicode characters (e.g. Unicode whitespace property)? If the former, then instead of using \"whitespace that includes ...\" use something like \"whitespace is defined as one of ...\" \u00a0  :\u00a0 OPTIONAL plain text new password that is case \u00a0 \u00a0 \u00a0  sensitive, has a minimum length of 6 characters, and has a \u00a0 \u00a0 \u00a0  maximum length that is up to server policy.\u00a0 All leading and \u00a0 \u00a0 \u00a0  trailing whitespace is removed, and all internal contiguous \u00a0 \u00a0 \u00a0  whitespace that includes #x9 (tab), #xA (linefeed), #xD (carriage \u00a0 \u00a0 \u00a0  return), and #x20 (space) is replaced with a single #x20 (space). \u00a0 \u00a0 \u00a0  This element MUST only be used if the [ RFC5730 ]\u00a0 element \u00a0 \u00a0 \u00a0  is set to the \"[LOGIN-SECURITY]\" value. As above.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-30 09:39:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-21 10:34:52-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-22 18:50:36-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-21 10:34:52-08:00",
+        "text": "Perhaps some simple questions (apologies if I'm missing something obvious): since there is no registry of custom events, how do developers of independent implementations know which custom events they should be aiming to support? And how do they understand the semantics associated with custom events beyond what the event names can convey?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-22 18:50:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-01-22 03:36:59-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-22 03:36:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-01-17 11:46:41-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-17 11:46:41-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-22 18:30:17-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-26 14:15:48-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-22 18:30:17-08:00",
+        "text": "This document+extension claims to provide \"Login Security\" but has no substantive discussion of why the previous mechanism was insecure and how this extension improves the security.\u00a0 I find it hard to believe that any such discussion could fail to acknowledge that sending the plaintext password (after only processing for whitespace) to the server (akin to SASL PLAIN) is severely lacking on several security-related fronts.\u00a0 While it may be possible that there is adequate justification for only pursuing the smallest incremental improvement in the current document, it would require some additional discussion to convince me that the \"small incremental improvement\" of removing a protocol-level maximum password length is the best choice at this time, as opposed to a broader approach that attempts to tackle more axes upon which \"security\" can be measured.\u00a0 Does this discussion already exist somewhere? (This document also includes functionality for relatively rich event notifications, that are likely worth doing in their own right, but do not seem to be \"security improvements\" per se, to me.) I also think that there many places in the description of the XML elements/attributes that are underspecified, given that XML is traditionally thought of as a machine-readable format.\u00a0 Several instances have already been noted by my fellow IESG members (e.g., custom events, statistical warnings, \"value\" attribute), but they seem prevalent enough that I would like to see the authors make a pass through all the protocol elements and assess which ones need to be machine-readable vs. only for human consumption, and accurately document that.\u00a0 I list some examples in the Comment section, and specifically call out the\u00a0 and\u00a0 encodings, which leaves many ambiguities with respect to what non-ASCII behavior is allowed other than OpaqueString, what constitutes \"whitespace\" in the two listed situations, and whether the password encoding is related to the XML document encoding of the request.\u00a0 As I note in the comment, my understanding was that the PRECIS profiles were intended to be used at a protocol-level (vs. a deployment level) and thus the nature of the profile usage would be fairly tightly specified by this document; perhaps the responsible AD (or someone else) will correct my understanding. I'd also like to have a bit of discussion regarding the prohibition of using the literal string \"[LOGIN-SECURITY]\" as an actual password. Section 3.2 notes '''[t]he server MUST NOT allow the client to set the password to the value \"[LOGIN-SECURITY]\"''', and though I did not do a full case-by-case analysis, this feels like something that a server implementing this extension wants to do always, regardless of whether a given client indicates support for this extension.\u00a0 That seems like it could meet the criteria to mark this document as Updating  RFC 5730 , to reserve this sentinel value.\u00a0 Is there more reasoning for or against having this document Update the password-handling behavior  RFC 5730  to reserve this sentinel value?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-26 14:15:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-01-22 13:43:04-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-22 13:43:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-01-18 15:08:24-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-18 15:08:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-01-23 00:59:59-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-23 00:59:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-01-22 06:21:21-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-22 06:21:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-01-20 09:52:22-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-20 09:52:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-01-22 09:51:49-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-03 07:18:45-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-22 09:51:49-08:00",
+        "text": "** Section 3.1.\u00a0 When @type=\u201dstat\u201d and the name of the stat is set in @name, how does a client know the semantics of this stat?\u00a0 Is that negotiated out of band? ** Section 4.1.\u00a0 Per\u00a0 , how are the clients supposed to generate the app, tech or os strings in a way that the server will understand? If this is out of scope, please just say so.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-03 07:18:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-01-22 23:19:22-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-22 23:19:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-01-22 15:34:32-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-17 11:46:40-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-02-27 09:56:45-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-22 15:34:32-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8807",
+  "evaluation_end": "2020-02-27 09:56:45-08:00",
+  "evaluation_start": "2020-01-17 11:46:40-08:00"
+}

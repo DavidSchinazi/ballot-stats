@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-09-03 23:08:26-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-03 23:08:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-04 10:42:09-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 10:42:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-09-04 17:09:05-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 17:09:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-04 09:53:05-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-25 13:18:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-04 09:53:05-07:00",
+        "text": "I'm sure this will be easy to either explain to me or re-phrase: Sections 4 and 6 both say something like \"MUST be agreed by all users of the network\".\u00a0 What does that really mean?\u00a0 How is it remotely possible to get agreement from all users of your network?\u00a0 How is it remotely possible that they could understand what you're asking them to agree to?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-25 13:18:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-09-04 17:49:59-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-23 10:38:30-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-04 17:49:59-07:00",
+        "text": "We don't ever clearly state that the protocol allows for packet sizes other than the listed 44- and 112-octet variants, that content larger than that is to be treated as padding unless directed otherwise by configuration, that the reflected packet must be the same size as the incoming packet, and how a Session-Reflector should set any such padding that it needs to add in order to produce a same-sized packet. This document hardcodes the truncated HMAC-SHA-256 algorithm.\u00a0 Per  BCP 201 , what is the procedure for cryptographic algorithm agility? Please also consider the discussion in  BCP 107  about key lifecycles and key management, including whether it is appropriate to use a key-derivation function to produce short-term (e.g., per flow) keys from a long-lived key (e.g., one fixed in static configuration). What is the input plaintext to the HMAC computation?\u00a0 In the case of future extensions, does the HMAC field remain at its current fixed offset in the packet or move to always be the last 16 octets?\u00a0 Is any additional padding/TLV content protected by the HMAC? What error does the error estimate ... estimate? Clock skew between sender and receiver? I think we need to require some level of cryptographic protection whenever control information is included in a Session-Sender's test packet.\u00a0 That is, that a Session-Reflector MUST NOT act on control information received in unauthenticated packets.\u00a0 (That said, this document itself does not describe a way to include control information, so perhaps the note about \"optional control information communicated in the Session-Sender's test packet\" in Section 4 is misplaced. In Section 4.2.1: \u00a0  o\u00a0 Timestamp and Receiver Timestamp fields are each eight octets \u00a0 \u00a0 \u00a0 long.\u00a0 The format of these fields, NTP or PTPv2, indicated by the \u00a0 \u00a0 \u00a0 Z flag of the Error Estimate field as described in Section 4.1. I think you need to explicitly say that \"Timestamp\" is echoed from the received packet and \"Receiver Timestamp\" is determined locally as close to (reciept? transmission?) as possible. I think we need greater clarity on whether the normative statements in Section 4.4 apply only to STAMP peers that are aware they are interacting with TWAMP Light, or apply to all STAMP peers (see Comment for further discussion on why the current text seems internally inconsistent). In Section 4.1.1: \u00a0  o\u00a0 Timestamp is eight octets long field.\u00a0 STAMP node MUST support \u00a0 \u00a0 \u00a0 Network Time Protocol (NTP) version 4 64-bit timestamp format \u00a0 \u00a0 \u00a0 [ RFC5905 ], the format used in [ RFC5357 ].\u00a0 STAMP node MAY support \u00a0 \u00a0 \u00a0 IEEE 1588v2 Precision Time Protocol truncated 64-bit timestamp \u00a0 \u00a0 \u00a0 format [IEEE.1588.2008], the format used in [ RFC8186 ]. I think a note that which one is in use will be configured by the configuration/management function is in order.\u00a0 Except that the Z bit below confuses things terribly... \u00a0 \u00a0 \u00a0 The STAMP Session-Sender and Session-Reflector MAY use, not use, \u00a0 \u00a0 \u00a0 or set value of the Z field in accordance with the timestamp \u00a0 \u00a0 \u00a0 format in use.\u00a0 This optional field is to enhance operations, but \u00a0 \u00a0 \u00a0 local configuration or defaults could be used in its place. ... since, as noted by the secdir reviewer, this line just confuses everything.\u00a0 Either keep the \"must be zero\" semantics of 4656 or the \"MUST match reality\" semantics of 8186, but this middle case is actively harmful. (I also support Barry and Magnus' Discusses.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-23 10:38:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-09-03 14:29:16-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-03 14:29:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-09-04 06:53:55-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-09-26 01:41:18-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-04 06:53:55-07:00",
+        "text": "Two very much discussing discusses. However, I would really like to hear the answer to these concerns before clearing.  1. Section 4.3: Is the HMAC field size of 16 bytes hard coded? If there ever would exist a need to deploy another integrity solution, even if the actual algorithm used to construct the tag can be agreed by the management, there appear to exist a hard look in to use 16-byte tags. Have this issue been considered?  \t2. Section 6:  \tThe possible impact of the \u00a0  STAMP test packets on the network MUST be thoroughly analyzed, and \u00a0  the use of STAMP for each case MUST be agreed by all users on the \u00a0  network before starting the STAMP test session.   \tI assume some potential issues are know, shouldn't they really be listed here in the security consideration to further motivate why the analysis needs to happen.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-26 01:41:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-09-05 07:05:11-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-05 07:05:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-30 02:40:42-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-30 02:40:42-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-09-04 18:44:36-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-09-04 18:45:07-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-09-04 18:44:36-07:00",
+        "text": "(1) Section 4.3.\u00a0 The text does not explicitly state the data on which the HMAC is computed (i.e., bytes 1 to the end of the last MBZ field of the message?) (2) Section 6.\u00a0 Per \u201cIn general, all the security considerations related to TWAMP-Test, discussed in [ RFC5357 ] apply to STAMP.\u201d, what exact guidance is relevant here: -- Section 6 (Security Considerations) of  RFC5357  says follow the guidance of  RFC4656  and guidance on the OWAMP Server-Greeting messages, only the former seems relevant -- Section 6 (Security Considerations) of  RFC4656  has: Section 6.1 which discusses authenticated and encrypted mode of OWAMP; but STAMP has no encrypted mode.\u00a0 The claims about authenticate mode seem to be similar to OWAMP, but that\u2019s not explicitly said Section 6.2 discusses DoS, seems to have some related guidance but also discusses TCP handshakes  Section 6.3 discusses covert channels, this seems relevant Section 6.4 seems to discuss key management that section 4.3 of this draft seems to suggest is out of scope Section 6.5 seems to provide guidance on resource provisioning but uses the KeyID primitive that doesn\u2019t appear present in this draft [\u2026]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-20 10:32:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-04 18:45:07-07:00",
+        "text": "(1) Section 4.3.\u00a0 The text does not explicitly state the data on which the HMAC is computed (i.e., bytes 1 to the end of the last MBZ field of the message?) (2) Section 6.\u00a0 Per \u201cIn general, all the security considerations related to TWAMP-Test, discussed in [ RFC5357 ] apply to STAMP.\u201d, what exact guidance is relevant here: -- Section 6 (Security Considerations) of  RFC5357  says follow the guidance of  RFC4656  and guidance on the OWAMP Server-Greeting messages, only the former seems relevant -- Section 6 (Security Considerations) of  RFC4656  has: Section 6.1 which discusses authenticated and encrypted mode of OWAMP; but STAMP has no encrypted mode.\u00a0 The claims about authenticate mode seem to be similar to OWAMP, but that\u2019s not explicitly said Section 6.2 discusses DoS, seems to have some related guidance but also discusses TCP handshakes  Section 6.3 discusses covert channels, this seems relevant Section 6.4 seems to discuss key management that section 4.3 of this draft seems to suggest is out of scope Section 6.5 seems to provide guidance on resource provisioning but uses the KeyID primitive that doesn\u2019t appear present in this draft [please review the other sections too ...]",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-20 10:32:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-09-04 23:30:39-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 23:30:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-09-04 15:34:46-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-30 02:40:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-11-13 09:19:26-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 15:34:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8762",
+  "evaluation_end": "2019-11-13 09:19:26-08:00",
+  "evaluation_start": "2019-08-30 02:40:40-07:00"
+}

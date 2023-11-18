@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-01 22:00:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-09 08:54:28-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-01 22:00:28-07:00",
+        "text": "Thanks for all the work everyone put into this document. I think it's great to have a solution defined for automating these kinds of operations, and look forward to widespread deployment of this technology. I do have a small number of comments that I think we need to close on prior to publication, and a handful of other suggestions of varying (but lesser) importance. --------------------------------------------------------------------------- This is a discuss because the current document attempts to override normative language in an external document. \u00a74.3: >\u00a0 In reference to Figure 4, the DOTS client sends two TCP SYNs and two >\u00a0 DTLS ClientHello messages at the same time over IPv6 and IPv4. This is problematic for the reason described in  RFC 8305  \u00a75 (\"In order to avoid unreasonable network load, connection attempts SHOULD NOT be made simultaneously\"). To be clear, my discuss is only on the fact that this document violates a normative statement in  RFC 8305 . The following comments are merely my thoughts on the best way to resolve this issue. It's also worth noting that  RFC 8305  is geared towards getting users the fastest possible response to a user action, while the text in DOTS implies that the selection of the \"most preferred\" connection is significantly more important (e.g., it talks about migrating from TCP to UDP, and performing periodic checks to enable such a migration). This factor, combined with the fact that this is not a transaction that involves user interactivity requirements, would seem to increase, rather than decrease, the desire to space out checks across the various transport/address-family pairs. My strong recommendation would be remove the specific description of happy-eyeballs-like behavior from this document, and to instead defer all such specification to the text in  RFC 8305 . I would further recommend specification of a \"Connection Attempt Delay\" (as that term is defined in  RFC 8305 ) that is substantially larger than those used for interactive connections: something on the order of 2 to 5 seconds would be my suggestion. Of course, be sure to adjust the example to match the specified handling. --------------------------------------------------------------------------- This is a discuss because it impacts interoperability. \u00a74.4.1: >\u00a0 target-uri:\u00a0  A list of Uniform Resource Identifiers (URIs) [ RFC3986 ] >\u00a0 \u00a0  identifying resources under attack. This definition needs to be clearer about what parts of the URI are used for what purposes. For example:  - The URI scheme can be taken to specify a 'target-protocol'  - The URI host can be taken to specify a 'target-fqdn' or 'target-prefix'  - The URI port (or scheme, if absent) can be taken to specify a \u00a0  'target-port-range' It is unclear whether this specification intends the URI to impact one, two, or all three of these. This can result in a client asking for one thing and the server doing something else. --------------------------------------------------------------------------- This is a discuss because it impacts interoperability. \u00a76: The handling of 64-bit values in Table 4 seems problematic. Section 3 specifies: >\u00a0 Representing these data >\u00a0 as CBOR data can either follow the rules in [ I-D.ietf-core-yang-cbor ] >\u00a0 or those in [ RFC7951 ] combined with JSON/CBOR conversion rules in >\u00a0 [ RFC7049 ]; both approaches produce a valid encoding. However, if we consider, say, mitigation-start: >\u00a0 +----------------------+-------------+-----+---------------+--------+ >\u00a0 | Parameter Name\u00a0 \u00a0 \u00a0  | YANG\u00a0 \u00a0 \u00a0 \u00a0 | CBOR| CBOR Major\u00a0 \u00a0 | JSON\u00a0  | >\u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | Type\u00a0 \u00a0 \u00a0 \u00a0 | Key |\u00a0 \u00a0 Type &\u00a0 \u00a0  | Type\u00a0  | >\u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0  | Information\u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 | >\u00a0 +----------------------+-------------+-----+---------------+--------+ > ... >\u00a0 | mitigation-start\u00a0 \u00a0  | uint64\u00a0 \u00a0 \u00a0 |\u00a0 15 | 0 unsigned\u00a0 \u00a0 | String | If an implementation follows the first path ( draft-ietf-core-yang-cbor ), then this value is sent on the wire as a CBOR 64-bit unsigned integer type. If an implementation instead uses  RFC 7951  followed by  RFC 7049  \u00a74, the resulting value is encoded on the wire as a CBOR string. If this is the intention, then it represents a huge gotcha for implementors of both clients and of servers, as all implementations must be ready to accept both strings and 64-bit data types for these fields. If this is the intention, please add strongly-worded text warning implementors of this particular gotcha, since it's pretty non-obvious. It's worth noting that, while some implementations may set limits on the precision of JSON Numbers, and that such limits may be smaller than 64 bits, nothing in the format defined by  RFC 8259  has any such inherent limitations. There is a similar (but subtly different) problem with the handling of enumerations that may cause them to be encoded as either strings or as integers: >\u00a0 | status\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | enumeration |\u00a0 16 | 0 unsigned\u00a0 \u00a0 | String | If you choose to maintain the situation currently described in the document, then the table in section 9.6.1.2 needs to be updated to allow both formats; e.g.: >\u00a0 +----------------------+-------+-------+------------+---------------+ >\u00a0 | Parameter Name\u00a0 \u00a0 \u00a0  | CBOR\u00a0 | CBOR\u00a0 | Change\u00a0 \u00a0  | Specification | >\u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | Key\u00a0  | Major | Controller | Document(s)\u00a0  | >\u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | Value | Type\u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | >\u00a0 +----------------------+-------+-------+------------+---------------+ ... >\u00a0 | mitigation-start\u00a0 \u00a0  |\u00a0  15\u00a0 | 0 or 3|\u00a0 \u00a0 IESG\u00a0 \u00a0 |\u00a0  [RFCXXXX]\u00a0  |",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-09 08:54:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-01 07:32:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-02 05:06:03-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-05-01 07:32:28-07:00",
+        "text": "Thank you for a well written document. Despite its length, it was a pleasure to read. I have a list of small issues/questions to discuss before I can recommend approval of this document. 1)  RFC 3986  must be Normative as you use URI syntax in the document. 2) In 4.4.1: base64url needs a Normative reference. Please point to section 5 of  RFC 4648 . 3) Also in the same section: \u00a0  A DOTS gateway MAY add the CoAP Hop-Limit Option \u00a0  [ I-D.ietf-core-hop-limit ]. Use of  RFC 2119  language makes this reference Normative. Which means that this document can't be published as an RFC until [ I-D.ietf-core-hop-limit ] is published as an RFC. 4) Later in the same section: \u00a0  If the request is missing a mandatory attribute, does not include \u00a0  'cuid' or 'mid' Uri-Path options, includes multiple 'scope' \u00a0  parameters, or contains invalid or unknown parameters, the DOTS \u00a0  server MUST reply with 4.00 (Bad Request).\u00a0 DOTS agents can safely \u00a0  ignore comprehension-optional parameters they don't understand. How can DOTS agents know which parameters are comprehension-optional? 5) In 4.4.2: \u00a0  The 'c' (content) parameter and its permitted values defined in \u00a0  [ I-D.ietf-core-comi ] can be used to retrieve non-configuration data Because you define syntax of the parameter by reference, this makes [ I-D.ietf-core-comi ] Normative. (It doesn't matter that the feature is optional. Implementors still need to look at [ I-D.ietf-core-comi ] to implement this aspect of your document.) If you don't want Normative dependency, you should fully specify syntax in your draft and keep the reference Informative. \u00a0  (attack mitigation status), configuration data, or both.\u00a0 The DOTS \u00a0  server MAY support this optional filtering capability.\u00a0 It can safely \u00a0  ignore it if not supported.\u00a0 If the DOTS client supports the optional \u00a0  filtering capability, it SHOULD use \"c=n\" query (to get back only the \u00a0  dynamically changing data) or \"c=c\" query (to get back the static \u00a0  configuration values) when the DDoS attack is active to limit the \u00a0  size of the response. 6) In 4.4.3: \u00a0 \u00a0 \u00a0 { \u00a0 \u00a0 \u00a0  \"ietf-dots-signal-channel:mitigation-scope\": { \u00a0 \u00a0 \u00a0 \u00a0  \"scope\": [ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"target-prefix\": [ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"2001:db8:6401::1/128\", \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"2001:db8:6401::2/128\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ], \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"target-port-range\": [ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"lower-port\": 80 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  }, \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"lower-port\": 443 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  }, \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"lower-port\": 8080 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ], \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"target-protocol\": [ \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 6 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ], \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"attack-status\": \"under-attack\" This value is invalid, as you define this attribute as numeric on the next page. \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 \u00a0 \u00a0  ] \u00a0 \u00a0 \u00a0  } \u00a0 \u00a0 \u00a0 } 7) In 7.1: \u00a0  When a DOTS client is configured with a domain name of the DOTS \u00a0  server, and connects to its configured DOTS server, the server may \u00a0  present it with a PKIX certificate.\u00a0 In order to ensure proper \u00a0  authentication, a DOTS client MUST verify the entire certification \u00a0  path per [ RFC5280 ].\u00a0 The DOTS client additionally uses [ RFC6125 ] \u00a0  validation techniques to compare the domain name with the certificate \u00a0  provided. I am glad that you are referencing  RFC 6125  here, but the description is not complete. Do you allow for wildcards in certificate subjectAltNames? Do you support CN-ID, DNS-ID, SRV-ID, URI-ID? I think you only want to support DNS-ID and possibly SRV-ID and CN-ID. This needs to be explicitly stated in the document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-18 03:24:04-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-05-02 05:06:03-07:00",
+        "text": "Thank you for a well written document. Despite its length, it was a pleasure to read. I have a list of small issues/questions to discuss before I can recommend approval of this document. Based on\u00a0 I've updated my DISCUSS/comments: 1)-6) resolved 7) In 7.1: \u00a0  When a DOTS client is configured with a domain name of the DOTS \u00a0  server, and connects to its configured DOTS server, the server may \u00a0  present it with a PKIX certificate.\u00a0 In order to ensure proper \u00a0  authentication, a DOTS client MUST verify the entire certification \u00a0  path per [ RFC5280 ].\u00a0 The DOTS client additionally uses [ RFC6125 ] \u00a0  validation techniques to compare the domain name with the certificate \u00a0  provided. I am glad that you are referencing  RFC 6125  here, but the description is not complete. Do you allow for wildcards in certificate subjectAltNames? Do you support CN-ID, DNS-ID, SRV-ID, URI-ID? I think you only want to support DNS-ID and possibly SRV-ID and CN-ID. This needs to be explicitly stated in the document. 8) In Section 3: \u00a0  This document specifies a YANG module for representing DOTS \u00a0  mitigation scopes, DOTS signal channel session configuration data, \u00a0  and DOTS redirected signalling (Section 5).\u00a0 Representing these data \u00a0  as CBOR data can either follow the rules in [ I-D.ietf-core-yang-cbor ] \u00a0  or those in [ RFC7951 ] combined with JSON/CBOR conversion rules in \u00a0  [ RFC7049 ]; both approaches produce a valid encoding. This reads like there are 2 possible encodings, both of which are mandatory to implement. Firstly, I don't think that having 2 encodings is a good idea, but if the WG really needs this, I will remove this part of my DISCUSS. Secondly, this means that [ I-D.ietf-core-yang-cbor ] must be Normative.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-18 03:24:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-18 03:24:04-07:00",
+        "text": "hank you for addressing my DISCUSS.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-18 03:24:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-01 18:55:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-10 09:54:55-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-01 18:55:30-07:00",
+        "text": "= Section 3 = \"By default, a DOTS signal channel MUST run over port number TBD as \u00a0  defined in Section 9.1, for both UDP and TCP, unless the DOTS server \u00a0  has a mutual agreement with its DOTS clients to use a different port \u00a0  number.\u00a0 DOTS clients MAY alternatively support means to dynamically \u00a0  discover the ports used by their DOTS servers (e.g., \u00a0  [ I-D.boucadair-dots-server-discovery ]).\" MUST implies an absolute requirement, so \"MUST ... unless\" is a problematic construction. Furthermore, it doesn't make sense together with \"MAY alternatively,\" which indicates that port number discovery is an alternative to the fixed to-be-assigned port.  I didn't have time to get very far into  draft-boucadair-dots-server-discovery , but it appears that it does not mandate support for any single discovery mechanism for clients and servers to support. If so, that \"alternatively\" seems like more of a problem, since it allows for there to be no interoperable mechanism for clients to discover server ports. I think maybe what was intended here was: s/MUST/SHOULD/ s/MAY alternatively/MAY additionally/ = Section 4.4.1 = (1) \"In deployments where server-domain DOTS gateways are enabled, \u00a0  identity information about the origin source client domain SHOULD be \u00a0  propagated to the DOTS server.\u00a0 That information is meant to assist \u00a0  the DOTS server to enforce some policies such as grouping DOTS \u00a0  clients that belong to the same DOTS domain, limiting the number of \u00a0  DOTS requests, and identifying the mitigation scope.\u00a0 These policies \u00a0  can be enforced per-client, per-client domain, or both.\u00a0 Also, the \u00a0  identity information may be used for auditing and debugging purposes.\" Does \"identity information\" just refer to cdid, or something else? (2) The constructions \"MUST ... (absent explicit policy/configuration otherwise)\" are problematic. I'm assuming these are meant to be SHOULDs. = Section 13.1 = I don't understand why  RFC 7951  is a normative reference but  draft-ietf-core-yang-cbor  is an informative reference.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-10 09:54:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-01 17:11:29-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 17:11:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-05-01 11:39:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 11:39:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-04-02 14:58:47-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-04-29 10:44:15-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-29 10:44:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-05-01 23:43:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 23:43:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-04-30 09:27:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-01 07:42:22-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-04-30 09:27:28-07:00",
+        "text": "1) Port usage (see section 3): The port request for DOTS was reviewed by the port expert team. Some members of the team where concerned about the assignment of a separate port number for DOTS as Coap is used and already has a designated port number. I believe that Coap is used as a transport in the case and DOTS provides a separate service compared to what Coap is usually used for, however, it is not clear why DOTS needs a designated port. Section 3 says that the port can either be preconfigured or dynamically detected, therefore it is not clear why a fixed port in needed (see also section 7.1. of  RFC7605 ). In the port review process the authored argued that a port is needed to differentiate the DOTS service in the network. However, this is not an endorsed usage for port numbers (see section 6.2. of  RFC7605 ). Further, I believe assigning a fixed port might actually add an attack vector for DOTS, either by DDoSing the respective port at the DOTS server, or any attempt to block DOTS traffic on the network from the DOTS client to the DOTS server. 2) Section 4.3 says: \"In reference to Figure 4, the DOTS client sends two TCP SYNs and two \u00a0  DTLS ClientHello messages at the same time over IPv6 and IPv4.\" However,  RFC8305  explicitly states that connection attempts SHOULD NOT be made simultaneously (see sec 5). Further Figure 4 shows a different order of request as recommended in the text (text says: \"UDP over IPv6, UDP over IPv4, TCP over IPv6, and finally TCP over IPv4\"). Also why are the UDP connection attempts repeated? I guess that is meant to be the retransmission of the DTLS Hello? However, usually you should receive the TCP SYNACK before you retransmit or in the best case even before you start the next connection attempt. Therefore that should be not displayed like this in the figure or needs further explanation. 3) Why are these statements SHOULDs and not MUSTs (see section 4.4)? \u00a0 \"DOTS agents SHOULD follow the data transmission guidelines discussed \u00a0  in Section 3.1.3 of [ RFC8085 ] and control transmission behavior by \u00a0  not sending more than one UDP datagram per round-trip time (RTT) to \u00a0  the peer DOTS agent on average.\" and \u00a0 \"If the DOTS client cannot maintain an RTT estimate, it \u00a0  SHOULD NOT send more than one Non-confirmable request every 3 \u00a0  seconds\" However, all communication pattern used by DOTS rely on a request/reply pattern and Coap specifies for this case that only one request can be outstanding at a time with an exponential backoff pattern for retransmission (see section 4.7 and 4.2 of  RFC7252 ) which therefore will be used in this case.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-20 08:57:45-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-01 07:42:22-07:00",
+        "text": "1) Port usage (see section 3): The port request for DOTS was reviewed by the port expert team. Some members of the team were concerned about the assignment of a separate port number for DOTS as Coap is used and already has a designated port number. I believe that Coap is used as a transport in the case and DOTS provides a separate service compared to what Coap is usually used for, however, it is not clear why DOTS needs a designated port. Section 3 says that the port can either be preconfigured or dynamically detected, therefore it is not clear why a fixed port is needed (see also section 7.1. of  RFC7605 ). In the port review process the authored argued that a port is needed to differentiate the DOTS service in the network. However, this is not an endorsed usage for port numbers (see section 6.2. of  RFC7605 ). Further, I believe assigning a fixed port might actually add an attack vector for DOTS, either by DDoSing the respective port at the DOTS server, or any attempt to block DOTS traffic on the network from the DOTS client to the DOTS server. 2) Section 4.3 says: \"In reference to Figure 4, the DOTS client sends two TCP SYNs and two \u00a0  DTLS ClientHello messages at the same time over IPv6 and IPv4.\" However,  RFC8305  explicitly states that connection attempts SHOULD NOT be made simultaneously (see sec 5). Further Figure 4 shows a different order of request as recommended in the text (text says: \"UDP over IPv6, UDP over IPv4, TCP over IPv6, and finally TCP over IPv4\"). Also why are the UDP connection attempts repeated? I guess that is meant to be the retransmission of the DTLS Hello? However, usually you should receive the TCP SYNACK before you retransmit or in the best case even before you start the next connection attempt. Therefore that should be not displayed like this in the figure or needs further explanation. 3) Why are these statements SHOULDs and not MUSTs (see section 4.4)? \u00a0 \"DOTS agents SHOULD follow the data transmission guidelines discussed \u00a0  in Section 3.1.3 of [ RFC8085 ] and control transmission behavior by \u00a0  not sending more than one UDP datagram per round-trip time (RTT) to \u00a0  the peer DOTS agent on average.\" and \u00a0 \"If the DOTS client cannot maintain an RTT estimate, it \u00a0  SHOULD NOT send more than one Non-confirmable request every 3 \u00a0  seconds\" as well as in section 4.4.2.1: \u00a0 \"If the DOTS server cannot maintain an RTT \u00a0  estimate, it SHOULD NOT send more than one asynchronous notification \u00a0  every 3 seconds\" and again in section 4.4.2.2:  \"The frequency of polling the DOTS server to get the \u00a0  mitigation status SHOULD follow the transmission guidelines in \u00a0  Section 3.1.3 of [ RFC8085 ]. However, most of the communication pattern used by DOTS rely on a request/reply pattern and Coap specifies for this case that only one request can be outstanding at a time (until the reply is received or message is assumed to be lost) (see section 4.7 and 4.2 of  RFC7252 ) which therefore will be used in this case. Only migration updates are send without reply, and here a MUST would be more appropriate. Please also note that if there can only be one request outstanding (before a reply is received) it is also not possible that requests are received out of order (see e.g. 4.4.3: \"If UDP is used as transport, CoAP requests may arrive out-of-order.\"). 4)  draft-ietf-core-hop-limit  is used in section 10: \"The presence of DOTS gateways may lead to infinite forwarding loops, \u00a0  which is undesirable.\u00a0 To prevent and detect such loops, this \u00a0  document uses the Hop-Limit Option.\" This sounds like it should be required (and normative language should be used) and therefore  draft-ietf-core-hop-limit  should also be a normative reference.  Also  draft-ietf-core-comi  should probably another normative reference. 5)Section 4.5.2: You give recommendations for min and max in a note, however, these values should be specified normatively and in best with a MUST. 6) Section 4.7: \"the DOTS \u00a0  agent sends a heartbeat over the signal channel to maintain its half \u00a0  of the channel.\u00a0 The DOTS agent similarly expects a heartbeat from \u00a0  its peer DOTS agent\" and  \"DOTS servers MAY trigger their heartbeat requests immediately after \u00a0  receiving heartbeat probes from peer DOTS clients.\" Actually heartbeat should only be send in one direction (as the other end will send an ack) and the protocol should clearly specify which endpoint is responsible for triggering the ping. 7) sec 7.3:\"To avoid DOTS signal message fragmentation and the subsequent \u00a0  decreased probability of message delivery, DOTS agents MUST ensure \u00a0  that the DTLS record MUST fit within a single datagram.\" This should be handled by the DTLS record layer and not by DOTS that works on top of DTLS (actually Coap), therefor it seems straight to have a normative requirement here in the DOTS spec. Also note that the calculation provided is not valid for early data (0-RTT) as the hello messages could be transmitted in the same datagram. 8) Also sec 7.3: \"If the path \u00a0  MTU is not known to the DOTS server, an IP MTU of 1280 bytes SHOULD \u00a0  be assumed.\" \u00a0 Actually this is only true for IPv6. The later note mentions that the situation is different from IPV4, however, it should probably be made clear from the beginning that 1280 can only be assumed for IPv6. 9) sec 9.6: What's the registration policy for the newly created registries? 10) The document should more explicitly provide more guidance about when a client should start a session and what should be done (from the client side) if a session is detected as inactive (other than during migration which is discussed a bit in 4.7). Is the assumption to have basically permanently an active session or connect for migration and configuration requests separately at a time?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-20 08:57:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-04-30 10:20:27-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-05-02 07:32:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-30 10:20:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-02 07:32:01-07:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-04-30 20:06:51-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-05-21 20:37:34-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-30 20:06:51-07:00",
+        "text": "This should be easy to clear up, but I would like to understand why this document needs to restate the motivation and describe the algorithm for happy eyeballs instead of simply stating that hosts should use  RFC8305  and then specify that UDP must be tried before TCP in each of the address families. If you do want to specify the whole algorithm here it needs to be more specific than \"in a manner similar to the Happy Eyeballs mechanism\" as it is not clear where it is similar (and where it will differ). It also looks like the example flow in Figure 4 is not consistent with the description before (TCP+IPv6 before UDP+IPv4)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-21 20:37:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-05-01 12:28:07-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-02 14:58:47-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-01-07 09:10:03-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 12:28:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8782",
+  "evaluation_end": "2020-01-07 09:10:03-08:00",
+  "evaluation_start": "2019-04-02 14:58:47-07:00"
+}

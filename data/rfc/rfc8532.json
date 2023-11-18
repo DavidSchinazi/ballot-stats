@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-10-24 22:45:35-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-24 22:45:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-10-21 04:24:13-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-21 04:24:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-10-25 09:16:28-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-10-30 07:25:05-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-10-25 09:16:28-07:00",
+        "text": "Thank you for your work on this document.\u00a0 I have a number of serious concerns - but they all amount to fixing up your references and slight restructuring\u00a0 for clarity and reuse. 1) In Sec 3.1, the reference is system-id to represent the device or\u00a0 node.[ I-D.ietf-spring-sr-yang ] I believe that should be  \"typedef router-id { \u00a0 \u00a0 \u00a0  type yang:dotted-quad; \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0  \"A 32-bit number in the dotted quad format assigned to each \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 router. This number uniquely identifies the router within \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 an Autonomous System.\"; \u00a0 \u00a0  }\" from draft-ietf-rtgwg-routing-types. Certainly \"[ I-D.ietf-spring-sr-yang ]\" is NOT an informative reference with such a dependency. I see that this document actually redefines router-id, instead of using it as part of the included import from  import ietf-routing-types { \u00a0  prefix rt; \u00a0 } On p.27, I see \"leaf system-id { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 type rt:router-id; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"System ID assigned to this node.\"; \u00a0 \u00a0 \u00a0 \u00a0 }\" so it is using the routing-yang-types, but renaming it as system-id, there. Consistency isn't just the hobgoblin of little minds - it's actually useful. In choice to-location, again \"case system-id { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 leaf system-id-location { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 type router-id; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"System id location\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"System ID\";\" using the locally defined router-id and renaming it instead of using rt:router-id. 2) On p. 13 & 14, there are many identities associated with time and time-stamps.\u00a0 I cannot believe that the best way to handle these is by having them as part of an OAM model!\u00a0  At a minimum, they should be defined as a separate module and then included, even if it is in the same draft.\u00a0 Then they will be available for reuse elsewhere. 3) This is extending [ I-D.ietf-i2rs-yang-network-topo ] - I do not believe this should be merely an informative reference. 4) I cannot tell if  I-D.ietf-rtgwg-ni-model  is informative or normative; it is not referenced in the draft - though there are fields that are labeled NI without adequate description. 5) [ I-D.ietf-rtgwg-routing-types ] is not an informative reference.\u00a0 Its module is imported and used.\u00a0 It must be normative. 6) [ I-D.ietf-spring-sr-yang ] is listed as an informative reference, but if it were actually used as described, it would need to be normative. Instead, I believe this can be removed as a reference.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-10-30 08:21:18-07:00",
+        "end_reason": "position_updated",
+        "start": "2017-10-30 07:25:05-07:00",
+        "text": "I took a quick look through version -15 and it looks like it addresses almost all of my serious Discuss points. The only Discuss-worthy point is (c) below.\u00a0 I have a few more points related to the changes that were made; they are just comments & listed here to be with the original points. For version 15: a) In Sec 3.1,\u00a0 it still says  \" o\u00a0 Router-id to represent the device or node. \u00a0 \u00a0 \u00a0 [ I-D.ietf-spring-sr-yang ]\" but [I-D.ietf.spring-sr-yang] has nothing to do with the router-id b) In Section 4, thanks for adding urn:ietf:params:xml:ns:yang:ietf-lime-common-types - but could it be a meaningful and accurate name like \u00a0  ietf-lime-time-types or ietf-time-types\u00a0 (Benoit would know best structure)\u00a0 that clearly  shows its intended scope for reuse and please fix the description for it too. c)\u00a0 [ I-D.ietf-rtgwg-ni-model ] is still listed as informative, but the model defined in there is imported \"import ietf-network-instance { \u00a0 \u00a0 prefix ni; \u00a0 }\"\u00a0  It needs to be normative d)  I-D.ietf-spring-sr-yang  is still listed as informative - but not really correctly used as a reference. ================= Thank you for your work on this document.\u00a0 I have a number of serious concerns - but they all amount to fixing up your references and slight restructuring\u00a0 for clarity and reuse. 1) In Sec 3.1, the reference is system-id to represent the device or\u00a0 node.[ I-D.ietf-spring-sr-yang ] I believe that should be  \"typedef router-id { \u00a0 \u00a0 \u00a0  type yang:dotted-quad; \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0  \"A 32-bit number in the dotted quad format assigned to each \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 router. This number uniquely identifies the router within \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 an Autonomous System.\"; \u00a0 \u00a0  }\" from draft-ietf-rtgwg-routing-types. Certainly \"[ I-D.ietf-spring-sr-yang ]\" is NOT an informative reference with such a dependency. I see that this document actually redefines router-id, instead of using it as part of the included import from  import ietf-routing-types { \u00a0  prefix rt; \u00a0 } On p.27, I see \"leaf system-id { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 type rt:router-id; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"System ID assigned to this node.\"; \u00a0 \u00a0 \u00a0 \u00a0 }\" so it is using the routing-yang-types, but renaming it as system-id, there. Consistency isn't just the hobgoblin of little minds - it's actually useful. In choice to-location, again \"case system-id { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 leaf system-id-location { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 type router-id; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"System id location\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 } \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"System ID\";\" using the locally defined router-id and renaming it instead of using rt:router-id. 2) On p. 13 & 14, there are many identities associated with time and time-stamps.\u00a0 I cannot believe that the best way to handle these is by having them as part of an OAM model!\u00a0  At a minimum, they should be defined as a separate module and then included, even if it is in the same draft.\u00a0 Then they will be available for reuse elsewhere. 3) This is extending [ I-D.ietf-i2rs-yang-network-topo ] - I do not believe this should be merely an informative reference. 4) I cannot tell if  I-D.ietf-rtgwg-ni-model  is informative or normative; it is not referenced in the draft - though there are fields that are labeled NI without adequate description. 5) [ I-D.ietf-rtgwg-routing-types ] is not an informative reference.\u00a0 Its module is imported and used.\u00a0 It must be normative. 6) [ I-D.ietf-spring-sr-yang ] is listed as an informative reference, but if it were actually used as described, it would need to be normative. Instead, I believe this can be removed as a reference.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-30 08:21:18-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-10-25 07:07:07-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-25 07:07:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-10-24 14:33:07-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-24 14:33:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-10-25 18:26:21-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-25 18:26:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-10-19 05:21:41-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-10-24 17:19:43-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-24 17:19:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-10-23 07:19:57-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-23 07:19:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-10-23 15:03:29-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-23 15:03:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-10-26 06:18:23-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-26 06:18:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-10-24 17:30:54-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-24 17:30:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-10-26 06:36:20-07:00",
+        "end_reason": "new_position",
+        "start": "2017-10-19 05:21:41-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-11-14 00:23:59-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-10-26 06:36:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8532",
+  "evaluation_end": "2017-11-14 00:23:59-08:00",
+  "evaluation_start": "2017-10-19 05:21:41-07:00"
+}

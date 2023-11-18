@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-12-05 13:09:05-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-26 08:21:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 13:09:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-12-18 05:36:35-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-26 08:21:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-18 05:36:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-12-05 08:27:47-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-26 08:21:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 08:27:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-12-05 14:34:45-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-26 08:21:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 14:34:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-12-05 18:59:10-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-12-05 18:59:10-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-12-19 10:36:12-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-17 15:52:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-12-19 10:36:12-08:00",
+        "text": "Section 3.3's procedures for shortening domain names seem potentially problematic.\u00a0 While I can understand the desire to reduce the number of DNS queries, I'm not sure that it's really appropriate to place restrictions on what prefix lengths/boundaries can be used to divide administrative domains in a standards-track document.\u00a0 In particular, the IPv4 procedure only allows lengths that end on octet boundaries, which seems to ignore the possibility of using procedures from  BCP 20 .\u00a0 IPv6 is a somewhat different case, but my understanding is that in the general case prefix boundaries can land on arbitrary nibbles, and if we only look at a specific subset for NAPTR records we risk not matching up with reality.\u00a0 The lists in the fourth column of the table in Section 3.4 would presumably need to be revised as well, if this changes. From Section 5.2.1: \u00a0  We assume that if two organizations share parts of their DNS \u00a0  infrastructure, i.e., have common  in-addr.arpa . and/or  ip6.arpa . \u00a0  subdomains, they will also be able to operate a common ALTO server, Perhaps I am confused, but common subdomains in the reverse zones just implies a common IP address block.\u00a0 Why does it also imply a common DNS infrastructure? I also have a few points relating to the security of DNS and DNSSEC. From Section 6.1 \u00a0 \u00a0 \u00a0 However, it should also be noted that, if an attacker was able to \u00a0 \u00a0 \u00a0 compromise the DNS infrastructure used for cross-domain ALTO \u00a0 \u00a0 \u00a0 server discovery, (s)he could also launch significantly more \u00a0 \u00a0 \u00a0 serious other attacks (e.g., redirecting various application \u00a0 \u00a0 \u00a0 protocols). I'm not sure that this statement holds as strongly as one might like. In particular, this document is using the reverse zone (whereas normal ALTO usage would seem to only use the forward zone), and my understanding is that the management and operational practices for the reverse zone lag behind that of the forward zone.\u00a0 For example, I have encountered scenarios where I am issued an IPv4 address via DHCP that has no corresponding entry in the reverse zone, which broke some services for me at that site. \u00a0  Protection Strategies and Mechanisms \u00a0 \u00a0 \u00a0 The cross-domain ALTO server discovery procedure relies on a \u00a0 \u00a0 \u00a0 series of DNS lookups.\u00a0 If an attacker was able to modify or spoof \u00a0 \u00a0 \u00a0 any of the DNS records, the resulting URI could be replaced by a \u00a0 \u00a0 \u00a0 forged URI.\u00a0 The application of DNS security (DNSSEC) [ RFC4033 ] \u00a0 \u00a0 \u00a0 provides a means to limit attacks that rely on modification of the \u00a0 \u00a0 \u00a0 DNS records while in transit. [...] I think we need to have a discussion about the efficacy and availability of DNSSEC for the reverse zone (and how those compare to the forward zone).\u00a0 It seems that the situation is less bad than I feared when I deferred the ballot on this document, but perhaps still not in a great place.\u00a0 In particular, I see that IANA and the RIRs do sign their reverse zones, and at least some RIRs have self-service options for inserting DS records into those zones, but my understanding is that in practice signing of the reverse zone is not in great shape.\u00a0 That is, while the technical pieces are all available (and in particular the pieces at the top are all present), it's not currently in any significant usage due to a lack of compelling use case and interest among (e.g.) ISPs.\u00a0 This document does not really seem like it's providing a compelling enough use case to drive adoption, so I think we're forced to treat DNSSEC as not actually useful in practice for this scenario. Separately, there is the question of what trust anchor to use for DNSSEC in the reverse zone for private-use addresses (which can be properly used in multiple locations and have no single point of authority).\u00a0  RFC 7216  includes some text about this issue, which would probably be appropriate to adopt to this case as well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-26 08:21:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-17 15:52:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-12-05 08:37:53-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-26 08:21:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 08:37:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-12-19 12:49:21-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-12-19 12:49:21-08:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D3649 The security considerations for this document don't seem to be adequate. In general, the security of this mechanism seems to rely on DNSSEC, and yet it's not mandated. DETAIL S 6.1. >\u00a0   >\u00a0 \u00a0 \u00a0 \u00a0  However, it should also be noted that, if an attacker was able to >\u00a0 \u00a0 \u00a0 \u00a0  compromise the DNS infrastructure used for cross-domain ALTO >\u00a0 \u00a0 \u00a0 \u00a0  server discovery, (s)he could also launch significantly more >\u00a0 \u00a0 \u00a0 \u00a0  serious other attacks (e.g., redirecting various application >\u00a0 \u00a0 \u00a0 \u00a0  protocols). Hmm... Are there no settings in which ALTO servers give information that isn't something that is a subset of info in DNS? This seems like it needs more analysis. S 6.1. >\u00a0 \u00a0 \u00a0 \u00a0  certificate will contain the host name (CN).\u00a0 Consequently, only >\u00a0 \u00a0 \u00a0 \u00a0  the host part of the HTTPS URI will be authenticated, i.e., the >\u00a0 \u00a0 \u00a0 \u00a0  result of the ALTO server discovery procedure.\u00a0 The DNS/U-NAPTR >\u00a0 \u00a0 \u00a0 \u00a0  based mapping within the cross-domain ALTO server discovery >\u00a0 \u00a0 \u00a0 \u00a0  procedure needs to be secured as described above, e.g., by using >\u00a0 \u00a0 \u00a0 \u00a0  DNSSEC. This is not an acceptable description of how to use TLS. Given that you are using HTTPS, you need to cite 2818. And as this is a new application of HTTPS, you should be specifying modern TLS, i.e., mimimum 1.2 and 7525. S 6.4. >\u00a0 \u00a0 \u00a0 \u00a0  statement [ RFC5693 ] and/or discussed in the ALTO working group, >\u00a0 \u00a0 \u00a0 \u00a0  this scenario has not been identified as a relevant threat. >\u00a0   >\u00a0 \u00a0 \u00a0 Protection Strategies and Mechanisms >\u00a0 \u00a0 \u00a0 \u00a0  No protection mechanisms for this scenario have been provided, as >\u00a0 \u00a0 \u00a0 \u00a0  it has not been identified as a relevant threat.\u00a0 However, if a Another threat here is the disclosure of the exact query you are making to the ALTO server. An attacker might be interested in that, and it's not all manifest in the DNS query.",
+        "type": "Discuss"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-12-20 07:04:13-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-26 08:21:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-20 07:04:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-12-06 00:47:44-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-08-26 08:21:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-06 00:47:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-11-28 00:38:59-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-26 08:21:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-12-05 19:08:29-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-12-05 19:08:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-12-05 08:05:13-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-07-26 11:46:21-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-12-05 08:05:13-08:00",
+        "text": "* Section 5.1.2. I am having a hard time seeing how this can be implemented as described. \"Therefore, a dual stack or multihomed resource consumer SHOULD either always use the same address for contacting the resource directory and the resource providers, i.e., overriding the operating system's automatic source IP address selection\" What exactly is the mechanism to be used for the override? A policy table (manual or  RFC7078 )? I think it would be good if the document can provide an implementable description based on  RFC6724 . * Section 3.2.\u00a0 Step 1 \"Similarly, if AT=IPv6 and L < 32, the procedure aborts\u00a0 and indicates an \"invalid prefix length\" error to the caller.\" I am trying to understand why is this a limitation. An IPv6 prefix can certainly legally have a length of < 32.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-07-26 11:53:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-26 11:46:21-07:00",
+        "text": "hanks for addressing my DISCUSS points in version -05.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-26 08:21:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-26 11:53:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-12-17 19:53:18-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-12-17 19:53:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-12-18 12:37:39-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-28 00:38:59-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-12-19 09:30:25-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-12-18 12:37:39-08:00",
+        "text": "Note: I have not completed my review in detail (and so it may be answered further down), but I wanted to get this in early... I'm in no way an ALTO expert (I can barely spell it), so am hoping that I'm missing something obvious, but I'm really concerned by the scaling implications / cost shifting of this. Let's say this suddenly becomes very popular -- Apple includes this in the iOS App Store / iMessage app, or Chrome / Firefox decides to start doing this to find the best datacenter to send traffic to or something... Until the huge majority of ISPs start answering with these records for all of their subnets, it seems like there could be a sizable amount of traffic hitting a: the ISPs recursive servers, b: RIRs, and possibly c: AS112 servers. E.g: The address I get when I lookup  www.google.com  is 216.58.193.164. These are the lookups I'd need to do (I think!) if my $application (or, more worrying, framework / browser) were to use this: wkumari$ dig +nocomment +nostats +nocmd NAPTR  164.193.58.216.in-addr.arpa ; 164.193.58.216.in-addr.arpa .\tIN\tNAPTR 193.58.216.in-addr.arpa . 59\tIN\tSOA\t ns1.google.com .  dns-admin.google.com . 226022060 900 900 1800 60 wkumari$ dig +nocomment +nostats +nocmd NAPTR  193.58.216.in-addr.arpa ; 193.58.216.in-addr.arpa .\tIN\tNAPTR 193.58.216.in-addr.arpa . 59\tIN\tSOA\t ns1.google.com .  dns-admin.google.com . 225983176 900 900 1800 60 wkumari$ dig +nocomment +nostats +nocmd NAPTR  58.216.in-addr.arpa ; 58.216.in-addr.arpa .\t\tIN\tNAPTR 216.in-addr.arpa .\t1539\tIN\tSOA\t z.arin.net .  dns-ops.arin.net . 2017026288 1800 900 691200 10800 wkumari$ dig +nocomment +nostats +nocmd NAPTR  216.in-addr.arpa ; 216.in-addr.arpa .\t\tIN\tNAPTR 216.in-addr.arpa .\t1665\tIN\tSOA\t z.arin.net .  dns-ops.arin.net . 2017026288 1800 900 691200 10800  This is 4 lookups per host / app / connection hitting my recursive servers. In addition 2 of them hit Google's resolvers, and 2 hit ARINs. Yes, ARIN already gets many \"reverse\" queries, and my recursive already does lots of lookups, but the document doesn't (that I could see) discuss the potential fallout from potentially *lots* more load.  Caching is only slightly effective here -- there are many many subnets, and e.g the ARIN NoData,NoError response will be cached for 1800 seconds (30 minutes).  There are other examples -- for example, my laptop is currently on 192.168.0.65. If I try connect to 192.168.1.2 using an app which implements this, I'll have 4 queries hitting my recursive server (3 of which will get NXDOMAIN) and  192.in-addr.arpa . hitting ARINs servers. I'm assuming that I must be missing something obvious here, because I cannot see how the above sounds reasonable.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-26 08:21:23-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-19 09:30:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8686",
+  "evaluation_end": "2019-08-26 08:21:23-07:00",
+  "evaluation_start": "2018-11-28 00:38:59-08:00"
+}

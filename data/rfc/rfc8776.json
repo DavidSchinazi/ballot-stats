@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-21 15:55:19-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 15:55:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-22 03:32:48-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-22 03:32:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-21 17:44:51-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 17:44:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-16 08:22:14-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-16 08:22:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-21 14:13:20-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 14:13:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-20 10:27:15-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-11-12 16:21:36-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-08-20 10:27:15-07:00",
+        "text": "There's a couple points (describe further in the comment section) that I'd like to get a bit more clarity on: (1) the semantics of admin-group hex strings of length smaller than 11 (2) the units for the te-bandwidth numerical values (and in what cases no units are needed), and for performance-metrics-*-way-bandwidth values (3) whether threshold-accelerated-advertisement's use of relative vs. absolute values requires any special handling (4) whether we want to specify any requirements/error-handling/etc. when there is potential for \"nonsense\" configuration, such as a max-constraint being configured as numerically smaller than a min-constraint (5) what the \"variation\" in the te-packet-types module's leafs is intending to measure.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-11-17 17:51:13-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-11-12 16:21:36-08:00",
+        "text": "Thank you for the updates in the -12; they're some good improvements! I think I am still looking for a little more clarity on one point, though it can probably be addressed with an RFC-Editor note: (1) the semantics of admin-group hex strings of length smaller than 11 In the -12 we now have: \u00a0 typedef admin-group { \u00a0 \u00a0 type yang:hex-string { \u00a0 \u00a0 \u00a0 /* 01:02:03:04 */ \u00a0 \u00a0 \u00a0 length \"1..11\"; \u00a0 \u00a0 } \u00a0 \u00a0 description \u00a0 \u00a0 \u00a0 \"Administrative group/Resource class/Color representation in \u00a0 \u00a0 \u00a0  hex-string type. \u00a0 \u00a0 \u00a0  The Most Significant Byte (MSB) is the farthest to the \u00a0 \u00a0 \u00a0  left in the byte sequence.\"; \u00a0 \u00a0 reference \"RFC3630 and  RFC5305 \"; \u00a0 } This description still feels potentially ambiguous as to how to interpret a byte sequence with fewer than four bytes -- does \"MSB\" mean \"MSB of the input string\" or \"MSB of the full-width value\"? I suggest adding\u00a0 \"Leading zero bytes in the configured value may be omitted for brevity.\" (but anything with similar clarifying value would be fine).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-17 17:51:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-07-31 11:43:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-31 11:43:32-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-22 06:19:46-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-22 06:19:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-08-20 08:17:41-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 08:17:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-20 05:50:24-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 05:50:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-21 19:44:27-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 19:44:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-20 20:44:22-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 20:44:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-21 09:30:38-07:00",
+        "end_reason": "new_position",
+        "start": "2019-07-31 11:43:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-12-06 13:53:36-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 09:30:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8776",
+  "evaluation_end": "2019-12-06 13:53:36-08:00",
+  "evaluation_start": "2019-07-31 11:43:31-07:00"
+}

@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-01-22 19:24:08-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-22 19:24:08-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-01-14 04:54:48-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-01-23 08:24:24-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-23 08:24:24-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-01-23 13:03:45-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-23 13:03:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-01-22 19:13:50-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-01-22 19:14:20-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-01-22 19:13:50-08:00",
+        "text": "Hi, thanks for the readable approach to this. I like the plain English approach to the security considerations, in particular. But I do have some comments, including one I think needs to be resolved before progressing the draft: 1) I was surprised not to see a discussion of the \"never-meet\" problem. That is, what happens if a provider and a consumer never connect with the controller at the same time. Is the controller expected to store-and-forward items submitted to a topic prior to when the consumer connects? IIRC (and I apologize that I did not have time to refresh my memory on the referenced XEPs), that sort of behavior is optional under XEP-0060. Is it required for this use case? Is support for delayed delivery (xep-0203) or something similar required? Or perhaps platforms are expected to keep long-lived connections? 2) The security considerations suggest that the use of TLS mitigates\u00a0 all of the \"network attacks\". However, the potential or eavesdropping or data modification are only mentioned in terms of such \"network attacks\". It is also possible for the controller (aka XMPP server) to do those things unless some sort of e2e protection is used. This is not discussed in the sections about how the controller is trusted, nor is it discussed in the countermeasures sections. There is a mention of e2e protection in the privacy considerations, but I think that really needs treatment under the security considerations.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-25 06:40:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-01-22 19:14:20-08:00",
+        "text": "Hi, thanks for the readable approach to this. I like the plain English approach to the security considerations, in particular. But I do have some comments, including a couple that I think needs to be resolved before progressing the draft: 1) I was surprised not to see a discussion of the \"never-meet\" problem. That is, what happens if a provider and a consumer never connect with the controller at the same time. Is the controller expected to store-and-forward items submitted to a topic prior to when the consumer connects? IIRC (and I apologize that I did not have time to refresh my memory on the referenced XEPs), that sort of behavior is optional under XEP-0060. Is it required for this use case? Is support for delayed delivery (xep-0203) or something similar required? Or perhaps platforms are expected to keep long-lived connections? 2) The security considerations suggest that the use of TLS mitigates\u00a0 all of the \"network attacks\". However, the potential or eavesdropping or data modification are only mentioned in terms of such \"network attacks\". It is also possible for the controller (aka XMPP server) to do those things unless some sort of e2e protection is used. This is not discussed in the sections about how the controller is trusted, nor is it discussed in the countermeasures sections. There is a mention of e2e protection in the privacy considerations, but I think that really needs treatment under the security considerations.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-25 06:40:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-01-23 19:59:16-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-25 14:40:26-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-01-23 19:59:16-08:00",
+        "text": "In the vein of Alissa's comments, I think this document does not adequately present the normative requirements for an implementation of the \"XMPP Grid\".\u00a0 As far as I can tell, these requirements are just relating to the communications security measures used to protect XMPP traffic, per Section 8.3.\u00a0 (Adhering to the MTI and MTN requirements of  RFC 6120  does not seem like a new requirement.)\u00a0 The main bulk of the document consists of examples that show how to use standard XMPP functionality to discover pubsub streams that convey data (types) that are of relevance for the types of behavior that MILE is interested in (e.g., security incident reporting and discovery), with inline mention of which XMPP features are used to negotiate and discover the streams in question.\u00a0 (Several of my comments are related to this Discuss point.) I also think this document does not adequately justify restricting to just the EXTERNAL and SCRAM families of SASL mechanisms; there are other mechanisms in use that provide equivalent or better security properties, and this sort of unjustified restriction is detrimental to the evolution of the Internet. The current requirements on SASL mechanisms also seem inconsistent with the claims in the threat model that the controller can obtain credentials to allow impersonation of platforms;  RFC 5802  (SCRAM) is quite explicit that \"The server does not gain the ability to impersonate the client to other servers\", and my understanding is that usage of EXTERNAL is generally not susceptible to this threat.\u00a0 (A bit more discussion in the COMMENT section.) The secdir reviewer rightly points out that this document does not discuss the implications of (non-) use of XMPP pubsub message persistence, which affect either availability of historic data or the privacy/security requirements properties of the controller and the system as a whole. (This relates to Ben's discuss point (1).) The secdir review also notes that the full implications of the participants' access to plaintext data are not covered.\u00a0 (This also relates  to Ben's discuss point (2).) Some of them are covered by existing text, e.g., the trust model's instistence that the platforms preserve the confidentiality of sensitive data, but others are not.\u00a0 (I attempt to note these cases in the COMMENT section.)  Section 6 notes that \"Depending on security requirements, the Provider might need to request a non-default configuration for the node; see [XEP-0060] for detailed examples.\" I think you need to either list out some of the examples or give a section reference from XEP-0060; the obvious places about creating or configuring a node don't seem to have this sort of discussion of security requirements and implications.\u00a0 The secdir reviewer's note about an example that demonstrates the recommended configuration is quite apt as well.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-26 05:20:12-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-25 14:40:26-07:00",
+        "text": "Thank you for updating to describe this document as essentially an  RFC206 -style applicability statement; that helps a lot to frame what it is intending to deliver, and the other updates are improvements as well. That said, I think a couple of my DISCUSS\u00a0 points remain applicable: Section 8.2.3 still has text about how an XMPP Grid Controller could obtain XMPP-Grid Platform credentials and impersonate the XMPP Grid Platform even after the breach of the XMPP Grid Controller is repaired.\u00a0 The current MTI SASL mechanisms\u00a0 do not give the controller that ability, and it's only bad mechanisms like PLAIN that involve sending cleartext passwords/bearer tokens to the server that give an attacker that compromises the controller this ability.\u00a0 I think we need to clarify that this depends on the SASL mechanism used, and that the MTI mechanisms are not vulnerable to this attack.\u00a0 Suggested change: OLD: \u00a0  o\u00a0 Obtain and cache XMPP-Grid Platform credentials so they can be \u00a0 \u00a0 \u00a0 used to impersonate XMPP-Grid Platforms even after a breach of the \u00a0 \u00a0 \u00a0 XMPP-Grid Controller is repaired NEW: \u00a0  o\u00a0 Obtain and cache XMPP-Grid Platform credentials so they can be \u00a0 \u00a0 \u00a0 used to impersonate XMPP-Grid Platforms even after a breach of the \u00a0 \u00a0 \u00a0 XMPP-Grid Controller is repaired.\u00a0 Some SASL mechanisms (including \u00a0 \u00a0 \u00a0 the mandatory-to-implement SCRAM and EXTERNAL with TLS mutual \u00a0 \u00a0 \u00a0 certificate-based authentication) do not admit this class of attack, but \u00a0 \u00a0 \u00a0 others (such as PLAIN) are susceptible. The secdir review notes that the full implications of the participants' access to plaintext data are not covered.\u00a0 (This also relates  to Ben's discuss point (2).) Some of them are covered by existing text, e.g., the trust model's instistence that the platforms preserve the confidentiality of sensitive data, but others are not.\u00a0 I repeat here the portions of the COMMENT section that seem relevant: Section 8.1.3 The controller is also trusted to preserve the integrity (and confidentiality against unauthorized parties) of the data flowing through it. Section 8.2.2 The authorized platform could advertise data that is incorrect with the intent to lead to incorrect actions by the recipients, without needing to exploit vulnerabilities in other systems or compromising them. Suggested additions: Section 8.1.3: \u00a0  o Preserve the integrity (and confidentiality against unauthorized parties) \u00a0 \u00a0  of the data flowing through it. Section 8.2.2 \u00a0  Advertise false data that leads to incorrect (e.g., potentially attacker-controlled \u00a0  or -induced) behavior of XMPP-Grid Platforms, by virtue of applying correct procdeures \u00a0  to the falsified input.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-26 05:20:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-01-23 11:20:03-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-23 11:20:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-01-24 05:48:27-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-20 14:35:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-01-24 05:48:27-08:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D4730 I have marked a number of places where I do not consider this fully specified. DETAIL S 4. >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | Request Topic Creation\u00a0 | >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | (XEP-0060)\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |<------------------------| >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | Topic Creation Success\u00a0 | >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | (XEP-0060)\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | >\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 |------------------------>| Why Isn't XEP-0060 a normative reference? S 5. >\u00a0 \u00a0 \u00a0  >\u00a0   >\u00a0 \u00a0 \u00a0 The Broker responds with the \"disco#info\" description, which SHOULD >\u00a0 \u00a0 \u00a0 include an XMPP Data Form [XEP-0004] including a 'pubsub#type' field >\u00a0 \u00a0 \u00a0 that specifies the supported namespace (in this example, the IODEF >\u00a0 \u00a0 \u00a0 namespace defined in [ RFC7970 ]): This seems underspecified.\u00a0 What does the consumer look at to \"determine the exact nature of each topic\"? This text implies it's the 'pubsub#type' but doesn't quite say so. I am imagining changing this SHOULD to a MUST and then stating how the consumer behaves. S 8.3.1. >\u00a0 \u00a0 \u00a0 mechanism [ RFC4422 ] or using the SASL SCRAM mechanism (with the >\u00a0 \u00a0 \u00a0 SCRAM-SHA-256-PLUS variant being preferred over the SCRAM-SHA-256 >\u00a0 \u00a0 \u00a0 variant and SHA-256 variants [ RFC7677 ] being preferred over SHA-1 >\u00a0 \u00a0 \u00a0 varients [ RFC5802 ]).\u00a0 XMPP-Grid Platforms and XMPP-Grid Controllers >\u00a0 \u00a0 \u00a0 using mutual certificate-based authentication SHOULD each verify the >\u00a0 \u00a0 \u00a0 revocation status of the other party's certificate.\u00a0 All XMPP-Grid I am having trouble reading these two sentences together. Is the implication that I must use SCRAM and may also use mutual certificate auth?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-20 14:35:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-01-24 03:01:29-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-24 03:01:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-01-21 09:36:29-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-21 09:36:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-01-22 16:25:57-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-22 16:25:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-01-22 21:04:35-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-22 21:04:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-01-23 20:30:07-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-23 20:30:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-01-23 10:46:40-08:00",
+        "end_reason": "new_position",
+        "start": "2019-01-14 04:54:48-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-03-27 04:22:49-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-23 10:46:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8600",
+  "evaluation_end": "2019-03-27 04:22:49-07:00",
+  "evaluation_start": "2019-01-14 04:54:48-08:00"
+}

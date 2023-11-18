@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-02-21 13:36:02-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-07-22 07:52:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-21 13:36:02-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-03-05 01:52:43-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-07-12 07:18:50-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-05 01:52:43-08:00",
+        "text": "Thank you for a well written document! My apologies for filing a procedural DISCUSS on this, but I am looking at: 7.5.\u00a0 Determining the IdP URI \u00a0  3.\u00a0 The path, starting with \"/.well-known/idp-proxy/\" and appended \u00a0 \u00a0 \u00a0  with the IdP protocol.\u00a0 Note that the separator characters '/' \u00a0 \u00a0 \u00a0  (%2F) and '\\' (%5C) MUST NOT be permitted in the protocol field, \u00a0 \u00a0 \u00a0  lest an attacker be able to direct requests outside of the \u00a0 \u00a0 \u00a0  controlled \"/.well-known/\" prefix.\u00a0 Query and fragment values MAY \u00a0 \u00a0 \u00a0  be used by including '?' or '#' characters. \"idp-proxy\" is not registered in the IANA's\u00a0 registry and this document doesn't register it either. If I missed where this is registered, please point me to the right document. If I haven't, please register it in this document.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-07-22 07:52:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 07:18:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-05 13:52:30-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-07-22 07:52:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-05 13:52:30-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-05 14:39:36-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-07-22 07:52:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-05 14:39:36-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-04 19:49:18-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-04 19:49:18-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-06 18:30:17-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-12 20:01:08-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-06 18:30:17-08:00",
+        "text": "The question of when an IdP is trustworthy, whether at all (even for \"authoritative\" IdPs) or for a specific user, is a pretty core topic for the identity assertion scheme presented here.\u00a0 These topics do get explained in localized sections of the document, but there seem to be other portions of the text that do not really acknowledge the risks. I've tried to note these in the COMMENT section (though having finished reading the document, perhaps I am overzealous about determination that an authoritative IdP is indeed authoritative). I also think that we need to be more careful about having the IdP know the semantics of what it's signing (or otherwise attesting to), so that it does not turn into a signing oracle, etc.. The \"Modifying the Session\" treatment for the SDP \"identity\" attribute seems incompletely specified. I'm a bit unclear about how the port in the IdP URI's Authority (Section 7.5) would get discovered.\u00a0 If it can be remotely supplied, there may be risks in just trusting blindly whatever value is received. It seems like there are some unstated privacy considerations in allowing the IdP proxy to automatically generate an assertion (that reveals the user's identity) at the request of javascript from the calling application, as described in Section 7.7. Section 9.4 talks about how the IdP is attesting to the binding of the user identified in the assertion with the key fingerprints, but in Sections 7.4 and 7.6 we claim that this assertion is \"opaque to the IdP\"; these statements appear to be in conflict with each other.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-22 07:52:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-12 20:01:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-03-05 09:25:45-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-07-22 07:52:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-05 09:25:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-06 06:41:33-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-06 06:41:33-08:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-03-07 06:30:39-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-07-22 07:52:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-07 06:30:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-03-06 02:24:16-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-07-22 07:52:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-06 02:24:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-02-28 09:59:49-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-07-22 07:52:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-28 09:59:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-06 19:09:43-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-06 19:09:43-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-03-05 20:02:16-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-07-22 07:52:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-05 20:02:16-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-07-22 07:52:11-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-21 13:36:01-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8827",
+  "evaluation_end": "2019-07-22 07:52:11-07:00",
+  "evaluation_start": "2019-02-21 13:36:01-08:00"
+}

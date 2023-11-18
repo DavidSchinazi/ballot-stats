@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-14 13:33:31-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-14 13:33:31-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-30 10:16:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-30 10:16:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-30 08:24:19-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-31 07:23:16-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-30 08:24:19-07:00",
+        "text": "I appreciate the new text in Section 2.7, but I'm still a little unclear on the ABNF that is specified. As far as I can tell the relevant line from the original ABNF in  RFC 3261  is: \u00a0 \u00a0  algorithm\u00a0 \u00a0 \u00a0 \u00a0 =\u00a0 \"algorithm\" EQUAL ( \"MD5\" / \"MD5-sess\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  / token ) And what it is being replaced with is: \u00a0  algorithm = \"algorithm\" EQUAL ( \"MD5\" / \"SHA-512-256\" / \"SHA-256\" \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  / token ) \u00a0  Each one of these algorithms might have a \"-sess\" variant, e.g., \u00a0  MD5-sess, SHA-256-sess, etc, as defined in [ RFC7616 ] But the point of ABNF is to formally specify the syntax, so just having the note after the definition that says there might be -sess variants leaves it unclear whether those -sess variants are expected in the \"algorithm=\" line. And if it is valid for them to appear, they need to be formally included in the ABNF line, I think.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-31 07:23:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-30 07:57:02-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-30 07:57:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-10-17 14:00:50-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-17 14:00:50-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-28 13:06:43-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-28 13:06:43-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-10-28 12:15:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-28 12:15:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-10-25 23:45:35-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-25 23:45:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-10-28 19:47:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-28 19:47:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-31 04:12:06-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-31 04:12:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-10-30 14:12:26-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-30 14:12:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-10-25 08:41:05-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-25 08:41:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-30 09:54:23-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-30 09:54:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-10-30 19:46:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-30 19:46:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-30 12:54:02-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-14 13:33:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-11-14 17:56:25-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-30 12:54:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8760",
+  "evaluation_end": "2019-11-14 17:56:25-08:00",
+  "evaluation_start": "2019-10-14 13:33:30-07:00"
+}

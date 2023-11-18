@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-01 18:17:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-01 18:22:45-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-01 18:17:08-07:00",
+        "text": "Thanks for the work that everyone put into this document! I have one item that needs discussion, and then a small number of very minor editorial nits. I plan to ballot YES once the issue I identify below has been addressed. 7.3: >\u00a0 In order to avoid correlation of certificates by account, if >\u00a0 unauthenticated GET is negotiated (Section 3.4) the recommendation in >\u00a0 Section 10.5 of [ RFC8555 ] regarding the choice of URL structure >\u00a0 applies, i.e. servers SHOULD choose URLs of certificate resources in >\u00a0 a non-guessable way, for example using capability URLs >\u00a0 [W3C.WD-capability-urls-20140218]. Thanks for reinforcing the privacy point from 8555 here; however, I think the situation here is substantially more sensitive. With base 8555 behavior, the existence of a URL (as can be deduced by distinguishing between 401 and 404 responses) poses a privacy risk, if parties can deduce a pattern to the URL paths, allowing correlation of users' domains. With unauthenticated GET, the ability to guess the associated URL would be incredibly dire, allowing arbitrary unauthorized parties to download the cert in question. While this may be somewhat obvious to the authors and working groups, it's the kind of thing that really needs to be spelled out in the security section, to avoid any oversight on the part of implementors. For a similar reason, I'm pretty sure that \"SHOULD\" is not the right level of requirement for unguessability. An ACME STAR service with guessable URLs may as well not perform validation at all, since it's effectively handing out everyone's cert to everyone on the Internet. Unguessability for unauthenticated GET needs to be a MUST, and the document should explain why this is a hard requirement.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-01 18:22:45-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-29 09:12:14-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-29 09:29:19-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-09-29 09:12:14-07:00",
+        "text": "ection 6.4 and 6.6 don\u2019t seem to specify IANA registration procedure for new subregistries.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-21 10:16:44-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-29 09:29:19-07:00",
+        "text": "Thank you for this well written document. I have one small issue that I would like to discuss before recommending approval of this document: Section 6.4 and 6.6 don\u2019t seem to specify IANA registration procedure for new subregistries.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-21 10:16:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-02 11:27:21-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-02 11:27:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-03 03:55:42-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-03 03:55:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-26 00:27:15-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-26 00:27:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-02 11:06:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-18 18:33:23-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-02 11:06:13-07:00",
+        "text": "RFC 8555  (and the IANA registry) list the 'status' field of the order object as not configurable, yet we propose to configure it (in Sections 3.1.1 and 3.1.2).\u00a0 It would perhaps be possible to make this work procedurally, by updating the registry entry and maybe an Updates: header, but it may be worth a broader rethink.\u00a0 Specifically, if we add a new field to the order instead, for the cancellation URL, then we do not modify the order directly (but instead request the server to take an action that does so as a side effect), and we also can avoid state-machine concerns about attempting to enter \"canceled\" state from a state other than \"valid\" by simply not making the cancellation URL visible until the order is \"valid\". A more minor concern, but when we consider the examples in this document in conjunction with the examples in  RFC 8555  itself, we find several protocol invariants violated: we reuse a nonce for different requests, but nonces are single-use; we use the same Order URL for two different order contents, the same certificate URL for two different (star-)certificates, and (not quite a protocol invariant, but \"with very high probability\" so) the signature on a request is duplicated.\u00a0 I also note that we reuse an account URL from  RFC 8555 , which is not inherently problematic, but my suggestion would be to generate a new one to make a clean break.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-18 18:33:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-10-01 14:04:48-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-01 14:04:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-10-03 06:21:04-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-03 06:21:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-02 01:39:18-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-02 01:39:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-09-24 17:03:34-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-24 17:03:34-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-01 09:02:38-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-24 17:03:33-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-24 06:51:13-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-01 09:02:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8739",
+  "evaluation_end": "2019-10-24 06:51:13-07:00",
+  "evaluation_start": "2019-09-24 17:03:33-07:00"
+}

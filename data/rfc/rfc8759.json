@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-15 22:53:06-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-11-07 13:54:56-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-15 22:53:06-07:00",
+        "text": "Thanks for the work everyone put into this document. I think it's not quite ready to publish, due to one ambiguity, one critical missing feature, and the lack of guidance around fragmentation. I also have two comments that I consider very important, although they don't quite rise to the level of blocking publication. As always, it's possible that my DISCUSS points are off-base, and I'd be happy to be corrected if I've misunderstood anything here. --------------------------------------------------------------------------- \u00a74.1: >\u00a0 \u00a0  When the document spans more >\u00a0 \u00a0  than one RTP packet, the entire document is obtained by >\u00a0 \u00a0  concatenating User Data Words from each contributing packet in >\u00a0 \u00a0  ascending order of Sequence Number. This is underspecified, in that it doesn't make it clear whether it would be valid to split a single UTF-8 or UTF-16 character between RTP packets, and it is nearly certain that different implementations will make different assumptions on this point, leading to interop failures. For example, the UTF-8 encoding of '\u00a2' is 0xC2 0xA2. Would it be valid to place the \"0xC2\" in one packet and the \"0xA2\" in a subsequent packet? Without specifying this, it is quite likely that some implementations will use, e.g., UTF-8 strings to accumulate the contents of RTP packets; and most such libraries will emit errors or exhibit unexpected behavior if units of less than a character are added at any time.\u00a0 (The same point holds for splitting a UTF-16 byte across packets). I don't think it much matters which choice you make (explicitly allowing or explicitly forbidding splitting characters between packets), but it does need to be explicit. I have a slight personal preference for requiring that characters cannot be split (both for ease of implementation on the receiving end and to more smoothly handle missing data due to extended packet loss), but leave it to the authors and working group to decide. --------------------------------------------------------------------------- Unlike other definitions to convey non-loss-resilient data on RTP streams, this document had no defined mechanism to deal with packet loss. This makes it unusable on the public Internet, where packet loss is an inevitable feature of the network. The existing text-in-RTP specifications define procedures to deal with such loss (see, e.g.,  RFC 4103  section 4 and  RFC 4396  section 5). --------------------------------------------------------------------------- This format is rather unique in that it, alone among all other RTP text formats, is designed to send monolithic documents that may stretch into the multiple kilobyte range.\u00a0 While fragmentation is mentioned as a possibility, the document provides no implementation guidance about when to fragment documents, and what sizes each fragment should assume.  RFC 4396  section 4.4 is an example of the kind of information I would expect to see in a document like this, with emphasis on the fact that TTML documents are going to frequently exceed the PTMU for a typical network connection.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-07 13:54:56-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-16 03:01:05-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-16 03:01:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-14 10:37:22-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-14 10:37:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-16 15:25:43-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-16 15:25:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-10-09 07:34:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-09 07:34:33-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-16 19:21:18-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-16 19:21:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-10-15 11:18:01-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-15 11:18:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-10-11 04:38:20-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-11 04:38:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-10-16 04:04:54-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-16 04:04:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-15 07:41:11-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-21 07:02:13-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-10-15 07:41:11-07:00",
+        "text": "James and WG,  I do have a couple of issues I want to have your feedback on if they should be corrected or not before proceeding to publication. Note they are for discussion and in cases where things have been discussed and there is consensus please reference that so that I can take that into consideration when we resolve these.  1. Section 4.1:  \tTimestamp:  \tThe RTP Timestamp encodes the time of the text in the packet.   \tAs timed text is a media that has duration, from a start time to an end time, and the RTP timestmap is a single time tick in the chose clock resolution the above text is not clear. I would think the start time of the document would be the most useful to include?\u00a0    \tI think the text in 4.2.1.2 combined with the above attempts to imply that the RTP timestamp will be the 0 reference for the time-expression?    \tI think this needs a bit more clarification. Not having detailed studied TTML2/1 I might be missing important details. But some more information how the document timebase:media time line connects to the RTP timestamp appears necessary.    2. A Discuss Discuss: As Timed Text is directly associated with one or more video and audio streams and requires synchronization with these other media streams to function correct. This leads to two questions.    \tFirst of all is application/ttml+xml actually the right top-level media type? If using SDP that forces one unless one have BUNDLE to use a different RTP session. Many media types having this type of properties of being associated with some other media types have registered media types in all relevant top-level media types.    \tSecondly, this payload format may need some references to mechanisms in RTP and signalling that has the purpose of associating media streams? I also assume that we have the interesting cases with localization that different languages have different time lines for the text and how long it shows as there are different tranditions in different countries and languages for how one makes subtitles.    \tThis may also point to the need for discussing the pick one out of n mechanism that a manifest may need.    3. Section 7.1:   \tIt may be appropriate to use the same Synchronization \u00a0  Source and Clock Rate as the related media.   \tUsing the same SSRC as another media stream in the same RTP Session is no-no. If you meant to use multiple RTP sessions and associate them using the same SSRC in diffiernt, yes it works but is not recommended. This points to the need for a clearer discussion of how to achieve linkage and the reasons for why same RTP timestamp may be useful or not.    4. Fragmentation: \tI think the fragmentation of an TTML document across multiple RTP payloads are a bit insufficiently described. I have the impression that it is hard to do something more clever than to fill each RTP payload to MTU limtiation, and send them out insequence. However, I think a firm requirement to apply RTP sequence number for a single document in consecutive numbers. Also the re-assebly process appear to have to parts for detecting what belongs together, same timestamp and last packet of document should have marker bit set.  \tAs a receiver can loose the last packet in the previous document, still know that it has received everything for the following document. However, if the losses are multiple, inspection of the re-assemblied document will be necessary to determine if the correct beginning is present. I have the impression that a proper section discussing these matter of fragmentation and re-assembly are necessary for good interoperability and function.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-29 04:49:00-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-10-21 07:02:13-07:00",
+        "text": "James and WG,  I do have a couple of issues I want to have your feedback on if they should be corrected or not before proceeding to publication. Note they are for discussion and in cases where things have been discussed and there is consensus please reference that so that I can take that into consideration when we resolve these.  1. Section 4.1:  \tTimestamp:  \tThe RTP Timestamp encodes the time of the text in the packet.   \tAs timed text is a media that has duration, from a start time to an end time, and the RTP timestmap is a single time tick in the chose clock resolution the above text is not clear. I would think the start time of the document would be the most useful to include?\u00a0    \tI think the text in 4.2.1.2 combined with the above attempts to imply that the RTP timestamp will be the 0 reference for the time-expression?    \tI think this needs a bit more clarification. Not having detailed studied TTML2/1 I might be missing important details. But some more information how the document timebase:media time line connects to the RTP timestamp appears necessary.    2. A Discuss Discuss: As Timed Text is directly associated with one or more video and audio streams and requires synchronization with these other media streams to function correct. This leads to two questions.    \tFirst of all is application/ttml+xml actually the right top-level media type? If using SDP that forces one unless one have BUNDLE to use a different RTP session. Many media types having this type of properties of being associated with some other media types have registered media types in all relevant top-level media types.    \tSecondly, this payload format may need some references to mechanisms in RTP and signalling that has the purpose of associating media streams? I also assume that we have the interesting cases with localization that different languages have different time lines for the text and how long it shows as there are different tranditions in different countries and languages for how one makes subtitles.    \tThis may also point to the need for discussing the pick one out of n mechanism that a manifest may need.    3. Section 7.1:   \tIt may be appropriate to use the same Synchronization \u00a0  Source and Clock Rate as the related media.   \tUsing the same SSRC as another media stream in the same RTP Session is no-no. If you meant to use multiple RTP sessions and associate them using the same SSRC in diffiernt, yes it works but is not recommended. This points to the need for a clearer discussion of how to achieve linkage and the reasons for why same RTP timestamp may be useful or not.    4. Fragmentation: \tI think the fragmentation of an TTML document across multiple RTP payloads are a bit insufficiently described. I have the impression that it is hard to do something more clever than to fill each RTP payload to MTU limtiation, and send them out insequence. However, I think a firm requirement to apply RTP sequence number for a single document in consecutive numbers. Also the re-assebly process appear to have to parts for detecting what belongs together, same timestamp and last packet of document should have marker bit set.  \tAs a receiver can loose the last packet in the previous document, still know that it has received everything for the following document. However, if the losses are multiple, inspection of the re-assemblied document will be necessary to determine if the correct beginning is present. I have the impression that a proper section discussing these matter of fragmentation and re-assembly are necessary for good interoperability and function. 5. Lack of definition of parameter types in the media type when using SDP Offer/answer.  As the application/ttml media type do contain parameters (charset and profile) there is a need to define what SDP O/A interpretations they need to have. See section 3.4.2.1 of  RFC 8088  for discussion of these different types.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-29 07:35:49-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-29 04:49:00-07:00",
+        "text": "Thanks for the discussion and addressing most of the issues completely. I leave these in so that I know that the remaining text issues to be addressed are associated with these.    3. Section 7.1:   \tIt may be appropriate to use the same Synchronization \u00a0  Source and Clock Rate as the related media.   \tUsing the same SSRC as another media stream in the same RTP Session is no-no. If you meant to use multiple RTP sessions and associate them using the same SSRC in diffiernt, yes it works but is not recommended. This points to the need for a clearer discussion of how to achieve linkage and the reasons for why same RTP timestamp may be useful or not.    4. Fragmentation: \tI think the fragmentation of an TTML document across multiple RTP payloads are a bit insufficiently described. I have the impression that it is hard to do something more clever than to fill each RTP payload to MTU limtiation, and send them out insequence. However, I think a firm requirement to apply RTP sequence number for a single document in consecutive numbers. Also the re-assebly process appear to have to parts for detecting what belongs together, same timestamp and last packet of document should have marker bit set.  \tAs a receiver can loose the last packet in the previous document, still know that it has received everything for the following document. However, if the losses are multiple, inspection of the re-assemblied document will be necessary to determine if the correct beginning is present. I have the impression that a proper section discussing these matter of fragmentation and re-assembly are necessary for good interoperability and function.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-29 07:35:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-10-17 03:59:36-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-17 03:59:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-10-11 07:12:19-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-11 07:12:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-15 05:16:50-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-15 05:16:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-10-14 20:43:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-14 20:43:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-15 07:30:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-10-09 07:34:32-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-11-19 23:10:57-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-15 07:30:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8759",
+  "evaluation_end": "2019-11-19 23:10:57-08:00",
+  "evaluation_start": "2019-10-09 07:34:32-07:00"
+}

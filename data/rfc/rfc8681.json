@@ -1,0 +1,307 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-10-09 23:49:47-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-09 23:49:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-10-11 06:15:32-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-11 06:15:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-10-08 08:21:32-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-08 08:21:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-10-10 17:00:22-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-10-10 17:00:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-10-10 21:28:32-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-05-28 21:33:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-10-10 21:28:32-07:00",
+        "text": "Thank you for making updates in response to the secdir review; they do help. That said, while I think this is a useful technology to specify and a clear improvement over the existing block-based schemes, this document still has several flaws that need to be fixed before it is ready for publication. Most notably, it is internally inconsistent in several places, about whether bitrate must be fixed or can vary, or whether the encoding/decoding window size ratio is 3/4, or whether the encoding window size only changes during startup as new ADUs are added to reach the max encoding window size, etc.\u00a0 I attempt to note these in my COMMENTs (noting that they were written as I go through the document and I may not have caught all the places where text later in the document clarifies the situation). It's also implied but not entirely clear that the C code is part of the normative algorithm specification, and the C code itself incurs implementation-defined behavior (so as to not be usable as a deterministic protocol standard element), as Ekr notes. The recommendation to bound ls_max_size in section 3.1.1 does not seem strong enough to allow this scheme to meet its stated constraints for maximum latency, since solving very large linear systems can exceed the provisioned timeslot. The SDP encoding for the fssi parmeter should explicitly state that the name value \"E\" is used to convey the E parameter. Multi-byte integer protocol fields need to specify the endianness of encoding (i.e., network byte order).\u00a0 (E.g., for ESI and E values.) The security considerations need to be checked about whether only DoS or data corruption is possible in a few situations. (More details on almost all of these in the COMMENT section.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-28 21:33:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-10-10 13:14:20-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-10 13:14:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-10-09 18:05:45-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-10-09 18:05:45-07:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D3423 I do not believe that this specification is sufficiently precise to be interoperably implemented. DETAIL S 3.4. >\u00a0 \u00a0 \u00a0 value, in addition to the maximum FEC-related latency budget >\u00a0 \u00a0 \u00a0 (Section 3.1). >\u00a0   >\u00a0  3.4.\u00a0 Pseudo-Random Number Generator (PRNG) >\u00a0   >\u00a0 \u00a0 \u00a0 The RLC FEC Schemes defined in this document rely on the TinyMT32 What is the normative reference here? We can't really plausibly normatively reference a github link without even a version hash. Is the code in the appendix the normative description of the algorithm. S 3.5. >\u00a0 \u00a0 \u00a0 These considerations apply both the RLC over GF(2) and RLC over >\u00a0 \u00a0 \u00a0 GF(2^^8), the only difference being the value of the m parameter. >\u00a0 \u00a0 \u00a0 With the RLC over GF(2) FEC Scheme (Section 5), m MUST be equal to 1. >\u00a0 \u00a0 \u00a0 With RLC over GF(2^^8) FEC Scheme (Section 4), m MUST be equal to 8. >\u00a0   >\u00a0 \u00a0 \u00a0  Again, is the normative reference here the code? I note that this code contains references to constants which are not defined here and therefore will not compile S 6.2. >\u00a0 \u00a0 \u00a0 ew_size coding coefficients that are computed by the same coefficient >\u00a0 \u00a0 \u00a0 generation function (Section Section 3.5), using the repair key and >\u00a0 \u00a0 \u00a0 encoding window descriptions carried in the Repair FEC Payload ID. >\u00a0 \u00a0 \u00a0 Whenever possible (i.e., when a sub-system covering one or more lost >\u00a0 \u00a0 \u00a0 source symbols is of full rank), decoding is performed in order to >\u00a0 \u00a0 \u00a0 recover lost source symbols.\u00a0 Each time an ADUI can be totally You should provide an algorithm for solving this system or at least a pointer to a description of how to do so S 12.2. >\u00a0 \u00a0 #define TINYMT32_MEXP 127 >\u00a0 \u00a0 #define TINYMT32_SH0 1 >\u00a0 \u00a0 #define TINYMT32_SH1 10 >\u00a0 \u00a0 #define TINYMT32_SH8 8 >\u00a0 \u00a0 #define TINYMT32_MASK UINT32_C(0x7fffffff) >\u00a0 \u00a0 #define TINYMT32_MUL (1.0f / 16777216.0f) ANSI C doesn't specify any particular method of computing floating point arithmetic, so I don't believe that any of this code is portably deterministic. S 12.2. >\u00a0 \u00a0 \u00a0 \u00a0 s->status[0] = s->status[1]; >\u00a0 \u00a0 \u00a0 \u00a0 s->status[1] = s->status[2]; >\u00a0 \u00a0 \u00a0 \u00a0 s->status[2] = x ^ (y << TINYMT32_SH1); >\u00a0 \u00a0 \u00a0 \u00a0 s->status[3] = y; >\u00a0 \u00a0 \u00a0 \u00a0 s->status[1] ^= -((int32_t)(y & 1)) & s->mat1; >\u00a0 \u00a0 \u00a0 \u00a0 s->status[2] ^= -((int32_t)(y & 1)) & s->mat2; You also can't assume that negative numbers have any particular representation (e.g., twos complement) so this XOR is not deterministic.",
+        "type": "Discuss"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-23 01:48:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-10-11 06:52:36-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-11 06:52:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-17 04:45:02-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-05-28 02:10:59-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-28 02:10:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-10-10 08:39:55-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-20 10:53:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-10-10 08:39:55-07:00",
+        "text": "I'm really not an expert on legal questions and get easily confused myself but I think just copying in the code including the copyright into the draft appendix leads to conflicting copyright statements, as the all content of the draft has the following copyright: \u00a0  Copyright (c) 2018 IETF Trust and the persons identified as the \u00a0  document authors.\u00a0 All rights reserved. And the code says this: \u00a0 * Copyright (c) 2011, 2013 Mutsuo Saito, Makoto Matsumoto, \u00a0 * Hiroshima University and The University of Tokyo. \u00a0 * All rights reserved.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-20 10:53:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-06-18 02:21:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-28 17:50:08-07:00",
+        "text": "A few code nits for Section 3.6 so that the code compiles: ** To make the combination of this source code and that in  draft-ietf-tsvwg-tinymt32  compile requires that the directive \u201c#include \u201d be added (for the memset). ** The final return in Section 3.6 is missing a semicolon: s/return 0/return 0;/",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-18 02:21:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-10-01 10:16:31-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-10-09 20:47:04-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-09 20:47:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-06-20 07:38:26-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-01 10:16:31-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8681",
+  "evaluation_end": "2019-06-20 07:38:26-07:00",
+  "evaluation_start": "2018-10-01 10:16:31-07:00"
+}

@@ -1,0 +1,261 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-10-10 17:00:39-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-10 17:00:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-10-06 09:15:25-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-06 09:15:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-10-10 12:10:34-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-10 12:10:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-10-08 07:45:20-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-08 07:45:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-10-10 14:59:48-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-10 14:59:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-10-10 07:59:47-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-10 07:59:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-10-10 13:06:43-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-10 13:06:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-10-10 19:12:55-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-11-21 13:49:05-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-10-10 19:12:55-07:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D5110 I believe there are security issues as detailed in this review. DETAIL S 9. >\u00a0 \u00a0 \u00a0 For such an attack to be effective, the attacker would need to know >\u00a0 \u00a0 \u00a0 both the client identifier and active IPv4 address lease currently in >\u00a0 \u00a0 \u00a0 use by another client.\u00a0 The risk of this can be reduced by using a >\u00a0 \u00a0 \u00a0 client identifier format which is not easily guessable, e.g., by >\u00a0 \u00a0 \u00a0 including a time component for when the client identifier was >\u00a0 \u00a0 \u00a0 generated (see [ I-D.ietf-dhc-rfc3315bis ] Section 11.2). This doesn't seem like a very strong defense. At minimum you need an analysis of the level of entropy. I note that an on-path attacker (as  RFC 3552  requires us to consider) will have no real problem with this attack. This seems fairly serious.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-21 13:49:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-10-11 07:05:51-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-11 07:05:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-10-10 06:09:19-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-10 06:09:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-10-10 13:44:17-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-10 13:44:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-09-19 20:56:25-07:00",
+        "end_reason": "new_position",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-01-02 12:54:07-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-19 20:56:25-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8539",
+  "evaluation_end": "2019-01-02 12:54:07-08:00",
+  "evaluation_start": "2018-09-19 20:56:25-07:00"
+}

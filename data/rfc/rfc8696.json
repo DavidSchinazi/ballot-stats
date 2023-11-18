@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-19 19:38:12-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 19:38:12-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-19 03:55:45-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 03:55:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-21 13:27:54-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 13:27:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-19 15:02:34-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 15:02:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-21 14:28:06-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 14:28:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-16 10:21:52-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-23 15:28:59-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-16 10:21:52-07:00",
+        "text": "I think we need to have a discussion about the abstract API for a KEY-DERIVATION instance and how that relates to what we need for a key combination operation.\u00a0 In Section 5 we assume that we can use the HKDF terminology, but that doesn't seem to hold universally for KEY-DERIVATION; for example, while HKDF has IKM, salt, and info, PBKDF2 (from  RFC 3211  that AFAICT introduces keyDerivationalgorithm for CMS) is specified by  RFC 2898  as taking just the input secret (password) and a salt, with no separate 'info' (and of course the different iteration count and PRF parameters needed for its construction).\u00a0 I note (with chagrin, as sponsoring AD) that  RFC 8619  says \"PARAMS ARE absent\" for the HKDF-based KEY-DERIVATION instances but is silent about how one is supposed to know what to pass for salt/info (the IKM we can perhaps assume will be obvious). In short, should we be seeking to define a distinct key combination operation like KRB-FX-CF2 ( RFC6113 ) rather than trying to repurpose key derivation?\u00a0 Some KDFs support this fairly well, but it's not clear to me that it is a universal property.\u00a0 For example, the proof in [H2019] seems to be assuming HKDF but this draft does not (as is clearly seen from the use of the X9.63 KDF in one of the examples).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-23 15:28:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-20 13:32:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 13:32:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-22 03:17:22-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-22 03:17:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-08-21 00:04:01-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 00:04:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-19 08:16:40-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 08:16:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-12 08:34:54-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-12 08:34:54-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-20 11:14:52-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 11:14:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-21 15:28:09-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:34:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-26 14:58:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 15:28:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8696",
+  "evaluation_end": "2019-08-26 14:58:21-07:00",
+  "evaluation_start": "2019-08-12 08:34:53-07:00"
+}

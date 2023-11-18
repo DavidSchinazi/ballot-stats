@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-10-08 14:13:28-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-10-24 05:42:26-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 05:42:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-10-25 00:19:50-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-25 00:19:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-10-24 22:23:52-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 22:23:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-10-23 14:45:54-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-23 14:45:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-10-23 10:38:37-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-23 10:38:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-10-24 08:43:04-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 08:43:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-10-24 11:05:09-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-11-07 23:31:06-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-10-24 11:05:09-07:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D3624 This DISCUSS should be easy to clear. I have noted a few points where I do not believe that the spec is sufficiently clear to implement. DETAIL S 3.4. >\u00a0   >\u00a0 \u00a0 \u00a0 o\u00a0 clientUpdateProhibited, serverUpdateProhibited: Requests to update >\u00a0 \u00a0 \u00a0 \u00a0  the object (other than to remove this status) MUST be rejected. >\u00a0   >\u00a0 \u00a0 \u00a0 o\u00a0 clientDeleteProhibited, serverDeleteProhibited: Requests to delete >\u00a0 \u00a0 \u00a0 \u00a0  the object MUST be rejected. How does access control work here? If either of these values are set, then it must be rejected? S 4.1.2. >\u00a0 \u00a0 \u00a0 C:\u00a0 \u00a0 \u00a0 \u00a0 res1523 >\u00a0 \u00a0 \u00a0 C:\u00a0 \u00a0 \u00a0  >\u00a0 \u00a0 \u00a0 C:\u00a0 \u00a0  >\u00a0 \u00a0 \u00a0 C:\u00a0 \u00a0 ABC-12345 >\u00a0 \u00a0 \u00a0 C:\u00a0  >\u00a0 \u00a0 \u00a0 C: So I can only\u00a0 one org? S 4.1.2. >\u00a0   >\u00a0 \u00a0 \u00a0 o\u00a0 One or more\u00a0 elements that contain the operational >\u00a0 \u00a0 \u00a0 \u00a0  status of the organization, as defined in Section 3.4. >\u00a0   >\u00a0 \u00a0 \u00a0 o\u00a0 An OPTIONAL\u00a0 element that contains the identifier of >\u00a0 \u00a0 \u00a0 \u00a0  the parent object, as defined in Section 3.6. It's not clear to me what's really optional here, because you say above that it's up to the server but then you label some stuff here as OPTIONAL",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-07 23:31:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-10-25 07:17:10-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-25 07:17:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-10-24 14:05:34-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 14:05:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-10-24 08:05:51-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 08:05:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-10-24 19:17:47-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 19:17:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-10-24 10:02:00-07:00",
+        "end_reason": "new_position",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-24 10:02:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-12-21 13:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-08 14:13:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8543",
+  "evaluation_end": "2018-12-21 13:23:11-08:00",
+  "evaluation_start": "2018-10-08 14:13:28-07:00"
+}

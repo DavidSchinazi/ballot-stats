@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-06 17:41:39-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-06 17:41:39-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-06 19:18:26-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-07 08:54:37-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-06 19:18:26-08:00",
+        "text": "Comparing the requirements in  RFC 8300  Section 8.1 under \"Single Domain Boundary\" and the text in Section 15 of this document, it seems that the mechanism specified in this document is not subject to the same normative requirements as specified for the administrative boundaries of a network where MPLS is used as the transport encapsulation for NSH. What is the reasoning for that? I would have expected to see similar normative requirements here as in  RFC 8300  Section 8.1.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-07 08:54:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-04 13:02:19-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-04 13:02:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-05 13:37:35-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-05 13:37:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-06 20:52:43-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-07 15:18:57-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-06 20:52:43-08:00",
+        "text": "Thank you for this easy-to-read document!\u00a0 The design is pretty elegant, but I think there are a few places that remain insufficiently specified so as to admit interoperable implementation. In particular, I don't think the TTL-handling behavior for the SF Label in the \"label stacking\" case is completely specified, though an apparent typo in Section 7 (see COMMENT) makes it hard to tell what was intended. In Section 8, we see that: \u00a0  When an SFF receives a packet containing an MPLS label stack, it \u00a0  checks whether it is processing an {SFP, SI} label pair for label \u00a0  swapping or a {context label, SFI index} label pair for label \u00a0  stacking. [...] What data source is consulted to make this check?\u00a0 The control plane? Is this distinction made on a per-node basis or a per-packet basis or otherwise?\u00a0 My first thought was that it's per-SFC-Context-Label, but we're not guaranteed that those values will be interpretable equivalently in the swapping or stacking usages, IIUC. I also support Alissa's DISCUSS (and the secdir reviewer makes similar comments).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-07 15:18:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-02-12 14:47:43-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-07 06:07:59-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-09 16:33:05-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-07 06:07:59-08:00",
+        "text": "Rich version of this review at: https://mozphab-ietf.devsvcdev.mozaws.net/D5624 I have what may be a simple question or a real interop problem, as noted below. Hopefully it's the former and we can resolve it quickly. DETAIL S 13. >\u00a0 \u00a0 \u00a0 \u00a0  and defined in [ RFC8300 ]. >\u00a0   >\u00a0 \u00a0 \u00a0 Metadata:\u00a0 The actual metadata formatted as described in whatever >\u00a0 \u00a0 \u00a0 \u00a0  document defines the metadata.\u00a0 This field is end-padded with zero >\u00a0 \u00a0 \u00a0 \u00a0  to three octets of zeroes to take it up to a four octet boundary. >\u00a0   What happens if the packet gets lost? Is there an ACK? How often should I send it?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-09 16:33:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-03-07 06:45:09-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-07 06:45:09-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-03-06 02:19:05-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-06 02:19:05-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-03-06 07:57:59-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-06 07:57:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-06 19:47:27-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-06 19:47:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-03-06 19:57:13-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-06 19:57:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-07 02:55:26-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-07 02:55:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-03-05 16:53:42-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 14:47:43-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-03-11 10:25:40-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-05 16:53:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8595",
+  "evaluation_end": "2019-03-11 10:25:40-07:00",
+  "evaluation_start": "2019-02-12 14:47:43-08:00"
+}

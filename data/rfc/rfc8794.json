@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-16 21:27:27-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-18 13:44:57-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-16 21:27:27-08:00",
+        "text": "Thanks to the authors and the participants of the CELLAR working group for the work that has gone into documenting the EBML format. I have a handful of comments that I believe need to be addressed prior to publication, and a handful of suggestions for improvement. --------------------------------------------------------------------------- Abstract: I see that the Introduction has been revised to address Ben Campbell's AD review comment regarding the document positioning itself as a general-purpose data format rather than being scoped to its use in Matroska. The Abstract still claims the much broader scope -- please update it to match the reduced scope in the Introduction. --------------------------------------------------------------------------- \u00a77.3: >\u00a0 A Float Element stores a floating-point number as defined in >\u00a0 [IEEE.754.1985]. This is not sufficiently precise to interoperate, as IEEE-754 defines multiple floating-point representations at each bit length. To differentiate from, e.g., decimal representation and arithmetic format (neither of which are probably what you want), please specify the use of \"binary interchange format\" (unless some other format is intended). --------------------------------------------------------------------------- \u00a714.1.3: >\u00a0 For String Elements and UTF-8 Elements the length of Element Data MAY >\u00a0 be reduced by adding Null Octets ... >\u00a0 Note that this method is NOT RECOMMENDED. These two normative statements conflict with each other: when using  RFC 2119 language, MAY is a very different level than \"NOT RECOMMENDED\" (which is equivalent to \"SHOULD NOT\"). Please pick one, and eliminate the other. --------------------------------------------------------------------------- \u00a717.1: >\u00a0 The VINT Data value of one-octet Element IDs MUST be between 0x01 and >\u00a0 0x7E.\u00a0 These items are valuable because they are short, and need to >\u00a0 be used for commonly repeated elements.\u00a0 Values from 1 to 126 are to >\u00a0 be allocated according to the \"RFC Required\" policy [ RFC8126 ]. This, combined with the values that are being registered, is extremely confusing, and I don't know how IANA is supposed to understand what's going on without reading and understanding the VINT bit encoding scheme (which is way too much to ask of them). This is because of the document-wide practice of speaking of IDs in their VINT-encoded values (e.g., 0xBF) instead of their data values (e.g., 63 or 0x3F), including in the initial registry in this section. Please either revise the prose to speak in terms of VINT-encoded values (e.g., \"MUST be between 0x81 and 0xFE\"), or revise the registration tables to indicate the VINT data values (e.g., \"0x3F\" for CRC-32).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-18 13:44:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-11-16 18:31:32-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-17 11:10:59-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-17 11:10:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-12-18 19:49:56-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 19:49:56-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-18 21:45:11-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-18 21:45:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-18 23:30:36-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-22 16:41:49-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-18 23:30:36-08:00",
+        "text": "Section 7.7 says: \u00a0  A Master Element MUST declare a length in octets from zero to \u00a0  VINTMAX.\u00a0 The Master Element MAY also use an unknown length.\u00a0 See \u00a0  Section 6 for rules that apply to elements of unknown length. but the second sentence contradicts the immediately prior MUST.\u00a0 We need to resolve the internal inconsistency.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-22 16:41:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-12-12 07:23:19-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-12 07:23:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-12-19 03:06:42-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-19 03:06:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-19 06:02:21-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-29 06:06:44-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-19 06:02:21-08:00",
+        "text": "1. Section 5: \u00a0  The Element ID is encoded as a Variable Size Integer. \u00a0 \u00a0 +-----------------------+-------------------------+---------------+ \u00a0 \u00a0 | VINT Length in octets |\u00a0 Range of Possible IDs\u00a0 | Number of IDs | \u00a0 \u00a0 +=======================+=========================+===============+ \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  1\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0  0x81 - 0xFE\u00a0 \u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  126 | \u00a0 \u00a0 +-----------------------+-------------------------+---------------+ \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  2\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0 \u00a0  0x407F - 0x7FFE\u00a0 \u00a0  |\u00a0 \u00a0 \u00a0 \u00a0 16,256 | \u00a0 \u00a0 +-----------------------+-------------------------+---------------+ \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  3\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  |\u00a0  0x203FFF - 0x3FFFFE\u00a0  |\u00a0 \u00a0  2,080,768 | \u00a0 \u00a0 +-----------------------+-------------------------+---------------+ \u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  4\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | 0x101FFFFF - 0x1FFFFFFE |\u00a0  268,338,304 | \u00a0 \u00a0 +-----------------------+-------------------------+---------------+ To me it appears that this whole section can't decide if the Element ID is encoded integer using VINT or an VINT format octet sequence that is self describing in length? If it is the first then the above quoted table would to me state that the IDs are 1-126 for 1 octet, and the second two-octet 127-16382. But based on later section it is actually the later. As the ID values defined in Section 11.2 for the various elements are actually the encoded form rather than a representation of the Integer value encoded. This needs to be clarified.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-29 06:06:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-12-16 03:39:03-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-16 03:39:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-16 10:21:59-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-16 10:21:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-03 10:54:02-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 10:54:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-15 20:55:05-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-15 20:55:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-12-17 06:17:02-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-16 18:31:32-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-01-29 06:06:27-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-17 06:17:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8794",
+  "evaluation_end": "2020-01-29 06:06:27-08:00",
+  "evaluation_start": "2019-11-16 18:31:32-08:00"
+}

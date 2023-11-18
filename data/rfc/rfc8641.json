@@ -1,0 +1,285 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-01 22:12:41-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 22:12:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-02 02:56:26-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-02 03:05:51-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-02 02:56:26-07:00",
+        "text": "YANG validation reports the following errors: yanglint 0.14.80: yanglint --verbose -p {rfclib} -p {draftlib} -p {tmplib} {model} -i: err : The leafref leaf is config but refers to a non-config leaf. (/ietf-subscribed-notifications:subscriptions/subscription/target/stream/stream) err : The leafref leaf is config but refers to a non-config leaf. (/ietf-subscribed-notifications:subscriptions/subscription/target/stream/stream) err : Invalid value \"subscription-policy\" of \"uses\". (/ietf-subscribed-notifications:subscriptions/subscription/subscription-policy) err : Copying data from grouping failed. (/ietf-subscribed-notifications:subscriptions/subscription/subscription-policy) err : Module \"ietf-subscribed-notifications\" parsing failed. err : Importing \"ietf-subscribed-notifications\" module into \"ietf-yang-push\" failed. err : Module \"ietf-yang-push\" parsing failed. Are these real problems or are these errors in the validation tool?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-02 03:05:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-01 11:16:37-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 11:16:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-01 16:45:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 16:45:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-05-01 11:30:09-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 11:30:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-05-01 12:08:18-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-05-23 10:01:49-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-01 12:08:18-07:00",
+        "text": "Note that I reviewed the -22 and the current version is -23.\u00a0 Briefly skimming the diff, it seems that some changes touch on points I make in my review, but there is probably still discussion to have on them. (pro-forma) I see the GenArt reviewer noted the author count (seven) already, but I couldn't find a response or note in the ballot or shephert writeup acknowledging this.\u00a0 So failing that, I'll put up a discuss point until the responsible AD says it's fine. [See also discussion on draft-ietf-netconf-subscribed notifications about the pre-RFC5378 boilerplate and whether or not it can be removed from this document] Section 3.3 states: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 In order for a subscriber to determine whether objects \u00a0  support on-change subscriptions, objects are marked accordingly on a \u00a0  publisher.\u00a0 Accordingly, when subscribing, it is the responsibility \u00a0  of the subscriber to ensure it is aware of which objects support on- \u00a0  change and which do not.\u00a0 For more on how objects are so marked, see \u00a0  Section 3.10. Chasing the reference, we see that this marking is left for future work or implementation-specific usage.\u00a0 I'm not very comfortable with the way we are describing this situation, as it seems pretty fragile in the face of different implementations trying to interoperate.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-23 10:01:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-04-29 10:50:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-29 10:50:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-04-29 06:12:23-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-29 06:12:23-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-04-16 05:39:10-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-05-02 05:30:36-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-02 05:30:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-05-02 00:40:44-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-02 00:40:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-04-30 07:45:30-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-30 07:45:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-04-30 13:01:29-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-30 13:01:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-05-01 19:59:10-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-01 19:59:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-05-27 07:27:16-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-16 05:39:10-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8641",
+  "evaluation_end": "2019-05-27 07:27:16-07:00",
+  "evaluation_start": "2019-04-16 05:39:10-07:00"
+}

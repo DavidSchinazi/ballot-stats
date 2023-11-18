@@ -1,0 +1,287 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-03-13 17:10:20-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-13 17:10:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-03-12 09:36:58-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-12 09:36:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-03-13 08:17:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-13 08:17:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-13 18:47:16-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-13 18:48:47-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-03-13 18:47:16-07:00",
+        "text": "I am balloting DISCUSS because the specification is incomplete and not clear enough.\u00a0 This document basically specifies how to construct forwarding entries (\u00a73.1) and packet forwarding (\u00a73.2).\u00a0 I have concerns about both the specification of the first, and about the specification of the tunnel end-points. (1) Forwarding Entries The procedures in \u00a73.1 seem to want to be specified by example, but I think that this approach doesn't serve the document well as it goes into specifics for the protocols used in the example only (even using Normative language), and doesn't provide a general specification.\u00a0 As \u00a73 says, \"the examples in Section 3.1 and Section 3.2 assume that OSPF or ISIS is enabled: in fact, other mechanisms of discovery and advertisement could be used including other routing protocols (such as BGP) or a central controller.\"\u00a0 I would prefer if the text in would talk about the general process first.\u00a0 If the authors think that the examples serve an important function then it's ok to leave them.\u00a0  Others have raised the point about the link state extensions needing to be Normative references.\u00a0 The way the text is written, Normative language is used in some cases to specifically talk about the use of those extensions...so I would agree.\u00a0 Using the extensions just in examples (and not mixing them with specification text) would solve that issue. What would I like to see?\u00a0 For example, the third step talks about \"If A and E are in different IGP areas/levels, then...\"\u00a0 How does the rest of the text help with understanding how BGP, for example, would be used?\u00a0 In this case I believe that the step can be summarized into the need to advertise the SID and encapsulation with enough information so that the receiver \"knows the characteristics of the router that originated the advertisement\", even if not in the same routing/flooding domain (maybe: \"information MUST be advertised across flooding domain boundaries...\" -- I'm sure the authors can come up with better text).\u00a0 Making that (or some text to the effect) the normative statement in this document would be better than using normative language in the example (e.g. \"MUST set the \"router-ID\" field to a valid value\") and hoping/expecting for the reader to be able to translate that into whatever makes sense for BGP, or OSPFv3 or the central controller...\u00a0 After the general specification, you can then use an example (\"for example, if using OSPF, then the router-ID field is set to a valid value...\"). (2) Tunnel Endpoints \u00a72: \"The tunnel selected MUST have its remote end point (destination) address equal to the address of the next SR-MPLS capable node along the path (i.e., the egress of the active node segment).\"\u00a0 I find this statement misleading and confusing. In the general case the statement is wrong: Yes, the tunnel destination should be the next SR-MPLS node, but, that doesn't have to be \"the egress of the active node segment\".\u00a0 For example, in Figure 2 the SID could direct the traffic to the Egress Router (e.g. using it's Node SID) while having individual tunnels from the Ingress Router to the first SR, then to the next SR, etc., as explained in \u00a73.2.1/3.2.2. I realize that the sentence after the statement above is \"This is shown in Figure 1.\"\u00a0 Figure 1 is a degenerate case of the (almost) general case from Figure 2.\u00a0 Even in the single tunnel (Figure 1) case, \"the egress of the active node segment\" doesn't have to be R2, it could be another node inside the SR-MPLS network (as R2, being SR-MPLS aware, should be able to forward the frames). As I hopefully explained above, I have two issues with the statement: 1. It is wrong.\u00a0 I think that what makes it wrong is the clarification that \"the next SR-MPLS capable node along the path\" is \"the egress of the active node segment\".\u00a0 Taken the text is parenthesis out would make me happy. 2. It is a general statement.\u00a0 The placement is somewhat unfortunate because it seems that it may apply only to the Figure 1 case...but it applies in general...and there is no similar statement then describing Figure 2.\u00a0 Instead of adding something similar for Figure 2, perhaps move the sentence to a place that covers all the use cases. A third issue with the statement comes up when considering \u00a73.1/\u00a73.2: there is no specification there that explains how to figure out which should be the tunnel destination address.\u00a0 The example in \u00a73.1 only talks about receiving information from E, including the \"the encapsulation endpoint and the tunnel type of any tunnel used to reach E\"...but says nothing about other potential SR-MPLS capable nodes between A and E, or how A would use a tunnel to one of those transit nodes on the way to E..w.which is what is illustrated in \u00a73.2.1/3.2.2. (3) A very, very late IPR declaration came in after the IETF LC started.\u00a0 I didn't find a thread where the WG was made aware of it. https://datatracker.ietf.org/ipr/3439/",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-03-13 18:58:07-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-03-13 18:48:47-07:00",
+        "text": "I am balloting DISCUSS because the specification is incomplete and not clear enough.\u00a0 I have concerns about both the construction of forwarding entries, including the setting of the tunnel endpoints. (1) Forwarding Entries The procedures in \u00a73.1 seem to want to be specified by example, but I think that this approach doesn't serve the document well as it goes into specifics for the protocols used in the example only (even using Normative language), and doesn't provide a general specification.\u00a0 As \u00a73 says, \"the examples in Section 3.1 and Section 3.2 assume that OSPF or ISIS is enabled: in fact, other mechanisms of discovery and advertisement could be used including other routing protocols (such as BGP) or a central controller.\"\u00a0 I would prefer if the text in would talk about the general process first.\u00a0 If the authors think that the examples serve an important function then it's ok to leave them.\u00a0  Others have raised the point about the link state extensions needing to be Normative references.\u00a0 The way the text is written, Normative language is used in some cases to specifically talk about the use of those extensions...so I would agree.\u00a0 Using the extensions just in examples (and not mixing them with specification text) would solve that issue. What would I like to see?\u00a0 For example, the third step talks about \"If A and E are in different IGP areas/levels, then...\"\u00a0 How does the rest of the text help with understanding how BGP, for example, would be used?\u00a0 In this case I believe that the step can be summarized into the need to advertise the SID and encapsulation with enough information so that the receiver \"knows the characteristics of the router that originated the advertisement\", even if not in the same routing/flooding domain (maybe: \"information MUST be advertised across flooding domain boundaries...\" -- I'm sure the authors can come up with better text).\u00a0 Making that (or some text to the effect) the normative statement in this document would be better than using normative language in the example (e.g. \"MUST set the \"router-ID\" field to a valid value\") and hoping/expecting for the reader to be able to translate that into whatever makes sense for BGP, or OSPFv3 or the central controller...\u00a0 After the general specification, you can then use an example (\"for example, if using OSPF, then the router-ID field is set to a valid value...\"). (2) Tunnel Endpoints \u00a72: \"The tunnel selected MUST have its remote end point (destination) address equal to the address of the next SR-MPLS capable node along the path (i.e., the egress of the active node segment).\"\u00a0 I find this statement misleading and confusing. In the general case the statement is wrong: Yes, the tunnel destination should be the next SR-MPLS node, but, that doesn't have to be \"the egress of the active node segment\".\u00a0 For example, in Figure 2 the SID could direct the traffic to the Egress Router (e.g. using it's Node SID) while having individual tunnels from the Ingress Router to the first SR, then to the next SR, etc., as explained in \u00a73.2.1/3.2.2. I realize that the sentence after the statement above is \"This is shown in Figure 1.\"\u00a0 Figure 1 is a degenerate case of the (almost) general case from Figure 2.\u00a0 Even in the single tunnel (Figure 1) case, \"the egress of the active node segment\" doesn't have to be R2, it could be another node inside the SR-MPLS network (as R2, being SR-MPLS aware, should be able to forward the frames). As I hopefully explained above, I have two issues with the statement: 1. It is wrong.\u00a0 I think that what makes it wrong is the clarification that \"the next SR-MPLS capable node along the path\" is \"the egress of the active node segment\".\u00a0 Taken the text is parenthesis out would make me happy. 2. It is a general statement.\u00a0 The placement is somewhat unfortunate because it seems that it may apply only to the Figure 1 case...but it applies in general...and there is no similar statement then describing Figure 2.\u00a0 Instead of adding something similar for Figure 2, perhaps move the sentence to a place that covers all the use cases. A third issue with the statement comes up when considering \u00a73.1/\u00a73.2: there is no specification there that explains how to figure out which should be the tunnel destination address.\u00a0 The example in \u00a73.1 only talks about receiving information from E, including the \"the encapsulation endpoint and the tunnel type of any tunnel used to reach E\"...but says nothing about other potential SR-MPLS capable nodes between A and E, or how A would use a tunnel to one of those transit nodes on the way to E..w.which is what is illustrated in \u00a73.2.1/3.2.2. (3) A very, very late IPR declaration came in after the IETF LC started.\u00a0 I didn't find a thread where the WG was made aware of it. https://datatracker.ietf.org/ipr/3439/",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-23 08:48:52-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-13 18:58:07-07:00",
+        "text": "I am balloting DISCUSS because the specification is incomplete and not clear enough.\u00a0 I have concerns about both the construction of forwarding entries, including the setting of the tunnel endpoints. (1) Forwarding Entries The procedures in \u00a73.1 seem to want to be specified by example, but I think that this approach doesn't serve the document well as it goes into specifics for the protocols used in the example only (even using Normative language), and doesn't provide a general specification.\u00a0 As \u00a73 says, \"the examples in Section 3.1 and Section 3.2 assume that OSPF or ISIS is enabled: in fact, other mechanisms of discovery and advertisement could be used including other routing protocols (such as BGP) or a central controller.\"\u00a0 I would prefer if the text would talk about the general process first.\u00a0 If the authors think that the examples serve an important function then it's ok to leave them.\u00a0  Others have raised the point about the link state extensions needing to be Normative references.\u00a0 The way the text is written, Normative language is used in some cases to specifically talk about the use of those extensions...so I would agree.\u00a0 Using the extensions just in examples (and not mixing them with specification text) would solve that issue. What would I like to see?\u00a0 For example, the third step talks about \"If A and E are in different IGP areas/levels, then...\"\u00a0 How does the rest of the text help with understanding how BGP, for example, would be used?\u00a0 In this case I believe that the step can be summarized into the need to advertise the SID and encapsulation with enough information so that the receiver \"knows the characteristics of the router that originated the advertisement\", even if not in the same routing/flooding domain (maybe: \"information MUST be advertised across flooding domain boundaries...\" -- I'm sure the authors can come up with better text).\u00a0 Making that (or some text to the effect) the normative statement would be better than using normative language in the example (e.g. \"MUST set the \"router-ID\" field to a valid value\") and hoping/expecting for the reader to be able to translate that into whatever makes sense for BGP, or OSPFv3 or the central controller...\u00a0 After the general specification, you can then use an example (\"for example, if using OSPF, then the router-ID field is set to a valid value...\"). (2) Tunnel Endpoints \u00a72: \"The tunnel selected MUST have its remote end point (destination) address equal to the address of the next SR-MPLS capable node along the path (i.e., the egress of the active node segment).\"\u00a0 I find this statement misleading and confusing. In the general case the statement is wrong: Yes, the tunnel destination should be the next SR-MPLS node, but that isn't always \"the egress of the active node segment\".\u00a0 For example, in Figure 2 the SID could direct the traffic to the Egress Router (e.g. using it's Node SID) while having individual tunnels from the Ingress Router to the first SR, then to the next SR, etc., as explained in \u00a73.2.1/3.2.2. I realize that the sentence after the statement above is \"This is shown in Figure 1.\"\u00a0 Figure 1 is a degenerate case of the (almost) general case from Figure 2.\u00a0 Even in the single tunnel (Figure 1) case, \"the egress of the active node segment\" doesn't have to be R2, it could be another node inside the SR-MPLS network (as R2, being SR-MPLS aware, should be able to forward the frames). As I hopefully explained above, I have two issues with the statement: 1. It is wrong.\u00a0 I think that what makes it wrong is the clarification that \"the next SR-MPLS capable node along the path\" is \"the egress of the active node segment\".\u00a0 Taken the text is parenthesis out would solve this issue. 2. It is a general statement.\u00a0 The placement is somewhat unfortunate because it seems that it may apply only to the Figure 1 case...but it applies in general...and there is no similar statement then describing other cases.\u00a0 Instead of adding something similar for Figure 2, perhaps move the sentence to a place that covers all the use cases. A third issue with the statement comes up when considering \u00a73.1/\u00a73.2: there is no specification there that explains how to figure out which should be the tunnel destination address.\u00a0 The example in \u00a73.1 only talks about receiving information from E, including the \"the encapsulation endpoint and the tunnel type of any tunnel used to reach E\"...but says nothing about other potential SR-MPLS capable nodes between A and E, or how A would use a tunnel to one of those transit nodes on the way to E...which is what is illustrated in \u00a73.2.1/3.2.2. (3) A very, very late IPR declaration came in after the IETF LC started.\u00a0 I didn't find a thread where the WG was made aware of it. https://datatracker.ietf.org/ipr/3439/",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-23 08:48:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-13 11:23:48-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-13 11:23:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-03-04 13:50:03-08:00",
+        "end_reason": "new_position",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-04 13:50:03-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-02 03:03:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-03-14 02:37:41-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-14 02:37:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-03-12 03:52:49-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-06 05:40:16-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-03-12 03:52:49-07:00",
+        "text": "These points should be easy to resolve: 1) Given section 3.1, the following drafts all seems that they should be normative references: ietf-isis-encapsulation-cap, ietf-ospf-encapsulation-cap, ietf-ospf-segment-routing-extensions, ietf-isis-segment-routing-extensions 2) Sec 3.2.3 on IP Header fields should refer to  RFC6040  for the ECN field and eventually  RFC2983  for DSCP.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-06 05:40:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-12 12:45:35-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-12 12:45:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-06-06 06:52:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-06 06:52:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-03-14 01:46:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-04 13:50:02-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-06-21 10:11:27-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-14 01:46:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8663",
+  "evaluation_end": "2019-06-21 10:11:27-07:00",
+  "evaluation_start": "2019-03-04 13:50:02-08:00"
+}

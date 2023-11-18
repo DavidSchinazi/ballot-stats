@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-15 00:18:42-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-07-26 11:26:59-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-15 00:18:42-07:00",
+        "text": "Thanks for all the work that the authors and other contributors have put into this document. I have two comments that need to be addressed before publication, but they should both be very easy to fix. --------------------------------------------------------------------------- \u00a73.3: >\u00a0 If a publisher fails to serve the RPC request for one of the reasons >\u00a0 indicated in [I-D.draft-ietf-netconf-subscribed-notifications] >\u00a0 Section 2.4.6 or [ I-D.ietf-netconf-yang-push ] Appendix A, this will >\u00a0 be indicated by \"406\" status code transported in the HTTP response. This really isn't what 406 means. 406 means \"you sent one or more of the 'Accept', 'Accept-Charset', 'Accept-Encoding', or 'Accept-Language' header fields, and I can't generate a response that satisfies what you've asked for.\" For some of the errors listed in the two cited sections, there is a reasonable semantic mapping onto existing HTTP response codes; e.g. the \"no-such-subscription\" errors could all reasonably map on to HTTP 404.\u00a0 I'll note that  RFC 8040  section 7 performs exactly this kind of mapping, so the approach seems to be consistent with the way that RESTCONF has elected to use HTTP response codes. In fact, this document already maps from the cited errors to error tags already, and that table maps from error-tag to HTTP response codes, so fixing this should be the relatively straightforward exercise of updaing the tables in this section to also include the HTTP response code that  RFC 8040  maps to the indicated error-tag. For example: \u00a0 \u00a0  error identity\u00a0 \u00a0 \u00a0 \u00a0  uses error-tag\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  HTTP Response \u00a0 \u00a0  ---------------------- --------------\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  ------------- \u00a0 \u00a0  dscp-unavailable\u00a0 \u00a0 \u00a0  invalid-value\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 400 \u00a0 \u00a0  encoding-unsupported\u00a0  invalid-value\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 400 \u00a0 \u00a0  filter-unsupported\u00a0 \u00a0  invalid-value\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 400 \u00a0 \u00a0  insufficient-resources resource-denied\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 409 \u00a0 \u00a0  no-such-subscription\u00a0  invalid-value\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 404 \u00a0 \u00a0  replay-unsupported\u00a0 \u00a0  operation-not-supported\u00a0 \u00a0 501 \u00a0 \u00a0  error identity\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 uses error-tag\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 HTTP Response \u00a0 \u00a0  ----------------------\u00a0 \u00a0 \u00a0 --------------\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 ------------- \u00a0 \u00a0  cant-exclude\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 operation-not-supported 501 \u00a0 \u00a0  datastore-not-subscribable\u00a0 invalid-value\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  400 \u00a0 \u00a0  no-such-subscription-resync invalid-value\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  404 \u00a0 \u00a0  on-change-unsupported\u00a0 \u00a0 \u00a0  operation-not-supported 501 \u00a0 \u00a0  on-change-sync-unsupported\u00a0 operation-not-supported 501 \u00a0 \u00a0  period-unsupported\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 invalid-value\u00a0 \u00a0 \u00a0 \u00a0 \u00a0  400 \u00a0 \u00a0  update-too-big\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 too-big\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  400 \u00a0 \u00a0  sync-too-big\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 too-big\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  400 \u00a0 \u00a0  unchanging-selection\u00a0 \u00a0 \u00a0 \u00a0 operation-failed\u00a0 \u00a0 \u00a0 \u00a0 500 However you choose to address this, if the error isn't related to any of the four header fields I mention above, then you can't specify the use of a 406. --------------------------------------------------------------------------- \u00a73.4: This section is unclear about how Server-Sent Events are to be used (in particular, they don't say anything about event type to be used). Based on the one example in Appendix A that shows SSE syntax, I'm assuming you probably do not intend to use SSE \"event type\" fields to distinguish between events in any way.\u00a0 This would mean that you need to specify that all SSE messages are sent with an event type of \"message,\" which the server may omit (as it is the default specified in the Server-Side Events specification).\u00a0 This means that clients will need to accept both: data: { data:\u00a0  \"ietf-restconf:notification\" : { data:\u00a0 \u00a0  \"eventTime\": \"2007-09-01T10:00:00Z\", data:\u00a0 \u00a0  \"ietf-subscribed-notifications:subscription-modified\": { data:\u00a0 \u00a0 \u00a0  \"id\": \"39\", data:\u00a0 \u00a0 \u00a0  \"uri\": \" https://example.com/restconf/subscriptions/22 \" data:\u00a0 \u00a0 \u00a0  \"stream-xpath-filter\": \"/example-module:foo\", data:\u00a0 \u00a0 \u00a0  \"stream\": { data:\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"ietf-netconf-subscribed-notifications\" : \"NETCONF\" data:\u00a0 \u00a0 \u00a0  } data:\u00a0 \u00a0  } data:\u00a0  } data: } ...and... event: message data: { data:\u00a0  \"ietf-restconf:notification\" : { data:\u00a0 \u00a0  \"eventTime\": \"2007-09-01T10:00:00Z\", data:\u00a0 \u00a0  \"ietf-subscribed-notifications:subscription-modified\": { data:\u00a0 \u00a0 \u00a0  \"id\": \"39\", data:\u00a0 \u00a0 \u00a0  \"uri\": \" https://example.com/restconf/subscriptions/22 \" data:\u00a0 \u00a0 \u00a0  \"stream-xpath-filter\": \"/example-module:foo\", data:\u00a0 \u00a0 \u00a0  \"stream\": { data:\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \"ietf-netconf-subscribed-notifications\" : \"NETCONF\" data:\u00a0 \u00a0 \u00a0  } data:\u00a0 \u00a0  } data:\u00a0  } data: } It may be helpful to incorporate the SSE syntax into all of the notification examples in Appendix A (that is, all of the examples in A.2 and A.3). I would recommend a mix of examples with and without \"event: message\".",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-07-26 11:26:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-10 06:38:06-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-10 06:38:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-14 13:44:11-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-14 13:44:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-14 21:03:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-14 21:03:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-05-15 21:02:54-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 21:02:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-05-07 13:58:42-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-06-13 16:18:59-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-07 13:58:42-07:00",
+        "text": "Thanks for the well-written document!\u00a0 I\u00a0 just have some boring housecleaning points that should be easy to resolve. Section 3.2 states: \u00a0  Subscribers can learn what event streams a RESTCONF server supports \u00a0  by querying the \"streams\" container of ietf-subscribed- \u00a0  notification.yang in \u00a0  [I-D.draft-ietf-netconf-subscribed-notifications].\u00a0 Support for the \u00a0  \"streams\" container of ietf-restconf-monitoring.yang in [ RFC8040 ] is \u00a0  not required.\u00a0 If it is supported, the event streams which are in the \u00a0  \"streams\" container of ietf-subscribed-notifications.yang SHOULD also \u00a0  be in the \"streams\" container of ietf-restconf-monitoring.yang. This \"SHOULD\" seems to be attempting to impose a normative requirement on specifications that implement draft-ietf-netconf-subscribed-notifications  and  RFC 8040  streams, without regard to whether they implement this specification.\u00a0 It seems better-placed in draft-ietf-netconf-subscribed-notifications. Similarly, when Section 4 writes: \u00a0  To meet subscription quality of service promises, the publisher MUST \u00a0  take any existing subscription \"dscp\" and apply it to the DSCP \u00a0  marking in the IP header. that seems to be duplicating a normative requirement from the core subscribed-notifications document.\u00a0 (And I'm sure Magnus will have further follow-up about how DSCP markings are per-connection for the stream transports we have available, as well.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-13 16:18:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-05-14 08:42:53-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-14 08:42:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-05-15 23:11:42-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 23:11:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-04-17 00:02:03-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-05-16 04:47:05-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-16 04:47:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-05-15 05:26:24-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 05:26:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-13 03:29:36-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-13 03:29:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-05-15 12:38:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-06-10 16:30:44-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-05-15 12:38:30-07:00",
+        "text": "Per Section 9, [ draft-ietf-netconf-netconf-event-notifications ] and [ draft-ietf-netconf-subscribed-notifications ] mention concerns about a \u201cmalicious or buggy subscriber sends a number of establish-subscription requests\u201d in their Security Considerations.\u00a0 Is that not a concern here too?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-10 16:30:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-05-15 15:16:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-15 15:16:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-08 08:54:50-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-17 00:02:03-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8650",
+  "evaluation_end": "2019-08-08 08:54:50-07:00",
+  "evaluation_start": "2019-04-17 00:02:03-07:00"
+}

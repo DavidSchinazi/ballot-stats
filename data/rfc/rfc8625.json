@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-04-10 17:01:26-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-08 12:21:37-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-10 17:01:26-07:00",
+        "text": "Thanks for everyone's work on this document. \u00a73.1: >\u00a0 \u00a0  Availability (4 octets): a 32-bit floating point number describes  >\u00a0 \u00a0  the decimal value of availability requirement for this bandwidth  >\u00a0 \u00a0  request. The value MUST be less than 1and is usually expressed in  >\u00a0 \u00a0  the value of 0.99/0.999/0.9999/0.99999.  \"32-bit floating point number\" is not sufficiently precise to specify the encoding of this field. Presumably, this is intended to use IEEE 754-2008 32-bit binary interchange format. Please specify this, and add a normative citation for IEEE 754-2008.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-08 12:21:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-04-11 01:14:35-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-11 01:14:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-04-10 13:24:03-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 13:24:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-04-10 14:12:56-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 14:12:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-07 23:16:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-04-09 10:37:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-05-02 17:58:18-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-09 10:37:33-07:00",
+        "text": "As the genart review notes, when Section 3.2 says: \u00a0  When a node does not support the Availability TLV, the node SHOULD \u00a0  generate a PathErr message with the error code \"Extended Class-Type \u00a0  Error\" and the error value \"Class-Type mismatch\" (see [ RFC2205 ]). is attempting to place a normative requirement on implementations that do not implement this specification, which cannot possibly work. The appropriate thing to do here is to say something like \"as described in Section Y of [RFC XXXX], a node that does not support the Availability TLV will [behave in this fashion]\", with no normative language.\u00a0 (Also, the  RFC 2205  reference is not very helpful to me; as far as I can tell it is just providing information about how to encode a PathErr but does not tell me anything about the specific error code and value indicated.) I'll also hold a placeholder discuss point to wait for the [IEEE754] reference for the floating-point format.\u00a0 (I think that format is not a great fit for this application, for many of the reasons that Magnus notes, but  RFC 8330  has kind of forced us into keeping it.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-02 17:58:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-03-20 13:12:50-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-08 01:51:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-04-08 09:42:09-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-08 09:42:09-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-04-30 02:10:17-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-08 03:13:24-07:00",
+        "text": "Section 3.1: \u00a0 \u00a0 \u00a0 Availability (4 octets): a 32-bit floating point number describes  \u00a0 \u00a0 \u00a0 the decimal value of availability requirement for this bandwidth  \u00a0 \u00a0 \u00a0 request. The value MUST be less than 1and is usually expressed in  \u00a0 \u00a0 \u00a0 the value of 0.99/0.999/0.9999/0.99999.  It appears that this format has some very clear limitations when it comes to store availability numbers. Assuming that this 32-bit float is an IEEE-754 representation which should be explicitly stated.  In that case representing availabilities higher than 0.999999 starts to introduce significant errors in relation to intended precision. Intended value Error\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  Actual value 0.999999\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 -1.3278961181640625E-8\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 0.999998986721038818359375 0.9999999\u00a0 \u00a0 \u00a0 \u00a0 -1.920928955078125E-8\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 0.99999988079071044921875 0.99999999\u00a0 \u00a0 \u00a0 1E-8\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  1 (Which is not allowed) So at a minimal the limitations for what is practical to express needs to be provided. Secondly, are this range sufficient in all cases?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-30 02:10:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-04-03 03:05:57-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-03 03:05:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-09 12:14:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-04-10 16:31:34-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 16:31:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-04-09 16:43:58-07:00",
+        "end_reason": "new_position",
+        "start": "2019-03-20 13:12:50-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-05-08 13:23:22-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-09 16:43:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8625",
+  "evaluation_end": "2019-05-08 13:23:22-07:00",
+  "evaluation_start": "2019-03-20 13:12:50-07:00"
+}

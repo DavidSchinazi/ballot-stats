@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-09-04 00:01:17-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-10 14:31:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-04 00:01:17-07:00",
+        "text": "Thanks to everyone who worked on this document. I have a couple of concerns that I think make this specification ambiguous in some very important ways that will prevent interoperation. These should be pretty simple to fix. Section 3.2 talks about patching operations. One of the things it indicates is: \u00a0 \"The \u00a0  names and times of the Patch Records are given and matched in same \u00a0  way as for the Fetch Records, except each Patch Record can match at \u00a0  most one Target Record.\" I kept waiting for text that tells the recipient of a patch what to do if a Patch Record matches more than one SenML Record (e.g., if the Patch Record contains no time value and so matches several different SenML Records), but I couldn't find any. Presumably, this is an error, and an error should be sent to the client. The ability for one Patch Record to raise an error, in turn, raises the question about how to handle other Patch Records in the same Patch Pack. For example, if I send a Patch Pack with two Patch Records that can be successfully applied, and one that cannot (because it matches multiple SenML Records), does the server apply the two that it can, but not the one that cannot? If so, how does it communicate to the client which records succeeded, and which failed? Relevant to the above points, we also need to clearly specify in this document whether the Patch Records are considered to be applied in sequence. For example, consider a SenML database containing: \u00a0  [ \u00a0 \u00a0  {\"n\":\"urn:dev:ow:10e2073a01080063\",\"u\":\"%RH\",\"t\":1.320067464e+09, \u00a0 \u00a0 \u00a0 \"v\":20}, \u00a0 \u00a0  {\"n\":\"urn:dev:ow:10e2073a01080063\",\"u\":\"%RH\",\"t\":1.320067524e+09, \u00a0 \u00a0 \u00a0 \"v\":20.3} \u00a0  ] Now, I send a Patch Pack like: \u00a0  [ \u00a0 \u00a0  {\"n\":\"urn:dev:ow:10e2073a01080063\",\"u\":\"%RH\",\"t\":1.320067464e+09, \u00a0 \u00a0 \u00a0 \"v\":null}, \u00a0 \u00a0  {\"n\":\"urn:dev:ow:10e2073a01080063\",\"u\":\"%RH\", \"v\":21} \u00a0  ] Does this succeed, or does it fail? If executed in sequence, this succeeds, since the first Patch Record will remove the first SenML record, and the second Patch Record will unambiguously match the second SenML record (and update it). On the other hand, if we don't specify that records are processed in order, then this might be rejected due to the second Patch Record being ambiguous. Note that this rejection could also arise if an implementation naively attempted to validate records prior to executing them, without taking into account the impact of the preceding record on the state of the SenML record database. There are other ways of handling this, but my strawman for how to address these issues would be to add language that specifies: - Any Patch Record that matches more than one SenML record results \u00a0 in an error that is sent to the client. - If an error is sent to a client for a Patch Pack, then the final \u00a0 state of the SenML records on the client must not be changed. \u00a0 In other words, either the Patch Pack works in its entirety, or \u00a0 it fails in its entirety. - Patch Records in a Patch Pack are processed sequentially. In order \u00a0 to implement both this and the preceding bullet, the implementation \u00a0 will need some ability to roll-back any already-applied changes if \u00a0 an error is encountered.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-10 14:31:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-19 04:11:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 04:11:28-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-09-04 12:41:22-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 12:41:22-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-09-04 15:26:30-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 15:26:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-03 15:32:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-03 15:32:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-09-04 20:48:41-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 20:48:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-09-03 14:35:15-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-03 14:35:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-09-04 09:58:53-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 09:58:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-09-04 07:11:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 07:11:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-28 06:29:57-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-28 06:29:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-09-04 11:45:38-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-10 11:07:00-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-04 11:45:38-07:00",
+        "text": "(1) Section 5.\u00a0 It\u2019s helpful that this document notes the relevance of SenML\u2019s security and privacy considerations (i.e., Section 13 of  RFC8428 ).\u00a0 However, this references seems circular.\u00a0  RFC8428  says, \u201cSenML formats alone do not provide any security and instead rely on the protocol that carries them to provide security.\u201d\u00a0 This document seems to be that \u201cprotocol that carries them\u201d implying it\u00a0 should cover the security mechanisms.\u00a0 Is it not appropriate to suggest that CoAPs can address the (per  RFC8428 ) \u201cconfidentiality, data integrity, and authentication as appropriate for the usage.\u201d? If not, what additional guidance can be provided? (2) Section 5.\u00a0 It seems like it would be appropriate for the server to support access control to restrict the client\u2019s ability access and modify a resource with FETCH and (i)PATCH.\u00a0 My read of \u201cPer \u201cIn FETCH and (i)PATCH requests, the client can pass arbitrary names to the target resource for manipulation.\u00a0 The resource implementer must take care to only allow access to names that are actually part of (or accessible through) the target resource\u201d, doesn\u2019t suggest that type of access control.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-10 11:07:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-09-03 20:41:53-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-03 20:41:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-09-03 12:22:53-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-19 04:11:27-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-11 05:46:08-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-03 12:22:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8790",
+  "evaluation_end": "2020-03-11 05:46:08-07:00",
+  "evaluation_start": "2019-08-19 04:11:27-07:00"
+}

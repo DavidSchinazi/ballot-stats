@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-21 21:26:41-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-03 09:24:41-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-21 21:26:41-08:00",
+        "text": "Thanks to the authors and working group for their work on this document.\u00a0 I have one major concern about the ability for this mechanism to be abused to form DDoS attacks, described below. Unfortunately, while I have identified the attack, I don't have an easy solution to propose that mitigates it satisfactorily. I also have a handful of mostly editorial comments on the document. --------------------------------------------------------------------------- \u00a76: I was expecting to see a discussion of the DDoS attack that may result from a large network (or a rogue host on such a network) sending out a PvD ID containing the hostname of a victim machine, and setting the \"H\" flag. Since the messages used to trigger these HTTP connections are extremely lightweight, unauthenticated UDP messages, and the resulting HTTP connections require the exchange of a significant number of packets in addition to a number of cryptographic operations, this is a very high ratio amplification attack, both in terms of network and CPU resources. Given that the delay setting comes from the network instead of being independently computed by the host, such an attack could be honed to be particularly devastating.\u00a0 Although it isn't a complete mitigation, one approach to consider would be moving computation of the delay upper bound to the host, or specifying a minimum upper bound of several minutes (where a smaller value will cause the host to use this minimum upper bound). Regardless of how this is ultimately handled, I think this is a pretty severe risk that needs addressing in the document prior to publication.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-03 09:24:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-01-17 04:01:58-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-17 04:01:58-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-21 08:22:23-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-22 18:48:04-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-21 08:22:23-08:00",
+        "text": "This is a nit that should be easy to resolve but I'm confused by it, so I'm flagging it here. The reference for [URN] in Section 10.2 says '[URN] \"URN Namespaces\", n.d..,' which seems like an error. Given the way [URN] is used in 4.3, I'm not sure I understand why organizations with formal URN namespaces\u00a0 would be expected to be using PvDs, if that is what the document intends to convey. In any event, at a minimum the reference needs to be fixed.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-22 18:48:04-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-01-21 09:55:45-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-21 09:55:45-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-01-16 21:00:28-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-16 21:00:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-21 16:21:09-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-03 13:58:22-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-21 16:21:09-08:00",
+        "text": "Alexey basically already noted this in his Comment, but I'll elevate it to a Discuss: the usage of TLS for retrieving PvD Additional Information is not really completely specified -- generally in this sort of case where there's a (provisioning) domain name to authenticate we'd expect to require that the server present a certificate with DNS-ID [ RFC6125 ] that matches the expected name.\u00a0 We could also cite  RFC 7525  for TLS best practices and/or make a TLS version recommendation (i.e., 1.3). There seems to be a missing step in the binding of the PvD ID to the actual usage, or rather, we are making stronger statements about authenticity than the technology seems to justify.\u00a0 While we can verify that the TLS certificate used to access the additional information matches with the PvD ID provided, there doesn't seem to be a step to validate that the PvD ID in question is applicable for the current network environment.\u00a0 The prefix match helps some, but (to first order) only for globally-routable prefixes in the absence of NAT.\u00a0 Malicious routers (e.g., coffeeshop wifi) can fairly easily implement NAT66 and circumvent host-side countermeasures; tunneling traffic through to a compromised host actually in the target PvD would allow circumvention of the TLS-server-side countermeasures.\u00a0 I have some suggested rewordings in the Comment section that should bring the claims in line with what is actually provided. (As something of a side note, it seems that the JOSE/signature scheme discussed in the secdir review thread, that does have a tighter binding to the local network with the PvD, could defeat the caching attack discussed there by having the host supply a nonce in the RS and including that in the signed response, but that requires a lot of expensive signatures and has some challenging key-management problems. So it doesn't seem worth pursuing, even though it's attractive to make more use of the network locality.) The IANA Considerations for PvD Option Flags indicates that bits 0 to 15 are managed by IANA, but I think there are only 12 bits available due to the 4-bit Delay field.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-03 13:58:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-01-22 13:42:30-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-22 13:42:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-01-03 16:24:26-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-03 16:24:26-08:00",
+        "text": null,
+        "type": "Recuse"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-01-23 00:47:09-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-23 00:47:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-01-23 02:44:12-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-23 02:44:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-01-20 09:37:42-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-20 09:37:42-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-01-22 09:52:49-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-03 07:09:30-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-22 09:52:49-08:00",
+        "text": "Section 4.4.\u00a0 Per \u201cWhen a host retrieves the PvD Additional Information, it MUST verify that the TLS server certificate is valid for the performed request (e.g., that the Subject Alternative Name is equal to the PvD ID expressed as an FQDN).\u00a0 This authentication creates a secure binding between the information provided by the trusted Router Advertisement, and the HTTPS server.\u201d, what is the trust anchor the client is supposed to use to valid the server certificate is valid?\u00a0 How is that trust anchor provisioned?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-02-03 07:09:30-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-01-03 11:53:04-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-01-21 12:43:54-08:00",
+        "end_reason": "new_position",
+        "start": "2020-01-03 11:53:04-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-02-12 06:55:51-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-21 12:43:54-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc8801",
+  "evaluation_end": "2020-02-12 06:55:51-08:00",
+  "evaluation_start": "2020-01-03 11:53:04-08:00"
+}

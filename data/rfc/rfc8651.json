@@ -1,0 +1,341 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-04-10 15:09:59-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 15:09:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-04-06 07:00:17-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-06 07:00:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-04-10 12:38:34-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-04-10 12:39:41-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-04-10 12:38:34-07:00",
+        "text": "I support the DISCUSS positions of Warren and Magnus. Also, this work item does not appear to be inside the scope of the MANET charter, at least based on my reading of the charter. Am I missing something?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-05-10 07:04:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-10 12:39:41-07:00",
+        "text": "This work item does not appear to be inside the scope of the MANET charter, at least based on my reading of the charter. Am I missing something?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-10 07:04:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-04-03 07:36:59-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-04-07 23:25:01-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-07 23:25:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-04-10 17:58:11-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-06-06 15:01:58-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-04-10 17:58:11-07:00",
+        "text": "Section 3.1 defines 'Scale' as a four-bit unsigned integer field but only the values 0-3 are assigned, leaving 4-16k usable.\u00a0 How will future values be assigned? In Section 3.1.1: \u00a0  DS Field Qn: \u00a0 \u00a0 \u00a0 The data item contains a sequence of 8 bit DS Fields.\u00a0 The number \u00a0 \u00a0 \u00a0 of DS Fields present MUST equal the sum of all Num DSCPs field \u00a0 \u00a0 \u00a0 values. Perhaps I'm misreading, but I thought the Num DSCPs Qn field was global for this queue index, so there would just be one of them and no need to take a sum. In Section 3.3: \u00a0  A router which receives the Restart Data Item SHOULD resume \u00a0  transmission of the identified traffic to the modem. Why is this only a \"SHOULD\"? Section 4 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  The extension does not inherently \u00a0  introduce any additional vulnerabilities above those documented in \u00a0  [ RFC8175 ].\u00a0 [...] As noted by others, this sentence is just not true. I will not duplicate the suggestions for additional considerations that need to be documented.\u00a0 In particular, I agree with Roman that the use of TLS needs to be mandatory, especially since this protocol is nominally only defined for use with radio links.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-06-14 16:21:24-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-06-06 15:01:58-07:00",
+        "text": "[Future 'Scale' allocations will be done via Updates:] In Section 3.1.1: \u00a0  DS Field Qn: \u00a0 \u00a0 \u00a0 The data item contains a sequence of 8 bit DS Fields.\u00a0 The number \u00a0 \u00a0 \u00a0 of DS Fields present MUST equal the sum of all Num DSCPs field \u00a0 \u00a0 \u00a0 values. Perhaps I'm misreading, but I thought the Num DSCPs Qn field was global for this queue index, so there would just be one of them and no need to take a sum. [Restart Data may not lead to data restart due to other conditions on the router] Section 4 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  The extension does not inherently \u00a0  introduce any additional vulnerabilities above those documented in \u00a0  [ RFC8175 ].\u00a0 [...] As noted by others, this sentence is just not true. I will not duplicate the suggestions for additional considerations that need to be documented.\u00a0 In particular, I agree with Roman that the use of TLS needs to be mandatory, especially since this protocol is nominally only defined for use with radio links.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-14 16:21:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-04-09 14:11:06-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-09 14:11:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-04-08 10:14:21-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-08 10:14:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-04-04 04:42:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-05-06 00:56:41-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-04 04:42:28-07:00",
+        "text": "It is unclear to me what the purpose of the pause and resume is here?  Is it to enable the router to build the queue rather than the modem if there is a queue buildup in the modem?  If that is the case, then pause and resume will be done frequently and on short time scales due to variability of the link. And then the router resumes transmission to the modem when the buffer has been reduced? As this is enabled to be done on a queue level what how does one ensure the per hop behavior that is intended based on the DSCP with this split. Because you will get an interaction between the two queue that are in series for the same link which makes ensuring the PHB difficult.  I hope for a timely clarification to determine if this is a discuss or not and make it more actionable.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-06 00:56:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-04-10 05:23:39-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 05:23:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-04-04 08:28:44-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-04-04 08:29:31-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-04-04 08:28:44-07:00",
+        "text": "I have similar questions as Magnus does about the specific use case for this mechanism. Moreover I wonder about the assumed usage of the different DSCPs. If he router would want to assign assign code points to the traffic, then it would need to know what the requirement of the traffic is which is usually unknown. If there is an assumption that the traffic is marked with the right DSCP by the origin than the router does not need to know about the available DS queue configuration. Can you please clarify!",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-06-06 09:56:53-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-04 08:29:31-07:00",
+        "text": "I have similar questions as Magnus does about the specific use case for this mechanism. Moreover I wonder about the assumed usage of the different DSCPs. If the router would want to assign code points to the traffic, then it would need to know what the requirements of the traffic is which is usually unknown to a router. If there is an assumption that the traffic is marked with the right DSCP by the origin than the router does not need to know about the available DS queue configuration. Can you please clarify!",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-06 09:56:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-04-10 14:40:31-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-05-17 11:44:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-10 14:40:31-07:00",
+        "text": "Unauthenticated shutdown of the network seems exceedingly dangerous.\u00a0 An expansion of the implementation scenarios described in Section 4 of  RFC8175  and the architecture laid out in Figure 1 of  RFC8175  appears to be: (a) single direct connect (1x modem + 1x router) (b) single dedicated switch (1x modem + 1x switch + 1x router) (c) multiple connect (>1x modem + >=0 switches + 1x router) (d) mobile environment (>=1x modem + switch + router + other devices in the switch) (e) networked deployment (as stated in  RFC8175 /anything more complicated) I believe that the safest thing is that using TLS with this extension should be a MUST.\u00a0 If that is problematic, then I\u2019d only soften it to (text that amounts to) \u201cin environments and deployment scenarios (a) and (b), TLS SHOULD be used.\u00a0 In all other environments, TLS MUST be used.\u201d Warren: I believe that your neighbor scenario is likely scenario (c). As the current security considerations say, using TLS in scenario (a) won\u2019t help if the modem gets compromised.\u00a0 In the above recommendation, there is an assumption that the switch(s) isn\u2019t compromised (and that should be documented).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-17 11:44:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-04-09 16:15:05-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-09 16:15:05-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-04-08 11:57:03-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-03 07:36:59-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-04-11 06:29:48-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-08 11:57:03-07:00",
+        "text": "Please note that I'm really not a DLEP person, and so this may be completely incorrect -- in which case I'm (of course!) happy to clear my discuss. Hypothetical Scenario: My next-door neighbor keeps using up all the bandwidth, making my Internets slow! Stupid neighbor! Until now I didn't have much motivation to mess with DLEP (it didn't really gain me anything), but now I can spoof Pause Data Items to get the router to stop sending traffic to her, freeing up all the bandwidth for me. The security considerations section doesn't *really* cover this -- it says:  \" Note that this extension does allow a compromised or impersonating modem to suppress transmission by the router, but this is not a substantively different attack by such a compromised modem simply dropping all traffic destined to, or sent by a router.\" -- that only covers compromised modems, not impersonating modems. It also says: \"[ RFC8175 ] defines the use of TLS to protect against the impersonating attacker.\" -- yes,  RFC8175  does indeed define the use of TLS, but doesn't require it. RFC8175  Security Considerations also say: \" This specification does not address security of the data plane, as it (the data plane) is not affected, and standard security procedures can be employed.\" and \"Similar issues can arise if DLEP data is used as an input to policing algorithms -- injection of malicious data via DLEP can cause those policing algorithms to make incorrect decisions, degrading network throughput.\" It seems that this specification is specifically allowing the dataplane to be affected by (spoofed) DLEP messages, and in a much more direct way than discussed in the  RFC8175  security considerations section. I think that this is dangerous without much more direct advice (like \"MUST use TLS\" or similar).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-06-17 13:17:10-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-11 06:29:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8651",
+  "evaluation_end": "2019-06-17 13:17:10-07:00",
+  "evaluation_start": "2019-04-03 07:36:59-07:00"
+}

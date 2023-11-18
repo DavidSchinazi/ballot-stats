@@ -1,0 +1,301 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-11-29 14:14:49-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-11-29 14:15:14-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-11-29 14:14:49-08:00",
+        "text": "to discuss before the document is published. It's possible that I'm mistaken about the way this is intended to work -- don't be shy about telling me I'm wrong. \u00a74.2: >\u00a0 To use a DNS server as a source of bootstrapping data, a device MAY >\u00a0 perform a multicast DNS [ RFC6762 ] query searching for the service >\u00a0 \"_zerotouch._tcp.local.\".\u00a0 Alternatively the device MAY perform DNS- >\u00a0 SD [ RFC6763 ] via normal DNS operation, using the domain returned to >\u00a0 it from the DHCP server; for example, searching for the service >\u00a0 \"_zerotouch._tcp.example.com\". RFC 6763  \u00a74.1.2 defers to  RFC 2782  for the structure of DNS-SD records; and  RFC 2782  indicates that these are of the format \"_service._proto.name\". In this case, \"service\" is one of the services registered with IANA at https://www.iana.org/assignments/service-names-port-numbers/ The service \"zerotouch\" is not registered in that registry, nor does this document register it there. Unless I'm confused about the way SRV records are intended to work, this document needs to register \"zerotouch\" in the service name table indicated above.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-12-20 12:15:13-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-11-29 14:15:14-08:00",
+        "text": "Thanks to everyone who worked on this document. I have one concern that I'd like to discuss before the document is published. It's possible that I'm mistaken about the way this is intended to work -- don't be shy about telling me I'm wrong. \u00a74.2: >\u00a0 To use a DNS server as a source of bootstrapping data, a device MAY >\u00a0 perform a multicast DNS [ RFC6762 ] query searching for the service >\u00a0 \"_zerotouch._tcp.local.\".\u00a0 Alternatively the device MAY perform DNS- >\u00a0 SD [ RFC6763 ] via normal DNS operation, using the domain returned to >\u00a0 it from the DHCP server; for example, searching for the service >\u00a0 \"_zerotouch._tcp.example.com\". RFC 6763  \u00a74.1.2 defers to  RFC 2782  for the structure of DNS-SD records; and  RFC 2782  indicates that these are of the format \"_service._proto.name\". In this case, \"service\" is one of the services registered with IANA at https://www.iana.org/assignments/service-names-port-numbers/ The service \"zerotouch\" is not registered in that registry, nor does this document register it there. Unless I'm confused about the way SRV records are intended to work, this document needs to register \"zerotouch\" in the service name table indicated above.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-20 12:15:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-12-05 10:21:31-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-12-21 02:36:38-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-12-05 10:21:31-08:00",
+        "text": "Thank you for a well written document, it was a pleasure to read. I have a small list of issues that I would like to discuss before recommending approval of this document: In Section 5.3: \u00a0  If the zero touch information artifact contains redirect information, \u00a0  the device MUST, within limits of how many recursive loops the device \u00a0  allows, process the redirect information as described in Section 5.5. \u00a0  This is the recursion step, it will cause the device to reenter this \u00a0  algorithm, but this time the data source will definitely be a \u00a0  bootstrap server, as that is all redirect information is able to \u00a0  redirect a device to. I think you need to specify a \"max redirect\" value in order to prevent intentional or unintentional misconfigurations. Without such limit it is trivial to introduce denial-of-service attack on naive device implementations. 2)  10.3.\u00a0 The SMI Security for S/MIME CMS Content Type Registry \u00a0  IANA is kindly requested to add two entries in the \"SMI Security for \u00a0  S/MIME CMS Content Type\" registry (1.2.840.113549.1.9.16.1), with \u00a0  values as follows: \u00a0  Decimal\u00a0 Description\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  References \u00a0  -------\u00a0 --------------------------------------\u00a0 ---------- \u00a0  TBD1\u00a0 \u00a0 \u00a0 id-ct-zerotouchInformationXML\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 [RFCXXXX] \u00a0  TBD2\u00a0 \u00a0 \u00a0 id-ct-zerotouchInformationJSON\u00a0 \u00a0 \u00a0 \u00a0  [RFCXXXX] \u00a0  id-ct-zerotouchInformationXML indicates that the \"zerotouch- \u00a0  information\" is encoded using XML.\u00a0 id-ct-zerotouchInformationJSON \u00a0  indicates that the \"zerotouch-information\" is encoded using JSON. You define these values, but they are not used anywhere in the document. It looks like you intended for this to be used in several places, for example: 3.1.\u00a0 Zero Touch Information \u00a0  When the zero touch information artifact is unsigned, as it might be \u00a0  when communicated over trusted channels, the CMS structure's top-most \u00a0  content type MUST be one of the OIDs described in Section 10.3, or \u00a0  the OID id-data (1.2.840.113549.1.7.1), in which case the encoding \u00a0  (JSON, XML, etc.)\u00a0 SHOULD be communicated externally.\u00a0 In either Did you intend to use the above OIDs here? \u00a0  case, the associated content is an octet string containing \u00a0  \"zerotouch-information\" data in the expected encoding.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-21 02:36:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-12-06 06:47:59-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-06 06:47:59-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-12-05 13:17:18-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 13:17:18-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-12-05 21:31:29-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 21:31:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-12-03 22:28:37-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-12-29 16:33:42-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-12-03 22:28:37-08:00",
+        "text": "First off, thanks for this clear and considered document and design; it really lays out the scenario of applicability and the functionality quite well.\u00a0 I just have a couple lingering places that we might want to nail down a little bit tighter... (1) SSH key formats The module in Section 7.3 says: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  leaf-list ssh-host-key { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type binary; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  description \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"The binary public key data for this SSH key, as \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 specified by  RFC 4253 , Section 6.6, i.e.: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 string\u00a0 \u00a0 certificate or public key format \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 identifier \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 byte[n]\u00a0  key/certificate data.\"; \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  reference \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \"RFC 4253: The Secure Shell (SSH) Transport Layer \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Protocol\"; but  RFC 4523  Section 6.6 says: \u00a0  The key type MUST always be explicitly known (from algorithm \u00a0  negotiation or some other source).\u00a0 It is not normally included in \u00a0  the key blob. \u00a0  Certificates and public keys are encoded as follows: \u00a0 \u00a0 \u00a0 string\u00a0 \u00a0 certificate or public key format identifier \u00a0 \u00a0 \u00a0 byte[n]\u00a0  key/certificate data How is the key type known for the SZTP usage? (2) Privilege escalation by design There's text in Section 2.1 (and, really, throughout) that indicates that a device being boostrap should allow a trusted bootstrap server to behave as (i.e., supply) a trust anchor for verifying a different service.\u00a0 In some sense this is elevating an EE cert to a CA cert, and I had hoped to see some discussion of this escalation in the security considerations.\u00a0 (Same for the owner cert, though there's a stronger argument that the owner should be considered fully privileged here.) (3) Nonce length Section 7.3 describes the nonce leaf: \u00a0 \u00a0 \u00a0 \u00a0  leaf nonce { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type binary { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  length \"8..32\"; There is probably some discussion to be had about the minimum nonce length (not necessarily in the document itself).\u00a0 Do you have a pointer handy to previous disucsions or do we need to have it now? (I do see that this is just following  RFC 8366 , so hopefully this is an easy question.) (4) OPTION_V4_ZEROTOUCH_REDIRECT repeated instances (In Section 8.1.) I think I may just be misunderstanding things here, but aren't \u00a0  As the list of URIs may exceed the maximum allowed length of a single \u00a0  DHCPv4 option (255 octets), the client MUST implement [ RFC3396 ], \u00a0  allowing the URI list to be split across a number of \u00a0  OPTION_V4_ZEROTOUCH_REDIRECT option instances. and \u00a0  The DHCPv4 server MAY include a single instance of Option \u00a0  OPTION_V4_ZEROTOUCH_REDIRECT in DHCP messages it sends.\u00a0 Servers MUST \u00a0  NOT send more than one instance of the OPTION_V4_ZEROTOUCH_REDIRECT \u00a0  option. in conflict about sending more than one instance of OPTION_V4_ZEROTOUCH_REDIRECT?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-01-05 20:33:34-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-12-29 16:33:42-08:00",
+        "text": "[editing to reflect changes in the -26] First off, thanks for this clear and considered document and design; it really lays out the scenario of applicability and the functionality quite well.\u00a0 I just have a couple lingering places that we might want to nail down a little bit tighter... (2) Privilege escalation by design There's text in Section 2.1 (and, really, throughout) that indicates that a device being boostrap should allow a trusted bootstrap server to behave as (i.e., supply) a trust anchor for verifying a different service.\u00a0 In some sense this is elevating an EE cert to a CA cert, and I had hoped to see some discussion of this escalation in the security considerations.\u00a0 (Same for the owner cert, though there's a stronger argument that the owner should be considered fully privileged here.) (3) Nonce length Section 7.3 describes the nonce leaf: \u00a0 \u00a0 \u00a0 \u00a0  leaf nonce { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  type binary { \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  length \"8..32\"; There is probably some discussion to be had about the minimum nonce length (not necessarily in the document itself).\u00a0 That is, is a 64-bit nonce actually secure for what we are asking of it, or do we need 128 bits?\u00a0 Do you have a pointer handy to previous discussions or do we need to have it now? (I do see that this is just following  RFC 8366 , so hopefully this is an easy question.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-01-05 20:33:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-12-05 08:35:40-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 08:35:40-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-11-04 18:56:47-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-04 18:56:47-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-12-06 00:46:52-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-06 00:46:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-11-30 10:48:08-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-30 10:48:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-12-05 20:45:06-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-05 20:45:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-12-05 21:51:18-08:00",
+        "end_reason": "new_position",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-12-21 09:28:25-08:00",
+        "end_reason": "position_updated",
+        "start": "2018-12-05 21:51:18-08:00",
+        "text": "* Section 8.1 This should be easy to fix but this text about the cardinality of the option  \"Servers MUST NOT send more than one instance of the OPTION_V4_ZEROTOUCH_REDIRECT option.\" is contradictory to the following recommendation to use  RFC3396  for long URLs *which will certainly result* in multiple options being sent. I would like personally like this to be a qualified MUST NOT (e.g. MUST NOT except for the long URL case) but I leave it up to the authors and the sponsoring AD to figure out the best way forward.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-12-21 09:28:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-01-15 09:58:29-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-04 18:56:46-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8572",
+  "evaluation_end": "2019-01-15 09:58:29-08:00",
+  "evaluation_start": "2018-11-04 18:56:46-08:00"
+}

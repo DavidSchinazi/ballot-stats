@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-12-03 23:54:51-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 23:54:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-11-29 01:30:53-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-29 01:30:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-12-03 09:53:07-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 09:53:07-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-11-07 08:36:48-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-07 08:36:48-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-12-04 14:49:26-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 14:49:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-12-03 13:51:00-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-03 10:07:35-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-12-03 13:51:00-08:00",
+        "text": "I think we need greater clarity on whether the list of GDR candidate addresses is sorted or not (i.e., whether it is required for protocol operation), as indicated by the rtgdir reviewer. Specifically, Section 5.3 is clear in the descriptive text that the list is sorted (as if a recipient might rely on that behavior), but Section 5.3.2 and Section 5.4 only have it as RECOMMENDED.\u00a0 Given my understanding of the protocol, it seems that all routers need to receive the DRLB-List in order to perform the GDR selection algorithm, in which case the extra information about the addresses being sorted would not be useful for the calculation.\u00a0 That would actually suggest that we do not need  RFC 2119  keywords here, and could just say (as we do in Section 5.4) that it's recommended for the DR to use a deterministic procedure, such as sorting. I also think the text should be more clear in Section 5.3.2 about the use of the Router Identifier as the \"GDR Candidate Address\".\u00a0 I believe (but am not certain) that the intended behavior is that the elected DR use all the PIM Hellos it has received (from candidate GDRs) to assemble the list of candidate \"addresses\", but instead of using the actual IP addresses it uses the Router Identifier construction described here when assembling the \"GDR Candidate Address(es)\" field.\u00a0 The current text leaves unsaid what entity is performing this operation and how the PIM Hello+Router Identifier corresponds to an entry in the list of addresses.\u00a0 Furtheremore, for the IPv6 case, it seems like this substitution procedure interacts very poorly with the masking procedure when the network includes a mix of routers that do/don't send a Router ID (as it may not be possible to set a 32-bit contiguous mask that captures the varying parts of IPv6 router addresses and the space reserved here for \"Router ID\"). I'm concerned about hash algorithm agility (in the vein of  BCP 201 , though since this is not a cryptographic hash that BCP does not strictly speaking apply), as the rtg-dir review noted.\u00a0 Specifically, each router has to commit in its Hello to a single hash algorithm, so transitioning to a new algorithm will require accepting reduced functionality during the transition period (a reduced list of potential GDR candidates), which is contrary to the goals of algorithm negotiation espoused in  BCP 201 .\u00a0 Is this not a significant concern for this use case?\u00a0 I see that Section 6 attempts to disclaim discussion of algorithm migration, but I am not yet convinced that it is appropriate to do so. Please also remove from Section 5.7 the stale statement referring to the previous section (see COMMENT).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-03 10:07:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-12-04 09:10:02-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 09:10:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-12-01 02:23:11-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-01 02:23:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-12-02 06:55:37-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-02 06:55:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-12-03 04:37:11-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 04:37:11-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-12-03 04:07:27-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 04:07:27-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-12-03 17:53:29-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 17:53:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-12-04 09:39:28-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-04 09:39:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-12-03 06:42:22-08:00",
+        "end_reason": "new_position",
+        "start": "2019-11-07 08:36:47-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-01-03 15:09:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-12-03 06:42:22-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8775",
+  "evaluation_end": "2020-01-03 15:09:28-08:00",
+  "evaluation_start": "2019-11-07 08:36:47-08:00"
+}

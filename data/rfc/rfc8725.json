@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-06-24 22:04:11-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-06-27 07:38:49-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-06-24 22:04:11-07:00",
+        "text": "Thanks for everyone who worked to get this document out the door. I found it to be well-organized and easy to read. --------------------------------------------------------------------------- This is a process discuss for Roman to handle, and I plan to clear it during the IESG formal telechat. This document is intended for BCP status. It has a normative reference to  RFC 8017 , which is an informational document. Checking the last call text ( https://datatracker.ietf.org/doc/draft-ietf-oauth-jwt-bcp/edit/lastcalltext/ ), there is no mention of  RFC 8017 , nor does  RFC 8017  appear in the downref registry ( https://datatracker.ietf.org/doc/downref/ ). Thanks to  RFC 8067 , we are not required to run this document through IETF LC again (and, given that  RFC 8017 's predecessor,  RFC 3447 , is in the registry, we probably don't want to). However, we'll need to minute that the point was raised and addressed. There is also at least one additional requirement imposed by section 2 of  RFC 8067  that needs to be satisfied (see the last sentence in that section).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-27 07:38:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-06-24 12:58:47-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-24 12:58:47-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-06-25 08:20:36-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-25 08:20:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-06-24 01:50:07-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-24 01:50:07-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-06-24 16:19:58-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-18 18:43:54-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-06-24 16:19:58-07:00",
+        "text": "Thank you for assembling this document; it will be very valuable to the community.\u00a0 I intend to ballot Yes once the following items are resolved: Section 2.6 notes: \u00a0  Previous versions of the JSON format such as the obsoleted [ RFC7159 ] \u00a0  allowed several different character encodings: UTF-8, UTF-16 and UTF- \u00a0  32.\u00a0 This is not the case anymore, with the latest standard [ RFC8259 ] \u00a0  only allowing UTF-8.\u00a0 [...] The actual situation is a bit more subtle than this text makes it seem; interoperable JSON can only use non-UTF-8 with explicit mutual prearrangement in a closed ecosystem.\u00a0 So, while this statement is true for Internet JWT usage, it may not be true for *all* JWT usage. (I do see that in Section 3.7 of this document we do mandate UTF-8 for JWT, which makes things unambiguous, even if this text here is not correct.) Section 3.2 notes: \u00a0  JWT libraries SHOULD NOT generate JWTs using \"none\" unless explicitly \u00a0  requested to do by the caller. I couldn't find anywhere where we have matching guidance about \"SHOULD NOT consume JWTs using 'none' unless explicitly requested\"; this seems important enough to get called out explicitly.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-18 18:43:54-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-06-25 08:55:40-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-25 08:55:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-06-27 00:37:40-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-27 00:37:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-06-26 07:38:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-26 07:38:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-06-26 07:27:16-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-26 07:27:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-06-25 09:35:37-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-25 09:35:37-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-06-07 11:30:20-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-06-24 08:53:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-24 08:53:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-06-27 00:13:26-07:00",
+        "end_reason": "new_position",
+        "start": "2019-06-07 11:30:20-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-21 08:50:34-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-27 00:13:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8725",
+  "evaluation_end": "2019-10-21 08:50:34-07:00",
+  "evaluation_start": "2019-06-07 11:30:20-07:00"
+}

@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-09-30 18:55:03-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-30 18:55:03-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-29 08:37:53-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-01 05:14:53-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-29 08:37:53-07:00",
+        "text": "Thank you for this document. I have a trivial thing I would like to discuss before recommending approval of this document: Section 3 of  RFC 6066  says: \u00a0  \"HostName\" contains the fully qualified DNS hostname of the server, \u00a0  as understood by the client.\u00a0 The hostname is represented as a byte \u00a0  string using ASCII encoding without a trailing dot. However your example shows in Section 6: \u00a0  For the \"tls-alpn-01\" challenge the subjectAltName extension in the \u00a0  validation certificate MUST contain a single iPAddress that matches \u00a0  the address being validated.\u00a0 As [ RFC6066 ] does not permit IP \u00a0  addresses to be used in the SNI extension HostName field the server \u00a0  MUST instead use the  IN-ADDR.ARPA  [ RFC1034 ] or  IP6.ARPA  [ RFC3596 ] \u00a0  reverse mapping of the IP address as the HostName field value instead \u00a0  of the IP address string representation itself.\u00a0 For example if the \u00a0  IP address being validated is 2001:db8::1 the SNI HostName field \u00a0  should contain \"1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d \u00a0  .0.1.0.0.2.ip6.arpa.\". I.e. there is a trailing dot after \u201carpa\u201d. Is the example wrong or am I missing something?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-01 05:14:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-02 13:22:04-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-02 13:22:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-09-27 18:00:02-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-27 18:00:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-26 15:23:26-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-26 15:23:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-09-30 18:06:15-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-30 18:06:15-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-10-01 14:02:48-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-01 14:02:48-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-09-30 14:09:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-30 14:09:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-01 07:12:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-01 07:12:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-09-30 00:44:11-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-30 00:44:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-09-26 09:37:29-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-26 09:37:29-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-09-29 12:13:07-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-29 12:13:07-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-01 08:24:24-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-26 09:37:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-01 15:03:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-01 08:24:24-07:00",
+        "text": "This is either a huge issue, or a complete non-event -- I'm not sure which - please help me understand / convince me I'm missing something. Contrived, but simple example scenario: My local coffeeshop runs their Point of Sale (POS) system on 192.0.2.10. They have a certificate for this (e.g from LE), and all of their credit card machines contact the POS system using https://192.0.2.10.  I now visit the coffee shop, and using e.g ARP spoofing grab 192.0.2.10. I then use ACME to request and get a cert for 192.0.2.10. I now fire up a webserver, the credit card machines happily connect to me, I present a valid cert, and they send me those sweet, sweet credit card numbers. I get that this isn't really an issue with ACME itself, but rather A: the existence of IP based certificates, and B: the fact that the ability to \"control\" an IP is\u00a0 more easily under an attackers control than the ability to \"control\" a useful domain name. As another exmaple, I could construct scenarios where I use BGP route hijacking to control an address remotely, without having to visit the victim network. The Security Considerations section *does* say: \"The CA may wish to perform additional checks not \u00a0  specified in this document.\u00a0 For example if the CA believes an IP \u00a0  identifier belongs to a ISP or cloud service provider with short \u00a0  delegation periods they may wish to impose additional restrictions on \u00a0  certificates requested for that identifier.\" Again, I understand that ACME is \"just\" the protocol / means to automate this, but it seems that this is a sufficiently dangerous thing to be doing that having it more automated is a bad idea.  Please don't misunderstand, I really like ACME - it's made my life much better, but its power / convenience might be dangerous here.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-10-11 07:30:35-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-01 15:03:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8738",
+  "evaluation_end": "2019-10-11 07:30:35-07:00",
+  "evaluation_start": "2019-09-26 09:37:28-07:00"
+}

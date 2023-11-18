@@ -1,0 +1,251 @@
+{
+  "all_ballots": {
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-11-04 09:54:09-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 09:54:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-10-28 09:54:50-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-10-28 09:59:12-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2020-10-28 09:54:50-07:00",
+        "text": "\u2014 Section 3.1 \u2014 \u00a0 \u00a0 \u00a0  [ RFC2231 ] encoding of the message Subject header field \u00a0 \u00a0 \u00a0  MUST be supported, but when used, only \"UTF-8\" and \"US-ASCII\" \u00a0 \u00a0 \u00a0  charsets MUST be used (i.e. other charsets MUST NOT be used). NOT DISCUSS: I don\u2019t like the second use of MUST: it\u2019s confusing (for example, it\u2019s not the case that you always MUST use both charsets).\u00a0 I suggest this: NEW \u00a0  [ RFC2231 ] encoding of the message Subject header field \u00a0  MUST be supported, and when used, only the \"UTF-8\" and \"US-ASCII\" \u00a0  charsets are allowed: other charsets MUST NOT be used. END DISCUSS: That said, I don\u2019t understand the need to specifically allow UTF-8 here.\u00a0 If the subject only contains \u201cACME:\u201d, FWS, and a base64 string, it will always be ASCII.\u00a0 Why are we talking about UTF-8 at all? \u00a0 \u00a0 \u00a0  The message MUST also pass \u00a0 \u00a0 \u00a0  DMARC validation [ RFC7489 ], which implies DKIM and SPF validation \u00a0 \u00a0 \u00a0  [ RFC7208 ]. Two things here, which apply to bullet 9 in Section 3.2 also: 1. DMARC does not imply DKIM *and* SPF validation: DMARC uses DKIM *or* SPF to do Identifier Alignment. 2. I have an issue with requiring the use of DMARC at this point, as it\u2019s specified only in an Informational document in the Independent stream.\u00a0 In any case, what\u2019s the point of requiring DMARC?\u00a0 It seems to me that the authentication you need is provided by DKIM or S/MIME; what do you need from DMARC?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-11-18 20:36:06-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-10-28 09:59:12-07:00",
+        "text": "(Sorry; I forgot to include the first item in my initial DISCUSS ballot.) I question why this is Informational, and the shepherd writeup doesn't really explain it.\u00a0 I get that this fills a gap, and that the working group wants to see this adopted.\u00a0 I don't get why, therefore, you aren't proposing a standard here.\u00a0 What is the point of making this Informational, and not Proposed Standard... or Experimental, if you're less sure of whether it will work as expected? \u2014 Section 3.1 \u2014 \u00a0 \u00a0 \u00a0  [ RFC2231 ] encoding of the message Subject header field \u00a0 \u00a0 \u00a0  MUST be supported, but when used, only \"UTF-8\" and \"US-ASCII\" \u00a0 \u00a0 \u00a0  charsets MUST be used (i.e. other charsets MUST NOT be used). NOT DISCUSS: I don\u2019t like the second use of MUST: it\u2019s confusing (for example, it\u2019s not the case that you always MUST use both charsets).\u00a0 I suggest this: NEW \u00a0  [ RFC2231 ] encoding of the message Subject header field \u00a0  MUST be supported, and when used, only the \"UTF-8\" and \"US-ASCII\" \u00a0  charsets are allowed: other charsets MUST NOT be used. END DISCUSS: That said, I don\u2019t understand the need to specifically allow UTF-8 here.\u00a0 If the subject only contains \u201cACME:\u201d, FWS, and a base64 string, it will always be ASCII.\u00a0 Why are we talking about UTF-8 at all? \u00a0 \u00a0 \u00a0  The message MUST also pass \u00a0 \u00a0 \u00a0  DMARC validation [ RFC7489 ], which implies DKIM and SPF validation \u00a0 \u00a0 \u00a0  [ RFC7208 ]. Two things here, which apply to bullet 9 in Section 3.2 also: 1. DMARC does not imply DKIM *and* SPF validation: DMARC uses DKIM *or* SPF to do Identifier Alignment. 2. I have an issue with requiring the use of DMARC at this point, as it\u2019s specified only in an Informational document in the Independent stream.\u00a0 In any case, what\u2019s the point of requiring DMARC?\u00a0 It seems to me that the authentication you need is provided by DKIM or S/MIME; what do you need from DMARC?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-18 20:36:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-11-05 00:03:13-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-01-13 15:03:55-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-11-05 00:03:13-08:00",
+        "text": "I have one point that I am not sure of the significance of and would like to discuss further, and one point that I think has a fairly clear/straightforward resolution. One of the key properties of ACME is that its authenticator provides assurance that both a party controlling the identifier to be certified and the ACME client jointly assent to the certification request of that identifier.\u00a0 I'm trying to explore a bit more the \"jointly assent\" part, and whether it is clear that all steps of the challenge/validation flow are ultimatetly tied to the same order request. In the validation flows for the challenge types from 8555, the full token is returned to the ACME client, which then provides the token to the entity that controls the identifier being certified, in order to set up state to expect a verification attempt using that token.\u00a0 In this email validation flow, though, the token-part1 is *only* present in the challenge email, so there is no thread of continuity that allows the email account holder to tie the validation attempt to the specific request (i.e., token).\u00a0 Any message that comes in claiming to be an ACME challenge would end up being treated as a validation attempt for the pending request, so the ACME server (or a party pretending to be one) does not have to provide any proof of knowledge of the pending validation before the response email is generated.\u00a0 Some key properties here seem to include: there is a portion (token-part2) to the response email that can only be provided by the ACME client, there is a part (token-part1) to the response email that can only be provided by an entity that can receive email at the email address being validated, and that the validation attempt, response email, and ACME order request can be tied together by unique identifiers.\u00a0 It seems that we could achieve all three of these by having the HTTPS response to the ACME client include a token-part0 as well as the token-part2, with token-part0 being used as the subject line of the challenge email and token-part1 being conveyed in some fashion (whether body or headers) of the challenge email.\u00a0 Does such a scheme provide any useful properties that are not provided by the current scheme? The more straightforward point is that the procedure in section 3 indicates that token-part2 is returned to the ACME client over HTTPS, but the stated procedure does not otherwise involve an ACME client in initiating the newOrder request.\u00a0 I think we need to clarify the interaction/relationship between end-user/email client UI/etc and the ACME client in step 1.\u00a0 In particular, I think that \"[t]his document doesn't prescribe how exactly S/MIME certificate issuance is initiated\" seems incompatible with requiring there to be an ACME client involved (and the presumed newOrder ACME request, etc.) unless the \"initiate\" operation is supposed to be the way by which the ACME client is triggered to start the request.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2021-01-13 15:03:55-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-11-04 14:56:57-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 14:56:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-11-05 00:34:38-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-05 00:34:38-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2020-11-03 23:35:08-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-03 23:35:08-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2020-11-02 12:34:48-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-02 12:34:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2020-11-04 21:46:13-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 21:46:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2020-11-04 09:48:01-08:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-11-04 09:48:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-10-28 05:47:29-07:00",
+        "end_reason": "new_position",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-28 05:47:29-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2021-02-15 14:38:31-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-10-28 05:47:28-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8823",
+  "evaluation_end": "2021-02-15 14:38:31-08:00",
+  "evaluation_start": "2020-10-28 05:47:28-07:00"
+}

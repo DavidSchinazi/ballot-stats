@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-07-03 13:37:00-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-03 13:37:00-07:00",
+        "text": "I agree with Ben (and, transitively, the OPSDIR an GENART reviewers). From my reading, this document -- while immensely valuable to the working group for creation of an  RFC 4960  bis document -- has little archival value. The following standing guidance from the IESG would seem to be applicable: https://www.ietf.org/blog/support-documents-ietf-working-groups/ Like Ben, I'm abstaining on this document. I would ask the working group to consider not publishing it in this form, and waiting until a complete bis version of the document can be produced.",
+        "type": "Abstain"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-07-01 14:08:30-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-07-05 05:50:04-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-07-01 14:08:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-05 05:50:04-07:00",
+        "text": " am not convinced in the value of publishing this document (as opposed to just doing -bis).",
+        "type": "Abstain"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-07-05 05:44:31-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-05 05:44:31-07:00",
+        "text": "I agree with the Gen-ART reviewer and the other ADs who have abstained on this document. I see why the WG wants this documented, but it doesn't appear to need to be documented in an RFC.",
+        "type": "Abstain"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-07-04 23:11:31-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-04 23:11:31-07:00",
+        "text": "As others have commented, while this intermediate document is of value to implementors, and a similar process has worked well before ( rfc2960  ->  rfc4460  ->  rfc4960 ), I believe the work is not required to be published as an RFC.\u00a0 Nonetheless, I won't stand in the way of its publication and I am then also ABSTAINing.",
+        "type": "Abstain"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-07-02 18:33:46-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-02 18:33:46-07:00",
+        "text": "I agree with Alexey that I don't see the value of publishing this, and am concerned it might even be slightly harmful.\u00a0 The approach seems unfriendly to implementers, who would get much more benefit from an \"RFC4960bis\" draft.\u00a0 At best it seems like an intermediate step in the creation of such a bis draft. (I note similar concerns from the Gen-ART and OPSDIR reviewers) I don't expect the decision to publish this in it's current form to change, so I am balloting \"abstain\" and getting out of the way.",
+        "type": "Abstain"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-07-04 20:57:51-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-07-04 20:59:54-07:00",
+        "end_reason": "comment_updated",
+        "start": "2018-07-04 20:57:51-07:00",
+        "text": "The reasons for my Abstain vs. No Objection are covered in the other Abstain positions' descriptions. I did take some notes while reviewing the document, though: Section 3.14.2 (new text)  When its peer is multi-homed, an endpoint SHOULD send fast  retransmissions to the same destination transport address where the  original data was sent to. If the primary path has been changed and the  original data was sent there before the fast retransmit, the  implementation MAY send it to the new primary path. What is \"there\"? Section 3.35.2 There seem to be two instances of \"Old Text\" for the same outline of text; presumably the second one is supposed to be \"New Text\". Section 3.36.2 The ICMP3 change goes both from \"MAY ignore\" to \"SHOULD ignore\" and from \"code does not indicate\" to \"code indicates\", which is qualitatively a large change.\u00a0 There are 13 code values that are not mentioned in either old or new text, and the supporting problem/solution descriptions don't do very much to explain the change for these 13 codes. Section 3.40.2 Is ECN really still a \"proposed extension to IP\", or a realized extension?",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-04 20:59:54-07:00",
+        "text": "The reasons for my Abstain vs. No Objection are covered in the other Abstain positions' descriptions. In particular, the \"user-unfriendliness\" aspect; e.g., in my notes, I was going to suggest switching the example CRC code to using fixed-width types, and had to wait until basically the end of the document to see that this was already done. I did take some notes while reviewing the document, though: Section 3.14.2 (new text)  When its peer is multi-homed, an endpoint SHOULD send fast  retransmissions to the same destination transport address where the  original data was sent to. If the primary path has been changed and the  original data was sent there before the fast retransmit, the  implementation MAY send it to the new primary path. What is \"there\"? Section 3.35.2 There seem to be two instances of \"Old Text\" for the same outline of text; presumably the second one is supposed to be \"New Text\". Section 3.36.2 The ICMP3 change goes both from \"MAY ignore\" to \"SHOULD ignore\" and from \"code does not indicate\" to \"code indicates\", which is qualitatively a large change.\u00a0 There are 13 code values that are not mentioned in either old or new text, and the supporting problem/solution descriptions don't do very much to explain the change for these 13 codes. Section 3.40.2 Is ECN really still a \"proposed extension to IP\", or a realized extension?",
+        "type": "Abstain"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-07-03 11:59:46-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-03 11:59:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-07-03 16:31:30-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-07-05 07:54:18-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-07-03 16:31:30-07:00",
+        "text": "I agree with Adam and Spencer. This is just an incredibly user-hostile presentation of this information, in particular: \u00a0 Note that when reading this document one must use care to assure that \u00a0 a field or item is not updated further on within the document.\u00a0 Since \u00a0 this document is a historical record of the sequential changes that \u00a0 have been found necessary at various inter-op events and through \u00a0 discussion on the list, the last delta in the text is the one which \u00a0 should be applied. This seems like good input to a -bis but should not be published as-is.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-11-01 14:03:35-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-07-05 07:54:18-07:00",
+        "text": "Given that the majority of the IESG has now ballotted abstain, I think we should at least discuss this. I'm marking my ballot DISCUSS until we have a chance to discuss this on a telechat. After we've done that, if Spencer still believes we should advance the document, I will withdraw my DISCUSS.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-11-01 14:03:35-07:00",
+        "text": "ow that we have had a discussion, I am re-balloting Abstain. In my opinion, this document should not be published as an RFC.",
+        "type": "Abstain"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-07-03 02:40:55-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-03 02:40:55-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-07-02 06:41:31-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-02 06:41:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-06-20 07:16:17-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-07-05 07:05:34-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-05 07:05:34-07:00",
+        "text": "I agree with my abstaining co-ADs that this document is better kept as a living document and 4960bis is the one that should be published.",
+        "type": "Abstain"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-07-04 19:34:09-07:00",
+        "end_reason": "new_position",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-07-04 19:34:09-07:00",
+        "text": "I appreciate and recognise the WG's desire to highlight the number of issues that need to be correctioned in  RFC 4960 . I urge the WG to select an alternative way to keep track of these concerns in leading toward a -bis. Archiving the enumerated list doesn't to me seem like an ideal way forward. Adam has provided a URL of previous advice that the WG should consider. I am, therefore, abstaining.",
+        "type": "Abstain"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-11-04 23:10:28-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-06-20 07:16:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8540",
+  "evaluation_end": "2018-11-04 23:10:28-08:00",
+  "evaluation_start": "2018-06-20 07:16:17-07:00"
+}

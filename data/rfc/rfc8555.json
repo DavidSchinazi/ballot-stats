@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2018-08-29 21:48:26-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-08-30 07:14:20-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2018-08-29 21:48:26-07:00",
+        "text": "Thanks for all the work that everyone has put into this protocol. I'm excited by what it's been able to do for the certificate issuance sector as a whole, and truly appreciate all of the early implementors who have put both clients and servers into active production. I'm definitely balloting YES once we get clarity on my DISCUSS, below. --------------------------------------------------------------------------- I've looked at this several different ways, and I must be missing something obvious -- which should make this easy to clear. \u00a76.2: >\u00a0 Note that authentication via signed JWS request bodies implies that >\u00a0 GET requests are not authenticated.\u00a0 Servers MUST NOT respond to GET >\u00a0 requests for resources that might be considered sensitive.\u00a0 Account >\u00a0 resources are the only sensitive resources defined in this >\u00a0 specification. This doesn't seem correct. For example, let's imagine that I, as a user, get the directory for an ACME server, the body of which is the example in \u00a77.1.1. Then, I go through the new-account process, and receive the Account object in \u00a77.1.2: \u00a0  { \u00a0 \u00a0  \"status\": \"valid\", \u00a0 \u00a0  \"contact\": [ \u00a0 \u00a0 \u00a0  \"mailto: cert-admin@example.com \", \u00a0 \u00a0 \u00a0  \"mailto: admin@example.com \" \u00a0 \u00a0  ], \u00a0 \u00a0  \"termsOfServiceAgreed\": true, \u00a0 \u00a0  \"orders\": \" https://example.com/acme/acct/1/orders \" \u00a0  } Huh. Suddenly, I'm not so interested in *my* orders, because I've noticed that different users' orders are apparently at a predictable URL that varies only by a small integer. Curious, I change the \"1\" to a \"2\" and send: \u00a0 GET /acme/acct/2/orders HTTP/1.1 \u00a0 Host:  example.com And get back not *my* orders, but someone *else's* orders. \u00a0  HTTP/1.1 200 OK \u00a0  Content-Type: application/json \u00a0  { \u00a0 \u00a0  \"orders\": [ \u00a0 \u00a0 \u00a0  \" https://example.com/acme/acct/2/order/1 \", \u00a0 \u00a0 \u00a0  \" https://example.com/acme/acct/2/order/2 \", \u00a0 \u00a0 \u00a0  \" https://example.com/acme/acct/2/order/3 \", \u00a0 \u00a0 \u00a0  \" https://example.com/acme/acct/2/order/4 \" \u00a0 \u00a0  ] \u00a0  } Interesting. So now I can do four more unauthenticated GETs and grab those order objects. \u00a0  HTTP/1.1 200 OK \u00a0  Content-Type: application/json \u00a0  { \u00a0 \u00a0  \"status\": \"valid\", \u00a0 \u00a0  ... \u00a0 \u00a0  \"identifiers\": [ \u00a0 \u00a0 \u00a0  { \"type\": \"dns\", \"value\": \"smithforcongress.example\" } \u00a0 \u00a0  ], \u00a0 \u00a0  ... \u00a0 \u00a0  \"certificate\": \" https://example.com/acme/cert/1234 \" \u00a0  } ---------- \u00a0  HTTP/1.1 200 OK \u00a0  Content-Type: application/json \u00a0  { \u00a0 \u00a0  \"status\": \"valid\", \u00a0 \u00a0  ... \u00a0 \u00a0  \"identifiers\": [ \u00a0 \u00a0 \u00a0  { \"type\": \"dns\", \"value\": \"something-embarassing-with-goats.example\" } \u00a0 \u00a0  ], \u00a0 \u00a0  ... \u00a0 \u00a0  \"certificate\": \" https://example.com/acme/cert/5678 \" \u00a0  } ---------- \u00a0  HTTP/1.1 200 OK \u00a0  Content-Type: application/json \u00a0  { \u00a0 \u00a0  \"status\": \"valid\", \u00a0 \u00a0  ... \u00a0 \u00a0  \"identifiers\": [ \u00a0 \u00a0 \u00a0  { \"type\": \"email\", \"value\": \"smith-personal@obscure-domain.example\" } \u00a0 \u00a0  ], \u00a0 \u00a0  ... \u00a0 \u00a0  \"certificate\": \" https://example.com/acme/cert/9abc \" \u00a0  } ---------- \u00a0  HTTP/1.1 200 OK \u00a0  Content-Type: application/json \u00a0  { \u00a0 \u00a0  \"status\": \"valid\", \u00a0 \u00a0  ... \u00a0 \u00a0  \"identifiers\": [ \u00a0 \u00a0 \u00a0  { \"type\": \"tn\", \"value\": \"+12025550172\" } \u00a0 \u00a0  ], \u00a0 \u00a0  ... \u00a0 \u00a0  \"certificate\": \" https://example.com/acme/cert/defg \" \u00a0  } So now I've learned that the same account has pulled certs for both \"smithforcongress.example\" and \"something-embarassing-with-goats.example\"; that they have control over the email address \"smith-personal@obscure-domain.example,\" and that their phone number is +1 202 555 0172. There's a pretty good chance that... someone didn't want all of that to be generally known. And... huh... that's interesting. \u00a0 \u00a0  GET /acme/cert/9abc HTTP/1.1 \u00a0 \u00a0  Host:  example.com \u00a0 \u00a0  HTTP/1.1 200 OK \u00a0 \u00a0  Content-Type: application/pem-certificate-chain \u00a0 \u00a0  Link: ;rel=\"index\" \u00a0 \u00a0  -----BEGIN CERTIFICATE----- \u00a0 \u00a0  [X.509 Cert for smith-personal@obscure-domain.example] \u00a0 \u00a0  -----END CERTIFICATE----- \u00a0 \u00a0  -----BEGIN CERTIFICATE----- \u00a0 \u00a0  [Issuer certificate contents] \u00a0 \u00a0  -----END CERTIFICATE----- \u00a0 \u00a0  -----BEGIN CERTIFICATE----- \u00a0 \u00a0  [Other certificate contents] \u00a0 \u00a0  -----END CERTIFICATE----- Whoa. That's cool. The next thing I'm doing is configuring Thunderbird to forge mail from smith-personal@obscure-domain.example and going on an email spree admitting to owning a rather embarrassing domain name, in which I ask concerned constituents to call me on my unlisted phone number to discuss the issue. Clearly I've missed something, because this just seems way too obvious. What prevents this attack (or a similar one from observing that the order URLs are predictable?) If I *haven't* missed something, then there appears to have been an assumption here, never written into the document, that the URLs generated for the orders list and for the order objects are unguessable. If that's the case, I would: (1) Expect this to be stated in section 7.1.2.1 and 7.1.3 (2) Expect a specification of a reasonable number of bits of entropy to use in \u00a0 \u00a0 orders list and order object URLs. (3) Expect the examples to show appropriately random URLs (e.g. \u00a0 \u00a0  https://example.com/acme/acct/9258fac3-7866-4922-90e6-bbd0c89e751a/orders ) (4) Expect a treatment in section 10 of the risks that might arise from third \u00a0 \u00a0 parties gaining access to orders, as doing so provides free-and-clear access \u00a0 \u00a0 to private certificates (which, for dns, can be trivially used to \u00a0 \u00a0 revoke certs; and for other types, can be used for impersonation as well) Again, I'm still expecting that I've simply missed something obvious -- I just can't for the life of me figure out what it is.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-10-16 12:11:05-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-08-30 07:14:20-07:00",
+        "text": "Thanks for all the work that everyone has put into this protocol. I'm excited by what it's been able to do for the certificate issuance sector as a whole, and truly appreciate all of the early implementors who have put both clients and servers into active production. I'm definitely balloting YES once we get clarity on my DISCUSS, below. --------------------------------------------------------------------------- I've looked at this several different ways, and I must be missing something obvious -- which should make this easy to clear. \u00a76.2: >\u00a0 Note that authentication via signed JWS request bodies implies that >\u00a0 GET requests are not authenticated.\u00a0 Servers MUST NOT respond to GET >\u00a0 requests for resources that might be considered sensitive.\u00a0 Account >\u00a0 resources are the only sensitive resources defined in this >\u00a0 specification. This doesn't seem correct. For example, let's imagine that I, as a user, get the directory for an ACME server, the body of which is the example in \u00a77.1.1. Then, I go through the new-account process, and receive the Account object in \u00a77.1.2: \u00a0  { \u00a0 \u00a0  \"status\": \"valid\", \u00a0 \u00a0  \"contact\": [ \u00a0 \u00a0 \u00a0  \"mailto: cert-admin@example.com \", \u00a0 \u00a0 \u00a0  \"mailto: admin@example.com \" \u00a0 \u00a0  ], \u00a0 \u00a0  \"termsOfServiceAgreed\": true, \u00a0 \u00a0  \"orders\": \" https://example.com/acme/acct/1/orders \" \u00a0  } Huh. Suddenly, I'm not so interested in *my* orders, because I've noticed that different users' orders are apparently at a predictable URL that varies only by a small integer. Curious, I change the \"1\" to a \"2\" and send: \u00a0 GET /acme/acct/2/orders HTTP/1.1 \u00a0 Host:  example.com And get back not *my* orders, but someone *else's* orders. \u00a0  HTTP/1.1 200 OK \u00a0  Content-Type: application/json \u00a0  { \u00a0 \u00a0  \"orders\": [ \u00a0 \u00a0 \u00a0  \" https://example.com/acme/acct/2/order/1 \", \u00a0 \u00a0 \u00a0  \" https://example.com/acme/acct/2/order/2 \", \u00a0 \u00a0 \u00a0  \" https://example.com/acme/acct/2/order/3 \", \u00a0 \u00a0 \u00a0  \" https://example.com/acme/acct/2/order/4 \" \u00a0 \u00a0  ] \u00a0  } Interesting. So now I can do four more unauthenticated GETs and grab those order objects. \u00a0  HTTP/1.1 200 OK \u00a0  Content-Type: application/json \u00a0  { \u00a0 \u00a0  \"status\": \"valid\", \u00a0 \u00a0  ... \u00a0 \u00a0  \"identifiers\": [ \u00a0 \u00a0 \u00a0  { \"type\": \"dns\", \"value\": \"smithforcongress.example\" } \u00a0 \u00a0  ], \u00a0 \u00a0  ... \u00a0 \u00a0  \"certificate\": \" https://example.com/acme/cert/1234 \" \u00a0  } ---------- \u00a0  HTTP/1.1 200 OK \u00a0  Content-Type: application/json \u00a0  { \u00a0 \u00a0  \"status\": \"valid\", \u00a0 \u00a0  ... \u00a0 \u00a0  \"identifiers\": [ \u00a0 \u00a0 \u00a0  { \"type\": \"dns\", \"value\": \"something-embarassing-with-goats.example\" } \u00a0 \u00a0  ], \u00a0 \u00a0  ... \u00a0 \u00a0  \"certificate\": \" https://example.com/acme/cert/5678 \" \u00a0  } ---------- \u00a0  HTTP/1.1 200 OK \u00a0  Content-Type: application/json \u00a0  { \u00a0 \u00a0  \"status\": \"valid\", \u00a0 \u00a0  ... \u00a0 \u00a0  \"identifiers\": [ \u00a0 \u00a0 \u00a0  { \"type\": \"email\", \"value\": \"smith-personal@obscure-domain.example\" } \u00a0 \u00a0  ], \u00a0 \u00a0  ... \u00a0 \u00a0  \"certificate\": \" https://example.com/acme/cert/9abc \" \u00a0  } ---------- \u00a0  HTTP/1.1 200 OK \u00a0  Content-Type: application/json \u00a0  { \u00a0 \u00a0  \"status\": \"valid\", \u00a0 \u00a0  ... \u00a0 \u00a0  \"identifiers\": [ \u00a0 \u00a0 \u00a0  { \"type\": \"tn\", \"value\": \"+12025550172\" } \u00a0 \u00a0  ], \u00a0 \u00a0  ... \u00a0 \u00a0  \"certificate\": \" https://example.com/acme/cert/defg \" \u00a0  } So now I've learned that the same account has pulled certs for both \"smithforcongress.example\" and \"something-embarassing-with-goats.example\"; that they have control over the email address \"smith-personal@obscure-domain.example,\" and that their phone number is +1 202 555 0172. There's a pretty good chance that... someone didn't want all of that to be generally known. Clearly I've missed something, because this just seems way too obvious. What prevents this attack (or a similar one from observing that the order URLs are predictable?) If I *haven't* missed something, then there appears to have been an assumption here, never written into the document, that the URLs generated for the orders list and for the order objects are unguessable. If that's the case, I would: (1) Expect this to be stated in section 7.1.2.1 and 7.1.3 (2) Expect a specification of a reasonable number of bits of entropy to use in \u00a0 \u00a0 orders list and order object URLs. (3) Expect the examples to show appropriately random URLs (e.g. \u00a0 \u00a0  https://example.com/acme/acct/9258fac3-7866-4922-90e6-bbd0c89e751a/orders ) (4) Expect a treatment in section 10 of the risks that might arise from third \u00a0 \u00a0 parties gaining access to orders, as doing so provides free-and-clear access \u00a0 \u00a0 to private certificates (which, for dns, can be trivially used to \u00a0 \u00a0 revoke certs; and for other types, can be used for impersonation as well) Again, I'm still expecting that I've simply missed something obvious -- I just can't for the life of me figure out what it is.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-16 12:11:05-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-08-29 04:14:18-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-09-01 02:00:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-08-29 04:14:18-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-09-01 02:00:11-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-10-17 05:52:15-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-17 05:52:15-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-08-28 06:42:11-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-28 06:42:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-08-28 19:46:31-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-28 19:46:31-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-08-29 11:53:24-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-10-03 08:56:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2018-08-29 11:53:24-07:00",
+        "text": "This is a great thing to have, and I intend to eventually ballot Yes, but I do have some questions that may require further discussion before this document is approved. It looks like the server returns an unauthenticated \"badSignatureAlgorithm\" error when the client sends a JWS using an unsupported signature algorithm (Section 6.2).\u00a0 What prevents an active attacker from performing a downgrade attack on the signature algorithm used? Similarly, since we include in the threat model a potentially hostile CDN/MitM between the ACME client and ACME server, can that attacker strip a success response and replace it with a badNonce error, causing the client to retry (and thus duplicate the request processing on the server)? I am not an ART AD, but there is not yet an internationalization directorate, and seeing statements like \"inputs for digest computations MUST be encoded using the UTF-8 character set\" (Section 5) without additional discussion of normalization and/or what the canonical form for the digest input is makes me nervous.\u00a0 Has sufficient internationalization review been performed to ensure that there are no latent issues in this space? Section 6.1 has text discussing TLS 1.3's 0-RTT mode.\u00a0 If this text is intended to be a profile that defines/allows the use of TLS 1.3 0-RTT data for the ACME protocol, I think you need to be more specific and say something like \"MAY allow clients to send early data (0-RTT); there are no ACME-specific restrictions on which types of requests are permitted in 0-RTT\", since the runtime configuration is just 0-RTT yes/no, and the protocol spec is in charge of saying which PDUs are allowed or not. Section 6.2 notes that servers MUST NOT respond to GET requests for sensitvie resources.\u00a0 Why are account resources the only sensitive ones? Are authorizations not sensitive?\u00a0 Or are those considered to fall under the umbrella of \"account resources\" (Section 7.1 seems pretty clear that they do not)? Section 7.1.1 discusses how the server can include a caaIdentities element in its directory metadata; does this (or anything else) need to be integrity protected by anything stronger than the Web PKI cert authenticating the HTTPS connection?\u00a0 It seems that a bogus caaIdentities value could lead to an unfortunate DoS in some cases. I am also a bit uncertain if the document is internally consistent about whether one challenge verification suffices or there can be cases when multiple challenge verifications are required for a successful authorization.\u00a0 I attmpted to note relevant snippets of the text in my comments on Section 7.1.4. I also have some important substantive comments in the section-by-section COMMENTS, since they would not in and of themselves block publication.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-10-03 08:56:46-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-08-28 09:31:02-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-28 09:31:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-08-10 08:37:40-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-08-30 06:44:21-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-30 06:44:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-08-30 00:40:27-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-30 00:40:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-08-27 12:23:15-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-27 12:23:15-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-08-27 16:28:45-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-27 16:28:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-08-28 19:12:21-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-28 19:12:21-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-08-29 20:13:24-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-29 20:13:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-08-29 14:56:30-07:00",
+        "end_reason": "new_position",
+        "start": "2018-08-10 08:37:40-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2018-12-20 10:06:44-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2018-08-29 14:56:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8555",
+  "evaluation_end": "2018-12-20 10:06:44-08:00",
+  "evaluation_start": "2018-08-10 08:37:40-07:00"
+}

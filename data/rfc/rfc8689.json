@@ -1,0 +1,293 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-02-19 23:14:11-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-05 09:10:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-19 23:14:11-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-02-12 02:34:45-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-05 09:10:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-12 02:34:45-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-02-21 06:07:17-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-05 09:10:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-21 06:07:17-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-02-20 10:50:41-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-05 09:10:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 10:50:41-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-02-20 19:49:55-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-20 19:49:55-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-02-20 20:55:05-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-03-14 10:52:00-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-02-20 20:55:05-08:00",
+        "text": "I'm pretty sad to see that the \"RequireTLS: no\" header field has the name \"require TLS\" and the opposite semantics.\u00a0 It seems like the positvie signal that we are trying to indicate is \"Ignore TLS\" or \"TLS optional\" or similar; why does the header field need to be named \"Require TLS\" -- isn't that confusing to users? While I understand that there can be cases where it is desired to ignore recipient-domain indications to use TLS, such as to report problems with the TLS capabilities of those domains, I have strong qualms about describing this protocol as an \"override\" for DANE and MTA-STS, or that such recipient-domain signals should be \"ignored\".\u00a0 In effect, by attempting to do so, this document is fundamentally modifying the protocol semantics for (SMTP) DANE and MTA-STS, something that can only properly be done by clearly calling out the behavior change and an Updates: relationship with the documents whose semantics are being modified.\u00a0 Alternately, it could also be reasonable to remove claims of \"override\" or \"ignore\" and to leave the semantics of the header field as being that the sender requests one behavior, and the MTA can balance the requests of the sender and recipient at their own discretion. This is still not a great option, though, as it would seem to put multiple IETF proposed standards at odds with each other. I'm also concerned about the apparent new burden placed on senders to actively decide whether every outgoing message requires end-to-end TLS protection or is safe to forward without TLS, especially in light of the apparent goal (see next paragraph) of quickly achieving (near-)universal deployment.\u00a0 There doesn't seem to be much in this document to justify the stance that the default \"don't care\" option should be removed. The \"must chain forward to final delivery\" property for the REQUIRETLS option seems to present some incremental deployment difficulties, in that it will be nigh-impossible to successfully deliver such a message until there is fairly significant deployment coverage.\u00a0 E.g., if any major email hosting provider does not implement, then it will forever remain a niche technology.\u00a0 What indication to we have that this technology can succeed as specified?\u00a0 If we anticipate it becoming a part of the de facto core, mandatory, SMTP feature set, should we not indicate that by an Updates: relationship? I'm also unsure exactly how tightly nailed down the (non-DANE) TLS certificate validation process is supposed to be as a result of this document; more in the COMMENT section.\u00a0 It seems that without some form of strict certificate (host)name validation, this mechanism does not actually mitigate the lack of server authentication by the client that's described as a goal. I'd also like to discuss whether it's safe to require that the tag and header be mutually exclusive.\u00a0 (As per the COMMENT section,) I don't have a great picture on what scenarios could cause that to arise, how common they are, and what the impact would be for strict enforcement.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-07-17 12:15:36-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-03-14 10:52:00-07:00",
+        "text": "I'm pretty sad to see that the \"RequireTLS: no\" header field has the name \"require TLS\" and the opposite semantics.\u00a0 It seems like the positvie signal that we are trying to indicate is \"Ignore TLS\" or \"TLS optional\" or similar; why does the header field need to be named \"Require TLS\" -- isn't that confusing to users, as opposed to, say, \"TLS-Required\"? While I understand that there can be cases where it is desired to ignore recipient-domain indications to use TLS, such as to report problems with the TLS capabilities of those domains, I have strong qualms about describing this protocol as an \"override\" for DANE and MTA-STS, or that such recipient-domain signals should be \"ignored\".\u00a0 In effect, by attempting to do so, this document is fundamentally modifying the protocol semantics for (SMTP) DANE and MTA-STS, something that can only properly be done by clearly calling out the behavior change and an Updates: relationship with the documents whose semantics are being modified (i.e., the DANE and MTA-STS specifications). Alternately, it could also be reasonable to remove claims of \"override\" or \"ignore\" and to leave the semantics of the header field as being that the sender requests one behavior, and the MTA can balance the requests of the sender and recipient at their own discretion. This is still not a great option, though, as it would seem to put multiple IETF proposed standards at odds with each other. I'm also concerned about the apparent new burden placed on senders in Section 4.3 to actively decide whether every outgoing message requires end-to-end TLS protection or is safe to forward without TLS (\"when TLS is to be required, [...].\u00a0 When TLS is not to be required, [...]\"), where both \"[...]\" require new behavior not present in a client that does not implement this specification.\u00a0 To some extent this is an editorial matter of how the new mechanisms are portrayed, but I don't see much in this document to justify the stance that the default \"don't care\" option should be removed (for clients that implement this specification at all). [discussion of \"de facto part of the core SMTP spec\" removed, on\u00a0 indications that this is not the intent] I'm also unsure exactly how tightly nailed down the (non-DANE) TLS certificate validation process is supposed to be as a result of this document; more in the COMMENT section.\u00a0 It seems that without some form of strict certificate (host)name validation, this mechanism does not actually mitigate the lack of server authentication by the client that's described as a goal.\u00a0 That is, while the referenced DANE procedures for validating a TLS connection for SMTP are pretty clear and exhaustive, the non-DANE case does not seem to have thorough instructions for how to validate the TLS connection, whether in this document or an external reference. I'd also like to discuss whether it's safe to require that the tag and header be mutually exclusive.\u00a0 (As per the COMMENT section,) I don't have a great picture on what scenarios could cause that to arise, how common they are, and what the impact would be for strict enforcement, but there doesn't seem to be much reason to actively allow conflicting indications, even when we say which one takes precedence.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-02 15:06:42-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-07-17 12:15:36-07:00",
+        "text": "I'm glad that we were able to come to consensus to rename the header field to \"TLS-Required\"; that addresses a key concern of mine. I\u00a0 also appreciate the addition of the \"Policy Conflicts\" section that portrays a fairly clear picture of the interaction between this mechanism, DANE, and MTA-STS.\u00a0 I still wish that we were able to bring the technologies into greater alignment and not need to convey the sense that standards-track mechanisms are in conflict with each other, but cannot justify blocking publication based solely on that desire. In this space, though, I do request an additional wording tweak in Appendix A.2, which currently states \"The TLS-Required header field is used when the sender of the message wants to override the default policy of the recipient domain to require TLS.\" which uses the \"override\" terminology without couching it as a request.\u00a0 Can we reword to include \"request\" here as well? The following paragraph (unchanged from my ballot on -07) received only minimal discussion so far: I'm also concerned about the apparent new burden placed on senders in Section 4.3 to actively decide whether every outgoing message requires end-to-end TLS protection or is safe to forward without TLS (\"when TLS is to be required, [...].\u00a0 When TLS is not to be required, [...]\"), where both \"[...]\" require new behavior not present in a client that does not implement this specification.\u00a0 To some extent this is an editorial matter of how the new mechanisms are portrayed, but I don't see much in this document to justify the stance that the default \"don't care\" option should be removed (for clients that implement this specification at all). It seems that we are in agreement that it's okay to have a \"don't care\" option, which is indicated by not using the extension at all.\u00a0 That said, I still think that the specific text of Section 4.3 conveys an impression that there is a requirement to actively decide, with the language about \"has the authority to decide whether to require TLS\", \"when TLS is\u00a0 to be required\", \"when TLS is not to be required\", and \"in either case, the decision [...] MAY be done based on [...]\".\u00a0  Perhaps I'm just misreading the text, but I haven't seen any signals to that effect yet.\u00a0 I'd suggest (but am open to further refinement\" changing to \"has the option to decide whether to require TLS\" and \"if one of these cases is selected, the decision [...]\" as a way to clarify the language used. [discussion of \"de facto part of the core SMTP spec\" removed, on\u00a0 indications that this is not the intent] We had some good discussion about the three potential cases for authenticating the TLS connection: (1) Dane per  RFC 7672 (2) MTA-STS per  RFC 8461 (3) DNSSEC-validated MX records + WebPKI authentication of the MX hosts I think a little more specificity is needed for the (3) case; we do say to use the  RFC 6125  procedures but still need to specify (e.g.) that the DNS-ID name type is used and (IIRC) that the hostname resulting from the MX lookup is used as the DNS-ID to be validated.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-05 09:10:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-02 15:06:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-02-20 15:46:29-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-05 09:10:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 15:46:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-02-21 07:07:06-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-21 07:07:06-08:00",
+        "text": "I support Benjamin's DISCUSS. To elaborate on one point a bit: it seems to me that it's harmful to security to allow the sender to unilaterally override the recipient's preferences that something be encrypted. To forestall one argument, yes, the sender knows the contents of the message, but the recipient knows their own circumstances, and they may be at particular risk \u00a0 \u00a0 \u00a0  The choices of key lengths and algorithms change over time, so a \u00a0 \u00a0 \u00a0  specific requirement is not presented here. \u00a0 \u00a0 \u00a0   This is not a verifiable conformance requirement. You either need to not have a 8174 SHOULD here, or actually specify what \"meaningfully secure\" means.",
+        "type": "Discuss"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-02-19 10:47:42-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-05 09:10:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-19 10:47:42-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-02-20 22:24:02-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-08-05 09:10:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 22:24:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-02-19 11:53:23-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-05 09:10:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-19 11:53:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-02-19 17:29:47-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-19 17:29:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-02-20 11:14:20-08:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-05 09:10:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-02-20 11:14:20-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2019-03-29 00:00:00+00:00",
+        "end_reason": "ad_term_ended",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-03-14 01:36:45-07:00",
+        "end_reason": "new_position",
+        "start": "2019-02-12 02:34:44-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-05 09:10:01-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-03-14 01:36:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8689",
+  "evaluation_end": "2019-08-05 09:10:01-07:00",
+  "evaluation_start": "2019-02-12 02:34:44-08:00"
+}

@@ -1,0 +1,309 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-04-10 18:45:27-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-04-11 07:37:24-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-10 18:45:27-07:00",
+        "text": "This is a \"discuss discuss\" that I plan to clear once the IESG has considered the topic during tomorrow's telechat. This document has a normative reference to  RFC 8199 , which is informational. This downref was not mentioned in the IETF Last Call announcement , and  RFC 8199  doesn't yet appear in the downref registry . Per  RFC 8067 , this doesn't require running another IETF last call; however, as it wasn't part of the IETF last call discussion, the IESG is required to evaluate whether the downref is appropriate.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-11 07:37:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-04-11 06:40:16-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-04-11 06:40:58-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-11 06:40:16-07:00",
+        "text": null,
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-17 11:53:50-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-11 06:40:58-07:00",
+        "text": "This is generally a fine document, but after checking  RFC 7950  syntax for strings I question why you think you need non ASCII tags. There are so many problems that can arise from that. For example, how would IANA be able to enforce uniqueness of Unicode tags written in different Unicode canonicalisation forms?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-17 11:53:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-04-11 05:38:14-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-24 10:39:51-08:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-11 05:38:14-07:00",
+        "text": "This is a minor thing, but people get really confused about it so I'd like to discuss it. This document allows for minting new \"IETF Standard\" tags by publishing documents that are not standards of any kind. That is, because the registry specified in 7.2 has its allocation policy as IETF Review, that means that informational documents can be used to register new \"IETF Standard\" tags. This seems ripe for creating further confusion about what is and is not an IETF \"standard.\" Could these tags simply be called \"IETF tags\"?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-24 10:39:51-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-04-11 06:29:19-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-11 06:29:19-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-04-07 23:31:33-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-07 23:31:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-04-11 06:49:43-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-15 08:50:56-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-04-11 06:49:43-07:00",
+        "text": "I think this document does introduce new security considerations, specifically the ability for one user to remove (\"mask\") tags from being visible to other users.\u00a0 A malicious user could interfere with the operations of other users/entities, especially in the case mentioned in an example where multiple semi-independent clients use tags to indicate modules to avoid that may be broken.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-03-15 08:50:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-04-09 14:17:50-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-09 14:17:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-04-04 11:41:56-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-04 11:41:56-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-04-09 05:31:04-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-09 05:31:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-04-10 05:49:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 05:49:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-04-05 03:02:52-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-05 03:02:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-04-10 16:45:39-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 16:45:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-04-10 20:23:58-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-10 20:23:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-04-08 14:13:50-07:00",
+        "end_reason": "new_position",
+        "start": "2019-04-04 11:41:55-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-03-17 12:23:44-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-04-08 14:13:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8819",
+  "evaluation_end": "2020-03-17 12:23:44-07:00",
+  "evaluation_start": "2019-04-04 11:41:55-07:00"
+}

@@ -1,0 +1,325 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-09-03 17:33:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-09-05 07:38:06-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-03 17:33:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-05 07:38:06-07:00",
+        "text": "I've updated my position to an Abstain based on the telechat discussion. I find the arguments regarding BCP versus Informational to be compelling, and am sympathetic to the concerns about both stream and charter. All of that said, I do want to see this document published, and I hope we can rearrange things in a way that allows that to happen. --------------------------------------------------------------------------- Thanks for taking on this work to fill a hole in the tools that we have for production of RFCs. I have one fairly major comment and several editorial suggestions. --------------------------------------------------------------------------- Abstract: >\u00a0 This document defines two strategies for handling long lines in >\u00a0 width-bounded text content.\u00a0 One strategy is based on the historic >\u00a0 use of a single backslash ('\\') character to indicate where line- Nit: \"historical\" --------------------------------------------------------------------------- \u00a71: >\u00a0 According to the RFC Editor, >\u00a0 there is currently no convention in place for how to handle long >\u00a0 lines in such inclusions, other than advising authors to clearly >\u00a0 indicate what manipulation has occurred. This won't age well. Perhaps \"Historically, there has been no RFC-Editor-recommended convention in place for how to handle...\" >\u00a0 This document defines two strategies for handling long lines in >\u00a0 width-bounded text content.\u00a0 One strategy is based on the historic >\u00a0 use of a single backslash ('\\') character to indicate where line- Nit: \"historical\" --------------------------------------------------------------------------- \u00a77.1.1: >\u00a0  NOTE: '\\' line wrapping per BCP XXX (RFC XXXX) Using this string as the start of the specially-wrapped section seems somewhat problematic, as it forecloses on the possibility of also *citing* this BCP at that point in the document. For example, if I were to use this format, I would definitely want to use a string more of the format: \u00a0 \u00a0 NOTE: '\\' line wrapping per BCP XXX ([RFC XXXX]) (taking note of the added brackets). If this has already been debated in the working group and the current text is the result of carefully considering this issue and deciding that the use of the specified string has benefits that outweigh the drawback of not being able to cite the document per ordinary convention, then don't afford my suggestion any undue weight. I'm not trying to change a consensus decision. But if this is a simple oversight, I think it does need to be given significant thought. For example, I personally am rather likely to elect to do things \"the old way\" in my own documents rather than using this format because of the awkwardness of properly citing a normative reference. This same comment applies to \u00a78.1.1, of course. --------------------------------------------------------------------------- > Appendix A.\u00a0 POSIX Shell Script: rfcfold Please add [POSIX.1-2017] as a reference.",
+        "type": "Abstain"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-28 11:50:31-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-29 06:46:11-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-28 11:50:31-07:00",
+        "text": "Thank you for your document. It might be just me, but I think your examples in 9.4.1 with trailing \\ don\u2019t seem to match the folding algorithm in section 7, as it doesn\u2019t describe special handling of trailing \\.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-29 06:46:11-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-09-04 11:56:10-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 11:56:10-07:00",
+        "text": "RFC 7994  is not a product of IETF consensus, so it seems inappropriate to publish a consensus BCP predicated on requirements defined in  RFC 7994  which themselves do not have IETF consensus. This would be the only document related to the RFC format in the last 10 years that I'm aware of that would be published on the IETF stream. There has been discussion about how embedding YANG models in RFCs seems like a poor fit for a number of reasons. By standardizing line-folding mechanisms and claiming them as a best practice, this document reinforces the root of that problem rather than trying to fix it.",
+        "type": "Abstain"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-09-04 22:17:48-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 22:17:48-07:00",
+        "text": "I agree with Alissa on her concern of work related to the RFC format being published in the IETF Stream.\u00a0 I am then also ABSTAINing. The text mentions that the RFC Editor has confirmed that \"there is currently no convention in place for how to handle long lines\", but there is no mention, and I couldn't find a related conversation in the archive, about the RFC Editor's opinion of the proposed solution.\u00a0 Because \"this work primarily targets\" elements in xml2rfc, I encourage the Shepherd/AD to explicitly discuss the solution with the RFC Editor.\u00a0 I also strongly believe that a conversation should take place with the RFC Editor/IAB about the appropriate publication stream.\u00a0 Both conversations should happen before this document is approved for publication.",
+        "type": "Abstain"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-21 21:40:44-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 21:40:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-09-04 23:07:36-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-09 15:28:23-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-09-04 23:07:36-07:00",
+        "text": "I think the procedures described herein are incomplete without a footer to terminate the un-folding process.\u00a0 Otherwise, it seems that the described algorithms would leave the two-line header for the second and subsequent instances of folded text in a single document.\u00a0 (If we tried to just blindly remove all instances of the header without seeking boundaries, then we would misreconstruct content when different folding algorithms are used in the same document with the single-backslash algorithm occurring first.) I don't think it's proper to refer to a script that requires bash specifically as a \"POSIX shell script\".\u00a0 I did not attmept to check whether any bash-specific features are used or this requirements stems solely from the shebang line, though. I think the shell script does need to use double-quotes around some variable expansions, especially \"$infile\" and \"$outfile\", to work properly for filenames containing spaces.\u00a0 We do quote \"$infile\" when we're checking that it exists, just not (most of the time) when we actually use it! In addition to the above, I also share Alissa's (and Mirja's) concerns, but feel that Discuss is more appropriate than Abstain, so we can discuss what the best way to get this content published is.\u00a0 For it's fine content, and we should see it published; it's just not immediately clear to me what the right way to do so is.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-20 18:30:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2020-01-09 15:28:23-08:00",
+        "text": "Thank you for the updates in the -10 and -11; the content looks a lot better and I am not uncomfortable about publishing as Informational (vs. BCP)! That said, I think the edits to the script have introduced a regression: \u00a0 \u00a0  # ensure input file doesn't contain the fold-sequence already \u00a0 \u00a0  if [[ -n \"$(\"$SED\" -n '/\\\\$/{N;s/\\\\\\n[ ]*\\\\/&/p}' \"$infile\")\" ]] Unfortunately, I'm not sure this gets all cases, since the 'N' command reads a line and prevents it from being considered as the first half of the wrapped sequence: kaduk$:~/git/openssl$ cat /tmp/a this is a line\\ another line\\ \\that wraps kaduk$:~/git/openssl$ cat /tmp/b this is a line another line\\ \\that wraps kaduk$:~/git/openssl$ sed -n '/\\\\$/{N;s/\\\\\\n[ ]*\\\\/&/p}' < /tmp/a kaduk$:~/git/openssl$ sed -n '/\\\\$/{N;s/\\\\\\n[ ]*\\\\/&/p}' < /tmp/b another line\\ \\that wraps",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2020-01-20 18:30:29-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-09-03 14:35:54-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-03 14:35:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-26 04:37:25-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-26 04:37:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-13 06:26:53-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-13 06:26:53-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-09-05 07:18:24-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-05 07:18:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-09-05 05:47:41-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-05 05:47:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-29 05:11:45-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-29 05:11:45-07:00",
+        "text": "I don't think this draft is in scope of the charter of the netmod working group. I've seen in the shepherd write-up that input from the RSE was received, therefore I don't necessarily assume that a different publication path would have produced a different outcome and I decided not to block publication, however, given the publication path taken it is\u00a0 not visible to me if sufficient feedback from the right people that are impacted or targeted by this document has been received.  In general I don't think it is okay to publish a document that is out-of scope for a working group, especially when the scope of the document impacts other work in the IETF so broadly (while I do understand that this was written with main focus on YANG). Given the current situation I would eventually rather go for informational than BCP.",
+        "type": "Abstain"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-09-04 10:55:56-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-04 10:55:56-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-09-05 07:24:13-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-09-05 07:40:46-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-05 07:24:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-09-05 07:41:00-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2019-09-05 07:40:46-07:00",
+        "text": "After some thought I think there are two things about this document that make me uncomfortable enough to ballot Discuss.  a) Due to its home in the netmod WG it is highly likely that people outside the yang community have not paid enough attention to this work. Since this is applicable to code fragments of all kinds, I think the home chosen for this RFC might have inadvertently limited input from the broader community. b) Given a) I think it is better that this document go forward as an Informational document rather than a BCP so that use of this technique becomes optional, without the force of a BCP behind it.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-11-02 15:47:50-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-05 07:41:00-07:00",
+        "text": "After some thought I think there are two things about this document that make me uncomfortable enough to ballot Discuss.  a) Due to its home in the netmod WG it is highly likely that people outside the yang community have not paid enough attention to this work. Since this is applicable to code fragments of all kinds, I think the home chosen for this RFC might have inadvertently limited input from the broader community. b) Given a) I think it is better that this document go forward as an Informational document rather than a BCP so that use of this technique becomes optional, without the force of a BCP behind it.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-11-02 15:47:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2020-01-28 11:57:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-13 06:26:51-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8792",
+  "evaluation_end": "2020-01-28 11:57:11-08:00",
+  "evaluation_start": "2019-08-13 06:26:51-07:00"
+}

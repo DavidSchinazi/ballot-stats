@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-08-19 19:02:04-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 19:02:04-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-08-19 08:16:39-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 08:16:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-08-21 06:13:59-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 06:13:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-08-19 08:54:08-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 08:54:08-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-08-21 14:09:54-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 14:09:54-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-19 15:15:07-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-08-23 15:38:53-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-08-19 15:15:07-07:00",
+        "text": "(1) I think that we need some text that covers how the resource server will know to use mtls (and thus, to send a CertificateRequest to the client during the TLS handshake).\u00a0 The authorization server and client can indicate their capabilities/preference via the  RFC 8414  and  RFC 7591 discovery and registration procedures, but I didn't see any discussion of how an AS might know a RS's capabilities, or how an RS might develop expectations of the capabilities of the clients accessing it.\u00a0 A naive conclusion might be that any given RS (hostname+port) would have to either always or never use mtls, given the misordering between TLS handshake completion and delivery of TLS application data (i.e., including the oauth token), though there may be refinements available in the form of the unpopular TLS 1.2 renegotiation or TLS 1.3 post-handshake authentication (or exported authenticators).\u00a0 Doing either of those in an environment with TLS Termination per Section 6.5 may entail additional complications. (We may also want some additional text discussing error handling for the client/AS interaction, e.g., if a request shows up from a client-id that should be using mtls but did not provide a certificate in the TLS handshake, but that is only debatably something that rises to Discuss-level; or if a client that advertised an intent to use MTLS used the regular token endpoint and not the mtls endpoint alias (if they differ).) (2) I can't validate the examples in Appendix A. Specifically, my reading of the text would put the \"x5t#S256\" value as needing 86 characters, but only 43 are provided.\u00a0 The ones there also do not seem to be a prefix of the result that I get from taking the PEM certificate contents and running them through the pipeline: base64 -di | sha256sum |awk '{print $1}'|tr -d '\\n'|base64 (Noting, of course, that 'base64' will be producing the non-URL-safe variant, but expecting it to remain \"pretty close\".) I also had some trouble comparing the \"y\" coordinate from the JWK to the certificate contents, but that may just be user error.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-23 15:38:53-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-08-19 12:34:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 12:34:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-08-22 07:06:16-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-22 07:06:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-08-22 02:55:43-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-22 02:55:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-08-21 00:17:25-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 00:17:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-08-19 09:01:46-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-19 09:01:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-08-12 08:54:04-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-12 08:54:04-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-08-20 12:16:03-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-20 12:16:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-08-21 09:03:38-07:00",
+        "end_reason": "new_position",
+        "start": "2019-08-12 08:54:03-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-09-11 10:27:36-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-08-21 09:03:38-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8705",
+  "evaluation_end": "2019-09-11 10:27:36-07:00",
+  "evaluation_start": "2019-08-12 08:54:03-07:00"
+}

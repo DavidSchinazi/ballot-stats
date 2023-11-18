@@ -1,0 +1,261 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-10-01 23:58:58-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-01 23:58:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-10-02 17:25:39-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-02 17:25:39-07:00",
+        "text": "I agree with \u00c9ric and Alvaro. It's not clear what is gained by publishing this as an RFC rather than a research paper, especially given the lack of support in the WG.",
+        "type": "Abstain"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-09-27 07:04:19-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-27 07:04:19-07:00",
+        "text": "The integration of distributed protocols and centralized control in a Hybrid network is not a new topic.\u00a0 I feel conflicted about the publication of this document as an RFC because it doesn't contribute much to the existing literature...except maybe for the explicit suggestion of using \"PCE in a native IP network\".\u00a0 Specifically, the interaction of the distributed and centralized components can result in added operational complexity and new security vulnerabilities.\u00a0 Neither of these issues are mentioned.\u00a0  I appreciate the work that the authors have put into this document, but because of it being incomplete and only having \"tepid support\" [1] from the WG, I have decided to ABSTAIN and not stand in the way of publication. [1]  https://datatracker.ietf.org/doc/draft-ietf-teas-native-ip-scenarios/shepherdwriteup/",
+        "type": "Abstain"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-09-25 23:48:31-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-10-03 06:20:26-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-09-25 23:48:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-03 06:20:26-07:00",
+        "text": "In light of Roman's comments about the academic paper, I agree and join in the \"Abstain\" group.\u00a0 It would be better just to have the other documents refer to the academic paper, rather than to republish a portion of that paper in the RFC series.",
+        "type": "Abstain"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-02 22:14:52-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-10-25 15:09:27-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-02 22:14:52-07:00",
+        "text": "I have two points for discussion: (1) If this document was subject to the approval requirements for standards action, it would basically be suffering from \"death by abstain\"; this seems like a good signal for the IESG to discuss whether it makes sense to approve this document even though the more-lenient document-action requirements would otherwise let it go forward. (2) The document seems incomplete to me.\u00a0 It has some aspects of being all/any of a use-cases document, an architecture document, and an applicability analysis, but does not seem to have a complete treatment for any of them.\u00a0 To be clear, there is enough in the document to indicate that the topic merits further work, and there are some interesting results, but I'm not sure that publication as an RFC is appropriate for this document in this form.\u00a0 Specifically: (2a) use-cases: we see the examples of star topology with BRAS/SR and the simulated network in Figure 6, but there is not much discussion of where these (or similar) scenarios arise in practice, how common they are, and how closely the simulation reflects actual usage. (2b) architecture: a very high-level picture is given (\"use a PCE to engineer some of the IP traffic on a network and improve overall efficiency\"), but we don't see much about how PCCs will be involved and apply the computed paths or what requirements will need to be met by the protocols and components used to instantiate the architecture (2c) applicability: we see some scenarios where the proposed technology shows drastic improvement over the alternative selected for comparison, but there is little to give confidence that this reflects a broad maxima that is robust to environmental variations.\u00a0 Is the alternative selected for comparison an appropriate one for the cases in question?\u00a0 How would the propsal react in the face of changes in the environment it runs in, such as link or node failure, changes in the baseline usage, or traffic spikes?\u00a0 What timescale can it react in and what level of visibility does the PCE need into current conditions in order to be reliable?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-25 15:09:27-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-09-20 14:27:18-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-20 14:27:18-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-10-01 02:22:05-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-01 02:22:05-07:00",
+        "text": "I share Alvaro's and TSV reviewer feeling about this is not a usual RFC but rather a scientific paper (even if the results are not really a surprise). So, I am abstaining. Some comments though: - why using OSPF and not IS-IS for the comparison ? Not that it would change a lot IMHO - when using generated topologies, little is written on how it is generated (as it could introduce some bias changing the results of section 4.4) - using the new format for XML2RFC could have included SVG for graphics Interesting read anyway -\u00e9ric",
+        "type": "Abstain"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-03 02:42:46-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-10-03 07:30:02-07:00",
+        "end_reason": "position_updated",
+        "start": "2019-10-03 02:42:46-07:00",
+        "text": "I also think IESG and the WG really should have a discussion if this document should be published at all. In addition to the points raised by Benjamin I want to add my view to this.  The document in its current form appear to be outside of TEAS Charter. This document is none of the several things TEAS is approved to work with. As Benjamin enumerates so well the document is also a very poor support or architecture document. Which is why I would argue that it fully outside of the TEAS charter as neither a main objective of the WG or a support document.  Even if fixed to be a better support document, I still think the WG should consider its charter and the IESG statement on support documents:  https://www.ietf.org/about/groups/iesg/statements/support-documents/  and ask themselves if that is really something that is worth publishing.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-03 07:30:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-10-03 05:56:16-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-03 05:56:16-07:00",
+        "text": "Thank you Roman for finding the paper. It seems to me that there is much more details in the paper than in the draft. As such I don't really see the value of publishing a subset as a draft and then an RFC.",
+        "type": "Abstain"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-10-02 19:37:26-07:00",
+        "end_reason": "new_position",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-10-02 19:37:26-07:00",
+        "text": "==[ Summary I am balloting as an ABSTAIN because the primary contribution of this draft appears to be the simulation results.\u00a0 However, these results appear to be already published in greater detail in  http://ieeexplore.ieee.org/document/8657733 . I have no commentary on the utility of the CDDR Scenarios found in Section 3. ==[ Details I have reservations about the approach taken in Section 4.\u00a0 As a stand-alone write-up, it insufficiently describes the simulations in question.\u00a0 Furthermore, the content in this section copies verbatim or re-phrases the source material of these simulations from an already published academic paper (without citation).\u00a0 See  http://ieeexplore.ieee.org/document/8657733 .\u00a0 In particular: -- The entirely of Section 4.1 (text and diagrams) is a cut-and-paste from Section V.B of the academic paper.\u00a0  -- The simulation results of Section 4.4 in this draft align with the analysis in Section V.C of the academic paper.\u00a0  -- The simulation results of Section 4.5 in this draft align with analysis in Section V.D of the academic paper. Without the benefit of the academic paper cited above, I would have had the following feedback on Section 4: -- Section 4.\u00a0 What use case is being simulated isn\u2019t clear.\u00a0 The text is Section 3.1 states that \u201cSection 4 of this document describes the simulation results of this use case\u201d.\u00a0 However, the topology for the simulation described in Section 4.2 looks different than the one in Figure 1 (of Section 3.1).\u00a0  -- Section 4.\u00a0 A few questions about the simulation design: Only the results were presented.\u00a0 How were the simulations constructed and results evaluated?\u00a0  Section 4.0 states that this section \u201cillustrate[s the] CCDR algorithm\u201d.\u00a0 Where is that algorithm defined?\u00a0 Is that Section 7 of  draft-ietf-teas-pce-native-ip  or  http://ieeexplore.ieee.org/document/8657733? What specific algorithms was used to create the contrasting charts in Figures 7 and 8?\u00a0  Section 4.2 said that \u201c[t]he number of links connecting one edge node to the set of core nodes is randomly between 2 to 30, and the total number of links is more than 20000.\u201d\u00a0 Section 4.3 said that \u201c[i]n the CCDR simulation, the dimension of the traffic matrix is 500*500.\u00a0 About 20% links are overloaded when the Open Shortest Path First (OSPF) protocol is used in the network.\u201d, What is the basis of these choices?\u00a0 Are they representative of a given use case? What is the relationship between the Sections 4.2 and 4.3, and the simulation results in Sections 4.4 and 4.5 Additional feedback includes: -- Section 5.\u00a0 The purpose of this section isn\u2019t clear. -- Missing references Section 1.\u00a0 A reference to CCDR is needed.\u00a0 Also, given that CCDR is the basis of the simulation, it needs to be normative. Section 5.\u00a0 A reference is needed for the IEEE document.",
+        "type": "Abstain"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-11-04 14:55:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-09-20 14:27:17-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc8735",
+  "evaluation_end": "2019-11-04 14:55:50-08:00",
+  "evaluation_start": "2019-09-20 14:27:17-07:00"
+}

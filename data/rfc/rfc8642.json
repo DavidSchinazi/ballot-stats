@@ -1,0 +1,269 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2019-06-12 21:41:52-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Adam Roach",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-12 21:41:52-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-06-11 01:27:49-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-11 01:27:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-06-10 12:28:17-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-10 12:28:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-06-11 15:03:19-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-11 15:03:19-07:00",
+        "text": "Consistent behavior is important.\u00a0 Understanding that behavior to achieve consistent operations is even more important. However, I believe that this document doesn't provide the substance needed to achieve or guarantee consistency in the future.\u00a0 Specifically, the Normative content (mostly in \u00a76) doesn't define a specific behavior...instead it basically boils down to \"keep doing whatever you're doing...and document it if you want to\"... The language can always be improved, but unless a specific behavior is specified I don't think there is much value is publishing this document as an RFC.\u00a0 According to the Shepherd, the consensus on this document is solid in the WG.\u00a0 I then don't expect significant changes, and don't want to delay publication, so I am ABSTAINing. I do have some specific comments that hopefully may help improve the document. ======= (1) What is the Update to  rfc1997 ?\u00a0 Please mention what it is in the Abstract and Introduction. I don't see a specific update to  rfc1997 , as in changing the behavior, for example.\u00a0 But, based on the e-mail archive, it seems that the intent is to point readers of  rfc1997  to this document...at least say that. (2) Document Status  As others have mentioned, and specially because this document doesn't really specify anything, I don't think it belongs in the Standards Track.\u00a0 I think that tagging it as an update to  rfc1997  is not a great excuse to make it a Proposed Standard.\u00a0 Unfortunately, we have no other way to point readers of  rfc1997  to this document. I also don't think that BCP is appropriate because it simply points at the fact that inconsistencies exist...\u00a0 [See more below.] I think that this document is better suited to be Informational.\u00a0 Other documents that have addressed the use of communities have been published as Informational; for example  rfc1998 ,  rfc8195 ... (3) Introduction \u00a0  This document recommends specific actions to limit future \u00a0  inconsistency, namely BGP implementors MUST NOT create further \u00a0  inconsistencies from this point forward. How can the creation of inconsistencies be Normatively enforced?\u00a0 I understand that this whole document is about addressing inconsistencies, which I think is a valid use of the  rfc2119  keywords...but I don't understand what action is expected out of the statement.\u00a0  s/MUST NOT/must not I do think that the Action Items (\u00a76) represent better guidance than the statement above.\u00a0  (3) Action Items  (3a) \"Vendors SHOULD clearly document the behavior of \"set\" directive in their implementations.\"\u00a0 Why is MUST not used?\u00a0 IOW, when it is ok for vendors not to clearly document the behavior?\u00a0 If the intent is not to mandate what vendors do, then please s/SHOULD/should...but I thought that was the intent in Standards Track documents... (3b) Given that this document is about addressing inconsistencies, I am sad by this paragraph: \u00a0  Vendors MUST ensure that their implementations' \"set\" directive \u00a0  treatment of any specific community does not change if/when that \u00a0  community becomes a new Well-Known Community through future \u00a0  standardization.\u00a0 For most implementations, this means that the \"set\" \u00a0  directive MUST continue to remove the community; for those \u00a0  implementations where the \"set\" directive removes no communities, \u00a0  that behavior MUST continue. Note first that \"MUST ensure that...\"set\" directive...does not change\" is hard to enforce unless the behavior is clearly documented, but that is not absolutely required... Second...the text Normatively (MUST) allows for the behavior to remain the way it is.\u00a0 This makes me sad because I hoped for this document to define a specific behavior...instead it basically boils down to \"keep doing whatever you're doing...and document it if you want to\"... :-( (5) Note for Those Writing RFCs for New Community-Like Attributes (\u00a75) \u00a0  \"...RFC authors should state explicitly how the new attribute is to be handled.\" This seems to be the one piece of important information in this document...but it is not mandatory.\u00a0 Also, based on the rest of the document, I think you explicitly mean more than general handling...but probably mean also what implementations are expected to do in relation to filtering, etc.\u00a0 If so, please be explicit. Also, what are \"community-like attributes\"?\u00a0 The examples mentioned are also communities... I think that where specific attributes exist, they should be explicitly mentioned:  rfc4360 ,  rfc8092 ... (6) Nits... (6a) Table 1: There is one reference ( rfc7611 ) -- or at least it looks like a reference, but there's no corresponding entry in the References section.\u00a0 Please be consistent: either add references to the Table (and the References section), or not.\u00a0 I think that in this case you should. (6b) \"On Extreme networks' Brocade NetIron: \"set community X\" removes all communities and sets X.\"\u00a0 Most of the other text in this section makes the point of indicating \"all communities, Well-Known or otherwise\"...is there a difference in behavior here?",
+        "type": "Abstain"
+      }
+    ],
+    "Barry Leiba": [
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-06-12 18:42:15-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Barry Leiba",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-12 18:42:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benjamin Kaduk": [
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-06-10 11:14:24-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benjamin Kaduk",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-10 11:14:24-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-06-12 10:55:31-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-12 10:55:31-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Ignas Bagdonas": [
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-06-12 08:19:28-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ignas Bagdonas",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-12 08:19:28-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Magnus Westerlund": [
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-06-13 02:27:57-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Magnus Westerlund",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-13 02:27:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Vigoureux": [
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-06-13 01:51:02-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Vigoureux",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-13 01:51:02-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-05-20 10:39:32-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-20 10:39:32-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-06-11 18:19:59-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-11 18:19:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-06-11 20:19:16-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-06-11 20:19:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-05-16 14:01:52-07:00",
+        "end_reason": "new_position",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2019-06-17 12:46:38-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2019-05-16 14:01:52-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ]
+  },
+  "doc_name": "rfc8642",
+  "evaluation_end": "2019-06-17 12:46:38-07:00",
+  "evaluation_start": "2019-05-16 14:01:52-07:00"
+}

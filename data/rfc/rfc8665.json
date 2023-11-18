@@ -1,0 +1,277 @@
+{
+  "all_ballots": {
+    "Adam Roach": [
+      {
+        "ad": "Adam Roach",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Alexey Melnikov": [
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-12-12 14:17:05-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-12-13 02:47:36-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2017-12-12 14:17:05-08:00",
+        "text": "his is generally a fine document, but it needs a few minor changes that need doing before it is approved for publication:",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-12-14 05:03:03-08:00",
+        "end_reason": "position_updated",
+        "start": "2017-12-13 02:47:36-08:00",
+        "text": "This is generally a clearly written document, but it needs a few minor changes before I can recommend its approval for publication. 1) In Section 3.2: \u00a0  o\u00a0 When a router receives multiple overlapping ranges, it MUST \u00a0 \u00a0 \u00a0 conform to the procedures defined in \u00a0 \u00a0 \u00a0 [ I-D.ietf-spring-conflict-resolution ]. RFC 2119  keyword usage makes the reference a Normative reference, yet it is currently listed as informative. 3.4.\u00a0 SRMS Preference TLV \u00a0  The Segment Routing Mapping Server Preference TLV (SRMS Preference \u00a0  TLV) is used to advertise a preference associated with the node that \u00a0  acts as an SR Mapping Server.\u00a0 The role of an SRMS is described in \u00a0  [ I-D.ietf-spring-segment-routing-ldp-interop ]. As draff-ietf-spring-segment-routing-ldp-interop needs to be read in order to understand what SR Mapping Server is, this reference must also be Normative. \u00a0 SRMS preference is defined in [ I-D.ietf-spring-conflict-resolution ]. This just confirms that this reference must be Normative. 2) In Section 3.1: \u00a0  When multiple SR-Algorithm TLVs are received from a given router, the \u00a0  receiver SHOULD use the first occurrence of the TLV in the Router \u00a0  Information LSA.\u00a0 If the SR-Algorithm TLV appears in multiple Router \u00a0  Information LSAs that have different flooding scopes, the SR- \u00a0  Algorithm TLV in the Router Information LSA with the area-scoped \u00a0  flooding scope SHOULD be used.\u00a0 If the SR-Algorithm TLV appears in \u00a0  multiple Router Information LSAs that have the same flooding scope, \u00a0  the SR-Algorithm TLV in the Router Information (RI) LSA with the \u00a0  numerically smallest Instance ID SHOULD be used and subsequent \u00a0  instances of the SR-Algorithm TLV SHOULD be ignored. In the last 2 sentences: why are you using SHOULD (twice) instead of MUST? This seems to affect interoperability. (I think there is similar text in another section.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Alexey Melnikov",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-14 05:03:03-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alia Atlas": [
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-12-12 11:09:17-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alia Atlas",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-12 11:09:17-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Alissa Cooper": [
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-12-13 11:53:37-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alissa Cooper",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 11:53:37-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-12-13 19:59:35-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 19:59:35-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Ben Campbell": [
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-12-13 18:43:01-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Ben Campbell",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 18:43:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Benoit Claise": [
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-12-14 03:55:50-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Benoit Claise",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-14 03:55:50-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Deborah Brungard": [
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-12-13 15:19:25-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Deborah Brungard",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 15:19:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Rescorla": [
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-12-13 16:04:48-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Rescorla",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 16:04:48-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Kathleen Moriarty": [
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-12-12 12:07:13-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Kathleen Moriarty",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-12 12:07:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Mirja Kuhlewind": [
+      {
+        "ad": "Mirja Kuhlewind",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Spencer Dawkins": [
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-12-13 20:36:52-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Spencer Dawkins",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 20:36:52-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Suresh Krishnan": [
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-12-13 13:14:54-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Suresh Krishnan",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 13:14:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Terry Manderson": [
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-12-13 16:57:19-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Terry Manderson",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 16:57:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-12-13 13:03:23-08:00",
+        "end_reason": "new_position",
+        "start": "2017-12-12 11:09:16-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2017-12-18 12:23:11-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2017-12-13 13:03:23-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc8665",
+  "evaluation_end": "2017-12-18 12:23:11-08:00",
+  "evaluation_start": "2017-12-12 11:09:16-08:00"
+}
