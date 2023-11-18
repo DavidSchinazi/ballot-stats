@@ -10,3 +10,10 @@ To install dependencies, run:
 ```
 python3 -m pip install -r requirements.txt
 ```
+
+## Regenerating Data
+
+The `regenerate_rfc_ballots.py` script requires querying the IETF datatracker.
+This repository is currently configured to use a localhost copy to avoid overwhelming the real datatracker.
+Instructions for running your own local copy of the datatracker can be found [here](https://github.com/ietf-tools/datatracker).
+Other scripts such as `regenerate_all_discusses.py` run solely using local json files from this repository.
