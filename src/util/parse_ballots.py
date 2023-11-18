@@ -124,7 +124,18 @@ def parse_ballot(doc_name):
                 else:
                     change_split = action_details.split(" has been changed to ")
                     if len(change_split) > 1:
-                        ballot_type = change_split[1].split(" from ")[0]
+                        assert action_details.startswith("Position for ")
+                        change_split_split = change_split[1].split(" from ")
+                        ballot_type = change_split_split[0]
+                        ballot_meta_by = "by {a}".format(a=author)
+                        if unidecode(change_split_split[1]).endswith(ballot_meta_by):
+                            name_meta = change_split[0]
+                            # Handle cases where ballot was entered by secretariat on behalf of the AD.
+                            name_meta_start = "Position for "
+                            assert name_meta.startswith(name_meta_start)
+                            author = normalize_ad_name(
+                                name_meta[len(name_meta_start) :]
+                            )
                         ballots_for_author = ballots.get(author, [])
                         if len(ballots_for_author) > 0:
                             ballots_for_author[-1].end_time = timestamp
