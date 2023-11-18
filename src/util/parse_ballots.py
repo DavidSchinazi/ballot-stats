@@ -50,21 +50,25 @@ def parse_ballot(doc_name):
             action = cells[3].text
         if action == 'Created "Approve" ballot':
             ballot_start_time = timestamp
+            iesg_members_to_add = set()
             for iesg in iesgs:
                 if iesg.date_start > timestamp:
                     continue
                 if iesg.date_end is not None and iesg.date_end < timestamp:
                     continue
-                for ad in iesg.members:
-                    ballots_for_ad = ballots.get(ad, [])
-                    ballots_for_ad.append(Ballot(ad, "No Record", timestamp))
-                    ballots[ad] = ballots_for_ad
+                iesg_members_to_add |= set(iesg.members)
+            for ad in iesg_members_to_add:
+                ballots_for_ad = ballots.get(ad, [])
+                ballots_for_ad.append(Ballot(ad, "No Record", timestamp))
+                ballots[ad] = ballots_for_ad
             # print('{t} - {a}'.format(t=timestamp, a=action))
         elif action == 'Closed "Approve" ballot':
             ballot_end_time = timestamp
             for a in ballots:
-                ballots[a][-1].end_time = timestamp
-                ballots[a][-1].end_reason = "evaluation_closed"
+                ballots_for_a = ballots.get(a, [])
+                if len(ballots_for_a) > 0:
+                    ballots_for_a[-1].end_time = timestamp
+                    ballots_for_a[-1].end_reason = "evaluation_closed"
         elif action.startswith("["):
             action_type = action[1 : action.find("]")]
             if action_type == "Ballot Position Update":
@@ -106,13 +110,13 @@ def parse_ballot(doc_name):
                 action_details = action[action.find("]") + 2 :]
                 ballots_for_author = ballots.get(author, [])
                 if len(ballots_for_author) > 0:
-                    if ballots[author][-1].text is None:
-                        ballots[author][-1].text = action_details
+                    if ballots_for_author[-1].text is None:
+                        ballots_for_author[-1].text = action_details
                     else:
                         ballots_for_author[-1].end_time = timestamp
                         ballots_for_author[-1].end_reason = "discuss_updated"
                         new_ballot = Ballot(
-                            author, ballots[author][-1].ballot_type, timestamp
+                            author, ballots_for_author[-1].ballot_type, timestamp
                         )
                         new_ballot.text = action_details
                         ballots_for_author.append(new_ballot)
@@ -122,15 +126,15 @@ def parse_ballot(doc_name):
                 ballots_for_author = ballots.get(author, [])
                 if (
                     len(ballots_for_author) > 0
-                    and ballots[author][-1].ballot_type == "Abstain"
+                    and ballots_for_author[-1].ballot_type == "Abstain"
                 ):
-                    if ballots[author][-1].text is None:
-                        ballots[author][-1].text = action_details
+                    if ballots_for_author[-1].text is None:
+                        ballots_for_author[-1].text = action_details
                     else:
                         ballots_for_author[-1].end_time = timestamp
                         ballots_for_author[-1].end_reason = "comment_updated"
                         new_ballot = Ballot(
-                            author, ballots[author][-1].ballot_type, timestamp
+                            author, ballots_for_author[-1].ballot_type, timestamp
                         )
                         new_ballot.text = action_details
                         ballots_for_author.append(new_ballot)
