@@ -16,12 +16,9 @@ def normalize_ad_name(name):
     name = unidecode(name)
     if '"' in name:
         # Remove nickname.
-        print(name)
         name_split = name.split('"')
-        print(name_split)
         if len(name_split) == 3:
             name = name_split[0][:-1] + name_split[2]
-        print(name)
     return name
 
 
