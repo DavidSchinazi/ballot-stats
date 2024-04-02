@@ -1,0 +1,3603 @@
+
+<!DOCTYPE html>
+
+
+
+<!-- template: templates/base.html -->
+
+
+<html data-bs-theme="auto" lang="en" >
+    <head>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+            
+    History for draft-ietf-quic-recovery
+    -34
+
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/_static/fonts/inter/import.css" rel="stylesheet">
+        <link href="/_static/fonts/noto-sans-mono/import.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/ietf/css/ietf.css">
+        <link rel="stylesheet" href="/static/ietf/css/select2.css">
+        
+        <script src="/static/ietf/js/theme.js"></script>
+        <style>
+            
+        </style>
+        
+        
+    <link rel="alternate"
+          type="application/atom+xml"
+          href="/feed/document-changes/draft-ietf-quic-recovery/">
+    <link rel="stylesheet" href="/static/ietf/css/list.css">
+
+        <script type="module" crossorigin="" src="/static/assets/embedded-77b322cb.js"></script>
+<link href="/static/assets/preload-helper-f23b7876.js" type="text/javascript" crossorigin="anonymous" rel="modulepreload" as="script" />
+        
+
+<link rel="apple-touch-icon"
+      sizes="180x180"
+      href="/static/ietf/images/ietf-logo-nor-180-dev.png">
+<link rel="icon"
+      sizes="32x32"
+      href="/static/ietf/images/ietf-logo-nor-32-dev.png">
+<link rel="icon"
+      sizes="16x16"
+      href="/static/ietf/images/ietf-logo-nor-16-dev.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon"
+      href="/static/ietf/images/ietf-logo-nor-mask.svg"
+      color="#ffc4c4">
+<meta name="msapplication-TileColor"
+      content="#ffc4c4">
+<meta name="theme-color"
+      content="#ffc4c4">
+        <script src="/static/ietf/js/ietf.js"></script>
+        
+    </head>
+    <body  class="navbar-offset position-relative"
+          data-group-menu-data-url="/group/groupmenu.json">
+        
+        <a class="visually-hidden visually-hidden-focusable" href="#content">Skip to main content</a>
+        <nav class="navbar navbar-expand-lg fixed-top bg-danger-subtle">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    
+
+<!-- template: templates/logo.html -->
+
+<img alt="IETF Logo"
+     class="d-lm-none me-2"
+     
+     
+        
+             src="/static/ietf/images/ietf-logo-nor-white.svg"
+        
+     
+     >
+
+<img alt="IETF Logo"
+     class="d-dm-none me-2"
+     
+     
+        
+             src="/static/ietf/images/ietf-logo-nor.svg"
+        
+     
+     >
+                    Datatracker
+                    
+                        <span class="text-danger">&delta;</span>
+                    
+                </a>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        
+
+<!-- template: templates/base/menu.html -->
+
+
+<li class="nav-item dropdown">
+    
+        <a href="#"
+           class="nav-link dropdown-toggle"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Groups
+        </a>
+        <ul class="dropdown-menu mt-n1">
+        
+    <li class="dropdown-header">By area/parent</li>
+    
+
+<!-- template: templates/base/menu_wg.html -->
+
+    <li class="dropend group-menu group-parent-2010">
+        <a class="dropdown-item dropdown-toggle "
+           href="/wg/#ART">
+            Apps &amp; Realtime
+        </a>
+    </li>
+
+    <li class="dropend group-menu group-parent-1008">
+        <a class="dropdown-item dropdown-toggle "
+           href="/wg/#GEN">
+            General
+        </a>
+    </li>
+
+    <li class="dropend group-menu group-parent-1052">
+        <a class="dropdown-item dropdown-toggle "
+           href="/wg/#INT">
+            Internet
+        </a>
+    </li>
+
+    <li class="dropend group-menu group-parent-1193">
+        <a class="dropdown-item dropdown-toggle "
+           href="/wg/#OPS">
+            Ops &amp; Management
+        </a>
+    </li>
+
+    <li class="dropend group-menu group-parent-1249">
+        <a class="dropdown-item dropdown-toggle "
+           href="/wg/#RTG">
+            Routing
+        </a>
+    </li>
+
+    <li class="dropend group-menu group-parent-1260">
+        <a class="dropdown-item dropdown-toggle "
+           href="/wg/#SEC">
+            Security
+        </a>
+    </li>
+
+    <li class="dropend group-menu group-parent-2412">
+        <a class="dropdown-item dropdown-toggle "
+           href="/wg/#WIT">
+            Web and Internet Transport
+        </a>
+    </li>
+
+    <li class="dropend group-menu group-parent-7">
+        <a class="dropdown-item dropdown-toggle "
+           href="/program/">
+            IAB
+        </a>
+    </li>
+
+    <li class="dropend group-menu group-parent-3">
+        <a class="dropdown-item dropdown-toggle "
+           href="/rg/">
+            IRTF
+        </a>
+    </li>
+
+    <li class="dropend group-menu group-parent-2309">
+        <a class="dropdown-item dropdown-toggle "
+           href="/adm/">
+            IETF LLC
+        </a>
+    </li>
+
+    <li class="dropend group-menu group-parent-1876">
+        <a class="dropdown-item dropdown-toggle "
+           href="/rfcedtyp/">
+            RFC Editor
+        </a>
+    </li>
+
+
+    <li class="dropend">
+        <a class="dropdown-item dropdown-toggle "
+           href="/group/">
+            Other
+        </a>
+        
+
+<!-- template: templates/base/menu_active_groups.html -->
+<ul class="dropdown-menu ms-n1">
+    
+        <li>
+            <a class="dropdown-item "
+               href="/ag/">Active AGs</a>
+        </li>
+    
+        <li>
+            <a class="dropdown-item "
+               href="/area/">Active Areas</a>
+        </li>
+    
+        <li>
+            <a class="dropdown-item "
+               href="/dir/">Active Directorates</a>
+        </li>
+    
+        <li>
+            <a class="dropdown-item "
+               href="/iabworkshop/">Active IAB Workshops</a>
+        </li>
+    
+        <li>
+            <a class="dropdown-item "
+               href="/program/">Active Programs</a>
+        </li>
+    
+        <li>
+            <a class="dropdown-item "
+               href="/rag/">Active RAGs</a>
+        </li>
+    
+        <li>
+            <a class="dropdown-item "
+               href="/team/">Active Teams</a>
+        </li>
+    
+    
+</ul>
+
+    </li>
+    <li><hr class="dropdown-divider"></li>
+    <li class="dropdown-header">New work</li>
+    <li>
+        <a class="dropdown-item "
+           href="/group/chartering/">
+            Chartering groups
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/wg/bofs/">
+            BOFs
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/doc/bof-requests">
+            BOF Requests
+        </a>
+    </li>
+    <li><hr class="dropdown-divider"></li>
+    <li class="dropdown-header">Other groups</li>
+    <li>
+        <a class="dropdown-item "
+           href="/group/concluded/">
+            Concluded groups
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/list/nonwg">
+            Non-WG lists
+        </a>
+    </li>
+    
+    </ul>
+</li>
+
+<li class="nav-item dropdown">
+    
+        <a href="#"
+           class="nav-link dropdown-toggle"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Documents
+        </a>
+        <ul class="dropdown-menu mt-n1">
+        
+    <li>
+        <a class="dropdown-item "
+           href="/doc/search">
+            Search
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/doc/recent">
+            Recent I-Ds
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/submit/">
+            I-D submission
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/doc/ad">
+            IESG dashboard
+        </a>
+    </li>
+    
+    
+        <li><hr class="dropdown-divider">
+        </li>
+    
+    <li class="dropdown-header">
+        RFC streams
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/stream/iab/">
+            IAB
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/stream/irtf/">
+            IRTF
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/stream/ise/">
+            ISE
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/stream/editorial/">
+            Editorial
+        </a>
+    </li>
+    
+        <li><hr class="dropdown-divider">
+        </li>
+    
+    <li class="dropdown-header">
+        Subseries
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/doc/std">
+            STD
+        </a>
+        <a class="dropdown-item "
+           href="/doc/bcp">
+            BCP
+        </a>
+        <a class="dropdown-item "
+           href="/doc/fyi">
+            FYI
+        </a>
+    </li>
+    
+    </ul>
+</li>
+
+<li class="nav-item dropdown">
+    
+        <a href="#"
+           class="nav-link dropdown-toggle"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Meetings
+        </a>
+        <ul class="dropdown-menu mt-n1">
+        
+    <li>
+        <a class="dropdown-item "
+           href="/meeting/agenda">
+            Agenda
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/meeting/materials">
+            Materials
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/meeting/floor-plan">
+            Floor plan
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="https://www.ietf.org/how/meetings/register/">
+            Registration
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/meeting/important-dates/">
+            Important dates
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/secr/sreq/">
+            Request a session
+        </a>
+    </li>
+    
+    <li>
+        <a class="dropdown-item "
+           href="/meeting/requests">
+            Session requests
+        </a>
+    </li>
+    
+    
+        
+            <li><hr class="dropdown-divider">
+            </li>
+        
+        <li class="dropdown-header">
+            Upcoming meetings
+        </li>
+    
+    <li>
+        <a class="dropdown-item "
+           href="/meeting/upcoming">
+            Upcoming meetings
+        </a>
+    </li>
+    
+        
+            <li><hr class="dropdown-divider">
+            </li>
+        
+        <li class="dropdown-header">
+            Past meetings
+        </li>
+    
+    <li>
+        <a class="dropdown-item "
+           href="/meeting/past">
+            Past meetings
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="https://www.ietf.org/how/meetings/past/">
+            Meeting proceedings
+        </a>
+    </li>
+    
+    </ul>
+</li>
+
+<li class="nav-item dropdown">
+    
+        <a href="#"
+           class="nav-link dropdown-toggle"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Other
+        </a>
+        <ul class="dropdown-menu mt-n1">
+        
+    <li>
+        <a class="dropdown-item "
+           href="/ipr/">
+            IPR disclosures
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/liaison/">
+            Liaison statements
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/iesg/agenda/">
+            IESG agenda
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/nomcom/">
+            NomComs
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/doc/downref">
+            Downref registry
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/stats/">
+            Statistics
+        </a>
+        <ul class="dropdown-menu mt-n1">
+            <li>
+                <a class="dropdown-item "
+                   href="/stats/document/">
+                    I-Ds/RFCs
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item "
+                   href="/stats/meeting/">
+                    Meetings
+                </a>
+            </li>
+            
+        </ul>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/api/">
+            API Help
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item "
+           href="/release/">
+            Release notes
+        </a>
+    </li>
+    
+        <li><hr class="dropdown-divider">
+        </li>
+    
+    <li>
+        <a class="dropdown-item text-danger "
+           target="_blank" href="https://github.com/ietf-tools/datatracker/issues/new/choose">
+            <i class="bi bi-bug">
+            </i>
+            Report a bug
+        </a>
+    </li>
+    
+    </ul>
+</li>
+
+
+    
+
+<!-- template: templates/base/menu_user.html -->
+
+<li class="nav-item dropdown">
+    
+        <a href="#"
+           class="nav-link dropdown-toggle"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">
+            
+                User
+            
+        </a>
+        <ul class="dropdown-menu  mt-n1 ">
+        
+    
+    
+        
+            <li>
+                <a class="dropdown-item "
+                   rel="nofollow"
+                   href="/accounts/login/?next=/doc/draft-ietf-quic-recovery/history/">
+                    Sign in
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item "
+                   rel="nofollow"
+                   href="/accounts/reset/">
+                    Password reset
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item "
+                   href="/accounts/settings/"
+                   rel="nofollow">
+                    Preferences
+                </a>
+            </li>
+        
+    
+    
+        <li>
+            <a class="dropdown-item "
+               href="/accounts/create/">
+                New account
+            </a>
+        </li>
+    
+    
+    
+    
+    
+    
+    </ul></li>
+
+
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center">
+                    <a class="nav-link text-danger d-none d-xl-inline me-xl-4"
+                       target="_blank"
+                       href="https://github.com/ietf-tools/datatracker/issues/new/choose">
+                        Report a bug
+                        <i class="bi bi-bug"></i>
+                    </a>
+
+                    
+                        <a class="btn me-1  btn-info  d-none d-sm-block"
+                           rel="nofollow"
+                           href="/accounts/login/?next=/doc/draft-ietf-quic-recovery/history/">
+                            Sign in
+                        </a>
+                    
+
+                    <label class="d-none d-md-block" aria-label="Document search">
+                    <input class="form-control select2-field search-select"
+                           id="navbar-doc-search"
+                           data-select2-ajax-url="/doc/select2search/document/all/"
+                           type="text"
+                           data-placeholder="Document search">
+                   </label>
+                </div>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbar-collapse"
+                        aria-controls="navbar-collapse"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <i class="navbar-toggler-icon"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <div class="pt-3 container-fluid">
+            <div class="row">
+                
+                <div class="col mx-lg-3 ietf-auto-nav" id="content">
+                    <noscript>
+                        <div class="alert alert-danger alert-ignore my-3">
+                            <b>Javascript disabled?</b> Like other modern websites, the IETF Datatracker relies on Javascript.
+                            Please enable Javascript for full functionality.
+                        </div>
+                    </noscript>
+                    
+                    
+    <!-- template: templates/doc/document_history.html -->
+    
+
+<!-- template: templates/doc/document_top.html -->
+
+<h1>
+    QUIC Loss Detection and Congestion Control
+    <br>
+    <small class="text-body-secondary">draft-ietf-quic-recovery-34</small>
+</h1>
+<ul class="nav nav-tabs my-3">
+    
+        <li  class="nav-item">
+            <a class="nav-link "
+               href="/doc/draft-ietf-quic-recovery/">
+                Status
+            </a>
+        </li>
+    
+        <li  class="nav-item">
+            <a class="nav-link "
+               href="/doc/draft-ietf-quic-recovery/ballot/">
+                IESG evaluation record
+            </a>
+        </li>
+    
+        <li  class="nav-item">
+            <a class="nav-link "
+               href="/doc/draft-ietf-quic-recovery/writeup/">
+                IESG writeups
+            </a>
+        </li>
+    
+        <li  class="nav-item">
+            <a class="nav-link "
+               href="/doc/draft-ietf-quic-recovery/email/">
+                Email expansions
+            </a>
+        </li>
+    
+        <li  class="nav-item">
+            <a class="nav-link active"
+               href="/doc/draft-ietf-quic-recovery/history/">
+                History
+            </a>
+        </li>
+    
+</ul>
+
+    
+        <h2 class="my-3">Revision differences</h2>
+        
+
+
+<!-- template: templates/doc/document_history_form.html -->
+<form class="form-horizontal diff-form"
+      action="https://author-tools.ietf.org/iddiff"
+      method="get"
+      target="_blank">
+
+    <div class="row mb-3">
+        <label for="url1" class="col-form-label col-sm-2 fw-bold">From revision</label>
+        <div class="col-sm-10">
+
+            <select class="form-select select2-field"
+                    data-max-entries="1"
+                    data-width="resolve"
+                    data-allow-clear="false"
+                    data-minimum-input-length="0"
+                    id="url1"
+                    name="url1">
+                
+                    <option value="rfc9002">
+                        RFC 9002
+                        (2021-05-27)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-34">
+                        draft-ietf-quic-recovery-34
+                        (2021-01-14)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-33" selected>
+                        draft-ietf-quic-recovery-33
+                        (2020-12-13)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-32">
+                        draft-ietf-quic-recovery-32
+                        (2020-10-20)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-31">
+                        draft-ietf-quic-recovery-31
+                        (2020-09-24)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-30">
+                        draft-ietf-quic-recovery-30
+                        (2020-09-09)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-29">
+                        draft-ietf-quic-recovery-29
+                        (2020-06-09)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-28">
+                        draft-ietf-quic-recovery-28
+                        (2020-05-19)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-27">
+                        draft-ietf-quic-recovery-27
+                        (2020-03-09)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-26">
+                        draft-ietf-quic-recovery-26
+                        (2020-02-21)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-25">
+                        draft-ietf-quic-recovery-25
+                        (2020-01-21)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-24">
+                        draft-ietf-quic-recovery-24
+                        (2019-11-04)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-23">
+                        draft-ietf-quic-recovery-23
+                        (2019-09-11)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-22">
+                        draft-ietf-quic-recovery-22
+                        (2019-07-09)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-21">
+                        draft-ietf-quic-recovery-21
+                        (2019-07-08)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-20">
+                        draft-ietf-quic-recovery-20
+                        (2019-04-23)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-19">
+                        draft-ietf-quic-recovery-19
+                        (2019-03-11)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-18">
+                        draft-ietf-quic-recovery-18
+                        (2019-01-22)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-17">
+                        draft-ietf-quic-recovery-17
+                        (2018-12-18)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-16">
+                        draft-ietf-quic-recovery-16
+                        (2018-10-23)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-15">
+                        draft-ietf-quic-recovery-15
+                        (2018-10-03)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-14">
+                        draft-ietf-quic-recovery-14
+                        (2018-08-15)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-13">
+                        draft-ietf-quic-recovery-13
+                        (2018-06-27)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-12">
+                        draft-ietf-quic-recovery-12
+                        (2018-05-22)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-11">
+                        draft-ietf-quic-recovery-11
+                        (2018-04-17)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-10">
+                        draft-ietf-quic-recovery-10
+                        (2018-03-05)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-09">
+                        draft-ietf-quic-recovery-09
+                        (2018-01-28)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-08">
+                        draft-ietf-quic-recovery-08
+                        (2017-12-05)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-07">
+                        draft-ietf-quic-recovery-07
+                        (2017-11-14)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-06">
+                        draft-ietf-quic-recovery-06
+                        (2017-09-22)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-05">
+                        draft-ietf-quic-recovery-05
+                        (2017-08-16)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-04">
+                        draft-ietf-quic-recovery-04
+                        (2017-06-13)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-03">
+                        draft-ietf-quic-recovery-03
+                        (2017-05-21)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-02">
+                        draft-ietf-quic-recovery-02
+                        (2017-03-13)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-01">
+                        draft-ietf-quic-recovery-01
+                        (2017-01-14)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-00">
+                        draft-ietf-quic-recovery-00
+                        (2016-11-28)
+                    </option>
+                
+                
+            </select>
+
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="url2" class="col-form-label col-sm-2 fw-bold">To revision</label>
+        <div class="col-sm-10">
+
+            <select class="form-select select2-field"
+                    data-max-entries="1"
+                    data-width="resolve"
+                    data-allow-clear="false"
+                    data-minimum-input-length="0"
+                    id="url2"
+                    name="url2">
+                
+                    <option value="rfc9002">
+                        RFC 9002
+                        (2021-05-27)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-34" selected>
+                        draft-ietf-quic-recovery-34
+                        (2021-01-14)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-33">
+                        draft-ietf-quic-recovery-33
+                        (2020-12-13)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-32">
+                        draft-ietf-quic-recovery-32
+                        (2020-10-20)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-31">
+                        draft-ietf-quic-recovery-31
+                        (2020-09-24)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-30">
+                        draft-ietf-quic-recovery-30
+                        (2020-09-09)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-29">
+                        draft-ietf-quic-recovery-29
+                        (2020-06-09)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-28">
+                        draft-ietf-quic-recovery-28
+                        (2020-05-19)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-27">
+                        draft-ietf-quic-recovery-27
+                        (2020-03-09)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-26">
+                        draft-ietf-quic-recovery-26
+                        (2020-02-21)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-25">
+                        draft-ietf-quic-recovery-25
+                        (2020-01-21)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-24">
+                        draft-ietf-quic-recovery-24
+                        (2019-11-04)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-23">
+                        draft-ietf-quic-recovery-23
+                        (2019-09-11)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-22">
+                        draft-ietf-quic-recovery-22
+                        (2019-07-09)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-21">
+                        draft-ietf-quic-recovery-21
+                        (2019-07-08)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-20">
+                        draft-ietf-quic-recovery-20
+                        (2019-04-23)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-19">
+                        draft-ietf-quic-recovery-19
+                        (2019-03-11)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-18">
+                        draft-ietf-quic-recovery-18
+                        (2019-01-22)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-17">
+                        draft-ietf-quic-recovery-17
+                        (2018-12-18)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-16">
+                        draft-ietf-quic-recovery-16
+                        (2018-10-23)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-15">
+                        draft-ietf-quic-recovery-15
+                        (2018-10-03)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-14">
+                        draft-ietf-quic-recovery-14
+                        (2018-08-15)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-13">
+                        draft-ietf-quic-recovery-13
+                        (2018-06-27)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-12">
+                        draft-ietf-quic-recovery-12
+                        (2018-05-22)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-11">
+                        draft-ietf-quic-recovery-11
+                        (2018-04-17)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-10">
+                        draft-ietf-quic-recovery-10
+                        (2018-03-05)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-09">
+                        draft-ietf-quic-recovery-09
+                        (2018-01-28)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-08">
+                        draft-ietf-quic-recovery-08
+                        (2017-12-05)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-07">
+                        draft-ietf-quic-recovery-07
+                        (2017-11-14)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-06">
+                        draft-ietf-quic-recovery-06
+                        (2017-09-22)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-05">
+                        draft-ietf-quic-recovery-05
+                        (2017-08-16)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-04">
+                        draft-ietf-quic-recovery-04
+                        (2017-06-13)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-03">
+                        draft-ietf-quic-recovery-03
+                        (2017-05-21)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-02">
+                        draft-ietf-quic-recovery-02
+                        (2017-03-13)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-01">
+                        draft-ietf-quic-recovery-01
+                        (2017-01-14)
+                    </option>
+                
+                    <option value="draft-ietf-quic-recovery-00">
+                        draft-ietf-quic-recovery-00
+                        (2016-11-28)
+                    </option>
+                
+                
+            </select>
+
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-form-label col-sm-2 fw-bold">Diff format</label>
+        <div class="col-sm-10">
+
+            <button type="submit"
+                    class="btn btn-primary"
+                    value="--html"
+                    name="difftype">
+                Side-by-side
+            </button>
+            
+                <button type="submit"
+                        class="btn btn-primary"
+                        value="--abdiff"
+                        name="difftype">
+                    Before-after
+                </button>
+                <button type="submit"
+                        class="btn btn-primary"
+                        value="--chbars"
+                        name="difftype">
+                    Change bars
+                </button>
+            
+            <button type="submit"
+                    class="btn btn-primary"
+                    value="--hwdiff"
+                    name="difftype">
+                Inline
+            </button>
+
+        </div>
+    </div>
+
+</form>
+    
+    <h2 class="my-3">Document history</h2>
+    
+    
+        <ul class="nav nav-tabs my-3">
+            <li class="nav-item">
+                <a class="nav-link" href="/doc/rfc9002/history/">RFC 9002</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active">draft-ietf-quic-recovery</a>
+            <li>
+        </ul>
+    
+
+    
+    <table class="table table-sm table-striped tablesorter">
+        <thead>
+            <tr>
+                <th scope="col" data-sort="date">Date</th>
+                <th scope="col" data-sort="rev">Rev.</th>
+                <th scope="col" data-sort="by">By</th>
+                <th scope="col" data-sort="action">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr id="history-967112">
+                    <td>
+                        <div title="2024-01-26 04:22:32 -0800">2024-01-26</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>Gunter Van de Velde</td>
+                    <td>Request closed, assignment withdrawn: Shwetha Bhandari Last Call OPSDIR review</td>
+                </tr>
+            
+                <tr id="history-967111">
+                    <td>
+                        <div title="2024-01-26 04:22:32 -0800">2024-01-26</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>Gunter Van de Velde</td>
+                    <td>Closed request for Last Call review by OPSDIR with state 'Overtaken by Events': Cleaning up stale OPSDIR queue</td>
+                </tr>
+            
+                <tr id="history-807695">
+                    <td>
+                        <div title="2021-05-20 09:16:56 -0700">2021-05-20</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>(System)</td>
+                    <td>RFC Editor state changed to <a href="https://www.rfc-editor.org/auth48/rfc9002"><b>AUTH48-DONE</b></a> from AUTH48</td>
+                </tr>
+            
+                <tr id="history-805082">
+                    <td>
+                        <div title="2021-04-29 16:10:28 -0700">2021-04-29</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>(System)</td>
+                    <td>RFC Editor state changed to <a href="https://www.rfc-editor.org/auth48/rfc9002"><b>AUTH48</b></a></td>
+                </tr>
+            
+                <tr id="history-800054">
+                    <td>
+                        <div title="2021-03-23 11:49:46 -0700">2021-03-23</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>(System)</td>
+                    <td>RFC Editor state changed to <b>RFC-EDITOR</b> from REF</td>
+                </tr>
+            
+                <tr id="history-799519">
+                    <td>
+                        <div title="2021-03-18 10:20:58 -0700">2021-03-18</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>(System)</td>
+                    <td>RFC Editor state changed to <b>REF</b> from EDIT</td>
+                </tr>
+            
+                <tr id="history-790478">
+                    <td>
+                        <div title="2021-02-04 14:06:53 -0800">2021-02-04</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>(System)</td>
+                    <td>IANA Action state changed to <b>No IANA Actions</b></td>
+                </tr>
+            
+                <tr id="history-790272">
+                    <td>
+                        <div title="2021-02-03 14:48:35 -0800">2021-02-03</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>(System)</td>
+                    <td>RFC Editor state changed to <b>EDIT</b></td>
+                </tr>
+            
+                <tr id="history-790271">
+                    <td>
+                        <div title="2021-02-03 14:48:34 -0800">2021-02-03</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>(System)</td>
+                    <td>IESG state changed to <b>RFC Ed Queue</b> from Approved-announcement sent</td>
+                </tr>
+            
+                <tr id="history-790270">
+                    <td>
+                        <div title="2021-02-03 14:48:30 -0800">2021-02-03</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>(System)</td>
+                    <td>Announcement was received by RFC Editor</td>
+                </tr>
+            
+                <tr id="history-790206">
+                    <td>
+                        <div title="2021-02-03 09:20:24 -0800">2021-02-03</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>Cindy Morgan</td>
+                    <td>IESG state changed to <b>Approved-announcement sent</b> from Approved-announcement to be sent</td>
+                </tr>
+            
+                <tr id="history-790205">
+                    <td>
+                        <div title="2021-02-03 09:20:24 -0800">2021-02-03</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>Cindy Morgan</td>
+                    <td>IESG has approved the document</td>
+                </tr>
+            
+                <tr id="history-790204">
+                    <td>
+                        <div title="2021-02-03 09:20:23 -0800">2021-02-03</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>Cindy Morgan</td>
+                    <td>Closed "Approve" ballot</td>
+                </tr>
+            
+                <tr id="history-790171">
+                    <td>
+                        <div title="2021-02-03 06:00:07 -0800">2021-02-03</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>Magnus Westerlund</td>
+                    <td>The related document are now ready.</td>
+                </tr>
+            
+                <tr id="history-790170">
+                    <td>
+                        <div title="2021-02-03 06:00:06 -0800">2021-02-03</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>Magnus Westerlund</td>
+                    <td>IESG state changed to <b>Approved-announcement to be sent</b> from Approved-announcement to be sent::AD Followup</td>
+                </tr>
+            
+                <tr id="history-790169">
+                    <td>
+                        <div title="2021-02-03 05:58:56 -0800">2021-02-03</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>Magnus Westerlund</td>
+                    <td>Ballot approval text was generated</td>
+                </tr>
+            
+                <tr id="history-787240">
+                    <td>
+                        <div title="2021-01-14 23:02:52 -0800">2021-01-14</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>(System)</td>
+                    <td>Sub state has been changed to <b>AD Followup</b> from <b>Revised ID Needed</b></td>
+                </tr>
+            
+                <tr id="history-787239">
+                    <td>
+                        <div title="2021-01-14 23:02:50 -0800">2021-01-14</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/34/">draft-ietf-quic-recovery-34.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-787238">
+                    <td>
+                        <div title="2021-01-14 23:02:44 -0800">2021-01-14</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-787202">
+                    <td>
+                        <div title="2021-01-14 19:11:45 -0800">2021-01-14</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Ian Swett , Jana Iyengar </td>
+                </tr>
+            
+                <tr id="history-787201">
+                    <td>
+                        <div title="2021-01-14 19:11:44 -0800">2021-01-14</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-787200">
+                    <td>
+                        <div title="2021-01-14 19:11:44 -0800">2021-01-14</div>
+                    </td>
+                    <td class="text-end">34</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-786156">
+                    <td>
+                        <div title="2021-01-07 07:34:06 -0800">2021-01-07</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Cindy Morgan</td>
+                    <td>IESG state changed to <b>Approved-announcement to be sent::Revised I-D Needed</b> from IESG Evaluation</td>
+                </tr>
+            
+                <tr id="history-786116">
+                    <td>
+                        <div title="2021-01-07 02:53:54 -0800">2021-01-07</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Martin Vigoureux</td>
+                    <td>[Ballot Position Update] New position, No Objection, has been recorded for Martin Vigoureux</td>
+                </tr>
+            
+                <tr id="history-786102">
+                    <td>
+                        <div title="2021-01-07 00:36:05 -0800">2021-01-07</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Erik Kline</td>
+                    <td>[Ballot Position Update] New position, No Objection, has been recorded for Erik Kline</td>
+                </tr>
+            
+                <tr id="history-786093">
+                    <td>
+                        <div title="2021-01-06 22:51:04 -0800">2021-01-06</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Murray Kucherawy</td>
+                    <td>[Ballot comment]<br>Again, nicely done.&nbsp; And I particularly appreciated Section 4.</td>
+                </tr>
+            
+                <tr id="history-786092">
+                    <td>
+                        <div title="2021-01-06 22:51:04 -0800">2021-01-06</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Murray Kucherawy</td>
+                    <td>[Ballot Position Update] New position, Yes, has been recorded for Murray Kucherawy</td>
+                </tr>
+            
+                <tr id="history-786089">
+                    <td>
+                        <div title="2021-01-06 22:17:44 -0800">2021-01-06</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Benjamin Kaduk</td>
+                    <td><div class="snippet">[Ballot comment]<br>Another well-written QUIC document; thank you!<br>(The last version of -recovery I read was quite some time ago, perhaps the<br>-09, and left …<button type="button" aria-label="Expand" class="btn btn-sm btn-primary show-all"><i class="bi bi-caret-down"></i></button></div><div class="d-none full">[Ballot comment]<br>Another well-written QUIC document; thank you!<br>(The last version of -recovery I read was quite some time ago, perhaps the<br>-09, and left me scratching my head quite often.&nbsp; This one is quite clear.)<br><br>I put my usual editorial suggestions up at <a href="https://github.com/quicwg/base-drafts/pull/4685">https://github.com/quicwg/base-drafts/pull/4685</a><br><br>Section 5.2<br><br>&gt; Endpoints SHOULD set the min_rtt to the newest RTT sample after<br>&gt; persistent congestion is established.&nbsp; [...]<br><br>Earlier we said that min_rtt was the minimum value observed "over the<br>lifetime of the path", which seems in conflict with this behavior unless<br>we somehow declare that the path is re-established after a persistent<br>congestion event.&nbsp; Perhaps we could finesse the wording a bit in the<br>former location (given that we go on to allow re-establishing (or<br>refreshing) the min_rtt at other times as well)?&nbsp; (Appendix A.3 might be<br>affected as well, if changes are made.)<br><br>Section 5.3<br><br>&gt; After the handshake is confirmed, any acknowledgement delays reported<br>&gt; by the peer that are greater than the peer's max_ack_delay are<br>&gt; attributed to unintentional but potentially repeating delays, such as<br>&gt; scheduler latency at the peer or loss of previous acknowledgements.<br><br>I don't think I understand how loss of previous acknowledgements could<br>induce a peer to delay sending an ack longer than its max_ack_delay<br>after an ack-eliciting packet.<br><br>Section 6.2.1<br><br>&gt; A sender SHOULD restart its PTO timer every time an ack-eliciting<br>&gt; packet is sent or acknowledged, when the handshake is confirmed<br>&gt; (Section 4.1.2 of [QUIC-TLS]), or when Initial or Handshake keys are<br>&gt; discarded (Section 4.9 of [QUIC-TLS]).&nbsp; [...]<br><br>If I understand correctly, "handshake is confirmed" and "handshake keys<br>are discarded" occur simultaneously, thus it is redundant to list both.<br><br>Section 6.2.3<br><br>&gt; Endpoints<br>&gt; that do not cease retransmitting packets in response to<br>&gt; unauthenticated data risk creating an infinite exchange of packets.<br><br>We may want to be more precise about what "unauthenticated data" means<br>here, since in -transport we say that even Initial packets are<br>"authenticated" in some sense.<br><br>Section 6.2.4<br><br><br>&gt; When a PTO timer expires, a sender MUST send at least one ack-<br>&gt; eliciting packet in the packet number space as a probe.&nbsp; [...]<br>&gt; [...]<br>&gt; When the PTO timer expires, an ack-eliciting packet MUST be sent.&nbsp; [...]<br><br>These look redundant to me (which, of course, does not necessarily mean<br>that there is no value in having both).<br><br>Section 7.7<br><br>&gt; Endpoints can implement pacing as they choose.&nbsp; A perfectly paced<br>&gt; sender spreads packets exactly evenly over time.&nbsp; For a window-based<br>&gt; congestion controller, such as the one in this document, that rate<br>&gt; can be computed by averaging the congestion window over the round-<br>&gt; trip time.&nbsp; Expressed as a rate in bytes:<br><br>I cringed a little when I saw a rate being expressed as a unit<br>expression with no time denominator, but am not sure how it might be<br>improved.&nbsp; The best I can come up with is "bytes/time".<br><br>Section 8.1<br><br>I guess in some sense the observed RTT is also a signal under the<br>control of a (Dolev-Yao) attacker, in addition to the loss and ECN<br>signals.<br><br>Appendix A<br><br>Should we say explicitly that '^' in the pseudocode is used to indicate<br>exponentiation?</div></td>
+                </tr>
+            
+                <tr id="history-786088">
+                    <td>
+                        <div title="2021-01-06 22:17:44 -0800">2021-01-06</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Benjamin Kaduk</td>
+                    <td>[Ballot Position Update] New position, No Objection, has been recorded for Benjamin Kaduk</td>
+                </tr>
+            
+                <tr id="history-786013">
+                    <td>
+                        <div title="2021-01-06 11:48:01 -0800">2021-01-06</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Warren Kumari</td>
+                    <td>[Ballot Position Update] New position, No Objection, has been recorded for Warren Kumari</td>
+                </tr>
+            
+                <tr id="history-785983">
+                    <td>
+                        <div title="2021-01-06 09:49:16 -0800">2021-01-06</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Robert Wilton</td>
+                    <td>[Ballot comment]<br>Another well written QUIC document, thank you.</td>
+                </tr>
+            
+                <tr id="history-785982">
+                    <td>
+                        <div title="2021-01-06 09:49:16 -0800">2021-01-06</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Robert Wilton</td>
+                    <td>[Ballot Position Update] New position, No Objection, has been recorded for Robert Wilton</td>
+                </tr>
+            
+                <tr id="history-785898">
+                    <td>
+                        <div title="2021-01-06 05:31:27 -0800">2021-01-06</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Éric Vyncke</td>
+                    <td><div class="snippet">[Ballot comment]<br>Thank you for the work put into this document. Even for a non transport person like myself, I find the text easy to …<button type="button" aria-label="Expand" class="btn btn-sm btn-primary show-all"><i class="bi bi-caret-down"></i></button></div><div class="d-none full">[Ballot comment]<br>Thank you for the work put into this document. Even for a non transport person like myself, I find the text easy to read.<br><br>Please find below some non-blocking COMMENT points (but replies would be appreciated), and some nits.<br><br>I hope that this helps to improve the document,<br><br>Regards,<br><br>-éric<br><br>== COMMENTS ==<br><br>Does the QUIC WG intend to have a BCP-like document on how network devices on the path should handle buffers? E.g., QUIC ressembles a lot to TCP so nodes can apply back pressure with mechanisms similar to RED (but, AFAIK, RED is mainly applied to TCP traffic so not to QUIC/UDP).<br><br>-- Abstract --<br>Should the QUIC version be specified ?<br><br>-- Section 1 --<br>Suggest to specify version 1 for the 2nd sentence.<br><br>This (too?) short introduction would benefit by mentioning UDP transport.<br><br>== NITS ==<br><br>-- Section 7.2 --<br>&nbsp; "Endpoints SHOULD use an initial congestion<br>&nbsp;  window of 10 times the maximum datagram size (max_datagram_size),<br>&nbsp;  limited to the larger of 14720 bytes or twice the maximum datagram<br>&nbsp;  size. "<br><br>The above text looks ambiguous to me especially with the ',' before 'limited'.<br><br>Also, s/8 byte overhead/8-byte overhead/ ?</div></td>
+                </tr>
+            
+                <tr id="history-785897">
+                    <td>
+                        <div title="2021-01-06 05:31:27 -0800">2021-01-06</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Éric Vyncke</td>
+                    <td>[Ballot Position Update] New position, No Objection, has been recorded for Éric Vyncke</td>
+                </tr>
+            
+                <tr id="history-785828">
+                    <td>
+                        <div title="2021-01-05 14:36:13 -0800">2021-01-05</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Roman Danyliw</td>
+                    <td><div class="snippet">[Ballot comment]<br>Thanks to Derrell Piper for the SECDIR review.<br><br>** Section 3.&nbsp; Per “The encryption level indicates the packet number space, as described in …<button type="button" aria-label="Expand" class="btn btn-sm btn-primary show-all"><i class="bi bi-caret-down"></i></button></div><div class="d-none full">[Ballot comment]<br>Thanks to Derrell Piper for the SECDIR review.<br><br>** Section 3.&nbsp; Per “The encryption level indicates the packet number space, as described in [QUIC-TRANSPORT ]”, I think that reference here is Section 4.* from [QUIC-TLS] as I can’t find a mapping between PNS and encryption levels as discussed here in [QUIC-TRANSPORT].</div></td>
+                </tr>
+            
+                <tr id="history-785827">
+                    <td>
+                        <div title="2021-01-05 14:36:13 -0800">2021-01-05</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Roman Danyliw</td>
+                    <td>[Ballot Position Update] New position, No Objection, has been recorded for Roman Danyliw</td>
+                </tr>
+            
+                <tr id="history-785816">
+                    <td>
+                        <div title="2021-01-05 13:04:17 -0800">2021-01-05</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Alvaro Retana</td>
+                    <td>[Ballot Position Update] New position, No Objection, has been recorded for Alvaro Retana</td>
+                </tr>
+            
+                <tr id="history-785785">
+                    <td>
+                        <div title="2021-01-05 09:09:04 -0800">2021-01-05</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Alissa Cooper</td>
+                    <td>[Ballot comment]<br>Section 4: It might be good to add citations for the various features of TCP that are mentioned throughout the section.</td>
+                </tr>
+            
+                <tr id="history-785784">
+                    <td>
+                        <div title="2021-01-05 09:09:04 -0800">2021-01-05</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Alissa Cooper</td>
+                    <td>[Ballot Position Update] New position, Yes, has been recorded for Alissa Cooper</td>
+                </tr>
+            
+                <tr id="history-785773">
+                    <td>
+                        <div title="2021-01-05 08:37:03 -0800">2021-01-05</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Barry Leiba</td>
+                    <td>[Ballot comment]<br>Thanks for an exceptionally well written and easy-to-read document.</td>
+                </tr>
+            
+                <tr id="history-785772">
+                    <td>
+                        <div title="2021-01-05 08:37:03 -0800">2021-01-05</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Barry Leiba</td>
+                    <td>[Ballot Position Update] New position, No Objection, has been recorded for Barry Leiba</td>
+                </tr>
+            
+                <tr id="history-785590">
+                    <td>
+                        <div title="2021-01-04 11:08:38 -0800">2021-01-04</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Deborah Brungard</td>
+                    <td>[Ballot Position Update] New position, No Objection, has been recorded for Deborah Brungard</td>
+                </tr>
+            
+                <tr id="history-784953">
+                    <td>
+                        <div title="2020-12-23 12:43:02 -0800">2020-12-23</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Martin Duke</td>
+                    <td>[Ballot comment]<br>Great document!<br><br>It’s odd that sec 4.7 doesn’t mention RACK at all, as that’s headed to TCP standard.</td>
+                </tr>
+            
+                <tr id="history-784952">
+                    <td>
+                        <div title="2020-12-23 12:43:02 -0800">2020-12-23</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Martin Duke</td>
+                    <td>[Ballot Position Update] New position, Yes, has been recorded for Martin Duke</td>
+                </tr>
+            
+                <tr id="history-784874">
+                    <td>
+                        <div title="2020-12-22 15:54:57 -0800">2020-12-22</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Amanda Baber</td>
+                    <td>IANA Review state changed to <b>IANA OK - No Actions Needed</b> from Version Changed - Review Needed</td>
+                </tr>
+            
+                <tr id="history-783706">
+                    <td>
+                        <div title="2020-12-14 07:17:14 -0800">2020-12-14</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Amy Vezza</td>
+                    <td>Placed on agenda for telechat - 2021-01-07</td>
+                </tr>
+            
+                <tr id="history-783671">
+                    <td>
+                        <div title="2020-12-14 02:51:55 -0800">2020-12-14</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Magnus Westerlund</td>
+                    <td>IESG state changed to <b>IESG Evaluation</b> from Waiting for Writeup</td>
+                </tr>
+            
+                <tr id="history-783670">
+                    <td>
+                        <div title="2020-12-14 02:49:25 -0800">2020-12-14</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Magnus Westerlund</td>
+                    <td>Ballot has been issued</td>
+                </tr>
+            
+                <tr id="history-783669">
+                    <td>
+                        <div title="2020-12-14 02:49:25 -0800">2020-12-14</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Magnus Westerlund</td>
+                    <td>[Ballot Position Update] New position, Yes, has been recorded for Magnus Westerlund</td>
+                </tr>
+            
+                <tr id="history-783668">
+                    <td>
+                        <div title="2020-12-14 02:49:24 -0800">2020-12-14</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Magnus Westerlund</td>
+                    <td>Created "Approve" ballot</td>
+                </tr>
+            
+                <tr id="history-783667">
+                    <td>
+                        <div title="2020-12-14 02:49:23 -0800">2020-12-14</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Magnus Westerlund</td>
+                    <td>Ballot writeup was changed</td>
+                </tr>
+            
+                <tr id="history-783547">
+                    <td>
+                        <div title="2020-12-13 15:22:55 -0800">2020-12-13</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>(System)</td>
+                    <td>IANA Review state changed to <b>Version Changed - Review Needed</b> from IANA OK - No Actions Needed</td>
+                </tr>
+            
+                <tr id="history-783546">
+                    <td>
+                        <div title="2020-12-13 15:22:53 -0800">2020-12-13</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/33/">draft-ietf-quic-recovery-33.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-783545">
+                    <td>
+                        <div title="2020-12-13 15:22:53 -0800">2020-12-13</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-783538">
+                    <td>
+                        <div title="2020-12-13 15:21:24 -0800">2020-12-13</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-783537">
+                    <td>
+                        <div title="2020-12-13 15:21:23 -0800">2020-12-13</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-783536">
+                    <td>
+                        <div title="2020-12-13 15:21:22 -0800">2020-12-13</div>
+                    </td>
+                    <td class="text-end">33</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-782323">
+                    <td>
+                        <div title="2020-12-02 09:28:45 -0800">2020-12-02</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Vijay Gurbani</td>
+                    <td>Request for Last Call review by GENART Completed: Ready with Nits. Reviewer: Vijay Gurbani. Sent review to list.</td>
+                </tr>
+            
+                <tr id="history-779491">
+                    <td>
+                        <div title="2020-11-16 08:48:59 -0800">2020-11-16</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>(System)</td>
+                    <td>IANA Review state changed to <b>IANA OK - No Actions Needed</b> from IANA - Review Needed</td>
+                </tr>
+            
+                <tr id="history-779473">
+                    <td>
+                        <div title="2020-11-16 08:48:59 -0800">2020-11-16</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Sabrina Tanamal</td>
+                    <td><div class="snippet">(Via <a href="mailto:drafts-lastcall@iana.org">drafts-lastcall@iana.org</a>): IESG/Authors/WG Chairs:<br><br>The IANA Functions Operator has reviewed <a href="/doc/draft-ietf-quic-recovery/32/">draft-ietf-quic-recovery-32</a>, which is currently in Last Call, and has the following comments:<br><br>We …<button type="button" aria-label="Expand" class="btn btn-sm btn-primary show-all"><i class="bi bi-caret-down"></i></button></div><div class="d-none full">(Via <a href="mailto:drafts-lastcall@iana.org">drafts-lastcall@iana.org</a>): IESG/Authors/WG Chairs:<br><br>The IANA Functions Operator has reviewed <a href="/doc/draft-ietf-quic-recovery/32/">draft-ietf-quic-recovery-32</a>, which is currently in Last Call, and has the following comments:<br><br>We understand that this document doesn't require any registry actions. <br><br>While it's often helpful for a document's IANA Considerations section to remain in place upon publication even if there are no actions, if the authors strongly prefer to remove it, we do not object.<br><br>If this assessment is not accurate, please respond as soon as possible.<br><br>Thank you,<br><br>Sabrina Tanamal<br>Senior IANA Services Specialist</div></td>
+                </tr>
+            
+                <tr id="history-779285">
+                    <td>
+                        <div title="2020-11-16 00:24:58 -0800">2020-11-16</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>(System)</td>
+                    <td>IESG state changed to <b>Waiting for Writeup</b> from In Last Call</td>
+                </tr>
+            
+                <tr id="history-776969">
+                    <td>
+                        <div title="2020-11-02 12:20:28 -0800">2020-11-02</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Derrell Piper</td>
+                    <td>Request for Last Call review by SECDIR Completed: Ready. Reviewer: Derrell Piper. Sent review to list.</td>
+                </tr>
+            
+                <tr id="history-774813">
+                    <td>
+                        <div title="2020-10-26 07:39:53 -0700">2020-10-26</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Gunter Van de Velde</td>
+                    <td>Request for Last Call review by OPSDIR is assigned to Shwetha Bhandari</td>
+                </tr>
+            
+                <tr id="history-774812">
+                    <td>
+                        <div title="2020-10-26 07:39:53 -0700">2020-10-26</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Gunter Van de Velde</td>
+                    <td>Request for Last Call review by OPSDIR is assigned to Shwetha Bhandari</td>
+                </tr>
+            
+                <tr id="history-774476">
+                    <td>
+                        <div title="2020-10-22 12:11:06 -0700">2020-10-22</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Tero Kivinen</td>
+                    <td>Request for Last Call review by SECDIR is assigned to Derrell Piper</td>
+                </tr>
+            
+                <tr id="history-774475">
+                    <td>
+                        <div title="2020-10-22 12:11:06 -0700">2020-10-22</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Tero Kivinen</td>
+                    <td>Request for Last Call review by SECDIR is assigned to Derrell Piper</td>
+                </tr>
+            
+                <tr id="history-774380">
+                    <td>
+                        <div title="2020-10-22 05:48:20 -0700">2020-10-22</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Jean Mahoney</td>
+                    <td>Request for Last Call review by GENART is assigned to Vijay Gurbani</td>
+                </tr>
+            
+                <tr id="history-774379">
+                    <td>
+                        <div title="2020-10-22 05:48:20 -0700">2020-10-22</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Jean Mahoney</td>
+                    <td>Request for Last Call review by GENART is assigned to Vijay Gurbani</td>
+                </tr>
+            
+                <tr id="history-774091">
+                    <td>
+                        <div title="2020-10-21 06:27:02 -0700">2020-10-21</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Amy Vezza</td>
+                    <td>IANA Review state changed to <b>IANA - Review Needed</b></td>
+                </tr>
+            
+                <tr id="history-774090">
+                    <td>
+                        <div title="2020-10-21 06:27:01 -0700">2020-10-21</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Amy Vezza</td>
+                    <td><div class="snippet">The following Last Call announcement was sent out (ends 2020-11-16):<br><br>From: The IESG <br>To: IETF-Announce <br>CC: <a href="mailto:quic-chairs@ietf.org">quic-chairs@ietf.org</a>, <a href="mailto:quic@ietf.org">quic@ietf.org</a>, <a href="mailto:magnus.westerlund@ericsson.com">magnus.westerlund@ericsson.com</a>, <a href="mailto:lars@eggert.org">lars@eggert.org</a>, <a href="mailto:draft-ietf-quic-recovery@ietf.org">draft-ietf-quic-recovery@ietf.org …</a><button type="button" aria-label="Expand" class="btn btn-sm btn-primary show-all"><i class="bi bi-caret-down"></i></button></div><div class="d-none full">The following Last Call announcement was sent out (ends 2020-11-16):<br><br>From: The IESG <br>To: IETF-Announce <br>CC: <a href="mailto:quic-chairs@ietf.org">quic-chairs@ietf.org</a>, <a href="mailto:quic@ietf.org">quic@ietf.org</a>, <a href="mailto:magnus.westerlund@ericsson.com">magnus.westerlund@ericsson.com</a>, <a href="mailto:lars@eggert.org">lars@eggert.org</a>, <a href="mailto:draft-ietf-quic-recovery@ietf.org">draft-ietf-quic-recovery@ietf.org</a><br>Reply-To: <a href="mailto:last-call@ietf.org">last-call@ietf.org</a><br>Sender: <br>Subject: Last Call:&nbsp; (QUIC Loss Detection and Congestion Control) to Proposed Standard<br><br><br>The IESG has received a request from the QUIC WG (quic) to consider the<br>following document: - 'QUIC Loss Detection and Congestion Control'<br>&nbsp;  as Proposed Standard<br><br>This document is part of a combined 26-day last call for multiple <br>related documents that defines the QUIC protocol and the HTTP mapping<br>onto QUIC. The documents are:<br>	<br>&nbsp;  - <a href="/doc/draft-ietf-quic-transport/">draft-ietf-quic-transport</a><br>&nbsp;  - <a href="/doc/draft-ietf-quic-recovery/">draft-ietf-quic-recovery</a><br>&nbsp;  - <a href="/doc/draft-ietf-quic-tls/">draft-ietf-quic-tls</a><br>&nbsp;  - <a href="/doc/draft-ietf-quic-invariants/">draft-ietf-quic-invariants</a><br>&nbsp;  - <a href="/doc/draft-ietf-quic-http/">draft-ietf-quic-http</a><br>&nbsp;  - <a href="/doc/draft-ietf-quic-qpack/">draft-ietf-quic-qpack</a><br><br>Due to its GitHub-centric work style, the QUIC WG requests that LC review <br>comments are individually filed as issues in the WG repository at <br><a href="https://github.com/quicwg/base-drafts">https://github.com/quicwg/base-drafts</a> if at all possible. A summary email with <br>URLs to the individual issue should then also be sent to the relevant mailing list <br>(primarily <a href="mailto:last-call@ietf.org">last-call@ietf.org</a> and <a href="mailto:quic@ietf.org">quic@ietf.org</a>).	<br><br>The IESG plans to make a decision in the next few weeks, and solicits final<br>comments on this action. Please send substantive comments to the<br><a href="mailto:last-call@ietf.org">last-call@ietf.org</a> mailing lists by 2020-11-16. Exceptionally, comments may<br>be sent to <a href="mailto:iesg@ietf.org">iesg@ietf.org</a> instead. In either case, please retain the beginning<br>of the Subject line to allow automated sorting.<br><br><br>Abstract<br><br><br>&nbsp;  This document describes loss detection and congestion control<br>&nbsp;  mechanisms for QUIC.<br><br>Note to Readers<br><br>&nbsp;  Discussion of this draft takes place on the QUIC working group<br>&nbsp;  mailing list (<a href="mailto:quic@ietf.org">quic@ietf.org</a> (mailto:<a href="mailto:quic@ietf.org">quic@ietf.org</a>)), which is<br>&nbsp;  archived at <a href="https://mailarchive.ietf.org/arch/">https://mailarchive.ietf.org/arch/</a><br>&nbsp;  search/?email_list=quic.<br><br>&nbsp;  Working Group information can be found at <a href="https://github.com/quicwg;">https://github.com/quicwg;</a><br>&nbsp;  source code and issues list for this draft can be found at<br>&nbsp;  <a href="https://github.com/quicwg/base-drafts/labels/-recovery">https://github.com/quicwg/base-drafts/labels/-recovery</a>.<br><br><br>The file can be obtained via<br><a href="https://datatracker.ietf.org/doc/draft-ietf-quic-recovery/">https://datatracker.ietf.org/doc/draft-ietf-quic-recovery/</a><br><br><br>The following IPR Declarations may be related to this I-D:<br><br>&nbsp;  <a href="https://datatracker.ietf.org/ipr/2910/">https://datatracker.ietf.org/ipr/2910/</a><br><br><br><br><br><br></div></td>
+                </tr>
+            
+                <tr id="history-774089">
+                    <td>
+                        <div title="2020-10-21 06:27:00 -0700">2020-10-21</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Amy Vezza</td>
+                    <td>IESG state changed to <b>In Last Call</b> from Last Call Requested</td>
+                </tr>
+            
+                <tr id="history-774052">
+                    <td>
+                        <div title="2020-10-21 03:28:43 -0700">2020-10-21</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Magnus Westerlund</td>
+                    <td>Last call was requested</td>
+                </tr>
+            
+                <tr id="history-774051">
+                    <td>
+                        <div title="2020-10-21 03:28:42 -0700">2020-10-21</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Magnus Westerlund</td>
+                    <td>Ballot approval text was generated</td>
+                </tr>
+            
+                <tr id="history-774050">
+                    <td>
+                        <div title="2020-10-21 03:28:42 -0700">2020-10-21</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Magnus Westerlund</td>
+                    <td>Ballot writeup was generated</td>
+                </tr>
+            
+                <tr id="history-774048">
+                    <td>
+                        <div title="2020-10-21 03:28:39 -0700">2020-10-21</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Magnus Westerlund</td>
+                    <td>IESG state changed to <b>Last Call Requested</b> from AD Evaluation::AD Followup</td>
+                </tr>
+            
+                <tr id="history-774033">
+                    <td>
+                        <div title="2020-10-21 02:12:42 -0700">2020-10-21</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Magnus Westerlund</td>
+                    <td>Last call announcement was changed</td>
+                </tr>
+            
+                <tr id="history-774029">
+                    <td>
+                        <div title="2020-10-21 01:53:59 -0700">2020-10-21</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Magnus Westerlund</td>
+                    <td>Last call announcement was changed</td>
+                </tr>
+            
+                <tr id="history-774025">
+                    <td>
+                        <div title="2020-10-21 01:40:43 -0700">2020-10-21</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Magnus Westerlund</td>
+                    <td>Last call announcement was changed</td>
+                </tr>
+            
+                <tr id="history-773961">
+                    <td>
+                        <div title="2020-10-20 15:26:44 -0700">2020-10-20</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>(System)</td>
+                    <td>Sub state has been changed to <b>AD Followup</b> from <b>Revised ID Needed</b></td>
+                </tr>
+            
+                <tr id="history-773960">
+                    <td>
+                        <div title="2020-10-20 15:26:43 -0700">2020-10-20</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/32/">draft-ietf-quic-recovery-32.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-773959">
+                    <td>
+                        <div title="2020-10-20 15:26:41 -0700">2020-10-20</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-773948">
+                    <td>
+                        <div title="2020-10-20 15:23:32 -0700">2020-10-20</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Ian Swett , Jana Iyengar </td>
+                </tr>
+            
+                <tr id="history-773947">
+                    <td>
+                        <div title="2020-10-20 15:23:31 -0700">2020-10-20</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-773946">
+                    <td>
+                        <div title="2020-10-20 15:23:30 -0700">2020-10-20</div>
+                    </td>
+                    <td class="text-end">32</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-772923">
+                    <td>
+                        <div title="2020-10-12 09:36:56 -0700">2020-10-12</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Magnus Westerlund</td>
+                    <td>AD review comments sent to the WG mailing list as a list of github issues.</td>
+                </tr>
+            
+                <tr id="history-772922">
+                    <td>
+                        <div title="2020-10-12 09:36:54 -0700">2020-10-12</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Magnus Westerlund</td>
+                    <td>IESG state changed to <b>AD Evaluation::Revised I-D Needed</b> from AD Evaluation</td>
+                </tr>
+            
+                <tr id="history-771081">
+                    <td>
+                        <div title="2020-09-25 03:41:35 -0700">2020-09-25</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Magnus Westerlund</td>
+                    <td>IESG state changed to <b>AD Evaluation</b> from Publication Requested</td>
+                </tr>
+            
+                <tr id="history-771056">
+                    <td>
+                        <div title="2020-09-25 02:32:12 -0700">2020-09-25</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Lars Eggert</td>
+                    <td><div class="snippet">Shepherd Writeup for QUIC “base drafts”<br><br>1. Summary<br><br>This publication requests covers the following I-Ds that together define<br>the QUIC protocol:<br><br>-&nbsp;  QUIC: A UDP-Based …<button type="button" aria-label="Expand" class="btn btn-sm btn-primary show-all"><i class="bi bi-caret-down"></i></button></div><div class="d-none full">Shepherd Writeup for QUIC “base drafts”<br><br>1. Summary<br><br>This publication requests covers the following I-Ds that together define<br>the QUIC protocol:<br><br>-&nbsp;  QUIC: A UDP-Based Multiplexed and Secure Transport,<br>&nbsp; &nbsp; <a href="/doc/draft-ietf-quic-transport/31/">draft-ietf-quic-transport-31</a><br>-&nbsp;  QUIC Loss Detection and Congestion Control,<br>&nbsp; &nbsp; <a href="/doc/draft-ietf-quic-recovery/31/">draft-ietf-quic-recovery-31</a><br>-&nbsp;  Using TLS to Secure QUIC, <a href="/doc/draft-ietf-quic-tls/31/">draft-ietf-quic-tls-31</a><br>-&nbsp;  Version-Independent Properties of QUIC,<br>&nbsp; &nbsp; <a href="/doc/draft-ietf-quic-invariants/11/">draft-ietf-quic-invariants-11</a><br>-&nbsp;  Hypertext Transfer Protocol Version 3 (HTTP/3),<br>&nbsp; &nbsp; <a href="/doc/draft-ietf-quic-http/31/">draft-ietf-quic-http-31</a><br>-&nbsp;  QPACK: Header Compression for HTTP/3, <a href="/doc/draft-ietf-quic-qpack/18/">draft-ietf-quic-qpack-18</a><br><br>All of these I-Ds are intended to become Proposed Standard RFCs, and<br>that intended status is indicated in their respective title page<br>headers.<br><br>2. Document Announcement Write-Up<br><br>Technical Summary:<br><br>QUIC is a standards-track, UDP-based, stream-multiplexing, encrypted<br>transport protocol. Its main features are minimizing connection<br>establishment and overall transport latency for applications such as<br>HTTP/3, providing multiplexing without head-of-line blocking, requiring<br>only changes to path endpoints to enable deployment, providing<br>always-secure transport using TLS 1.3.<br><br>This document set specifies the QUIC transport protocol and it<br>version-independent invariants, its loss detection and recovery<br>approach, its use of TLS1.3 for providing security, and a new version of<br>HTTP that uses QUIC (HTTP/3), along with QPACK for header compression in<br>that protocol.<br><br>Working Group Summary:<br><br>As can be expected, discussion on many aspects of QUIC was quite<br>intense. The resulting consensus, however, was judged by the chairs to<br>be both strong and broad.<br><br>Document Quality:<br><br>There are over twenty implementations of QUIC that are participating in<br>interop testing, including all major web browsers and many server, CDN<br>and standalone library implementations.<br><br>The acknowledgements sections of the I-Ds highlight the individuals that<br>made major contributions to a given document.<br><br>Personnel:<br><br>The document shepherds for the individual I-Ds are:<br><br>-&nbsp;  Lucas Pardue:<br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-http/31/">draft-ietf-quic-http-31</a><br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-qpack/18/">draft-ietf-quic-qpack-18</a><br>-&nbsp;  Lars Eggert:<br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-transport/31/">draft-ietf-quic-transport-31</a><br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-recovery/31/">draft-ietf-quic-recovery-31</a><br>-&nbsp;  Mark Nottingham:<br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-tls/31/">draft-ietf-quic-tls-31</a><br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-invariants/11/">draft-ietf-quic-invariants-11</a><br><br>The responsible AD for the document set is Magnus Westerlund.<br><br>3. Document Shepherd Review<br><br>The document shepherds extensively reviewed the documents before this<br>publication request.<br><br>4. Document Shepherd Review Concerns<br><br>The document shepherds have no concerns about the depth or breadth of<br>the reviews for these documents.<br><br>5. Broader Reviews<br><br>Parts of the document set benefited from specialized reviews from the<br>TLS, HTTP and transport IETF communities.<br><br>6. Document Shepherd General Concerns<br><br>The document shepherds have no general concerns about these documents.<br><br>7. IPR Disclosure Obligation<br><br>The editors of the I-Ds have all declared that they have filed any and<br>all appropriate IPR disclosures required for full conformance with the<br>provisions of <a href="/doc/bcp78/">BCP 78</a> and <a href="/doc/bcp79/">BCP 79</a>.<br><br>8. Filed IPR Disclosures<br><br><a href="/doc/draft-ietf-quic-recovery/">draft-ietf-quic-recovery</a> has had an IPR disclosure filed on it. No<br>resulting technical changes were argued for.<br><br>9. Strength of Consensus<br><br>The consensus behind the document set is very strong, also as evidenced<br>by the substantial number of existing implementations.<br><br>The WG last calls were forwarded to the TLS and HTTP WGs, due to the<br>topical relationships.<br><br>10. Discontent<br><br>No discontent was voiced.<br><br>11. Document Nits<br><br>The IDNits tool does not appear to be functioning correctly, both<br>locally and using the Web service, so it’s difficult to ascertain<br>whether its results are accurate (there are many “Failure fetching the<br>file, proceeding without it.” errors).<br><br>12. Formal Review Criteria<br><br>No formal review requirements are applicable to this document set.<br><br>13. Split References<br><br>All references within this document set have been identified as either<br>normative or informative.<br><br>14. Normative References<br><br>The document set contains the following normative references to I-Ds:<br><br>-&nbsp;  <a href="/doc/draft-ietf-httpbis-cache/">draft-ietf-httpbis-cache</a><br>-&nbsp;  <a href="/doc/draft-ietf-httpbis-semantics/">draft-ietf-httpbis-semantics</a><br><br>All of these are on track for timely publication in their respective<br>WGs.<br><br>15. Downward References<br><br>The TLS document has the following downrefs: * <a href="/doc/rfc8439/">RFC8439</a> (CHACHA) * AES<br><br>16. RFC Status Changes<br><br>Publication of this document set will not change the status of any<br>existing RFCs.<br><br>17. IANA Considerations Review<br><br>The IANA considerations of the document set have been reviewed and no<br>issues were identified.<br><br>18. New “Expert Review” Registries<br><br>The document set defines several IANA registries that allow for<br>“Provisional Registrations” and “Permanent Registrations”, which both<br>require Expert review. The IESG should select subject matter experts for<br>these registration types; candidates include the document editors and<br>the individuals named as contributors in the acknowledgment sections.<br><br>19. Validation of Formal Language Parts<br><br>No formal code exists in the document set. <a href="/doc/draft-ietf-quic-transport/">draft-ietf-quic-transport</a>,<br><a href="/doc/draft-ietf-quic-recovery/">draft-ietf-quic-recovery</a> and <a href="/doc/draft-ietf-quic-qpack/">draft-ietf-quic-qpack</a> contain python-like<br>pseudo code, but not at a level of detail that would lend itself to<br>automated checking.<br><br>20. YANG<br><br>The document set does not contain a YANG model.</div></td>
+                </tr>
+            
+                <tr id="history-771055">
+                    <td>
+                        <div title="2020-09-25 02:32:11 -0700">2020-09-25</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Lars Eggert</td>
+                    <td>Responsible AD changed to Magnus Westerlund</td>
+                </tr>
+            
+                <tr id="history-771054">
+                    <td>
+                        <div title="2020-09-25 02:32:11 -0700">2020-09-25</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Lars Eggert</td>
+                    <td>IETF WG state changed to <b>Submitted to IESG for Publication</b> from In WG Last Call</td>
+                </tr>
+            
+                <tr id="history-771053">
+                    <td>
+                        <div title="2020-09-25 02:32:10 -0700">2020-09-25</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Lars Eggert</td>
+                    <td>IESG state changed to <b>Publication Requested</b> from I-D Exists</td>
+                </tr>
+            
+                <tr id="history-771052">
+                    <td>
+                        <div title="2020-09-25 02:32:09 -0700">2020-09-25</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Lars Eggert</td>
+                    <td>IESG process started in state <b>Publication Requested</b></td>
+                </tr>
+            
+                <tr id="history-771041">
+                    <td>
+                        <div title="2020-09-25 02:26:08 -0700">2020-09-25</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Lars Eggert</td>
+                    <td><div class="snippet">Shepherd Writeup for QUIC “base drafts”<br><br>1. Summary<br><br>This publication requests covers the following I-Ds that together define<br>the QUIC protocol:<br><br>-&nbsp;  QUIC: A UDP-Based …<button type="button" aria-label="Expand" class="btn btn-sm btn-primary show-all"><i class="bi bi-caret-down"></i></button></div><div class="d-none full">Shepherd Writeup for QUIC “base drafts”<br><br>1. Summary<br><br>This publication requests covers the following I-Ds that together define<br>the QUIC protocol:<br><br>-&nbsp;  QUIC: A UDP-Based Multiplexed and Secure Transport,<br>&nbsp; &nbsp; <a href="/doc/draft-ietf-quic-transport/31/">draft-ietf-quic-transport-31</a><br>-&nbsp;  QUIC Loss Detection and Congestion Control,<br>&nbsp; &nbsp; <a href="/doc/draft-ietf-quic-recovery/31/">draft-ietf-quic-recovery-31</a><br>-&nbsp;  Using TLS to Secure QUIC, <a href="/doc/draft-ietf-quic-tls/31/">draft-ietf-quic-tls-31</a><br>-&nbsp;  Version-Independent Properties of QUIC,<br>&nbsp; &nbsp; <a href="/doc/draft-ietf-quic-invariants/11/">draft-ietf-quic-invariants-11</a><br>-&nbsp;  Hypertext Transfer Protocol Version 3 (HTTP/3),<br>&nbsp; &nbsp; <a href="/doc/draft-ietf-quic-http/31/">draft-ietf-quic-http-31</a><br>-&nbsp;  QPACK: Header Compression for HTTP/3, <a href="/doc/draft-ietf-quic-qpack/18/">draft-ietf-quic-qpack-18</a><br><br>All of these I-Ds are intended to become Proposed Standard RFCs, and<br>that intended status is indicated in their respective title page<br>headers.<br><br>2. Document Announcement Write-Up<br><br>Technical Summary:<br><br>QUIC is a standards-track, UDP-based, stream-multiplexing, encrypted<br>transport protocol. Its main features are minimizing connection<br>establishment and overall transport latency for applications such as<br>HTTP/3, providing multiplexing without head-of-line blocking, requiring<br>only changes to path endpoints to enable deployment, providing<br>always-secure transport using TLS 1.3.<br><br>This document set specifies the QUIC transport protocol and it<br>version-independent invariants, its loss detection and recovery<br>approach, its use of TLS1.3 for providing security, and a new version of<br>HTTP that uses QUIC (HTTP/3), along with QPACK for header compression in<br>that protocol.<br><br>Working Group Summary:<br><br>As can be expected, discussion on many aspects of QUIC was quite<br>intense. The resulting consensus, however, was judged by the chairs to<br>be both strong and broad.<br><br>Document Quality:<br><br>There are over twenty implementations of QUIC that are participating in<br>interop testing, including all major web browsers and many server, CDN<br>and standalone library implementations.<br><br>The acknowledgements sections of the I-Ds highlight the individuals that<br>made major contributions to a given document.<br><br>Personnel:<br><br>The document shepherds for the individual I-Ds are:<br><br>-&nbsp;  Lucas Pardue:<br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-http/31/">draft-ietf-quic-http-31</a><br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-qpack/18/">draft-ietf-quic-qpack-18</a><br>-&nbsp;  Lars Eggert:<br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-transport/31/">draft-ietf-quic-transport-31</a><br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-recovery/31/">draft-ietf-quic-recovery-31</a><br>-&nbsp;  Mark Nottingham:<br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-tls/31/">draft-ietf-quic-tls-31</a><br>&nbsp; &nbsp; -&nbsp;  <a href="/doc/draft-ietf-quic-invariants/11/">draft-ietf-quic-invariants-11</a><br><br>The responsible AD for the document set is Magnus Westerlund.<br><br>3. Document Shepherd Review<br><br>The document shepherds extensively reviewed the documents before this<br>publication request.<br><br>4. Document Shepherd Review Concerns<br><br>The document shepherds have no concerns about the depth or breadth of<br>the reviews for these documents.<br><br>5. Broader Reviews<br><br>Parts of the document set benefited from specialized reviews from the<br>TLS, HTTP and transport IETF communities.<br><br>6. Document Shepherd General Concerns<br><br>The document shepherds have no general concerns about these documents.<br><br>7. IPR Disclosure Obligation<br><br>The editors of the I-Ds have all declared that they have filed any and<br>all appropriate IPR disclosures required for full conformance with the<br>provisions of <a href="/doc/bcp78/">BCP 78</a> and <a href="/doc/bcp79/">BCP 79</a>.<br><br>8. Filed IPR Disclosures<br><br><a href="/doc/draft-ietf-quic-recovery/">draft-ietf-quic-recovery</a> has had an IPR disclosure filed on it. No<br>resulting technical changes were argued for.<br><br>9. Strength of Consensus<br><br>The consensus behind the document set is very strong, also as evidenced<br>by the substantial number of existing implementations.<br><br>The WG last calls were forwarded to the TLS and HTTP WGs, due to the<br>topical relationships.<br><br>10. Discontent<br><br>No discontent was voiced.<br><br>11. Document Nits<br><br>The IDNits tool does not appear to be functioning correctly, both<br>locally and using the Web service, so it’s difficult to ascertain<br>whether its results are accurate (there are many “Failure fetching the<br>file, proceeding without it.” errors).<br><br>12. Formal Review Criteria<br><br>No formal review requirements are applicable to this document set.<br><br>13. Split References<br><br>All references within this document set have been identified as either<br>normative or informative.<br><br>14. Normative References<br><br>The document set contains the following normative references to I-Ds:<br><br>-&nbsp;  <a href="/doc/draft-ietf-httpbis-cache/">draft-ietf-httpbis-cache</a><br>-&nbsp;  <a href="/doc/draft-ietf-httpbis-semantics/">draft-ietf-httpbis-semantics</a><br><br>All of these are on track for timely publication in their respective<br>WGs.<br><br>15. Downward References<br><br>The TLS document has the following downrefs: * <a href="/doc/rfc8439/">RFC8439</a> (CHACHA) * AES<br><br>16. RFC Status Changes<br><br>Publication of this document set will not change the status of any<br>existing RFCs.<br><br>17. IANA Considerations Review<br><br>The IANA considerations of the document set have been reviewed and no<br>issues were identified.<br><br>18. New “Expert Review” Registries<br><br>The document set defines several IANA registries that allow for<br>“Provisional Registrations” and “Permanent Registrations”, which both<br>require Expert review. The IESG should select subject matter experts for<br>these registration types; candidates include the document editors and<br>the individuals named as contributors in the acknowledgment sections.<br><br>19. Validation of Formal Language Parts<br><br>No formal code exists in the document set. <a href="/doc/draft-ietf-quic-transport/">draft-ietf-quic-transport</a>,<br><a href="/doc/draft-ietf-quic-recovery/">draft-ietf-quic-recovery</a> and <a href="/doc/draft-ietf-quic-qpack/">draft-ietf-quic-qpack</a> contain python-like<br>pseudo code, but not at a level of detail that would lend itself to<br>automated checking.<br><br>20. YANG<br><br>The document set does not contain a YANG model.</div></td>
+                </tr>
+            
+                <tr id="history-771034">
+                    <td>
+                        <div title="2020-09-25 01:02:15 -0700">2020-09-25</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Lars Eggert</td>
+                    <td>Notification list changed to <a href="mailto:quic-chairs@ietf.org">quic-chairs@ietf.org</a> from Lars Eggert &lt;<a href="mailto:lars@netapp.com">lars@netapp.com</a>&gt;, Lars Eggert &lt;<a href="mailto:lars@eggert.org">lars@eggert.org</a>&gt;</td>
+                </tr>
+            
+                <tr id="history-771023">
+                    <td>
+                        <div title="2020-09-24 16:17:48 -0700">2020-09-24</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/31/">draft-ietf-quic-recovery-31.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-771022">
+                    <td>
+                        <div title="2020-09-24 16:17:47 -0700">2020-09-24</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-771011">
+                    <td>
+                        <div title="2020-09-24 16:11:41 -0700">2020-09-24</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Ian Swett , Jana Iyengar </td>
+                </tr>
+            
+                <tr id="history-771010">
+                    <td>
+                        <div title="2020-09-24 16:11:40 -0700">2020-09-24</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-771009">
+                    <td>
+                        <div title="2020-09-24 16:11:40 -0700">2020-09-24</div>
+                    </td>
+                    <td class="text-end">31</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-770632">
+                    <td>
+                        <div title="2020-09-23 01:33:40 -0700">2020-09-23</div>
+                    </td>
+                    <td class="text-end">30</td>
+                    <td>Lars Eggert</td>
+                    <td>Notification list changed to Lars Eggert &lt;<a href="mailto:lars@netapp.com">lars@netapp.com</a>&gt;, Lars Eggert &lt;<a href="mailto:lars@eggert.org">lars@eggert.org</a>&gt; from Lars Eggert &lt;<a href="mailto:lars@netapp.com">lars@netapp.com</a>&gt;</td>
+                </tr>
+            
+                <tr id="history-770631">
+                    <td>
+                        <div title="2020-09-23 01:33:40 -0700">2020-09-23</div>
+                    </td>
+                    <td class="text-end">30</td>
+                    <td>Lars Eggert</td>
+                    <td>Document shepherd changed to Lars Eggert</td>
+                </tr>
+            
+                <tr id="history-770630">
+                    <td>
+                        <div title="2020-09-23 01:32:49 -0700">2020-09-23</div>
+                    </td>
+                    <td class="text-end">30</td>
+                    <td>Lars Eggert</td>
+                    <td>Notification list changed to Lars Eggert &lt;<a href="mailto:lars@netapp.com">lars@netapp.com</a>&gt;</td>
+                </tr>
+            
+                <tr id="history-770629">
+                    <td>
+                        <div title="2020-09-23 01:32:49 -0700">2020-09-23</div>
+                    </td>
+                    <td class="text-end">30</td>
+                    <td>Lars Eggert</td>
+                    <td>Document shepherd changed to Lars Eggert</td>
+                </tr>
+            
+                <tr id="history-768920">
+                    <td>
+                        <div title="2020-09-09 19:04:23 -0700">2020-09-09</div>
+                    </td>
+                    <td class="text-end">30</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/30/">draft-ietf-quic-recovery-30.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-768919">
+                    <td>
+                        <div title="2020-09-09 19:04:21 -0700">2020-09-09</div>
+                    </td>
+                    <td class="text-end">30</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-768918">
+                    <td>
+                        <div title="2020-09-09 19:03:25 -0700">2020-09-09</div>
+                    </td>
+                    <td class="text-end">30</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Ian Swett , Jana Iyengar </td>
+                </tr>
+            
+                <tr id="history-768917">
+                    <td>
+                        <div title="2020-09-09 19:03:24 -0700">2020-09-09</div>
+                    </td>
+                    <td class="text-end">30</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-768916">
+                    <td>
+                        <div title="2020-09-09 19:03:23 -0700">2020-09-09</div>
+                    </td>
+                    <td class="text-end">30</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-754286">
+                    <td>
+                        <div title="2020-06-09 22:43:11 -0700">2020-06-09</div>
+                    </td>
+                    <td class="text-end">29</td>
+                    <td>Lars Eggert</td>
+                    <td>IETF WG state changed to <b>In WG Last Call</b> from WG Document</td>
+                </tr>
+            
+                <tr id="history-754257">
+                    <td>
+                        <div title="2020-06-09 17:34:19 -0700">2020-06-09</div>
+                    </td>
+                    <td class="text-end">29</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/29/">draft-ietf-quic-recovery-29.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-754256">
+                    <td>
+                        <div title="2020-06-09 17:34:16 -0700">2020-06-09</div>
+                    </td>
+                    <td class="text-end">29</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-754244">
+                    <td>
+                        <div title="2020-06-09 17:01:00 -0700">2020-06-09</div>
+                    </td>
+                    <td class="text-end">29</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Ian Swett , Jana Iyengar </td>
+                </tr>
+            
+                <tr id="history-754243">
+                    <td>
+                        <div title="2020-06-09 17:01:00 -0700">2020-06-09</div>
+                    </td>
+                    <td class="text-end">29</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-754242">
+                    <td>
+                        <div title="2020-06-09 17:00:59 -0700">2020-06-09</div>
+                    </td>
+                    <td class="text-end">29</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-751540">
+                    <td>
+                        <div title="2020-05-19 18:26:50 -0700">2020-05-19</div>
+                    </td>
+                    <td class="text-end">28</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/28/">draft-ietf-quic-recovery-28.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-751539">
+                    <td>
+                        <div title="2020-05-19 18:26:46 -0700">2020-05-19</div>
+                    </td>
+                    <td class="text-end">28</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-751524">
+                    <td>
+                        <div title="2020-05-19 17:31:15 -0700">2020-05-19</div>
+                    </td>
+                    <td class="text-end">28</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Ian Swett , Jana Iyengar </td>
+                </tr>
+            
+                <tr id="history-751523">
+                    <td>
+                        <div title="2020-05-19 17:31:15 -0700">2020-05-19</div>
+                    </td>
+                    <td class="text-end">28</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-751520">
+                    <td>
+                        <div title="2020-05-19 17:31:14 -0700">2020-05-19</div>
+                    </td>
+                    <td class="text-end">28</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-739414">
+                    <td>
+                        <div title="2020-03-09 05:57:44 -0700">2020-03-09</div>
+                    </td>
+                    <td class="text-end">27</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/27/">draft-ietf-quic-recovery-27.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-739413">
+                    <td>
+                        <div title="2020-03-09 05:57:42 -0700">2020-03-09</div>
+                    </td>
+                    <td class="text-end">27</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-739088">
+                    <td>
+                        <div title="2020-03-08 19:45:54 -0700">2020-03-08</div>
+                    </td>
+                    <td class="text-end">27</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Ian Swett , Jana Iyengar </td>
+                </tr>
+            
+                <tr id="history-739087">
+                    <td>
+                        <div title="2020-03-08 19:45:53 -0700">2020-03-08</div>
+                    </td>
+                    <td class="text-end">27</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-739086">
+                    <td>
+                        <div title="2020-03-08 19:45:52 -0700">2020-03-08</div>
+                    </td>
+                    <td class="text-end">27</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-736071">
+                    <td>
+                        <div title="2020-02-21 16:23:28 -0800">2020-02-21</div>
+                    </td>
+                    <td class="text-end">26</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/26/">draft-ietf-quic-recovery-26.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-736070">
+                    <td>
+                        <div title="2020-02-21 16:23:23 -0800">2020-02-21</div>
+                    </td>
+                    <td class="text-end">26</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-735865">
+                    <td>
+                        <div title="2020-02-21 01:15:24 -0800">2020-02-21</div>
+                    </td>
+                    <td class="text-end">26</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-735864">
+                    <td>
+                        <div title="2020-02-21 01:15:23 -0800">2020-02-21</div>
+                    </td>
+                    <td class="text-end">26</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-735863">
+                    <td>
+                        <div title="2020-02-21 01:15:21 -0800">2020-02-21</div>
+                    </td>
+                    <td class="text-end">26</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-728421">
+                    <td>
+                        <div title="2020-01-21 18:17:16 -0800">2020-01-21</div>
+                    </td>
+                    <td class="text-end">25</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/25/">draft-ietf-quic-recovery-25.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-728420">
+                    <td>
+                        <div title="2020-01-21 18:17:14 -0800">2020-01-21</div>
+                    </td>
+                    <td class="text-end">25</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-728403">
+                    <td>
+                        <div title="2020-01-21 17:50:24 -0800">2020-01-21</div>
+                    </td>
+                    <td class="text-end">25</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-728402">
+                    <td>
+                        <div title="2020-01-21 17:50:23 -0800">2020-01-21</div>
+                    </td>
+                    <td class="text-end">25</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-728401">
+                    <td>
+                        <div title="2020-01-21 17:50:22 -0800">2020-01-21</div>
+                    </td>
+                    <td class="text-end">25</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-715300">
+                    <td>
+                        <div title="2019-11-04 06:47:30 -0800">2019-11-04</div>
+                    </td>
+                    <td class="text-end">24</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/24/">draft-ietf-quic-recovery-24.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-715299">
+                    <td>
+                        <div title="2019-11-04 06:47:29 -0800">2019-11-04</div>
+                    </td>
+                    <td class="text-end">24</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-714791">
+                    <td>
+                        <div title="2019-11-03 19:50:32 -0800">2019-11-03</div>
+                    </td>
+                    <td class="text-end">24</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-714789">
+                    <td>
+                        <div title="2019-11-03 19:50:31 -0800">2019-11-03</div>
+                    </td>
+                    <td class="text-end">24</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-714788">
+                    <td>
+                        <div title="2019-11-03 19:50:29 -0800">2019-11-03</div>
+                    </td>
+                    <td class="text-end">24</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-706604">
+                    <td>
+                        <div title="2019-09-11 18:24:35 -0700">2019-09-11</div>
+                    </td>
+                    <td class="text-end">23</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/23/">draft-ietf-quic-recovery-23.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-706603">
+                    <td>
+                        <div title="2019-09-11 18:24:33 -0700">2019-09-11</div>
+                    </td>
+                    <td class="text-end">23</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-706590">
+                    <td>
+                        <div title="2019-09-11 18:19:55 -0700">2019-09-11</div>
+                    </td>
+                    <td class="text-end">23</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-706589">
+                    <td>
+                        <div title="2019-09-11 18:19:53 -0700">2019-09-11</div>
+                    </td>
+                    <td class="text-end">23</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-706588">
+                    <td>
+                        <div title="2019-09-11 18:19:51 -0700">2019-09-11</div>
+                    </td>
+                    <td class="text-end">23</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-695291">
+                    <td>
+                        <div title="2019-07-09 08:46:07 -0700">2019-07-09</div>
+                    </td>
+                    <td class="text-end">22</td>
+                    <td>Jana Iyengar</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/22/">draft-ietf-quic-recovery-22.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-695290">
+                    <td>
+                        <div title="2019-07-09 08:46:05 -0700">2019-07-09</div>
+                    </td>
+                    <td class="text-end">22</td>
+                    <td>(System)</td>
+                    <td>Forced post of submission</td>
+                </tr>
+            
+                <tr id="history-695289">
+                    <td>
+                        <div title="2019-07-09 08:45:56 -0700">2019-07-09</div>
+                    </td>
+                    <td class="text-end">22</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-695288">
+                    <td>
+                        <div title="2019-07-09 08:45:54 -0700">2019-07-09</div>
+                    </td>
+                    <td class="text-end">22</td>
+                    <td>Jana Iyengar</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-695215">
+                    <td>
+                        <div title="2019-07-08 19:10:15 -0700">2019-07-08</div>
+                    </td>
+                    <td class="text-end">21</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/21/">draft-ietf-quic-recovery-21.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-695214">
+                    <td>
+                        <div title="2019-07-08 19:10:14 -0700">2019-07-08</div>
+                    </td>
+                    <td class="text-end">21</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-695076">
+                    <td>
+                        <div title="2019-07-08 16:30:32 -0700">2019-07-08</div>
+                    </td>
+                    <td class="text-end">21</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-695075">
+                    <td>
+                        <div title="2019-07-08 16:30:31 -0700">2019-07-08</div>
+                    </td>
+                    <td class="text-end">21</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-695074">
+                    <td>
+                        <div title="2019-07-08 16:30:30 -0700">2019-07-08</div>
+                    </td>
+                    <td class="text-end">21</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-663210">
+                    <td>
+                        <div title="2019-04-23 16:56:56 -0700">2019-04-23</div>
+                    </td>
+                    <td class="text-end">20</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/20/">draft-ietf-quic-recovery-20.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-663209">
+                    <td>
+                        <div title="2019-04-23 16:56:54 -0700">2019-04-23</div>
+                    </td>
+                    <td class="text-end">20</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-663190">
+                    <td>
+                        <div title="2019-04-23 16:04:00 -0700">2019-04-23</div>
+                    </td>
+                    <td class="text-end">20</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-663188">
+                    <td>
+                        <div title="2019-04-23 16:04:00 -0700">2019-04-23</div>
+                    </td>
+                    <td class="text-end">20</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-663186">
+                    <td>
+                        <div title="2019-04-23 16:03:57 -0700">2019-04-23</div>
+                    </td>
+                    <td class="text-end">20</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-655042">
+                    <td>
+                        <div title="2019-03-11 17:02:14 -0700">2019-03-11</div>
+                    </td>
+                    <td class="text-end">19</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/19/">draft-ietf-quic-recovery-19.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-655041">
+                    <td>
+                        <div title="2019-03-11 17:02:13 -0700">2019-03-11</div>
+                    </td>
+                    <td class="text-end">19</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-654840">
+                    <td>
+                        <div title="2019-03-11 15:55:09 -0700">2019-03-11</div>
+                    </td>
+                    <td class="text-end">19</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-654839">
+                    <td>
+                        <div title="2019-03-11 15:55:08 -0700">2019-03-11</div>
+                    </td>
+                    <td class="text-end">19</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-654838">
+                    <td>
+                        <div title="2019-03-11 15:55:07 -0700">2019-03-11</div>
+                    </td>
+                    <td class="text-end">19</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-646312">
+                    <td>
+                        <div title="2019-01-22 16:44:13 -0800">2019-01-22</div>
+                    </td>
+                    <td class="text-end">18</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/18/">draft-ietf-quic-recovery-18.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-646311">
+                    <td>
+                        <div title="2019-01-22 16:44:12 -0800">2019-01-22</div>
+                    </td>
+                    <td class="text-end">18</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-646307">
+                    <td>
+                        <div title="2019-01-22 16:43:06 -0800">2019-01-22</div>
+                    </td>
+                    <td class="text-end">18</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-646306">
+                    <td>
+                        <div title="2019-01-22 16:43:03 -0800">2019-01-22</div>
+                    </td>
+                    <td class="text-end">18</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-646305">
+                    <td>
+                        <div title="2019-01-22 16:43:03 -0800">2019-01-22</div>
+                    </td>
+                    <td class="text-end">18</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-641760">
+                    <td>
+                        <div title="2018-12-18 16:04:38 -0800">2018-12-18</div>
+                    </td>
+                    <td class="text-end">17</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/17/">draft-ietf-quic-recovery-17.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-641759">
+                    <td>
+                        <div title="2018-12-18 16:04:37 -0800">2018-12-18</div>
+                    </td>
+                    <td class="text-end">17</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-641750">
+                    <td>
+                        <div title="2018-12-18 15:55:39 -0800">2018-12-18</div>
+                    </td>
+                    <td class="text-end">17</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-641749">
+                    <td>
+                        <div title="2018-12-18 15:55:38 -0800">2018-12-18</div>
+                    </td>
+                    <td class="text-end">17</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-641748">
+                    <td>
+                        <div title="2018-12-18 15:55:38 -0800">2018-12-18</div>
+                    </td>
+                    <td class="text-end">17</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-632894">
+                    <td>
+                        <div title="2018-10-23 16:55:34 -0700">2018-10-23</div>
+                    </td>
+                    <td class="text-end">16</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/16/">draft-ietf-quic-recovery-16.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-632893">
+                    <td>
+                        <div title="2018-10-23 16:55:33 -0700">2018-10-23</div>
+                    </td>
+                    <td class="text-end">16</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-632889">
+                    <td>
+                        <div title="2018-10-23 16:55:14 -0700">2018-10-23</div>
+                    </td>
+                    <td class="text-end">16</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-632888">
+                    <td>
+                        <div title="2018-10-23 16:55:14 -0700">2018-10-23</div>
+                    </td>
+                    <td class="text-end">16</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-632887">
+                    <td>
+                        <div title="2018-10-23 16:55:13 -0700">2018-10-23</div>
+                    </td>
+                    <td class="text-end">16</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-632886">
+                    <td>
+                        <div title="2018-10-23 16:55:13 -0700">2018-10-23</div>
+                    </td>
+                    <td class="text-end">16</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-632885">
+                    <td>
+                        <div title="2018-10-23 16:55:09 -0700">2018-10-23</div>
+                    </td>
+                    <td class="text-end">16</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-632884">
+                    <td>
+                        <div title="2018-10-23 16:55:08 -0700">2018-10-23</div>
+                    </td>
+                    <td class="text-end">16</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-627792">
+                    <td>
+                        <div title="2018-10-03 16:02:03 -0700">2018-10-03</div>
+                    </td>
+                    <td class="text-end">15</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/15/">draft-ietf-quic-recovery-15.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-627791">
+                    <td>
+                        <div title="2018-10-03 16:02:02 -0700">2018-10-03</div>
+                    </td>
+                    <td class="text-end">15</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-627778">
+                    <td>
+                        <div title="2018-10-03 15:40:18 -0700">2018-10-03</div>
+                    </td>
+                    <td class="text-end">15</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-627777">
+                    <td>
+                        <div title="2018-10-03 15:40:18 -0700">2018-10-03</div>
+                    </td>
+                    <td class="text-end">15</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-627776">
+                    <td>
+                        <div title="2018-10-03 15:40:17 -0700">2018-10-03</div>
+                    </td>
+                    <td class="text-end">15</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-621362">
+                    <td>
+                        <div title="2018-08-15 00:34:03 -0700">2018-08-15</div>
+                    </td>
+                    <td class="text-end">14</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/14/">draft-ietf-quic-recovery-14.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-621361">
+                    <td>
+                        <div title="2018-08-15 00:34:01 -0700">2018-08-15</div>
+                    </td>
+                    <td class="text-end">14</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-621345">
+                    <td>
+                        <div title="2018-08-14 21:06:22 -0700">2018-08-14</div>
+                    </td>
+                    <td class="text-end">14</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-621344">
+                    <td>
+                        <div title="2018-08-14 21:06:21 -0700">2018-08-14</div>
+                    </td>
+                    <td class="text-end">14</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-621341">
+                    <td>
+                        <div title="2018-08-14 21:06:20 -0700">2018-08-14</div>
+                    </td>
+                    <td class="text-end">14</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-611748">
+                    <td>
+                        <div title="2018-06-27 18:09:52 -0700">2018-06-27</div>
+                    </td>
+                    <td class="text-end">13</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/13/">draft-ietf-quic-recovery-13.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-611747">
+                    <td>
+                        <div title="2018-06-27 18:09:52 -0700">2018-06-27</div>
+                    </td>
+                    <td class="text-end">13</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-611734">
+                    <td>
+                        <div title="2018-06-27 17:39:19 -0700">2018-06-27</div>
+                    </td>
+                    <td class="text-end">13</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-611732">
+                    <td>
+                        <div title="2018-06-27 17:39:19 -0700">2018-06-27</div>
+                    </td>
+                    <td class="text-end">13</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-611730">
+                    <td>
+                        <div title="2018-06-27 17:39:19 -0700">2018-06-27</div>
+                    </td>
+                    <td class="text-end">13</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-606330">
+                    <td>
+                        <div title="2018-05-22 15:47:56 -0700">2018-05-22</div>
+                    </td>
+                    <td class="text-end">12</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/12/">draft-ietf-quic-recovery-12.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-606329">
+                    <td>
+                        <div title="2018-05-22 15:47:56 -0700">2018-05-22</div>
+                    </td>
+                    <td class="text-end">12</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-606326">
+                    <td>
+                        <div title="2018-05-22 15:47:32 -0700">2018-05-22</div>
+                    </td>
+                    <td class="text-end">12</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-606325">
+                    <td>
+                        <div title="2018-05-22 15:47:31 -0700">2018-05-22</div>
+                    </td>
+                    <td class="text-end">12</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-606324">
+                    <td>
+                        <div title="2018-05-22 15:47:31 -0700">2018-05-22</div>
+                    </td>
+                    <td class="text-end">12</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-601721">
+                    <td>
+                        <div title="2018-04-17 15:52:51 -0700">2018-04-17</div>
+                    </td>
+                    <td class="text-end">11</td>
+                    <td>Jana Iyengar</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/11/">draft-ietf-quic-recovery-11.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-601720">
+                    <td>
+                        <div title="2018-04-17 15:52:51 -0700">2018-04-17</div>
+                    </td>
+                    <td class="text-end">11</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-601719">
+                    <td>
+                        <div title="2018-04-17 15:51:24 -0700">2018-04-17</div>
+                    </td>
+                    <td class="text-end">11</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-601718">
+                    <td>
+                        <div title="2018-04-17 15:51:24 -0700">2018-04-17</div>
+                    </td>
+                    <td class="text-end">11</td>
+                    <td>Jana Iyengar</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-601717">
+                    <td>
+                        <div title="2018-04-17 15:51:23 -0700">2018-04-17</div>
+                    </td>
+                    <td class="text-end">11</td>
+                    <td>Jana Iyengar</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-592014">
+                    <td>
+                        <div title="2018-03-05 06:09:50 -0800">2018-03-05</div>
+                    </td>
+                    <td class="text-end">10</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/10/">draft-ietf-quic-recovery-10.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-592013">
+                    <td>
+                        <div title="2018-03-05 06:09:49 -0800">2018-03-05</div>
+                    </td>
+                    <td class="text-end">10</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-591600">
+                    <td>
+                        <div title="2018-03-04 21:58:39 -0800">2018-03-04</div>
+                    </td>
+                    <td class="text-end">10</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Jana Iyengar , Ian Swett , <a href="mailto:quic-chairs@ietf.org">quic-chairs@ietf.org</a></td>
+                </tr>
+            
+                <tr id="history-591598">
+                    <td>
+                        <div title="2018-03-04 21:58:39 -0800">2018-03-04</div>
+                    </td>
+                    <td class="text-end">10</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-591597">
+                    <td>
+                        <div title="2018-03-04 21:58:39 -0800">2018-03-04</div>
+                    </td>
+                    <td class="text-end">10</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-584025">
+                    <td>
+                        <div title="2018-01-28 17:28:08 -0800">2018-01-28</div>
+                    </td>
+                    <td class="text-end">09</td>
+                    <td>Jana Iyengar</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/09/">draft-ietf-quic-recovery-09.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-584024">
+                    <td>
+                        <div title="2018-01-28 17:28:08 -0800">2018-01-28</div>
+                    </td>
+                    <td class="text-end">09</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-584016">
+                    <td>
+                        <div title="2018-01-28 17:27:01 -0800">2018-01-28</div>
+                    </td>
+                    <td class="text-end">09</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Janardhan Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-584015">
+                    <td>
+                        <div title="2018-01-28 17:27:01 -0800">2018-01-28</div>
+                    </td>
+                    <td class="text-end">09</td>
+                    <td>Jana Iyengar</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-584014">
+                    <td>
+                        <div title="2018-01-28 17:27:00 -0800">2018-01-28</div>
+                    </td>
+                    <td class="text-end">09</td>
+                    <td>Jana Iyengar</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-576067">
+                    <td>
+                        <div title="2017-12-05 17:38:08 -0800">2017-12-05</div>
+                    </td>
+                    <td class="text-end">08</td>
+                    <td>Ian Swett</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/08/">draft-ietf-quic-recovery-08.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-576066">
+                    <td>
+                        <div title="2017-12-05 17:38:08 -0800">2017-12-05</div>
+                    </td>
+                    <td class="text-end">08</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-576055">
+                    <td>
+                        <div title="2017-12-05 17:27:58 -0800">2017-12-05</div>
+                    </td>
+                    <td class="text-end">08</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Janardhan Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-576054">
+                    <td>
+                        <div title="2017-12-05 17:27:58 -0800">2017-12-05</div>
+                    </td>
+                    <td class="text-end">08</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-576053">
+                    <td>
+                        <div title="2017-12-05 17:27:58 -0800">2017-12-05</div>
+                    </td>
+                    <td class="text-end">08</td>
+                    <td>Ian Swett</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-572992">
+                    <td>
+                        <div title="2017-11-14 18:24:23 -0800">2017-11-14</div>
+                    </td>
+                    <td class="text-end">07</td>
+                    <td>Martin Thomson</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/07/">draft-ietf-quic-recovery-07.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-572991">
+                    <td>
+                        <div title="2017-11-14 18:24:23 -0800">2017-11-14</div>
+                    </td>
+                    <td class="text-end">07</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-572990">
+                    <td>
+                        <div title="2017-11-14 18:19:25 -0800">2017-11-14</div>
+                    </td>
+                    <td class="text-end">07</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Janardhan Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-572989">
+                    <td>
+                        <div title="2017-11-14 18:19:24 -0800">2017-11-14</div>
+                    </td>
+                    <td class="text-end">07</td>
+                    <td>Martin Thomson</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-562469">
+                    <td>
+                        <div title="2017-09-22 17:11:09 -0700">2017-09-22</div>
+                    </td>
+                    <td class="text-end">06</td>
+                    <td>Jana Iyengar</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/06/">draft-ietf-quic-recovery-06.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-562468">
+                    <td>
+                        <div title="2017-09-22 17:11:09 -0700">2017-09-22</div>
+                    </td>
+                    <td class="text-end">06</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-562463">
+                    <td>
+                        <div title="2017-09-22 17:09:14 -0700">2017-09-22</div>
+                    </td>
+                    <td class="text-end">06</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Janardhan Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-562462">
+                    <td>
+                        <div title="2017-09-22 17:09:14 -0700">2017-09-22</div>
+                    </td>
+                    <td class="text-end">06</td>
+                    <td>Jana Iyengar</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-557418">
+                    <td>
+                        <div title="2017-08-16 05:42:20 -0700">2017-08-16</div>
+                    </td>
+                    <td class="text-end">05</td>
+                    <td>Martin Thomson</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/05/">draft-ietf-quic-recovery-05.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-557417">
+                    <td>
+                        <div title="2017-08-16 05:42:19 -0700">2017-08-16</div>
+                    </td>
+                    <td class="text-end">05</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-557379">
+                    <td>
+                        <div title="2017-08-15 22:12:46 -0700">2017-08-15</div>
+                    </td>
+                    <td class="text-end">05</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Janardhan Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-557378">
+                    <td>
+                        <div title="2017-08-15 22:12:46 -0700">2017-08-15</div>
+                    </td>
+                    <td class="text-end">05</td>
+                    <td>Martin Thomson</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-544673">
+                    <td>
+                        <div title="2017-06-13 07:39:17 -0700">2017-06-13</div>
+                    </td>
+                    <td class="text-end">04</td>
+                    <td>Martin Thomson</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/04/">draft-ietf-quic-recovery-04.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-544672">
+                    <td>
+                        <div title="2017-06-13 07:39:16 -0700">2017-06-13</div>
+                    </td>
+                    <td class="text-end">04</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-544661">
+                    <td>
+                        <div title="2017-06-13 06:41:38 -0700">2017-06-13</div>
+                    </td>
+                    <td class="text-end">04</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Janardhan Iyengar , Ian Swett </td>
+                </tr>
+            
+                <tr id="history-544660">
+                    <td>
+                        <div title="2017-06-13 06:41:37 -0700">2017-06-13</div>
+                    </td>
+                    <td class="text-end">04</td>
+                    <td>Martin Thomson</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-541860">
+                    <td>
+                        <div title="2017-05-22 22:32:13 -0700">2017-05-22</div>
+                    </td>
+                    <td class="text-end">03</td>
+                    <td>Mark Nottingham</td>
+                    <td>Added to session: interim-2017-quic-02</td>
+                </tr>
+            
+                <tr id="history-541656">
+                    <td>
+                        <div title="2017-05-21 23:26:57 -0700">2017-05-21</div>
+                    </td>
+                    <td class="text-end">03</td>
+                    <td>Martin Thomson</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/03/">draft-ietf-quic-recovery-03.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-541655">
+                    <td>
+                        <div title="2017-05-21 23:26:56 -0700">2017-05-21</div>
+                    </td>
+                    <td class="text-end">03</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-541642">
+                    <td>
+                        <div title="2017-05-21 21:51:03 -0700">2017-05-21</div>
+                    </td>
+                    <td class="text-end">03</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Janardhan Iyengar , Ian Swett , <a href="mailto:quic-chairs@ietf.org">quic-chairs@ietf.org</a></td>
+                </tr>
+            
+                <tr id="history-541641">
+                    <td>
+                        <div title="2017-05-21 21:51:02 -0700">2017-05-21</div>
+                    </td>
+                    <td class="text-end">03</td>
+                    <td>Martin Thomson</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-532741">
+                    <td>
+                        <div title="2017-03-29 19:54:52 -0700">2017-03-29</div>
+                    </td>
+                    <td class="text-end">02</td>
+                    <td>Mark Nottingham</td>
+                    <td>Added to session: IETF-98: quic&nbsp; Thu-0900</td>
+                </tr>
+            
+                <tr id="history-528779">
+                    <td>
+                        <div title="2017-03-13 16:22:55 -0700">2017-03-13</div>
+                    </td>
+                    <td class="text-end">02</td>
+                    <td>Mike Bishop</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/02/">draft-ietf-quic-recovery-02.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-528778">
+                    <td>
+                        <div title="2017-03-13 16:22:55 -0700">2017-03-13</div>
+                    </td>
+                    <td class="text-end">02</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-528773">
+                    <td>
+                        <div title="2017-03-13 16:19:57 -0700">2017-03-13</div>
+                    </td>
+                    <td class="text-end">02</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: Janardhan Iyengar , Ian Swett , <a href="mailto:quic-chairs@ietf.org">quic-chairs@ietf.org</a></td>
+                </tr>
+            
+                <tr id="history-528772">
+                    <td>
+                        <div title="2017-03-13 16:19:56 -0700">2017-03-13</div>
+                    </td>
+                    <td class="text-end">02</td>
+                    <td>Mike Bishop</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-517580">
+                    <td>
+                        <div title="2017-01-16 06:01:56 -0800">2017-01-16</div>
+                    </td>
+                    <td class="text-end">01</td>
+                    <td>Lars Eggert</td>
+                    <td>Added to session: interim-2017-quic-01</td>
+                </tr>
+            
+                <tr id="history-517576">
+                    <td>
+                        <div title="2017-01-16 06:01:23 -0800">2017-01-16</div>
+                    </td>
+                    <td class="text-end">01</td>
+                    <td>Lars Eggert</td>
+                    <td>Added to session: interim-2017-quic-01</td>
+                </tr>
+            
+                <tr id="history-517572">
+                    <td>
+                        <div title="2017-01-16 05:57:46 -0800">2017-01-16</div>
+                    </td>
+                    <td class="text-end">01</td>
+                    <td>Lars Eggert</td>
+                    <td>Added to session: interim-2017-quic-01</td>
+                </tr>
+            
+                <tr id="history-517461">
+                    <td>
+                        <div title="2017-01-14 10:45:51 -0800">2017-01-14</div>
+                    </td>
+                    <td class="text-end">01</td>
+                    <td>Mike Bishop</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/01/">draft-ietf-quic-recovery-01.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-517460">
+                    <td>
+                        <div title="2017-01-14 10:45:50 -0800">2017-01-14</div>
+                    </td>
+                    <td class="text-end">01</td>
+                    <td>(System)</td>
+                    <td>New version approved</td>
+                </tr>
+            
+                <tr id="history-517453">
+                    <td>
+                        <div title="2017-01-14 10:24:57 -0800">2017-01-14</div>
+                    </td>
+                    <td class="text-end">01</td>
+                    <td>(System)</td>
+                    <td>Request for posting confirmation emailed to previous authors: "Ian Swett" , "Janardhan Iyengar" , <a href="mailto:quic-chairs@ietf.org">quic-chairs@ietf.org</a></td>
+                </tr>
+            
+                <tr id="history-517452">
+                    <td>
+                        <div title="2017-01-14 10:24:56 -0800">2017-01-14</div>
+                    </td>
+                    <td class="text-end">01</td>
+                    <td>Mike Bishop</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+                <tr id="history-496073">
+                    <td>
+                        <div title="2016-11-28 16:35:10 -0800">2016-11-28</div>
+                    </td>
+                    <td class="text-end">00</td>
+                    <td>Mark Nottingham</td>
+                    <td>Changed consensus to <b>Yes</b> from Unknown</td>
+                </tr>
+            
+                <tr id="history-496072">
+                    <td>
+                        <div title="2016-11-28 16:35:09 -0800">2016-11-28</div>
+                    </td>
+                    <td class="text-end">00</td>
+                    <td>Mark Nottingham</td>
+                    <td>Intended Status changed to <b>Proposed Standard</b> from None</td>
+                </tr>
+            
+                <tr id="history-496057">
+                    <td>
+                        <div title="2016-11-28 16:07:51 -0800">2016-11-28</div>
+                    </td>
+                    <td class="text-end">00</td>
+                    <td>Mark Nottingham</td>
+                    <td>This document now replaces <b><a href="/doc/draft-iyengar-quic-loss-recovery/">draft-iyengar-quic-loss-recovery</a></b> instead of None</td>
+                </tr>
+            
+                <tr id="history-496056">
+                    <td>
+                        <div title="2016-11-28 16:07:50 -0800">2016-11-28</div>
+                    </td>
+                    <td class="text-end">00</td>
+                    <td>Jana Iyengar</td>
+                    <td>New version available: <b><a href="/doc/draft-ietf-quic-recovery/00/">draft-ietf-quic-recovery-00.txt</a></b></td>
+                </tr>
+            
+                <tr id="history-496055">
+                    <td>
+                        <div title="2016-11-28 16:07:50 -0800">2016-11-28</div>
+                    </td>
+                    <td class="text-end">00</td>
+                    <td>(System)</td>
+                    <td>WG -00 approved</td>
+                </tr>
+            
+                <tr id="history-496054">
+                    <td>
+                        <div title="2016-11-28 16:04:07 -0800">2016-11-28</div>
+                    </td>
+                    <td class="text-end">00</td>
+                    <td>Jana Iyengar</td>
+                    <td>Set submitter to "Jana Iyengar ", replaces to <a href="/doc/draft-iyengar-quic-loss-recovery/">draft-iyengar-quic-loss-recovery</a> and sent approval email to group chairs: <a href="mailto:quic-chairs@ietf.org">quic-chairs@ietf.org</a></td>
+                </tr>
+            
+                <tr id="history-496053">
+                    <td>
+                        <div title="2016-11-28 16:03:17 -0800">2016-11-28</div>
+                    </td>
+                    <td class="text-end">00</td>
+                    <td>Jana Iyengar</td>
+                    <td>Uploaded new revision</td>
+                </tr>
+            
+        </tbody>
+    </table>
+
+                    
+                </div>
+            </div>
+        </div>
+        
+            <footer class="col-md-12 col-sm-12 border-top mt-5 py-5 bg-light-subtle text-center position-sticky">
+                <a href="https://www.ietf.org/" class="p-3">IETF</a>
+                <a href="https://www.ietf.org/iesg/" class="p-3">IESG</a>
+                <a href="https://www.iab.org/" class="p-3">IAB</a>
+                <a href="https://www.irtf.org/" class="p-3">IRTF</a>
+                <a href="https://www.ietf.org/llc/" class="p-3 text-nowrap">IETF LLC</a>
+                <a href="https://trustee.ietf.org/" class="p-3 text-nowrap">IETF Trust</a>
+                <a href="https://www.rfc-editor.org/" class="p-3 text-nowrap">RFC Editor</a>
+                <a href="https://www.iana.org/" class="p-3">IANA</a>
+                <a href="https://www.ietf.org/privacy-statement/" class="p-3 text-nowrap">Privacy Statement</a>
+                <div class="small text-body-secondary py-3">
+                    
+                        <a class="mx-2" href="/release/about">About IETF Datatracker</a>
+                        <span class="mx-2">
+                            
+                            Version -dev
+                            
+                            
+                        </span>
+                    
+                    <span class="mx-2 text-danger">
+                        <i class="bi bi-bug"></i>
+                        Report a bug:
+                        <a class="text-reset" target="_blank" href="https://github.com/ietf-tools/datatracker/issues/new/choose">GitHub</a>
+                        
+                            <a class="text-reset" href="mailto:tools-help@ietf.org">Email</a>
+                        
+                    </span>
+                    
+                        <br>
+                        Python 3.9.18
+                        Django 4.2.11
+                        <br>
+                        
+
+
+<!-- template: templates/debug.html -->
+
+    
+        <small class="text-center text-body-secondary">
+            Add <code>ietf.context_processors.sql_debug</code> to <code>settings.DEV_TEMPLATE_CONTEXT_PROCESSORS</code> to turn on the SQL statement table.
+        </small>
+    
+
+
+                    
+                </div>
+            </footer>
+        
+        
+    <script src="/static/ietf/js/list.js"></script>
+
+        <script src="/static/ietf/js/select2.js"></script>
+        <script>
+            $('#navbar-doc-search').on('select2:select', function (e) {
+                window.location.href = e.params.data.url;
+            });
+        </script>
+      
+    </body>
+</html>
