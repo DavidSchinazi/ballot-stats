@@ -1,0 +1,267 @@
+{
+  "all_ballots": {
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-04-01 22:17:58-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-01 22:17:58-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-04-24 03:01:50-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-05-24 15:03:39-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-04-24 03:01:50-07:00",
+        "text": "Thank you for the work put into this document, it can only help operations. Please find below two blocking DISCUSS points (easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education). Special thanks to Matthew Bocci for the shepherd's detailed write-up including the WG consensus and the justification of the intended status.  I hope that this review helps to improve the document, Regards, -\u00e9ric # DISCUSS (blocking) As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ## Missing normative references Even experienced authors sometimes forget to add normative references to  RFC 2119  and  RFC 8174  ;-) ## Section 4.4 Probably due to my lack of knowledge about EVPN and  RFC 9136  et al, but I wonder how the length of the \"IP Prefix\" field can be known by the receiver ? There is a \"IP Prefix length\" field but it seems to indicate the prefix length, e.g., \"IP Prefix Len\" field could be 32 bit but the \"IP Prefix\" field itself could be the 128-bit value of 2001:db8:: May I strongly suggest adding clarification text if my understanding is incorrect ?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-24 15:03:39-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-04-26 18:11:57-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-26 18:11:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-04-18 12:49:05-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-05-09 06:08:33-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-04-18 12:49:05-07:00",
+        "text": "Section 4.1: EVPN MAC/IP Sub-TLV This Sub-TLV appears to be used for both EVPN MAC/IP and PBB-EVPN. The content of the TLV contains information for EVPN taken from [ RFC7432 ] and PBB-EVPN taken from [ RFC7623 ]. This begs the question as to why these are both merged into the same Sub-TLV rather than have separate Sub-TLVs. The name of the Sub-TLV implies it's for EVPN but it is not exclusively for that. Also, there are fields in the TLV such as Ethernet Tag ID that are relevant only to PBB-EVPN (or vice versa) so I assume that these would be set to zero if not used (?) but the document does not specify this.  Section 8:1: Sub-type TLV \u00a0  This document defines four new Sub-TLV type to be included in Target \u00a0  FEC Stack TLV (TLV Type 1, 16 and 21) [ RFC8029 ] in Echo Request and \u00a0  Echo Reply messages in EVPN and PBB-EVPN network. The reference to  RFC8029  looks incorrect. I think this is referring to  RFC9041  and if so, the reference should be corrected. The Target FEC Stack TLV sub-TLVs are in this registry  https://www.iana.org/assignments/mpls-lsp-ping-parameters/mpls-lsp-ping-parameters.xhtml#sub-tlv-1-16-21 . \u00a0  IANA is requested to assign lowest 4 free values for the four Sub- \u00a0  TLVs listed below from the Standards Track\" (0-16383) range If this is in fact referencing  RFC9041  then the 0-16383 range is \"Standards Action\" NOT \"Standards Track\"",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-09 06:08:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-04-25 17:39:07-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-15 08:22:36-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-04-25 17:39:07-07:00",
+        "text": "### Section 4.4, IP Prefix sub-TLV This might end up being implicit in Lars's DISCUSS points and/or \u00c9ric's question, but how does one even know whether the IP Prefix is 4 or 16 octets? Looking at  RFC 9136 , it's careful to tell us how to infer the address family of the RT-5: \"The Length field of the BGP EVPN NLRI for an EVPN IP Prefix route MUST be either 34 (if IPv4 addresses are carried) or 58 (if IPv6 addresses are carried).\" If a similar length-based technique is to be used here, I think this spec has to spell it out.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-15 08:22:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-04-24 06:29:39-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-05-22 02:18:49-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-04-24 06:29:39-07:00",
+        "text": "# GEN AD review of  draft-ietf-bess-evpn-lsp-ping-09 CC @larseggert Thanks to Joel Halpern for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/o65AsTa-IlE5tq5kZy_2kZ80bfE ). ## Discuss ### Section 4.1, paragraph 3 ``` \u00a0 \u00a0  The EVPN MAC/IP Sub-TLV fields are derived from the MAC/IP \u00a0 \u00a0  Advertisement route defined in [ RFC7432 ] Section 7.2 and have the \u00a0 \u00a0  format as shown in Figure 1.\u00a0 This Sub-TLV is included in the Echo \u00a0 \u00a0  Request sent by a PBB-EVPN/EVPN PE to a Peer PE.\u00a0 IP Address field in \u00a0 \u00a0  this Sub-TLV is optional. ``` The field may be derived from the one in  RFC7432  in terms of what it contains, but this specification still needs to define it precisely, e.g., say what unit the Mac Addr Len is in, what should be done with the MBZ field on receive, etc. ### Section 4.2, paragraph 1 ``` \u00a0 \u00a0  The EVPN Inclusive Multicast Sub-TLV fields are based on the EVPN \u00a0 \u00a0  Inclusive Multicast route defined in [ RFC7432 ] Section 7.3. ``` As above, the field may be derived from the one in  RFC7432 , but this specification still needs to define it precisely, e.g., say what unit the IP Addr Len is in, etc. ### Section 4.4, paragraph 2 ``` \u00a0 \u00a0  The EVPN IP Prefix Sub-TLV fields are derived from the IP Prefix \u00a0 \u00a0  Route (RT-5) advertisement defined in [ RFC9136 ] and applies to only \u00a0 \u00a0  EVPN.\u00a0 This Sub-TLV has the format as shown in Figure 4. ``` As above, the field may be derived from the one in  RFC9136 , but this specification still needs to define it precisely, e.g., say what unit the IP Prefix Len is in, what should be done with the MBZ field on receive, etc. Also, any reason why the order of Ethernet Tag ID and Ethernet Segment Identifier is swapped compared to  RFC9136  Section 3.1?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-22 02:18:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-04-25 10:08:50-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-25 10:08:50-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-04-27 02:13:44-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-27 02:13:44-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-04-25 15:00:36-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-25 15:00:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-04-25 17:07:34-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-25 17:07:34-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-04-27 05:47:40-07:00",
+        "end_reason": "new_position",
+        "start": "2023-04-01 22:17:57-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-05-31 10:01:54-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-04-27 05:47:40-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9489",
+  "evaluation_end": "2023-05-31 10:01:54-07:00",
+  "evaluation_start": "2023-04-01 22:17:57-07:00"
+}

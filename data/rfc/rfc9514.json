@@ -1,0 +1,243 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-11-01 06:41:53-07:00",
+        "end_reason": "new_position",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2022-12-15 06:01:35-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-15 06:01:35-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-12-15 01:19:06-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-15 01:19:06-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-12-14 23:24:44-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 23:24:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-12-14 13:18:28-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-16 14:55:19-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-14 13:18:28-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-idr-bgpls-srv6-ext-12 CC @jgscudder ### Global, field definitions are unclear throughout I have a problem with how several different fields are defined. For example, in Section 3.1, the description of the flags field says, ``` \u00a0  *\u00a0 Flags: 2 octet field.\u00a0 The flags are derived from the SRv6 \u00a0 \u00a0 \u00a0 Capabilities sub-TLV/TLV of IS-IS (section 2 of \u00a0 \u00a0 \u00a0 [ I-D.ietf-lsr-isis-srv6-extensions ]) and OSPFv3 (section 2 of \u00a0 \u00a0 \u00a0 [ I-D.ietf-lsr-ospfv3-srv6-extensions ]). ``` There are two problems here: \"derived\", and \"and\". On consideration, I think \"and\" is the more serious, although it wasn't what initially caught my attention. Regarding \"derived\": Normally when I think of something being \"derived from\" something else, I think of some derivation function, e.g. pressure can be derived from the volume of a confined gas according to Boyle's Law. Of course, the function can technically be the identity function, which appears to be what you mean here. There's a suggestion related to that in my second discuss point, below. Regarding \"and\": As written (here and elsewhere), you're saying that the field comes from both places at once. That doesn't make sense on the face of it, and it led me down a rabbit hole I'll spare you the description of.  In the end, I guess how you arrived at your current text is probably by trying to capture that BGP-LS is a vessel to convey fields that originate in one of the IGPs, hence the fields aren't defined here and you don't want to write rules or semantics for them here. I think there are two basic changes you can make to your pattern that would address my concern. First and less importantly, choose some verb other than \"derive\". \"Copied\" seems like the most precise, but something else could be proposed. (But again, see my second discuss point.) Second, use \"or\", not \"and\", or a similar approach that accomplishes the same end. Rewriting the example text according to this suggestion, we'd have something like, ``` \u00a0  *\u00a0 Flags: 2 octet field.\u00a0 The flags are copied from the SRv6 \u00a0 \u00a0 \u00a0 Capabilities sub-TLV/TLV of either IS-IS (section 2 of \u00a0 \u00a0 \u00a0 [ I-D.ietf-lsr-isis-srv6-extensions ]) or OSPFv3 (section 2 of \u00a0 \u00a0 \u00a0 [ I-D.ietf-lsr-ospfv3-srv6-extensions ]), depending on the  \u00a0 \u00a0 \u00a0 source protocol. ``` I don't insist that you use this exact pattern, it's just an example of a minimal patch that addresses the issue, I don't claim it's the best fix. And TBH, if you made the other changes but left \"copied\" as \"derived\" I think it would have been clear enough in context. Indeed, I think just changing \"and\" to \"or\" could pass the smell test, especially if there's an introductory paragraph somewhere, setting up the pattern. (Again, see my second point.) For some examples of how we've solved this for past BGP-LS specs, we can consider RFCs 8814 and 9085. In Section 2 of  RFC 8814 , it says, \"When a BGP-LS speaker is originating the topology learnt via link-state routing protocols such as OSPF or IS-IS, the MSD information for the nodes and their links is sourced from the underlying extensions as defined in [ RFC8476 ] and [ RFC8491 ], respectively.\" Or, if we look at  RFC 9085 , you use \"derived\" but mostly in ways I find clear enough, for example, \u00a72.3.5: ``` \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 The \u00a0  information advertised in the Range TLV is derived from the SID/Label \u00a0  Binding TLV in the case of IS-IS and the OSPFv2/OSPFv3 Extended \u00a0  Prefix Range TLV in the case of OSPFv2/OSPFv3. ``` The use of \"in the case of\" makes it clear that there's only a single source for the field in any given instance. Or \u00a72.1.1: ``` \u00a0  The SID/Label TLV is used as a sub-TLV by the SR Capabilities \u00a0  (Section 2.1.2) and Segment Routing Local Block (SRLB) \u00a0  (Section 2.1.4) TLVs.\u00a0 This information is derived from the protocol- \u00a0  specific advertisements. \u00a0  *\u00a0 IS-IS, as defined by the SID/Label Sub-TLV in Section 2.3 of \u00a0 \u00a0 \u00a0 [ RFC8667 ]. \u00a0  *\u00a0 OSPFv2/OSPFv3, as defined by the SID/Label Sub-TLV in Section 2.1 \u00a0 \u00a0 \u00a0 of [ RFC8665 ] and Section 3.1 of [ RFC8666 ]. ``` The use of \"from the protocol-specific advertisements\" makes it clear in context. I'm not going to flag each instance of this pattern in my review, but ask that you do a global search for \"derived\". I've noted some other issues that won't be revealed by a search for \"derived\" in my COMMENT section. (I notice that in Section 7.1 you have \"The flags map to the IS-IS or OSPFv3...\" -- which works just fine as far as I'm concerned.) ### Section 2 In the same vein, it also seems worth tightening up this paragraph from Section 2: ``` \u00a0  When a BGP-LS router advertises topology information that it sources \u00a0  from the underlying link-state routing protocol (as described in \u00a0  [ RFC7752 ]), then it maps the corresponding SRv6 information from the \u00a0  SRv6 extensions for IS-IS [ I-D.ietf-lsr-isis-srv6-extensions ] and \u00a0  OSPFv3 [ I-D.ietf-lsr-ospfv3-srv6-extensions ] protocols to their BGP- \u00a0  LS TLVs/sub-TLVs for all SRv6 capable nodes in that routing protocol \u00a0  domain.\u00a0 When a BGP-LS router advertises topology information from \u00a0  the BGP routing protocol (e.g., for EPE), then it advertises the SRv6 \u00a0  information from the local node alone. ``` Perhaps this could be made more specific, for example: ``` \u00a0  In most cases, a BGP-LS router will advertise topology information it has \u00a0  sourced from an underlying link-state routing protocol, as described in \u00a0  [ RFC7752 ]. In such cases, it will derive the corresponding SRv6 information \u00a0  from the SRv6 extensions for IS-IS [ I-D.ietf-lsr-isis-srv6-extensions ] or \u00a0  OSPFv3 [ I-D.ietf-lsr-ospfv3-srv6-extensions ], as applicable. In practice, \u00a0  this derivation comprises a simple copy of the relevant field into a field \u00a0  of the corresponding BGP-LS TLV/sub-TLV. This document defines an \u00a0  exception case where a BGP-LS router can originate topology information \u00a0  itself, for EPE. Such information is advertised only on behalf of the \u00a0  local router, in contrast to the usual [ RFC7752 ] behavior of advertising \u00a0  information for an entire underlying IGP domain. ``` This rolls together a few of the windmills I've been tilting at, including supplying a small definition of \"derives\" to perhaps minimize rewriting in the rest of the document. (See also my second COMMENT.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-16 14:55:19-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-12-15 04:23:44-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-15 04:23:44-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2022-12-14 22:42:34-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 22:42:34-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-12-14 17:12:26-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 17:12:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-12-15 06:50:02-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-15 06:50:02-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-12-14 19:43:26-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 19:43:26-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-12-14 13:25:53-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-01 06:41:53-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-02-17 09:20:19-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 13:25:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9514",
+  "evaluation_end": "2023-02-17 09:20:19-08:00",
+  "evaluation_start": "2022-11-01 06:41:53-07:00"
+}

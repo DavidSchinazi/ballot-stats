@@ -1,0 +1,243 @@
+{
+  "all_ballots": {
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2024-01-04 05:38:05-08:00",
+        "end_reason": "new_position",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2024-01-04 05:38:05-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-12-20 23:47:01-08:00",
+        "end_reason": "new_position",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-12-20 23:47:01-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2024-01-03 20:14:25-08:00",
+        "end_reason": "new_position",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2024-01-03 20:14:25-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2024-01-03 03:48:57-08:00",
+        "end_reason": "new_position",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2024-01-03 03:48:57-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-12-15 13:01:42-08:00",
+        "end_reason": "new_position",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-12-15 13:01:42-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2024-01-02 13:49:22-08:00",
+        "end_reason": "new_position",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2024-01-03 11:18:51-08:00",
+        "end_reason": "discuss_updated",
+        "start": "2024-01-02 13:49:22-08:00",
+        "text": "There are several elements here that are either poorly phrased or misconceived in some way. 1. Sequencing of PRF, PEF, and POF functions. Section 4.1 says \"However, the PREOF functions run independently without any state exchange required between the PEF and the POF or the PRF and the POF. Error cases in which the POF is presented duplicate packets can lead to out of order delivery of duplicate packets as well as to increased delays.\" but then Section 4.6 says \"In DetNet scenarios there is always an Elimination function before the POF (therefore duplicates are not considered by the POF).\" I can't reconcile these statements. How can there be a duplicate packet error case if the PEF is always before the POF? A statement that the POF is always the last thing before egress would clean up some logical holes, like in (3a) below. 2. Requirements for ordering vs loss What is the purpose of Sec 4.3 directly forwarding packets with (sequence number < POF Last Sent + 1)? There's an implicit requirement that delivering the packet in order is less important that not dropping it, but is a strange requirement for a *Packet Ordering Function*. If Detnet is to be decomposed into three functions, it is very difficult reason about if the POF guarantees ordering, but sometimes it ignores that if it's trying to avoid losses. Just do PRF/PEF if you want to avoid losses! So I would suggest that the POF forward (sequence number == POF Last Sent + 1) and drop anything earlier. 3. Strange assumptions in the advanced algorithm. 3a. Is there an assumption that there is no PRF beyond the POF? If there is, it's possible that there are different path delays beyond the POF, and that has to be accounted for in the algorithm. My guess is that you are assuming that, given Figure 1. In that case it should be stated explicitly (See point #1). 3b. The introduction suggests that out-of-order delivery is a result of the PRF rather than some sort of link-layer pathology. If so, I don't see why it's necessary for the POF timeout to be path-dependent. That is, the shorter-path packets will by definition be in-order[1], and the longer path will be out-of-order. So it's sufficient for the timeout to be the limited by the remaining time budget for the longest path. [1] Unless there's a loss on that path. But in that case, there is no advantage to a longer delay, so my proposed algorithm holds. Maybe I'm getting the underlying assumptions wrong? 4. Is there some reason that \"Consensus Boilerplate\" is set to NO on the datatracker page? Informational RFCs have IETF consensus!",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2024-01-16 08:23:18-08:00",
+        "end_reason": "position_updated",
+        "start": "2024-01-03 11:18:51-08:00",
+        "text": "There are several elements here that are either poorly phrased or misconceived in some way. 1. Sequencing of PRF, PEF, and POF functions. Section 4.1 says \"However, the PREOF functions run independently without any state exchange required between the PEF and the POF or the PRF and the POF. Error cases in which the POF is presented duplicate packets can lead to out of order delivery of duplicate packets as well as to increased delays.\" but then Section 4.6 says \"In DetNet scenarios there is always an Elimination function before the POF (therefore duplicates are not considered by the POF).\" I can't reconcile these statements. How can there be a duplicate packet error case if the PEF is always before the POF? A statement that the POF is always the last thing before egress would clean up some logical holes, like in (3a) below. 2. Requirements for ordering vs loss What is the purpose of Sec 4.3 directly forwarding packets with (sequence number < POF Last Sent + 1)? There's an implicit requirement that delivering the packet in order is less important that not dropping it, but is a strange requirement for a *Packet Ordering Function*. If Detnet is to be decomposed into three functions, it is very difficult reason about if the POF guarantees ordering, but sometimes it ignores that if it's trying to avoid losses. Just do PRF/PEF if you want to avoid losses! So I would suggest that the POF forward (sequence number == POF Last Sent + 1) and drop anything earlier. 3. Strange assumptions in the advanced algorithm. Is there an assumption that there is no PRF beyond the POF? If there is, it's possible that there are different path delays beyond the POF, and that has to be accounted for in the algorithm. My guess is that you are assuming that, given Figure 1. In that case it should be stated explicitly (See point #1).",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2024-01-16 08:23:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2024-01-03 22:25:21-08:00",
+        "end_reason": "new_position",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2024-01-03 22:25:21-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2024-01-03 18:04:53-08:00",
+        "end_reason": "new_position",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2024-01-03 18:04:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2024-01-02 07:08:54-08:00",
+        "end_reason": "new_position",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2024-01-02 07:08:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-12-08 12:50:24-08:00",
+        "end_reason": "new_position",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-12-08 12:50:24-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2024-01-19 09:23:02-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-12-08 12:50:23-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9550",
+  "evaluation_end": "2024-01-19 09:23:02-08:00",
+  "evaluation_start": "2023-12-08 12:50:23-08:00"
+}

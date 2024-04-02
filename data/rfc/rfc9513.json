@@ -1,0 +1,251 @@
+{
+  "all_ballots": {
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-06-08 02:20:38-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-06-08 04:37:28-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-06-08 02:20:38-07:00",
+        "text": "Hi There,  Firstly thanks for the document.\u00a0  I'd like to have a discussion about the following text in Section 7.1. If the SRv6 Locator TLV for \u00a0  the same Locator appears in multiple SRv6 Locator LSAs that have the \u00a0  same flooding scope, the TLV in the SRv6 Locator LSA with the \u00a0  numerically smallest Link-State ID MUST be used and subsequent \u00a0  instances of the TLV MUST be ignored. My question may be as a result of not quite understanding the nature of End.X SID's - and as such, this may be easy to resolve.\u00a0 But - Reading the document, you have a limit of the size of an OSPFv3 packet of 65535 bytes (with fragmentation - which I would argue you probably don't wanna rely on).\u00a0 Now, if you are stacking END.X sub-TLV's beneath a locator SID - and you require more than 4000 of them on a large device (though in reality its probably far less than this because of overhead etc - if you avoid fragmentation even on a large MTU network you're at under 500) you're going to run into a problem because you cannot split the announcement by using the same locator in subsequent LSA's (my understanding is that normally this would be accomplished by having the same locator in multiple LSA's with different LS ID's, that the router would then combine). So - the question is - under what scenarios are END.X and END sub tlv's added to the packet and advertised - and could we run into a major length problem here on large dense devices that are, for example, terminating huge numbers of cross connects.\u00a0 Further to this, is there a reason why the locator cannot be split across multiple packets with different Link State ID's to reduce the size of the OSPF packets if this does become necessary? (I do realise that you could use multiple locators on the same router to split this up - but would argue thats going to create operational nightmares and lead to potentially big problems with admins having to figure out when they are going to hit the limit)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-08 04:37:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-06-21 23:01:16-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-21 23:01:16-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-06-06 23:30:36-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-06 23:30:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-05-24 09:23:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-24 09:23:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-15 08:32:50-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-15 08:32:50-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-06-08 00:05:42-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-08 00:05:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-06-06 18:43:17-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-06-08 08:37:01-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-06-06 18:43:17-07:00",
+        "text": "I have a DISCUSS similar to Roman: Existing security extensions as described in [ RFC5340 ] and [ RFC8362 ] apply to these SRv6 extensions. While OSPFv3 is under a single administrative domain, there can be deployments where potential attackers have access to one or more networks in the OSPFv3 routing domain. In these deployments, stronger authentication mechanisms such as those specified in [ RFC4552 ] or [ RFC7166 ] SHOULD be used. RFC5340  does say to use IPsec, but because of the \"group\" setting, IKE could not be used (I guess it pre-dates or didn't want to use Group DOI (GDOI)  RFC3547  and Group Secure Association Key Management Protocol (GSAKMP)  RFC4535 ). But  RFC 4552  is recommending IPsec with manual keying, which is no longer really possible with AEAD ciphers (eg AES-GCM, which you would want to use for performance). It does state: \u00a0  Future specifications can explore the usage of protocols like \u00a0  Kerberized Internet Negotiation of Keys/Group Secure Association Key \u00a0  Management Protocol (KINK/GSAKMP) when they are widely available. But I don't think KINK/GSAKMP became widely available. GDOI has seen some but not much implementation. Furthermore,  RFC4535  is also a (not widely implemented) IKEv1 extension. This cannot be recommended anymore because IKEv1 itself is obsolete (see  RFC9395 ) Updated advise would be to use  draft-ietf-ipsecme-g-ikev2  \"Group Key Management using IKEv2, but again we don't know yet if this will be widely available. That puts us back at \"use manual keying or this soon to hopefully be available IKEv2 RFC\", except that with AEADs, we also cannot recommend manual keying anymore. I am not sure what to recommend as text here. Removing all IKEv1 references and putting  draft-ietf-ipsecme-g-ikev2  there and saying manual keying MUST NOT be used is not a good security recommendation either.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-08 08:37:01-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-06-08 01:25:47-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-08 01:25:47-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-06-05 15:16:45-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-06-21 08:26:58-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-06-05 15:16:45-07:00",
+        "text": "** Section 12. \u00a0  While OSPFv3 is under a single \u00a0  administrative domain, there can be deployments where potential \u00a0  attackers have access to one or more networks in the OSPFv3 routing \u00a0  domain.\u00a0 In these deployments, stronger authentication mechanisms \u00a0  such as those specified in [ RFC4552 ] or [ RFC7166 ] SHOULD be used. Please rewrite this guidance.\u00a0 It appears to be saying that in networks with potential attackers stronger authentication mechanisms SHOULD be used.\u00a0 With the use of the language of \"_potential attacker\" and \"_one_ or more\",\u00a0 isn\u2019t that all networks?\u00a0 Is this equivalent to strong auth SHOULD be used?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-21 08:26:58-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-06-07 21:45:15-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-15 08:32:49-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-06-27 11:32:03-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-07 21:45:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9513",
+  "evaluation_end": "2023-06-27 11:32:03-07:00",
+  "evaluation_start": "2023-05-15 08:32:49-07:00"
+}

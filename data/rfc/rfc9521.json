@@ -1,0 +1,259 @@
+{
+  "all_ballots": {
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-07-11 01:39:30-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-08-07 02:56:03-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-08-24 04:27:14-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-08-07 02:56:03-07:00",
+        "text": "# \u00c9ric Vyncke, INT AD, comments for raft-ietf-nvo3-bfd-geneve-12 Thank you for the work put into this document.  Please find below one blocking DISCUSS points (easy to address), some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and some nits. Special thanks to Matthew Bocci for the shepherd's detailed write-up including the WG consensus *and* the justification of the intended status.  Other thanks to Don Eastlake, the Internet directorate reviewer (at my request), please consider this int-dir review: https://datatracker.ietf.org/doc/review-ietf-nvo3-bfd-geneve-12-intdir-telechat-eastlake-2023-08-05/ Don's review was 'not ready', and I concur with him after doing my own review. Authors' reply to Don's review will be welcome. I hope that this review helps to improve the document, Regards, -\u00e9ric # DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ## Sectin 6 I share Don's issue about having `Geneve provides security` and `Geneve does not have any inherent security mechanisms` in the same paragraph. There should probably some nuance or limitation in those two assertions to make them compatible.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-24 04:27:14-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-07-18 23:18:06-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-07-18 23:18:06-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-08-01 06:25:26-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-01 06:25:26-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-08-03 12:40:19-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-09-08 07:25:25-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-08-03 12:40:19-07:00",
+        "text": "Thanks for this valuable and easy-to-read spec. I have one concern that I'd like to have a discussion about; I hope this will be easy to resolve. There are several places where you use MUST in a way I think is unnecessary, you seem to be saying, in effect, \"to do Geneve you MUST do Geneve\". Most of these are harmless IMO (I put some examples in the COMMENT section just in case you're unclear what I'm talking about) but there are two that seem problematic to me, nearly-identical sentences from Sections 4.1 and 5.1: \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Then the Destination IP, the UDP destination port and \u00a0  the TTL or Hop Limit of the inner IP packet MUST be validated to \u00a0  determine whether the received packet can be processed by BFD. and \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Then the UDP destination port and the TTL or Hop Limit \u00a0  of the inner IP packet MUST be validated to determine whether the \u00a0  received packet can be processed by BFD. In both cases, it's unclear to me if you're just saying \"Geneve has certain validation rules that have to be met before the packet can be passed to the upper layer\", or if you're introducing a new requirement. In the former case, please be more transparent about that, possibly with a citation to the validation rules in the underlying spec. You could also consider dropping the  RFC 2119  MUST. In the latter case, if you're truly introducing a new requirement, I think the validation rules need to be spelled out much more clearly. (I think it's probably the former case.)",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-09-08 07:25:25-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-08-04 05:00:46-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-04 05:00:46-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-08-08 12:27:28-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-08 12:27:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-08-09 23:07:49-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-09 23:07:49-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-08-09 10:31:42-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-09 10:31:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-08-01 14:47:17-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-01 14:47:17-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-08-07 18:28:28-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-07 18:28:28-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-08-07 06:38:42-07:00",
+        "end_reason": "new_position",
+        "start": "2023-07-11 01:39:30-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-09-21 06:31:21-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-07 06:38:42-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9521",
+  "evaluation_end": "2023-09-21 06:31:21-07:00",
+  "evaluation_start": "2023-07-11 01:39:30-07:00"
+}

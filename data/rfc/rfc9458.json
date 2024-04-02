@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-01-03 05:08:13-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-03 05:08:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-01-05 00:53:43-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-05 00:53:43-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-01-19 03:37:47-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-09 05:15:29-08:00",
+        "end_reason": "position_updated",
+        "start": "2023-01-19 03:37:47-08:00",
+        "text": "# \u00c9ric Vyncke, INT AD, comments for  draft-ietf-ohai-ohttp-06 CC @evyncke Thank you for the work put into this document.  Please find below two blocking DISCUSS points, some non-blocking COMMENT points (but replies would be appreciated even if only for my own education), and one nit. Special thanks to Shivan Kaul Sahib for the shepherd's detailed write-up *including* the WG consensus and the justification of the intended status.  Other thanks to Wassim Haddad, the Internet directorate reviewer (at my request): https://datatracker.ietf.org/doc/review-ietf-ohai-ohttp-06-intdir-telechat-haddad-2023-01-13/ I hope that this review helps to improve the document, Regards, -\u00e9ric ## DISCUSS As noted in  https://www.ietf.org/blog/handling-iesg-ballot-positions/ , a DISCUSS ballot is a request to have a discussion on the following topics: ### The relay/gateway pair vs. charter My memory probably fails on me, but I vaguely remember that during the initial chartering of this WG, only specially modified target servers would be able to be reached with oblivious requests. It appears to me that the relay/gateway pair breaks this assumption... The charter is clearly about \"a proxy\" (and not a gateway/relay combination) and furthermore the charter includes the sentence `Broad applicability is limited by multiple factors, including the need for explicit server support of the protocol.` that appears to me as in opposition with section 2.2 about target server `This resource logically handles only regular HTTP requests and responses and so might be ignorant of the use of Oblivious HTTP to reach it.` If I read the charter and this document correctly, then this document cannot be published as an outcome of OHAI IMHO. Happy to stand corrected. ### Security of Target Server ``` In this section, a deployment where there are three entities is considered: A Client makes requests and receives responses A relay operates the Oblivious Relay Resource A server operates both the Oblivious Gateway Resource and the Target Resource ``` But, what about the other deployment scenarios that are allowed by this specification ? I fail to read any security consideration for the target server in this case... How can it be protected from hostile clients ? At first sight, nothing is said in the document about this, so blocking requests from the gateway IP address is probably the only way, i.e., blocking all the clients. So, we are back to the old issue of blocking proxies/CGN. This seems very similar to my first DISCUSS point. So, I am probably missing something obvious. Or, the document MUST state that gateway/target server MUST be colocated.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-09 05:15:29-08:00",
+        "text": "Thanks to the authors (and the OHAI WG chairs and AD for their suggestions) for the -06 as it addresses most of the points raised in my previous DISCUSS: https://mailarchive.ietf.org/arch/msg/ohai/AroMMySrG1FTz_H9UQ5Q2KIKLKg/ I am balloting ABSTAIN as in \"I oppose this document but understand that others differ and am not going to stand in the way of the others\" per  https://www.ietf.org/standards/process/iesg-ballots/   I.e., I understand that I am on the rough (wrt. the IESG, OHAI WG, and the IETF community), but I still have concerns about this tool that could be used outside of its applicability statement with bad intentions (like many tools): 1) reliance on the absence of collusion between the relay and the gateway 2) it could also lead to more centralisation of the Internet if the relays/gateways are operated by a handful of organisations (especially if the client has no choice but using specific ones) => a discovery mechanism is probably needed 3) open relays/gateways can open a venue to hide attacks (per design) like any open web proxies/VPN or TOR",
+        "type": "Abstain"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-01-03 22:08:31-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-03 22:08:31-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2022-12-22 23:39:33-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-01-18 18:04:47-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-18 18:04:47-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-01-16 04:51:12-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-16 04:51:12-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-01-18 13:59:56-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-18 13:59:56-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-01-02 16:13:11-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-01-05 07:11:18-08:00",
+        "end_reason": "position_updated",
+        "start": "2023-01-02 16:13:11-08:00",
+        "text": "This is good stuff, and very well prepared.\u00a0 I'm planning to change to \"Yes\" once we sort out this one procedural issue: The downref to  RFC 9180  was apparently not called out in the Last Call announcement, and that RFC isn't in the downref registry.\u00a0 Placing a DISCUSS so the IESG can, well, discuss this and figure out whether it's something that needs further action.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-05 07:11:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-01-17 13:23:45-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-03-15 11:34:35-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-01-17 13:23:45-08:00",
+        "text": "# Sec AD review of  draft-ietf-ohai-ohttp-06 CC @paulwouters Please refer to  https://www.ietf.org/about/groups/iesg/statements/handling-ballot-positions/  for more information about how to handle DISCUSS and COMMENT positions. This review uses the format specified in  https://github.com/mnot/ietf-comments/  which allows automated tools to process items (eg to produce github issues) # DISCUSS ### Clarification of DNS lookup I think it would be good to add a section on how DNS works with ohttp. Eg to clarify whether the lookup is performed by the Client (and hopefully uses DoH or oDoH on its own) or whether it is looked up by the Oblivious Gateway Resource. Eg is the encrypted request using an IP address or a URI. ### Media type registrations Please address the media type registration issues raised in the secdir review raised by Alexey Melnikov : https://datatracker.ietf.org/doc/review-ietf-ohai-ohttp-05-secdir-lc-melnikov-2022-12-08/ Additionally, the registrations instruct IANA to use the authors email. Should this instead point to the OHAI WG, the IESG or IETF instead? ### link fest It seems some automated tooling was used to creating links within the document, eg for \"key configuration\": 7 times in Section 3, pointing to a few lines below in section 3.1, and even one time within section 3.1 itself pointing recursively back to itself, and 3 more times in section 3.2, and then I stopped counting. The same for things like \"client\", Oblivious Gateway Resource\", etc etc culminating in Section 5 that's more blue than black, making the blue links, uhm, oblivious :P ### Foreknowledge A number of items (see below comments) seem to require foreknowledge of things. Is this currently envisioned as part of a provisioning step that is not (yet?) standardized? Is it expected to be discoverable ? eg via DNS? Or is an actual provisioning protocol being worked on?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-03-15 11:34:35-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-01-19 06:55:25-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-19 06:55:25-08:00",
+        "text": "Abstaining because I don't want to block the publication of this document, but I also have strong concerns as to whether standardizing this type of technology is really in the long term best interests of most Internet end-users. Specifically, my primary concern relate to whether centralizing DNS services then anonymizing DNS requests, and hence reducing the ability and opportunity for access networks to implement network level security or required regulatory content filtering is really in the best interests for all end users. I also find the telemetry use case cited in this document to be quite weak because the solution does not (and presumably cannot) prevent the telemetry data from containing personal identifiable information.\u00a0 Hence, I don't see much difference between the required trust relationship that a user must have with the client application and that of the client application's backend systems processing telemetry data.\u00a0 However, in mitigation, this solution also doesn't seem to cause any harm in this case, I just don't see it really adding much value. Regards, Rob",
+        "type": "Abstain"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-01-03 09:11:31-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-03 09:11:31-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-01-03 08:15:49-08:00",
+        "end_reason": "new_position",
+        "start": "2022-12-22 23:39:33-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-03-15 16:29:04-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-01-03 08:15:49-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9458",
+  "evaluation_end": "2023-03-15 16:29:04-07:00",
+  "evaluation_start": "2022-12-22 23:39:33-08:00"
+}

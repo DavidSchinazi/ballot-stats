@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-07-05 11:31:05-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-08-04 04:25:19-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-07-05 11:31:05-07:00",
+        "text": "I've been back and forth on this having read the document several times - and I have to join Warren in an abstention here - for very similar reasons.\u00a0 While I view the security issues in this document as stemming from a former document ( RFC8402 ) - the way I see it, we're building on quicksand here. Yes,  RFC8402  says that SRv6 must run in a trusted domain - however, the practical methods of enforcing the trusted domain seem woefully lacking, and then, in addition to that when dealing with replication we then compound the issues created by potential packet injection. I simply cannot see how I can no-object to this, however, I also fully understand the criteria for discuss ballots, and since these issues stem from  RFC8402  I do not feel that I'm on solid ground balloting discuss.\u00a0 As such, I must abstain.",
+        "type": "Abstain"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-08-24 07:34:15-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-08-04 04:25:19-07:00",
+        "text": "Firstly, thanks for the security section updates - that moves me from an abstain to a discuss. I would like to this discuss text: \"Given the definition of the Replication segment in this document, an attacker subverting ingress filter above cannot take advantage of a stack of replication segments to perform amplification attacks nor link exhaustion attacks. Replication segment trees always terminate at a Leaf or Bud node resulting in a decapsulation.\" Here is issue with this - what happens post decapsulation.\u00a0 I.E - if I were to take an IPv4 packet - encapsulate it in a replication SID - with a source host I wished to attack, and a destination address of an attached broadcast - would the IPv4 packet be processed post de-cap. If the packets post de-cap do indeed get forwarded, the attack vector is still entirely real. The SRv6 is used to tunnel packets pass things like IP directed broadcast protections, unicast reverse path filtering etc, and the de-cap ensures they get acted on. If I've missed something here or am off in my analysis - apologies - but if not - the above text needs to be rectified so that this attack vector is made clear.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-24 07:34:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-06-28 02:17:36-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-28 02:17:36-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-07-05 18:24:20-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-08-10 21:55:29-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-07-05 18:24:20-07:00",
+        "text": "# Internet AD comments for  draft-ietf-spring-sr-replication-segment-15 CC @ekline * comment syntax: \u00a0 -  https://github.com/mnot/ietf-comments/blob/main/format.md * \"Handling Ballot Positions\": \u00a0 -  https://ietf.org/about/groups/iesg/statements/handling-ballot-positions/ ## Discuss ### S2.2.1 * I think there's some clarification required about what a Replication SID \u00a0 does if Segments Left is > 0. \u00a0 I can't see where Segments Left is decremented prior to packet duplication \u00a0 and so it looks like Replicate() would effectively H.Encaps[.Red] packets \u00a0 with an (inner) SRH that still points to the Replication SID? * At S20, if Segments Left is still > 0 (even after whatever S16 is supposed \u00a0 to be doing), why would you discard all of the extension headers? \u00a0 I think the S14-S21 stuff is trying to say \"if this Replication node is \u00a0 a leaf or a bud include it in the Replication List\".\u00a0 If that's true I \u00a0 suspect there are clearer ways to express that; you could just redefine \u00a0 the replication list inside Replicate() and let implementers figure out \u00a0 how to apply optimizations. ### A.2.1 * Please clarify which source address R6 uses to formulate the Echo Reply. \u00a0 I'm a little unclear on the mental model here.\u00a0 The generation of ICMP \u00a0 errors is prohibited because the Replication SID is analogized to a \u00a0 multicast address in this context. \u00a0 Pinging a multicast address is of course fine, but the echo requester knows \u00a0 to expect the source address of replies to be any unicast address.\u00a0 I'm \u00a0 assuming a requester needs to be modified to know that echo replies cannot \u00a0 come from the Replication SID in this case? \u00a0 Or is the Replication SID intended to be the source address of Echo Replies \u00a0 here, as if it's some kind of conceptual \"unicast whenever we want but also \u00a0 multicast whenever say\" kind of address?",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-10 21:55:29-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-06-20 05:22:19-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-20 05:22:19-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-08-04 01:26:03-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-08-28 00:46:00-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-08-04 01:26:03-07:00",
+        "text": "# GEN AD review of  draft-ietf-spring-sr-replication-segment-16 CC @larseggert Thanks to Thomas Fossati for the General Area Review Team (Gen-ART) review ( https://mailarchive.ietf.org/arch/msg/gen-art/WF6_i6kgEP9J8_frlekZtnm_6sQ ). ## Discuss ### Paragraph 0 This document introduces packet replication functionality into SR networks. This significantly increases and complicates the attack surface of the technology while at the same time introducing severe new misconfiguration possibilities (e.g., multicast amplification loops that can lead to congestion collapse of the network.) This document does not adequately describe and discuss these issues. Additionally, this documents needs to specify suitable countermeasures - it is not sufficient to leave this up to unspecified control plane mechanisms.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-28 00:46:00-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-07-05 15:14:10-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-07-05 15:14:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-08-10 08:53:30-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-10 08:53:30-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-07-05 10:04:35-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-07-05 10:04:35-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-07-05 10:48:03-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-07-05 10:48:03-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-07-05 19:27:53-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-08-21 11:06:15-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-07-05 19:27:53-07:00",
+        "text": "I appreciate the mention of  RFC8402  and  RFC8754 \u2019s Security Considerations.\u00a0 Both reiterate the need to filter traffic at the SR domain boundary and the notion that trusting the nodes in the SR domain.\u00a0 However, this document is introducing new SR behavior (replication).\u00a0 This new behavior introduces additional DoS risk which should be documented.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-08-21 11:06:15-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-07-05 11:19:11-07:00",
+        "end_reason": "new_position",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-07-05 11:19:11-07:00",
+        "text": "I am balloting Abstain (in the \"I oppose this document but understand that others differ and am not going to stand in the way of the others.\" sense) on this document as I cannot in good conscience ballot NoObj. The Security Consideration hinge on \"An SR domain operates within an assumed trust domain as specified in Security Considerations of  RFC 8402 . Traffic must be filtered at SR domain boundaries to prevent malicious replication of packets.\" Firstly I'll note that this isn't really what the Security Considerations section of  RFC8042  actually says (it is really short, but says: \"**By default**, SR operates within a trusted domain. Traffic MUST be filtered at the domain boundaries.\" (emphasis mine)), but secondly, this talks about replication of traffic (AKA a DoS amplifier). I believe that the document (and SR in general) needs to do a much better job of discussing the security / DoS implications of what happens when an attacker is able to inject traffic into the SR domain (e.g because they have 0wned a node within the network. I'm balloting Abstain instead of DISCUSS because I've raised this objection multiple times on multiple document, and no longer have the stomach to have this fight yet again.",
+        "type": "Abstain"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-08-28 12:03:00-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-06-20 05:22:18-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ]
+  },
+  "doc_name": "rfc9524",
+  "evaluation_end": "2023-08-28 12:03:00-07:00",
+  "evaluation_start": "2023-06-20 05:22:18-07:00"
+}

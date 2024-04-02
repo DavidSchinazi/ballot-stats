@@ -1,0 +1,275 @@
+{
+  "all_ballots": {
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-05-25 06:02:34-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-05-26 00:46:57-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-05-25 06:02:34-07:00",
+        "text": "Hi There, Thanks for the document. I am issuing a discuss based on section 6.3 of the document that I'd like to talk about.\u00a0  RFC8200  Section 4.1 states:  Each extension header should occur at most once, except for the \u00a0  Destination Options header, which should occur at most twice (once \u00a0  before a Routing header and once before the upper-layer header). I also note that  RFC8200  is not written using normative language - but considering the context I am assuming that this should be read as such. This directly conflicts with section 6.3 - which makes allowance for multiple SRH in the packet.\u00a0 The only way that multiple SRH's should be allowed to occur in the packet is if the packet is re-encapsulated - at which point section 6.3 would still (in my view) not be referring to multiple SRH's - since the second SRH would be attached to a fully encapsulated packet. If there is indeed a need for multiple SRH in IPFIX - this would require a pretty clear explanation as to why, how this could occur and a strong justification for violating  RFC8200  in my opinion.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-26 00:46:57-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-05-22 07:16:03-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-22 07:16:03-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2023-05-23 21:36:13-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-23 21:36:13-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Jim Guichard": [
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-05-09 18:02:58-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-05-12 06:01:10-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-05-09 18:02:58-07:00",
+        "text": "Section 1: \u00a0  Also, three routing protocol extensions, OSPFv3 [ RFC9352 ], IS-IS \u00a0  [ I-D.ietf-lsr-isis-srv6-extensions ] and BGP Prefix Segment \u00a0  Identifiers(Prefix-SIDs) [ RFC9252 ] The above needs to be fixed. OSPFv3 is not [ RFC9352 ] and I assume that the reference should point to  https://datatracker.ietf.org/doc/draft-ietf-lsr-ospfv3-srv6-extensions/ , ietf-lsr-isis-srv6-extensions is an out-of-date reference as it is now  https://www.rfc-editor.org/rfc/rfc9352 , and  RFC 9252  is \"BGP Overlay Services Based on Segment Routing over IPv6 (SRv6)\" that provides protocol extensions for SRv6-based BGP services.  Section 3: \u00a0  srhSegmentsIPv6Left \u00a0 \u00a0 \u00a0 8-bit unsigned integer defining the number of segments remaining \u00a0 \u00a0 \u00a0 to reach the end of the segment list as defined in Section 2 of \u00a0 \u00a0 \u00a0 [ RFC8754 ]. The above description is not technically accurate. While section 2 of  RFC8754  does define the SRH, the 'Segments Left' field of the SRH is actually defined in Section 4.4 of  RFC8200  ( https://www.rfc-editor.org/rfc/rfc8200#section-4.4 ) and  RFC8754  points to that reference. Section 5.7 of this document should also point to the correct reference. Section 5.9.1: \u00a0 | TBD15 | OSPFv3\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | [RFC-to-be],\u00a0  | \u00a0 |\u00a0 \u00a0 \u00a0  | Segment Routing\u00a0 \u00a0 |\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  | \u00a0 +-------+--------------------+---------------------------------------+ \u00a0 | TBD16 | IS-IS\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 | [RFC-to-be],\u00a0 | \u00a0 +-------+--------------------+---------------------------------------+ These references need to be corrected as indicated above.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "Jim Guichard",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-12 06:01:10-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-23 10:45:24-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-23 10:45:43-07:00",
+        "end_reason": "discuss_updated",
+        "start": "2023-05-23 10:45:24-07:00",
+        "text": "Thanks to Mohamed Boucadair for the high-quality shepherd write-up with illuminating details. I have one point I'd like to have a discussion about. As you point out in Section 6.2, compressed segment lists are a thing, and one of their implications is that (with certain flavors) one can have an SRH-less SRv6 packet, a \"bare cSID\". I wonder if it would be desirable to elaborate on how (for example) the srhSegmentIPv6ListSection is to be formed (I guess it might just be a verbatim copy of the cSID, and the importer has to do the work to figure it out?) or how the srhSegmentIPv6BasicList is to be formed (I guess the exporter has to do the work to decompress the cSID to provide the expanded representation). And what of srhIPv6Section? Would it just be omitted in the case of a bare cSID, would it be a zero-length octetArray, ...? I don't have a fixed idea of how (or even if) the document should be changed to address this question but I'd like to know the authors' thoughts on the matter.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-05-24 14:37:59-07:00",
+        "end_reason": "position_updated",
+        "start": "2023-05-23 10:45:43-07:00",
+        "text": "Thanks to Mohamed Boucadair for the high-quality shepherd write-up with illuminating details. I have one point I'd like to have a discussion about. As you note in Section 6.2, compressed segment lists are a thing, and one of their implications is that (with certain flavors) one can have an SRH-less SRv6 packet, a \"bare cSID\". I wonder if it would be desirable to elaborate on how (for example) the srhSegmentIPv6ListSection is to be formed (I guess it might just be a verbatim copy of the cSID, and the importer has to do the work to figure it out?) or how the srhSegmentIPv6BasicList is to be formed (I guess the exporter has to do the work to decompress the cSID to provide the expanded representation). And what of srhIPv6Section? Would it just be omitted in the case of a bare cSID, would it be a zero-length octetArray, ...? I don't have a fixed idea of how (or even if) the document should be changed to address this question but I'd like to know the authors' thoughts on the matter.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-24 14:37:59-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-05-25 00:15:33-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-25 00:15:33-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-05-19 13:58:43-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Martin Duke",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-19 13:58:43-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-05-24 22:04:41-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-24 22:04:41-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-05-24 20:22:51-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-24 20:22:51-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-05-04 04:28:45-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-05-22 09:28:20-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-22 09:28:20-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-05-18 00:28:45-07:00",
+        "end_reason": "new_position",
+        "start": "2023-05-04 04:28:45-07:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-06-07 14:33:24-07:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-05-18 00:28:45-07:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9487",
+  "evaluation_end": "2023-06-07 14:33:24-07:00",
+  "evaluation_start": "2023-05-04 04:28:45-07:00"
+}

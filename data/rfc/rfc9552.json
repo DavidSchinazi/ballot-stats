@@ -1,0 +1,235 @@
+{
+  "all_ballots": {
+    "Alvaro Retana": [
+      {
+        "ad": "Alvaro Retana",
+        "end": "2022-11-14 08:33:34-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Alvaro Retana",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "Yes"
+      }
+    ],
+    "Andrew Alston": [
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-02-28 05:32:54-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Andrew Alston",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-28 05:32:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Eric Vyncke": [
+      {
+        "ad": "Eric Vyncke",
+        "end": "2022-12-15 04:04:54-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Eric Vyncke",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-15 04:04:54-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Erik Kline": [
+      {
+        "ad": "Erik Kline",
+        "end": "2022-12-14 20:08:28-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Erik Kline",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 20:08:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Francesca Palombini": [
+      {
+        "ad": "Francesca Palombini",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "John Scudder": [
+      {
+        "ad": "John Scudder",
+        "end": "2022-12-12 17:29:17-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-20 09:51:14-08:00",
+        "end_reason": "position_updated",
+        "start": "2022-12-12 17:29:17-08:00",
+        "text": "# John Scudder, RTG AD, comments for  draft-ietf-idr-rfc7752bis-14 CC @jgscudder Thanks for the work you've put into this needed document. I reviewed the diff vs.  RFC 7752 , but didn't focus on any unchanged sections. Thanks also to the shepherd, Jeff Haas, for the meticulous and helpful shepherd write-up. As an aside to the author, my review would have been easier if a native HTML rendering had been available. I assume you must have uploaded txt instead of XML -- please consider uploading XML in the future? Thanks. ## DISCUSS ### Section 5.2.1, using ASN to disambiguate Router ID ``` \u00a0  BGP-LS uses the Autonomous System (AS) Number to \u00a0  disambiguate the Router-IDs, as described in Section 5.2.1.1. ``` My concern with this is straightforward: Section 5.2.1.1 doesn't describe the use of ASN to disambiguate Router ID. In fact, it's a little hard to understand WHAT Section 5.2.1.1 describes :-( but it's not that. I see that this claim is a carry forward from  RFC 7752 , but since you're touching it, I think you need to make it right, sorry. If I were confident I knew what the intent was, I'd propose a rewrite, but since I'm not, I'm just flagging the problem. ### Section 8.2.2, treat-as-withdraw I have a concern about this: ``` \u00a0  When the error that is determined allows for the router to skip the \u00a0  malformed NLRI(s) and continue the processing of the rest of the BGP \u00a0  UPDATE message (e.g. when the TLV ordering rule is violated), then it \u00a0  MUST handle such malformed NLRIs as 'Treat-as-withdraw'. ``` It's novel, in the context of  RFC 7606 , to allow malformed NLRI to result in something other than a session reset (or equivalent). I see why you are OK with it in the context of TLV misordering, however I think it's better to limit the exception to the exact case, instead of making it a general guideline open to implementor creativity.  A second comment (not DISCUSS level but I'll include it here) is that you don't have to characterize this as treat-as-withdraw. Since an implementation that follows this rule will never accept such an NLRI, there will never be anything to withdraw. So, following the example of  RFC 7606  Section 5.4, we'd have something like this as a replacement for the quoted sentence: \"An NLRI that violates the TLV ordering rule MUST be discarded.\" There's probably a little knock-on rewriting that would suggest, too, as in: ``` \u00a0  An NLRI that violates the TLV ordering rule MUST be discarded. Other NLRI \u00a0  error cases SHOULD be handled using 'AFI/SAFI disable', when... ``` If you think there are other NLRI error cases that should get the more lenient treatment, my preference would be to enumerate them specifically, but if I'm missing some reason this should be left as written, let's discuss.",
+        "type": "Discuss"
+      },
+      {
+        "ad": "John Scudder",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2023-02-20 09:51:14-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Lars Eggert": [
+      {
+        "ad": "Lars Eggert",
+        "end": "2022-12-15 04:18:28-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Lars Eggert",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-15 04:18:28-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Martin Duke": [
+      {
+        "ad": "Martin Duke",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Murray Kucherawy": [
+      {
+        "ad": "Murray Kucherawy",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Paul Wouters": [
+      {
+        "ad": "Paul Wouters",
+        "end": "2022-12-14 17:00:13-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Paul Wouters",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-14 17:00:13-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Robert Wilton": [
+      {
+        "ad": "Robert Wilton",
+        "end": "2022-12-15 05:02:09-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Robert Wilton",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-15 05:02:09-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Roman Danyliw": [
+      {
+        "ad": "Roman Danyliw",
+        "end": "2022-12-13 09:46:18-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Roman Danyliw",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-13 09:46:18-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ],
+    "Warren Kumari": [
+      {
+        "ad": "Warren Kumari",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      }
+    ],
+    "Zaheduzzaman Sarker": [
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2022-12-15 02:29:53-08:00",
+        "end_reason": "new_position",
+        "start": "2022-11-14 08:33:34-08:00",
+        "text": null,
+        "type": "No Record"
+      },
+      {
+        "ad": "Zaheduzzaman Sarker",
+        "end": "2023-02-28 09:17:50-08:00",
+        "end_reason": "evaluation_closed",
+        "start": "2022-12-15 02:29:53-08:00",
+        "text": null,
+        "type": "No Objection"
+      }
+    ]
+  },
+  "doc_name": "rfc9552",
+  "evaluation_end": "2023-02-28 09:17:50-08:00",
+  "evaluation_start": "2022-11-14 08:33:34-08:00"
+}
