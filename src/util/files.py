@@ -23,6 +23,18 @@ class Files:
         return os.path.join(cls.ensure_dir_exists(cls.data_dir("rfc")), sub_dir)
 
     @classmethod
+    def history_dir(cls, sub_dir=""):
+        return os.path.join(cls.ensure_dir_exists(cls.data_dir("history")), sub_dir)
+
+    @classmethod
+    def history_html(cls, doc_name):
+        return cls.history_dir("{d}.html".format(d=doc_name))
+
+    @classmethod
+    def history_json(cls, doc_name):
+        return cls.history_dir("{d}.json".format(d=doc_name))
+
+    @classmethod
     def metadata_dir(cls, sub_dir=""):
         return os.path.join(cls.ensure_dir_exists(cls.data_dir("meta")), sub_dir)
 

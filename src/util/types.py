@@ -112,3 +112,22 @@ class DocBallot:
         for ad in all_ballots:
             db.all_ballots[ad] = [Ballot.from_dict(b) for b in all_ballots[ad]]
         return db
+
+
+class DownloadedHistoryMetadata:
+    download_time = None
+
+    def __init__(self, download_time):
+        self.download_time = download_time
+
+    def as_dict(self):
+        return {
+            "download_time": self.download_time.isoformat(),
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        b = cls(
+            download_time=datetime.fromisoformat(d["download_time"]),
+        )
+        return b

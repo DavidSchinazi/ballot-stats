@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 from unidecode import unidecode
 
+from .download import get_doc_history_html
 from .files import Files
 from .iesg import normalize_ad_name
 from .json_handler import (
@@ -15,14 +16,14 @@ from .json_handler import (
 from .types import Ballot, DocBallot
 
 
-def parse_ballot(doc_name):
-    resp = requests.get("http://localhost:8000/doc/{d}/history/".format(d=doc_name))
-    if resp.status_code == 404:
-        print("{d} does not exist".format(d=doc_name))
+def parse_ballot(doc_name, force_download=False, past_draft_name=""):
+    doc_name_for_html = past_draft_name if past_draft_name != "" else doc_name
+    history_html = get_doc_history_html(
+        doc_name_for_html, force_download=force_download
+    )
+    if history_html == "":
         return False
-
-    assert resp.ok
-    soup = BeautifulSoup(resp.text, "lxml")
+    soup = BeautifulSoup(history_html, "lxml")
 
     if (
         len(
@@ -32,6 +33,19 @@ def parse_ballot(doc_name):
         )
         == 0
     ):
+        if past_draft_name == "":
+            past_drafts = soup.find_all(
+                lambda tag: tag.name == "a"
+                and tag.text.startswith("draft-")
+                and tag["href"].startswith("/doc/draft-")
+                and tag["href"].endswith("/history/")
+            )
+            if len(past_drafts) == 1:
+                return parse_ballot(
+                    doc_name,
+                    force_download=force_download,
+                    past_draft_name=past_drafts[0].text,
+                )
         print("{d} was not evaluated by the IESG".format(d=doc_name))
         return False
 
